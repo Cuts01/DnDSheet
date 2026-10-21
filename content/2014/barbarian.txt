@@ -1,0 +1,80 @@
+@class Barbarian | hitDie 12 | caster none | spell none | saves str con | sublevel 3 | sublabel Primal Path
+@prof armor light, medium, shields | weapons simple, martial | skills 2 from Animal Handling, Athletics, Intimidation, Nature, Perception, Survival
+@mc armor shields | weapons simple, martial
+1 | Rage | As a bonus action, rage for 1 minute: advantage on Strength checks and saves, bonus melee damage and resistance to bludgeoning, piercing and slashing. Limited uses per long rest.
+1 | Unarmored Defense | Without armor, your AC is 10 + Dexterity modifier + Constitution modifier. You can still use a shield.
+2 | Reckless Attack | On your first attack of a turn, gain advantage on Strength melee attacks, but attacks against you have advantage until your next turn.
+2 | Danger Sense | Advantage on Dexterity saves against effects you can see, such as traps and spells, unless blinded, deafened or incapacitated.
+3 | Primal Knowledge (Optional) | Gain proficiency in one more skill from the barbarian list.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+5 | Extra Attack | You can attack twice when you take the Attack action.
+5 | Fast Movement | Your speed increases by 10 feet while you aren't wearing heavy armor. The app already adds this automatically.
+7 | Feral Instinct | Advantage on initiative rolls; if surprised, you can act normally on your first turn if you rage first.
+7 | Instinctive Pounce (Optional) | When you enter a rage, you can move up to half your speed as part of that bonus action.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+9 | Brutal Critical | Roll one extra weapon damage die on melee critical hits; two at 13th level and three at 17th.
+11 | Relentless Rage | If you drop to 0 HP while raging, make a DC 10 Constitution save to drop to 1 HP instead. The DC rises by 5 each use until a rest.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+15 | Persistent Rage | Your rage only ends early if you fall unconscious or choose to end it.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+18 | Indomitable Might | If your total for a Strength check is lower than your Strength score, use the score instead.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Primal Champion | Your Strength and Constitution scores increase by 4, and their maximum becomes 24.
+
+@sub Path of the Ancestral Guardian | XGtE
+3 | Ancestral Protectors | While raging, the first creature you hit each turn has disadvantage on attacks against anyone but you, and others it damages have resistance, until your next turn.
+6 | Spirit Shield | While raging, use your reaction to reduce damage to a creature within 30 feet by 2d6 (3d6 at 10th, 4d6 at 14th).
+10 | Consult the Spirits | Cast Augury or Clairvoyance without a slot or components. Once per short or long rest.
+14 | Vengeful Ancestors | When Spirit Shield reduces damage, the attacker takes force damage equal to the damage prevented.
+
+@sub Path of the Battlerager | SCAG
+3 | Battlerager Armor | While raging in spiked armor, make a bonus action spike attack (1d4 piercing) and deal 3 piercing damage when you grapple.
+6 | Reckless Abandon | When you use Reckless Attack while raging, gain temp HP equal to your Constitution modifier.
+10 | Battlerager Charge | You can take the Dash action as a bonus action while raging.
+14 | Spiked Retribution | While raging in spiked armor, a creature that hits you with a melee attack within 5 feet takes 3 piercing damage.
+
+@sub Path of the Beast | TCoE
+3 | Form of the Beast | When you rage, grow a natural weapon: bite (heal on a hit when below half HP), claws (an extra claw attack) or tail (reach and a reaction to add 1d8 to AC).
+6 | Bestial Soul | Your natural weapons are magical, and after a rest you choose a swimming speed, climbing speed, or improved jumps.
+10 | Infectious Fury | When you hit with natural weapons while raging, the target makes a Wisdom save or must attack another creature or take 2d12 psychic damage. Proficiency bonus uses per long rest.
+14 | Call the Hunt | When you rage, up to Constitution modifier allies within 30 feet gain a d6 bonus damage once per turn, and you gain 5 temp HP per ally. Proficiency bonus uses per long rest.
+
+@sub Path of the Berserker | PHB
+3 | Frenzy | You can go into a frenzy when you rage, making a melee attack as a bonus action each turn; you gain a level of exhaustion when the rage ends.
+6 | Mindless Rage | You can't be charmed or frightened while raging, and those effects are suspended.
+10 | Intimidating Presence | As an action, frighten a creature within 30 feet on a failed Wisdom save; you can extend it each turn with your action.
+14 | Retaliation | When a creature within 5 feet damages you, use your reaction to make a melee attack against it.
+
+@sub Path of the Giant | BGG
+3 | Giant's Power | You learn Druidcraft or Thaumaturgy and one language (Giant).
+3 | Giant's Havoc | While raging, your reach increases by 5 feet, you can become Large, and you can use rage damage with thrown weapons and Strength checks.
+6 | Elemental Cleaver | When you rage, infuse a weapon with acid, cold, fire, lightning or thunder: extra 1d6 damage, it gains thrown and returns to your hand.
+10 | Mighty Impel | As a bonus action while raging, hurl a Medium or smaller creature within reach up to 30 feet.
+14 | Demiurgic Colossus | When you rage, you can become Large or Huge, your reach grows by 10 feet, and Elemental Cleaver deals 2d6.
+
+@sub Path of the Storm Herald | XGtE
+3 | Storm Aura | While raging, emanate a 10-foot aura: Desert (fire damage), Sea (lightning damage on a failed Dexterity save) or Tundra (temp HP to allies). Choose the environment when you gain the feature.
+6 | Storm Soul | Gain resistance and an exploration benefit tied to your environment (fire, lightning or cold).
+10 | Shielding Storm | Allies in your aura gain the damage resistance from your Storm Soul.
+14 | Raging Storm | Your aura gains a reaction: Desert burns attackers, Sea knocks creatures prone, Tundra reduces a creature's speed to 0.
+
+@sub Path of the Totem Warrior | PHB
+3 | Spirit Seeker | Cast Beast Sense and Speak with Animals as rituals.
+3 | Totem Spirit | Choose a totem for rage benefits: Bear (resist all damage but psychic), Eagle (Dash as a bonus action, opportunity attacks at disadvantage), Elk (+15 feet walking speed while raging without heavy armor), Tiger (longer jumps) or Wolf (allies have advantage against foes next to you). {speed +15 cond}
+6 | Aspect of the Beast | Choose an exploration benefit: Bear (carry more), Eagle (see far), Elk (fast travel), Tiger (extra skills) or Wolf (track at fast pace).
+10 | Spirit Walker | Cast Commune with Nature as a ritual.
+14 | Totemic Attunement | Choose a powerful rage benefit: Bear (enemies near you have disadvantage attacking others), Eagle (fly), Elk (knock creatures prone as you move), Tiger (bonus attack after moving) or Wolf (knock Large or smaller creatures prone).
+
+@sub Path of Wild Magic | TCoE
+3 | Magic Awareness | As an action, sense spells and magic items within 60 feet. Proficiency bonus uses per long rest.
+3 | Wild Surge | When you rage, roll on the Wild Magic table for a random magical effect that lasts the rage.
+6 | Bolstering Magic | As an action, give a creature 1d3 to attack rolls and checks for 10 minutes, or restore a spell slot of level 1d3. Proficiency bonus uses per long rest.
+10 | Unstable Backlash | When you take damage or fail a save while raging, use your reaction to reroll on the Wild Magic table.
+14 | Controlled Surge | When you roll on the Wild Magic table, roll twice and choose; doubles let you pick any effect.
+
+@sub Path of the Zealot | XGtE
+3 | Divine Fury | While raging, your first hit each turn deals extra necrotic or radiant damage equal to 1d6 + half your barbarian level.
+3 | Warrior of the Gods | Spells that restore you to life don't need material components.
+6 | Fanatical Focus | Once per rage, reroll a failed saving throw.
+10 | Zealous Presence | As a bonus action, up to ten creatures within 60 feet gain advantage on attacks and saves until your next turn. Once per long rest.
+14 | Rage Beyond Death | While raging, dropping to 0 HP doesn't knock you unconscious; you die only if your rage ends at 0 HP and you have three failed death saves.

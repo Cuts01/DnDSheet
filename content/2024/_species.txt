@@ -1,0 +1,61 @@
+# Species 2024 (PHB). Resúmenes propios. Los incrementos de ability vienen del background.
+@species Aasimar | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Celestial Resistance | Resistance to Necrotic and Radiant damage.
+- Healing Hands | As a Magic action, touch a creature to heal it a number of d4s equal to your Proficiency Bonus. Once per Long Rest.
+- Light Bearer | You know the Light cantrip (Charisma).
+- Celestial Revelation | From level 3, as a Bonus Action transform for 1 minute: Heavenly Wings (fly), Inner Radiance (radiant aura) or Necrotic Shroud (frighten); once per turn add damage equal to your Proficiency Bonus. Once per Long Rest.
+@species Dragonborn | size Medium | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Draconic Ancestry | Choose a dragon type; it sets your breath weapon and resistance damage type.
+- Breath Weapon | Replace one attack with a 15-foot cone or 30-foot line: Dexterity save, 1d10 damage (2d10 at 5th, 3d10 at 11th, 4d10 at 17th). Proficiency Bonus uses per Long Rest.
+- Damage Resistance | Resistance to your ancestry's damage type.
+- Draconic Flight | From level 5, as a Bonus Action sprout wings for 10 minutes and gain a Fly Speed equal to your Speed. Once per Long Rest.
+@species Dwarf | size Medium | speed 30 | darkvision 120 | lang Common | source PHB 2024
+- Dwarven Resilience | Resistance to Poison damage and advantage on saves to avoid or end Poisoned.
+- Dwarven Toughness | Your HP maximum increases by 1 per level.
+- Stonecunning | As a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on stone. Proficiency Bonus uses per Long Rest.
+@species Elf (Drow) | size Medium | speed 30 | darkvision 120 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
+- Drow Lineage | Darkvision 120 feet and the Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each once per Long Rest without a slot.
+- Fey Ancestry | Advantage on saves to avoid or end Charmed.
+- Keen Senses | Proficiency in Insight, Perception or Survival.
+- Trance | You don't need sleep; a Long Rest takes 4 hours of trance.
+@species Elf (High Elf) | size Medium | speed 30 | darkvision 60 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
+- High Elf Lineage | Prestidigitation (swap it after a Long Rest); Detect Magic at level 3 and Misty Step at level 5, each once per Long Rest without a slot.
+- Fey Ancestry | Advantage on saves to avoid or end Charmed.
+- Keen Senses | Proficiency in Insight, Perception or Survival.
+- Trance | You don't need sleep; a Long Rest takes 4 hours of trance.
+@species Elf (Wood Elf) | size Medium | speed 35 | darkvision 60 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
+- Wood Elf Lineage | Speed 35 feet and the Druidcraft cantrip; Longstrider at level 3 and Pass without Trace at level 5, each once per Long Rest without a slot.
+- Fey Ancestry | Advantage on saves to avoid or end Charmed.
+- Keen Senses | Proficiency in Insight, Perception or Survival.
+- Trance | You don't need sleep; a Long Rest takes 4 hours of trance.
+@species Gnome (Forest Gnome) | size Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Gnomish Cunning | Advantage on Intelligence, Wisdom and Charisma saving throws.
+- Forest Gnome Lineage | You know Minor Illusion and always have Speak with Animals prepared, castable without a slot Proficiency Bonus times per Long Rest.
+@species Gnome (Rock Gnome) | size Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Gnomish Cunning | Advantage on Intelligence, Wisdom and Charisma saving throws.
+- Rock Gnome Lineage | You know Mending and Prestidigitation, and can spend 10 minutes to make a Tiny clockwork device with a simple effect.
+@species Goliath | size Medium | speed 35 | lang Common | source PHB 2024
+- Giant Ancestry | Choose a boon used Proficiency Bonus times per Long Rest: Cloud's Jaunt (teleport), Fire's Burn (fire damage), Frost's Chill (cold and slow), Hill's Tumble (knock prone), Stone's Endurance (reduce damage) or Storm's Thunder (thunder reaction).
+- Large Form | From level 5, as a Bonus Action become Large for 10 minutes: advantage on Strength checks and +10 feet of Speed. Once per Long Rest. {speed +10 cond}
+- Powerful Build | Advantage to end Grappled, and you count as one size larger for carrying capacity.
+@species Halfling | size Small | speed 30 | lang Common | source PHB 2024
+- Brave | Advantage on saves to avoid or end Frightened.
+- Halfling Nimbleness | You can move through the space of any creature larger than you.
+- Luck | When you roll a 1 on a d20 Test, you can reroll it and must use the new roll.
+- Naturally Stealthy | You can Hide behind a creature at least one size larger than you.
+@species Human | size Medium or Small | speed 30 | skillchoice 1 from any | lang Common | feat | source PHB 2024
+- Resourceful | You gain Heroic Inspiration when you finish a Long Rest.
+- Skillful | Proficiency in one skill of your choice.
+- Versatile | You gain an Origin feat of your choice (Skilled is recommended).
+@species Orc | size Medium | speed 30 | darkvision 120 | lang Common | source PHB 2024
+- Adrenaline Rush | Take the Dash action as a Bonus Action and gain temp HP equal to your Proficiency Bonus. Proficiency Bonus uses per Short or Long Rest.
+- Relentless Endurance | When you drop to 0 HP but don't die, drop to 1 HP instead. Once per Long Rest.
+@species Tiefling (Abyssal) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Abyssal Legacy | Resistance to Poison and the Poison Spray cantrip; Ray of Sickness at level 3 and Hold Person at level 5, once per Long Rest each.
+- Otherworldly Presence | You know Thaumaturgy.
+@species Tiefling (Chthonic) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Chthonic Legacy | Resistance to Necrotic and the Chill Touch cantrip; False Life at level 3 and Ray of Enfeeblement at level 5, once per Long Rest each.
+- Otherworldly Presence | You know Thaumaturgy.
+@species Tiefling (Infernal) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
+- Infernal Legacy | Resistance to Fire and the Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, once per Long Rest each.
+- Otherworldly Presence | You know Thaumaturgy.

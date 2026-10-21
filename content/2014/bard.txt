@@ -1,0 +1,70 @@
+@class Bard | hitDie 8 | caster full | spell cha | saves dex cha | sublevel 3 | sublabel Bard College
+@prof armor light | weapons simple, hand crossbow, longsword, rapier, shortsword | tools three musical instruments | skills 3 from any
+@mc armor light | tools one musical instrument | skills 1 from any
+1 | Spellcasting | You know bard cantrips and spells and cast them with Charisma, using a musical instrument as a focus.
+1 | Bardic Inspiration | As a bonus action, give a creature within 60 feet an inspiration die to add to one ability check, attack or save within 10 minutes. Charisma modifier uses per long rest; the die grows with level.
+2 | Jack of All Trades | Add half your proficiency bonus, rounded down, to ability checks that don't already include it.
+2 | Song of Rest | Allies who spend Hit Dice during a short rest with you regain an extra 1d6 HP, growing at higher levels.
+2 | Magical Inspiration (Optional) | A creature holding your Bardic Inspiration can add the die to a spell's healing or damage roll.
+3 | Expertise | Double your proficiency bonus for two skill proficiencies; choose two more at 10th level.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+4 | Bardic Versatility (Optional) | When you gain an ASI, you can replace an Expertise skill or a bard cantrip.
+5 | Font of Inspiration | You regain all Bardic Inspiration uses on a short or long rest.
+6 | Countercharm | As an action, start a performance that gives you and nearby allies advantage on saves against being frightened or charmed.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+10 | Magical Secrets | Learn two spells from any class list; they count as bard spells. You gain two more at 14th and 18th level.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Superior Inspiration | When you roll initiative with no Bardic Inspiration uses left, you regain one.
+
+@sub College of Creation | TCoE
+3 | Mote of Potential | When you give Bardic Inspiration, a mote orbits the target: on an ability check it grants a reroll, on an attack a thunder burst, on a save temp HP.
+3 | Performance of Creation | As an action, create a nonmagical Medium or smaller item worth up to 20 times your bard level; it lasts proficiency bonus hours. Once per long rest or by spending a 2nd-level slot.
+6 | Animating Performance | As an action, animate a Large or smaller nonmagical item as a Dancing Item construct for 1 hour; command it with a bonus action. Once per long rest or a 3rd-level slot.
+14 | Creative Crescendo | Performance of Creation can make several items at once (Charisma modifier, minimum two), only one of them up to the maximum size, with no gold limit.
+
+@sub College of Eloquence | MOoT
+3 | Silver Tongue | On Persuasion and Deception checks, treat a d20 roll of 9 or lower as a 10.
+3 | Unsettling Words | As a bonus action, spend a Bardic Inspiration die: a creature within 60 feet subtracts the roll from its next saving throw before your next turn.
+6 | Unfailing Inspiration | When a creature fails a roll after adding your Bardic Inspiration die, it keeps the die.
+6 | Universal Speech | As an action, up to Charisma modifier creatures within 60 feet understand you for 1 hour. Once per long rest or by spending a spell slot.
+14 | Infectious Inspiration | When a creature within 60 feet succeeds using your Bardic Inspiration, use your reaction to give another creature a die for free. Charisma modifier uses per long rest.
+
+@sub College of Glamour | XGtE
+3 | Mantle of Inspiration | As a bonus action, spend a Bardic Inspiration use: up to Charisma modifier allies within 60 feet gain temp HP and can move without provoking opportunity attacks.
+3 | Enthralling Performance | After performing for 1 minute, humanoids who watched must make a Wisdom save or be charmed by you for 1 hour. Once per short or long rest.
+6 | Mantle of Majesty | As a bonus action, cast Command without a slot and keep casting it as a bonus action each turn for 1 minute (concentration). Once per long rest.
+14 | Unbreakable Majesty | As a bonus action, for 1 minute a creature that first attacks you each turn must make a Charisma save or choose another target. Once per short or long rest.
+
+@sub College of Lore | PHB
+3 | Bonus Proficiencies | Gain proficiency in three skills of your choice.
+3 | Cutting Words | As a reaction, spend a Bardic Inspiration die to subtract it from an attack roll, ability check or damage roll of a creature within 60 feet that can hear you.
+6 | Additional Magical Secrets | Learn two spells from any class list; they count as bard spells.
+14 | Peerless Skill | When you make an ability check, spend a Bardic Inspiration die and add it to the roll.
+
+@sub College of Spirits | VRGtR
+3 | Guiding Whispers | You learn Guidance, and its range becomes 60 feet for you.
+3 | Spiritual Focus | Use a candle, crystal ball, skull, spirit board or tarokka deck as a focus. From 6th level, spells cast through it add 1d6 to one damage or healing roll.
+3 | Tales from Beyond | As a bonus action, spend a Bardic Inspiration die to roll on the Spirit Tales table; you can later use an action to unleash that tale on a creature within 30 feet.
+6 | Spirit Session | Run a 1-hour ritual with willing creatures to temporarily learn a Divination or Necromancy spell whose level is at most the number of participants. Once per long rest.
+14 | Mystical Connection | When you roll for Tales from Beyond, roll twice and choose; doubles let you pick any tale.
+
+@sub College of Swords | XGtE
+3 | Bonus Proficiencies | Gain proficiency with medium armor and the scimitar; a melee weapon you're proficient with can be your spellcasting focus.
+3 | Fighting Style | Choose Dueling or Two-Weapon Fighting.
+3 | Blade Flourish | When you take the Attack action, your walking speed increases by 10 feet that turn, and a hit can spend Bardic Inspiration for Defensive, Slashing or Mobile Flourish. {speed +10 cond}
+6 | Extra Attack | Attack twice when you take the Attack action.
+14 | Master's Flourish | When you use a Blade Flourish option, you can roll a d6 instead of spending a Bardic Inspiration die.
+
+@sub College of Valor | PHB
+3 | Bonus Proficiencies | Gain proficiency with medium armor, shields and martial weapons.
+3 | Combat Inspiration | A creature with your Bardic Inspiration die can add it to a weapon damage roll or, as a reaction, to its AC against one attack.
+6 | Extra Attack | Attack twice when you take the Attack action.
+14 | Battle Magic | When you use your action to cast a bard spell, you can make one weapon attack as a bonus action.
+
+@sub College of Whispers | XGtE
+3 | Psychic Blades | When you hit with a weapon, spend a Bardic Inspiration die to deal extra psychic damage (2d6, growing with level). Once per turn.
+3 | Words of Terror | After speaking alone with a humanoid for 1 minute, it makes a Wisdom save or is frightened of you or a creature you choose for 1 hour. Once per short or long rest.
+6 | Mantle of Whispers | As a reaction when a humanoid dies within 30 feet, capture its shadow to later disguise yourself as it for 1 hour with surface knowledge of its life. Once per short or long rest.
+14 | Shadow Lore | As an action, a creature within 30 feet makes a Wisdom save or is charmed for 8 hours, obeying you for fear its darkest secret is revealed. Once per long rest.

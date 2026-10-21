@@ -1,0 +1,109 @@
+# Eldritch Invocations 2014 (PHB, XGtE, TCoE). Resúmenes propios.
+@invocation Agonizing Blast | prereq Eldritch Blast cantrip | source PHB
+Add your Charisma modifier to the damage of each Eldritch Blast beam.
+@invocation Armor of Shadows | spells Mage Armor will | source PHB
+Cast Mage Armor on yourself at will without a spell slot or material components.
+@invocation Ascendant Step | prereq 9th level | level 9 | spells Levitate will | source PHB
+Cast Levitate on yourself at will without a spell slot or material components.
+@invocation Beast Speech | spells Speak with Animals will | source PHB
+Cast Speak with Animals at will without a spell slot.
+@invocation Beguiling Influence | source PHB
+Gain proficiency in Deception and Persuasion.
+@invocation Bewitching Whispers | prereq 7th level | level 7 | spells Compulsion | source PHB
+Cast Compulsion once using a Pact Magic slot. Once per long rest.
+@invocation Book of Ancient Secrets | prereq Pact of the Tome | pact tome | spells pick 2 L1 ritual | source PHB
+Your Book of Shadows holds two 1st-level ritual spells, and you can add more rituals you find.
+@invocation Chains of Carceri | prereq 15th level, Pact of the Chain | level 15 | pact chain | spells Hold Monster will | source PHB
+Cast Hold Monster at will on a celestial, fiend or elemental without a slot; once per creature per long rest.
+@invocation Devil's Sight | source PHB
+See normally in magical and nonmagical darkness out to 120 feet.
+@invocation Dreadful Word | prereq 7th level | level 7 | spells Confusion | source PHB
+Cast Confusion once using a Pact Magic slot. Once per long rest.
+@invocation Eldritch Sight | spells Detect Magic will | source PHB
+Cast Detect Magic at will without a spell slot.
+@invocation Eldritch Spear | prereq Eldritch Blast cantrip | source PHB
+Eldritch Blast has a range of 300 feet.
+@invocation Eyes of the Rune Keeper | source PHB
+You can read all writing.
+@invocation Fiendish Vigor | spells False Life will | source PHB
+Cast False Life on yourself at will as a 1st-level spell without a slot.
+@invocation Gaze of Two Minds | source PHB
+As an action, touch a willing humanoid and perceive through its senses until the end of your next turn.
+@invocation Lifedrinker | prereq 12th level, Pact of the Blade | level 12 | pact blade | source PHB
+Your pact weapon hits deal extra necrotic damage equal to your Charisma modifier.
+@invocation Mask of Many Faces | spells Disguise Self will | source PHB
+Cast Disguise Self at will without a spell slot.
+@invocation Master of Myriad Forms | prereq 15th level | level 15 | spells Alter Self will | source PHB
+Cast Alter Self at will without a spell slot.
+@invocation Minions of Chaos | prereq 9th level | level 9 | spells Conjure Elemental | source PHB
+Cast Conjure Elemental once using a Pact Magic slot. Once per long rest.
+@invocation Mire the Mind | prereq 5th level | level 5 | spells Slow | source PHB
+Cast Slow once using a Pact Magic slot. Once per long rest.
+@invocation Misty Visions | spells Silent Image will | source PHB
+Cast Silent Image at will without a spell slot.
+@invocation One with Shadows | prereq 5th level | level 5 | source PHB
+In dim light or darkness, use your action to become invisible until you move or act.
+@invocation Otherworldly Leap | prereq 9th level | level 9 | spells Jump will | source PHB
+Cast Jump on yourself at will without a spell slot.
+@invocation Repelling Blast | prereq Eldritch Blast cantrip | source PHB
+When an Eldritch Blast beam hits, push the creature up to 10 feet away.
+@invocation Sculptor of Flesh | prereq 7th level | level 7 | spells Polymorph | source PHB
+Cast Polymorph once using a Pact Magic slot. Once per long rest.
+@invocation Sign of Ill Omen | prereq 5th level | level 5 | spells Bestow Curse | source PHB
+Cast Bestow Curse once using a Pact Magic slot. Once per long rest.
+@invocation Thief of Five Fates | spells Bane | source PHB
+Cast Bane once using a Pact Magic slot. Once per long rest.
+@invocation Thirsting Blade | prereq 5th level, Pact of the Blade | level 5 | pact blade | source PHB
+Attack twice with your pact weapon when you take the Attack action.
+@invocation Visions of Distant Realms | prereq 15th level | level 15 | spells Arcane Eye will | source PHB
+Cast Arcane Eye at will without a spell slot.
+@invocation Voice of the Chain Master | prereq Pact of the Chain | pact chain | source PHB
+Communicate telepathically with your familiar and perceive through its senses at any distance on the same plane.
+@invocation Whispers of the Grave | prereq 9th level | level 9 | spells Speak with Dead will | source PHB
+Cast Speak with Dead at will without a spell slot.
+@invocation Witch Sight | prereq 15th level | level 15 | source PHB
+See the true form of shapechangers and creatures concealed by illusion or transmutation within 30 feet.
+@invocation Aspect of the Moon | prereq Pact of the Tome | pact tome | source XGtE
+You don't need to sleep; you can rest with light activity only.
+@invocation Cloak of Flies | prereq 5th level | level 5 | source XGtE
+As a bonus action, surround yourself with a 5-foot aura of flies: advantage on Intimidation, disadvantage on other Charisma checks, and poison damage to creatures that start their turn in it. Once per short or long rest.
+@invocation Eldritch Smite | prereq 5th level, Pact of the Blade | level 5 | pact blade | source XGtE
+Once per turn when you hit with your pact weapon, spend a Pact Magic slot for 1d8 force damage plus 1d8 per slot level, and knock a Huge or smaller target prone.
+@invocation Ghostly Gaze | prereq 7th level | level 7 | source XGtE
+As an action, see through solid objects to 30 feet for 1 minute (concentration). Once per short or long rest.
+@invocation Gift of the Depths | prereq 5th level | level 5 | spells Water Breathing long | source XGtE
+Breathe underwater, gain a swimming speed equal to your walking speed, and cast Water Breathing once per long rest without a slot.
+@invocation Gift of the Ever-Living Ones | prereq Pact of the Chain | pact chain | source XGtE
+When you regain HP while your familiar is within 100 feet, treat any dice rolled as their maximum.
+@invocation Grasp of Hadar | prereq Eldritch Blast cantrip | source XGtE
+Once per turn when Eldritch Blast hits, pull the creature 10 feet closer to you.
+@invocation Improved Pact Weapon | prereq Pact of the Blade | pact blade | source XGtE
+Your pact weapon is a focus, gets +1 to attack and damage if not already magical, and can be a shortbow, longbow or crossbow.
+@invocation Lance of Lethargy | prereq Eldritch Blast cantrip | source XGtE
+Once per turn when Eldritch Blast hits, reduce the creature's speed by 10 feet until the end of your next turn.
+@invocation Maddening Hex | prereq 5th level, Hex spell or a warlock feature that curses | level 5 | source XGtE
+As a bonus action, creatures within 5 feet of your cursed target take psychic damage equal to your Charisma modifier.
+@invocation Relentless Hex | prereq 7th level, Hex spell or a warlock feature that curses | level 7 | source XGtE
+As a bonus action, teleport up to 30 feet to a space within 5 feet of your cursed target.
+@invocation Shroud of Shadow | prereq 15th level | level 15 | spells Invisibility will | source XGtE
+Cast Invisibility at will without a spell slot.
+@invocation Tomb of Levistus | prereq 5th level | level 5 | source XGtE
+As a reaction when you take damage, encase yourself in ice: gain 10 temp HP per warlock level but become incapacitated with speed 0 until the end of your next turn. Once per short or long rest.
+@invocation Trickster's Escape | prereq 7th level | level 7 | spells Freedom of Movement long | source XGtE
+Cast Freedom of Movement on yourself once using a Pact Magic slot. Once per long rest.
+@invocation Bond of the Talisman | prereq 12th level, Pact of the Talisman | level 12 | pact talisman | source TCoE
+The wearer of your talisman can teleport to you as an action, or you to them. Proficiency bonus uses per long rest.
+@invocation Eldritch Mind | source TCoE
+Advantage on Constitution saves to maintain concentration.
+@invocation Far Scribe | prereq 5th level, Pact of the Tome | level 5 | pact tome | spells Sending will | source TCoE
+Creatures who write their names in your book can receive your Sending without a slot.
+@invocation Gift of the Protectors | prereq 9th level, Pact of the Tome | level 9 | pact tome | source TCoE
+Creatures who write their names in your book drop to 1 HP instead of 0, once each per long rest.
+@invocation Investment of the Chain Master | prereq Pact of the Chain | pact chain | source TCoE
+Your familiar gains a flying or swimming speed, attacks with your bonus action command, magical weapon attacks, your save DC, and you can give it resistance.
+@invocation Protection of the Talisman | prereq 7th level, Pact of the Talisman | level 7 | pact talisman | source TCoE
+The wearer adds 1d4 to failed saving throws. Proficiency bonus uses per long rest.
+@invocation Rebuke of the Talisman | prereq Pact of the Talisman | pact talisman | source TCoE
+When the wearer is hit by a creature within 30 feet, use your reaction to deal psychic damage equal to your proficiency bonus and push it 10 feet.
+@invocation Undying Servitude | prereq 5th level | level 5 | source TCoE
+Cast Animate Dead without a slot once per long rest.

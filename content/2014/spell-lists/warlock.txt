@@ -1,0 +1,10 @@
+L0: Blade Ward; Booming Blade; Chill Touch; Create Bonfire; Eldritch Blast; Friends; Frostbite; Green-Flame Blade; Infestation; Lightning Lure; Mage Hand; Magic Stone; Mind Sliver; Minor Illusion; Poison Spray; Prestidigitation; Sword Burst; Thunderclap; Toll the Dead; True Strike
+L1: Armor of Agathys; Arms of Hadar; Cause Fear; Charm Person; Comprehend Languages; Distort Value; Expeditious Retreat; Hellish Rebuke; Hex; Illusory Script; Protection from Evil and Good; Unseen Servant; Witch Bolt
+L2: Borrowed Knowledge; Cloud of Daggers; Crown of Madness; Darkness; Earthbind; Enthrall; Flock of Familiars; Hold Person; Invisibility; Mind Spike; Mirror Image; Misty Step; Ray of Enfeeblement; Shadow Blade; Shatter; Spider Climb; Spray Of Cards; Suggestion; Warp Sense
+L3: Antagonize; Counterspell; Dispel Magic; Enemies Abound; Fear; Fly; Gaseous Form; Hunger Of Hadar; Hypnotic Pattern; Incite Greed; Intellect Fortress; Magic Circle; Major Image; Remove Curse; Spirit Shroud; Summon Fey; Summon Lesser Demons; Summon Shadowspawn; Summon Undead; Thunder Step; Tongues; Vampiric Touch
+L4: Banishment; Blight; Charm Monster; Dimension Door; Elemental Bane; Galder's Speedy Courier; Gate Seal; Hallucinatory Terrain; Raulothim's Psychic Lance; Shadow Of Moil; Sickening Radiance; Spirit Of Death; Summon Aberration; Summon Greater Demon
+L5: Contact Other Plane; Danse Macabre; Dream; Enervation; Far Step; Hold Monster; Infernal Calling; Mislead; Negative Energy Flood; Planar Binding; Scrying; Synaptic Static; Teleportation Circle; Wall of Light
+L6: Arcane Gate; Circle of Death; Conjure Fey; Create Undead; Eyebite; Flesh to Stone; Investiture of Flame; Investiture of Ice; Investiture of Stone; Investiture of Wind; Mass Suggestion; Mental Prison; Scatter; Soul Cage; Summon Fiend; Tasha's Otherworldly Guise; True Seeing
+L7: Crown of Stars; Dream of the Blue Veil; Etherealness; Finger of Death; Forcecage; Plane Shift; Power Word: Pain
+L8: Demiplane; Dominate Monster; Feeblemind; Glibness; Maddening Darkness; Power Word: Stun
+L9: Astral Projection; Blade of Disaster; Foresight; Gate; Imprisonment; Power Word: Kill; Psychic Scream; True Polymorph; Weird

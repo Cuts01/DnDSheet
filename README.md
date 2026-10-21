@@ -60,9 +60,13 @@ npm run build      # build de producción en dist/
 npm run preview    # sirve dist/ en http://localhost:4173
 ```
 
-Con `npm run dev`, Datos > Contenido tiene el botón **Actualizar packs de la wiki**, que carga directo `content/dist/wiki-2014.json` y `wiki-2024.json` de la carpeta del proyecto. Si un pack importado es de una versión anterior, la app lo avisa.
+Los packs de la wiki (`public/packs/wiki-2014.json` y `wiki-2024.json`) vienen con la app: al abrirla con conexión se importan solos si faltan o si hay una versión más nueva. Datos > Contenido también tiene el botón **Actualizar packs de la wiki**.
 
 Para probar desde el teléfono en tu red: `npm run dev -- --host` y abre la IP que muestra. Ojo: por HTTP en la red local la app funciona, pero no se puede instalar ni usa service worker. Para instalarla hace falta HTTPS.
+
+## App publicada
+
+https://cuts01.github.io/DnDSheet/ (se actualiza sola en cada push a `main`).
 
 ## Publicar en GitHub Pages
 
@@ -144,9 +148,9 @@ Formato resumido:
 
 ## Packs de la wiki (content/)
 
-`content/` tiene los packs armados a partir de dnd5e.wikidot.com (2014) y dnd2024.wikidot.com (2024), sin homebrew ni Unearthed Arcana. Las descripciones son resúmenes propios, no el texto de los libros. Está en `.gitignore` para que no se publique con el repo.
+`content/` tiene los packs armados a partir de dnd5e.wikidot.com (2014) y dnd2024.wikidot.com (2024), sin homebrew ni Unearthed Arcana. Las descripciones son resúmenes propios, no el texto de los libros. Se publican con la app.
 
-- `content/dist/wiki-2014.json` y `content/dist/wiki-2024.json`: listos para importar en Datos > Contenido.
+- `public/packs/wiki-2014.json` y `public/packs/wiki-2024.json`: los genera `build_pack.py` y la app los carga sola.
 - `content/2014/*.txt` y `content/2024/*.txt`: fuentes editables, una clase por archivo. Formato de clases: `nivel | nombre | resumen`. Razas, backgrounds, feats, invocations e items van en los archivos que empiezan con `_` (`@species`, `@background`, `@feat`, `@invocation`, `@weapon`, `@armor`, `@gear`, `@tool`). Efectos: `{speed +10 cond}`, `{init +5}`, `{ac +1}`, `{pperc +5}`, `{pinv +5}`, `{pins +5}`. Feats con skills: `| skills 1 either insight, perception` (modos `prof`, `expertise`, `either`; varias separadas por `;`).
 - Spells: `content/<ruleset>/spells/*.txt`, una por línea `Nombre | school | casting time | range | components | duration | clases | fuente`, seguida del resumen y opcionalmente `+ mejora con slot mayor`. `or R` en casting time marca ritual, `C,` en duration marca concentration y `M(C)` / `M(C*)` material con costo o que se consume. En 2014 las clases se toman de `content/2014/spell-lists/` (listas de la wiki) cuando la línea dice `-`. Los items se regeneran con `python3 content/gen_items.py`.
 - Regenerar: `python3 content/build_pack.py 2014` (o `2024`).

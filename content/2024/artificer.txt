@@ -1,0 +1,70 @@
+@class Artificer | hitDie 8 | caster artificer | spell int | saves con int | sublevel 3 | sublabel Artificer Subclass
+@prof armor light, medium, shields | weapons simple | tools Thieves' Tools, Tinker's Tools, one Artisan's Tools | skills 2 from Arcana, History, Investigation, Medicine, Nature, Perception, Sleight of Hand
+@mc armor light, medium, shields | tools Thieves' Tools, Tinker's Tools
+1 | Spellcasting | Prepare Artificer spells cast with Intelligence, using Tinker's Tools or Artisan's Tools as a focus.
+1 | Tinker's Magic | You know Mending, and as a Magic action you can create a simple mundane item nearby that lasts until your next Long Rest. Intelligence modifier uses per Long Rest.
+2 | Replicate Magic Item | Learn magic item plans and create temporary magic items from them after a Long Rest; the number of plans and items grows with level.
+4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+6 | Magic Item Tinker | Use your replicated items flexibly: recharge them, turn them into spell slots, or transmute one into another plan.
+7 | Flash of Genius | As a Reaction, add your Intelligence modifier to a failed ability check or save by you or a creature you see within 30 feet. Intelligence modifier uses per Long Rest.
+8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+10 | Magic Item Adept | You can attune to four magic items.
+11 | Spell-Storing Item | After a Long Rest, store a level 1 to 3 Artificer spell in a weapon or focus so a holder can cast it, a limited number of times.
+12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+14 | Advanced Artifice | You can attune to five magic items and regain a Flash of Genius use on a Short Rest.
+16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+18 | Magic Item Master | You can attune to six magic items.
+19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
+20 | Soul of Artifice | When you drop to 0 HP, you can destroy one of your replicated items to stay at higher HP instead; attuned items also boost your recovery.
+
+@sub Alchemist | Forge of the Artificer
+3 | Tools of the Trade | Proficiency with Alchemist's Supplies and the Herbalism Kit, and potions take half the time to brew.
+3 | Alchemist Spells | Always prepared. Level 3: Healing Word, Ray of Sickness. Level 5: Flaming Sphere, Melf's Acid Arrow. Level 9: Gaseous Form, Mass Healing Word. Level 13: Death Ward, Vitriolic Sphere. Level 17: Cloudkill, Raise Dead.
+3 | Experimental Elixir | After a Long Rest, create random elixirs (healing, swiftness, resilience, boldness, flight, transformation); spend slots for more. More elixirs at 5th, 9th and 15th level.
+5 | Alchemical Savant | When you cast a spell through Alchemist's Supplies, add Intelligence modifier to one roll that heals or deals Acid, Fire or Poison damage.
+9 | Restorative Reagents | Cast Lesser Restoration without a slot Intelligence modifier times per Long Rest.
+15 | Chemical Mastery | Resistance to Acid and Poison and immunity to Poisoned; your Acid, Fire or Poison spells deal an extra 2d8 Force once per turn; cast Tasha's Bubbling Cauldron free once per Long Rest.
+
+@sub Armorer | Forge of the Artificer
+3 | Tools of the Trade | Heavy armor training and Smith's Tools proficiency; armor takes half the time to craft.
+3 | Armorer Spells | Always prepared. Level 3: Magic Missile, Thunderwave. Level 5: Mirror Image, Shatter. Level 9: Hypnotic Pattern, Lightning Bolt. Level 13: Fire Shield, Greater Invisibility. Level 17: Passwall, Wall of Force.
+3 | Arcane Armor | Turn your armor into Arcane Armor: no Strength requirement, quick to don, and usable as a spellcasting focus.
+3 | Armor Model | Choose Dreadnaught, Guardian or Infiltrator, each with a special Intelligence-based weapon; switch after a rest. Infiltrator also adds 5 feet of Speed. {speed +5 cond}
+5 | Extra Attack | Attack twice when you take the Attack action.
+9 | Improved Armorer | Learn an extra Armor plan for Replicate Magic Item, and your model weapon gets +1 to attack and damage.
+15 | Perfected Armor | Your armor model's weapons deal more damage and each model gains extra abilities.
+
+@sub Artillerist | Forge of the Artificer
+3 | Tools of the Trade | Martial ranged weapon proficiency and Woodcarver's Tools; wands take half the time to craft.
+3 | Artillerist Spells | Always prepared. Level 3: Shield, Thunderwave. Level 5: Scorching Ray, Shatter. Level 9: Fireball, Wind Wall. Level 13: Ice Storm, Wall of Fire. Level 17: Cone of Cold, Wall of Force.
+3 | Eldritch Cannon | As a Magic action, create a cannon for 1 hour with Flamethrower, Force Ballista or Protector modes, activated with a Bonus Action.
+5 | Arcane Firearm | Carve a rod, staff, wand or ranged weapon into a focus that adds 1d8 to one damage roll of your Artificer spells.
+9 | Explosive Cannon | Your cannon deals more damage and can be detonated for a burst of Force damage.
+15 | Fortified Position | Maintain two cannons and activate both with one Bonus Action; allies near them have Half Cover.
+
+@sub Battle Smith | Forge of the Artificer
+3 | Tools of the Trade | Smith's Tools proficiency; weapons take half the time to craft.
+3 | Battle Smith Spells | Always prepared. Level 3: Heroism, Shield. Level 5: Shining Smite, Warding Bond. Level 9: Aura of Vitality, Conjure Barrage. Level 13: Aura of Purity, Fire Shield. Level 17: Banishing Smite, Mass Cure Wounds.
+3 | Battle Ready | Martial weapon proficiency, and you can use Intelligence for magic weapon attacks and damage; a weapon can be your focus.
+3 | Steel Defender | Gain a construct companion that acts on your turn and Dodges unless you command it with a Bonus Action.
+5 | Extra Attack | Attack twice when you take the Attack action, or replace one attack with a command to your Steel Defender.
+9 | Arcane Jolt | Once per turn, when your magic weapon or defender hits, deal 2d6 extra Force or heal a creature 2d6. Intelligence modifier uses per Long Rest.
+15 | Improved Defender | Arcane Jolt becomes 4d6, and your defender's Deflect Attack damages the attacker.
+
+@sub Cartographer | Forge of the Artificer
+3 | Tool Proficiency | Proficiency with Calligrapher's Supplies and Cartographer's Tools; scrolls take half the time to scribe.
+3 | Cartographer Spells | Always prepared. Level 3: Faerie Fire, Guiding Bolt, Healing Word. Level 5: Locate Object, Mind Spike. Level 9: Call Lightning, Clairvoyance. Level 13: Banishment, Locate Creature. Level 17: Scrying, Teleportation Circle.
+3 | Adventurer's Atlas | After a Long Rest, create magical maps for your allies: holders add 1d4 to Initiative and know each other's locations.
+3 | Scouting Magic | Cast Faerie Fire without a slot Intelligence modifier times per Long Rest, and use Portal Jump to teleport short distances by spending movement.
+5 | Guided Precision | Once per turn, add Intelligence modifier to damage of your Cartographer spells or against Faerie Fire targets; damage can't break Faerie Fire.
+9 | Ingenious Movement | When you use Flash of Genius, you can also teleport yourself or an ally up to 30 feet.
+15 | Superior Atlas | A map holder that drops to 0 HP can destroy the map to return with twice your Artificer level in HP, and you can cast Find the Path free once per Long Rest.
+
+@sub Reanimator | Ravenloft: The Horrors Within
+3 | Reanimator Spells | Always prepared. Level 3: False Life, Spare the Dying, Witch Bolt. Level 5: Blindness/Deafness, Enhance Ability. Level 9: Animate Dead, Lightning Bolt. Level 13: Blight, Death Ward. Level 17: Antilife Shell, Raise Dead.
+3 | Reanimator's Tools | Proficiency with Alchemist's Supplies.
+3 | Reanimator's Skill Set | Spare the Dying can revive a creature with HP equal to your Artificer level and shock nearby creatures. Intelligence modifier uses per Long Rest.
+3 | Reanimated Companion | As a Magic action, create an undead companion that obeys you until a Long Rest or until dismissed.
+5 | Strange Modifications | Each new companion gets a modification such as Arcane Conduit or Ferocity.
+9 | Improved Reanimation | Companions get two modifications, their Death Burst deals 4d4, and their Necrotic damage ignores resistance.
+15 | Superior Reanimation | Companions get three modifications, you can cast Raise Dead once per Long Rest without a slot, and you can sacrifice your companion to heal yourself.

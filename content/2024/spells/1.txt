@@ -1,0 +1,180 @@
+@level 1
+Alarm | Abj | 1 minute or R | 30 feet | V, S, M | 8 hours | Art, Rgr, Wiz | PHB 2024
+Ward a door, window or area up to a 20-foot Cube. When a creature touches or enters it, you get a mental ping (wakes you if asleep) or an audible bell for 10 seconds. You choose creatures that don't trigger it.
+Animal Friendship | Enc | Action | 30 feet | V, S, M | 24 hours | Brd, Drd, Rgr | PHB 2024
+A Beast you can see makes a Wisdom save or is Charmed by you for the duration. The spell ends if you or your allies damage it.
++ One additional Beast per slot level above 1.
+Armor of Agathys | Abj | Bonus Action | Self | V, S, M | 1 hour | Wlk | PHB 2024
+You gain 5 Temporary Hit Points. While you have them, a creature that hits you with a melee attack takes 5 Cold damage.
++ Temporary Hit Points and Cold damage both increase by 5 per slot level above 1.
+Arms of Hadar | Con | Action | Self | V, S | Instantaneous | Wlk | PHB 2024
+Tendrils erupt in a 10-foot Emanation. Each creature there makes a Strength save or takes 2d6 Necrotic damage and can't take Reactions until the start of its next turn; half damage on a success.
++ Damage increases by 1d6 per slot level above 1.
+Bane | Enc | Action | 30 feet | V, S, M | C, up to 1 minute | Brd, Clr, Wlk | PHB 2024
+Up to three creatures make a Charisma save. Each that fails subtracts 1d4 from its attack rolls and saving throws for the duration.
++ One additional creature per slot level above 1.
+Bless | Enc | Action | 30 feet | V, S, M(C) | C, up to 1 minute | Clr, Pal | PHB 2024
+Up to three creatures add 1d4 to their attack rolls and saving throws for the duration. Material: a Holy Symbol worth 5+ GP.
++ One additional creature per slot level above 1.
+Burning Hands | Evo | Action | Self | V, S | Instantaneous | Sor, Wiz | PHB 2024
+Each creature in a 15-foot Cone makes a Dexterity save, taking 3d6 Fire damage on a failure or half on a success. Unattended flammable objects in the Cone start burning.
++ Damage increases by 1d6 per slot level above 1.
+Buzzing Bee | Con | Action | 120 feet | V, S, M | C, up to 1 minute | Drd, Rgr, Sor, Wiz | DDB Drops
+A conjured bee pesters one creature you can see. Until the spell ends it has Disadvantage on Wisdom (Perception) checks, Dexterity (Stealth) checks and Constitution saves to keep Concentration, and it can't benefit from the Invisible condition.
+Charm Person | Enc | Action | 30 feet | V, S | 1 hour | Brd, Drd, Sor, Wlk, Wiz | PHB 2024
+A Humanoid makes a Wisdom save (with Advantage if you or allies are fighting it) or is Charmed by you. It ends if you or allies damage it. The creature knows it was charmed when the spell ends.
++ One additional creature per slot level above 1.
+Chromatic Orb | Evo | Action | 90 feet | V, S, M(C) | Instantaneous | Sor, Wiz | PHB 2024
+Ranged spell attack for 3d8 damage of a type you choose: Acid, Cold, Fire, Lightning, Poison or Thunder. If two or more d8s show the same number, the orb leaps to another target within 30 feet (new attack); it can leap a number of times equal to the slot level. Material: a diamond worth 50+ GP.
++ Damage increases by 1d8 per slot level above 1.
+Color Spray | Ill | Action | Self | V, S, M | Instantaneous | Brd, Sor, Wiz | PHB 2024
+Each creature in a 15-foot Cone makes a Constitution save or is Blinded until the end of your next turn.
+Command | Enc | Action | 60 feet | V | Instantaneous | Brd, Clr, Pal | PHB 2024
+Speak a one-word command to a creature that understands you: Approach, Drop, Flee, Grovel or Halt. On a failed Wisdom save it follows the command on its next turn.
++ One additional creature per slot level above 1.
+Compelled Duel | Enc | Bonus Action | 30 feet | V | C, up to 1 minute | Pal | PHB 2024
+A creature makes a Wisdom save or has Disadvantage on attack rolls against creatures other than you, and can't willingly move more than 30 feet away from you. Ends if you attack another creature, an ally damages it, or you end your turn more than 30 feet away.
+Comprehend Languages | Div | Action or R | Self | V, S, M | 1 hour | Brd, Sor, Wlk, Wiz | PHB 2024
+You understand the literal meaning of any language you hear or sign you see, and any written language you touch. It doesn't decode symbols or secret messages.
+Create or Destroy Water | Tra | Action | 30 feet | V, S, M | Instantaneous | Clr, Drd | PHB 2024
+Create up to 10 gallons of clean water (or rain in a 30-foot Cube that extinguishes exposed flames), or destroy up to 10 gallons of water (or fog in a 30-foot Cube).
++ 10 more gallons, or 5 feet more on the Cube, per slot level above 1.
+Cure Wounds | Abj | Action | Touch | V, S | Instantaneous | Art, Brd, Clr, Drd, Pal, Rgr | PHB 2024
+A creature you touch regains 2d8 + your spellcasting modifier Hit Points.
++ Healing increases by 2d8 per slot level above 1.
+Detect Evil and Good | Div | Action | Self | V, S | C, up to 10 minutes | Clr, Pal | PHB 2024
+You sense the location and type of any Aberration, Celestial, Elemental, Fey, Fiend or Undead within 30 feet, and places or objects consecrated or desecrated. Blocked by 1 foot of stone, dirt or wood, 1 inch of metal or a thin sheet of lead.
+Detect Magic | Div | Action or R | Self | V, S | C, up to 10 minutes | Art, Brd, Clr, Drd, Pal, Rgr, Sor, Wlk, Wiz | PHB 2024
+You sense magic within 30 feet. As a Magic action you can see a faint aura around any visible creature or object bearing magic and learn its school, if any. Blocked by the same barriers as Detect Evil and Good.
+Detect Poison and Disease | Div | Action or R | Self | V, S, M | C, up to 10 minutes | Clr, Drd, Pal, Rgr | PHB 2024
+You sense the location of poisons, poisonous or venomous creatures, and magical contagions within 30 feet, and learn their kind.
+Disguise Self | Ill | Action | Self | V, S | 1 hour | Art, Brd, Sor, Wiz | PHB 2024
+Change how you look, including clothing and gear, up to 1 foot taller or shorter. A creature that takes the Study action can make an Intelligence (Investigation) check against your spell save DC to notice.
+Dissonant Whispers | Enc | Action | 60 feet | V | Instantaneous | Brd | PHB 2024
+A creature makes a Wisdom save. On a failure it takes 3d6 Psychic damage and must use its Reaction, if available, to move as far away from you as it can. On a success it takes half damage only.
++ Damage increases by 1d6 per slot level above 1.
+Divine Favor | Tra | Bonus Action | Self | V, S | 1 minute | Pal | PHB 2024
+Your weapon attacks deal an extra 1d4 Radiant damage on a hit for the duration.
+Divine Smite | Evo | Bonus Action | Self | V | Instantaneous | Pal | PHB 2024
+Cast right after you hit with a melee weapon or Unarmed Strike: the target takes an extra 2d8 Radiant damage, plus 1d8 if it is a Fiend or Undead.
++ Damage increases by 1d8 per slot level above 1.
+Ensnaring Strike | Con | Bonus Action | Self | V | C, up to 1 minute | Rgr | PHB 2024
+Cast right after hitting with a weapon: the target makes a Strength save (Advantage if Large or bigger) or is Restrained by thorny vines and takes 1d6 Piercing damage at the start of each of its turns. It or a creature within reach can take an action for a Strength (Athletics) check against your DC to free it.
++ Damage increases by 1d6 per slot level above 1.
+Entangle | Con | Action | 90 feet | V, S | C, up to 1 minute | Drd, Rgr | PHB 2024
+Vines fill a 20-foot square, making it Difficult Terrain. Each creature there when it appears makes a Strength save or is Restrained; it can take an action for a Strength (Athletics) check against your DC to break free.
+Expeditious Retreat | Tra | Bonus Action | Self | V, S | C, up to 10 minutes | Art, Sor, Wlk, Wiz | PHB 2024
+You take the Dash action when you cast it and can Dash as a Bonus Action for the duration.
+Faerie Fire | Evo | Action | 60 feet | V | C, up to 1 minute | Art, Brd, Drd | PHB 2024
+Each creature in a 20-foot Cube makes a Dexterity save or is outlined in light (blue, green or violet). Attack rolls against outlined creatures have Advantage and they can't benefit from the Invisible condition.
+False Life | Nec | Action | Self | V, S, M | Instantaneous | Art, Sor, Wiz | PHB 2024
+You gain 2d4 + 4 Temporary Hit Points.
++ 5 more Temporary Hit Points per slot level above 1.
+Feather Fall | Tra | Reaction | 60 feet | V, M | 1 minute | Art, Brd, Sor, Wiz | PHB 2024
+When you or a creature within 60 feet falls, up to five falling creatures descend at 60 feet per round and take no falling damage.
+Feign Interest | Ill | Action | Self | V | 1 hour | Wiz | DDB Drops
+You look attentive and engaged while your mind wanders. A creature that takes the Search action on you can see through it with a Wisdom (Insight) check against your spell save DC.
+Find Familiar | Con | 1 hour or R | 10 feet | V, S, M(C*) | Instantaneous | Wiz | PHB 2024
+Summon a spirit familiar (Celestial, Fey or Fiend) in the form of a small animal such as a cat, owl, raven or bat. It acts on its own, shares telepathy within 100 feet, can deliver your touch spells, and you can see through its senses. Material: incense worth 10+ GP, consumed.
+Fog Cloud | Con | Action | 120 feet | V, S | C, up to 1 hour | Drd, Rgr, Sor, Wiz | PHB 2024
+A 20-foot-radius Sphere of fog makes the area Heavily Obscured. A strong wind disperses it.
++ Radius increases by 20 feet per slot level above 1.
+Goodberry | Con | Action | Self | V, S, M | 24 hours | Drd, Rgr | PHB 2024
+Ten berries appear. A creature can eat one as a Bonus Action to regain 1 Hit Point; a berry also provides a day of nourishment.
+Grease | Con | Action | 60 feet | V, S, M | 1 minute | Art, Sor, Wiz | PHB 2024
+A 10-foot square becomes Difficult Terrain. Each creature there when it appears, entering it or ending its turn there makes a Dexterity save or falls Prone.
+Guiding Bolt | Evo | Action | 120 feet | V, S | 1 round | Clr | PHB 2024
+Ranged spell attack for 4d6 Radiant damage, and the next attack roll against the target before the end of your next turn has Advantage.
++ Damage increases by 1d6 per slot level above 1.
+Hail of Thorns | Con | Bonus Action | Self | V | Instantaneous | Rgr | PHB 2024
+Cast right after hitting with a ranged weapon: the target and each creature within 5 feet of it make a Dexterity save, taking 1d10 Piercing damage on a failure or half on a success.
++ Damage increases by 1d10 per slot level above 1.
+Healing Word | Abj | Bonus Action | 60 feet | V | Instantaneous | Brd, Clr, Drd | PHB 2024
+A creature you can see regains 2d4 + your spellcasting modifier Hit Points.
++ Healing increases by 2d4 per slot level above 1.
+Hellish Rebuke | Evo | Reaction | 60 feet | V, S | Instantaneous | Wlk | PHB 2024
+When a creature you can see damages you, it makes a Dexterity save, taking 2d10 Fire damage on a failure or half on a success.
++ Damage increases by 1d10 per slot level above 1.
+Heroism | Enc | Action | Touch | V, S | C, up to 1 minute | Brd, Pal | PHB 2024
+A willing creature is immune to Frightened and gains Temporary Hit Points equal to your spellcasting modifier at the start of each of its turns.
++ One additional creature per slot level above 1.
+Hex | Enc | Bonus Action | 90 feet | V, S, M | C, up to 1 hour | Wlk | PHB 2024
+Curse a creature: your attacks deal it an extra 1d6 Necrotic damage on a hit, and it has Disadvantage on ability checks with one ability you choose. If it drops to 0 HP, you can move the curse to another creature as a Bonus Action on a later turn.
++ Duration: up to 4 hours with a level 2 slot, 8 hours with level 3-4, 24 hours with level 5+.
+Hunter's Mark | Div | Bonus Action | 90 feet | V | C, up to 1 hour | Rgr | PHB 2024
+Mark a creature: your attacks deal it an extra 1d6 Force damage on a hit, and you have Advantage on Wisdom (Perception or Survival) checks to find it. If it drops to 0 HP, you can move the mark as a Bonus Action on a later turn.
++ Duration: up to 4 hours with a level 2 slot, 8 hours with level 3-4, 24 hours with level 5+.
+Ice Knife | Con | Action | 60 feet | S, M | Instantaneous | Drd, Sor, Wiz | PHB 2024
+Ranged spell attack for 1d10 Piercing damage. Hit or miss, the shard explodes: the target and each creature within 5 feet make a Dexterity save or take 2d6 Cold damage.
++ Cold damage increases by 1d6 per slot level above 1.
+Identify | Div | 1 minute or R | Touch | V, S, M(C) | Instantaneous | Art, Brd, Wiz | PHB 2024
+Learn a magic item's properties, how to use it, whether it needs Attunement and its charges, plus any spells affecting the item or creature you touch. Material: a pearl worth 100+ GP.
+Illusory Script | Ill | 1 minute or R | Touch | S, M(C*) | 10 days | Brd, Wlk, Wiz | PHB 2024
+Write on a surface so that only creatures you choose can read the message; others see unintelligible script or a false message you set. Truesight reveals it. Material: ink worth 10+ GP, consumed.
+Inflict Wounds | Nec | Action | Touch | V, S | Instantaneous | Clr | PHB 2024
+A creature you touch makes a Constitution save, taking 2d10 Necrotic damage on a failure or half on a success.
++ Damage increases by 1d10 per slot level above 1.
+Insidious Rhythm | Enc | Action | 120 feet | V, S | C, up to 1 minute | Brd | DDB Drops
+A target makes a Wisdom save or has Disadvantage on Intelligence checks and on Constitution saves to keep Concentration. It repeats the save at the end of each of its turns, ending the spell on a success.
++ One additional creature per slot level above 1.
+Jump | Tra | Bonus Action | Touch | V, S, M | 1 minute | Art, Drd, Rgr, Sor, Wiz | PHB 2024
+Once per turn for the duration, the willing target can jump up to 30 feet by spending 10 feet of movement.
++ One additional creature per slot level above 1.
+Longstrider | Tra | Action | Touch | V, S, M | 1 hour | Art, Brd, Drd, Rgr, Wiz | PHB 2024
+A creature's Speed increases by 10 feet.
++ One additional creature per slot level above 1.
+Mage Armor | Abj | Action | Touch | V, S, M | 8 hours | Sor, Wiz | PHB 2024
+A willing creature not wearing armor has a base AC of 13 + its Dexterity modifier. Ends if it dons armor.
+Magic Missile | Evo | Action | 120 feet | V, S | Instantaneous | Sor, Wiz | PHB 2024
+Three darts each hit automatically for 1d4 + 1 Force damage, split among creatures you can see as you like.
++ One additional dart per slot level above 1.
+Protection from Evil and Good | Abj | Action | Touch | V, S, M(C*) | C, up to 10 minutes | Clr, Drd, Pal, Wlk, Wiz | PHB 2024
+Aberrations, Celestials, Elementals, Fey, Fiends and Undead have Disadvantage on attack rolls against the target, and it can't be Charmed, Frightened or possessed by them. Material: a flask of Holy Water worth 25+ GP, consumed.
+Purify Food and Drink | Tra | Action or R | 10 feet | V, S | Instantaneous | Art, Clr, Drd, Pal | PHB 2024
+Remove poison and rot from nonmagical food and drink in a 5-foot-radius Sphere.
+Quick Clothier | Tra | Action | Touch | V, S, M | 24 hours | Art, Brd, Wiz | DDB Drops
+Restyle a set of nonmagical clothing no one is wearing: color, cut and decoration, up to a 15 GP value. It reverts when the spell ends.
+Ray of Sickness | Nec | Action | 60 feet | V, S | Instantaneous | Sor, Wiz | PHB 2024
+Ranged spell attack for 2d8 Poison damage, and the target is Poisoned until the end of your next turn.
++ Damage increases by 1d8 per slot level above 1.
+Sanctuary | Abj | Bonus Action | 30 feet | V, S, M | 1 minute | Art, Clr | PHB 2024
+A creature attacking the warded target or targeting it with a damaging spell must make a Wisdom save or choose a new target or lose the attack or spell. Ends if the warded creature attacks, casts a spell or deals damage.
+Searing Smite | Evo | Bonus Action | Self | V | 1 minute | Pal | PHB 2024
+Cast right after hitting with a melee weapon or Unarmed Strike: extra 1d6 Fire damage, and the target ignites, taking 1d6 Fire damage at the start of each of its turns until it succeeds on a Constitution save at the end of a turn.
++ Both damages increase by 1d6 per slot level above 1.
+Shield | Abj | Reaction | Self | V, S | 1 round | Sor, Wiz | PHB 2024
+When you are hit by an attack or targeted by Magic Missile: +5 AC until the start of your next turn (including against the triggering attack), and no damage from Magic Missile.
+Shield of Faith | Abj | Bonus Action | 60 feet | V, S, M | C, up to 10 minutes | Clr, Pal | PHB 2024
+A creature gains +2 AC for the duration.
+Silent Image | Ill | Action | 60 feet | V, S, M | C, up to 10 minutes | Brd, Sor, Wiz | PHB 2024
+Create a visual illusion no larger than a 15-foot Cube that you can move with a Magic action. Physical interaction reveals it; a Study action allows an Intelligence (Investigation) check against your DC.
+Sleep | Enc | Action | 60 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wiz | PHB 2024
+Each creature you choose in a 5-foot-radius Sphere makes a Wisdom save or is Incapacitated until the end of its next turn, then repeats the save; on a second failure it is Unconscious for the duration (ends if it takes damage or someone uses an action to wake it). Creatures that don't sleep or are immune to Exhaustion succeed automatically.
+Speak with Animals | Div | Action or R | Self | V, S | 10 minutes | Brd, Drd, Rgr, Wlk | PHB 2024
+You can understand and talk with Beasts. Most can tell you about nearby places and creatures they have seen in the last day.
+Spellfire Flare | Evo | Action | 60 feet | V, S | Instantaneous | Sor, Wiz | FRHoF
+Ranged spell attack that ignores Half and Three-Quarters Cover, dealing 2d10 Radiant damage on a hit.
++ One additional flare (separate attack) per slot level above 1.
+Tasha's Hideous Laughter | Enc | Action | 30 feet | V, S, M | C, up to 1 minute | Brd, Wlk, Wiz | PHB 2024
+A creature makes a Wisdom save or falls Prone and is Incapacitated, unable to stand, laughing. It repeats the save at the end of each of its turns and whenever it takes damage (with Advantage if damaged).
++ One additional creature per slot level above 1.
+Tenser's Floating Disk | Con | Action or R | 30 feet | V, S, M | 1 hour | Wiz | PHB 2024
+A 3-foot-wide floating disk holds up to 500 pounds and follows you, staying within 20 feet. It ends if you move more than 100 feet away.
+Thunderous Smite | Evo | Bonus Action | Self | V | Instantaneous | Pal | PHB 2024
+Cast right after hitting with a melee weapon or Unarmed Strike: extra 2d6 Thunder damage, and the target makes a Strength save or is pushed 10 feet and knocked Prone.
++ Damage increases by 1d6 per slot level above 1.
+Thunderwave | Evo | Action | Self | V, S | Instantaneous | Brd, Drd, Sor, Wiz | PHB 2024
+Each creature in a 15-foot Cube from you makes a Constitution save, taking 2d8 Thunder damage and being pushed 10 feet on a failure, or half damage only on a success. Audible 300 feet away.
++ Damage increases by 1d8 per slot level above 1.
+Unseen Servant | Con | Action or R | 60 feet | V, S, M | 1 hour | Brd, Wlk, Wiz | PHB 2024
+An invisible, mindless force performs simple tasks on your command (Bonus Action): fetch, clean, mend, fold, serve. It has AC 10, 1 HP and Strength 2, and can't attack.
++ One additional servant per slot level above 1.
+Wardaway | Abj | Action | 60 feet | V, S, M | Instantaneous | Brd, Clr, Pal, Wiz | FRHoF
+A target makes a Constitution save (Constructs and Undead succeed automatically). On a failure it takes 2d4 Force damage, its Speed is halved until the start of your next turn, and on its next turn it can take an action or a Bonus Action, not both. Half damage only on a success.
++ Damage increases by 2d4 per slot level above 1.
+Witch Bolt | Evo | Action | 60 feet | V, S, M | C, up to 1 minute | Sor, Wlk, Wiz | PHB 2024
+Ranged spell attack for 2d12 Lightning damage. On each later turn you can use a Bonus Action to deal 1d12 Lightning damage to the target automatically, as long as it stays within range and has no Total Cover.
++ Initial damage increases by 1d12 per slot level above 1.
+Wrathful Smite | Nec | Bonus Action | Self | V | 1 minute | Pal | PHB 2024
+Cast right after hitting with a melee weapon or Unarmed Strike: extra 1d6 Necrotic damage, and the target makes a Wisdom save or is Frightened for the duration, repeating the save at the end of each of its turns.
++ Damage increases by 1d6 per slot level above 1.

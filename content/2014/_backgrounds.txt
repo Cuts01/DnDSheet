@@ -1,0 +1,79 @@
+# Backgrounds 2014 (PHB, SCAG y otros). Resúmenes propios.
+@background Acolyte | skills Insight, Religion | lang two of your choice | source PHB | equipment Holy symbol, prayer book, 5 sticks of incense, vestments, common clothes, 15 gp
+- Shelter of the Faithful | You and your companions can receive free healing and care at temples of your faith.
+@background Charlatan | skills Deception, Sleight of Hand | tools Disguise Kit, Forgery Kit | source PHB | equipment Fine clothes, disguise kit, con tools, 15 gp
+- False Identity | You have a second identity with documentation and contacts.
+@background Criminal | skills Deception, Stealth | tools one Gaming Set, Thieves' Tools | source PHB | equipment Crowbar, dark common clothes with a hood, 15 gp
+- Criminal Contact | You have a reliable contact in a criminal network.
+@background Spy | skills Deception, Stealth | tools one Gaming Set, Thieves' Tools | source PHB | equipment Crowbar, dark common clothes with a hood, 15 gp
+- Criminal Contact | Variant of Criminal: you have a contact in a spy network.
+@background Entertainer | skills Acrobatics, Performance | tools Disguise Kit, one Musical Instrument | source PHB | equipment Musical instrument, a favor from an admirer, costume, 15 gp
+- By Popular Demand | You can find a place to perform and receive free lodging and food.
+@background Gladiator | skills Acrobatics, Performance | tools Disguise Kit, one Musical Instrument | source PHB | equipment Unusual weapon, a favor from an admirer, costume, 15 gp
+- By Popular Demand | Variant of Entertainer: you perform in arenas.
+@background Folk Hero | skills Animal Handling, Survival | tools one Artisan's Tools, Vehicles (land) | source PHB | equipment Artisan's tools, shovel, iron pot, common clothes, 10 gp
+- Rustic Hospitality | Common folk will shelter and hide you, as long as you don't endanger them.
+@background Guild Artisan | skills Insight, Persuasion | tools one Artisan's Tools | lang one of your choice | source PHB | equipment Artisan's tools, letter of introduction from your guild, traveler's clothes, 15 gp
+- Guild Membership | Your guild offers lodging, legal help and access to influential contacts.
+@background Guild Merchant | skills Insight, Persuasion | tools Navigator's Tools | lang one of your choice | source PHB | equipment Mule and cart, letter of introduction, traveler's clothes, 15 gp
+- Guild Membership | Variant of Guild Artisan for merchants.
+@background Hermit | skills Medicine, Religion | tools Herbalism Kit | lang one of your choice | source PHB | equipment Scroll case of notes, winter blanket, common clothes, herbalism kit, 5 gp
+- Discovery | You uncovered a unique and powerful secret during your seclusion.
+@background Noble | skills History, Persuasion | tools one Gaming Set | lang one of your choice | source PHB | equipment Fine clothes, signet ring, scroll of pedigree, 25 gp
+- Position of Privilege | You are welcome in high society and people assume you belong there.
+@background Knight | skills History, Persuasion | tools one Gaming Set | lang one of your choice | source PHB | equipment Fine clothes, signet ring, scroll of pedigree, 25 gp
+- Retainers | Variant of Noble: you have three loyal retainers.
+@background Outlander | skills Athletics, Survival | tools one Musical Instrument | lang one of your choice | source PHB | equipment Staff, hunting trap, trophy from an animal, traveler's clothes, 10 gp
+- Wanderer | Excellent memory for geography, and you can find food and water for up to six people daily.
+@background Sage | skills Arcana, History | lang two of your choice | source PHB | equipment Ink, quill, small knife, letter with an unanswered question, common clothes, 10 gp
+- Researcher | When you don't know a piece of lore, you know where to find it.
+@background Sailor | skills Athletics, Perception | tools Navigator's Tools, Vehicles (water) | source PHB | equipment Belaying pin, silk rope, lucky charm, common clothes, 10 gp
+- Ship's Passage | You can secure free passage on a sailing ship for you and your companions.
+@background Pirate | skills Athletics, Perception | tools Navigator's Tools, Vehicles (water) | source PHB | equipment Belaying pin, silk rope, lucky charm, common clothes, 10 gp
+- Bad Reputation | Variant of Sailor: people fear you, so you can get away with minor crimes.
+@background Soldier | skills Athletics, Intimidation | tools one Gaming Set, Vehicles (land) | source PHB | equipment Insignia of rank, trophy, gaming set, common clothes, 10 gp
+- Military Rank | Soldiers loyal to your former organization recognize your authority.
+@background Urchin | skills Sleight of Hand, Stealth | tools Disguise Kit, Thieves' Tools | source PHB | equipment Small knife, city map, pet mouse, token of your parents, common clothes, 10 gp
+- City Secrets | You know secret paths and can travel twice as fast through a city.
+@background City Watch | skills Athletics, Insight | lang two of your choice | source SCAG | equipment Uniform, horn, manacles, 10 gp
+- Watcher's Eye | You can easily find the local watch post and spot criminal dens.
+@background Clan Crafter | skills History, Insight | tools one Artisan's Tools | lang Dwarvish or one of your choice | source SCAG | equipment Artisan's tools, maker's mark chisel, traveler's clothes, 10 gp
+- Respect of the Stout Folk | Dwarves grant you free lodging and food.
+@background Cloistered Scholar | skills History | skillchoice 1 from Arcana, Nature, Religion | lang two of your choice | source SCAG | equipment Scholar's robes, writing kit, borrowed book, 10 gp
+- Library Access | You have access to libraries and archives that others can't use.
+@background Courtier | skills Insight, Persuasion | lang two of your choice | source SCAG | equipment Fine clothes, 5 gp
+- Court Functionary | You know how bureaucracies work and can access records and officials.
+@background Faction Agent | skills Insight | skillchoice 1 from Arcana, Deception, History, Intimidation, Investigation, Medicine, Nature, Performance, Persuasion, Religion, Survival | lang two of your choice | source SCAG | equipment Faction badge, copy of a faction text, common clothes, 15 gp
+- Safe Haven | Your faction's members offer you help and shelter.
+@background Far Traveler | skills Insight, Perception | tools one Gaming Set or Musical Instrument | lang one of your choice | source SCAG | equipment Traveler's clothes, instrument or gaming set, poorly drawn maps, jewelry worth 10 gp, 5 gp
+- All Eyes on You | People are curious about you and your foreign origin.
+@background Inheritor | skills Survival | skillchoice 1 from Arcana, History, Religion | tools one Gaming Set or Musical Instrument | lang one of your choice | source SCAG | equipment Your inheritance, traveler's clothes, 15 gp
+- Inheritance | You carry a valuable or mysterious object.
+@background Knight of the Order | skills Persuasion | skillchoice 1 from Arcana, History, Nature, Religion | tools one Gaming Set or Musical Instrument | lang one of your choice | source SCAG | equipment Traveler's clothes, signet or emblem, 10 gp
+- Knightly Regard | Members of your order and those who respect it offer help and shelter.
+@background Mercenary Veteran | skills Athletics, Persuasion | tools one Gaming Set, Vehicles (land) | source SCAG | equipment Uniform of your company, insignia, gaming set, common clothes, 10 gp
+- Mercenary Life | You know the mercenary companies and can find work for your skills.
+@background Urban Bounty Hunter | skillchoice 2 from Deception, Insight, Persuasion, Stealth | tools two of Gaming Set, Musical Instrument, Thieves' Tools | source SCAG | equipment Clothes for your role, 20 gp
+- Ear to the Ground | You have contacts in every city who give you information.
+@background Uthgardt Tribe Member | skills Athletics, Survival | tools one Musical Instrument or Artisan's Tools | lang one of your choice | source SCAG | equipment Hunting trap, totemic token, traveler's clothes, 10 gp
+- Uthgardt Heritage | You know the North's wilderness and find twice the food, and tribes welcome you.
+@background Waterdhavian Noble | skills History, Persuasion | tools one Gaming Set or Musical Instrument | lang one of your choice | source SCAG | equipment Fine clothes, signet ring, scroll of pedigree, skin of fine wine, 20 gp
+- Kept in Style | You can maintain a comfortable lifestyle in Waterdeep at no cost.
+@background Haunted One | skillchoice 2 from Arcana, Investigation, Religion, Survival | lang two exotic languages | source VRGtR | equipment Monster hunter's pack, trinket, common clothes, 1 sp
+- Heart of Darkness | Commoners sense your burden and help you, even taking up arms beside you.
+@background Investigator | skillchoice 2 from Insight, Investigation, Perception | tools Disguise Kit, Thieves' Tools | source VRGtR | equipment Magnifying glass, evidence from a past case, common clothes, 10 gp
+- Official Inquiry | You can gain access to people and places related to crimes.
+@background Archaeologist | skillchoice 2 from History, Survival | tools Cartographer's Tools or Navigator's Tools | lang one of your choice | source ToA | equipment Map case, bullseye lantern, miner's pick, traveler's clothes, shovel, tent, trinket, 25 gp
+- Historical Knowledge | You can identify ruins and estimate the value of art objects.
+@background Feylost | skills Deception, Survival | tools one Musical Instrument | lang one of Elvish, Gnomish, Goblin or Sylvan | source WBtW | equipment Musical instrument, traveler's clothes, three trinkets, 8 gp
+- Feywild Visitor | Fey creatures treat you with curiosity and respect.
+@background Witchlight Hand | skills Performance, Sleight of Hand | tools Disguise Kit or one Musical Instrument | lang one of your choice | source WBtW | equipment Carnival ticket, costume, 8 gp
+- Carnival Companion | You have a contact at the Witchlight Carnival.
+@background Astral Drifter | skills Insight, Religion | lang two of your choice | feat Magic Initiate | source SAiS | equipment Traveler's clothes, diary, ink, pen, 10 gp
+- Divine Contact | You gain Magic Initiate (Cleric) and once met a god in the Astral Sea.
+@background Wildspacer | skills Athletics, Survival | tools Navigator's Tools, Vehicles (space) | feat Tough | source SAiS | equipment Belaying pin, traveler's clothes, grappling hook, 10 gp
+- Wildspace Adaptation | You gain the Tough feat and advantage on saves against nausea in zero gravity.
+@background Knight of Solamnia | skills Athletics, Survival | lang one of your choice | feat Squire of Solamnia | source DSotDQ | equipment Insignia of rank, deck of cards, common clothes, 10 gp
+- Squire of Solamnia | You gain the Squire of Solamnia feat.
+@background Mage of High Sorcery | skills Arcana, History | lang two of your choice | feat Initiate of High Sorcery | source DSotDQ | equipment Bottle of colored ink, ink pen, common clothes, 10 gp
+- Initiate of High Sorcery | You gain the Initiate of High Sorcery feat.

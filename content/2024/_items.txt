@@ -1,0 +1,230 @@
+# Weapons, armor, gear y tools (2024). Generado por gen_items.py
+@weapon Club | simple melee | 1d4 bludgeoning | props light | mastery Slow | cost 1 sp | weight 2
+@weapon Dagger | simple melee | 1d4 piercing | props finesse, light, thrown | range 20/60 | mastery Nick | cost 2 gp | weight 1
+@weapon Greatclub | simple melee | 1d8 bludgeoning | props two-handed | mastery Push | cost 2 sp | weight 10
+@weapon Handaxe | simple melee | 1d6 slashing | props light, thrown | range 20/60 | mastery Vex | cost 5 gp | weight 2
+@weapon Javelin | simple melee | 1d6 piercing | props thrown | range 30/120 | mastery Slow | cost 5 sp | weight 2
+@weapon Light Hammer | simple melee | 1d4 bludgeoning | props light, thrown | range 20/60 | mastery Nick | cost 2 gp | weight 2
+@weapon Mace | simple melee | 1d6 bludgeoning | mastery Sap | cost 5 gp | weight 4
+@weapon Quarterstaff | simple melee | 1d6 bludgeoning | versatile 1d8 | props versatile | mastery Topple | cost 2 sp | weight 4
+@weapon Sickle | simple melee | 1d4 slashing | props light | mastery Nick | cost 1 gp | weight 2
+@weapon Spear | simple melee | 1d6 piercing | versatile 1d8 | props thrown, versatile | range 20/60 | mastery Sap | cost 1 gp | weight 3
+@weapon Light Crossbow | simple ranged | 1d8 piercing | props ammunition, loading, two-handed | range 80/320 | mastery Slow | cost 25 gp | weight 5
+@weapon Dart | simple ranged | 1d4 piercing | props finesse, thrown | range 20/60 | mastery Vex | cost 5 cp | weight 0.25
+@weapon Shortbow | simple ranged | 1d6 piercing | props ammunition, two-handed | range 80/320 | mastery Vex | cost 25 gp | weight 2
+@weapon Sling | simple ranged | 1d4 bludgeoning | props ammunition | range 30/120 | mastery Slow | cost 1 sp | weight 0
+@weapon Battleaxe | martial melee | 1d8 slashing | versatile 1d10 | props versatile | mastery Topple | cost 10 gp | weight 4
+@weapon Flail | martial melee | 1d8 bludgeoning | mastery Sap | cost 10 gp | weight 2
+@weapon Glaive | martial melee | 1d10 slashing | props heavy, reach, two-handed | mastery Graze | cost 20 gp | weight 6
+@weapon Greataxe | martial melee | 1d12 slashing | props heavy, two-handed | mastery Cleave | cost 30 gp | weight 7
+@weapon Greatsword | martial melee | 2d6 slashing | props heavy, two-handed | mastery Graze | cost 50 gp | weight 6
+@weapon Halberd | martial melee | 1d10 slashing | props heavy, reach, two-handed | mastery Cleave | cost 20 gp | weight 6
+@weapon Lance | martial melee | 1d12 piercing | props heavy, reach, two-handed (unless mounted) | mastery Topple | cost 10 gp | weight 6
+@weapon Longsword | martial melee | 1d8 slashing | versatile 1d10 | props versatile | mastery Sap | cost 15 gp | weight 3
+@weapon Maul | martial melee | 2d6 bludgeoning | props heavy, two-handed | mastery Topple | cost 10 gp | weight 10
+@weapon Morningstar | martial melee | 1d8 piercing | mastery Sap | cost 15 gp | weight 4
+@weapon Pike | martial melee | 1d10 piercing | props heavy, reach, two-handed | mastery Push | cost 5 gp | weight 18
+@weapon Rapier | martial melee | 1d8 piercing | props finesse | mastery Vex | cost 25 gp | weight 2
+@weapon Scimitar | martial melee | 1d6 slashing | props finesse, light | mastery Nick | cost 25 gp | weight 3
+@weapon Shortsword | martial melee | 1d6 piercing | props finesse, light | mastery Vex | cost 10 gp | weight 2
+@weapon Trident | martial melee | 1d8 piercing | versatile 1d10 | props thrown, versatile | range 20/60 | mastery Topple | cost 5 gp | weight 4
+@weapon War Pick | martial melee | 1d8 piercing | versatile 1d10 | props versatile | mastery Sap | cost 5 gp | weight 2
+@weapon Warhammer | martial melee | 1d8 bludgeoning | versatile 1d10 | props versatile | mastery Push | cost 15 gp | weight 2
+@weapon Whip | martial melee | 1d4 slashing | props finesse, reach | mastery Slow | cost 2 gp | weight 3
+@weapon Blowgun | martial ranged | 1 piercing | props ammunition, loading | range 25/100 | mastery Vex | cost 10 gp | weight 1
+@weapon Hand Crossbow | martial ranged | 1d6 piercing | props ammunition, light, loading | range 30/120 | mastery Vex | cost 75 gp | weight 3
+@weapon Heavy Crossbow | martial ranged | 1d10 piercing | props ammunition, heavy, loading, two-handed | range 100/400 | mastery Push | cost 50 gp | weight 18
+@weapon Longbow | martial ranged | 1d8 piercing | props ammunition, heavy, two-handed | range 150/600 | mastery Slow | cost 50 gp | weight 2
+@weapon Musket | martial ranged | 1d12 piercing | props ammunition, loading, two-handed | range 40/120 | mastery Slow | cost 500 gp | weight 10
+@weapon Pistol | martial ranged | 1d10 piercing | props ammunition, loading | range 30/90 | mastery Vex | cost 250 gp | weight 3
+
+@armor Padded Armor | light | ac 11 | stealth | cost 5 gp | weight 8
+@armor Leather Armor | light | ac 11 | cost 10 gp | weight 10
+@armor Studded Leather Armor | light | ac 12 | cost 45 gp | weight 13
+@armor Hide Armor | medium | ac 12 | dex 2 | cost 10 gp | weight 12
+@armor Chain Shirt | medium | ac 13 | dex 2 | cost 50 gp | weight 20
+@armor Scale Mail | medium | ac 14 | dex 2 | stealth | cost 50 gp | weight 45
+@armor Breastplate | medium | ac 14 | dex 2 | cost 400 gp | weight 20
+@armor Half Plate Armor | medium | ac 15 | dex 2 | stealth | cost 750 gp | weight 40
+@armor Ring Mail | heavy | ac 14 | dex 0 | stealth | cost 30 gp | weight 40
+@armor Chain Mail | heavy | ac 16 | dex 0 | str 13 | stealth | cost 75 gp | weight 55
+@armor Splint Armor | heavy | ac 17 | dex 0 | str 15 | stealth | cost 200 gp | weight 60
+@armor Plate Armor | heavy | ac 18 | dex 0 | str 15 | stealth | cost 1,500 gp | weight 65
+@armor Shield | shield | ac 2 | cost 10 gp | weight 6
+
+@gear Abacus | cat Adventuring Gear | cost 2 gp | weight 2
+@gear Acid (vial) | cat Adventuring Gear | cost 25 gp | weight 1
+Throw it (ranged attack, 20 ft): 2d6 acid damage on a hit.
+@gear Alchemist's Fire (flask) | cat Adventuring Gear | cost 50 gp | weight 1
+Throw it (20 ft): the target takes 1d4 fire damage at the start of each turn until it uses an action to put it out.
+@gear Antitoxin (vial) | cat Adventuring Gear | cost 50 gp | weight 0
+Advantage on saves against poison for 1 hour.
+@gear Backpack | cat Adventuring Gear | cost 2 gp | weight 5
+Holds 1 cubic foot or 30 lb of gear.
+@gear Ball Bearings (bag of 1,000) | cat Adventuring Gear | cost 1 gp | weight 2
+Cover a 10-foot square; creatures moving through must succeed on a DC 10 Dexterity save or fall prone.
+@gear Barrel | cat Adventuring Gear | cost 2 gp | weight 70
+@gear Basket | cat Adventuring Gear | cost 4 sp | weight 2
+@gear Bedroll | cat Adventuring Gear | cost 1 gp | weight 7
+@gear Bell | cat Adventuring Gear | cost 1 gp | weight 0
+@gear Blanket | cat Adventuring Gear | cost 5 sp | weight 3
+@gear Block and Tackle | cat Adventuring Gear | cost 1 gp | weight 5
+Lets you hoist up to four times the weight you can normally lift.
+@gear Book | cat Adventuring Gear | cost 25 gp | weight 5
+@gear Bottle, Glass | cat Adventuring Gear | cost 2 gp | weight 2
+@gear Bucket | cat Adventuring Gear | cost 5 cp | weight 2
+@gear Caltrops (bag of 20) | cat Adventuring Gear | cost 1 gp | weight 2
+Cover a 5-foot square; creatures entering must succeed on a DC 15 Dexterity save or take 1 piercing damage and lose speed.
+@gear Candle | cat Adventuring Gear | cost 1 cp | weight 0
+Bright light in 5 ft for 1 hour.
+@gear Case, Crossbow Bolt | cat Adventuring Gear | cost 1 gp | weight 1
+Holds up to 20 bolts.
+@gear Case, Map or Scroll | cat Adventuring Gear | cost 1 gp | weight 1
+@gear Chain (10 feet) | cat Adventuring Gear | cost 5 gp | weight 10
+@gear Chalk (1 piece) | cat Adventuring Gear | cost 1 cp | weight 0
+@gear Chest | cat Adventuring Gear | cost 5 gp | weight 25
+@gear Climber's Kit | cat Adventuring Gear | cost 25 gp | weight 12
+Anchor yourself: you can't fall more than 25 feet from the anchor point.
+@gear Clothes, Common | cat Adventuring Gear | cost 5 sp | weight 3
+@gear Clothes, Costume | cat Adventuring Gear | cost 5 gp | weight 4
+@gear Clothes, Fine | cat Adventuring Gear | cost 15 gp | weight 6
+@gear Clothes, Traveler's | cat Adventuring Gear | cost 2 gp | weight 4
+@gear Component Pouch | cat Adventuring Gear | cost 25 gp | weight 2
+Holds the material components for your spells that have no cost.
+@gear Crowbar | cat Adventuring Gear | cost 2 gp | weight 5
+Advantage on Strength checks where leverage helps.
+@gear Fishing Tackle | cat Adventuring Gear | cost 1 gp | weight 4
+@gear Flask or Tankard | cat Adventuring Gear | cost 2 cp | weight 1
+@gear Grappling Hook | cat Adventuring Gear | cost 2 gp | weight 4
+@gear Hammer | cat Adventuring Gear | cost 1 gp | weight 3
+@gear Healer's Kit | cat Adventuring Gear | cost 5 gp | weight 3
+Ten uses. Stabilize a creature at 0 HP without a Medicine check.
+@gear Holy Water (flask) | cat Adventuring Gear | cost 25 gp | weight 1
+Throw it (20 ft): 2d6 radiant damage to a fiend or undead on a hit.
+@gear Hourglass | cat Adventuring Gear | cost 25 gp | weight 1
+@gear Hunting Trap | cat Adventuring Gear | cost 5 gp | weight 25
+A creature that steps in makes a DC 13 Dexterity save or takes 1d4 piercing damage and is stuck.
+@gear Ink (1 ounce bottle) | cat Adventuring Gear | cost 10 gp | weight 0
+@gear Ink Pen | cat Adventuring Gear | cost 2 cp | weight 0
+@gear Jug or Pitcher | cat Adventuring Gear | cost 2 cp | weight 4
+@gear Ladder (10-foot) | cat Adventuring Gear | cost 1 sp | weight 25
+@gear Lamp | cat Adventuring Gear | cost 5 sp | weight 1
+Bright light 15 ft and dim light 30 ft for 6 hours per flask of oil.
+@gear Lantern, Bullseye | cat Adventuring Gear | cost 10 gp | weight 2
+Bright light in a 60-foot cone and dim light 60 more feet.
+@gear Lantern, Hooded | cat Adventuring Gear | cost 5 gp | weight 2
+Bright light 30 ft and dim light 30 more feet; can be lowered to dim light 5 ft.
+@gear Lock | cat Adventuring Gear | cost 10 gp | weight 1
+@gear Magnifying Glass | cat Adventuring Gear | cost 100 gp | weight 0
+@gear Manacles | cat Adventuring Gear | cost 2 gp | weight 6
+@gear Mirror, Steel | cat Adventuring Gear | cost 5 gp | weight 0.5
+@gear Oil (flask) | cat Adventuring Gear | cost 1 sp | weight 1
+Can be thrown and set alight to burn for 5 fire damage.
+@gear Paper (one sheet) | cat Adventuring Gear | cost 2 sp | weight 0
+@gear Parchment (one sheet) | cat Adventuring Gear | cost 1 sp | weight 0
+@gear Perfume (vial) | cat Adventuring Gear | cost 5 gp | weight 0
+@gear Pick, Miner's | cat Adventuring Gear | cost 2 gp | weight 10
+@gear Piton | cat Adventuring Gear | cost 5 cp | weight 0.25
+@gear Poison, Basic (vial) | cat Adventuring Gear | cost 100 gp | weight 0
+Coat a weapon or up to three pieces of ammunition: 1d4 poison damage on a hit (DC 10 Constitution save).
+@gear Pole (10-foot) | cat Adventuring Gear | cost 5 cp | weight 7
+@gear Pot, Iron | cat Adventuring Gear | cost 2 gp | weight 10
+@gear Potion of Healing | cat Adventuring Gear | cost 50 gp | weight 0.5
+Regain 2d4 + 2 hit points.
+@gear Pouch | cat Adventuring Gear | cost 5 sp | weight 1
+@gear Quiver | cat Adventuring Gear | cost 1 gp | weight 1
+Holds up to 20 arrows.
+@gear Ram, Portable | cat Adventuring Gear | cost 4 gp | weight 35
++4 to Strength checks to break doors.
+@gear Rations (1 day) | cat Adventuring Gear | cost 5 sp | weight 2
+@gear Robes | cat Adventuring Gear | cost 1 gp | weight 4
+@gear Rope, Hempen (50 feet) | cat Adventuring Gear | cost 1 gp | weight 10
+@gear Rope, Silk (50 feet) | cat Adventuring Gear | cost 10 gp | weight 5
+@gear Sack | cat Adventuring Gear | cost 1 cp | weight 0.5
+@gear Scale, Merchant's | cat Adventuring Gear | cost 5 gp | weight 3
+@gear Sealing Wax | cat Adventuring Gear | cost 5 sp | weight 0
+@gear Shovel | cat Adventuring Gear | cost 2 gp | weight 5
+@gear Signal Whistle | cat Adventuring Gear | cost 5 cp | weight 0
+@gear Signet Ring | cat Adventuring Gear | cost 5 gp | weight 0
+@gear Soap | cat Adventuring Gear | cost 2 cp | weight 0
+@gear Spellbook | cat Adventuring Gear | cost 50 gp | weight 3
+@gear Spikes, Iron (10) | cat Adventuring Gear | cost 1 gp | weight 5
+@gear Spyglass | cat Adventuring Gear | cost 1,000 gp | weight 1
+@gear Tent, Two-Person | cat Adventuring Gear | cost 2 gp | weight 20
+@gear Tinderbox | cat Adventuring Gear | cost 5 sp | weight 1
+@gear Torch | cat Adventuring Gear | cost 1 cp | weight 1
+Bright light 20 ft and dim light 20 more feet for 1 hour.
+@gear Vial | cat Adventuring Gear | cost 1 gp | weight 0
+@gear Waterskin | cat Adventuring Gear | cost 2 sp | weight 5
+@gear Whetstone | cat Adventuring Gear | cost 1 cp | weight 1
+@gear Net | cat Adventuring Gear | cost 1 gp | weight 3
+Throw it at a Large or smaller creature (range 5/15): it is restrained until freed (DC 10 Strength check or 5 slashing damage to the net).
+@gear Arrows (20) | cat Ammunition | cost 1 gp | weight 1
+@gear Blowgun Needles (50) | cat Ammunition | cost 1 gp | weight 1
+@gear Crossbow Bolts (20) | cat Ammunition | cost 1 gp | weight 1.5
+@gear Sling Bullets (20) | cat Ammunition | cost 4 cp | weight 1.5
+@gear Firearm Bullets (10) | cat Ammunition | cost 3 gp | weight 2
+Ammunition for pistols and muskets.
+@gear Arcane Focus: Crystal | cat Spellcasting Focus | cost 10 gp | weight 1
+@gear Arcane Focus: Orb | cat Spellcasting Focus | cost 20 gp | weight 3
+@gear Arcane Focus: Rod | cat Spellcasting Focus | cost 10 gp | weight 2
+@gear Arcane Focus: Staff | cat Spellcasting Focus | cost 5 gp | weight 4
+@gear Arcane Focus: Wand | cat Spellcasting Focus | cost 10 gp | weight 1
+@gear Druidic Focus: Sprig of Mistletoe | cat Spellcasting Focus | cost 1 gp | weight 0
+@gear Druidic Focus: Wooden Staff | cat Spellcasting Focus | cost 5 gp | weight 4
+@gear Druidic Focus: Yew Wand | cat Spellcasting Focus | cost 10 gp | weight 1
+@gear Holy Symbol: Amulet | cat Spellcasting Focus | cost 5 gp | weight 1
+@gear Holy Symbol: Emblem | cat Spellcasting Focus | cost 5 gp | weight 0
+@gear Holy Symbol: Reliquary | cat Spellcasting Focus | cost 5 gp | weight 2
+@gear Burglar's Pack | cat Equipment Pack | cost 16 gp | weight 44.5
+Backpack, ball bearings, string, bell, candles, crowbar, hammer, pitons, hooded lantern, oil, rations, tinderbox, waterskin and rope.
+@gear Diplomat's Pack | cat Equipment Pack | cost 39 gp | weight 36
+Chest, map cases, fine clothes, ink, pen, lamp, oil, paper, perfume, sealing wax and soap.
+@gear Dungeoneer's Pack | cat Equipment Pack | cost 12 gp | weight 61.5
+Backpack, crowbar, hammer, pitons, torches, tinderbox, rations, waterskin and rope.
+@gear Entertainer's Pack | cat Equipment Pack | cost 40 gp | weight 38
+Backpack, bedroll, costumes, candles, rations, waterskin and a disguise kit.
+@gear Explorer's Pack | cat Equipment Pack | cost 10 gp | weight 59
+Backpack, bedroll, mess kit, tinderbox, torches, rations, waterskin and rope.
+@gear Priest's Pack | cat Equipment Pack | cost 19 gp | weight 24
+Backpack, blanket, candles, tinderbox, alms box, incense, censer, vestments, rations and waterskin.
+@gear Scholar's Pack | cat Equipment Pack | cost 40 gp | weight 10
+Backpack, book of lore, ink, pen, parchment, sand and a small knife.
+
+@tool Alchemist's Supplies | cat Artisan's Tools | cost 50 gp | weight 8
+@tool Brewer's Supplies | cat Artisan's Tools | cost 20 gp | weight 9
+@tool Calligrapher's Supplies | cat Artisan's Tools | cost 10 gp | weight 5
+@tool Carpenter's Tools | cat Artisan's Tools | cost 8 gp | weight 6
+@tool Cartographer's Tools | cat Artisan's Tools | cost 15 gp | weight 6
+@tool Cobbler's Tools | cat Artisan's Tools | cost 5 gp | weight 5
+@tool Cook's Utensils | cat Artisan's Tools | cost 1 gp | weight 8
+@tool Glassblower's Tools | cat Artisan's Tools | cost 30 gp | weight 5
+@tool Jeweler's Tools | cat Artisan's Tools | cost 25 gp | weight 2
+@tool Leatherworker's Tools | cat Artisan's Tools | cost 5 gp | weight 5
+@tool Mason's Tools | cat Artisan's Tools | cost 10 gp | weight 8
+@tool Painter's Supplies | cat Artisan's Tools | cost 10 gp | weight 5
+@tool Potter's Tools | cat Artisan's Tools | cost 10 gp | weight 3
+@tool Smith's Tools | cat Artisan's Tools | cost 20 gp | weight 8
+@tool Tinker's Tools | cat Artisan's Tools | cost 50 gp | weight 10
+@tool Weaver's Tools | cat Artisan's Tools | cost 1 gp | weight 5
+@tool Woodcarver's Tools | cat Artisan's Tools | cost 1 gp | weight 5
+@tool Disguise Kit | cat Kits | cost 25 gp | weight 3
+@tool Forgery Kit | cat Kits | cost 15 gp | weight 5
+@tool Herbalism Kit | cat Kits | cost 5 gp | weight 3
+@tool Navigator's Tools | cat Kits | cost 25 gp | weight 2
+@tool Poisoner's Kit | cat Kits | cost 50 gp | weight 2
+@tool Thieves' Tools | cat Kits | cost 25 gp | weight 1
+@tool Dice Set | cat Gaming Set | cost 1 sp | weight 0
+@tool Dragonchess Set | cat Gaming Set | cost 1 gp | weight 0.5
+@tool Playing Card Set | cat Gaming Set | cost 5 sp | weight 0
+@tool Three-Dragon Ante Set | cat Gaming Set | cost 1 gp | weight 0
+@tool Bagpipes | cat Musical Instrument | cost 30 gp | weight 6
+@tool Drum | cat Musical Instrument | cost 6 gp | weight 3
+@tool Dulcimer | cat Musical Instrument | cost 25 gp | weight 10
+@tool Flute | cat Musical Instrument | cost 2 gp | weight 1
+@tool Horn | cat Musical Instrument | cost 3 gp | weight 2
+@tool Lute | cat Musical Instrument | cost 35 gp | weight 2
+@tool Lyre | cat Musical Instrument | cost 30 gp | weight 2
+@tool Pan Flute | cat Musical Instrument | cost 12 gp | weight 2
+@tool Shawm | cat Musical Instrument | cost 2 gp | weight 1
+@tool Viol | cat Musical Instrument | cost 30 gp | weight 1

@@ -1,0 +1,46 @@
+@class Druid | hitDie 8 | caster full | spell wis | saves int wis | sublevel 3 | sublabel Druid Subclass
+@prof armor light, shields | weapons simple | tools Herbalism Kit | skills 2 from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, Survival
+@mc armor light, shields
+1 | Spellcasting | Prepare Druid spells cast with Wisdom, using a Druidic Focus.
+1 | Druidic | You know the secret Druidic language and always have Speak with Animals prepared.
+1 | Primal Order | Choose Magician (an extra cantrip and bonus to Arcana or Nature checks) or Warden (Martial weapons and Medium armor training).
+2 | Wild Shape | As a Bonus Action, take the form of a beast you know for hours equal to half your Druid level. Limited uses that return on rests.
+2 | Wild Companion | Spend a spell slot or a Wild Shape use to cast Find Familiar without material components; the familiar is Fey.
+4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+5 | Wild Resurgence | If you have no Wild Shape uses, spend a spell slot to regain one; once per Long Rest, turn a Wild Shape use into a level 1 slot.
+7 | Elemental Fury | Choose Potent Spellcasting (add Wisdom modifier to cantrip damage) or Primal Strike (extra 1d8 elemental damage once per turn).
+8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+15 | Improved Elemental Fury | Potent Spellcasting extends cantrip range, or Primal Strike becomes 2d8.
+16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+18 | Beast Spells | You can cast spells while in Wild Shape, except those with costly or consumed material components.
+19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
+20 | Archdruid | Regain a Wild Shape use on Initiative if you have none, convert Wild Shape uses into spell slots, and age much more slowly.
+
+@sub Circle of the Land | PHB 2024
+3 | Circle of the Land Spells | After each Long Rest, choose a land; its spells are always prepared. Arid: Blur, Burning Hands, Fire Bolt / Fireball / Blight / Wall of Stone. Polar: Fog Cloud, Hold Person, Ray of Frost / Sleet Storm / Ice Storm / Cone of Cold. Temperate: Misty Step, Shocking Grasp, Sleep / Lightning Bolt / Freedom of Movement / Tree Stride. Tropical: Acid Splash, Ray of Sickness, Web / Stinking Cloud / Polymorph / Insect Plague (levels 3, 5, 7, 9).
+3 | Land's Aid | As a Magic action, spend a Wild Shape use to make a 10-foot burst that damages foes (Constitution save) and heals one creature. Scales at 10th and 14th level.
+6 | Natural Recovery | Cast one prepared Circle spell without a slot once per Long Rest, and recover spell slots on a Short Rest up to half your Druid level.
+10 | Nature's Ward | Immune to Poisoned and resistant to your current land's damage type.
+14 | Nature's Sanctuary | Spend a Wild Shape use to raise a 15-foot cube of spectral trees for 1 minute that grants Half Cover and your Nature's Ward resistance to allies.
+
+@sub Circle of the Moon | PHB 2024
+3 | Circle Forms | Wild Shape into beasts up to CR equal to Druid level / 3; your AC can be 13 + Wisdom modifier, and you gain temp HP equal to three times your Druid level.
+3 | Circle of the Moon Spells | Always prepared and castable in Wild Shape. Level 3: Cure Wounds, Moonbeam, Starry Wisp. Level 5: Conjure Animals. Level 7: Fount of Moonlight. Level 9: Mass Cure Wounds.
+6 | Improved Circle Forms | In Wild Shape, your attacks can deal Radiant damage and you add Wisdom modifier to Constitution saves.
+10 | Moonlight Step | As a Bonus Action, teleport up to 30 feet and gain advantage on your next attack this turn. Wisdom modifier uses per Long Rest or by spending slots.
+14 | Lunar Form | Once per turn, Wild Shape attacks deal an extra 2d10 Radiant, and Moonlight Step can bring a willing creature along.
+
+@sub Circle of the Sea | PHB 2024
+3 | Circle of the Sea Spells | Always prepared. Level 3: Fog Cloud, Gust of Wind, Ray of Frost, Shatter, Thunderwave. Level 5: Lightning Bolt, Water Breathing. Level 7: Control Water, Ice Storm. Level 9: Conjure Elemental, Hold Monster.
+3 | Wrath of the Sea | Spend a Wild Shape use to surround yourself with a 5-foot emanation of ocean spray for 10 minutes; as a Bonus Action, deal Cold damage and push a creature in it.
+6 | Aquatic Affinity | The emanation grows to 10 feet, and you gain a Swim Speed equal to your Speed.
+10 | Stormborn | While your emanation is active, gain a Fly Speed equal to your Speed and resistance to Cold, Lightning and Thunder.
+14 | Oceanic Gift | Place the emanation on a willing creature within 60 feet instead of yourself, or spend two uses to affect both of you.
+
+@sub Circle of the Stars | PHB 2024
+3 | Star Map | Your star chart is a focus; Guidance and Guiding Bolt are always prepared, and you can cast Guiding Bolt without a slot Wisdom modifier times per Long Rest.
+3 | Starry Form | Spend a Wild Shape use to take a starry form for 10 minutes with a constellation: Archer (ranged radiant attack), Chalice (extra healing) or Dragon (minimum 10 on concentration and Int or Wis checks).
+6 | Cosmic Omen | After a Long Rest, roll a die: even (Weal) lets you add 1d6 to a creature's d20 Test, odd (Woe) subtract 1d6. Wisdom modifier uses.
+10 | Twinkling Constellations | Archer and Chalice use 2d8, Dragon grants a 20-foot Fly Speed with hover, and you can change constellations each turn.
+14 | Full of Stars | In Starry Form, you resist Bludgeoning, Piercing and Slashing damage.

@@ -1,0 +1,268 @@
+# Razas 2014 (PHB, MotM, ERftLW, FToD, VRGtR y otras). Resúmenes propios.
+# Las razas de Monsters of the Multiverse usan +2 y +1 a elección (también vale +1/+1/+1 reasignando).
+@species Human | speed 30 | asi str+1 dex+1 con+1 int+1 wis+1 cha+1 | lang Common, one extra language | source PHB
+- Versatile | +1 to all ability scores.
+@species Variant Human | speed 30 | choose 2x1 from any | skillchoice 1 from any | lang Common, one extra language | feat | source PHB
+- Variant Traits | +1 to two abilities, one skill proficiency and one feat of your choice.
+@species Dragonborn | speed 30 | asi str+2 cha+1 | lang Common, Draconic | source PHB
+- Draconic Ancestry | Choose a dragon color; it sets your breath weapon and resistance.
+- Breath Weapon | As an action, exhale a cone or line: 2d6 damage (Dexterity or Constitution save for half), growing at 6th, 11th and 16th level. Once per short or long rest.
+- Damage Resistance | Resistance to your ancestry's damage type.
+@species Chromatic Dragonborn | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source FToD
+- Chromatic Ancestry | Choose black, blue, green, red or white for your breath and resistance.
+- Breath Weapon | Replace one attack with a 30-foot line: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest.
+- Draconic Resistance | Resistance to your ancestry's damage type.
+- Chromatic Warding | From 5th level, become immune to your ancestry's damage for 1 minute. Once per long rest.
+@species Metallic Dragonborn | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source FToD
+- Metallic Ancestry | Choose brass, bronze, copper, gold or silver for your breath and resistance.
+- Breath Weapon | Replace one attack with a 15-foot cone: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest.
+- Draconic Resistance | Resistance to your ancestry's damage type.
+- Metallic Breath Weapon | From 5th level, a second breath that pushes or incapacitates creatures. Once per long rest.
+@species Gem Dragonborn | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source FToD
+- Gem Ancestry | Choose amethyst, crystal, emerald, sapphire or topaz for your breath and resistance.
+- Breath Weapon | Replace one attack with a 15-foot cone: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest.
+- Psionic Mind | Telepathy 30 feet.
+- Gem Flight | From 5th level, as a bonus action gain a flying speed equal to your walking speed for 1 minute. Once per long rest.
+@species Hill Dwarf | speed 25 | darkvision 60 | asi con+2 wis+1 | weapons battleaxe, handaxe, light hammer, warhammer | tools one of smith's tools, brewer's supplies or mason's tools | lang Common, Dwarvish | source PHB
+- Dwarven Resilience | Advantage on saves against poison and resistance to poison damage.
+- Stonecunning | Double proficiency on History checks about stonework.
+- Dwarven Toughness | Your HP maximum increases by 1 per level.
+- Speed | Heavy armor doesn't reduce your speed.
+@species Mountain Dwarf | speed 25 | darkvision 60 | asi con+2 str+2 | armor light, medium | weapons battleaxe, handaxe, light hammer, warhammer | tools one of smith's tools, brewer's supplies or mason's tools | lang Common, Dwarvish | source PHB
+- Dwarven Resilience | Advantage on saves against poison and resistance to poison damage.
+- Stonecunning | Double proficiency on History checks about stonework.
+- Speed | Heavy armor doesn't reduce your speed.
+@species Duergar | speed 30 | darkvision 120 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Duergar Magic | From 3rd level cast Enlarge/Reduce on yourself and from 5th level Invisibility on yourself, once per long rest each.
+- Dwarven Resilience | Advantage on saves against poison and resistance to poison damage.
+- Psionic Fortitude | Advantage on saves to avoid or end charmed and stunned.
+@species High Elf | speed 30 | darkvision 60 | asi dex+2 int+1 | skills Perception | weapons longsword, shortsword, shortbow, longbow | lang Common, Elvish, one extra language | source PHB
+- Fey Ancestry | Advantage on saves against charmed, and magic can't put you to sleep.
+- Trance | You meditate 4 hours instead of sleeping.
+- Cantrip | You know one wizard cantrip (Intelligence).
+@species Wood Elf | speed 35 | darkvision 60 | asi dex+2 wis+1 | skills Perception | weapons longsword, shortsword, shortbow, longbow | lang Common, Elvish | source PHB
+- Fey Ancestry | Advantage on saves against charmed, and magic can't put you to sleep.
+- Trance | You meditate 4 hours instead of sleeping.
+- Mask of the Wild | You can try to hide when lightly obscured by natural phenomena.
+@species Drow | speed 30 | darkvision 120 | asi dex+2 cha+1 | skills Perception | weapons rapier, shortsword, hand crossbow | lang Common, Elvish | source PHB
+- Fey Ancestry | Advantage on saves against charmed, and magic can't put you to sleep.
+- Trance | You meditate 4 hours instead of sleeping.
+- Sunlight Sensitivity | Disadvantage on attacks and sight-based Perception in direct sunlight.
+- Drow Magic | Dancing Lights; Faerie Fire at 3rd and Darkness at 5th, once per long rest each.
+@species Eladrin | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skills Perception | lang Common, one extra language | source MotM
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+- Fey Step | As a bonus action, teleport 30 feet with a seasonal effect (Autumn, Winter, Spring, Summer). Proficiency bonus uses per long rest.
+- Trance | You meditate 4 hours instead of sleeping.
+@species Sea Elf | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skills Perception | lang Common, one extra language | source MotM
+- Child of the Sea | Swimming speed equal to your walking speed, breathe air and water, and resistance to cold.
+- Friend of the Sea | Communicate simple ideas to beasts with a swimming speed.
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+- Trance | You meditate 4 hours instead of sleeping.
+@species Shadar-kai | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skills Perception | lang Common, one extra language | source MotM
+- Blessing of the Raven Queen | As a bonus action, teleport 30 feet; from 3rd level you also gain resistance to all damage until your next turn. Proficiency bonus uses per long rest.
+- Necrotic Resistance | Resistance to necrotic damage.
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+- Trance | You meditate 4 hours instead of sleeping.
+@species Astral Elf | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skillchoice 1 from Insight, Perception, Survival | lang Common, one extra language | source SAiS
+- Astral Fire | Learn Dancing Lights, Light or Sacred Flame.
+- Starlight Step | As a bonus action, teleport 30 feet. Proficiency bonus uses per long rest.
+- Astral Trance | After resting, gain proficiency with one skill and one weapon or tool.
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+@species Forest Gnome | size Small | speed 25 | darkvision 60 | asi int+2 dex+1 | lang Common, Gnomish | source PHB
+- Gnome Cunning | Advantage on Intelligence, Wisdom and Charisma saves against magic.
+- Natural Illusionist | You know Minor Illusion.
+- Speak with Small Beasts | Communicate simple ideas with Small or smaller beasts.
+@species Rock Gnome | size Small | speed 25 | darkvision 60 | asi int+2 con+1 | tools Tinker's Tools | lang Common, Gnomish | source PHB
+- Gnome Cunning | Advantage on Intelligence, Wisdom and Charisma saves against magic.
+- Artificer's Lore | Double proficiency on History checks about magic items, alchemical objects and technology.
+- Tinker | Build Tiny clockwork devices with tinker's tools.
+@species Deep Gnome | size Small | speed 30 | darkvision 120 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Gift of the Svirfneblin | From 3rd level cast Disguise Self and from 5th level Nondetection, once per long rest each.
+- Gnomish Magic Resistance | Advantage on Intelligence, Wisdom and Charisma saves against spells.
+- Svirfneblin Camouflage | Advantage on a Stealth check. Proficiency bonus uses per long rest.
+@species Half-Elf | speed 30 | darkvision 60 | asi cha+2 | choose 2x1 from str, dex, con, int, wis | skillchoice 2 from any | lang Common, Elvish, one extra language | source PHB
+- Fey Ancestry | Advantage on saves against charmed, and magic can't put you to sleep.
+- Skill Versatility | Proficiency in two skills of your choice.
+@species Half-Orc | speed 30 | darkvision 60 | asi str+2 con+1 | skills Intimidation | lang Common, Orc | source PHB
+- Relentless Endurance | When reduced to 0 HP but not killed, drop to 1 HP instead. Once per long rest.
+- Savage Attacks | On a melee weapon critical hit, roll one extra weapon damage die.
+@species Lightfoot Halfling | size Small | speed 25 | asi dex+2 cha+1 | lang Common, Halfling | source PHB
+- Lucky | When you roll a 1 on an attack, check or save, reroll it.
+- Brave | Advantage on saves against frightened.
+- Halfling Nimbleness | Move through the space of larger creatures.
+- Naturally Stealthy | Hide behind a creature at least one size larger than you.
+@species Stout Halfling | size Small | speed 25 | asi dex+2 con+1 | lang Common, Halfling | source PHB
+- Lucky | When you roll a 1 on an attack, check or save, reroll it.
+- Brave | Advantage on saves against frightened.
+- Halfling Nimbleness | Move through the space of larger creatures.
+- Stout Resilience | Advantage on saves against poison and resistance to poison damage.
+@species Tiefling | speed 30 | darkvision 60 | asi cha+2 int+1 | lang Common, Infernal | source PHB
+- Hellish Resistance | Resistance to fire damage.
+- Infernal Legacy | Thaumaturgy; Hellish Rebuke at 3rd and Darkness at 5th, once per long rest each.
+@species Aarakocra | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Flight | Flying speed equal to your walking speed, but not in medium or heavy armor.
+- Talons | Unarmed strikes deal 1d6 slashing.
+- Wind Caller | From 3rd level, cast Gust of Wind once per long rest without a slot.
+@species Aasimar | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Celestial Resistance | Resistance to necrotic and radiant damage.
+- Healing Hands | As an action, heal a creature d4s equal to your proficiency bonus. Once per long rest.
+- Light Bearer | You know the Light cantrip.
+- Celestial Revelation | From 3rd level, transform for 1 minute (Heavenly Wings, Inner Radiance or Necrotic Shroud) and add damage equal to your proficiency bonus once per turn. Once per long rest.
+@species Bugbear | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skills Stealth | lang Common, one extra language | source MotM
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+- Long-Limbed | Your reach is 5 feet longer on your turn.
+- Powerful Build | You count as one size larger for carrying capacity.
+- Surprise Attack | Deal an extra 2d6 damage to a creature that hasn't taken a turn yet in the combat.
+@species Centaur | speed 40 | choose 1x2 from any; 1x1 from any | skillchoice 1 from Animal Handling, Medicine, Nature, Survival | lang Common, one extra language | source MotM
+- Charge | After moving 30 feet straight, make a hooves attack as a bonus action.
+- Equine Build | You count as Large for carrying, and climbing costs 4 extra feet per foot.
+- Hooves | Unarmed strikes deal 1d6 bludgeoning.
+@species Changeling | size Medium or Small | speed 30 | choose 1x2 from any; 1x1 from any | skillchoice 2 from Deception, Insight, Intimidation, Performance, Persuasion | lang Common, one extra language | source MotM
+- Shapechanger | As an action, change your appearance and voice.
+@species Fairy | size Small | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Fairy Magic | Druidcraft; Faerie Fire at 3rd and Enlarge/Reduce at 5th, once per long rest each.
+- Flight | Flying speed equal to your walking speed, but not in medium or heavy armor.
+@species Firbolg | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Firbolg Magic | Cast Detect Magic and Disguise Self once each per long rest without a slot.
+- Hidden Step | As a bonus action, turn invisible until the start of your next turn. Proficiency bonus uses per long rest.
+- Powerful Build | You count as one size larger for carrying capacity.
+- Speech of Beast and Leaf | Communicate simply with beasts and plants.
+@species Air Genasi | speed 35 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Unending Breath | You can hold your breath indefinitely.
+- Lightning Resistance | Resistance to lightning damage.
+- Mingle with the Wind | Shocking Grasp; Feather Fall at 3rd and Levitate at 5th, once per long rest each.
+@species Earth Genasi | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Earth Walk | Ignore difficult terrain made of earth or stone.
+- Merge with Stone | Blade Ward as a bonus action, and Pass without Trace at 5th once per long rest.
+@species Fire Genasi | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Fire Resistance | Resistance to fire damage.
+- Reach to the Blaze | Produce Flame; Burning Hands at 3rd and Flame Blade at 5th, once per long rest each.
+@species Water Genasi | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Acid Resistance | Resistance to acid damage.
+- Amphibious | Breathe air and water, and swimming speed equal to your walking speed.
+- Call to the Wave | Acid Splash; Create or Destroy Water at 3rd and Water Walk at 5th, once per long rest each.
+@species Githyanki | speed 30 | choose 1x2 from any; 1x1 from any | skillchoice 1 from any | lang Common, one extra language | source MotM
+- Astral Knowledge | After a long rest, gain proficiency with one skill and one weapon or tool.
+- Githyanki Psionics | Mage Hand (invisible); Jump at 3rd and Misty Step at 5th, once per long rest each.
+- Psychic Resilience | Resistance to psychic damage.
+@species Githzerai | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Githzerai Psionics | Mage Hand (invisible); Shield at 3rd and Detect Thoughts at 5th, once per long rest each.
+- Mental Discipline | Advantage on saves against charmed and frightened.
+- Psychic Resilience | Resistance to psychic damage.
+@species Goblin | size Small | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+- Fury of the Small | Once per turn, add damage equal to your proficiency bonus to a creature larger than you. Proficiency bonus uses per long rest.
+- Nimble Escape | Disengage or Hide as a bonus action.
+@species Goliath | speed 30 | choose 1x2 from any; 1x1 from any | skills Athletics | lang Common, one extra language | source MotM
+- Little Giant | Proficiency in Athletics, and you count as one size larger for carrying capacity.
+- Mountain Born | Resistance to cold damage and acclimated to high altitude.
+- Stone's Endurance | As a reaction, reduce damage by 1d12 + Constitution modifier. Proficiency bonus uses per long rest.
+@species Harengon | size Medium or Small | speed 30 | choose 1x2 from any; 1x1 from any | skills Perception | lang Common, one extra language | source MotM
+- Hare-Trigger | Add your proficiency bonus to initiative.
+- Lucky Footwork | When you fail a Dexterity save, use your reaction to add 1d4.
+- Rabbit Hop | As a bonus action, jump feet equal to five times your proficiency bonus without provoking. Proficiency bonus uses per long rest.
+@species Hobgoblin | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Fey Ancestry | Advantage on saves to avoid or end charmed.
+- Fey Gift | Help as a bonus action, and from 3rd level add a Hospitality, Passage or Spite benefit. Proficiency bonus uses per long rest.
+- Fortune from the Many | When you miss or fail, add a bonus equal to the number of allies you see (max +3). Proficiency bonus uses per long rest.
+@species Kenku | speed 30 | choose 1x2 from any; 1x1 from any | skillchoice 2 from Acrobatics, Deception, Stealth, Sleight of Hand | lang Common, one extra language | source MotM
+- Expert Duplication | Advantage on checks to produce copies of writing or craftwork.
+- Kenku Recall | Proficiency in two skills, and you can give yourself advantage on a check with a proficient skill. Proficiency bonus uses per long rest.
+- Mimicry | Accurately mimic sounds and voices you have heard.
+@species Kobold | size Small | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Draconic Cry | As a bonus action, give allies advantage against enemies within 10 feet until your next turn. Proficiency bonus uses per long rest.
+- Kobold Legacy | Choose Craftiness (a skill), Defiance (advantage against frightened) or Draconic Sorcery (a sorcerer cantrip).
+@species Lizardfolk | speed 30 | choose 1x2 from any; 1x1 from any | skillchoice 2 from Animal Handling, Medicine, Nature, Perception, Stealth, Survival | lang Common, one extra language | source MotM
+- Bite | Unarmed strikes deal 1d6 slashing.
+- Hold Breath | Hold your breath for 15 minutes, and swimming speed equal to your walking speed.
+- Hungry Jaws | As a bonus action, bite and gain temp HP equal to your proficiency bonus. Proficiency bonus uses per long rest.
+- Natural Armor | Without armor, your AC is 13 + Dexterity modifier.
+- Nature's Intuition | Proficiency in two skills from the list.
+@species Minotaur | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Horns | Unarmed strikes deal 1d6 piercing.
+- Goring Rush | After you Dash 20 feet, make a horn attack as a bonus action.
+- Hammering Horns | After hitting with a melee attack, shove a creature 10 feet as a bonus action.
+- Labyrinthine Recall | You always know north and have advantage to find your way.
+@species Orc | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Adrenaline Rush | Dash as a bonus action and gain temp HP equal to your proficiency bonus. Proficiency bonus uses per long rest.
+- Powerful Build | You count as one size larger for carrying capacity.
+- Relentless Endurance | When reduced to 0 HP but not killed, drop to 1 HP instead. Once per long rest.
+@species Satyr | speed 35 | choose 1x2 from any; 1x1 from any | skills Performance, Persuasion | tools one musical instrument | lang Common, one extra language | source MotM
+- Fey | Your creature type is fey.
+- Ram | Unarmed strikes deal 1d6 bludgeoning.
+- Magic Resistance | Advantage on saves against spells.
+- Mirthful Leaps | Jumps go farther by 1d8 feet.
+@species Shifter | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skillchoice 1 from Acrobatics, Athletics, Intimidation, Survival | lang Common, one extra language | source MotM
+- Shifting | As a bonus action, shift for 1 minute: temp HP and a benefit by type (Beasthide, Longtooth, Swiftstride, Wildhunt). Proficiency bonus uses per long rest.
+@species Tabaxi | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | skills Perception, Stealth | lang Common, one extra language | source MotM
+- Cat's Claws | Climbing speed equal to your walking speed, and unarmed strikes deal 1d6 slashing.
+- Feline Agility | Double your speed until the end of the turn; recharge by not moving for a turn.
+@species Tortle | speed 30 | choose 1x2 from any; 1x1 from any | skillchoice 1 from Animal Handling, Medicine, Nature, Perception, Stealth, Survival | lang Common, one extra language | source MotM
+- Claws | Unarmed strikes deal 1d6 slashing.
+- Hold Breath | Hold your breath for 1 hour.
+- Natural Armor | Your AC is 17 and you can't wear armor (use Valor manual in AC). Shields still apply.
+- Shell Defense | As an action, withdraw into your shell for +4 AC and advantage on Strength and Constitution saves.
+@species Triton | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Amphibious | Breathe air and water, swimming speed equal to your walking speed.
+- Control Air and Water | Fog Cloud; Gust of Wind at 3rd and Water Walk at 5th, once per long rest each.
+- Emissary of the Sea | Communicate simple ideas with beasts that can breathe water.
+- Guardian of the Depths | Resistance to cold damage.
+@species Yuan-ti | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source MotM
+- Magic Resistance | Advantage on saves against spells.
+- Poison Resilience | Advantage on saves against poisoned and resistance to poison damage.
+- Serpentine Spellcasting | Poison Spray; Animal Friendship (snakes) at will; Suggestion at 3rd once per long rest.
+@species Kalashtar | speed 30 | asi wis+2 cha+1 | lang Common, Quori, one extra language | source ERftLW
+- Dual Mind | Advantage on Wisdom saves.
+- Mental Discipline | Resistance to psychic damage.
+- Mind Link | Telepathy with creatures within 10 feet times your level.
+- Severed from Dreams | Immune to spells that require you to dream.
+@species Warforged | speed 30 | asi con+2 | choose 1x1 from str, dex, int, wis, cha | skillchoice 1 from any | tools one tool | lang Common, one extra language | source ERftLW
+- Constructed Resilience | Advantage against poison, resistance to poison damage, no need to eat, drink or breathe, immune to disease and magical sleep.
+- Sentry's Rest | Your long rest is 6 hours of inactive but conscious state.
+- Integrated Protection | +1 to AC, and armor takes an hour to don or doff. {ac +1}
+@species Leonin | speed 35 | darkvision 60 | asi con+2 str+1 | skillchoice 1 from Athletics, Intimidation, Perception, Survival | lang Common, Leonin | source MOoT
+- Claws | Unarmed strikes deal 1d4 slashing.
+- Daunting Roar | As a bonus action, frighten creatures within 10 feet on a failed Wisdom save. Once per short or long rest.
+@species Owlin | size Medium or Small | speed 30 | darkvision 120 | choose 1x2 from any; 1x1 from any | skills Stealth | lang Common, one extra language | source SACoC
+- Flight | Flying speed equal to your walking speed, but not in medium or heavy armor.
+- Silent Feathers | Proficiency in Stealth.
+@species Dhampir | size Medium or Small | speed 35 | darkvision 60 | choose 1x2 from any; 1x1 from any | skillchoice 2 from any | lang Common, one extra language | source VRGtR
+- Deathless Nature | You don't need to breathe.
+- Spider Climb | Climbing speed equal to your walking speed; from 3rd level you can climb ceilings.
+- Vampiric Bite | Bite (1d4 + Con) that can heal you or empower your next check or attack. Proficiency bonus uses per long rest.
+@species Hexblood | size Medium or Small | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source VRGtR
+- Eerie Token | Detach a token to communicate telepathically or see through it.
+- Hex Magic | Cast Disguise Self and Hex once each per long rest without a slot.
+@species Reborn | size Medium or Small | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source VRGtR
+- Deathless Nature | Advantage against disease and poison, resistance to poison, and no need to eat, drink, breathe or sleep.
+- Knowledge from a Past Life | Add 1d6 to an ability check. Proficiency bonus uses per long rest.
+@species Kender | size Small | speed 30 | choose 1x2 from any; 1x1 from any | skillchoice 1 from Insight, Investigation, Sleight of Hand, Stealth, Survival | lang Common, one extra language | source DSotDQ
+- Fearless | Advantage against frightened, and once per long rest succeed on a failed save against it.
+- Kender Aptitude | Proficiency in one skill from the list.
+- Taunt | As a bonus action, a creature within 60 feet makes a Wisdom save or has disadvantage attacking others. Proficiency bonus uses per long rest.
+@species Autognome | size Small | speed 30 | choose 1x2 from any; 1x1 from any | tools two tools | lang Common, one extra language | source SAiS
+- Armored Casing | Without armor, your AC is 13 + Dexterity modifier (use Mage Armor mode).
+- Built for Success | Add 1d4 to an attack, check or save. Proficiency bonus uses per long rest.
+- Mechanical Nature | Resistance to poison, advantage against paralysis, poison and disease, no need to eat or breathe.
+- Sentry's Rest | Your long rest is 6 hours of inactive but conscious state.
+@species Giff | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source SAiS
+- Astral Spark | Once per turn, a simple or martial weapon hit adds force damage equal to your proficiency bonus. Proficiency bonus uses per long rest.
+- Firearms Mastery | Proficiency with all firearms, ignore loading, and no disadvantage at long range.
+- Hippo Build | Advantage on Strength checks and saves, and count as larger for carrying.
+@species Hadozee | size Medium or Small | speed 30 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source SAiS
+- Dexterous Feet | Use an object as a bonus action.
+- Glide | Glide 5 feet horizontally per 1 foot of descent and take no falling damage.
+- Hadozee Dodge | As a reaction, reduce damage by 1d6 + proficiency bonus. Proficiency bonus uses per long rest.
+@species Plasmoid | size Medium or Small | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source SAiS
+- Amorphous | Squeeze through 1-inch spaces and advantage to escape grapples.
+- Hold Breath | Hold your breath for 1 hour.
+- Natural Resilience | Resistance to acid and poison damage, and advantage against poisoned.
+- Shape Self | Reshape your body and form pseudopods.
+@species Thri-kreen | size Medium or Small | speed 30 | darkvision 60 | choose 1x2 from any; 1x1 from any | lang Common, one extra language | source SAiS
+- Chameleon Carapace | Without armor your AC is 13 + Dexterity modifier (use Mage Armor mode), and you can blend in for advantage on Stealth.
+- Secondary Arms | Two smaller arms that can wield light weapons.
+- Sleepless | You don't need to sleep.
+- Thri-kreen Telepathy | Telepathy with a creature within 120 feet.
+@species Custom Lineage | size Medium or Small | speed 30 | choose 1x2 from any | skillchoice 1 from any | lang Common, one extra language | feat | source TCoE
+- Variable Trait | Choose darkvision 60 feet or proficiency in one skill.
+- Feat | You gain one feat of your choice.

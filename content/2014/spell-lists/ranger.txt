@@ -1,0 +1,5 @@
+L1: Absorb Elements; Alarm; Animal Friendship; Beast Bond; Cure Wounds; Detect Magic; Detect Poison and Disease; Ensnaring Strike; Entangle; Fog Cloud; Goodberry; Hail of Thorns; Hunter's Mark; Jump; Longstrider; Searing Smite; Snare; Speak with Animals; Zephyr Strike
+L2: Aid; Air Bubble; Animal Messenger; Barkskin; Beast Sense; Cordon of Arrows; Darkvision; Enhance Ability; Find Traps; Gust of Wind; Healing Spirit; Lesser Restoration; Locate Animals or Plants; Locate Object; Magic Weapon; Pass Without Trace; Protection from Poison; Silence; Spike Growth; Summon Beast
+L3: Ashardalon's Stride; Conjure Animals; Conjure Barrage; Daylight; Elemental Weapon; Flame Arrows; Lightning Arrow; Meld into Stone; Nondetection; Plant Growth; Protection from Energy; Revivify; Speak with Plants; Summon Fey; Water Breathing; Water Walk; Wind Wall
+L4: Conjure Woodland Beings; Dominate Beast; Freedom of Movement; Grasping Vine; Guardian of Nature; Locate Creature; Stoneskin; Summon Elemental
+L5: Commune with Nature; Conjure Volley; Greater Restoration; Steel Wind Strike; Swift Quiver; Tree Stride; Wrath Of Nature

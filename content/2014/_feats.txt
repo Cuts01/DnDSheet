@@ -1,0 +1,177 @@
+# Feats 2014 (PHB, XGtE, TCoE, FToD, ERftLW, BGG, SCAG). Resúmenes propios.
+@feat Alert | source PHB
++5 to initiative, you can't be surprised while conscious, and hidden attackers don't gain advantage against you. {init +5}
+@feat Athlete | asi str, dex | source PHB
+Stand up with 5 feet of movement, climbing costs no extra movement, and running jumps need only 5 feet.
+@feat Actor | asi cha | source PHB
+Advantage on Deception and Performance to pass as someone else, and you can mimic voices.
+@feat Charger | source PHB
+After you Dash, use a bonus action to attack (+5 damage) or shove someone 10 feet.
+@feat Crossbow Expert | source PHB
+Ignore loading on crossbows, no disadvantage in melee with ranged attacks, and a bonus action hand crossbow attack after attacking with a one-handed weapon.
+@feat Defensive Duelist | prereq Dexterity 13 | source PHB
+With a finesse weapon, use your reaction to add your proficiency bonus to AC against one melee attack.
+@feat Dual Wielder | source PHB
++1 AC while dual-wielding, two-weapon fighting with non-light one-handed weapons, and draw or stow two weapons at once.
+@feat Dungeon Delver | source PHB
+Advantage to detect secret doors and on saves against traps, resistance to trap damage, and search for traps at normal pace.
+@feat Durable | asi con | source PHB
+When you roll a Hit Die to heal, the minimum you regain is twice your Constitution modifier.
+@feat Elemental Adept | prereq The ability to cast at least one spell | repeatable | source PHB
+Your spells ignore resistance to a chosen damage type, and 1s on damage dice count as 2s.
+@feat Grappler | prereq Strength 13 | source PHB
+Advantage on attacks against creatures you grapple, and you can try to pin a grappled creature.
+@feat Great Weapon Master | source PHB
+A critical hit or kill grants a bonus action melee attack; with heavy weapons you can take -5 to hit for +10 damage.
+@feat Healer | source PHB
+A healer's kit can stabilize and restore 1 HP, or heal 1d6 + 4 + the creature's max Hit Dice once per rest.
+@feat Heavily Armored | prereq Proficiency with medium armor | asi str | source PHB
+Gain proficiency with heavy armor.
+@feat Heavy Armor Master | prereq Proficiency with heavy armor | asi str | source PHB
+In heavy armor, reduce nonmagical bludgeoning, piercing and slashing damage by 3.
+@feat Inspiring Leader | prereq Charisma 13 | source PHB
+Spend 10 minutes to give up to six creatures temp HP equal to your level + Charisma modifier.
+@feat Keen Mind | asi int | source PHB
+Always know north and the hours until sunrise or sunset, and recall anything from the past month.
+@feat Lightly Armored | asi str, dex | source PHB
+Gain proficiency with light armor.
+@feat Linguist | asi int | source PHB
+Learn three languages and create written ciphers.
+@feat Lucky | source PHB
+Three luck points per long rest to reroll your attack, check or save, or an attack against you.
+@feat Mage Slayer | source PHB
+Reaction attack against adjacent casters, they have disadvantage on concentration saves you cause, and advantage on saves against spells cast within 5 feet.
+@feat Magic Initiate | repeatable | spells pick 2 L0 list:Bard,Cleric,Druid,Sorcerer,Warlock,Wizard; pick 1 L1 list:Bard,Cleric,Druid,Sorcerer,Warlock,Wizard long | castwith list | source PHB
+Choose a class: learn two cantrips and a 1st-level spell from its list, castable once per long rest.
+@feat Martial Adept | source PHB
+Learn two Battle Master maneuvers and gain one d6 superiority die per short rest.
+@feat Medium Armor Master | prereq Proficiency with medium armor | source PHB
+Medium armor doesn't impose Stealth disadvantage, and you can add up to +3 Dexterity to AC.
+@feat Mobile | source PHB
+Your speed increases by 10 feet, Dash ignores difficult terrain, and creatures you attack can't make opportunity attacks against you. {speed +10}
+@feat Moderately Armored | prereq Proficiency with light armor | asi str, dex | source PHB
+Gain proficiency with medium armor and shields.
+@feat Mounted Combatant | source PHB
+Advantage against unmounted creatures smaller than your mount, redirect attacks to yourself, and your mount gets evasion.
+@feat Observant | asi int, wis | source PHB
++5 to passive Perception and Investigation, and you can read lips. {pperc +5} {pinv +5}
+@feat Polearm Master | source PHB
+Bonus action attack with the butt of a glaive, halberd, quarterstaff or spear (1d4), and creatures entering your reach provoke.
+@feat Resilient | asi any | source PHB
+Gain proficiency in saving throws of the ability you increase.
+@feat Ritual Caster | prereq Intelligence or Wisdom 13 | source PHB
+Gain a ritual book with two 1st-level rituals from a chosen class and add more you find.
+@feat Savage Attacker | source PHB
+Once per turn, reroll a melee weapon's damage dice and use either total.
+@feat Sentinel | source PHB
+Opportunity attacks reduce speed to 0, Disengage doesn't stop them, and you can attack creatures that attack your allies.
+@feat Sharpshooter | source PHB
+No disadvantage at long range, ignore half and three-quarters cover, and take -5 to hit for +10 damage.
+@feat Shield Master | source PHB
+Bonus action shove with your shield, add its AC bonus to Dexterity saves, and take no damage on a successful Dexterity save.
+@feat Skilled | skills 3 prof | source PHB
+Gain proficiency in any combination of three skills or tools.
+@feat Skulker | prereq Dexterity 13 | source PHB
+Hide when lightly obscured, missing a ranged attack doesn't reveal you, and dim light doesn't hurt your Perception.
+@feat Spell Sniper | prereq The ability to cast at least one spell | spells pick 1 L0 attack list:Bard,Cleric,Druid,Sorcerer,Warlock,Wizard | castwith list | source PHB
+Double the range of attack spells, ignore half and three-quarters cover, and learn an attack cantrip.
+@feat Tavern Brawler | asi str, con | source PHB
+Proficiency with improvised weapons, unarmed strikes deal 1d4, and grapple as a bonus action after a hit.
+@feat Tough | source PHB
+Your HP maximum increases by twice your level, and by 2 more each level.
+@feat War Caster | prereq The ability to cast at least one spell | source PHB
+Advantage on concentration saves, somatic components with full hands, and cast a spell as an opportunity attack.
+@feat Weapon Master | asi str, dex | source PHB
+Gain proficiency with four weapons of your choice.
+@feat Bountiful Luck | cat racial | prereq Halfling | source XGtE
+When an ally within 30 feet rolls a 1, use your reaction to let them reroll.
+@feat Dragon Fear | cat racial | prereq Dragonborn | asi str, con, cha | source XGtE
+Use your breath weapon to roar instead, frightening creatures within 30 feet on a failed Wisdom save.
+@feat Dragon Hide | cat racial | prereq Dragonborn | asi str, con, cha | source XGtE
+Your AC is 13 + Dexterity without armor, and you grow claws that deal 1d4 slashing.
+@feat Drow High Magic | cat racial | prereq Elf (drow) | spells Detect Magic will; Levitate long; Dispel Magic long | castwith cha | source XGtE
+Cast Detect Magic at will and Levitate and Dispel Magic once per long rest.
+@feat Dwarven Fortitude | cat racial | prereq Dwarf | asi con | source XGtE
+When you Dodge, you can spend a Hit Die to heal.
+@feat Elven Accuracy | cat racial | prereq Elf or half-elf | asi dex, int, wis, cha | source XGtE
+When you have advantage on an attack using Dexterity, Intelligence, Wisdom or Charisma, reroll one of the dice.
+@feat Fade Away | cat racial | prereq Gnome | asi dex, int | source XGtE
+After you take damage, use your reaction to become invisible until the end of your next turn. Once per short or long rest.
+@feat Fey Teleportation | cat racial | prereq Elf (high) | asi int, cha | spells Misty Step short | castwith int | source XGtE
+Learn Sylvan and cast Misty Step once per short or long rest.
+@feat Flames of Phlegethos | cat racial | prereq Tiefling | asi int, cha | source XGtE
+Reroll 1s on fire spell damage, and after casting a fire spell you are wreathed in flames that burn attackers.
+@feat Infernal Constitution | cat racial | prereq Tiefling | asi con | source XGtE
+Resistance to cold and poison damage and advantage on saves against being poisoned.
+@feat Orcish Fury | cat racial | prereq Half-orc | asi str, con | source XGtE
+Once per short rest, add one extra weapon damage die, and when you use Relentless Endurance you can attack as a reaction.
+@feat Prodigy | cat racial | prereq Half-elf, half-orc or human | skills 1 prof; 1 expertise | source XGtE
+Gain one skill, one tool and one language, and expertise in a skill.
+@feat Second Chance | cat racial | prereq Halfling | asi dex, con, cha | source XGtE
+When a creature hits you, use your reaction to make it reroll. Once per initiative or rest.
+@feat Squat Nimbleness | cat racial | prereq Dwarf or a Small race | asi str, dex | skills 1 prof acrobatics, athletics | source XGtE
+Your walking speed increases by 5 feet, you gain Acrobatics or Athletics, and advantage to escape grapples. {speed +5}
+@feat Wood Elf Magic | cat racial | prereq Elf (wood) | spells pick 1 L0 list:Druid; Longstrider long; Pass without Trace long | castwith wis | source XGtE
+Learn a druid cantrip and cast Longstrider and Pass without Trace once per long rest.
+@feat Artificer Initiate | spells pick 1 L0 list:Artificer; pick 1 L1 list:Artificer long | castwith int | source TCoE
+Learn an artificer cantrip and a 1st-level artificer spell (once per long rest), plus proficiency with one artisan's tool.
+@feat Chef | asi con, wis | source TCoE
+Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP.
+@feat Crusher | asi str, con | source TCoE
+Once per turn bludgeoning hits push 5 feet, and critical hits give attacks against the target advantage.
+@feat Eldritch Adept | prereq Spellcasting or Pact Magic feature | source TCoE
+Learn one Eldritch Invocation that has no prerequisites.
+@feat Fey Touched | asi int, wis, cha | spells Misty Step long; pick 1 L1 divination,enchantment long | castwith asi | source TCoE
+Learn Misty Step and a 1st-level divination or enchantment spell, each castable once per long rest without a slot.
+@feat Fighting Initiate | prereq Proficiency with a martial weapon | source TCoE
+Learn one Fighting Style from the fighter list.
+@feat Gunner | asi dex | source TCoE
+Proficiency with firearms, ignore loading on firearms, and no disadvantage firing in melee.
+@feat Metamagic Adept | prereq Spellcasting or Pact Magic feature | source TCoE
+Learn two Metamagic options and gain 2 sorcery points to use them.
+@feat Piercer | asi str, dex | source TCoE
+Once per turn reroll a piercing damage die, and critical hits add one extra damage die.
+@feat Poisoner | source TCoE
+Your poison damage ignores resistance, apply poison as a bonus action, and brew poisons that deal 2d8.
+@feat Shadow Touched | asi int, wis, cha | spells Invisibility long; pick 1 L1 illusion,necromancy long | castwith asi | source TCoE
+Learn Invisibility and a 1st-level illusion or necromancy spell, each castable once per long rest without a slot.
+@feat Skill Expert | asi any | skills 1 prof; 1 expertise | source TCoE
+Gain proficiency in one skill and expertise in another.
+@feat Slasher | asi str, dex | source TCoE
+Once per turn slashing hits reduce speed by 10 feet, and critical hits impose disadvantage on the target's attacks.
+@feat Telekinetic | asi int, wis, cha | spells Mage Hand | castwith asi | source TCoE
+Learn an invisible Mage Hand and use a bonus action to shove a creature 5 feet on a failed Strength save.
+@feat Telepathic | asi int, wis, cha | spells Detect Thoughts long | castwith asi | source TCoE
+Telepathy 60 feet and cast Detect Thoughts once per long rest without a slot.
+@feat Gift of the Chromatic Dragon | source FToD
+Infuse a weapon with elemental damage (+1d4) once per long rest, and use your reaction to gain resistance to an element (proficiency bonus uses).
+@feat Gift of the Gem Dragon | asi int, wis, cha | source FToD
+When a creature within 10 feet damages you, use your reaction to deal force damage and push it on a failed Strength save.
+@feat Gift of the Metallic Dragon | spells Cure Wounds long | castwith wis | source FToD
+Cast Cure Wounds once per long rest, and use your reaction to add 1d4 to an ally's AC with protective wings.
+@feat Aberrant Dragonmark | prereq No other dragonmark | asi con | spells pick 1 L0 list:Sorcerer; pick 1 L1 list:Sorcerer long | castwith con | source ERftLW
+Learn a sorcerer cantrip and a 1st-level sorcerer spell castable once per long rest, with a Hit Die gamble on each cast.
+@feat Svirfneblin Magic | cat racial | prereq Gnome (deep gnome) | spells Nondetection will; Blindness/Deafness long; Blur long; Disguise Self long | castwith int | source SCAG
+Cast Nondetection on yourself at will, and Blindness/Deafness, Blur and Disguise Self once each per long rest.
+@feat Ember of the Fire Giant | prereq 4th level, Strike of the Giants (Fire) | level 4 | asi str, con, wis | source BGG
+Resistance to fire, and replace an attack with a fiery burst that blinds and damages nearby creatures.
+@feat Fury of the Frost Giant | prereq 4th level, Strike of the Giants (Frost) | level 4 | asi str, con, wis | source BGG
+Resistance to cold, and as a reaction when hit, deal cold damage and reduce the attacker's speed to 0.
+@feat Guile of the Cloud Giant | prereq 4th level, Strike of the Giants (Cloud) | level 4 | asi str, con, cha | source BGG
+When hit, use your reaction to gain resistance to the damage and teleport up to 30 feet.
+@feat Keenness of the Stone Giant | prereq 4th level, Strike of the Giants (Stone) | level 4 | asi str, con, wis | source BGG
+Darkvision 60 feet, and as a bonus action throw a rock that knocks a creature prone.
+@feat Soul of the Storm Giant | prereq 4th level, Strike of the Giants (Storm) | level 4 | asi str, con, wis | source BGG
+As a bonus action, create a storm aura that slows enemies and grants you resistance to lightning and thunder.
+@feat Vigor of the Hill Giant | prereq 4th level, Strike of the Giants (Hill) | level 4 | asi str, con | source BGG
+When you're knocked prone or shoved, you can stay standing, and healing from a Hit Die adds your Constitution modifier again.
+@feat Rune Shaper | asi int, wis, cha | source BGG
+Learn runes that let you cast specific spells once per long rest without a slot.
+@feat Strike of the Giants | prereq Proficiency with a martial weapon | source BGG
+Once per turn, a weapon hit adds an effect of a chosen giant type (cloud, fire, frost, hill, stone or storm).
+@feat Giant Foundling | asi str, con, wis | source BGG
+You count as Large for carrying and grappling, gain temp HP when you take damage while Large or bigger, and your reach extends with growth.
+@feat Squire of Solamnia | cat background | prereq Knight of Solamnia background | source DSotDQ
+Gain advantage on a weapon attack and extra damage on a hit (Precise Strike), proficiency bonus uses per long rest, and a mounted combat benefit.
+@feat Initiate of High Sorcery | cat background | prereq Mage of High Sorcery background | source DSotDQ
+Learn a cantrip and two 1st-level spells tied to your moon (Lunitari, Nuitari or Solinari), each castable once per long rest without a slot.

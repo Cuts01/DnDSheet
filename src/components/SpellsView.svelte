@@ -245,7 +245,7 @@
         {:else}
           Ningún pack importado trae spells.
         {/if}
-        Importa de nuevo <b>content/dist/wiki-{c.ruleset}.json</b> de la carpeta nueva del proyecto.
+        Toca Actualizar para cargar los packs que vienen con la app.
       </p>
       <div class="row-btns">
         {#if canLoadLocal}<button class="primary" onclick={updateLocal}>Actualizar packs de la wiki</button>{/if}

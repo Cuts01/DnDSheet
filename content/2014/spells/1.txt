@@ -1,0 +1,201 @@
+@level 1
+Absorb Elements | Abj | 1 reaction | Self | S | 1 round | - | XGtE
+When you take acid, cold, fire, lightning or thunder damage, you gain resistance to that type until your next turn, and your first melee hit on your next turn deals an extra 1d6 of that type.
++ Extra damage increases by 1d6 per slot level above 1.
+Alarm | Abj | 1 minute or R | 30 feet | V, S, M | 8 hours | - | PHB
+Ward a door, window or area up to a 20-foot cube; a creature touching or entering it triggers a mental or audible alarm. You choose creatures that don't trigger it.
+Animal Friendship | Enc | 1 action | 30 feet | V, S, M | 24 hours | - | PHB
+A beast with Intelligence 3 or less makes a Wisdom save or is charmed by you. It ends if you or allies harm it.
++ One additional beast per slot level above 1.
+Armor of Agathys | Abj | 1 action | Self | V, S, M | 1 hour | - | PHB
+You gain 5 temporary hit points. While you have them, a creature that hits you with a melee attack takes 5 cold damage.
++ Both increase by 5 per slot level above 1.
+Arms of Hadar | Con | 1 action | Self (10-foot radius) | V, S | Instantaneous | - | PHB
+Each creature within 10 feet makes a Strength save, taking 2d6 necrotic damage and losing its reaction on a failure, or half damage on a success.
++ Damage increases by 1d6 per slot level above 1.
+Bane | Enc | 1 action | 30 feet | V, S, M | C, up to 1 minute | - | PHB
+Up to three creatures make a Charisma save; those that fail subtract 1d4 from attack rolls and saving throws.
++ One additional creature per slot level above 1.
+Beast Bond | Div | 1 action | Touch | V, S, M | C, up to 10 minutes | - | XGtE
+A telepathic link with a friendly beast of Intelligence 3 or less. It can understand simple messages, and it has advantage on attacks against creatures within 5 feet of you that you can see.
+Bless | Enc | 1 action | 30 feet | V, S, M | C, up to 1 minute | - | PHB
+Up to three creatures add 1d4 to their attack rolls and saving throws.
++ One additional creature per slot level above 1.
+Burning Hands | Evo | 1 action | Self (15-foot cone) | V, S | Instantaneous | - | PHB
+Each creature in a 15-foot cone makes a Dexterity save, taking 3d6 fire damage (half on success). Flammable objects ignite.
++ Damage increases by 1d6 per slot level above 1.
+Catapult | Tra | 1 action | 60 feet | S | Instantaneous | - | XGtE
+Hurl an object of 1 to 5 pounds up to 90 feet in a line. A creature in its path makes a Dexterity save or takes 3d8 bludgeoning damage, stopping the object.
++ Weight limit grows by 5 pounds and damage by 1d8 per slot level above 1.
+Cause Fear | Nec | 1 action | 60 feet | V | C, up to 1 minute | - | XGtE
+A creature makes a Wisdom save or is frightened of you, repeating the save at the end of each of its turns. Constructs and undead are immune.
++ One additional creature per slot level above 1.
+Ceremony | Abj | 1 hour or R | Touch | V, S, M(C*) | Instantaneous | - | XGtE
+Perform a religious rite: Atonement, Bless Water, Coming of Age, Dedication, Funeral Rite or Wedding, each with a small lasting benefit. Material: silver powder worth 25 gp, consumed.
+Chaos Bolt | Evo | 1 action | 120 feet | V, S | Instantaneous | - | XGtE
+Ranged spell attack for 2d8 + 1d6 damage; the d8s set the damage type. If both d8s match, the bolt leaps to another creature within 30 feet.
++ Each target takes 1d6 more per slot level above 1.
+Charm Person | Enc | 1 action | 30 feet | V, S | 1 hour | - | PHB
+A humanoid makes a Wisdom save (advantage if you are fighting it) or is charmed by you. It knows when the spell ends.
++ One additional creature per slot level above 1.
+Chromatic Orb | Evo | 1 action | 90 feet | V, S, M(C) | Instantaneous | - | PHB
+Ranged spell attack for 3d8 damage of a type you choose: acid, cold, fire, lightning, poison or thunder. Material: a diamond worth 50 gp.
++ Damage increases by 1d8 per slot level above 1.
+Color Spray | Ill | 1 action | Self (15-foot cone) | V, S, M | 1 round | - | PHB
+Roll 6d10: creatures in a 15-foot cone with the lowest current HP are blinded until your next turn, as long as their HP fits within the total.
++ 2d10 more per slot level above 1.
+Command | Enc | 1 action | 60 feet | V | 1 round | - | PHB
+Give a one-word command (approach, drop, flee, grovel, halt...). On a failed Wisdom save the creature obeys on its next turn.
++ One additional creature per slot level above 1.
+Compelled Duel | Enc | 1 bonus action | 30 feet | V | C, up to 1 minute | - | PHB
+A creature makes a Wisdom save or has disadvantage on attacks against others than you and must save to move more than 30 feet away from you.
+Comprehend Languages | Div | 1 action or R | Self | V, S, M | 1 hour | - | PHB
+You understand any spoken language you hear and any written language you touch.
+Create or Destroy Water | Tra | 1 action | 30 feet | V, S, M | Instantaneous | - | PHB
+Create or destroy up to 10 gallons of water, or create rain or destroy fog in a 30-foot cube.
++ 10 more gallons or 5 feet more cube per slot level above 1.
+Cure Wounds | Evo | 1 action | Touch | V, S | Instantaneous | - | PHB
+A creature regains 1d8 + your spellcasting modifier hit points. No effect on undead or constructs.
++ Healing increases by 1d8 per slot level above 1.
+Detect Evil and Good | Div | 1 action | Self | V, S | C, up to 10 minutes | - | PHB
+Sense aberrations, celestials, elementals, fey, fiends and undead within 30 feet, and consecrated or desecrated places.
+Detect Magic | Div | 1 action or R | Self | V, S | C, up to 10 minutes | - | PHB
+Sense magic within 30 feet and see auras around magic creatures and objects, learning their school.
+Detect Poison and Disease | Div | 1 action or R | Self | V, S, M | C, up to 10 minutes | - | PHB
+Sense poisons, poisonous creatures and diseases within 30 feet and identify their kind.
+Disguise Self | Ill | 1 action | Self | V, S | 1 hour | - | PHB
+Change your appearance, clothing and gear, up to 1 foot taller or shorter. An Investigation check against your DC reveals it.
+Dissonant Whispers | Enc | 1 action | 60 feet | V | Instantaneous | - | PHB
+A creature makes a Wisdom save: on a failure 3d6 psychic damage and it must use its reaction to move away from you; half damage on a success.
++ Damage increases by 1d6 per slot level above 1.
+Distort Value | Ill | 1 minute | Touch | V | 8 hours | - | AI
+Make an object up to 1 cubic foot appear to be worth twice or half its actual value to anyone who examines it.
++ The object can be larger per slot level above 1.
+Divine Favor | Evo | 1 bonus action | Self | V, S | C, up to 1 minute | - | PHB
+Your weapon attacks deal an extra 1d4 radiant damage on a hit.
+Earth Tremor | Evo | 1 action | 10 feet | V, S | Instantaneous | - | XGtE
+Each creature within 10 feet makes a Dexterity save or takes 1d6 bludgeoning damage and falls prone. Loose ground becomes difficult terrain.
++ Damage increases by 1d6 per slot level above 1.
+Ensnaring Strike | Con | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next weapon hit makes the target attempt a Strength save or be restrained by thorny vines, taking 1d6 piercing damage at the start of each of its turns.
++ Damage increases by 1d6 per slot level above 1.
+Entangle | Con | 1 action | 90 feet | V, S | C, up to 1 minute | - | PHB
+Plants fill a 20-foot square as difficult terrain; creatures there make a Strength save or are restrained.
+Expeditious Retreat | Tra | 1 bonus action | Self | V, S | C, up to 10 minutes | - | PHB
+You can take the Dash action as a bonus action, starting when you cast it.
+Faerie Fire | Evo | 1 action | 60 feet | V | C, up to 1 minute | - | PHB
+Creatures in a 20-foot cube make a Dexterity save or are outlined in light; attacks against them have advantage and they can't benefit from being invisible.
+False Life | Nec | 1 action | Self | V, S, M | 1 hour | - | PHB
+You gain 1d4 + 4 temporary hit points.
++ 5 more temporary hit points per slot level above 1.
+Feather Fall | Tra | 1 reaction | 60 feet | V, M | 1 minute | - | PHB
+Up to five falling creatures descend 60 feet per round and take no falling damage.
+Find Familiar | Con | 1 hour or R | 10 feet | V, S, M(C*) | Instantaneous | - | PHB
+Summon a familiar (celestial, fey or fiend) in an animal form. It shares telepathy within 100 feet, can deliver touch spells and lets you use its senses. Material: 10 gp of charcoal, incense and herbs, consumed.
+Fog Cloud | Con | 1 action | 120 feet | V, S | C, up to 1 hour | - | PHB
+A 20-foot-radius sphere of fog makes the area heavily obscured.
++ Radius increases by 20 feet per slot level above 1.
+Frost Fingers | Evo | 1 action | Self (15-foot cone) | V, S | Instantaneous | - | IDRotF
+Each creature in a 15-foot cone makes a Constitution save, taking 2d8 cold damage (half on success). Unattended water freezes.
++ Damage increases by 1d8 per slot level above 1.
+Gift of Alacrity | Div | 1 minute | Touch | V, S, M | 8 hours | - | EGW
+A willing creature adds 1d8 to its initiative rolls for the duration.
+Goodberry | Tra | 1 action | Touch | V, S, M | Instantaneous | - | PHB
+Up to ten berries appear; eating one restores 1 hit point and provides a day's nourishment. They lose potency after 24 hours.
+Grease | Con | 1 action | 60 feet | V, S, M | 1 minute | - | PHB
+A 10-foot square becomes difficult terrain; creatures there or entering make a Dexterity save or fall prone.
+Guiding Bolt | Evo | 1 action | 120 feet | V, S | 1 round | - | PHB
+Ranged spell attack for 4d6 radiant damage; the next attack roll against the target before your next turn has advantage.
++ Damage increases by 1d6 per slot level above 1.
+Hail of Thorns | Con | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next ranged weapon hit makes thorns burst: the target and creatures within 5 feet make a Dexterity save, taking 1d10 piercing damage (half on success).
++ Damage increases by 1d10 per slot level above 1.
+Healing Word | Evo | 1 bonus action | 60 feet | V | Instantaneous | - | PHB
+A creature you can see regains 1d4 + your spellcasting modifier hit points.
++ Healing increases by 1d4 per slot level above 1.
+Hellish Rebuke | Evo | 1 reaction | 60 feet | V, S | Instantaneous | - | PHB
+When a creature damages you, it makes a Dexterity save, taking 2d10 fire damage (half on success).
++ Damage increases by 1d10 per slot level above 1.
+Heroism | Enc | 1 action | Touch | V, S | C, up to 1 minute | - | PHB
+A willing creature is immune to being frightened and gains temporary HP equal to your spellcasting modifier at the start of each of its turns.
++ One additional creature per slot level above 1.
+Hex | Enc | 1 bonus action | 90 feet | V, S, M | C, up to 1 hour | - | PHB
+Curse a creature: your attacks deal it an extra 1d6 necrotic damage, and it has disadvantage on checks with one ability you choose. Move the curse with a bonus action if it drops to 0 HP.
++ Level 3-4: up to 8 hours. Level 5+: up to 24 hours.
+Hunter's Mark | Div | 1 bonus action | 90 feet | V | C, up to 1 hour | - | PHB
+Mark a creature: your weapon attacks deal it an extra 1d6 damage and you have advantage on Perception and Survival checks to find it. Move the mark with a bonus action if it drops to 0 HP.
++ Level 3-4: up to 8 hours. Level 5+: up to 24 hours.
+Ice Knife | Con | 1 action | 60 feet | S, M | Instantaneous | - | XGtE
+Ranged spell attack for 1d10 piercing damage; hit or miss, it explodes and the target and creatures within 5 feet make a Dexterity save or take 2d6 cold damage.
++ Cold damage increases by 1d6 per slot level above 1.
+Identify | Div | 1 minute or R | Touch | V, S, M(C) | Instantaneous | - | PHB
+Learn a magic item's properties, attunement need and charges, or which spells affect a creature or object. Material: a pearl worth 100 gp.
+Illusory Script | Ill | 1 minute or R | Touch | S, M(C*) | 10 days | - | PHB
+Write a message only chosen creatures can read; others see gibberish or a false message. Material: ink worth 10 gp, consumed.
+Inflict Wounds | Nec | 1 action | Touch | V, S | Instantaneous | - | PHB
+Melee spell attack for 3d10 necrotic damage.
++ Damage increases by 1d10 per slot level above 1.
+Jim's Magic Missile | Evo | 1 action | 120 feet | V, S, M | Instantaneous | - | AI
+Three darts, each a ranged spell attack for 2d4 force damage. A natural 1 hits you instead; a critical deals 5 extra force damage per dart.
++ One more dart per slot level above 1.
+Jump | Tra | 1 action | Touch | V, S, M | 1 minute | - | PHB
+A creature's jump distance is tripled.
+Longstrider | Tra | 1 action | Touch | V, S, M | 1 hour | - | PHB
+A creature's speed increases by 10 feet.
++ One additional creature per slot level above 1.
+Mage Armor | Abj | 1 action | Touch | V, S, M | 8 hours | - | PHB
+A willing creature not wearing armor has a base AC of 13 + its Dexterity modifier.
+Magic Missile | Evo | 1 action | 120 feet | V, S | Instantaneous | - | PHB
+Three darts each hit automatically for 1d4 + 1 force damage.
++ One more dart per slot level above 1.
+Magnify Gravity | Tra | 1 action | 60 feet | V, S | 1 round | - | EGW
+Creatures in a 10-foot-radius sphere make a Constitution save, taking 2d8 force damage and having their speed halved until your next turn (half damage only on success).
++ Damage increases by 1d8 per slot level above 1.
+Protection from Evil and Good | Abj | 1 action | Touch | V, S, M(C*) | C, up to 10 minutes | - | PHB
+Aberrations, celestials, elementals, fey, fiends and undead have disadvantage on attacks against the target, and can't charm, frighten or possess it. Material: holy water or silver and iron powder, consumed.
+Purify Food and Drink | Tra | 1 action or R | 10 feet | V, S | Instantaneous | - | PHB
+Purify nonmagical food and drink in a 5-foot-radius sphere of poison and disease.
+Ray of Sickness | Nec | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+Ranged spell attack for 2d8 poison damage; the target makes a Constitution save or is poisoned until your next turn.
++ Damage increases by 1d8 per slot level above 1.
+Sanctuary | Abj | 1 bonus action | 30 feet | V, S, M | 1 minute | - | PHB
+A creature targeting the warded creature with an attack or harmful spell makes a Wisdom save or must choose a new target. Ends if the warded creature attacks or casts a harmful spell.
+Searing Smite | Evo | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next melee weapon hit deals an extra 1d6 fire damage and ignites the target, which takes 1d6 fire at the start of each turn until it succeeds on a Constitution save.
++ Initial damage increases by 1d6 per slot level above 1.
+Shield | Abj | 1 reaction | Self | V, S | 1 round | - | PHB
+When hit by an attack or targeted by magic missile, gain +5 AC until your next turn and take no damage from magic missile.
+Shield of Faith | Abj | 1 bonus action | 60 feet | V, S, M | C, up to 10 minutes | - | PHB
+A creature gains +2 AC.
+Silent Image | Ill | 1 action | 60 feet | V, S, M | C, up to 10 minutes | - | PHB
+A visual illusion up to a 15-foot cube that you can move with an action. An Investigation check against your DC reveals it.
+Silvery Barbs | Enc | 1 reaction | 60 feet | V | Instantaneous | - | SCC
+When a creature succeeds on an attack roll, ability check or save, it rerolls and uses the lower roll. Then another creature gets advantage on its next attack, check or save within 1 minute.
+Sleep | Enc | 1 action | 90 feet | V, S, M | 1 minute | - | PHB
+Roll 5d8: creatures within 20 feet of a point fall unconscious in ascending order of current HP, until the total runs out. Undead and creatures immune to charm are unaffected.
++ 2d8 more per slot level above 1.
+Snare | Abj | 1 minute | Touch | S, M | 8 hours | - | XGtE
+A nearly invisible magical trap in a 5-foot circle. A creature entering it makes a Dexterity save or is hoisted and restrained upside down.
+Speak with Animals | Div | 1 action or R | Self | V, S | 10 minutes | - | PHB
+You can understand and verbally communicate with beasts.
+Tasha's Caustic Brew | Evo | 1 action | Self (30-foot line) | V, S, M | C, up to 1 minute | - | TCoE
+Each creature in a 30-foot-long, 5-foot-wide line makes a Dexterity save or is covered in acid, taking 2d4 acid damage at the start of each turn until it or another creature scrapes it off with an action.
++ Damage increases by 2d4 per slot level above 1.
+Tasha's Hideous Laughter | Enc | 1 action | 30 feet | V, S, M | C, up to 1 minute | - | PHB
+A creature makes a Wisdom save or falls prone and is incapacitated with laughter, repeating the save each turn and when damaged (with advantage). Intelligence 4 or less is immune.
+Tenser's Floating Disk | Con | 1 action or R | 30 feet | V, S, M | 1 hour | - | PHB
+A floating disk holds up to 500 pounds and follows you within 20 feet.
+Thunderous Smite | Evo | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next melee weapon hit deals an extra 2d6 thunder damage, and the target makes a Strength save or is pushed 10 feet and knocked prone.
+Thunderwave | Evo | 1 action | Self (15-foot cube) | V, S | Instantaneous | - | PHB
+Each creature in a 15-foot cube makes a Constitution save, taking 2d8 thunder damage and being pushed 10 feet on a failure, or half on a success.
++ Damage increases by 1d8 per slot level above 1.
+Unseen Servant | Con | 1 action or R | 60 feet | V, S, M | 1 hour | - | PHB
+An invisible, mindless force performs simple tasks at your command.
+Witch Bolt | Evo | 1 action | 30 feet | V, S, M | C, up to 1 minute | - | PHB
+Ranged spell attack for 1d12 lightning damage; on later turns use your action to deal 1d12 lightning automatically.
++ Initial damage increases by 1d12 per slot level above 1.
+Wrathful Smite | Evo | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next melee weapon hit deals an extra 1d6 psychic damage, and the target makes a Wisdom save or is frightened of you. It can use an action for a Wisdom check to end it.
+Zephyr Strike | Tra | 1 bonus action | Self | V | C, up to 1 minute | - | XGtE
+You don't provoke opportunity attacks. Once, you can gain advantage on one weapon attack, which deals an extra 1d8 force damage, and your speed increases by 30 feet until the end of that turn.

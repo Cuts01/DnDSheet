@@ -1,0 +1,146 @@
+@level 3
+Animate Dead | Nec | 1 minute | 10 feet | V, S, M | Instantaneous | Clr, Wiz | PHB 2024
+Raise a pile of bones or a corpse of a Medium or Small Humanoid as a Skeleton or Zombie under your control for 24 hours. A Bonus Action commands any of them within 60 feet. Recast before 24 hours pass to keep control of up to four.
++ Two more undead per slot level above 3.
+Astral Flood | Evo | Action | Self | V, S, M | Instantaneous | Brd, Clr, Sor, Wlk, Wiz | DDB Drops
+Each creature in a 30-foot Cone makes a Dexterity save, taking 4d10 Cold or Radiant damage (your choice) on a failure, or half with no rider on a success. Cold: Disadvantage on its next D20 Test before the end of your next turn. Radiant: Blinded until then.
++ Damage increases by 1d10 per slot level above 3.
+Aura of Vitality | Abj | Action | Self | V | C, up to 1 minute | Clr, Drd, Pal | PHB 2024
+A 30-foot Emanation of healing energy. When you cast it and as a Bonus Action on later turns, one creature in it (including you) regains 2d6 Hit Points.
+Beacon of Hope | Abj | Action | 30 feet | V, S | C, up to 1 minute | Clr | PHB 2024
+Any number of creatures have Advantage on Wisdom saves and Death Saving Throws, and regain the maximum possible Hit Points from any healing.
+Bestow Curse | Nec | Action | Touch | V, S | C, up to 1 minute | Brd, Clr, Wiz | PHB 2024
+A creature makes a Wisdom save or is cursed: Disadvantage on checks and saves with one ability, Disadvantage on attacks against you, a Wisdom save each turn or it wastes its action, or your attacks and spells deal it an extra 1d8 Necrotic damage.
++ Level 4: up to 10 minutes. Level 5-6: 8 hours. Level 7-8: 24 hours. Level 9: until dispelled, and no Concentration from level 5.
+Blinding Smite | Evo | Bonus Action | Self | V | 1 minute | Pal | PHB 2024
+Cast right after hitting with a melee weapon or Unarmed Strike: extra 3d8 Radiant damage, and the target is Blinded. It makes a Constitution save at the end of each of its turns, ending the effect on a success.
++ Damage increases by 1d8 per slot level above 3.
+Blink | Tra | Action | Self | V, S | 1 minute | Art, Sor, Wiz | PHB 2024
+At the end of each of your turns, roll a d20: on 11+ you vanish to the Ethereal Plane until the start of your next turn, then return to a space you choose within 10 feet of where you left.
+Cacophonic Shield | Evo | Action | Self | V, S | C, up to 10 minutes | Brd, Sor, Wiz | FRHoF
+A 10-foot Emanation of noise. Creatures you don't exempt that enter it or start or end their turn there make a Constitution save (once per turn): 3d6 Thunder damage and Deafened until the start of your next turn, or half damage on a success. You have Resistance to Thunder and ranged attacks against you have Disadvantage.
++ Damage increases by 1d6 per slot level above 3.
+Call Lightning | Con | Action | 120 feet | V, S | C, up to 10 minutes | Drd | PHB 2024
+A storm cloud appears 100 feet up. When you cast it and as a Magic action on later turns, call a bolt to a point under it: each creature within 5 feet makes a Dexterity save, taking 3d10 Lightning damage (half on success). If it's already stormy, the damage increases by 1d10.
++ Damage increases by 1d10 per slot level above 3.
+Catnap | Enc | Action | 30 feet | S, M | 10 minutes | Art, Brd, Sor, Wiz | Arcana Unleashed
+Up to three willing creatures fall Unconscious for the duration (ends if damaged or woken with an action). A target that sleeps the full time gains the benefits of a Short Rest and can't be affected again until a Long Rest.
++ One additional creature per slot level above 3.
+Clairvoyance | Div | 10 minutes | 1 mile | V, S, M(C*) | C, up to 10 minutes | Brd, Clr, Sor, Wiz | PHB 2024
+Create an invisible sensor at a familiar or obvious location within 1 mile, and see or hear through it (switch as a Bonus Action). Material: a focus worth 100+ GP, consumed.
+Conjure Animals | Con | Action | 60 feet | V, S | C, up to 10 minutes | Drd, Rgr | PHB 2024
+A Large, intangible pack of spectral beasts appears. You have Advantage on Strength saves within 5 feet of it, and can move it 30 feet on your turn. When it moves within 10 feet of a creature, or a creature enters or ends its turn within 10 feet of it, the creature makes a Dexterity save or takes 3d10 Slashing damage (once per turn).
++ Damage increases by 1d10 per slot level above 3.
+Conjure Barrage | Con | Action | Self | V, S, M(C*) | Instantaneous | Rgr | PHB 2024
+Spectral copies of your weapon or ammunition fill a 60-foot Cone. Each creature you choose there makes a Dexterity save, taking 5d8 Force damage on a failure or half on a success.
++ Damage increases by 1d8 per slot level above 3.
+Conjure Constructs | Con | Action | 60 feet | V, S, M | C, up to 10 minutes | Wiz | FRHoF
+Intangible orderly spirits fill a Medium space. You can move them 30 feet on your turn, and as a Magic action command them to deal 3d6 Force damage (Dexterity save for half) or grant 1d6 + your spellcasting modifier Temporary Hit Points to a creature or object within 5 feet.
++ Damage and Temporary Hit Points increase by 1d6 per slot level above 3.
+Counterspell | Abj | Reaction | 60 feet | S | Instantaneous | Sor, Wlk, Wiz | PHB 2024
+When a creature you can see casts a spell, it makes a Constitution save. On a failure the spell dissipates with no effect and the action, Bonus Action or Reaction is wasted, but the slot isn't expended.
+Create Food and Water | Con | Action | 30 feet | V, S | Instantaneous | Art, Clr, Pal | PHB 2024
+Create 45 pounds of bland food and 30 gallons of fresh water, enough for fifteen Humanoids or five steeds for 24 hours. The food spoils after 24 hours.
+Crusader's Mantle | Evo | Action | Self | V | C, up to 1 minute | Pal | PHB 2024
+Allies in a 30-foot Emanation (and you) deal an extra 1d4 Radiant damage when they hit with a weapon or Unarmed Strike.
+Daylight | Evo | Action | 60 feet | V, S | 1 hour | Clr, Drd, Pal, Rgr, Sor | PHB 2024
+A 60-foot-radius Sphere of Bright Light (plus 60 feet of Dim Light) at a point or on an object. It dispels magical Darkness of level 3 or lower it overlaps.
+Dispel Magic | Abj | Action | 120 feet | V, S | Instantaneous | Art, Brd, Clr, Drd, Pal, Rgr, Sor, Wlk, Wiz | PHB 2024
+End spells of level 3 or lower on a creature, object or magical effect. For each higher-level spell, make an ability check with your spellcasting ability (DC 10 + its level) to end it.
++ Automatically ends spells of a level equal to or lower than the slot used.
+Elemental Weapon | Tra | Action | Touch | V, S | C, up to 1 hour | Art, Drd, Pal, Rgr | PHB 2024
+A nonmagical weapon becomes magic: +1 to attack rolls and an extra 1d4 damage of a type you choose (Acid, Cold, Fire, Lightning or Thunder).
++ Level 5-6: +2 and 2d4. Level 7+: +3 and 3d4.
+Fear | Ill | Action | Self | V, S, M | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Each creature in a 30-foot Cone makes a Wisdom save or drops what it holds and is Frightened, Dashing away from you on its turns. It repeats the save at the end of turns when it can't see you.
+Feign Death | Nec | Action or R | Touch | V, S, M | 1 hour | Brd, Clr, Drd, Wiz | PHB 2024
+A willing creature appears dead: it is Blinded and Incapacitated, its Speed is 0, it has Resistance to all damage except Psychic, and diseases and poisons are suspended.
+Fireball | Evo | Action | 150 feet | V, S, M | Instantaneous | Sor, Wiz | PHB 2024
+A 20-foot-radius Sphere explodes. Each creature there makes a Dexterity save, taking 8d6 Fire damage on a failure or half on a success. Flammable unattended objects ignite.
++ Damage increases by 1d6 per slot level above 3.
+Fly | Tra | Action | Touch | V, S, M | C, up to 10 minutes | Art, Sor, Wlk, Wiz | PHB 2024
+A willing creature gains a Fly Speed of 60 feet and can hover. It falls if the spell ends while aloft (unless it can stop the fall).
++ One additional creature per slot level above 3.
+Gaseous Form | Tra | Action | Touch | V, S, M | C, up to 1 hour | Sor, Wlk, Wiz | PHB 2024
+A willing creature becomes a misty cloud: Fly Speed 10 feet (hover), Resistance to Bludgeoning, Piercing and Slashing, Advantage on Strength, Dexterity and Constitution saves, can pass through small gaps. It can't attack or cast spells.
+Glyph of Warding | Abj | 1 hour | Touch | V, S, M(C*) | Until dispelled or triggered | Art, Brd, Clr, Wiz | PHB 2024
+Inscribe a nearly invisible glyph that triggers on conditions you set. Explosive Rune: 20-foot-radius Sphere, Dexterity save, 5d8 damage of a chosen type (half on success). Spell Glyph: store a spell of level 3 or lower that triggers. Material: diamond dust worth 200+ GP, consumed.
++ Explosive Rune damage increases by 1d8 per slot level above 3, and a Spell Glyph can hold a spell up to the slot's level.
+Haste | Tra | Action | 30 feet | V, S, M | C, up to 1 minute | Art, Sor, Wiz | PHB 2024
+A willing creature's Speed doubles, it gains +2 AC, Advantage on Dexterity saves, and an extra action each turn (Attack with one weapon attack only, Dash, Disengage, Hide or Utilize). When the spell ends, it can't move or act until after its next turn.
+Hunger of Hadar | Con | Action | 150 feet | V, S, M | C, up to 1 minute | Wlk | PHB 2024
+A 20-foot-radius Sphere of darkness and cold that is Difficult Terrain. A creature starting its turn there takes 2d6 Cold damage; one ending its turn there makes a Dexterity save or takes 2d6 Acid damage.
++ Cold or Acid damage (your choice) increases by 1d6 per slot level above 3.
+Hypnotic Pattern | Ill | Action | 120 feet | S, M | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Each creature in a 30-foot Cube that sees the pattern makes a Wisdom save or is Charmed: Incapacitated with Speed 0. It ends for a creature that takes damage or is shaken awake with an action.
+Inflict Doubt | Enc | Action | 120 feet | V, S | C, up to 1 minute | Brd, Sor, Wlk, Wiz | Arcana Unleashed
+A creature makes a Wisdom save or has Disadvantage on D20 Tests. It repeats the save at the end of each of its turns.
+Laeral's Silver Lance | Evo | Action | Self | V, S, M(C) | Instantaneous | Clr, Sor, Wiz | FRHoF
+A 120-foot-long, 5-foot-wide Line of silver force. Creatures you choose in it make a Strength save, taking 3d10 Force damage and falling Prone on a failure, or half damage on a success.
++ Damage increases by 1d10 per slot level above 3.
+Leomund's Tiny Hut | Evo | 1 minute or R | Self | V, S, M | 8 hours | Brd, Wiz | PHB 2024
+A 10-foot Emanation dome holds up to nine Medium creatures. Spells and magical effects can't extend through it, and creatures and objects can't pass in except those inside at casting. The interior is comfortable and dry. It ends if you leave it.
+Lightning Arrow | Tra | Bonus Action | Self | V, S | Instantaneous | Rgr | PHB 2024
+Cast after a ranged weapon attack, hit or miss: the target takes 4d8 Lightning damage on a hit (half on a miss) instead of the weapon's damage, and each creature within 10 feet makes a Dexterity save, taking 2d8 Lightning damage (half on success).
++ Both damages increase by 1d8 per slot level above 3.
+Lightning Bolt | Evo | Action | Self | V, S, M | Instantaneous | Sor, Wiz | PHB 2024
+A 100-foot-long, 5-foot-wide Line. Each creature in it makes a Dexterity save, taking 8d6 Lightning damage on a failure or half on a success.
++ Damage increases by 1d6 per slot level above 3.
+Magic Circle | Abj | 1 minute | 10 feet | V, S, M(C*) | 1 hour | Clr, Pal, Wlk, Wiz | PHB 2024
+A 10-foot-radius, 20-foot-tall Cylinder against Celestials, Elementals, Fey, Fiends or Undead (choose): they can't willingly enter it, have Disadvantage on attacks against those inside, and can't charm, frighten or possess them. You can reverse it to trap one inside. Material: salt and silver powder worth 100+ GP, consumed.
++ Duration increases by 1 hour per slot level above 3.
+Major Image | Ill | Action | 120 feet | V, S, M | C, up to 10 minutes | Brd, Sor, Wlk, Wiz | PHB 2024
+Create an illusion of an object, creature or phenomenon up to a 20-foot Cube, with sound, smell and temperature. Move it with a Magic action. A Study action allows an Investigation check to see through it.
++ With a level 4+ slot it lasts until dispelled without Concentration.
+Mass Healing Word | Abj | Bonus Action | 60 feet | V | Instantaneous | Brd, Clr | PHB 2024
+Up to six creatures you can see regain 2d4 + your spellcasting modifier Hit Points.
++ Healing increases by 1d4 per slot level above 3.
+Meld into Stone | Tra | Action or R | Touch | V, S | 8 hours | Clr, Drd, Rgr | PHB 2024
+Step into a stone object or surface large enough to hold you. You can hear outside and cast spells on yourself. Damaging the stone may expel you (6d6 Force if destroyed).
+Nondetection | Abj | Action | Touch | V, S, M(C*) | 8 hours | Brd, Rgr, Wiz | PHB 2024
+A creature, place or object can't be targeted by Divination spells or perceived through magical scrying sensors. Material: diamond dust worth 25+ GP, consumed.
+Phantom Steed | Ill | 1 minute or R | 30 feet | V, S | 1 hour | Wiz | PHB 2024
+A Large quasi-real horse with Speed 100 feet appears for a rider you designate. It disappears if it takes damage.
+Plant Growth | Tra | Action (Overgrowth) or 8 hours (Enrichment) | 150 feet | V, S | Instantaneous | Brd, Drd, Rgr | PHB 2024
+Overgrowth: plants in a 100-foot radius become thick, and each 5 feet of movement costs 20 feet (you can exclude areas). Enrichment: plants in a half-mile radius become enriched and yield twice the food for a year.
+Protection from Energy | Abj | Action | Touch | V, S | C, up to 1 hour | Art, Clr, Drd, Rgr, Sor, Wiz | PHB 2024
+A willing creature has Resistance to one damage type: Acid, Cold, Fire, Lightning or Thunder.
+Remove Curse | Abj | Action | Touch | V, S | Instantaneous | Clr, Pal, Wlk, Wiz | PHB 2024
+All curses on a creature or object end. A cursed magic item stays cursed, but its curse is broken on the owner so they can remove it.
+Revivify | Nec | Action | Touch | V, S, M(C*) | Instantaneous | Art, Clr, Drd, Pal, Rgr | PHB 2024
+A creature that died within the last minute returns to life with 1 Hit Point (not from old age, and with its body intact). Material: a diamond worth 300+ GP, consumed.
+Sending | Div | Action | Unlimited | V, S, M | Instantaneous | Brd, Clr, Wiz | PHB 2024
+Send a message of up to 25 words to a familiar creature anywhere; it can reply the same way. Crossing planes has a 5% chance to fail.
+Sleet Storm | Con | Action | 150 feet | V, S, M | C, up to 1 minute | Drd, Sor, Wiz | PHB 2024
+A 40-foot-radius, 20-foot-tall Cylinder of sleet is Heavily Obscured and Difficult Terrain and douses flames. A creature entering or starting its turn there makes a Dexterity save or falls Prone and loses Concentration.
+Slow | Tra | Action | 120 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wiz | PHB 2024
+Up to six creatures in a 40-foot Cube make a Wisdom save. On a failure: Speed halved, -2 AC and Dexterity saves, no Reactions, only an action or a Bonus Action per turn, and one attack only. They repeat the save at the end of each turn.
+Speak with Dead | Nec | Action | 10 feet | V, S, M | 10 minutes | Brd, Clr, Wiz | PHB 2024
+A corpse with a mouth answers up to five questions with what it knew in life. It can't be one targeted by this spell in the last 10 days, and it isn't compelled to be truthful.
+Speak with Plants | Tra | Action | Self | V, S | 10 minutes | Brd, Drd, Rgr | PHB 2024
+Plants within 30 feet become sentient enough to communicate and can tell you about the area in the last day. You can turn Difficult Terrain from plants normal, or vice versa.
+Spirit Guardians | Con | Action | Self | V, S, M | C, up to 10 minutes | Clr | PHB 2024
+Spirits fill a 15-foot Emanation; creatures you exempt are unaffected. Others there have their Speed halved, and a creature entering it, that it moves into, or ending its turn there makes a Wisdom save, taking 3d8 Radiant (or Necrotic) damage, half on success, once per turn.
++ Damage increases by 1d8 per slot level above 3.
+Stinking Cloud | Con | Action | 90 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wiz | PHB 2024
+A 20-foot-radius Sphere of nauseating gas is Heavily Obscured. A creature starting its turn there makes a Constitution save or is Poisoned until the end of the turn, spending its action retching.
+Summon Fey | Con | Action | 90 feet | V, S, M(C*) | C, up to 1 hour | Drd, Rgr, Wlk, Wiz | PHB 2024
+Summon a Fey Spirit (Fuming, Mirthful or Tricksy) that obeys you, acts after you and can teleport with Fey Step. Its stats scale with the spell's level. Material: a gilded flower worth 300+ GP.
++ Uses the higher slot level in its stat block.
+Summon Undead | Nec | Action | 90 feet | V, S, M(C*) | C, up to 1 hour | Wlk, Wiz | PHB 2024
+Summon an Undead Spirit (Ghostly, Putrid or Skeletal) that obeys you and acts after you. Its stats scale with the spell's level. Material: a gilded skull worth 300+ GP.
++ Uses the higher slot level in its stat block.
+Sylune's Viper | Con | Bonus Action | Self | V, S, M | 1 hour | Drd, Wiz | FRHoF
+You gain 15 Temporary Hit Points and a Climb Speed equal to your Speed. As a Magic action, a spectral viper bites a creature within 50 feet (ranged spell attack): 1d6 Force damage and Poisoned (and Incapacitated) until the start of your next turn.
++ 5 more Temporary Hit Points and 1d6 more damage per slot level above 3.
+Tongues | Div | Action | Touch | V, M | 1 hour | Brd, Clr, Sor, Wlk, Wiz | PHB 2024
+The creature understands any spoken or signed language it hears, and its speech is understood by any creature that knows a language.
+Vampiric Touch | Nec | Action | Self | V, S | C, up to 1 minute | Sor, Wlk, Wiz | PHB 2024
+Make a melee spell attack: 3d6 Necrotic damage and you regain half the damage dealt. You can repeat the attack as a Magic action on later turns.
++ Damage increases by 1d6 per slot level above 3.
+Water Breathing | Tra | Action or R | 30 feet | V, S, M | 24 hours | Art, Drd, Rgr, Sor, Wiz | PHB 2024
+Up to ten willing creatures can breathe underwater for the duration.
+Water Walk | Tra | Action or R | 30 feet | V, S, M | 1 hour | Art, Clr, Drd, Rgr, Sor | PHB 2024
+Up to ten willing creatures can move across liquids (water, acid, mud, snow, lava without harm from heat) as if solid ground.
+Wind Wall | Evo | Action | 120 feet | V, S, M | C, up to 1 minute | Drd, Rgr | PHB 2024
+A wall of wind up to 50 feet long, 15 feet high and 1 foot thick. When it appears, creatures in it make a Strength save, taking 4d8 Bludgeoning damage (half on success). It blocks gas, fog, small flying creatures and ranged weapon ammunition.

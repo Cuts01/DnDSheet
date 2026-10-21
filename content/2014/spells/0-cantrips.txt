@@ -1,0 +1,117 @@
+# Formato: Nombre | school | casting time | range | components | duration | clases | fuente
+# Clases "-" = se toman de content/2014/spell-lists/ (listas de la wiki).
+@level 0
+Acid Splash | Con | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+One creature, or two within 5 feet of each other, make a Dexterity save or take 1d6 acid damage.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Blade Ward | Abj | 1 action | Self | V, S | 1 round | - | PHB
+Until the end of your next turn, you have resistance to bludgeoning, piercing and slashing damage from weapon attacks.
+Booming Blade | Evo | 1 action | Self (5-foot radius) | S, M | 1 round | - | SCAG
+Make a melee attack with a weapon worth 1+ sp as part of casting. On a hit the target suffers the normal effects and is sheathed in thunder: if it willingly moves before your next turn, it takes 1d8 thunder damage.
++ At level 5 the hit deals +1d8 thunder and the move damage is 2d8; both rise by 1d8 at 11 and 17.
+Chill Touch | Nec | 1 action | 120 feet | V, S | 1 round | - | PHB
+Ranged spell attack for 1d8 necrotic damage; the target can't regain HP until your next turn, and an undead target has disadvantage on attacks against you.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Control Flames | Tra | 1 action | 60 feet | S | Instantaneous or 1 hour | - | XGtE
+Shape nonmagical fire within a 5-foot cube: spread it, extinguish it, change its brightness or color, or make simple shapes in it for 1 hour.
+Create Bonfire | Con | 1 action | 60 feet | V, S | C, up to 1 minute | - | XGtE
+A bonfire fills a 5-foot cube. A creature in it when it appears or that moves into it makes a Dexterity save or takes 1d8 fire damage.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Dancing Lights | Evo | 1 action | 120 feet | V, S, M | C, up to 1 minute | - | PHB
+Up to four torch-sized lights (or one Medium glowing humanoid form) shed dim light in 10 feet. As a bonus action move them up to 60 feet; they stay within 20 feet of each other.
+Druidcraft | Tra | 1 action | 30 feet | V, S | Instantaneous | - | PHB
+Predict the weather for 24 hours, make a flower bloom or seed open, create a harmless sensory effect, or light or snuff a small flame.
+Eldritch Blast | Evo | 1 action | 120 feet | V, S | Instantaneous | - | PHB
+A beam of crackling energy: ranged spell attack for 1d10 force damage.
++ Two beams at level 5, three at 11, four at 17, each with its own attack roll.
+Fire Bolt | Evo | 1 action | 120 feet | V, S | Instantaneous | - | PHB
+Ranged spell attack for 1d10 fire damage. Flammable unattended objects ignite.
++ 2d10 at level 5, 3d10 at 11, 4d10 at 17.
+Friends | Enc | 1 action | Self | S, M | C, up to 1 minute | - | PHB
+You have advantage on Charisma checks against one non-hostile creature. When the spell ends, it realizes you used magic and may become hostile.
+Frostbite | Evo | 1 action | 60 feet | V, S | Instantaneous | - | XGtE
+A creature makes a Constitution save or takes 1d6 cold damage and has disadvantage on its next weapon attack roll before the end of its next turn.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Green-Flame Blade | Evo | 1 action | Self (5-foot radius) | S, M | Instantaneous | - | SCAG
+Make a melee attack with a weapon worth 1+ sp as part of casting. On a hit, green fire leaps to a different creature within 5 feet of the target, dealing fire damage equal to your spellcasting modifier.
++ At level 5 the hit deals +1d8 fire and the leap deals 1d8 + modifier; both rise by 1d8 at 11 and 17.
+Guidance | Div | 1 action | Touch | V, S | C, up to 1 minute | - | PHB
+A willing creature can add 1d4 to one ability check of its choice before the spell ends.
+Gust | Tra | 1 action | 30 feet | V, S | Instantaneous | - | XGtE
+Push a Medium or smaller creature 5 feet (Strength save), push an unattended object up to 5 pounds 10 feet, or create a harmless sensory effect with air.
+Infestation | Con | 1 action | 30 feet | V, S, M | Instantaneous | - | XGtE
+Mites swarm a creature: Constitution save or 1d6 poison damage and it moves 5 feet in a random direction.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Light | Evo | 1 action | Touch | V, M | 1 hour | - | PHB
+An object sheds bright light in 20 feet and dim light 20 more. An object held by a hostile creature requires a Dexterity save to avoid.
+Lightning Lure | Evo | 1 action | Self (15-foot radius) | V | Instantaneous | - | SCAG
+A creature within 15 feet makes a Strength save or is pulled 10 feet toward you, taking 1d8 lightning damage if it ends within 5 feet of you.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Mage Hand | Con | 1 action | 30 feet | V, S | 1 minute | - | PHB
+A spectral hand manipulates objects, opens unlocked doors and containers, stows or retrieves items, or pours a vial (up to 10 pounds). It can't attack or activate magic items.
+Magic Stone | Tra | 1 bonus action | Touch | V, S | 1 minute | - | XGtE
+Imbue up to three pebbles. You or someone else can throw or sling them as a ranged spell attack, using your spellcasting modifier, for 1d6 + your spellcasting modifier bludgeoning damage.
+Mending | Tra | 1 minute | Touch | V, S, M | Instantaneous | - | PHB
+Repair a single break or tear in an object, such as a broken chain link or a torn cloak, no larger than 1 foot in any dimension.
+Message | Tra | 1 action | 120 feet | V, S, M | 1 round | - | PHB
+Whisper a message to a creature in range that only it hears; it can reply in a whisper. Blocked by 1 foot of stone, 1 inch of metal, thin lead or 3 feet of wood.
+Mind Sliver | Enc | 1 action | 60 feet | V | 1 round | - | TCoE
+A creature makes an Intelligence save or takes 1d6 psychic damage and subtracts 1d4 from its next saving throw before the end of your next turn.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Minor Illusion | Ill | 1 action | 30 feet | S, M | 1 minute | - | PHB
+Create a sound or an image of an object no larger than a 5-foot cube. An Intelligence (Investigation) check against your DC reveals it.
+Mold Earth | Tra | 1 action | 30 feet | S | Instantaneous or 1 hour | - | XGtE
+Move loose earth in a 5-foot cube, make shapes or colors appear on dirt or stone for 1 hour, or turn the ground into difficult terrain (or back).
+Poison Spray | Con | 1 action | 10 feet | V, S | Instantaneous | - | PHB
+A creature makes a Constitution save or takes 1d12 poison damage.
++ 2d12 at level 5, 3d12 at 11, 4d12 at 17.
+Prestidigitation | Tra | 1 action | 10 feet | V, S | Up to 1 hour | - | PHB
+Minor magical tricks: sensory effects, light or snuff a candle, clean or soil, chill or warm, flavor, make a small mark, or a trinket illusion. Up to three effects at once.
+Primal Savagery | Tra | 1 action | Self | S | Instantaneous | - | XGtE
+Your teeth or nails sharpen: melee spell attack against a creature within 5 feet for 1d10 acid damage.
++ 2d10 at level 5, 3d10 at 11, 4d10 at 17.
+Produce Flame | Con | 1 action | Self | V, S | 10 minutes | - | PHB
+A flame in your hand sheds light. You can hurl it (when cast or as an action later) as a ranged spell attack within 30 feet for 1d8 fire damage.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Ray of Frost | Evo | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+Ranged spell attack for 1d8 cold damage, and the target's speed drops by 10 feet until your next turn.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Resistance | Abj | 1 action | Touch | V, S, M | C, up to 1 minute | - | PHB
+A willing creature can add 1d4 to one saving throw of its choice before the spell ends.
+Sacred Flame | Evo | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+A creature makes a Dexterity save or takes 1d8 radiant damage, gaining no benefit from cover.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Sapping Sting | Nec | 1 action | 30 feet | V, S | Instantaneous | - | EGW
+A creature makes a Constitution save or takes 1d4 necrotic damage and falls prone.
++ 2d4 at level 5, 3d4 at 11, 4d4 at 17.
+Shape Water | Tra | 1 action | 30 feet | S | Instantaneous or 1 hour | - | XGtE
+Control water in a 5-foot cube: move it, form simple shapes, change its color or opacity, or freeze it (no creatures in it). Up to two non-instant effects.
+Shillelagh | Tra | 1 bonus action | Touch | V, S, M | 1 minute | - | PHB
+Your club or quarterstaff uses your spellcasting ability for attack and damage, its damage die becomes a d8, and it is magical.
+Shocking Grasp | Evo | 1 action | Touch | V, S | Instantaneous | - | PHB
+Melee spell attack (advantage if the target wears metal armor) for 1d8 lightning damage; the target can't take reactions until its next turn.
++ 2d8 at level 5, 3d8 at 11, 4d8 at 17.
+Spare the Dying | Nec | 1 action | Touch | V, S | Instantaneous | - | PHB
+A living creature at 0 hit points becomes stable.
+Sword Burst | Con | 1 action | Self (5-foot radius) | V | Instantaneous | - | SCAG
+Each creature within 5 feet makes a Dexterity save or takes 1d6 force damage.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Thaumaturgy | Tra | 1 action | 30 feet | V | Up to 1 minute | - | PHB
+Minor wonders: booming voice, flickering flames, harmless tremors, an ominous sound, doors flying open or slamming, altered eyes. Up to three at once.
+Thorn Whip | Tra | 1 action | 30 feet | V, S, M | Instantaneous | - | PHB
+Melee spell attack for 1d6 piercing damage; a Large or smaller target is pulled up to 10 feet toward you.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Thunderclap | Evo | 1 action | Self (5-foot radius) | S | Instantaneous | - | XGtE
+Each creature within 5 feet makes a Constitution save or takes 1d6 thunder damage. Audible 100 feet away.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.
+Toll the Dead | Nec | 1 action | 60 feet | V, S | Instantaneous | - | XGtE
+A creature makes a Wisdom save or takes 1d8 necrotic damage, or 1d12 if it is missing any hit points.
++ Two dice at level 5, three at 11, four at 17.
+True Strike | Div | 1 action | 30 feet | S | C, up to 1 round | - | PHB
+On your next turn you gain advantage on your first attack roll against the target, if the spell hasn't ended.
+Vicious Mockery | Enc | 1 action | 60 feet | V | Instantaneous | - | PHB
+A creature that hears you makes a Wisdom save or takes 1d4 psychic damage and has disadvantage on its next attack roll before the end of its next turn.
++ 2d4 at level 5, 3d4 at 11, 4d4 at 17.
+Word of Radiance | Evo | 1 action | 5 feet | V, M | Instantaneous | - | XGtE
+Each creature you choose within 5 feet makes a Constitution save or takes 1d6 radiant damage.
++ 2d6 at level 5, 3d6 at 11, 4d6 at 17.

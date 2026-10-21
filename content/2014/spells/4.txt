@@ -1,0 +1,131 @@
+@level 4
+Arcane Eye | Div | 1 action | 30 feet | V, S, M | C, up to 1 hour | - | PHB
+An invisible floating eye with darkvision 30 feet that you see through; move it 30 feet as an action.
+Aura of Life | Abj | 1 action | Self (30-foot radius) | V | C, up to 10 minutes | - | PHB
+Allies within 30 feet have resistance to necrotic damage and their hit point maximum can't be reduced; a living ally at 0 HP that starts its turn there regains 1 HP.
+Aura of Purity | Abj | 1 action | Self (30-foot radius) | V | C, up to 10 minutes | - | PHB
+Allies within 30 feet can't become diseased, have resistance to poison damage and advantage on saves against blinded, charmed, deafened, frightened, paralyzed, poisoned and stunned.
+Banishment | Abj | 1 action | 60 feet | V, S, M | C, up to 1 minute | - | PHB
+A creature makes a Charisma save or is banished to a harmless demiplane (or its home plane if it's from elsewhere and the spell lasts 1 minute).
++ One additional creature per slot level above 4.
+Blight | Nec | 1 action | 30 feet | V, S | Instantaneous | - | PHB
+A creature makes a Constitution save, taking 8d8 necrotic damage (half on success). Plants have disadvantage and take maximum damage.
++ Damage increases by 1d8 per slot level above 4.
+Charm Monster | Enc | 1 action | 30 feet | V, S | 1 hour | - | XGtE
+A creature makes a Wisdom save (advantage if fighting you) or is charmed by you.
++ One additional creature per slot level above 4.
+Compulsion | Enc | 1 action | 30 feet | V, S | C, up to 1 minute | - | PHB
+Creatures that fail a Wisdom save must move in a direction you choose with a bonus action on their turns.
+Confusion | Enc | 1 action | 90 feet | V, S, M | C, up to 1 minute | - | PHB
+Creatures in a 10-foot-radius sphere make a Wisdom save or act randomly each turn (d10), repeating the save at the end of their turns.
++ Radius increases by 5 feet per slot level above 4.
+Conjure Minor Elementals | Con | 1 minute | 90 feet | V, S | C, up to 1 hour | - | PHB
+Summon elementals: one of CR 2, two of CR 1, four of CR 1/2 or eight of CR 1/4. They obey you.
++ Level 6: twice as many. Level 8: three times.
+Conjure Woodland Beings | Con | 1 action | 60 feet | V, S, M | C, up to 1 hour | - | PHB
+Summon fey: one of CR 2, two of CR 1, four of CR 1/2 or eight of CR 1/4. They obey you.
++ Level 6: twice as many. Level 8: three times.
+Control Water | Tra | 1 action | 300 feet | V, S, M | C, up to 10 minutes | - | PHB
+Control water in a 100-foot cube: flood, part water, redirect flow or create a whirlpool.
+Death Ward | Abj | 1 action | Touch | V, S | 8 hours | - | PHB
+The first time the target would drop to 0 hit points, it drops to 1 instead; also negates one instant-death effect.
+Dimension Door | Con | 1 action | 500 feet | V | Instantaneous | - | PHB
+Teleport up to 500 feet, optionally with one willing creature. An occupied destination deals 4d6 force damage and the teleport fails.
+Divination | Div | 1 action or R | Self | V, S, M(C*) | Instantaneous | - | PHB
+Ask one question about an event within 7 days and get a truthful reply. Material: incense and an offering worth 25 gp, consumed.
+Dominate Beast | Enc | 1 action | 60 feet | V, S | C, up to 1 minute | - | PHB
+A beast makes a Wisdom save or is charmed and follows your telepathic commands; it repeats the save when damaged.
++ Level 5: 10 minutes. Level 6: 1 hour. Level 7+: 8 hours.
+Elemental Bane | Tra | 1 action | 90 feet | V, S | C, up to 1 minute | - | XGtE
+A creature makes a Constitution save or loses resistance to a damage type you choose and takes an extra 2d6 of that type the first time each turn it takes it.
++ One additional creature per slot level above 4.
+Evard's Black Tentacles | Con | 1 action | 90 feet | V, S, M | C, up to 1 minute | - | PHB
+A 20-foot square of tentacles, difficult terrain. A creature entering or starting its turn there makes a Dexterity save or takes 3d6 bludgeoning damage and is restrained.
+Fabricate | Tra | 10 minutes | 120 feet | V, S | Instantaneous | - | PHB
+Turn raw materials into products: up to a Large object (or 10-foot cube), or Medium for minerals. Fine work needs artisan's tools proficiency.
+Find Greater Steed | Con | 10 minutes | 30 feet | V, S | Instantaneous | - | XGtE
+Summon a loyal, intelligent greater steed spirit: griffon, pegasus, peryton, dire wolf, rhinoceros or saber-toothed tiger.
+Fire Shield | Evo | 1 action | Self | V, S, M | 10 minutes | - | PHB
+Warm shield (resistance to cold) or chill shield (resistance to fire); melee attackers within 5 feet take 2d8 fire or cold damage.
+Freedom of Movement | Abj | 1 action | Touch | V, S, M | 1 hour | - | PHB
+A creature ignores difficult terrain, can't be paralyzed or restrained by magic, can escape grapples with 5 feet of movement and moves freely underwater.
+Galder's Speedy Courier | Con | 1 action | 10 feet | V, S, M(C*) | 10 minutes | - | LLoK
+An air elemental with a chest carries items to a creature you have met; it can take them out before the spell ends. Material: 25 gp, consumed.
++ With a level 8 slot it can reach another plane.
+Gate Seal | Abj | 1 minute | 60 feet | V, S, M(C*) | 24 hours | - | PAitM
+Portals in a 30-foot cube close and can't open, and planar travel into or out of it fails. Material: a broken portal key, consumed.
++ Level 6+: lasts until dispelled.
+Giant Insect | Tra | 1 action | 30 feet | V, S | C, up to 10 minutes | - | PHB
+Turn up to ten centipedes, three spiders, five wasps or one scorpion into giant versions that obey you.
+Grasping Vine | Con | 1 bonus action | 30 feet | V, S | C, up to 1 minute | - | PHB
+A vine sprouts; as a bonus action it lashes at a creature within 30 feet: Dexterity save or pulled 20 feet toward it.
+Gravity Sinkhole | Evo | 1 action | 120 feet | V, S, M | Instantaneous | - | EGW
+A 20-foot-radius sphere of crushing gravity: Constitution save, 5d10 force damage and pulled toward the center (half damage only on success).
++ Damage increases by 1d10 per slot level above 4.
+Greater Invisibility | Ill | 1 action | Touch | V, S | C, up to 1 minute | - | PHB
+A creature becomes invisible, even while attacking or casting.
+Guardian of Faith | Con | 1 action | 30 feet | V | 8 hours | - | PHB
+A spectral guardian; a hostile creature that moves within 10 feet of it for the first time on a turn makes a Dexterity save, taking 20 radiant damage (half on success). It vanishes after 60 damage.
+Guardian of Nature | Tra | 1 bonus action | Self | V | C, up to 1 minute | - | XGtE
+Primal Beast (speed +10, darkvision, advantage on Strength attacks, +1d6 force on melee hits) or Great Tree (10 temp HP, advantage on Constitution saves and Dexterity and Wisdom attacks, difficult terrain for enemies within 15 feet).
+Hallucinatory Terrain | Ill | 10 minutes | 300 feet | V, S, M | 24 hours | - | PHB
+Natural terrain in a 150-foot cube looks, sounds and smells like another kind.
+Ice Storm | Evo | 1 action | 300 feet | V, S, M | Instantaneous | - | PHB
+A 20-foot-radius, 40-foot-high cylinder of hail: Dexterity save, 2d8 bludgeoning and 4d6 cold damage (half on success). Difficult terrain until your next turn.
++ Bludgeoning damage increases by 1d8 per slot level above 4.
+Leomund's Secret Chest | Con | 1 action | Touch | V, S, M(C) | Instantaneous | - | PHB
+Hide a chest on the Ethereal Plane and recall it with its replica. Material: a chest worth 5,000 gp and a replica worth 50 gp.
+Locate Creature | Div | 1 action | Self | V, S, M | C, up to 1 hour | - | PHB
+Sense the direction to a creature you know or describe within 1,000 feet. Running water blocks it.
+Mordenkainen's Faithful Hound | Con | 1 action | 30 feet | V, S, M | 8 hours | - | PHB
+An invisible watchdog barks at intruders and bites (melee spell attack, 4d8 piercing) hostile creatures within 5 feet.
+Mordenkainen's Private Sanctum | Abj | 10 minutes | 120 feet | V, S, M | 24 hours | - | PHB
+Secure an area up to a 100-foot cube against sound, sight, divination, teleportation and planar travel.
++ The area can be 100 feet larger per slot level above 4.
+Otiluke's Resilient Sphere | Evo | 1 action | 30 feet | V, S, M | C, up to 1 minute | - | PHB
+A sphere of force encloses a Large or smaller creature or object (Dexterity save); nothing passes through it.
+Phantasmal Killer | Ill | 1 action | 120 feet | V, S | C, up to 1 minute | - | PHB
+A creature makes a Wisdom save or is frightened; at the end of each turn it repeats the save or takes 4d10 psychic damage.
++ Damage increases by 1d10 per slot level above 4.
+Polymorph | Tra | 1 action | 60 feet | V, S, M | C, up to 1 hour | - | PHB
+A creature makes a Wisdom save or turns into a beast of CR up to its level or CR, using its hit points; it reverts when they drop to 0.
+Raulothim's Psychic Lance | Enc | 1 action | 120 feet | V | Instantaneous | - | FTD
+A creature (or one you name, even unseen) makes an Intelligence save, taking 7d6 psychic damage and incapacitated until your next turn (half damage only on success).
++ Damage increases by 1d6 per slot level above 4.
+Shadow of Moil | Nec | 1 action | Self | V, S, M | C, up to 1 minute | - | XGtE
+Shadows give you heavy obscurement in dim light, resistance to radiant damage, and a creature that hits you within 10 feet takes 2d8 necrotic damage.
++ Damage increases by 1d8 per slot level above 4.
+Sickening Radiance | Evo | 1 action | 120 feet | V, S | C, up to 10 minutes | - | XGtE
+A 30-foot-radius sphere of dim green light: a creature entering or starting its turn there makes a Constitution save or takes 4d10 radiant damage, gains a level of exhaustion and glows.
+Spirit of Death | Nec | 1 action | 60 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon a Reaper Spirit that obeys you and frightens creatures nearby. Its stats scale with the spell's level. Material: a diamond worth 400 gp.
++ Uses the higher slot level in its stat block.
+Staggering Smite | Evo | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next melee weapon hit deals an extra 4d6 psychic damage; the target makes a Wisdom save or has disadvantage on attacks and checks and can't take reactions until its next turn.
+Stone Shape | Tra | 1 action | Touch | V, S, M | Instantaneous | - | PHB
+Reshape a Medium or smaller stone object (or 5-foot section) into any form.
+Stoneskin | Abj | 1 action | Touch | V, S, M(C*) | C, up to 1 hour | - | PHB
+A willing creature has resistance to nonmagical bludgeoning, piercing and slashing damage. Material: diamond dust worth 100 gp, consumed.
+Storm Sphere | Evo | 1 action | 150 feet | V, S | C, up to 1 minute | - | XGtE
+A 20-foot-radius sphere of wind: difficult terrain; creatures ending a turn there make a Strength save or take 2d6 bludgeoning. As a bonus action shoot lightning from it (ranged spell attack, 4d6, advantage if the target is inside).
++ Both damages increase by 1d6 per slot level above 4.
+Summon Aberration | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon an Aberrant Spirit (beholderkin, slaad or star spawn) that obeys you. Its stats scale with the spell's level. Material: a pickled tentacle and eyeball worth 400 gp.
++ Uses the higher slot level in its stat block.
+Summon Construct | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon a Construct Spirit (clay, metal or stone) that obeys you. Its stats scale with the spell's level. Material: an ornate stone and metal lockbox worth 400 gp.
++ Uses the higher slot level in its stat block.
+Summon Elemental | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon an Elemental Spirit (air, earth, fire or water) that obeys you. Its stats scale with the spell's level. Material: air, a pebble, ash and water in a gold vial worth 400 gp.
++ Uses the higher slot level in its stat block.
+Summon Greater Demon | Con | 1 action | 60 feet | V, S, M | C, up to 1 hour | - | XGtE
+Summon a demon of CR 5 or lower that obeys you, but it makes a Charisma save each turn to break free and turn on you. A blood circle protects you.
++ CR increases by 1 per slot level above 4.
+Vitriolic Sphere | Evo | 1 action | 150 feet | V, S, M | Instantaneous | - | XGtE
+A 20-foot-radius sphere of acid: Dexterity save, 10d4 acid damage plus 5d4 at the end of its next turn (half the initial damage only on success).
++ Initial damage increases by 2d4 per slot level above 4.
+Wall of Fire | Evo | 1 action | 120 feet | V, S, M | C, up to 1 minute | - | PHB
+A wall of fire 60 feet long, 20 high and 1 thick (or a ring). Creatures in it make a Dexterity save, 5d8 fire damage (half on success); one side deals 5d8 to creatures ending their turn within 10 feet.
++ Damage increases by 1d8 per slot level above 4.
+Watery Sphere | Con | 1 action | 90 feet | V, S, M | C, up to 1 minute | - | XGtE
+A 5-foot-radius sphere of water holds up to four Medium creatures (Strength save), restraining them; move it 30 feet as an action.

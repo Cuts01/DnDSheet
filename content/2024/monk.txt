@@ -1,0 +1,61 @@
+@class Monk | hitDie 8 | caster none | spell none | saves str dex | sublevel 3 | sublabel Monk Subclass
+@prof weapons simple, martial weapons with the Light property | tools one Artisan's Tools or musical instrument | skills 2 from Acrobatics, Athletics, History, Insight, Religion, Stealth
+@mc weapons simple, martial weapons with the Light property
+1 | Martial Arts | While unarmored and without a shield, use Dexterity for unarmed strikes and Monk weapons, roll a Martial Arts die for damage, and make an unarmed strike as a Bonus Action.
+1 | Unarmored Defense | Without armor or shield, your AC is 10 + Dexterity modifier + Wisdom modifier.
+2 | Monk's Focus | Focus Points equal to your Monk level fuel Flurry of Blows, Patient Defense and Step of the Wind. They return on a Short or Long Rest.
+2 | Unarmored Movement | Your Speed increases while you wear no armor and no shield, from +10 feet up to +30 feet. The app already adds this automatically.
+2 | Uncanny Metabolism | When you roll Initiative, regain all Focus Points and heal Monk level + a Martial Arts die. Once per Long Rest.
+3 | Deflect Attacks | As a Reaction, reduce damage from an attack that hits you; if it drops to 0, spend 1 Focus Point to redirect the force at another creature.
+4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+4 | Slow Fall | As a Reaction, reduce falling damage by five times your Monk level.
+5 | Extra Attack | Attack twice when you take the Attack action.
+5 | Stunning Strike | Once per turn, when you hit, spend 1 Focus Point: the target makes a Constitution save or is Stunned; on a success its Speed is halved.
+6 | Empowered Strikes | Your unarmed strikes can deal Force damage.
+7 | Evasion | On a Dexterity save for half damage, take none on a success and half on a failure.
+8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+9 | Acrobatic Movement | While unarmored, you can move along vertical surfaces and across liquids on your turn.
+10 | Heightened Focus | Flurry of Blows makes three strikes, Patient Defense grants temp HP, and Step of the Wind can carry a creature with you.
+10 | Self-Restoration | At the end of your turns, remove Charmed, Frightened or Poisoned from yourself, and you don't gain Exhaustion from lack of food or water.
+12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+13 | Deflect Energy | Deflect Attacks works against any damage type.
+14 | Disciplined Survivor | Proficiency in all saving throws, and you can spend 1 Focus Point to reroll a failed save.
+15 | Perfect Focus | When you roll Initiative and don't use Uncanny Metabolism, regain Focus Points up to 4.
+16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+18 | Superior Defense | At the start of your turn, spend 3 Focus Points to resist all damage except Force for 1 minute.
+19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
+20 | Body and Mind | Your Dexterity and Wisdom increase by 4, to a maximum of 25.
+
+@sub Warrior of Mercy | PHB 2024
+3 | Hand of Harm | Once per turn, when you hit with an Unarmed Strike, spend 1 Focus Point to add Necrotic damage equal to a Martial Arts die + Wisdom modifier.
+3 | Hand of Healing | As a Magic action, spend 1 Focus Point to heal a creature a Martial Arts die + Wisdom modifier; you can replace a Flurry of Blows strike with it.
+3 | Implements of Mercy | Proficiency in Insight, Medicine and the Herbalism Kit.
+6 | Physician's Touch | Hand of Harm can also Poison the target, and Hand of Healing can end Blinded, Deafened, Paralyzed, Poisoned or Stunned.
+11 | Flurry of Healing and Harm | Replace Flurry of Blows strikes with free Hand of Healing uses and add Hand of Harm without Focus Points. Wisdom modifier uses per Long Rest.
+17 | Hand of Ultimate Mercy | Spend 5 Focus Points to revive a creature that died within 24 hours with 4d10 + Wisdom modifier HP. Once per Long Rest.
+
+@sub Warrior of Shadow | PHB 2024
+3 | Shadow Arts | Spend 1 Focus Point to cast Darkness without components (you see through it and can move it), gain Darkvision 60 feet, and learn Minor Illusion with Wisdom.
+6 | Shadow Step | While in dim light or darkness, as a Bonus Action, teleport up to 60 feet to another dim or dark space and gain advantage on your next melee attack.
+11 | Improved Shadow Step | Spend 1 Focus Point to Shadow Step without the light requirement and make an Unarmed Strike right after.
+17 | Cloak of Shadows | As a Magic action in dim light or darkness, spend 3 Focus Points to become Invisible and partly incorporeal for 1 minute, using Flurry of Blows for free.
+
+@sub Warrior of the Elements | PHB 2024
+3 | Elemental Attunement | At the start of your turn, spend 1 Focus Point for 10 minutes: +10 feet reach on unarmed strikes, elemental damage, and pushes or pulls on hits.
+3 | Manipulate Elements | You know Elementalism, cast with Wisdom.
+6 | Elemental Burst | As a Magic action, spend 2 Focus Points for a 20-foot-radius blast of three Martial Arts dice of elemental damage (Dexterity save for half).
+11 | Stride of the Elements | While Elemental Attunement is active, you have Fly and Swim Speeds equal to your Speed.
+17 | Elemental Epitome | While attuned: resist a chosen element, Step of the Wind adds 20 feet of Speed, and your strikes and movement deal extra elemental damage. {speed +20 cond}
+
+@sub Warrior of the Mystic Arts | Arcana Unleashed | caster third wis
+3 | Spellcasting | Learn Sorcerer cantrips and prepare Sorcerer spells cast with Wisdom. The app sets this class as a Third caster with WIS when you choose this subclass.
+6 | Mystic Fighting Style | When you take the Attack action, replace one unarmed strike with a Sorcerer cantrip that takes an action.
+6 | Mystic Focus | Spend a spell slot to regain Focus Points equal to its level, or spend Focus Points to recover slots up to level 4 on a Short Rest or with Uncanny Metabolism.
+11 | Focused Strike | After you use Stunning Strike, the target has disadvantage on saves against your spells until your next turn.
+17 | Improved Mystic Fighting Style | When you use Flurry of Blows, replace two strikes with a level 1 or 2 Sorcerer spell that takes an action.
+
+@sub Warrior of the Open Hand | PHB 2024
+3 | Open Hand Technique | When you hit with a Flurry of Blows strike, choose: the target can't make Opportunity Attacks, is pushed 15 feet, or is knocked Prone on a failed save.
+6 | Wholeness of Body | As a Bonus Action, regain HP equal to a Martial Arts die roll + Wisdom modifier. Wisdom modifier uses per Long Rest.
+11 | Fleet Step | When you take a Bonus Action other than Step of the Wind, you can also use Step of the Wind.
+17 | Quivering Palm | When you hit with an Unarmed Strike, spend 4 Focus Points to set lethal vibrations; later end them to deal 10d12 Force damage (half on a Constitution save).

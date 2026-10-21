@@ -1,0 +1,185 @@
+@level 3
+Animate Dead | Nec | 1 minute | 10 feet | V, S, M | Instantaneous | - | PHB
+Raise a skeleton or zombie from bones or a corpse, under your control for 24 hours. Command any within 60 feet as a bonus action. Recast to keep control of up to four.
++ Two more undead per slot level above 3.
+Antagonize | Enc | 1 action | 30 feet | V, S, M | Instantaneous | - | BMT
+A creature makes a Wisdom save: on a failure 4d4 psychic damage and it must use its reaction to attack a creature you choose (or has disadvantage on its next attack). Half damage only on a success.
++ Damage increases by 1d4 per slot level above 3.
+Ashardalon's Stride | Tra | 1 bonus action | Self | V, S | C, up to 1 minute | - | FTD
+Your speed increases by 20 feet and you don't provoke opportunity attacks; each creature you move within 5 feet of takes 1d6 fire damage (once per turn).
++ Speed increases by 5 feet and damage by 1d6 per slot level above 3.
+Aura of Vitality | Evo | 1 action | Self (30-foot radius) | V | C, up to 1 minute | - | PHB
+As a bonus action each turn, a creature in a 30-foot aura regains 2d6 hit points.
+Beacon of Hope | Abj | 1 action | 30 feet | V, S | C, up to 1 minute | - | PHB
+Any number of creatures have advantage on Wisdom saves and death saves and regain the maximum possible hit points from healing.
+Bestow Curse | Nec | 1 action | Touch | V, S | C, up to 1 minute | - | PHB
+A creature makes a Wisdom save or is cursed: disadvantage on checks and saves of one ability, disadvantage on attacks against you, a save each turn or lose its action, or your attacks deal it 1d8 extra necrotic.
++ Level 4: 10 minutes. Level 5: 8 hours. Level 7: 24 hours. Level 9: until dispelled; no concentration from level 5.
+Blinding Smite | Evo | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next melee weapon hit deals an extra 3d8 radiant damage, and the target makes a Constitution save or is blinded, repeating the save each turn.
+Blink | Tra | 1 action | Self | V, S | 1 minute | - | PHB
+At the end of each of your turns, roll a d20: on 11+ you vanish to the Ethereal Plane until your next turn.
+Call Lightning | Con | 1 action | 120 feet | V, S | C, up to 10 minutes | - | PHB
+A storm cloud forms; as an action call a bolt: creatures within 5 feet of the point make a Dexterity save, taking 3d10 lightning damage (half on success), 4d10 if already stormy.
++ Damage increases by 1d10 per slot level above 3.
+Catnap | Enc | 1 action | 30 feet | S, M | 10 minutes | - | XGtE
+Up to three willing creatures fall unconscious; one that sleeps 10 minutes gains the benefit of a short rest.
++ One additional creature per slot level above 3.
+Clairvoyance | Div | 10 minutes | 1 mile | V, S, M(C) | C, up to 10 minutes | - | PHB
+Create an invisible sensor at a familiar or obvious location to see or hear through. Material: a focus worth 100 gp.
+Conjure Animals | Con | 1 action | 60 feet | V, S | C, up to 1 hour | - | PHB
+Summon fey spirits as beasts: one of CR 2, two of CR 1, four of CR 1/2 or eight of CR 1/4. They obey your commands.
++ Level 5: twice as many. Level 7: three times. Level 9: four times.
+Conjure Barrage | Con | 1 action | Self (60-foot cone) | V, S, M | Instantaneous | - | PHB
+Throw or fire a weapon to create copies: each creature in a 60-foot cone makes a Dexterity save, taking 3d8 damage of the weapon's type (half on success).
+Counterspell | Abj | 1 reaction | 60 feet | S | Instantaneous | - | PHB
+Interrupt a creature casting a spell: a spell of 3rd level or lower fails; for higher levels make a spellcasting ability check, DC 10 + its level.
++ Automatically stops spells of the slot's level or lower.
+Create Food and Water | Con | 1 action | 30 feet | V, S | Instantaneous | - | PHB
+Create 45 pounds of food and 30 gallons of water, enough for fifteen humanoids or five steeds for 24 hours.
+Crusader's Mantle | Evo | 1 action | Self | V | C, up to 1 minute | - | PHB
+Allies within 30 feet (and you) deal an extra 1d4 radiant damage with weapon hits.
+Daylight | Evo | 1 action | 60 feet | V, S | 1 hour | - | PHB
+A 60-foot-radius sphere of bright light. Dispels magical darkness of 3rd level or lower.
+Dispel Magic | Abj | 1 action | 120 feet | V, S | Instantaneous | - | PHB
+End spells of 3rd level or lower on a target; for higher levels, make a spellcasting check, DC 10 + its level.
++ Automatically ends spells of the slot's level or lower.
+Elemental Weapon | Tra | 1 action | Touch | V, S | C, up to 1 hour | - | PHB
+A nonmagical weapon gains +1 to attack and an extra 1d4 acid, cold, fire, lightning or thunder damage.
++ Level 5-6: +2 and 2d4. Level 7+: +3 and 3d4.
+Enemies Abound | Enc | 1 action | 120 feet | V, S | C, up to 1 minute | - | XGtE
+A creature makes an Intelligence save or loses the ability to tell friend from foe, choosing targets at random among creatures it can see.
+Erupting Earth | Tra | 1 action | 120 feet | V, S, M | Instantaneous | - | XGtE
+A 20-foot cube of ground erupts: each creature makes a Dexterity save, taking 3d12 bludgeoning damage (half on success); the area becomes difficult terrain.
++ Damage increases by 1d12 per slot level above 3.
+Fast Friends | Enc | 1 action | 30 feet | V | C, up to 1 hour | - | AI
+A humanoid makes a Wisdom save or is charmed and performs services or activities you ask, as long as they aren't harmful to it.
++ Level 4: one more creature per slot level.
+Fear | Ill | 1 action | Self (30-foot cone) | V, S, M | C, up to 1 minute | - | PHB
+Each creature in a 30-foot cone makes a Wisdom save or drops what it holds and is frightened, dashing away from you.
+Feign Death | Nec | 1 action or R | Touch | V, S, M | 1 hour | - | PHB
+A willing creature appears dead: blinded and incapacitated, speed 0, resistance to all damage but psychic.
+Fireball | Evo | 1 action | 150 feet | V, S, M | Instantaneous | - | PHB
+A 20-foot-radius sphere explodes: each creature makes a Dexterity save, taking 8d6 fire damage (half on success).
++ Damage increases by 1d6 per slot level above 3.
+Flame Arrows | Tra | 1 action | Touch | V, S | C, up to 1 hour | - | XGtE
+Up to twelve pieces of ammunition from a quiver deal an extra 1d6 fire damage on a hit.
++ Two more pieces per slot level above 3.
+Fly | Tra | 1 action | Touch | V, S, M | C, up to 10 minutes | - | PHB
+A willing creature gains a flying speed of 60 feet.
++ One additional creature per slot level above 3.
+Galder's Tower | Con | 10 minutes | 30 feet | V, S, M | 24 hours | - | LLoK
+Create a two-story tower with themed, furnished rooms. Cast daily in the same spot for a year to make it permanent.
++ One more story per slot level above 3.
+Gaseous Form | Tra | 1 action | Touch | V, S, M | C, up to 1 hour | - | PHB
+A willing creature becomes a misty cloud: fly speed 10 feet, resistance to nonmagical damage, advantage on Strength, Dexterity and Constitution saves.
+Glyph of Warding | Abj | 1 hour | Touch | V, S, M(C*) | Until dispelled or triggered | - | PHB
+A glyph triggers on conditions you set: Explosive Runes (20-foot sphere, Dexterity save, 5d8 damage) or Spell Glyph (stores a spell of 3rd level or lower). Material: diamond dust worth 200 gp, consumed.
++ Runes deal 1d8 more and the glyph can store higher spells per slot level above 3.
+Haste | Tra | 1 action | 30 feet | V, S, M | C, up to 1 minute | - | PHB
+A willing creature's speed doubles, +2 AC, advantage on Dexterity saves and an extra action (one attack, Dash, Disengage, Hide or Use an Object). Lethargy for a turn when it ends.
+Hunger of Hadar | Con | 1 action | 150 feet | V, S, M | C, up to 1 minute | - | PHB
+A 20-foot-radius sphere of blackness and cold, difficult terrain. Creatures starting their turn there take 2d6 cold damage; ending it there, Dexterity save or 2d6 acid.
+Hypnotic Pattern | Ill | 1 action | 120 feet | S, M | C, up to 1 minute | - | PHB
+Creatures in a 30-foot cube that see the pattern make a Wisdom save or are charmed and incapacitated with speed 0, until damaged or shaken awake.
+Incite Greed | Enc | 1 action | 30 feet | V, S, M(C) | C, up to 1 minute | - | AI
+Show a gem worth 50+ gp: creatures that see it make a Wisdom save or are charmed and can only move toward you, repeating the save each turn.
+Intellect Fortress | Abj | 1 action | 30 feet | V | C, up to 1 hour | - | TCoE
+A willing creature has resistance to psychic damage and advantage on Intelligence, Wisdom and Charisma saves.
++ One additional creature per slot level above 3.
+Leomund's Tiny Hut | Evo | 1 minute or R | Self (10-foot hemisphere) | V, S, M | 8 hours | - | PHB
+A 10-foot dome holds up to nine creatures; spells and creatures can't pass in from outside. Ends if you leave.
+Life Transference | Nec | 1 action | 30 feet | V, S | Instantaneous | - | XGtE
+You take 4d8 necrotic damage (can't be reduced) and a creature regains twice that many hit points.
++ Damage increases by 1d8 per slot level above 3.
+Lightning Arrow | Tra | 1 bonus action | Self | V, S | C, up to 1 minute | - | PHB
+Your next ranged weapon attack becomes lightning: 4d8 lightning on a hit (half on a miss), and creatures within 10 feet make a Dexterity save or take 2d8.
++ Both damages increase by 1d8 per slot level above 3.
+Lightning Bolt | Evo | 1 action | Self (100-foot line) | V, S, M | Instantaneous | - | PHB
+A 100-foot-long, 5-foot-wide line: each creature makes a Dexterity save, taking 8d6 lightning damage (half on success).
++ Damage increases by 1d6 per slot level above 3.
+Magic Circle | Abj | 1 minute | 10 feet | V, S, M(C*) | 1 hour | - | PHB
+A 10-foot-radius cylinder against celestials, elementals, fey, fiends or undead: they can't enter willingly, have disadvantage on attacks against those inside and can't charm, frighten or possess them. Can be reversed to trap. Material: silver and iron powder worth 100 gp, consumed.
++ Duration increases by 1 hour per slot level above 3.
+Major Image | Ill | 1 action | 120 feet | V, S, M | C, up to 10 minutes | - | PHB
+An illusion up to a 20-foot cube with sound, smell and temperature.
++ Level 6+: lasts until dispelled, no concentration.
+Mass Healing Word | Evo | 1 bonus action | 60 feet | V | Instantaneous | - | PHB
+Up to six creatures regain 1d4 + your spellcasting modifier hit points.
++ Healing increases by 1d4 per slot level above 3.
+Meld into Stone | Tra | 1 action or R | Touch | V, S | 8 hours | - | PHB
+Step into a stone object or surface large enough to hold you.
+Melf's Minute Meteors | Evo | 1 action | Self | V, S, M | C, up to 10 minutes | - | XGtE
+Six tiny meteors orbit you. As a bonus action send one or two to points within 120 feet: creatures within 5 feet make a Dexterity save, taking 2d6 fire damage (half on success).
++ Two more meteors per slot level above 3.
+Motivational Speech | Enc | 1 minute | 60 feet | V | 1 hour | - | AI
+Up to five creatures gain 5 temporary hit points and advantage on Wisdom saves; when one is hit, it has advantage on its next attack.
++ Temporary hit points increase by 5 per slot level above 3.
+Nondetection | Abj | 1 action | Touch | V, S, M(C*) | 8 hours | - | PHB
+A creature, place or object can't be targeted by divination magic or perceived through scrying sensors. Material: diamond dust worth 25 gp, consumed.
+Phantom Steed | Ill | 1 minute or R | 30 feet | V, S | 1 hour | - | PHB
+A quasi-real horse with speed 100 feet for a rider you designate.
+Plant Growth | Tra | 1 action or 8 hours | 150 feet | V, S | Instantaneous | - | PHB
+Overgrowth in a 100-foot radius (each foot of movement costs 4) or enrichment in a half-mile radius (double harvest for a year).
+Protection from Energy | Abj | 1 action | Touch | V, S | C, up to 1 hour | - | PHB
+A willing creature has resistance to acid, cold, fire, lightning or thunder (choose one).
+Pulse Wave | Evo | 1 action | Self (30-foot cone) | V, S | Instantaneous | - | EGW
+Each creature in a 30-foot cone makes a Constitution save, taking 6d6 force damage and being pulled or pushed up to 15 feet (half damage only on success).
++ Damage increases by 1d6 and distance by 5 feet per slot level above 3.
+Remove Curse | Abj | 1 action | Touch | V, S | Instantaneous | - | PHB
+All curses on a creature or object end; cursed items let the owner remove them.
+Revivify | Nec | 1 action | Touch | V, S, M(C*) | Instantaneous | - | PHB
+A creature that died within the last minute returns to life with 1 hit point. Material: diamonds worth 300 gp, consumed.
+Sending | Evo | 1 action | Unlimited | V, S, M | 1 round | - | PHB
+Send a 25-word message to a familiar creature anywhere; it can reply. 5% failure across planes.
+Sleet Storm | Con | 1 action | 150 feet | V, S, M | C, up to 1 minute | - | PHB
+A 40-foot-radius, 20-foot-high cylinder of sleet: heavily obscured, difficult terrain. Creatures entering or starting there make a Dexterity save or fall prone; concentration requires a save.
+Slow | Tra | 1 action | 120 feet | V, S, M | C, up to 1 minute | - | PHB
+Up to six creatures in a 40-foot cube make a Wisdom save or have speed halved, -2 AC and Dexterity saves, no reactions, one action or bonus action, and one attack. Repeat the save each turn.
+Speak with Dead | Nec | 1 action | 10 feet | V, S, M | 10 minutes | - | PHB
+A corpse answers up to five questions with what it knew in life.
+Speak with Plants | Tra | 1 action | Self (30-foot radius) | V, S | 10 minutes | - | PHB
+Plants within 30 feet communicate and can follow simple commands, and you can make plant difficult terrain normal or vice versa.
+Spirit Guardians | Con | 1 action | Self (15-foot radius) | V, S, M | C, up to 10 minutes | - | PHB
+Spirits in a 15-foot radius halve enemies' speed. An enemy entering or starting its turn there makes a Wisdom save, taking 3d8 radiant (or necrotic) damage, half on success.
++ Damage increases by 1d8 per slot level above 3.
+Spirit Shroud | Nec | 1 bonus action | Self | V, S | C, up to 1 minute | - | TCoE
+Your attacks against creatures within 10 feet deal an extra 1d8 radiant, necrotic or cold damage and stop healing; enemies starting their turn within 10 feet have speed reduced by 10 feet.
++ Damage increases by 1d8 for every two slot levels above 3.
+Stinking Cloud | Con | 1 action | 90 feet | V, S, M | C, up to 1 minute | - | PHB
+A 20-foot-radius sphere of gas: heavily obscured; creatures starting their turn there make a Constitution save or lose their action retching.
+Summon Fey | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon a Fey Spirit (fuming, mirthful or tricksy) that obeys you. Its stats scale with the spell's level. Material: a gilded flower worth 300 gp.
++ Uses the higher slot level in its stat block.
+Summon Lesser Demons | Con | 1 action | 60 feet | V, S, M | C, up to 1 hour | - | XGtE
+Roll for random demons (CR 1 or lower) that are hostile to all creatures, including you. A blood circle protects you from them.
++ Level 6-7: twice as many. Level 8-9: three times.
+Summon Shadowspawn | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon a Shadow Spirit (fury, despair or fear) that obeys you. Its stats scale with the spell's level. Material: tears inside a gem worth 300 gp.
++ Uses the higher slot level in its stat block.
+Summon Undead | Nec | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon an Undead Spirit (ghostly, putrid or skeletal) that obeys you. Its stats scale with the spell's level. Material: a gilded skull worth 300 gp.
++ Uses the higher slot level in its stat block.
+Thunder Step | Con | 1 action | 90 feet | V | Instantaneous | - | XGtE
+Teleport up to 90 feet (optionally with a willing creature); creatures within 10 feet of where you left make a Constitution save, taking 3d10 thunder damage (half on success).
++ Damage increases by 1d10 per slot level above 3.
+Tidal Wave | Con | 1 action | 120 feet | V, S, M | Instantaneous | - | XGtE
+A wave in a 30-by-10-by-10-foot area: Dexterity save, 4d8 bludgeoning damage and prone (half on success). Extinguishes flames.
+Tiny Servant | Tra | 1 minute | Touch | V, S | 8 hours | - | XGtE
+A Tiny object becomes a creature that obeys your commands (bonus action), with attacks of its own.
++ Two more objects per slot level above 3.
+Tongues | Div | 1 action | Touch | V, M | 1 hour | - | PHB
+A creature understands any spoken language and is understood by any creature that knows a language.
+Vampiric Touch | Nec | 1 action | Self | V, S | C, up to 1 minute | - | PHB
+Melee spell attack for 3d6 necrotic damage, healing you for half; repeat as an action each turn.
++ Damage increases by 1d6 per slot level above 3.
+Wall of Sand | Evo | 1 action | 90 feet | V, S, M | C, up to 10 minutes | - | XGtE
+A wall of swirling sand 30 feet long, 10 high and 10 thick; it blocks sight, blinds those inside and costs triple movement.
+Wall of Water | Evo | 1 action | 60 feet | V, S, M | C, up to 10 minutes | - | XGtE
+A wall of water 30 feet long, 10 high and 1 thick (or a ring). Difficult terrain, disadvantage on ranged attacks through it, and fire damage through it is halved.
+Water Breathing | Tra | 1 action or R | 30 feet | V, S, M | 24 hours | - | PHB
+Up to ten willing creatures can breathe underwater.
+Water Walk | Tra | 1 action or R | 30 feet | V, S, M | 1 hour | - | PHB
+Up to ten willing creatures can move across liquid surfaces as if solid ground.
+Wind Wall | Evo | 1 action | 120 feet | V, S, M | C, up to 1 minute | - | PHB
+A wall of wind 50 feet long, 15 high and 1 thick: creatures in it when it appears make a Strength save, 3d8 bludgeoning (half on success). It blocks gas, small fliers and arrows.

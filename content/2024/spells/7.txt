@@ -1,0 +1,62 @@
+@level 7
+Aura of Evasion | Abj | Action | Self | V, S | C up to 1 minute | Sor, Wlk, Wiz | Arcana Unleashed
+You and creatures in a 30-foot Emanation have Advantage on Dexterity saves. On a Dexterity save that normally halves damage, a success means no damage and a failure means half.
+Conjure Celestial | Con | Action | 90 feet | V, S | C, up to 10 minutes | Clr | PHB 2024
+A 10-foot-radius, 40-foot-high Cylinder of celestial light. For each creature in it you choose healing light (4d12 + your spellcasting modifier HP) or searing light (Dexterity save, 6d12 Radiant, half on success), once per turn when it appears, moves into or a creature enters or ends its turn there. You move it 30 feet on your turn.
++ Healing and damage increase by 1d12 per slot level above 7.
+Delayed Blast Fireball | Evo | Action | 150 feet | V, S, M | C, up to 1 minute | Sor, Wiz | PHB 2024
+A bead of fire waits at a point; when the spell ends it explodes in a 20-foot-radius Sphere: Dexterity save, 12d6 Fire damage plus 1d6 per turn you kept it, half on success. A creature can pick up and throw the bead.
++ Base damage increases by 1d6 per slot level above 7.
+Divine Word | Evo | Bonus Action | 30 feet | V | Instantaneous | Clr | PHB 2024
+Creatures you choose make a Charisma save. A failed one with 50 HP or fewer suffers by its current HP: 0-20 dies, 21-30 Blinded, Deafened and Stunned for 1 hour, 31-40 Blinded and Deafened for 10 minutes, 41-50 Deafened for 1 minute. Celestials, Elementals, Fey and Fiends that fail are sent home for 24 hours.
+Etherealness | Con | Action | Self | V, S | Up to 8 hours | Brd, Clr, Sor, Wlk, Wiz | PHB 2024
+You step into the Ethereal Plane and can move through objects and see the Material Plane in gray, out to 60 feet.
++ Three more willing creatures within 10 feet per slot level above 7.
+Finger of Death | Nec | Action | 60 feet | V, S | Instantaneous | Sor, Wlk, Wiz | PHB 2024
+A creature makes a Constitution save, taking 7d8 + 30 Necrotic damage (half on success). A Humanoid killed rises as a Zombie under your command.
+Fire Storm | Evo | Action | 150 feet | V, S | Instantaneous | Clr, Drd, Sor | PHB 2024
+Up to ten connected 10-foot Cubes of fire. Each creature there makes a Dexterity save, taking 7d10 Fire damage (half on success). You can exclude plants.
+Forcecage | Evo | Action | 100 feet | V, S, M(C*) | C, up to 1 hour | Brd, Wlk, Wiz | PHB 2024
+An invisible cube prison (bars or solid box) traps creatures in a 20-foot Cube (or 10-foot box). Nothing physical passes; teleporting out requires a Charisma save. Material: ruby dust worth 1,500+ GP, consumed.
+Fractured Awareness | Div | Action | 120 feet | V, S | C, up to 1 minute | Brd, Sor, Wlk, Wiz | Arcana Unleashed
+A creature makes an Intelligence save: on a failure 12d10 Psychic damage and Disadvantage on D20 Tests, repeating the save at the end of each turn; on a success half damage and the spell ends.
+Mirage Arcane | Ill | 10 minutes | Sight | V, S | 10 days | Brd, Drd, Wiz | PHB 2024
+Make terrain up to 1 square mile look, sound, smell and even feel like another kind. You can make paths impassable or ponds seem solid; Truesight sees the real terrain.
+Mordenkainen's Magnificent Mansion | Con | 1 minute | 300 feet | V, S, M | 24 hours | Brd, Wiz | PHB 2024
+A shimmering door opens to an extradimensional mansion with up to 50 rooms, food for 100 and 100 servants. You choose who can enter.
+Mordenkainen's Sword | Evo | Action | 90 feet | V, S, M(C) | C, up to 1 minute | Brd, Wiz | PHB 2024
+A spectral sword appears. When you cast it and as a Bonus Action on later turns, move it 30 feet and make a melee spell attack against a creature within 5 feet of it: 4d12 + your spellcasting modifier Force damage. Material: a miniature sword worth 250+ GP.
+Plane Shift | Con | Action | Touch | V, S, M(C) | Instantaneous | Clr, Drd, Sor, Wlk, Wiz | PHB 2024
+You and up to eight willing creatures travel to another plane, or you banish an unwilling creature with a melee spell attack and failed Charisma save. Material: a forked metal rod worth 250+ GP.
+Power Word Fortify | Enc | Action | 60 feet | V | Instantaneous | Brd, Clr | PHB 2024
+Share 120 Temporary Hit Points as you like among up to six creatures you can see.
+Power Word Pain | Enc | Action | 60 feet | V | 1 minute | Brd, Sor, Wlk, Wiz | Arcana Unleashed
+A creature takes 6d8 Force damage. If it has 100 HP or fewer, it is Charmed: Speed at most 10 feet, Disadvantage on D20 Tests except Constitution saves, and it must pass a Constitution save to cast a spell. It repeats the save each turn.
+Prismatic Spray | Evo | Action | Self | V, S | Instantaneous | Brd, Sor, Wiz | PHB 2024
+Each creature in a 60-foot Cone makes a Dexterity save and is struck by a random color (1d8): Red Fire, Orange Acid, Yellow Lightning, Green Poison, Blue Cold (12d6, half on success), Indigo (Restrained, may Petrify), Violet (Blinded, may be sent to another plane), or two colors.
+Project Image | Ill | Action | 500 miles | V, S, M | C, up to 1 day | Brd, Wiz | PHB 2024
+An illusory copy of you appears somewhere you've seen. You can see, hear and speak through it and cast spells as if you were there (Magic action to switch senses). Material: a statuette of you worth 5+ GP.
+Regenerate | Tra | 1 minute | Touch | V, S, M | 1 hour | Brd, Clr, Drd | PHB 2024
+A creature regains 4d8 + 15 Hit Points, then 1 Hit Point at the start of each of its turns, and severed body parts regrow after 2 minutes.
+Resurrection | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | Brd, Clr | PHB 2024
+A creature dead for no more than a century (not of old age) returns to life with all its Hit Points. It has a -4 penalty to D20 Tests that drops by 1 each Long Rest. Material: a diamond worth 1,000+ GP, consumed.
+Reverse Gravity | Tra | Action | 100 feet | V, S, M | C, up to 1 minute | Drd, Sor, Wiz | PHB 2024
+Gravity reverses in a 50-foot-radius, 100-foot-high Cylinder; unanchored creatures and objects fall upward (a Dexterity save lets a creature grab something fixed).
+Reweave Fate | Div | Reaction | 60 feet | S | Instantaneous | Brd, Clr, Wlk, Wiz | Arcana Unleashed
+When a creature you can see fails a D20 Test, it rerolls with Advantage and must use the new roll. If the reroll succeeds, it also gains 6d10 Temporary Hit Points.
+Sequester | Tra | Action | Touch | V, S, M(C*) | Until dispelled | Wiz | PHB 2024
+A willing creature or object is hidden from divination and becomes Invisible; a creature also falls into suspended animation. You can set a condition that ends it. Material: gem dust worth 5,000+ GP, consumed.
+Simbul's Synostodweomer | Tra | Action | Touch | V, S | 1 hour | Sor, Wiz | FRHoF
+Whenever the touched creature casts a spell with a spell slot, it can roll unspent Hit Point Dice equal to the slot's level and regain that total plus your spellcasting modifier; those dice are expended.
+Simulacrum | Ill | 12 hours | Touch | V, S, M(C*) | Until dispelled | Wiz | PHB 2024
+Create an illusory duplicate of a Beast or Humanoid with half its Hit Points that obeys you. It can't regain spell slots or heal except by repair. Casting it again destroys the previous one. Material: powdered ruby worth 1,500+ GP, consumed.
+Symbol | Abj | 1 minute | Touch | V, S, M(C*) | Until dispelled or triggered | Brd, Clr, Drd, Wiz | PHB 2024
+Inscribe a glyph that triggers when a condition you set is met, affecting creatures in a 60-foot-radius Sphere for 10 minutes: Death (10d10 Necrotic), Discord, Fear, Pain, Sleep or Stunning, each with a save. Material: diamond dust and powdered opal worth 1,000+ GP, consumed.
+Teleport | Con | Action | 10 feet | V | Instantaneous | Brd, Sor, Wiz | PHB 2024
+You and up to eight willing creatures (or one object) teleport to a destination on the same plane. Accuracy depends on how well you know the place: on target, off target, similar area or mishap (3d10 Force damage).
+Transfix | Enc | Action | Self | V, S | C, up to 1 minute | Brd, Wlk, Wiz | Arcana Unleashed
+A creature within 60 feet makes a Charisma save or is Charmed: Incapacitated and drawn toward you until within 5 feet. If it ends its turn within 5 feet of you it takes 4d8 Psychic damage.
++ Damage increases by 1d8 per slot level above 7.
+Void Star | Nec | Action | 120 feet | V, S, M | Instantaneous | Wlk, Wiz | DDB Drops
+Ranged spell attack for 6d12 Necrotic damage. Hit or miss, the target takes 3d12 Necrotic damage at the end of its next turn and you regain that many Hit Points.
++ Both damages increase by 1d12 per slot level above 7.

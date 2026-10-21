@@ -1,0 +1,95 @@
+@level 8
+Animal Shapes | Tra | Action | 30 feet | V, S | 24 hours | Drd | PHB 2024
+Willing creatures you choose turn into Large or smaller Beasts of CR 4 or lower, gaining Temporary Hit Points equal to the form's HP. As a Magic action you can change their forms again.
+Antimagic Field | Abj | Action | Self | V, S, M | C, up to 1 hour | Clr, Wiz | PHB 2024
+A 10-foot Emanation where no magic works: spells can't be cast, magic items become mundane, summoned creatures vanish and spells' areas are suppressed.
+Antipathy/Sympathy | Enc | 1 hour | 60 feet | V, S, M | 10 days | Brd, Drd, Wiz | PHB 2024
+An object or area up to a 200-foot Cube repels (Antipathy: Frightened, must move away) or attracts (Sympathy: Charmed, must approach) a kind of creature you name, with Wisdom saves.
+Befuddlement | Enc | Action | 150 feet | V, S, M | Instantaneous | Brd, Drd, Wlk, Wiz | PHB 2024
+A creature makes an Intelligence save, taking 10d12 Psychic damage on a failure (half on success). On a failure it also can't cast spells or take the Magic action, repeating the save every 30 days.
+Clone | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | Wiz | PHB 2024
+Grow an inert duplicate of a living Medium or Small creature over 120 days. If the original dies, its soul moves to the clone. Material: a diamond worth 1,000+ GP (consumed) and a sealable vessel worth 2,000+ GP.
+Control Weather | Tra | 10 minutes | Self | V, S, M | C, up to 8 hours | Clr, Drd, Wiz | PHB 2024
+Change the weather within 5 miles outdoors: precipitation, temperature and wind, one stage at a time, taking 1d4 x 10 minutes per change.
+Demiplane | Con | Action | 60 feet | S | 1 hour | Sor, Wlk, Wiz | PHB 2024
+A Medium shadowy door opens to a 30-foot-cube room of wood or stone, new or one you made before. When the spell ends, creatures inside can stay or are expelled Prone nearby.
+Dominate Monster | Enc | Action | 60 feet | V, S | C, up to 1 hour | Brd, Sor, Wlk, Wiz | PHB 2024
+A creature makes a Wisdom save (Advantage if fighting you) or is Charmed and follows your telepathic commands. Each time it takes damage it repeats the save.
++ Level 9: up to 8 hours.
+Earthquake | Tra | Action | 500 feet | V, S, M | C, up to 1 minute | Clr, Drd, Sor | PHB 2024
+A 100-foot-radius area shakes and is Difficult Terrain. Creatures there make a Dexterity save or fall Prone; concentrating creatures make a Constitution save or lose it. Structures take 50 Bludgeoning damage per turn and fissures open.
+Entrancing Mirrors | Ill | Action | 90 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wlk, Wiz | Arcana Unleashed
+Up to three creatures make an Intelligence save: on a failure 7d6 Psychic damage and Stunned (Speed halved), repeating the save each turn; on a success half damage.
+Glibness | Enc | Action | Self | V | 1 hour | Brd, Wlk | PHB 2024
+When you make a Charisma check, you can replace the roll with a 15. Magic that would detect whether you're lying shows you as truthful.
+Holy Aura | Abj | Action | Self | V, S, M(C) | C, up to 1 minute | Clr | PHB 2024
+Creatures you choose in a 30-foot Emanation have Advantage on all saves and attacks against them have Disadvantage. A Fiend or Undead that hits one with a melee attack makes a Constitution save or is Blinded. Material: a reliquary worth 1,000+ GP.
+Holy Star of Mystra | Evo | Bonus Action | Self | V, S | C, up to 1 minute | Clr, Wiz | FRHoF
+As a Bonus Action on later turns, make a ranged spell attack within 120 feet for 4d10 + your spellcasting modifier Force or Radiant damage. You have Three-Quarters Cover and can use your Reaction to reflect a single-target spell of level 7 or lower at its caster.
+Illusory Dragon | Ill | Action | 120 feet | S | C, up to 1 minute | Wiz | Arcana Unleashed
+A Huge shadowy dragon appears; enemies who see it make a Wisdom save or are Frightened. As a Bonus Action move it 60 feet and breathe a 60-foot Cone: Intelligence save, 6d6 damage of a type you choose (half on success).
+Incendiary Cloud | Con | Action | 150 feet | V, S | C, up to 1 minute | Drd, Sor, Wiz | PHB 2024
+A 20-foot-radius Sphere of burning smoke, Heavily Obscured. Creatures there when it appears, entering or ending a turn there make a Dexterity save, taking 10d8 Fire damage (half on success). It drifts 10 feet each turn.
+Iron Body | Tra | Action | Touch | V, S, M(C*) | C, up to 1 hour | Sor, Wlk, Wiz | Arcana Unleashed
+A willing creature gains Resistance to Bludgeoning, Piercing, Slashing and Fire, immunity to Poison damage and to Paralyzed, Petrified and Poisoned, and can't gain Exhaustion. Material: diamond dust worth 250+ GP, consumed.
+Lightning Ring | Evo | Bonus Action | Self | V, S, M | C, up to 10 minutes | Drd, Sor, Wlk, Wiz | Arcana Unleashed
+A 10-foot Emanation of storms: creatures entering it or starting or ending a turn there make a Constitution save, 3d6 Lightning and 3d6 Thunder damage and Deafened 1 minute (half on success). As a Magic action fire a 60-foot Line: Dexterity save, 6d6 Lightning.
+Maze | Con | Action | 60 feet | V, S | C, up to 10 minutes | Wiz | PHB 2024
+Banish a creature into a labyrinthine demiplane. As its action it can make a DC 20 Intelligence (Investigation) check to escape.
+Mind Blank | Abj | Action | Touch | V, S | 24 hours | Brd, Wiz | PHB 2024
+A willing creature is immune to Psychic damage, Charmed, and any effect that reads its thoughts or locates it, even Wish.
+Moment of Prescience | Div | Reaction | Self | V, S | Instantaneous | Wiz | Arcana Unleashed
+When you fail a D20 Test, change the roll to a 20; or when a creature hits you with an attack roll, change that roll to a 1.
+Power Word Stun | Enc | Action | 60 feet | V | Instantaneous | Brd, Sor, Wlk, Wiz | PHB 2024
+A creature with 150 HP or fewer is Stunned, repeating a Constitution save at the end of each turn. One with more HP has its Speed reduced to 0 until your next turn.
+Sunburst | Evo | Action | 150 feet | V, S, M | Instantaneous | Clr, Drd, Sor, Wiz | PHB 2024
+Each creature in a 60-foot-radius Sphere makes a Constitution save, taking 12d6 Radiant damage and Blinded for 1 minute on a failure, or half on a success. Dispels magical Darkness in the area.
+Telepathy | Div | Action | Unlimited | V, S, M | 24 hours | Wiz | PHB 2024
+A telepathic link with a willing creature you know on the same plane: you share words, images and sensations instantly.
+Tsunami | Con | 1 minute | 1 mile | V, S | C, up to 6 rounds | Drd | PHB 2024
+A wall of water up to 300 feet long, 300 high and 50 thick. Creatures in it make a Strength save, taking 6d10 Bludgeoning damage (half on success). It moves 50 feet each turn, shrinking and dealing less damage.
+@level 9
+Astral Projection | Nec | 1 hour | 10 feet | V, S, M(C*) | Until dispelled | Clr, Wlk, Wiz | PHB 2024
+You and up to eight willing creatures project astral bodies into the Astral Plane, leaving bodies in suspended animation, linked by silver cords. Material: per creature, a jacinth worth 1,000+ GP and a silver bar worth 100+ GP, consumed.
+Blade of Disaster | Con | Bonus Action | 60 feet | V, S | C, up to 1 minute | Sor, Wlk, Wiz | FRHoF
+A blade-shaped rift appears; make up to two melee spell attacks against creatures within 5 feet of it, each 10d6 Force damage and a critical hit on 18-20. As a Bonus Action on later turns move it 60 feet and attack twice again.
+Detonate | Evo | Action | 500 feet | V, S, M | Instantaneous | Sor, Wlk, Wiz | Arcana Unleashed
+A creature makes a Constitution save, taking 10d10 Fire damage (half on success). Then it explodes: other creatures in a 60-foot Emanation make a Dexterity save for 10d10 Fire (half on success), with Disadvantage if the target dropped to 0 HP.
+Foresight | Div | 1 minute | Touch | V, S, M | 8 hours | Brd, Drd, Wlk, Wiz | PHB 2024
+A willing creature has Advantage on D20 Tests and attacks against it have Disadvantage.
+Gate | Con | Action | 60 feet | V, S, M(C) | C, up to 1 minute | Clr, Sor, Wlk, Wiz | PHB 2024
+Open a portal to another plane. Naming a specific creature pulls it through to you (no control over it). Material: a diamond worth 5,000+ GP.
+Hindsight | Div | 10 minutes | 500 feet | V, S, M(C*) | C, up to 1 hour | Wiz | Arcana Unleashed
+Watch the last 10 years of events within range at 1 day per second, pausing, rewinding or speeding up. Material: a tiny hourglass worth 500+ GP, consumed.
+Imprisonment | Abj | 1 minute | 30 feet | V, S, M(C) | Until dispelled | Wlk, Wiz | PHB 2024
+A creature makes a Wisdom save or is bound: Burial, Chaining, Hedged Prison, Minimus Containment or Slumber. You set a condition that ends it. Material: a statuette worth 5,000+ GP per Hit Die of the target.
+Invulnerability | Abj | Action | Self | V, S, M(C*) | C, up to 10 minutes | Wiz | Arcana Unleashed
+You are immune to all damage for the duration. Material: adamantine worth 500+ GP, consumed.
+Mass Heal | Abj | Action | 60 feet | V, S | Instantaneous | Clr | PHB 2024
+Restore up to 700 Hit Points divided among creatures you can see, and cure them of Blinded, Deafened and Poisoned.
+Meteor Swarm | Evo | Action | 1 mile | V, S | Instantaneous | Sor, Wiz | PHB 2024
+Four meteors explode in 40-foot-radius Spheres. Each creature in one makes a Dexterity save, taking 20d6 Fire and 20d6 Bludgeoning damage (half on success); a creature in several is affected once.
+Power Word Heal | Enc | Action | 60 feet | V | Instantaneous | Brd, Clr | PHB 2024
+A creature regains all its Hit Points and ends Charmed, Frightened, Paralyzed, Poisoned and Stunned. If Prone, it can stand with its Reaction.
+Power Word Kill | Enc | Action | 60 feet | V | Instantaneous | Brd, Sor, Wlk, Wiz | PHB 2024
+A creature with 100 HP or fewer dies. Otherwise it takes 12d12 Psychic damage.
+Prismatic Wall | Abj | Action | 60 feet | V, S | 10 minutes | Brd, Wiz | PHB 2024
+A seven-layered wall (or sphere) of light. Creatures within 20 feet when it appears make a Constitution save or are Blinded. Passing through applies each layer's effect in order; each layer is destroyed by a specific means.
+Shapechange | Tra | Action | Self | V, S, M(C) | C, up to 1 hour | Drd, Wiz | PHB 2024
+Turn into a creature with CR up to your level, gaining its stats and Temporary Hit Points equal to its HP but keeping your mind. You can change form as a Magic action. Material: a jade circlet worth 1,500+ GP.
+Storm of Vengeance | Con | Action | 1 mile | V, S | C, up to 1 minute | Drd | PHB 2024
+A 300-foot-radius storm cloud: thunder (2d6 Thunder, Deafened), then each turn acid rain, lightning bolts, hailstones and freezing wind across the area.
+Time Stop | Tra | Action | Self | V | Instantaneous | Sor, Wiz | PHB 2024
+Time stops for everyone else: you take 1d4 + 1 turns in a row. It ends if you affect another creature or an object it holds, or move more than 1,000 feet away.
+True Polymorph | Tra | Action | 30 feet | V, S, M | C, up to 1 hour | Brd, Wlk, Wiz | PHB 2024
+Turn a creature into another creature, a creature into an object, or an object into a creature (Wisdom save if unwilling). Held for the full hour, it becomes permanent until dispelled.
+True Resurrection | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | Clr, Drd | PHB 2024
+A creature dead up to 200 years (not of old age) returns to life with all its HP, fully restored, even without a body if you name it. Material: diamonds worth 25,000+ GP, consumed.
+Vision of Elapsing Eons | Ill | Action | 120 feet | V, S | 1 minute | Brd, Sor, Wlk, Wiz | Arcana Unleashed
+A creature makes an Intelligence save or takes 10d12 Psychic damage and is Paralyzed. Each failed save at the end of its turns adds an Exhaustion level; a success ends it. An ally within 5 feet can use an action to shake it free.
+Wail of the Banshee | Nec | Action | 60 feet | V | Instantaneous | Sor, Wlk, Wiz | PHB 2024
+Each creature you choose in a 60-foot Emanation (Constructs and Undead are immune) makes a Constitution save. On a failure its Hit Points drop to 0; on a success it takes 10d6 Psychic damage.
+Weird | Ill | Action | 120 feet | V, S | C, up to 1 minute | Wlk, Wiz | PHB 2024
+Each creature in a 30-foot-radius Sphere makes a Wisdom save, taking 10d10 Psychic damage and becoming Frightened on a failure (half damage only on success). A Frightened creature repeats the save each turn, taking 5d10 on a failure.
+Wish | Con | Action | Self | V | Instantaneous | Sor, Wiz | PHB 2024
+Duplicate any spell of level 8 or lower without components, or ask for another effect (objects, healing, resistances, a reroll, or something greater at the DM's discretion). Beyond duplication you take stress: necrotic damage per spell you cast and a 33% chance of never casting Wish again.

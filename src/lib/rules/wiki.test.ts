@@ -5,11 +5,11 @@ import { asiSlots, passive } from './derive';
 import { allGrantedEffects } from './features';
 import { spellAttacks, spellEntryFrom, spellList, subclassSpells } from './spells';
 
-/* Pruebas con los packs reales de content/dist (se saltan si no están). */
+/* Pruebas con los packs reales de public/packs (se saltan si no están). */
 const fsName = 'node:fs';
 const { readFileSync, existsSync } = await import(/* @vite-ignore */ fsName);
 const load = (r: string): Pack | null => {
-  const f = `content/dist/wiki-${r}.json`;
+  const f = `public/packs/wiki-${r}.json`;
   if (!existsSync(f)) return null;
   const p = parsePack(JSON.parse(readFileSync(f, 'utf8')));
   return p.ok ? p.pack : null;

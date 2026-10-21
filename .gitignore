@@ -3,6 +3,6 @@ dist
 dev-dist
 *.local
 .DS_Store
-# Respaldos de personaje y packs de contenido: viven en tu dispositivo, no en el repo
+# Respaldos de personaje: viven en tu dispositivo, no en el repo
 *.character.json
-content/
+content/dist/

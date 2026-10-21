@@ -1,0 +1,92 @@
+# Formato: Nombre | school | casting time | range | components | duration | clases | fuente
+# Siguiente línea: resumen. Línea con "+ " al inicio: qué cambia con slot mayor o nivel de personaje.
+# Casting time con "or R" = ritual. Duration con "C," = concentration. M(C) = material con costo, M(C*) = se consume.
+@level 0
+Acid Splash | Evo | Action | 60 feet | V, S | Instantaneous | Art, Sor, Wiz | PHB 2024
+An acid bubble bursts in a 5-foot-radius Sphere at a point you choose. Each creature there makes a Dexterity save or takes 1d6 Acid damage.
++ Damage rises to 2d6 at level 5, 3d6 at 11 and 4d6 at 17.
+Blade Ward | Abj | Action | Self | V, S | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Until the spell ends, any creature making an attack roll against you subtracts 1d4 from the roll.
+Chill Touch | Nec | Action | Touch | V, S | Instantaneous | Sor, Wlk, Wiz | PHB 2024
+Melee spell attack for 1d10 Necrotic damage. On a hit, the target can't regain Hit Points until the end of your next turn.
++ Damage rises to 2d10 at level 5, 3d10 at 11 and 4d10 at 17.
+Dancing Lights | Ill | Action | 120 feet | V, S, M | C, up to 1 minute | Art, Brd, Sor, Wiz | PHB 2024
+Create up to four torch-like lights (or one Medium glowing humanoid form), each shedding Dim Light in a 10-foot radius. As a Bonus Action you can move them up to 60 feet; they must stay within 20 feet of each other and within range.
+Druidcraft | Tra | Action | 30 feet | V, S | Instantaneous | Drd | PHB 2024
+Minor nature effects: predict the weather for 24 hours, make a flower bloom or a seed open, create a harmless sensory effect in a 5-foot cube, or light or snuff a small flame.
+Eldritch Blast | Evo | Action | 120 feet | V, S | Instantaneous | Wlk | PHB 2024
+A beam of crackling energy: ranged spell attack for 1d10 Force damage.
++ Two beams at level 5, three at 11 and four at 17. Each beam can target the same or different creatures, with a separate attack roll.
+Elementalism | Tra | Action | 30 feet | V, S | Instantaneous | Art, Drd, Sor, Wiz | PHB 2024
+Small elemental effects: stir air in a 5-foot cube, create a puff of harmless dust or a mote of fire, make a thimble of water or mist, or shape loose earth or stone into a crude figure for 1 hour.
+Fire Bolt | Evo | Action | 120 feet | V, S | Instantaneous | Art, Sor, Wiz | PHB 2024
+Ranged spell attack for 1d10 Fire damage. A flammable object hit that isn't worn or carried starts burning.
++ Damage rises to 2d10 at level 5, 3d10 at 11 and 4d10 at 17.
+Friends | Enc | Action | 10 feet | S, M | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+One creature you can see makes a Wisdom save or is Charmed by you. It succeeds automatically if it isn't a Humanoid, if you are fighting it, or if you cast this on it in the last 24 hours. The spell ends early if the target takes damage or you make an attack roll, deal damage or force a save; the target then knows it was charmed.
+Guidance | Div | Action | Touch | V, S | C, up to 1 minute | Art, Clr, Drd | PHB 2024
+Choose a skill. A willing creature adds 1d4 to any ability check using that skill until the spell ends.
+Light | Evo | Action | Touch | V, M | 1 hour | Art, Brd, Clr, Sor, Wiz | PHB 2024
+An object no larger than 10 feet sheds Bright Light in a 20-foot radius and Dim Light for 20 more feet, in a color you choose. Covering it blocks the light. Casting it again ends the previous one.
+Mage Hand | Con | Action | 30 feet | V, S | 1 minute | Art, Brd, Sor, Wlk, Wiz | PHB 2024
+A spectral hand appears. As a Magic action you can use it to manipulate an object, open an unlocked door or container, or stow or retrieve an item; it can carry up to 10 pounds and move 30 feet each time. It can't attack, activate magic items or carry more than 10 pounds.
+Mending | Tra | 1 minute | Touch | V, S, M | Instantaneous | Brd, Clr, Drd, Sor, Wiz | PHB 2024
+Repairs a single break or tear in an object no larger than 1 foot in any dimension, such as a broken chain link or a torn cloak. It can physically repair a magic item but can't restore its magic.
+Message | Tra | Action | 120 feet | S, M | 1 round | Art, Brd, Drd, Sor, Wiz | PHB 2024
+Whisper a message to a creature in range; only it hears, and it can reply in a whisper only you hear. You can cast through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone or metal, or a thin sheet of lead blocks it.
+Mind Sliver | Enc | Action | 60 feet | V | 1 round | Sor, Wlk, Wiz | PHB 2024
+The target makes an Intelligence save or takes 1d6 Psychic damage and subtracts 1d4 from its next saving throw before the end of your next turn.
++ Damage rises to 2d6 at level 5, 3d6 at 11 and 4d6 at 17.
+Minor Illusion | Ill | Action | 30 feet | S, M | 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Create a sound or an image of an object no larger than a 5-foot cube. Physical interaction reveals an image as illusion. A creature that takes a Study action can make an Intelligence (Investigation) check against your spell save DC to see through it.
+Poison Spray | Nec | Action | 30 feet | V, S | Instantaneous | Art, Drd, Sor, Wlk, Wiz | PHB 2024
+Ranged spell attack for 1d12 Poison damage.
++ Damage rises to 2d12 at level 5, 3d12 at 11 and 4d12 at 17.
+Prestidigitation | Tra | Action | 10 feet | V, S | Up to 1 hour | Art, Brd, Sor, Wlk, Wiz | PHB 2024
+Minor tricks: a harmless sensory effect, light or snuff a small flame, clean or soil a small object, chill, warm or flavor material, make a small mark or symbol appear for 1 hour, or create a trinket or illusory image that fits in your hand until your next turn. Up to three non-instantaneous effects at once.
+Produce Flame | Con | Bonus Action | Self | V, S | 10 minutes | Drd | PHB 2024
+A flame in your hand sheds Bright Light in 20 feet and Dim Light 20 feet more. Until the spell ends, you can take a Magic action to hurl it: ranged spell attack within 60 feet for 1d8 Fire damage, which ends the spell.
++ Damage rises to 2d8 at level 5, 3d8 at 11 and 4d8 at 17.
+Ray of Frost | Evo | Action | 60 feet | V, S | Instantaneous | Art, Sor, Wiz | PHB 2024
+Ranged spell attack for 1d8 Cold damage, and the target's Speed drops by 10 feet until the start of your next turn.
++ Damage rises to 2d8 at level 5, 3d8 at 11 and 4d8 at 17.
+Resistance | Abj | Action | Touch | V, S | C, up to 1 minute | Art, Clr, Drd | PHB 2024
+Choose a damage type: Acid, Bludgeoning, Cold, Fire, Lightning, Necrotic, Piercing, Poison, Radiant, Slashing or Thunder. Once per turn, when the willing target takes that damage, it reduces the total by 1d4.
+Sacred Flame | Evo | Action | 60 feet | V, S | Instantaneous | Clr | PHB 2024
+Radiance descends on a creature you can see. It makes a Dexterity save or takes 1d8 Radiant damage; it gains no benefit from Half or Three-Quarters Cover for this save.
++ Damage rises to 2d8 at level 5, 3d8 at 11 and 4d8 at 17.
+Shillelagh | Tra | Bonus Action | Self | V, S, M | 1 minute | Drd | PHB 2024
+A Club or Quarterstaff you hold uses your spellcasting ability for attack and damage rolls, its damage die becomes a d8, and it can deal Force damage instead of Bludgeoning. The spell ends if you cast it again or let go of the weapon.
++ Damage die becomes d10 at level 5, d12 at 11 and 2d6 at 17.
+Shocking Grasp | Evo | Action | Touch | V, S | Instantaneous | Art, Sor, Wiz | PHB 2024
+Melee spell attack for 1d8 Lightning damage. On a hit, the target can't make Opportunity Attacks until the start of its next turn.
++ Damage rises to 2d8 at level 5, 3d8 at 11 and 4d8 at 17.
+Sorcerous Burst | Evo | Action | 120 feet | V, S | Instantaneous | Sor | PHB 2024
+Ranged spell attack for 1d8 damage of a type you choose: Acid, Cold, Fire, Lightning, Poison, Psychic or Thunder. Each 8 rolled lets you roll another d8 and add it, up to a number of extra d8s equal to your spellcasting modifier.
++ Damage rises to 2d8 at level 5, 3d8 at 11 and 4d8 at 17.
+Spare the Dying | Nec | Action | 15 feet | V, S | Instantaneous | Art, Clr, Drd | PHB 2024
+A creature at 0 Hit Points becomes Stable.
++ Range doubles at level 5 (30 feet), 11 (60 feet) and 17 (120 feet).
+Starry Wisp | Evo | Action | 60 feet | V, S | Instantaneous | Brd, Drd | PHB 2024
+Ranged spell attack for 1d8 Radiant damage. Until the end of your next turn, the target sheds Dim Light in a 10-foot radius and can't benefit from the Invisible condition.
++ Damage rises to 2d8 at level 5, 3d8 at 11 and 4d8 at 17.
+Thaumaturgy | Tra | Action | 30 feet | V | Up to 1 minute | Clr | PHB 2024
+Minor wonders: your voice booms three times louder, flames flicker or change color, harmless tremors, an instantaneous sound, an unlocked door or window flies open or slams shut, or your eyes change. Up to three 1-minute effects at once.
+Thorn Whip | Tra | Action | 30 feet | V, S, M | Instantaneous | Art, Drd | PHB 2024
+Melee spell attack for 1d6 Piercing damage. If the target is Large or smaller, you can pull it up to 10 feet closer to you.
++ Damage rises to 2d6 at level 5, 3d6 at 11 and 4d6 at 17.
+Thunderclap | Evo | Action | Self | S | Instantaneous | Art, Brd, Drd, Sor, Wlk, Wiz | PHB 2024
+Each creature in a 5-foot Emanation from you makes a Constitution save or takes 1d6 Thunder damage. The sound is audible up to 100 feet away.
++ Damage rises to 2d6 at level 5, 3d6 at 11 and 4d6 at 17.
+Toll the Dead | Nec | Action | 60 feet | V, S | Instantaneous | Clr, Wlk, Wiz | PHB 2024
+The target makes a Wisdom save or takes 1d8 Necrotic damage, or 1d12 if it is missing any Hit Points.
++ Damage dice rise to 2 at level 5, 3 at 11 and 4 at 17.
+True Strike | Div | Action | Self | S, M | Instantaneous | Art, Brd, Sor, Wlk, Wiz | PHB 2024
+Make one attack with the weapon used as the material component, using your spellcasting ability for the attack and damage rolls instead of Strength or Dexterity. The damage can be Radiant or the weapon's normal type.
++ Extra 1d6 Radiant damage on a hit at level 5, 2d6 at 11 and 3d6 at 17.
+Vicious Mockery | Enc | Action | 60 feet | V | Instantaneous | Brd | PHB 2024
+A creature that can hear you makes a Wisdom save or takes 1d6 Psychic damage and has Disadvantage on its next attack roll before the end of its next turn.
++ Damage rises to 2d6 at level 5, 3d6 at 11 and 4d6 at 17.
+Word of Radiance | Evo | Action | Self | V, M | Instantaneous | Clr | PHB 2024
+Each creature you choose in a 5-foot Emanation makes a Constitution save or takes 1d6 Radiant damage.
++ Damage rises to 2d6 at level 5, 3d6 at 11 and 4d6 at 17.

@@ -1,0 +1,102 @@
+@class Wizard | hitDie 6 | caster full | spell int | saves int wis | sublevel 2 | sublabel Arcane Tradition
+@prof weapons dagger, dart, sling, quarterstaff, light crossbow | skills 2 from Arcana, History, Insight, Investigation, Medicine, Religion
+1 | Spellcasting | Learn spells into your spellbook, prepare them daily and cast them with Intelligence. You can cast ritual spells from your book.
+1 | Arcane Recovery | Once per day after a short rest, recover spell slots with combined levels up to half your wizard level (rounded up), none of 6th level or higher. The app handles this in Short Rest.
+3 | Cantrip Formulas (Optional) | After a long rest, you can replace a wizard cantrip you know with another.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+18 | Spell Mastery | Choose a 1st and a 2nd-level spell from your book to cast at their lowest level without a slot. Swap them with 8 hours of study.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Signature Spells | Two 3rd-level spells from your book are always prepared, and you can cast each once at 3rd level without a slot per short or long rest.
+
+@sub School of Abjuration | PHB
+2 | Abjuration Savant | Copying abjuration spells into your spellbook costs half the gold and time.
+2 | Arcane Ward | When you cast an abjuration spell of 1st level or higher, create a ward with HP equal to twice your wizard level + Intelligence modifier; abjuration casting recharges it. Once per long rest.
+6 | Projected Ward | As a reaction, your Arcane Ward absorbs damage dealt to a creature within 30 feet.
+10 | Improved Abjuration | Add your proficiency bonus to ability checks made as part of abjuration spells, like Counterspell and Dispel Magic.
+14 | Spell Resistance | Advantage on saves against spells and resistance to spell damage.
+
+@sub Bladesinging | TCoE
+2 | Training in War and Song | Proficiency with light armor, one one-handed melee weapon, and Performance.
+2 | Bladesong | As a bonus action without medium or heavy armor or a shield, for 1 minute: add Intelligence modifier to AC and concentration saves, +10 feet walking speed, and advantage on Acrobatics. Proficiency bonus uses per long rest. {speed +10 cond}
+6 | Extra Attack | Attack twice when you take the Attack action, and one attack can be replaced with a cantrip.
+10 | Song of Defense | While Bladesong is active, use your reaction and a spell slot to reduce damage by five times the slot's level.
+14 | Song of Victory | While Bladesong is active, add your Intelligence modifier to melee weapon damage.
+
+@sub Chronurgy Magic | EGtW
+2 | Chronal Shift | As a reaction, force a creature within 30 feet to reroll an attack, check or save. Twice per long rest.
+2 | Temporal Awareness | Add your Intelligence modifier to initiative rolls.
+6 | Momentary Stasis | As an action, a Large or smaller creature within 60 feet makes a Constitution save or is incapacitated with speed 0 until your next turn. Intelligence modifier uses per long rest.
+10 | Arcane Abeyance | When you cast a 4th-level or lower spell, store it in a bead for 1 hour so another creature can release it. Once per short or long rest.
+14 | Convergent Future | As a reaction, make an attack, check or save near you succeed or fail; you gain a level of exhaustion.
+
+@sub School of Conjuration | PHB
+2 | Conjuration Savant | Copying conjuration spells costs half the gold and time.
+2 | Minor Conjuration | As an action, conjure a nonmagical object up to 3 feet on a side that lasts 1 hour.
+6 | Benign Transportation | As an action, teleport up to 30 feet or swap places with a willing creature. Once per long rest or after casting a conjuration spell.
+10 | Focused Conjuration | Damage can't break your concentration on conjuration spells.
+14 | Durable Summons | Creatures you summon with conjuration spells gain 30 temp HP.
+
+@sub School of Divination | PHB
+2 | Divination Savant | Copying divination spells costs half the gold and time.
+2 | Portent | After a long rest, roll two d20s and record them; replace any attack roll, check or save you can see with one of them. Three dice at 14th level.
+6 | Expert Divination | When you cast a divination spell of 2nd level or higher, regain a lower-level spell slot (up to 5th).
+10 | The Third Eye | As an action, gain darkvision, ethereal sight, the ability to read any language, or see invisibility until your next rest.
+14 | Greater Portent | Roll three d20s for Portent.
+
+@sub School of Enchantment | PHB
+2 | Enchantment Savant | Copying enchantment spells costs half the gold and time.
+2 | Hypnotic Gaze | As an action, charm a creature within 5 feet on a failed Wisdom save, leaving it incapacitated while you maintain the gaze.
+6 | Instinctive Charm | As a reaction, force an attacker within 30 feet to make a Wisdom save or target another creature.
+10 | Split Enchantment | Single-target enchantment spells of 1st level or higher can target a second creature.
+14 | Alter Memories | Creatures charmed by your spells don't realize it, and you can make them forget time spent charmed.
+
+@sub School of Evocation | PHB
+2 | Evocation Savant | Copying evocation spells costs half the gold and time.
+2 | Sculpt Spells | When you cast an evocation spell, choose 1 + the spell's level creatures to succeed on its save and take no damage.
+6 | Potent Cantrip | Creatures that succeed on saves against your cantrips still take half damage.
+10 | Empowered Evocation | Add your Intelligence modifier to one damage roll of wizard evocation spells.
+14 | Overchannel | Deal maximum damage with a 5th-level or lower wizard spell; repeated uses before a long rest deal increasing necrotic damage to you.
+
+@sub Graviturgy Magic | EGtW
+2 | Adjust Density | As an action, halve or double a creature's weight for 1 minute, changing its speed, jumps and Strength checks.
+6 | Gravity Well | When you cast a spell on a creature, you can move it 5 feet.
+10 | Violent Attraction | As a reaction, add 1d10 to a weapon attack's damage or 2d10 to falling damage. Intelligence modifier uses per long rest.
+14 | Event Horizon | As an action, for 1 minute hostile creatures that start their turn within 30 feet take 2d10 force damage and have speed 0 on a failed Strength save. Once per long rest or a 3rd-level slot.
+
+@sub School of Illusion | PHB
+2 | Illusion Savant | Copying illusion spells costs half the gold and time.
+2 | Improved Minor Illusion | You learn Minor Illusion, and it creates both a sound and an image.
+6 | Malleable Illusions | As an action, change the nature of an illusion spell you cast with a duration of 1 minute or more.
+10 | Illusory Self | As a reaction, create an illusory duplicate that makes an attack miss you. Once per short or long rest.
+14 | Illusory Reality | As a bonus action, make one inanimate, nonmagical object in your illusion real for 1 minute.
+
+@sub School of Necromancy | PHB
+2 | Necromancy Savant | Copying necromancy spells costs half the gold and time.
+2 | Grim Harvest | When you kill a creature with a spell, regain HP equal to twice the spell's level (three times for necromancy).
+6 | Undead Thralls | Animate Dead creates one extra undead, and your undead get extra HP and add your proficiency bonus to damage.
+10 | Inured to Undeath | Resistance to necrotic damage, and your HP maximum can't be reduced.
+14 | Command Undead | As an action, take control of an undead within 60 feet on a failed Charisma save.
+
+@sub Order of Scribes | TCoE
+2 | Wizardly Quill | As a bonus action, create a magical quill that writes without ink and copies spells faster.
+2 | Awakened Spellbook | Your spellbook is a focus; you can change a spell's damage type to that of another spell in your book, and cast rituals at normal speed once per long rest.
+6 | Manifest Mind | As a bonus action, manifest your spellbook's mind within 60 feet; cast spells from its space proficiency bonus times per long rest.
+10 | Master Scrivener | After a long rest, create a scroll from your spellbook that casts the spell one level higher.
+14 | One with the Word | Advantage on Arcana checks, and when you take damage while your mind is manifested, dismiss it to prevent damage by removing spells from your book temporarily.
+
+@sub School of Transmutation | PHB
+2 | Transmutation Savant | Copying transmutation spells costs half the gold and time.
+2 | Minor Alchemy | Temporarily change an object's material (wood, stone, iron, copper or silver) for 1 hour.
+6 | Transmuter's Stone | Create a stone that grants darkvision, +10 feet speed, Constitution save proficiency, or resistance to an element. {speed +10 cond}
+10 | Shapechanger | Polymorph is in your spellbook, and you can cast it on yourself without a slot once per short or long rest (CR 1 or lower beast).
+14 | Master Transmuter | Consume your stone for a major effect: Major Transformation, Panacea, Restore Life or Restore Youth.
+
+@sub War Magic | XGtE
+2 | Arcane Deflection | When hit or failing a save, use your reaction to gain +2 AC or +4 to the save; afterward you can only cast cantrips until the end of your next turn.
+2 | Tactical Wit | Add your Intelligence modifier to initiative rolls.
+6 | Power Surge | Store power surges when you counter or dispel; once per turn, spend one to add half your wizard level as force damage to a spell.
+10 | Durable Magic | While concentrating, +2 to AC and all saving throws.
+14 | Deflecting Shroud | When you use Arcane Deflection, deal force damage equal to half your wizard level to up to three creatures within 60 feet.

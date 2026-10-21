@@ -1,0 +1,57 @@
+# Eldritch Invocations 2024 (dnd2024.wikidot.com). Resúmenes propios.
+@invocation Agonizing Blast | prereq Level 2+ Warlock, a Warlock cantrip that deals damage | level 2 | repeatable | source PHB 2024
+Choose a damaging Warlock cantrip: add your Charisma modifier to its damage rolls. Repeatable for a different cantrip.
+@invocation Armor of Shadows | spells Mage Armor will | source PHB 2024
+Cast Mage Armor on yourself without a spell slot.
+@invocation Ascendant Step | prereq Level 5+ Warlock | level 5 | spells Levitate will | source PHB 2024
+Cast Levitate on yourself without a spell slot.
+@invocation Devil's Sight | prereq Level 2+ Warlock | level 2 | source PHB 2024
+You see normally in magical and nonmagical darkness within 120 feet.
+@invocation Devouring Blade | prereq Level 12+ Warlock, Thirsting Blade | level 12 | source PHB 2024
+Thirsting Blade gives you two extra attacks instead of one.
+@invocation Eldritch Mind | source PHB 2024
+Advantage on Constitution saves to maintain Concentration.
+@invocation Eldritch Smite | prereq Level 5+ Warlock, Pact of the Blade | level 5 | source PHB 2024
+Once per turn when you hit with your pact weapon, spend a Pact Magic slot for extra Force damage and possibly knock the target Prone.
+@invocation Eldritch Spear | prereq Level 2+ Warlock, a damaging Warlock cantrip with range 10+ feet | level 2 | repeatable | source PHB 2024
+One chosen cantrip's range increases by 30 feet times your Warlock level.
+@invocation Fiendish Vigor | prereq Level 2+ Warlock | level 2 | spells False Life will | source PHB 2024
+Cast False Life on yourself without a slot, getting the maximum temp HP.
+@invocation Gaze of Two Minds | prereq Level 5+ Warlock | level 5 | source PHB 2024
+Touch a willing creature to perceive through its senses, keep the link with Bonus Actions, and cast spells as if from its space.
+@invocation Gift of the Depths | prereq Level 5+ Warlock | level 5 | spells Water Breathing long | source PHB 2024
+Breathe underwater and gain a Swim Speed equal to your Speed; cast Water Breathing once per Long Rest without a slot.
+@invocation Gift of the Protectors | prereq Level 9+ Warlock, Pact of the Tome | level 9 | source PHB 2024
+Creatures who wrote their names in your Book of Shadows drop to 1 HP instead of 0, once each per Long Rest.
+@invocation Investment of the Chain Master | prereq Level 5+ Warlock, Pact of the Chain | level 5 | source PHB 2024
+Your familiar gains a fly or swim speed, attacks with a Bonus Action command, uses your spell save DC, and you can give it resistance.
+@invocation Lessons of the First Ones | prereq Level 2+ Warlock | level 2 | repeatable | source PHB 2024
+Gain an Origin feat of your choice.
+@invocation Lifedrinker | prereq Level 9+ Warlock, Pact of the Blade | level 9 | source PHB 2024
+Once per turn, your pact weapon hits deal an extra 1d6 Necrotic, Psychic or Radiant damage and you can spend a Hit Die to heal.
+@invocation Mask of Many Faces | prereq Level 2+ Warlock | level 2 | spells Disguise Self will | source PHB 2024
+Cast Disguise Self without a spell slot.
+@invocation Master of Myriad Forms | prereq Level 5+ Warlock | level 5 | spells Alter Self will | source PHB 2024
+Cast Alter Self without a spell slot.
+@invocation Misty Visions | prereq Level 2+ Warlock | level 2 | spells Silent Image will | source PHB 2024
+Cast Silent Image without a spell slot.
+@invocation One with Shadows | prereq Level 5+ Warlock | level 5 | spells Invisibility will | source PHB 2024
+While in dim light or darkness, cast Invisibility on yourself without a spell slot.
+@invocation Otherworldly Leap | prereq Level 2+ Warlock | level 2 | spells Jump will | source PHB 2024
+Cast Jump on yourself without a spell slot.
+@invocation Pact of the Blade | source PHB 2024
+As a Bonus Action, conjure a pact weapon or bond with a magic weapon; you're proficient, can use Charisma for attack and damage, and can deal Necrotic, Psychic or Radiant damage.
+@invocation Pact of the Chain | spells Find Familiar will | source PHB 2024
+Find Familiar is always prepared and castable without a slot, with special forms (imp, pseudodragon, quasit, sprite and more), and your familiar can attack with its Reaction.
+@invocation Pact of the Tome | spells pick 3 L0; pick 2 L1 ritual | source PHB 2024
+Conjure a Book of Shadows with three cantrips and two level 1 Ritual spells always prepared; it is a spellcasting focus.
+@invocation Repelling Blast | prereq Level 2+ Warlock, a damaging Warlock cantrip with an attack roll | level 2 | repeatable | source PHB 2024
+When that cantrip hits a Large or smaller creature, push it up to 10 feet.
+@invocation Thirsting Blade | prereq Level 5+ Warlock, Pact of the Blade | level 5 | source PHB 2024
+You can attack twice with your pact weapon when you take the Attack action.
+@invocation Visions of Distant Realms | prereq Level 9+ Warlock | level 9 | spells Arcane Eye will | source PHB 2024
+Cast Arcane Eye without a spell slot.
+@invocation Whispers of the Grave | prereq Level 7+ Warlock | level 7 | spells Speak with Dead will | source PHB 2024
+Cast Speak with Dead without a spell slot.
+@invocation Witch Sight | prereq Level 15+ Warlock | level 15 | source PHB 2024
+You have Truesight out to 30 feet.

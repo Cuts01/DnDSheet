@@ -1,0 +1,137 @@
+@level 5
+Alustriel's Mooncloak | Abj | Action | Self | V, S, M(C) | C, up to 1 minute | Brd, Drd, Rgr, Wiz | FRHoF
+A 20-foot Emanation of Dim Light. You and allies in it have Half Cover and Resistance to Cold, Lightning and Radiant damage. You can end the spell early to succeed on a failed save against Frightened, Grappled or Restrained (Reaction), or to heal yourself or an ally in it 4d10 + your spellcasting modifier (Magic action).
+Animate Objects | Tra | Action | 120 feet | V, S | C, up to 1 minute | Art, Brd, Sor, Wiz | PHB 2024
+Animate nonmagical unattended objects up to your spellcasting modifier (Large counts as two, Huge as three). They use the Animated Object stat block, act after you and obey Bonus Action commands within 500 feet. At 0 HP an object reverts, carrying over excess damage.
++ Slam damage increases by 1d4 (Medium or smaller), 1d6 (Large) or 1d12 (Huge) per slot level above 5.
+Antilife Shell | Abj | Action | Self | V, S | C, up to 1 hour | Drd | PHB 2024
+A 10-foot Emanation keeps creatures other than Constructs and Undead from passing or reaching through it. Spells and ranged attacks can still cross it. If you move so that an affected creature would be forced through the barrier, the spell ends.
+Awaken | Tra | 8 Hours | Touch | V, S, M(C*) | Instantaneous | Brd, Drd | PHB 2024
+A Huge or smaller Beast or Plant with Intelligence 3 or less gains Intelligence 10 and the ability to speak one language you know. It is Charmed by you for 30 days. Material: an agate worth 1,000+ GP, consumed.
+Banishing Smite | Con | Bonus Action | Self | V | C, up to 1 minute | Pal | PHB 2024
+Cast right after hitting with a melee weapon or Unarmed Strike: extra 5d10 Force damage. If the target has 50 Hit Points or fewer, it makes a Charisma save or is banished to a harmless demiplane, Incapacitated, until the spell ends.
+Bigby's Hand | Evo | Action | 120 feet | V, S, M | C, up to 1 minute | Art, Sor, Wiz | PHB 2024
+A Large force hand appears. As a Bonus Action you move it 60 feet and use it: Clenched Fist (melee spell attack, 5d8 Force), Forceful Hand (push), Grasping Hand (grapple, crush 4d6 + modifier) or Interposing Hand (Half Cover and blocks movement).
++ Clenched Fist damage increases by 2d8 and Grasping Hand by 2d6 per slot level above 5.
+Circle of Power | Abj | Action | Self | V | C, up to 10 minutes | Art, Clr, Pal, Wiz | PHB 2024
+You and allies in a 30-foot Emanation have Advantage on saves against spells and magical effects. When a successful save would halve damage, they take none instead.
+Cloudkill | Con | Action | 120 feet | V, S | C, up to 10 minutes | Sor, Wiz | PHB 2024
+A 20-foot-radius Sphere of poisonous fog, Heavily Obscured. A creature in it makes a Constitution save when it appears, enters or ends its turn there: 5d8 Poison damage, half on success. The fog moves 10 feet away from you each turn.
++ Damage increases by 1d8 per slot level above 5.
+Commune | Div | 1 minute or R | Self | V, S, M | 1 minute | Clr | PHB 2024
+Contact your deity or a divine proxy and ask up to three yes-or-no questions before the spell ends. Repeat castings before a Long Rest risk no answer.
+Commune with Nature | Div | 1 minute or R | Self | V, S | Instantaneous | Drd, Rgr | PHB 2024
+Learn up to three facts about the area within 3 miles (1,000 feet underground): terrain, water, plants, minerals, creatures, influence from other planes, buildings.
+Cone of Cold | Evo | Action | Self | V, S, M | Instantaneous | Drd, Sor, Wiz | PHB 2024
+Each creature in a 60-foot Cone makes a Constitution save, taking 8d8 Cold damage on a failure or half on a success. A creature killed becomes a frozen statue.
++ Damage increases by 1d8 per slot level above 5.
+Conjure Elemental | Con | Action | 60 feet | V, S | C, up to 10 minutes | Drd, Wiz | PHB 2024
+A Large intangible elemental spirit of Cold, Fire, Lightning or Thunder appears. While it holds no one, a creature that enters its space or starts its turn within 5 feet makes a Dexterity save or takes 8d8 damage and is Restrained, taking 4d8 at the start of each of its turns and repeating the save to escape.
++ Damage increases by 1d8 per slot level above 5.
+Conjure Volley | Con | Action | 150 feet | V, S, M | Instantaneous | Rgr | PHB 2024
+Spectral weapons rain on a 40-foot-radius, 20-foot-high Cylinder. Each creature you choose there makes a Dexterity save, taking 8d8 Force damage on a failure or half on a success.
+Contact Other Plane | Div | 1 minute or R | Self | V | 1 minute | Wlk, Wiz | PHB 2024
+Ask an otherworldly entity up to five questions. First make a DC 15 Intelligence save: on a failure you take 6d6 Psychic damage and are Incapacitated until a Long Rest, getting no answers.
+Contagion | Nec | Action | Touch | V, S | 7 days | Clr, Drd | PHB 2024
+A creature makes a Constitution save or takes 11d8 Necrotic damage and is Poisoned, with Disadvantage on saves of an ability you chose. It repeats the save each turn: three successes end it, three failures make it last 7 days.
+Creation | Ill | 1 minute | 30 feet | V, S, M | Special | Art, Sor, Wiz | PHB 2024
+Create a nonliving object of vegetable matter or mineral up to a 5-foot Cube. Duration depends on the material: from 1 day (vegetable) down to 1 minute (precious metals or gems). It can't serve as a spell's material component.
++ The Cube grows by 5 feet per slot level above 5.
+Destructive Wave | Evo | Action | Self | V | Instantaneous | Pal | PHB 2024
+Creatures you choose in a 30-foot Emanation make a Constitution save, taking 5d6 Thunder plus 5d6 Radiant or Necrotic damage and falling Prone on a failure, or half damage on a success.
+Dispel Evil and Good | Abj | Action | Self | V, S, M | C, up to 1 minute | Clr, Pal | PHB 2024
+Celestials, Elementals, Fey, Fiends and Undead have Disadvantage on attacks against you. You can end the spell to break their charm, fright or possession on a creature, or make a melee spell attack to send one home (Charisma save).
+Dominate Person | Enc | Action | 60 feet | V, S | C, up to 1 minute | Brd, Sor, Wiz | PHB 2024
+A Humanoid makes a Wisdom save (Advantage if fighting you) or is Charmed and follows your telepathic commands. Each time it takes damage it repeats the save.
++ Level 6: up to 10 minutes. Level 7: 1 hour. Level 8+: 8 hours.
+Dream | Ill | 1 minute | Special | V, S, M | 8 hours | Brd, Wlk, Wiz | PHB 2024
+Shape the dreams of a creature you know on the same plane: talk with it, or send a nightmare (Wisdom save or no rest benefits and 3d6 Psychic damage on waking).
+Enervation | Nec | Action | 60 feet | V, S | C, up to 1 minute | Sor, Wlk, Wiz | Arcana Unleashed
+A tendril of dark energy lashes a creature: Dexterity save or it takes Necrotic damage and you can drain it again as a Bonus Action on later turns, regaining half the damage each time. On a success it takes half and the spell ends.
++ Initial damage increases by 1d8 per slot level above 5.
+Flame Strike | Evo | Action | 60 feet | V, S, M | Instantaneous | Clr | PHB 2024
+A 10-foot-radius, 40-foot-high Cylinder of divine fire. Each creature there makes a Dexterity save, taking 5d6 Fire and 5d6 Radiant damage on a failure or half on a success.
++ Fire and Radiant damage each increase by 1d6 per slot level above 5.
+Geas | Enc | 1 minute | 60 feet | V | 30 days | Brd, Clr, Drd, Pal, Wiz | PHB 2024
+A creature that understands you makes a Wisdom save or must follow a command; each day it acts against it, it takes 5d10 Psychic damage (once per day). Charmed by you for the duration.
++ Level 7-8: 365 days. Level 9: until ended by Remove Curse, Greater Restoration or Wish.
+Grave Ground | Nec | Action | 120 feet | V, S, M | C, up to 1 minute | Clr, Wlk, Wiz | Arcana Unleashed
+Up to four connected 10-foot squares become Difficult Terrain of grasping dead. Enemies in them, entering or ending a turn there make a Strength save: 6d6 Necrotic damage and -1d6 to their damage rolls until the end of their next turn (half damage on success), once per turn.
++ Damage increases by 1d6 per slot level above 5.
+Greater Restoration | Abj | Action | Touch | V, S, M(C*) | Instantaneous | Art, Brd, Clr, Drd, Pal, Rgr | PHB 2024
+Remove one: an Exhaustion level, Charmed or Petrified, a curse (including Attunement to a cursed item), any reduction to an ability score, or any reduction to the Hit Point maximum. Material: diamond dust worth 100+ GP, consumed.
+Hallow | Abj | 24 hours | Touch | V, S, M(C*) | Until dispelled | Clr | PHB 2024
+Bless an area up to 60 feet in radius: Celestials, Elementals, Fey, Fiends and Undead can't enter it or charm, frighten or possess creatures in it. Add one extra effect such as Courage, Darkness, Daylight, Energy Protection, Silence or Tongues. Material: incense worth 1,000+ GP, consumed.
+Hold Monster | Enc | Action | 90 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+A creature (not Undead) makes a Wisdom save or is Paralyzed, repeating the save at the end of each of its turns.
++ One additional creature per slot level above 5.
+Insect Plague | Con | Action | 300 feet | V, S, M | C, up to 10 minutes | Clr, Drd, Sor | PHB 2024
+A 20-foot-radius Sphere of locusts is Lightly Obscured and Difficult Terrain. A creature in it when it appears, entering or ending its turn there makes a Constitution save, taking 4d10 Piercing damage (half on success), once per turn.
++ Damage increases by 1d10 per slot level above 5.
+Jallarzi's Storm of Radiance | Evo | Action | 120 feet | V, S, M | C, up to 1 minute | Wlk, Wiz | PHB 2024
+A 10-foot-radius, 40-foot-high Cylinder of light and thunder. Creatures inside are Blinded and Deafened and can't cast Verbal spells. A creature makes a Constitution save when it appears, enters or ends its turn there (once per turn): 2d10 Radiant and 2d10 Thunder damage, half on success.
++ Each damage type increases by 1d10 per slot level above 5.
+Legend Lore | Div | 10 minutes | Self | V, S, M(C*) | Instantaneous | Brd, Clr, Wiz | PHB 2024
+Name a famous person, place or object and learn significant lore about it, more if you already know details. Material: incense worth 250+ GP (consumed) and four ivory strips worth 50+ GP each.
+Mass Cure Wounds | Abj | Action | 60 feet | V, S | Instantaneous | Brd, Clr, Drd | PHB 2024
+Up to six creatures in a 30-foot-radius Sphere regain 5d8 + your spellcasting modifier Hit Points.
++ Healing increases by 1d8 per slot level above 5.
+Mislead | Ill | Action | Self | S | C, up to 1 hour | Brd, Wlk, Wiz | PHB 2024
+You become Invisible and an illusory double appears. As a Bonus Action you move the double up to 60 feet and can see and hear through it. Invisibility ends if you attack or cast a spell.
+Modify Memory | Enc | Action | 30 feet | V, S | C, up to 1 minute | Brd, Wiz | PHB 2024
+A creature makes a Wisdom save (Advantage if fighting you) or is Charmed and Incapacitated while you alter its memory of an event within the last 24 hours lasting up to 10 minutes.
++ Level 6: past 7 days. Level 7: past 30 days. Level 8: past year. Level 9: any time.
+Mordenkainen's Lucubration | Div | Action | Self | V, S | Instantaneous | Wiz | Arcana Unleashed
+Regain up to two expended spell slots of level 2 or lower.
++ With a level 6-7 slot you can regain slots up to level 3; with level 8+, up to level 4.
+Negative Energy Flood | Nec | Action | 60 feet | V, M | Instantaneous | Wlk, Wiz | Arcana Unleashed
+A non-Undead target makes a Constitution save, taking 3d10 + 25 Necrotic damage (half on success); a Humanoid killed rises as a Zombie under your command for 24 hours. An Undead target gains 3d10 Temporary Hit Points instead.
++ Damage increases by 1d10 per slot level above 5.
+Passwall | Tra | Action | 30 feet | V, S, M | 1 hour | Wiz | PHB 2024
+A passage up to 5 feet wide, 8 high and 20 deep opens in wood, plaster or stone. When it ends, creatures inside are shunted out safely.
+Planar Binding | Abj | 1 hour | 60 feet | V, S, M(C*) | 24 hours | Brd, Clr, Drd, Wlk, Wiz | PHB 2024
+A Celestial, Elemental, Fey or Fiend makes a Charisma save or must serve you for the duration. Material: a jewel worth 1,000+ GP, consumed.
++ Level 6: 10 days. Level 7: 30 days. Level 8: 180 days. Level 9: a year and a day.
+Raise Dead | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | Brd, Clr, Pal | PHB 2024
+A creature dead up to 10 days returns to life with 1 Hit Point. It has a -4 penalty to D20 Tests that drops by 1 each Long Rest. Material: a diamond worth 500+ GP, consumed.
+Rary's Telepathic Bond | Div | Action or R | 30 feet | V, S, M | 1 hour | Brd, Wiz | PHB 2024
+Up to eight willing creatures share a telepathic link and can communicate at any distance on the same plane.
+Reincarnate | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | Drd | PHB 2024
+A creature dead up to 10 days returns in a new adult body of a random or chosen species. Material: rare oils worth 1,000+ GP, consumed.
+Scrying | Div | 10 minutes | Self | V, S, M(C) | C, up to 10 minutes | Brd, Clr, Drd, Wlk, Wiz | PHB 2024
+See and hear a creature on the same plane, which makes a Wisdom save modified by how well you know it and whether you have something of it. On a success you can't target it again for 24 hours. Material: a focus worth 1,000+ GP.
+Seeming | Ill | Action | 30 feet | V, S | 8 hours | Brd, Sor, Wiz | PHB 2024
+Change the appearance of any number of creatures you can see (unwilling ones make a Charisma save). A Study action allows an Investigation check to see through it.
+Songal's Elemental Suffusion | Tra | Action | Self | V, S, M(C) | C, up to 1 minute | Drd, Sor, Wiz | FRHoF
+Choose Acid, Cold, Fire, Lightning or Thunder: you gain Resistance to it and a Fly Speed of 30 feet (hover). When you cast it and at the start of each of your turns, creatures in a 15-foot Emanation make a Dexterity save or take 2d6 damage of that type and fall Prone (half damage on success).
+Spirit Lantern | Nec | Action | Self | V, S, M | 10 minutes | Art, Clr, Wlk, Wiz | Arcana Unleashed
+A lantern sheds Dim Light in 60 feet and gathers a soul fragment when an enemy dies in it (up to your spellcasting modifier). As a Bonus Action spend one: Drain Life (4d8 + modifier Necrotic, Constitution save for half), heal an Undead 4d8 + modifier, or give attacks against an ally Disadvantage until your next turn.
+Steel Wind Strike | Con | Action | 30 feet | S, M | Instantaneous | Rgr, Wiz | PHB 2024
+Make a melee spell attack against up to five creatures, each taking 6d10 Force damage on a hit. Then teleport to a space within 5 feet of one of them.
+Summon Celestial | Con | Action | 90 feet | V, S, M(C) | C, up to 1 hour | Clr, Pal | PHB 2024
+Summon a Celestial Spirit (Avenger or Defender) that obeys you and acts after you; it can also heal. Its stats scale with the spell's level. Material: a reliquary worth 500+ GP.
++ Uses the higher slot level in its stat block.
+Summon Dragon | Con | Action | 60 feet | V, S, M(C) | C, up to 1 hour | Wiz | PHB 2024
+Summon a Large Draconic Spirit (AC 14 + level, 50 HP plus 10 per level above 5) that obeys you and acts after you, with Rend attacks (1d6 + 4 + level Piercing) and a breath weapon. Material: an object with a dragon's image worth 500+ GP.
++ Uses the higher slot level in its stat block.
+Summon Plant | Con | Action | 90 feet | V, S, M(C) | C, up to 1 hour | Drd, Rgr | Arcana Unleashed
+Summon a plant spirit (Fungus, Tree or Vine) that acts after you and obeys your spoken commands. Its stats scale with the spell's level.
++ Uses the higher slot level: 10 more HP per level, more attacks and damage.
+Swift Quiver | Tra | Bonus Action | Self | V, S, M | C, up to 1 minute | Rgr | PHB 2024
+As a Bonus Action on each turn you can make two attacks with a ranged weapon; the spell conjures the ammunition, which vanishes after it hits or misses.
+Synaptic Static | Enc | Action | 120 feet | V, S | Instantaneous | Brd, Sor, Wlk, Wiz | PHB 2024
+Each creature in a 20-foot-radius Sphere makes an Intelligence save, taking 8d6 Psychic damage on a failure (half on success). On a failure it also subtracts 1d6 from attack rolls, ability checks and Concentration saves for 1 minute, repeating the save at the end of each turn.
+Telekinesis | Tra | Action | 60 feet | V, S | C, up to 10 minutes | Sor, Wiz | PHB 2024
+As a Magic action each turn, move a Huge or smaller creature (contested by its Strength save) or an object up to 1,000 pounds up to 30 feet, and hold it Restrained. You can manipulate objects finely.
+Teleportation Circle | Con | 1 minute | 10 feet | V, M(C*) | 1 round | Brd, Sor, Wlk, Wiz | PHB 2024
+Draw a circle linked to a permanent teleportation circle whose sigil sequence you know; creatures entering it appear at the destination. Material: rare inks worth 50+ GP, consumed.
+Tree Stride | Con | Action | Self | V, S | C, up to 1 minute | Drd, Rgr | PHB 2024
+Once per turn, step into a living tree and out of another of the same kind within 500 feet, using 5 feet of movement.
+Wall of Force | Evo | Action | 120 feet | V, S, M | C, up to 10 minutes | Wiz | PHB 2024
+An invisible wall of force (ten 10-foot panels, or a hemisphere or sphere up to 10 feet radius). Nothing physical passes through it; it is immune to damage and extends into the Ethereal Plane. Disintegrate destroys it.
+Wall of Stone | Evo | Action | 120 feet | V, S, M | C, up to 10 minutes | Art, Drd, Sor, Wiz | PHB 2024
+A stone wall of ten 10-by-10-foot, 6-inch-thick panels (or thinner, larger ones). Creatures where it forms make a Dexterity save to move aside. Each panel has AC 15 and 30 HP per inch. If you hold Concentration the full duration it becomes permanent.
+Waves of Exhaustion | Nec | Bonus Action | Self | V, S, M | C, up to 1 minute | Sor, Wlk, Wiz | Arcana Unleashed
+A gray glow surrounds you. As an action while it lasts, send a 60-foot Cone of gray light: each creature there makes a Constitution save or gains 1 Exhaustion level (it can't raise a creature above level 4 with this spell).
+Yolande's Regal Presence | Enc | Action | Self | V, S, M | C, up to 1 minute | Brd, Wiz | PHB 2024
+A 10-foot Emanation of majesty. Creatures you choose that enter it or start or end their turn there make a Wisdom save (once per turn): 4d6 Psychic damage, Prone and pushed up to 10 feet on a failure, or half damage on a success.

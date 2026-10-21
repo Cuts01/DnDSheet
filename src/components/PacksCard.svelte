@@ -1,6 +1,6 @@
 <script lang="ts">
   import { compendium } from '../lib/compendium.svelte';
-  import { MIN_WIKI_BUILT, canLoadLocal, importFiles, importLocalWiki, isStale, type ImportResult } from '../lib/packImport';
+  import { canLoadLocal, importFiles, importLocalWiki, isStale, type ImportResult } from '../lib/packImport';
   const when = (iso: string) =>
     new Date(iso).toLocaleString(undefined, { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 
@@ -48,7 +48,7 @@
 <div class="card stack">
   <h2>Contenido</h2>
   <p class="small muted">
-    Packs JSON con clases, subclasses, spells, razas, backgrounds, feats e items. Puedes importar varios a la vez (2014, 2024 y homebrew). Los de la wiki están en la carpeta content/dist del proyecto.
+    Packs JSON con clases, subclasses, spells, razas, backgrounds, feats e items. Puedes importar varios a la vez (2014, 2024 y homebrew). Los de la wiki vienen con la app y se actualizan solos al abrirla con conexión.
   </p>
   <div class="row wrap">
     <button class="primary" onclick={() => input.click()}>Importar packs</button>
@@ -91,7 +91,7 @@
             </span>
             {#if isStale(p)}
               <span class="stale small"
-                >Versión vieja{p.pack.built ? ` (${when(p.pack.built)})` : ''}: le faltan datos que esta app ya usa (spells de feats como Fey Touched y otros). Importa el {p.pack.id}.json generado el {when(MIN_WIKI_BUILT)} o después.</span
+                >Versión vieja{p.pack.built ? ` (${when(p.pack.built)})` : ''}: le faltan datos que esta app ya usa (spells de feats como Fey Touched y otros). Toca "Actualizar packs de la wiki" para cargar el que viene con la app.</span
               >
             {/if}
           </div>

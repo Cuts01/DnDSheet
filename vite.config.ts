@@ -2,37 +2,11 @@ import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { VitePWA } from 'vite-plugin-pwa';
 
-/* Solo en npm run dev: sirve content/dist en /__content/ para actualizar los packs con un botón. */
-const contentDev = {
-  name: 'content-dev',
-  apply: 'serve' as const,
-  configureServer(server: { middlewares: { use: (p: string, fn: (req: { url?: string }, res: { setHeader: (k: string, v: string) => void; end: (b?: string) => void; statusCode: number }) => void) => void } }) {
-    server.middlewares.use('/__content', async (req, res) => {
-      const name = (req.url ?? '').replace(/^\//, '');
-      if (!/^wiki-(2014|2024)\.json$/.test(name)) {
-        res.statusCode = 404;
-        return res.end();
-      }
-      try {
-        res.setHeader('Content-Type', 'application/json');
-        const fsName = 'node:fs/promises';
-        const fs = await import(/* @vite-ignore */ fsName);
-        res.end(await fs.readFile(new URL(`./content/dist/${name}`, import.meta.url), 'utf8'));
-      } catch {
-        res.statusCode = 404;
-        res.end();
-      }
-    });
-  }
-};
-
-// base relativa: funciona igual en GitHub Pages (/repo/), en la raiz de un dominio o en local.
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-10-20 · pact boons, invocations y límites') },
+  define: { __APP_VERSION__: JSON.stringify('2026-10-20 · GitHub Pages, packs incluidos') },
   plugins: [
-    contentDev,
     svelte(),
     VitePWA({
       registerType: 'autoUpdate',

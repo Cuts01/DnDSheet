@@ -1,0 +1,66 @@
+@class Druid | hitDie 8 | caster full | spell wis | saves int wis | sublevel 2 | sublabel Druid Circle
+@prof armor light, medium, shields | weapons club, dagger, dart, javelin, mace, quarterstaff, scimitar, sickle, sling, spear | tools Herbalism Kit | skills 2 from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, Survival
+@mc armor light, medium, shields
+1 | Druidic | You know the secret druid language and can leave hidden messages in it.
+1 | Spellcasting | Prepare druid spells and cast them with Wisdom, using a druidic focus.
+2 | Wild Shape | As an action, transform into a beast you have seen, twice per short or long rest. CR and movement limits loosen as you level.
+2 | Wild Companion (Optional) | Spend a Wild Shape use to cast Find Familiar without material components; the familiar is a fey.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+4 | Cantrip Versatility (Optional) | When you gain an ASI, you can replace a druid cantrip with another.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+18 | Timeless Body | You age only one year for every ten that pass.
+18 | Beast Spells | You can cast many druid spells while in Wild Shape, performing verbal and somatic components.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Archdruid | Use Wild Shape unlimited times and ignore verbal, somatic and costless material components of druid spells.
+
+@sub Circle of Dreams | XGtE
+2 | Balm of the Summer Court | A pool of d6s equal to your druid level: as a bonus action, heal a creature within 120 feet by spending up to half your level in dice, plus 1 temp HP per die. Refills on a long rest.
+6 | Hearth of Moonlight and Shadow | During a short or long rest, create a 30-foot sphere that gives +5 to Stealth and Perception checks and hides light from outside.
+10 | Hidden Paths | As a bonus action, teleport up to 60 feet, or as an action teleport a willing creature you touch 30 feet. Wisdom modifier uses per long rest.
+14 | Walker in Dreams | After a short rest, cast Dream, Scrying or Teleportation Circle without a slot or components (the circle leads to your last long rest spot). Once per long rest.
+
+@sub Circle of the Land | PHB
+2 | Bonus Cantrip | Learn one extra druid cantrip.
+2 | Natural Recovery | Once per long rest during a short rest, recover spell slots with combined levels up to half your druid level (rounded up), none 6th level or higher.
+3 | Circle Spells | Choose a land; its spells are always prepared at druid levels 3, 5, 7 and 9. Arctic: Hold Person, Spike Growth / Sleet Storm, Slow / Freedom of Movement, Ice Storm / Commune with Nature, Cone of Cold. Coast: Mirror Image, Misty Step / Water Breathing, Water Walk / Control Water, Freedom of Movement / Conjure Elemental, Scrying. Desert: Blur, Silence / Create Food and Water, Protection from Energy / Blight, Hallucinatory Terrain / Insect Plague, Wall of Stone. Forest: Barkskin, Spider Climb / Call Lightning, Plant Growth / Divination, Freedom of Movement / Commune with Nature, Tree Stride. Grassland: Invisibility, Pass without Trace / Daylight, Haste / Divination, Freedom of Movement / Dream, Insect Plague. Mountain: Spider Climb, Spike Growth / Lightning Bolt, Meld into Stone / Stone Shape, Stoneskin / Passwall, Wall of Stone. Swamp: Darkness, Melf's Acid Arrow / Water Walk, Stinking Cloud / Freedom of Movement, Locate Creature / Insect Plague, Scrying. Underdark: Spider Climb, Web / Gaseous Form, Stinking Cloud / Greater Invisibility, Stone Shape / Cloudkill, Insect Plague.
+6 | Land's Stride | Nonmagical difficult terrain costs no extra movement, plants don't harm you, and you have advantage against magical plants that impede movement.
+10 | Nature's Ward | You can't be charmed or frightened by elementals or fey, and you're immune to poison and disease.
+14 | Nature's Sanctuary | Beasts and plants that attack you must make a Wisdom save or choose another target; on a success they're immune for 24 hours.
+
+@sub Circle of the Moon | PHB
+2 | Combat Wild Shape | Use Wild Shape as a bonus action, and while transformed spend a spell slot as a bonus action to regain 1d8 HP per slot level.
+2 | Circle Forms | Wild Shape into beasts of CR 1 at 2nd level and CR equal to druid level divided by 3 from 6th level.
+6 | Primal Strike | Your attacks in beast form count as magical for overcoming resistance and immunity.
+10 | Elemental Wild Shape | Spend two Wild Shape uses to transform into an air, earth, fire or water elemental.
+14 | Thousand Forms | You can cast Alter Self at will.
+
+@sub Circle of the Shepherd | XGtE
+2 | Speech of the Woods | You learn Sylvan and can speak with beasts, which can understand you.
+2 | Spirit Totem | As a bonus action, summon a 30-foot spirit aura for 1 minute: Bear (temp HP and Strength advantage), Hawk (reaction to grant advantage on an attack) or Unicorn (Perception advantage and extra healing). Once per short or long rest.
+6 | Mighty Summoner | Beasts and fey you summon with spells gain 2 extra HP per Hit Die and their natural weapons count as magical.
+10 | Guardian Spirit | Beasts and fey you summon that end their turn in your Spirit Totem aura regain HP equal to half your druid level.
+14 | Faithful Summons | When you drop to 0 HP or are incapacitated against your will, gain the benefits of Conjure Animals as if cast with a 9th-level slot. Once per long rest.
+
+@sub Circle of Spores | TCoE
+2 | Circle Spells | Always prepared. 2nd: Chill Touch. 3rd: Blindness/Deafness, Gentle Repose. 5th: Animate Dead, Gaseous Form. 7th: Blight, Confusion. 9th: Cloudkill, Contagion.
+2 | Halo of Spores | As a reaction, deal necrotic damage (1d4, growing with level) to a creature that moves into or starts its turn within 10 feet, unless it succeeds on a Constitution save.
+2 | Symbiotic Entity | Spend a Wild Shape use to gain 4 temp HP per druid level for 10 minutes; while you have them, Halo of Spores doubles its dice and melee hits deal an extra 1d6 necrotic.
+6 | Fungal Infestation | As a reaction, animate a Small or Medium beast or humanoid that dies within 10 feet as a 1-HP zombie for 1 hour. Wisdom modifier uses per long rest.
+10 | Spreading Spores | While Symbiotic Entity is active, use a bonus action to place a 10-foot cube of spores that deals your Halo damage to creatures in it.
+14 | Fungal Body | Immune to blinded, deafened, frightened and poisoned, and critical hits against you become normal hits unless you're incapacitated.
+
+@sub Circle of Stars | TCoE
+2 | Star Map | Your star chart is a focus; you know Guidance, always have Guiding Bolt prepared, and can cast it without a slot proficiency bonus times per long rest.
+2 | Starry Form | Spend a Wild Shape use to take a starry form for 10 minutes: Archer (bonus action radiant attack), Chalice (extra healing) or Dragon (minimum 10 on concentration and Int or Wis checks).
+6 | Cosmic Omen | After a long rest, roll a die: even lets you add 1d6 to a creature's roll as a reaction, odd subtract 1d6. Proficiency bonus uses.
+10 | Twinkling Constellations | Archer and Chalice use 2d8, Dragon grants a 20-foot flying speed with hover, and you can switch constellations each turn.
+14 | Full of Stars | In starry form, you resist bludgeoning, piercing and slashing damage.
+
+@sub Circle of Wildfire | TCoE
+2 | Circle Spells | Always prepared. 2nd: Burning Hands, Cure Wounds. 3rd: Flaming Sphere, Scorching Ray. 5th: Plant Growth, Revivify. 7th: Aura of Life, Fire Shield. 9th: Flame Strike, Mass Cure Wounds.
+2 | Summon Wildfire Spirit | Spend a Wild Shape use to summon a wildfire spirit for 1 hour; creatures near where it appears take fire damage on a failed Dexterity save.
+6 | Enhanced Bond | While your spirit is summoned, add 1d8 to one roll of your fire damage or healing spells, and your spells can originate from the spirit.
+10 | Cauterizing Flames | When a creature dies near you or your spirit, a flame appears; as a reaction, a creature entering it is healed or burned 2d10 + Wisdom modifier. Proficiency bonus uses per long rest.
+14 | Blazing Revival | If you drop to 0 HP while your spirit is within 120 feet, it drops to 0 instead and you regain half your HP and stand up. Once per long rest.

@@ -1,0 +1,83 @@
+@class Warlock | hitDie 8 | caster pact | spell cha | saves wis cha | sublevel 1 | sublabel Otherworldly Patron
+@prof armor light | weapons simple | skills 2 from Arcana, Deception, History, Intimidation, Investigation, Nature, Religion
+@mc armor light | weapons simple
+1 | Pact Magic | Learn warlock cantrips and spells cast with Charisma. You have few spell slots, all of the same level, and they recharge on a short or long rest.
+2 | Eldritch Invocations | Gain two invocations, with more as you level. When you gain a warlock level you can swap one known invocation.
+3 | Pact Boon | Choose a gift from your patron: Pact of the Blade, Chain, Tome or Talisman.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+4 | Eldritch Versatility (Optional) | When you gain an ASI, you can swap a warlock cantrip, your Pact Boon or a Mystic Arcanum spell for another option.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+11 | Mystic Arcanum | Choose a 6th-level warlock spell you can cast once per long rest without a slot. You gain a 7th, 8th and 9th-level arcanum at levels 13, 15 and 17.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Eldritch Master | Spend one minute entreating your patron to regain all expended Pact Magic slots. Once per long rest.
+
+@sub Archfey | PHB
+1 | Expanded Spell List | 1st: Faerie Fire, Sleep. 2nd: Calm Emotions, Phantasmal Force. 3rd: Blink, Plant Growth. 4th: Dominate Beast, Greater Invisibility. 5th: Dominate Person, Seeming.
+1 | Fey Presence | As an action, creatures in a 10-foot cube from you make a Wisdom save or are charmed or frightened by you until the end of your next turn. Once per short or long rest.
+6 | Misty Escape | When you take damage, use your reaction to turn invisible and teleport up to 60 feet. You stay invisible until your next turn starts or you attack or cast. Once per short or long rest.
+10 | Beguiling Defenses | You are immune to being charmed. When someone tries to charm you, your reaction can turn it back on them with a Wisdom save, charming them for 1 minute.
+14 | Dark Delirium | As an action, a creature within 60 feet makes a Wisdom save or is charmed or frightened for 1 minute, lost in an illusion. Once per short or long rest.
+
+@sub Celestial | XGtE
+1 | Expanded Spell List | 1st: Cure Wounds, Guiding Bolt. 2nd: Flaming Sphere, Lesser Restoration. 3rd: Daylight, Revivify. 4th: Guardian of Faith, Wall of Fire. 5th: Flame Strike, Greater Restoration.
+1 | Bonus Cantrips | You learn Light and Sacred Flame; they count as warlock cantrips but not against your cantrips known.
+1 | Healing Light | You have a pool of d6s equal to 1 + your warlock level. As a bonus action, heal a creature within 60 feet by spending dice, up to your Charisma modifier per use. Recharges on a long rest.
+6 | Radiant Soul | You gain resistance to radiant damage. Add your Charisma modifier to one radiant or fire damage roll of your spells against one target.
+10 | Celestial Resilience | When you finish a short or long rest, gain temp HP equal to warlock level + Charisma modifier, and up to five creatures gain half that.
+14 | Searing Vengeance | When you make a death save at the start of your turn, you can instead rise with half your HP max and blast nearby enemies with radiant damage, blinding them. Once per long rest.
+
+@sub Fathomless | TCoE
+1 | Expanded Spell List | 1st: Create or Destroy Water, Thunderwave. 2nd: Gust of Wind, Silence. 3rd: Lightning Bolt, Sleet Storm. 4th: Control Water, Summon Elemental (water only). 5th: Bigby's Hand, Cone of Cold.
+1 | Tentacle of the Deep | As a bonus action, summon a spectral tentacle that makes a cold-damage spell attack and reduces the target's speed. Uses equal your proficiency bonus per long rest.
+1 | Gift of the Sea | You gain a 40-foot swimming speed and can breathe underwater.
+6 | Oceanic Soul | You gain resistance to cold damage. While fully submerged, you and other submerged creatures understand each other.
+6 | Guardian Coil | Use your reaction to reduce damage dealt to a creature near your tentacle by 1d8 (2d8 at 10th level).
+10 | Grasping Tentacles | You learn Evard's Black Tentacles and can cast it once per long rest without a slot. Casting it grants temp HP and damage can't break its concentration.
+14 | Fathomless Plunge | As an action, teleport yourself and up to five willing creatures to a body of water you've seen within 1 mile. Once per short or long rest.
+
+@sub Fiend | PHB
+1 | Expanded Spell List | 1st: Burning Hands, Command. 2nd: Blindness/Deafness, Scorching Ray. 3rd: Fireball, Stinking Cloud. 4th: Fire Shield, Wall of Fire. 5th: Flame Strike, Hallow.
+1 | Dark One's Blessing | When you reduce a hostile creature to 0 HP, gain temp HP equal to your Charisma modifier + warlock level (minimum 1).
+6 | Dark One's Own Luck | Add a d10 to an ability check or saving throw after seeing the roll but before the outcome. Once per short or long rest.
+10 | Fiendish Resilience | After a rest, choose a damage type to resist until you choose another. Magical or silvered weapons ignore it.
+14 | Hurl Through Hell | When you hit a creature, send it through the lower planes until the end of your next turn; non-fiends take 10d10 psychic damage. Once per long rest.
+
+@sub The Genie | TCoE
+1 | Expanded Spell List | Detect Evil and Good, Phantasmal Force, Create Food and Water, Phantasmal Killer, Creation and Wish, plus extra spells set by your genie kind (Dao, Djinni, Efreeti or Marid).
+1 | Genie's Vessel | You receive a Tiny vessel that is your spellcasting focus. If it is lost, a 1-hour ceremony during a rest gives you a new one.
+1 | Bottled Respite | As an action, vanish into your vessel's extradimensional space for up to twice your proficiency bonus in hours. Once per long rest.
+1 | Genie's Wrath | Once per turn, when you hit with an attack roll, deal extra damage equal to your proficiency bonus of your genie kind's type.
+6 | Elemental Gift | Gain resistance to your genie's damage type. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.
+10 | Sanctuary Vessel | Up to five willing creatures can enter your vessel with you. Staying 10 minutes grants short rest benefits, and Hit Dice healing there gets a bonus.
+14 | Limited Wish | As an action, cast any spell of 6th level or lower with a casting time of 1 action from any class list, ignoring requirements. Recharges after 1d4 long rests.
+
+@sub Great Old One | PHB
+1 | Expanded Spell List | 1st: Dissonant Whispers, Tasha's Hideous Laughter. 2nd: Detect Thoughts, Phantasmal Force. 3rd: Clairvoyance, Sending. 4th: Dominate Beast, Evard's Black Tentacles. 5th: Dominate Person, Telekinesis.
+1 | Awakened Mind | Speak telepathically with any creature you can see within 30 feet, as long as it knows at least one language.
+6 | Entropic Ward | Use your reaction to impose disadvantage on an attack against you; if it misses, you have advantage on your next attack against that creature. Once per short or long rest.
+10 | Thought Shield | Your thoughts can't be read without permission, you resist psychic damage, and a creature that deals psychic damage to you takes the same amount.
+14 | Create Thrall | As an action, touch an incapacitated humanoid to charm it until Remove Curse or you use this again. You can talk to it telepathically on the same plane.
+
+@sub Hexblade | XGtE
+1 | Expanded Spell List | 1st: Shield, Wrathful Smite. 2nd: Blur, Branding Smite. 3rd: Blink, Elemental Weapon. 4th: Phantasmal Killer, Staggering Smite. 5th: Banishing Smite, Cone of Cold.
+1 | Hexblade's Curse | As a bonus action, curse a creature within 30 feet for 1 minute: extra damage equal to your proficiency bonus, crits on 19-20, and healing when it dies. Once per short or long rest.
+1 | Hex Warrior | Gain proficiency with medium armor, shields and martial weapons. After a long rest, bind a one-handed weapon you're proficient with to use Charisma for its attack and damage.
+6 | Accursed Specter | When you slay a humanoid, you can raise its spirit as a specter that obeys you until your next long rest. Once per long rest.
+10 | Armor of Hexes | When the target of your curse attacks you, use your reaction to roll a d6; on a 4 or higher the attack misses.
+14 | Master of Hexes | When your cursed target dies, you can move the curse to another creature within 30 feet, without regaining HP from the first.
+
+@sub Undead | VRGtR
+1 | Expanded Spell List | 1st: Bane, False Life. 2nd: Blindness/Deafness, Phantasmal Force. 3rd: Phantom Steed, Speak with Dead. 4th: Death Ward, Greater Invisibility. 5th: Antilife Shell, Cloudkill.
+1 | Form of Dread | As a bonus action, transform for 1 minute: gain temp HP, immunity to frightened, and once per turn a hit can frighten the target on a failed Wisdom save. Proficiency bonus uses per long rest.
+6 | Grave Touched | You don't need to eat, drink or breathe. Once per turn, an attack can deal necrotic damage instead, with an extra die while in Form of Dread.
+10 | Necrotic Husk | Gain necrotic resistance (immunity in Form of Dread). When reduced to 0 HP, you can drop to 1 HP instead and burst necrotic energy, gaining exhaustion. Recharges after 1d4 long rests.
+14 | Spirit Projection | As an action, project your spirit from your body for up to 1 hour, gaining resistance to physical damage, flying, and other benefits. Once per long rest.
+
+@sub Undying | SCAG
+1 | Expanded Spell List | 1st: False Life, Ray of Sickness. 2nd: Blindness/Deafness, Silence. 3rd: Feign Death, Speak with Dead. 4th: Aura of Life, Death Ward. 5th: Contagion, Legend Lore.
+1 | Among the Dead | You learn Spare the Dying, have advantage on saves against disease, and undead must make a Wisdom save to target you directly.
+6 | Defy Death | When you succeed on a death save or stabilize someone with Spare the Dying, regain 1d8 + Constitution modifier HP. Once per long rest.
+10 | Undying Nature | You can hold your breath indefinitely, don't need food, water or sleep, and age much more slowly.
+14 | Indestructible Life | As a bonus action, regain 1d8 + warlock level HP and reattach severed body parts. Once per short or long rest.

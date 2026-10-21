@@ -1,0 +1,185 @@
+@level 2
+Aid | Abj | Action | 30 feet | V, S, M | 8 hours | Art, Brd, Clr, Drd, Pal, Rgr | PHB 2024
+Up to three creatures increase their Hit Point maximum and current Hit Points by 5 for the duration.
++ Increase by 5 more per slot level above 2.
+Alter Self | Tra | Action | Self | V, S | C, up to 1 hour | Art, Sor, Wiz | PHB 2024
+Choose one form, and change it with a Magic action: Aquatic Adaptation (gills, Swim Speed equal to Speed), Change Appearance (look like another creature of your size and kind), or Natural Weapons (claws, fangs, horns or hooves: Unarmed Strikes deal 1d6 of the matching type and can use your spellcasting ability).
+Animal Messenger | Enc | Action or R | 30 feet | V, S, M | 24 hours | Brd, Drd, Rgr | PHB 2024
+A Tiny Beast carries a message of up to 25 words to a place you describe, traveling about 25 miles per day (50 if it flies), and delivers it to the creature you describe.
++ Duration increases by 48 hours per slot level above 2.
+Arcane Lock | Abj | Action | Touch | V, S, M(C*) | Until dispelled | Art, Wiz | PHB 2024
+A closed door, window, gate or container is magically locked. You and creatures you designate open it normally; Knock suppresses it for 10 minutes. Breaking or picking it has a DC 10 higher. Material: gold dust worth 25+ GP, consumed.
+Arcane Vigor | Abj | Bonus Action | Self | V, S | Instantaneous | Art, Sor, Wiz | PHB 2024
+Expend one or two of your unspent Hit Point Dice, roll them and regain that total plus your spellcasting modifier in Hit Points.
++ You can expend one more Hit Die per slot level above 2.
+Augury | Div | 1 minute or R | Self | V, S, M(C) | Instantaneous | Clr, Drd, Wiz | PHB 2024
+Ask about a course of action you plan within the next 30 minutes and receive an omen: Weal, Woe, Weal and woe, or Indifference. Repeat castings before a Long Rest risk a random reading. Material: specially marked sticks or similar worth 25+ GP.
+Barkskin | Tra | Bonus Action | Touch | V, S, M | 1 hour | Drd, Rgr | PHB 2024
+A willing creature's AC can't be less than 17 for the duration.
++ One additional creature per slot level above 2.
+Battle Familiar | Con | Action | 10 feet | V, S, M(C) | 1 hour | Drd, Wlk, Wiz | Arcana Unleashed
+Summon a Celestial, Fey or Fiend familiar in Brute, Flyer or Stalker form that acts after you. Its Rend is a melee spell attack (5-foot reach) dealing 1d8 + 3 + the spell's level in Force damage, with attacks equal to half the spell level rounded down.
++ More damage, 5 more Hit Points and more Rend attacks per slot level above 2; the Brute's AC also rises.
+Beast Sense | Div | Action or R | Touch | S | C, up to 1 hour | Drd, Rgr | PHB 2024
+Touch a willing Beast and perceive through its senses until the spell ends, using its special senses. While you do, you benefit from them but are blind and deaf to your own surroundings.
+Blindness/Deafness | Tra | Action | 120 feet | V | 1 minute | Brd, Clr, Sor, Wiz | PHB 2024
+A creature makes a Constitution save or is Blinded or Deafened (your choice). It repeats the save at the end of each of its turns.
++ One additional creature per slot level above 2.
+Blur | Ill | Action | Self | V | C, up to 1 minute | Art, Sor, Wiz | PHB 2024
+Attack rolls against you have Disadvantage. Creatures with Blindsight or Truesight aren't affected.
+Calm Emotions | Enc | Action | 60 feet | V, S | C, up to 1 minute | Brd, Clr | PHB 2024
+Each Humanoid in a 20-foot-radius Sphere makes a Charisma save (it can choose to fail). On a failure, either suppress effects making it Charmed or Frightened, or make it indifferent toward creatures it is hostile to (ends if it is attacked or harmed).
+Cloud of Daggers | Con | Action | 60 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Spinning daggers fill a 5-foot Cube. A creature takes 4d4 Slashing damage when the Cube appears on it, when it enters, ends its turn there or the Cube moves into it (once per turn). As a Magic action you can move the Cube up to 30 feet.
++ Damage increases by 2d4 per slot level above 2.
+Conjure Tools | Con | Action | 30 feet | V, S | 8 hours | Art, Brd, Rgr, Wiz | DDB Drops
+Create a set of Artisan's Tools of your choice that you are proficient with. They vanish when the spell ends or if they are more than 10 feet from you, but what you made with them remains.
++ With a level 3+ slot you craft nonmagical items as efficiently as two characters.
+Continual Flame | Evo | Action | Touch | V, S, M(C*) | Until dispelled | Art, Clr, Drd, Wiz | PHB 2024
+A heatless flame as bright as a torch appears on an object. It can be covered but not smothered or quenched. Material: ruby dust worth 50+ GP, consumed.
+Cordon of Arrows | Tra | Action | Touch | V, S, M | 8 hours | Rgr | PHB 2024
+Plant four pieces of ammunition. When a creature other than those you designate first enters within 30 feet or ends its turn there, one piece flies at it: Dexterity save or 2d4 Piercing damage. The spell ends when no ammunition remains.
++ Two more pieces per slot level above 2.
+Crown of Madness | Enc | Action | 120 feet | V, S | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+A Humanoid makes a Wisdom save or is Charmed. At the start of its turns it must attack a creature you choose within its reach (or acts normally if none). You must use an action each turn to maintain control or the spell ends. It repeats the save at the end of its turns.
+Darkness | Evo | Action | 60 feet | V, M | C, up to 10 minutes | Sor, Wlk, Wiz | PHB 2024
+Magical Darkness fills a 15-foot-radius Sphere at a point or on an object you hold. Darkvision can't see through it and nonmagical light can't illuminate it. Dispels light spells of level 2 or lower it overlaps.
+Darkvision | Tra | Action | Touch | V, S, M | 8 hours | Art, Drd, Rgr, Sor, Wiz | PHB 2024
+A willing creature gains Darkvision with a range of 150 feet.
+Death Armor | Nec | Action | Touch | V, S, M(C*) | 1 hour | Sor, Wiz | FRHoF
+The target has Advantage on Death Saving Throws, and once per turn a creature within 5 feet that hits it with a melee attack takes 2d4 Necrotic damage. Material: an onyx worth 50+ GP, consumed.
+Deryan's Helpful Homunculi | Con | Action or R | Self | V, S, M(C*) | 8 hours | Clr, Wiz | FRHoF
+Intangible homunculus-like spirits help you craft: they count as proficient in Arcana and in the Artisan's Tools used, act as one assistant and halve the crafting time.
+Detect Thoughts | Div | Action | Self | V, S, M | C, up to 1 minute | Brd, Sor, Wiz | PHB 2024
+Sense creatures with thoughts within 30 feet. As a Magic action you read a creature's surface thoughts, and can probe deeper: it makes a Wisdom save or you learn its reasoning, emotions and something on its mind.
+Disruptive Tune | Abj | Action | 120 feet | V, S | C, up to 1 minute | Brd, Sor, Wiz | Arcana Unleashed
+Each creature in a 20-foot-radius Sphere makes a Constitution save. On a failure it loses Concentration and has Disadvantage on Constitution saves to keep Concentration for the duration.
+Dragon's Breath | Tra | Bonus Action | Touch | V, S, M | C, up to 1 minute | Art, Sor, Wiz | PHB 2024
+A willing creature can take a Magic action to exhale a 15-foot Cone of Acid, Cold, Fire, Lightning or Poison (your choice when casting): Dexterity save, 3d6 damage, half on a success.
++ Damage increases by 1d6 per slot level above 2.
+Dueling Ground | Abj | 10 minutes or R | Touch | V, S, M(C) | 1 hour | Art, Brd, Clr, Drd, Pal, Rgr, Sor, Wlk, Wiz | Arcana Unleashed
+A 15-foot-radius Sphere holds a duel between two willing creatures. A duelist reduced to 0 HP (or hit by an instant-death effect) instead becomes Stable at 0 HP and is teleported out. Ends if another creature enters.
++ One additional willing creature per slot level above 2.
+Elminster's Elusion | Abj | Bonus Action | Self | V, S | C, up to 10 minutes | Wiz | FRHoF
+You have Advantage on saving throws against spells and magical effects, and when a successful save would halve damage you take none instead.
+Enhance Ability | Tra | Action | Touch | V, S, M | C, up to 1 hour | Art, Brd, Clr, Drd, Rgr, Sor, Wiz | PHB 2024
+Choose an ability: the target has Advantage on ability checks using it for the duration.
++ One additional creature per slot level above 2.
+Enlarge/Reduce | Tra | Action | 30 feet | V, S, M | C, up to 1 minute | Art, Brd, Drd, Sor, Wiz | PHB 2024
+A creature or object grows or shrinks one size (an unwilling creature makes a Constitution save). Enlarged: Advantage on Strength checks and saves, weapons deal +1d4. Reduced: Disadvantage on those, weapons deal -1d4 (minimum 1).
+Enthrall | Enc | Action | 60 feet | V, S | C, up to 1 minute | Brd, Wlk | PHB 2024
+Creatures of your choice that can hear you make a Wisdom save (Advantage if fighting you) or have Disadvantage on Wisdom (Perception) checks to notice anyone but you.
+Find Steed | Con | Action | 30 feet | V, S | Instantaneous | Pal | PHB 2024
+Summon an otherworldly steed (Celestial, Fey or Fiend) using the Otherworldly Steed stat block; it is Large, acts on your turn when you ride it and can't be controlled by others. It disappears at 0 HP or if you cast the spell again.
++ The steed's stats improve with higher slots (more HP and abilities such as flight at level 4+).
+Find Traps | Div | Action | 120 feet | V, S | Instantaneous | Clr, Drd, Rgr | PHB 2024
+You sense any trap within range and line of sight and learn its general nature, but not its location.
+Flame Blade | Evo | Bonus Action | Self | V, S, M | C, up to 10 minutes | Drd, Sor | PHB 2024
+A fiery blade appears in your hand. As a Magic action you make a melee spell attack with it for 3d6 + your spellcasting modifier Fire damage. It sheds Bright Light in 10 feet.
++ Damage increases by 1d6 per slot level above 2.
+Flaming Sphere | Con | Action | 60 feet | V, S, M | C, up to 1 minute | Drd, Sor, Wiz | PHB 2024
+A 5-foot sphere of fire appears. A creature ending its turn within 5 feet makes a Dexterity save or takes 2d6 Fire damage (half on success). As a Bonus Action you move it 30 feet; ramming a creature forces the save.
++ Damage increases by 1d6 per slot level above 2.
+Gentle Repose | Nec | Action or R | Touch | V, S, M(C) | 10 days | Clr, Pal, Wiz | PHB 2024
+A corpse doesn't decay and can't become Undead, and the days don't count toward time limits like Raise Dead's. Material: 2 copper pieces placed on the eyes.
+Gust of Wind | Evo | Action | Self | V, S, M | C, up to 1 minute | Drd, Rgr, Sor, Wiz | PHB 2024
+A 60-foot-long, 10-foot-wide Line of wind. Each creature that starts its turn there makes a Strength save or is pushed 15 feet; moving against it costs double. Disperses gas and extinguishes unprotected flames. You can change its direction as a Bonus Action.
+Heat Metal | Tra | Action | 60 feet | V, S, M | C, up to 1 minute | Art, Brd, Drd | PHB 2024
+A metal object glows red-hot. A creature touching it takes 2d8 Fire damage; if it holds or wears it, it makes a Constitution save or drops it, otherwise it has Disadvantage on attacks and checks until your next turn. Repeat the damage as a Bonus Action.
++ Damage increases by 1d8 per slot level above 2.
+Hold Person | Enc | Action | 60 feet | V, S, M | C, up to 1 minute | Brd, Clr, Drd, Sor, Wlk, Wiz | PHB 2024
+A Humanoid makes a Wisdom save or is Paralyzed. It repeats the save at the end of each of its turns.
++ One additional Humanoid per slot level above 2.
+Homunculus Servant | Con | 1 hour or R | 10 feet | V, S, M(C) | Instantaneous | Art | EFotA
+Summon a loyal Tiny construct homunculus (AC 13, walk 20 ft, fly 30 ft) that acts after you, follows your orders and Dodges otherwise. Its Force Strike deals 1d6 + the spell's level in Force damage. Material: a gem worth 100+ GP.
++ Its Hit Points, Hit Dice, Force Strike damage and bonuses increase with the slot level.
+Invisibility | Ill | Action | Touch | V, S, M | C, up to 1 hour | Art, Brd, Sor, Wlk, Wiz | PHB 2024
+A creature has the Invisible condition. It ends early if the target makes an attack roll, deals damage or casts a spell.
++ One additional creature per slot level above 2.
+Knock | Tra | Action | 60 feet | V | Instantaneous | Brd, Sor, Wiz | PHB 2024
+Unlock an object that is locked, stuck or barred, or suppress Arcane Lock for 10 minutes. It makes a loud knock audible 300 feet away.
+Lesser Restoration | Abj | Bonus Action | Touch | V, S | Instantaneous | Art, Brd, Clr, Drd, Pal, Rgr | PHB 2024
+End one condition on a creature: Blinded, Deafened, Paralyzed or Poisoned.
+Levitate | Tra | Action | 60 feet | V, S, M | C, up to 10 minutes | Art, Sor, Wiz | PHB 2024
+A creature or loose object up to 500 pounds rises up to 20 feet (an unwilling creature makes a Constitution save). You can move it up or down 20 feet each turn; a levitating creature can only move by pushing or pulling.
+Locate Animals or Plants | Div | Action or R | Self | V, S, M | Instantaneous | Brd, Drd, Rgr | PHB 2024
+Name a kind of Beast, Plant creature or nonmagical plant: you learn the direction and distance to the closest one within 5 miles.
+Locate Object | Div | Action | Self | V, S, M | C, up to 10 minutes | Brd, Clr, Drd, Pal, Rgr, Wiz | PHB 2024
+Sense the direction of an object you describe within 1,000 feet. Blocked by lead.
+Magic Mouth | Ill | 1 minute or R | 30 feet | V, S, M(C*) | Until dispelled | Art, Brd, Wiz | PHB 2024
+Implant a message of up to 25 words on an object, spoken when a trigger you set occurs within 30 feet. Material: jade dust worth 10+ GP, consumed.
+Magic Weapon | Tra | Bonus Action | Touch | V, S | 1 hour | Art, Pal, Rgr, Sor, Wiz | PHB 2024
+A nonmagical weapon becomes a magic weapon with +1 to attack and damage rolls.
++ +2 with a level 3-5 slot, +3 with level 6+.
+Melf's Acid Arrow | Evo | Action | 90 feet | V, S, M | Instantaneous | Wiz | PHB 2024
+Ranged spell attack: 4d4 Acid damage on a hit and 2d4 Acid damage at the end of its next turn. On a miss, half the initial damage only.
++ Both damages increase by 1d4 per slot level above 2.
+Mind Spike | Div | Action | 120 feet | S | C, up to 1 hour | Sor, Wlk, Wiz | PHB 2024
+A creature makes a Wisdom save, taking 3d8 Psychic damage on a failure (half on success). On a failure you also know its location while on the same plane, and it can't hide from you or be Invisible to you.
++ Damage increases by 1d8 per slot level above 2.
+Mirror Image | Ill | Action | Self | V, S | 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Three illusory duplicates appear. When an attack would hit you, roll a d6 for each remaining duplicate; on a 3+ one duplicate is hit and destroyed instead. Creatures with Blindsight or Truesight aren't fooled.
+Misty Step | Con | Bonus Action | Self | V | Instantaneous | Sor, Wlk, Wiz | PHB 2024
+Teleport up to 30 feet to an unoccupied space you can see.
+Moonbeam | Evo | Action | 120 feet | V, S, M | C, up to 1 minute | Drd | PHB 2024
+A 5-foot-radius, 40-foot-high Cylinder of moonlight. A creature in it when it appears, entering it or ending its turn there makes a Constitution save, taking 2d10 Radiant damage (half on success), once per turn; a shapeshifter that fails reverts. As a Magic action you can move it up to 60 feet.
++ Damage increases by 1d10 per slot level above 2.
+Nystul's Magic Aura | Ill | Action | Touch | V, S, M | 24 hours | Wiz | PHB 2024
+Change how a creature or object appears to divination: make an object read as magical or not (False Aura), or change a creature's apparent type or alignment (Mask).
+Pass without Trace | Abj | Action | Self | V, S, M | C, up to 1 hour | Drd, Rgr | PHB 2024
+You and allies in a 30-foot Emanation have +10 to Dexterity (Stealth) checks and leave no tracks.
+Phantasmal Force | Ill | Action | 60 feet | V, S, M | C, up to 1 minute | Brd, Sor, Wiz | PHB 2024
+A creature makes an Intelligence save or perceives an illusion no larger than a 10-foot Cube that only it can see, and rationalizes it as real. If the illusion can harm, it deals 2d8 Psychic damage each turn the target is in it or within 5 feet. A Study action allows an Investigation check to see through it.
+Pinky Swear | Abj | Action | Touch | V, S | 24 Hours | Brd, Pal, Wiz | DDB Drops
+Make a promise of up to 25 words to the creature you touch. If you knowingly break it, it knows (within 1 mile) and you catch fire, taking 1 Fire damage at the start of each of your turns.
+Prayer of Healing | Abj | 10 minutes | 30 feet | V | Instantaneous | Clr, Pal | PHB 2024
+Up to five creatures gain the benefits of a Short Rest and regain 2d8 Hit Points. A creature can't benefit again until it finishes a Long Rest.
++ Healing increases by 1d8 per slot level above 2.
+Protection from Poison | Abj | Action | Touch | V, S | 1 hour | Art, Clr, Drd, Pal, Rgr | PHB 2024
+End the Poisoned condition on a creature. For the duration it has Advantage on saves against Poisoned and Resistance to Poison damage.
+Ray of Enfeeblement | Nec | Action | 60 feet | V, S | C, up to 1 minute | Wlk, Wiz | PHB 2024
+A creature makes a Constitution save. On a failure it has Disadvantage on Strength-based D20 Tests and subtracts 1d8 from all its damage rolls; it repeats the save at the end of each turn. On a success it has Disadvantage on its next attack roll.
+Rope Trick | Tra | Action | Touch | V, S, M | 1 hour | Art, Wiz | PHB 2024
+A rope leads to an invisible extradimensional space that holds up to eight Medium creatures. Attacks and spells can't cross into or out of it.
+Scorching Ray | Evo | Action | 120 feet | V, S | Instantaneous | Sor, Wiz | PHB 2024
+Hurl three rays, each a ranged spell attack for 2d6 Fire damage, at one or more targets.
++ One additional ray per slot level above 2.
+Searing Orb | Evo | Action | 60 feet | S, M | Instantaneous | Clr, Pal | DDB Drops
+Ranged spell attack for 3d4 Radiant damage. Hit or miss, the orb bursts: the target and each creature within 10 feet of it make a Constitution save or are Blinded until the end of their next turn.
++ Damage increases by 1d4 per slot level above 2.
+See Invisibility | Div | Action | Self | V, S, M | 1 hour | Art, Brd, Sor, Wiz | PHB 2024
+You see Invisible creatures and objects, and into the Ethereal Plane, as translucent shapes.
+Shatter | Evo | Action | 60 feet | V, S, M | Instantaneous | Brd, Sor, Wiz | PHB 2024
+Each creature in a 10-foot-radius Sphere makes a Constitution save, taking 3d8 Thunder damage on a failure or half on a success; Constructs have Disadvantage. Unattended nonmagical objects also take the damage.
++ Damage increases by 1d8 per slot level above 2.
+Shining Smite | Tra | Bonus Action | Self | V | C, up to 1 minute | Pal | PHB 2024
+Cast right after hitting with a melee weapon or Unarmed Strike: extra 2d6 Radiant damage, and the target sheds Bright Light in 5 feet, attacks against it have Advantage and it can't be Invisible.
++ Damage increases by 1d6 per slot level above 2.
+Silence | Ill | Action or R | 120 feet | V, S | C, up to 10 minutes | Brd, Clr, Rgr | PHB 2024
+No sound can be created in or pass through a 20-foot-radius Sphere. Creatures inside are Deafened and immune to Thunder damage, and can't cast spells with a Verbal component.
+Spider Climb | Tra | Action | Touch | V, S, M | C, up to 1 hour | Art, Sor, Wlk, Wiz | PHB 2024
+A willing creature can climb surfaces and ceilings with its hands free, and gains a Climb Speed equal to its Speed.
++ One additional creature per slot level above 2.
+Spike Growth | Tra | Action | 150 feet | V, S, M | C, up to 10 minutes | Drd, Rgr | PHB 2024
+A 20-foot-radius Sphere of ground becomes Difficult Terrain with hidden thorns. A creature takes 2d4 Piercing damage for every 5 feet it moves in the area. It's camouflaged: a Search action with Perception or Survival against your DC reveals it.
+Spiritual Weapon | Evo | Bonus Action | 60 feet | V, S | C, up to 1 minute | Clr | PHB 2024
+A floating spectral weapon appears. When you cast it, and as a Bonus Action on later turns, move it up to 20 feet and make a melee spell attack with it for 1d8 + your spellcasting modifier Force damage.
++ Damage increases by 1d8 per slot level above 2.
+Suggestion | Enc | Action | 30 feet | V, M | C, up to 8 hours | Brd, Sor, Wlk, Wiz | PHB 2024
+Suggest a reasonable course of activity (up to 25 words) to a creature that can hear and understand you. On a failed Wisdom save it pursues it. Ends if you or allies damage it.
+Summon Beast | Con | Action | 90 feet | V, S, M(C) | C, up to 1 hour | Drd, Rgr | PHB 2024
+Summon a Bestial Spirit (Air, Land or Water) that obeys you and acts right after you. It attacks with Rend and uses the spell's level for its AC, Hit Points and damage. Material: a feather, fur or fish tail in a gilded acorn worth 200+ GP.
++ Uses the higher slot level in its stat block.
+Tortoise Shell | Abj | Action | Touch | V, S | C, up to 1 minute | Art, Drd, Rgr | DDB Drops
+A willing creature gains +3 AC while it stays still. If it moves or uses its action, Bonus Action or Reaction to move, the bonus drops to +1 until the start of its next turn.
+Uncertain Footing | Ill | Action | 120 feet | V, S, M | C, up to 1 minute | Art, Brd, Wlk, Wiz | Arcana Unleashed
+Up to three creatures make an Intelligence save. On a failure a target's Speed is halved and it can't Dash; it repeats the save at the end of each of its turns.
+Warding Bond | Abj | Action | Touch | V, S, M(C) | 1 hour | Clr, Pal | PHB 2024
+A willing creature within 60 feet of you gets +1 AC and saves and Resistance to all damage; whenever it takes damage, you take the same amount. Material: two platinum rings worth 50+ GP each, worn by both.
+Web | Con | Action | 60 feet | V, S, M | C, up to 1 hour | Art, Sor, Wiz | PHB 2024
+Sticky webs fill a 20-foot Cube, making it Difficult Terrain and Lightly Obscured. A creature entering or starting its turn there makes a Dexterity save or is Restrained; it can take an action for a Strength (Athletics) check against your DC to break free. The webs are flammable.
+Wither and Bloom | Nec | Action | 60 feet | V, S, M | Instantaneous | Drd, Sor, Wiz | Arcana Unleashed
+Creatures you choose in a 10-foot-radius Sphere make a Constitution save, taking 3d6 Necrotic damage (half on success). One creature you choose in the area can spend a Hit Point Die to heal its roll + your spellcasting modifier.
++ Damage increases by 1d6 and one more Hit Point Die can be spent per slot level above 2.
+Zone of Truth | Enc | Action | 60 feet | V, S | 10 minutes | Brd, Clr, Pal | PHB 2024
+Creatures in a 15-foot-radius Sphere make a Charisma save; those that fail can't speak a deliberate lie while in it. You know who succeeded or failed.

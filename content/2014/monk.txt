@@ -1,0 +1,95 @@
+@class Monk | hitDie 8 | caster none | spell none | saves str dex | sublevel 3 | sublabel Monastic Tradition
+@prof weapons simple, shortsword | tools one Artisan's Tools or musical instrument | skills 2 from Acrobatics, Athletics, History, Insight, Religion, Stealth
+@mc weapons simple, shortsword
+1 | Unarmored Defense | Without armor or shield, your AC is 10 + Dexterity modifier + Wisdom modifier.
+1 | Martial Arts | Use Dexterity for unarmed strikes and monk weapons, roll a Martial Arts die for their damage, and make an unarmed strike as a bonus action after attacking.
+2 | Ki | Spend ki points on Flurry of Blows, Patient Defense and Step of the Wind. Points equal your monk level and return on a short or long rest.
+2 | Unarmored Movement | Your speed increases while you wear no armor and no shield, from +10 feet up to +30 feet at 18th level. The app already adds this automatically.
+2 | Dedicated Weapon (Optional) | After a rest, choose a simple or martial weapon you're proficient with to count as a monk weapon.
+3 | Deflect Missiles | Use your reaction to reduce ranged weapon damage; if reduced to 0, catch the missile and you can spend ki to throw it back.
+3 | Ki-Fueled Attack (Optional) | If you spend ki as part of your action, you can make one unarmed strike or monk weapon attack as a bonus action.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+4 | Slow Fall | Use your reaction to reduce falling damage by five times your monk level.
+4 | Quickened Healing (Optional) | As an action, spend 2 ki to regain HP equal to a Martial Arts die roll + your proficiency bonus.
+5 | Extra Attack | Attack twice when you take the Attack action.
+5 | Stunning Strike | When you hit with a melee weapon attack, spend 1 ki to force a Constitution save or the target is stunned until the end of your next turn.
+5 | Focused Aim (Optional) | When you miss an attack, spend 1 to 3 ki to add +2 per point to the roll.
+6 | Ki-Empowered Strikes | Your unarmed strikes count as magical for overcoming resistances and immunities.
+7 | Evasion | On a Dexterity save for half damage, take none on a success and half on a failure.
+7 | Stillness of Mind | As an action, end one effect on yourself that causes you to be charmed or frightened.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+9 | Unarmored Movement Improvement | You can move along vertical surfaces and across liquids on your turn without falling.
+10 | Purity of Body | You are immune to disease and poison.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+13 | Tongue of the Sun and Moon | You understand all spoken languages, and any creature that knows a language understands you.
+14 | Diamond Soul | You gain proficiency in all saving throws and can spend 1 ki to reroll a failed save.
+15 | Timeless Body | You suffer none of the frailty of old age, can't be aged magically, and don't need food or water.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+18 | Empty Body | Spend 4 ki to become invisible and resistant to all damage but force for 1 minute, or 8 ki to cast Astral Projection on yourself.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Perfect Self | When you roll initiative with no ki points, you regain 4.
+
+@sub Way of Mercy | TCoE
+3 | Implements of Mercy | Proficiency in Insight, Medicine and the herbalism kit, plus a special mask.
+3 | Hand of Healing | Spend 1 ki to heal a creature a Martial Arts die + Wisdom modifier; you can replace a Flurry of Blows strike with it for free.
+3 | Hand of Harm | Once per turn when you hit with an unarmed strike, spend 1 ki to add a Martial Arts die + Wisdom modifier necrotic damage.
+6 | Physician's Touch | Hand of Healing can end a disease or blinded, deafened, paralyzed, poisoned or stunned; Hand of Harm can poison the target.
+11 | Flurry of Healing and Harm | Replace each Flurry of Blows strike with Hand of Healing without ki, and add Hand of Harm to one strike for free.
+17 | Hand of Ultimate Mercy | Spend 5 ki to revive a creature that died within 24 hours with 4d10 + Wisdom modifier HP. Once per long rest.
+
+@sub Way of the Ascendant Dragon | FToD
+3 | Draconic Disciple | Unarmed strikes can deal acid, cold, fire, lightning or poison damage, you can reroll failed Intimidation or Persuasion checks, and you learn Draconic.
+3 | Breath of the Dragon | Replace an attack with a 20-foot cone or 30-foot line of elemental breath. Proficiency bonus uses per long rest, or 2 ki.
+6 | Wings Unfurled | When you use Step of the Wind, gain a flying speed equal to your walking speed until the end of the turn. Proficiency bonus uses per long rest.
+11 | Aspect of the Wyrm | As a bonus action, create a 10-foot aura for 1 minute that frightens creatures or gives allies resistance to an element. Once per long rest or 3 ki.
+17 | Ascendant Aspect | Gain blindsight 10 feet, Breath of the Dragon deals more damage, and a reaction lets you deal damage when hit while Aspect of the Wyrm is active.
+
+@sub Way of the Astral Self | TCoE
+3 | Arms of the Astral Self | As a bonus action, spend 1 ki to summon astral arms for 10 minutes: use Wisdom for unarmed strikes and Strength checks, 10-foot reach, and force damage. On summoning, nearby creatures take force damage.
+6 | Visage of the Astral Self | Spend 1 ki to summon an astral visage for 10 minutes: see in magical darkness, advantage on Insight and Intimidation, and focused speech.
+11 | Body of the Astral Self | With arms and visage summoned, reduce acid, cold, fire, force, lightning or thunder damage by a reaction, and add a Martial Arts die once per turn to arm hits.
+17 | Awakened Astral Self | Spend 5 ki to summon all three: +2 AC, and three arm attacks when you take the Attack action.
+
+@sub Way of the Drunken Master | XGtE
+3 | Bonus Proficiencies | Proficiency in Performance and with brewer's supplies.
+3 | Drunken Technique | When you use Flurry of Blows, you gain Disengage and your walking speed increases by 10 feet until the end of the turn. {speed +10 cond}
+6 | Tipsy Sway | Stand up from prone with 5 feet of movement, and when a creature misses you, spend 1 ki to redirect the attack to another creature.
+11 | Drunkard's Luck | Spend 2 ki to cancel disadvantage on an ability check, attack roll or saving throw.
+17 | Intoxicated Frenzy | When you use Flurry of Blows, make up to three more attacks if each targets a different creature.
+
+@sub Way of the Four Elements | PHB
+3 | Disciple of the Elements | Learn Elemental Attunement and elemental disciplines that cost ki (some cast spells like Burning Hands or Fireball). More disciplines at 6th, 11th and 17th level.
+3 | Elemental Disciplines | Options include Fangs of the Fire Snake, Fist of Four Thunders, Water Whip, Shape the Flowing River, Gong of the Summit, Ride the Wind, Breath of Winter and more.
+6 | Additional Discipline | Learn another elemental discipline; you can also swap one you know.
+11 | Additional Discipline | Learn another elemental discipline; you can also swap one you know.
+17 | Additional Discipline | Learn another elemental discipline; you can also swap one you know.
+
+@sub Way of the Kensei | XGtE
+3 | Path of the Kensei | Choose kensei weapons; gain AC while dual-wielding with an unarmed strike (Agile Parry), longer range as a bonus action (Kensei's Shot), and proficiency with calligrapher's or painter's supplies.
+6 | One with the Blade | Kensei weapons count as magical, and when you hit you can spend 1 ki to add a Martial Arts die to damage (Deft Strike).
+11 | Sharpen the Blade | As a bonus action, spend up to 3 ki to grant a kensei weapon that bonus to attack and damage for 1 minute.
+17 | Unerring Accuracy | Once per turn, reroll a missed attack with a monk weapon.
+
+@sub Way of the Long Death | SCAG
+3 | Touch of Death | When you reduce a creature within 5 feet to 0 HP, gain temp HP equal to Wisdom modifier + monk level.
+6 | Hour of Reaping | As an action, creatures within 30 feet that can see you make a Wisdom save or are frightened until the end of your next turn.
+11 | Mastery of Death | When reduced to 0 HP, spend 1 ki to drop to 1 HP instead.
+17 | Touch of the Long Death | As an action, touch a creature and spend 1 to 10 ki: it takes 2d10 necrotic per point (Constitution save for half).
+
+@sub Way of the Open Hand | PHB
+3 | Open Hand Technique | When you hit with Flurry of Blows, you can knock the target prone, push it 15 feet, or stop it from taking reactions.
+6 | Wholeness of Body | As an action, regain HP equal to three times your monk level. Once per long rest.
+11 | Tranquility | After a long rest, gain a Sanctuary effect until your next long rest or until you attack.
+17 | Quivering Palm | Spend 3 ki on an unarmed hit to set lethal vibrations; later, as an action, the target makes a Constitution save or drops to 0 HP (10d10 necrotic on a success).
+
+@sub Way of Shadow | PHB
+3 | Shadow Arts | Spend 2 ki to cast Darkness, Darkvision, Pass without Trace or Silence; you also learn Minor Illusion.
+6 | Shadow Step | As a bonus action in dim light or darkness, teleport up to 60 feet to another dim or dark space and gain advantage on your next melee attack.
+11 | Cloak of Shadows | As an action in dim light or darkness, become invisible until you attack, cast a spell or enter bright light.
+17 | Opportunist | When a creature within 5 feet is hit by someone else, use your reaction to make a melee attack against it.
+
+@sub Way of the Sun Soul | XGtE
+3 | Radiant Sun Bolt | Make ranged radiant spell-like attacks (30 feet) using Dexterity and your Martial Arts die; spend 1 ki for two bolts as a bonus action.
+6 | Searing Arc Strike | After the Attack action, spend 2 ki to cast Burning Hands as a bonus action, plus 1 ki per extra level.
+11 | Searing Sunburst | As an action, create a 20-foot radiant explosion (2d6, more with ki) on a failed Constitution save.
+17 | Sun Shield | Shed bright light, and when a creature hits you in melee, use your reaction to deal 5 + Wisdom modifier radiant damage to it.

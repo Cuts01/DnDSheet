@@ -1,0 +1,53 @@
+@class Artificer | hitDie 8 | caster artificer | spell int | saves con int | sublevel 3 | sublabel Artificer Specialist
+@prof armor light, medium, shields | weapons simple | tools Thieves' Tools, Tinker's Tools, one Artisan's Tools | skills 2 from Arcana, History, Investigation, Medicine, Nature, Perception, Sleight of Hand
+@mc armor light, medium, shields | tools Thieves' Tools, Tinker's Tools
+1 | Magical Tinkering | Touch a Tiny nonmagical object to give it a minor magical property (light, recorded message, sound, image). The number of objects is capped by your Intelligence modifier.
+1 | Spellcasting | Prepare and cast artificer spells with Intelligence, using thieves' tools or artisan's tools as a focus.
+2 | Infuse Item | Learn artificer infusions and imbue nonmagical items with them at the end of a long rest. You learn more infusions and can maintain more items as you level.
+3 | The Right Tool for the Job | Spend 1 hour to magically create a set of artisan's tools in an unoccupied space within 5 feet.
+4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+6 | Tool Expertise | Your proficiency bonus is doubled for ability checks using tools you are proficient with.
+7 | Flash of Genius | As a reaction, add your Intelligence modifier to an ability check or saving throw of a creature you see within 30 feet. Uses equal your Intelligence modifier per long rest.
+8 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+10 | Magic Item Adept | You can attune to four magic items, and crafting common or uncommon items costs half the gold and a quarter of the time.
+11 | Spell-Storing Item | After a long rest, store a 1st or 2nd-level spell with a casting time of 1 action in a weapon or focus; holders can cast it using your modifier.
+12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+14 | Magic Item Savant | You can attune to five magic items and ignore class, race, spell and level requirements for using them.
+16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+18 | Magic Item Master | You can attune to six magic items.
+19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
+20 | Soul of Artifice | Gain +1 to all saving throws per attuned magic item. When reduced to 0 HP, you can end an infusion to drop to 1 HP instead.
+
+@sub Alchemist | TCoE
+3 | Tool Proficiency | Proficiency with alchemist's supplies (or another artisan's tool if you already have it).
+3 | Alchemist Spells | Always prepared. 3rd: Healing Word, Ray of Sickness. 5th: Flaming Sphere, Melf's Acid Arrow. 9th: Gaseous Form, Mass Healing Word. 13th: Blight, Death Ward. 17th: Cloudkill, Raise Dead.
+3 | Experimental Elixir | After a long rest, create a random elixir (healing, swiftness +10 ft speed, resilience, boldness, flight or transformation); spend slots to make more. More free elixirs at 6th and 15th level. {speed +10 cond}
+5 | Alchemical Savant | When you cast a spell using alchemist's supplies as the focus, add your Intelligence modifier to one roll that heals or deals acid, fire, necrotic or poison damage.
+9 | Restorative Reagents | Your elixirs grant temp HP, and you can cast Lesser Restoration without a slot Intelligence modifier times per long rest.
+15 | Chemical Mastery | Resistance to acid and poison and immunity to poisoned; cast Greater Restoration and Heal once each per long rest without a slot.
+
+@sub Armorer | TCoE
+3 | Tools of the Trade | Proficiency with heavy armor and smith's tools.
+3 | Armorer Spells | Always prepared. 3rd: Magic Missile, Thunderwave. 5th: Mirror Image, Shatter. 9th: Hypnotic Pattern, Lightning Bolt. 13th: Fire Shield, Greater Invisibility. 17th: Passwall, Wall of Force.
+3 | Arcane Armor | Turn your armor into Arcane Armor: no Strength requirement, it can't be removed against your will, it replaces missing limbs and works as a focus.
+3 | Armor Model | Choose Guardian (thunder gauntlets, defensive field temp HP) or Infiltrator (lightning launcher, +5 feet speed, advantage on Stealth). Change it after a rest. {speed +5 cond}
+5 | Extra Attack | Attack twice when you take the Attack action.
+9 | Armor Modifications | Your armor counts as separate items for infusions (armor, boots, helmet, weapon), and you can infuse two more items as long as they're part of it.
+15 | Perfected Armor | Guardian: pull and attack creatures with a reaction. Infiltrator: your lightning hits make the target glow and grant advantage plus extra damage.
+
+@sub Artillerist | TCoE
+3 | Tool Proficiency | Proficiency with woodcarver's tools.
+3 | Artillerist Spells | Always prepared. 3rd: Shield, Thunderwave. 5th: Scorching Ray, Shatter. 9th: Fireball, Wind Wall. 13th: Ice Storm, Wall of Fire. 17th: Cone of Cold, Wall of Force.
+3 | Eldritch Cannon | Create a magical cannon for 1 hour (Flamethrower, Force Ballista or Protector) and activate it with a bonus action. Once per long rest or by spending a slot.
+5 | Arcane Firearm | Carve a wand, staff or rod into an arcane firearm; artificer spells cast through it add 1d8 to one damage roll.
+9 | Explosive Cannon | Your cannon's damage rolls increase by 1d8, and you can detonate it for 3d8 force damage to nearby creatures.
+15 | Fortified Position | You can have two cannons at once and activate both with one bonus action; allies within 10 feet of a cannon have half cover.
+
+@sub Battle Smith | TCoE
+3 | Tool Proficiency | Proficiency with smith's tools.
+3 | Battle Smith Spells | Always prepared. 3rd: Heroism, Shield. 5th: Branding Smite, Warding Bond. 9th: Aura of Vitality, Conjure Barrage. 13th: Aura of Purity, Fire Shield. 17th: Banishing Smite, Mass Cure Wounds.
+3 | Battle Ready | Proficiency with martial weapons, and you can use Intelligence for attack and damage rolls with magic weapons.
+3 | Steel Defender | Create a steel defender companion that acts on your initiative and Dodges unless you command it with a bonus action. It can impose disadvantage on attacks against allies.
+5 | Extra Attack | Attack twice when you take the Attack action.
+9 | Arcane Jolt | Once per turn, when your magic weapon or defender hits, deal 2d6 extra force damage or heal a creature within 30 feet 2d6. Intelligence modifier uses per long rest.
+15 | Improved Defender | Arcane Jolt becomes 4d6, your defender gets +2 AC, and its deflection deals force damage to the attacker.

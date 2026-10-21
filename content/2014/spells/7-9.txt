@@ -1,0 +1,156 @@
+@level 7
+Conjure Celestial | Con | 1 minute | 90 feet | V, S | C, up to 1 hour | - | PHB
+Summon a celestial of CR 4 or lower that obeys you.
++ Level 9: CR 5.
+Create Magen | Tra | 1 hour | Touch | V, S, M(C*) | Instantaneous | - | XGtE
+Create a magen (demos, galvan or hypnos) bound to you; your hit point maximum drops while it exists. Material: a vial of quicksilver and a doll worth 1,500 gp, consumed.
+Crown of Stars | Evo | 1 action | Self | V, S | 1 hour | - | XGtE
+Seven motes orbit your head. As a bonus action fire one (ranged spell attack, 4d12 radiant). They shed light.
++ Two more motes per slot level above 7.
+Delayed Blast Fireball | Evo | 1 action | 150 feet | V, S, M | C, up to 1 minute | - | PHB
+A bead of fire explodes when the spell ends: 20-foot-radius sphere, Dexterity save, 12d6 fire damage plus 1d6 per turn it waited (half on success).
++ Base damage increases by 1d6 per slot level above 7.
+Divine Word | Evo | 1 bonus action | 30 feet | V | Instantaneous | - | PHB
+Creatures you choose make a Charisma save; those that fail are deafened, blinded, stunned or killed depending on their current HP. Celestials, elementals, fey and fiends are banished.
+Draconic Transformation | Tra | 1 bonus action | Self | V, M | C, up to 1 minute | - | FTD
+You gain blindsight 30 feet, a 60-foot cone breath weapon (6d8 force, Dexterity save) usable as a bonus action, and spectral wings with a flying speed of 60 feet.
+Dream of the Blue Veil | Con | 10 minutes | 20 feet | V, S, M | 6 hours | - | TCoE
+You and up to eight willing creatures dream your way to another world of the Material Plane you know about.
+Etherealness | Tra | 1 action | Self | V, S | Up to 8 hours | - | PHB
+Step into the Border Ethereal, moving through objects and seeing the Material Plane in gray.
++ Three more willing creatures per slot level above 7.
+Finger of Death | Nec | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+A creature makes a Constitution save, taking 7d8 + 30 necrotic damage (half on success); a humanoid killed rises as a zombie under your control.
+Fire Storm | Evo | 1 action | 150 feet | V, S | Instantaneous | - | PHB
+Up to ten 10-foot cubes of fire: Dexterity save, 7d10 fire damage (half on success).
+Forcecage | Evo | 1 action | 100 feet | V, S, M(C*) | 1 hour | - | PHB
+An invisible prison of force (cage or box) traps creatures in a 20-foot or 10-foot cube. Material: ruby dust worth 1,500 gp, consumed.
+Mirage Arcane | Ill | 10 minutes | Sight | V, S | 10 days | - | PHB
+Terrain up to 1 square mile looks, sounds and feels like another kind.
+Mordenkainen's Magnificent Mansion | Con | 1 minute | 300 feet | V, S, M(C) | 24 hours | - | PHB
+An extradimensional mansion with food and servants for up to 100 people. Material: a portal miniature and items worth 15 gp.
+Mordenkainen's Sword | Evo | 1 action | 60 feet | V, S, M(C) | C, up to 1 minute | - | PHB
+A spectral sword: melee spell attack for 3d10 force damage; move it 20 feet and attack again as a bonus action. Material: a miniature sword worth 250 gp.
+Plane Shift | Con | 1 action | Touch | V, S, M(C) | Instantaneous | - | PHB
+You and up to eight creatures travel to another plane, or banish a creature with a melee spell attack and failed Charisma save. Material: a forked metal rod worth 250 gp.
+Power Word: Pain | Enc | 1 action | 60 feet | V | Instantaneous | - | XGtE
+A creature with 100 HP or fewer is wracked with pain: speed at most 10 feet, disadvantage on attacks, checks and saves except Constitution, and a Constitution save to cast spells. It repeats the save each turn.
+Prismatic Spray | Evo | 1 action | Self (60-foot cone) | V, S | Instantaneous | - | PHB
+Each creature in a 60-foot cone makes a Dexterity save and is hit by a random color: fire, acid, lightning, poison, cold (10d6 each), restraining (petrifies), blinding (may banish), or two colors.
+Project Image | Ill | 1 action | 500 miles | V, S, M(C) | C, up to 1 day | - | PHB
+An illusory copy of you appears at a place you have seen; you see, hear and cast through it. Material: a statuette of you worth 5 gp.
+Regenerate | Tra | 1 minute | Touch | V, S, M | 1 hour | - | PHB
+A creature regains 4d8 + 15 hit points, then 1 HP each round, and severed limbs regrow after 2 minutes.
+Resurrection | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | - | PHB
+A creature dead up to a century returns with all its hit points. Material: a diamond worth 1,000 gp, consumed.
+Reverse Gravity | Tra | 1 action | 100 feet | V, S, M | C, up to 1 minute | - | PHB
+Gravity reverses in a 50-foot-radius, 100-foot-high cylinder.
+Sequester | Tra | 1 action | Touch | V, S, M(C*) | Until dispelled | - | PHB
+A creature or object is hidden from divination and becomes invisible; creatures enter suspended animation. Material: gem dust worth 5,000 gp, consumed.
+Simulacrum | Ill | 12 hours | Touch | V, S, M(C*) | Until dispelled | - | PHB
+Create an obedient duplicate of a beast or humanoid with half its hit points. Material: ruby dust worth 1,500 gp, consumed.
+Symbol | Abj | 1 minute | Touch | V, S, M(C*) | Until dispelled or triggered | - | PHB
+A glyph that triggers on a condition: death (10d10 necrotic), discord, fear, hopelessness, insanity, pain, sleep or stunning, in a 60-foot sphere. Material: mercury, phosphorus and gem dust worth 1,000 gp, consumed.
+Teleport | Con | 1 action | 10 feet | V | Instantaneous | - | PHB
+You and up to eight creatures (or one object) teleport anywhere on the same plane; accuracy depends on familiarity.
+Temple of the Gods | Con | 1 hour | 120 feet | V, S, M(C) | 24 hours | - | XGtE
+Create a temple: creatures of chosen types must save to enter, divination is blocked, and healing inside gains a bonus equal to your Wisdom modifier. Material: a holy symbol worth 5 gp.
+Tether Essence | Nec | 1 action | 60 feet | V, S, M(C*) | C, up to 1 hour | - | EGW
+Two creatures are linked: damage or healing to one is mirrored on the other, and if one drops to 0 HP so does the other. Material: a spool of platinum cord worth 250 gp, consumed.
+Whirlwind | Evo | 1 action | 300 feet | V, M | C, up to 1 minute | - | XGtE
+A 10-foot-radius, 30-foot-high whirlwind: Dexterity save, 10d6 bludgeoning (half on success); a Large or smaller creature that fails is restrained and pulled inside.
+@level 8
+Abi-Dalzim's Horrid Wilting | Nec | 1 action | 150 feet | V, S, M | Instantaneous | - | XGtE
+Each creature in a 30-foot cube makes a Constitution save, taking 12d8 necrotic damage (half on success); plants and water elementals have disadvantage.
+Animal Shapes | Tra | 1 action | 30 feet | V, S | C, up to 24 hours | - | PHB
+Willing creatures turn into beasts of CR 4 or lower.
+Antimagic Field | Abj | 1 action | Self (10-foot sphere) | V, S, M | C, up to 1 hour | - | PHB
+A 10-foot sphere where magic doesn't work.
+Antipathy/Sympathy | Enc | 1 hour | 60 feet | V, S, M | 10 days | - | PHB
+An object or area repels or attracts a kind of creature you name.
+Clone | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | - | PHB
+Grow an inert duplicate of a creature; its soul transfers there if it dies. Material: a diamond worth 1,000 gp (consumed) and a vessel worth 2,000 gp.
+Control Weather | Tra | 10 minutes | Self (5-mile radius) | V, S, M | C, up to 8 hours | - | PHB
+Change precipitation, temperature and wind within 5 miles.
+Dark Star | Evo | 1 action | 150 feet | V, S, M | C, up to 1 minute | - | EGW
+A 40-foot-radius sphere of magical darkness and crushing gravity: difficult terrain, silenced, and a Constitution save each turn for 8d10 force damage (half on success).
+Demiplane | Con | 1 action | 60 feet | S | 1 hour | - | PHB
+A shadowy door opens to a 30-foot-cube empty room.
+Dominate Monster | Enc | 1 action | 60 feet | V, S | C, up to 1 hour | - | PHB
+A creature makes a Wisdom save or is charmed and follows your commands; it repeats the save when damaged.
++ Level 9: 8 hours.
+Earthquake | Evo | 1 minute | 500 feet | V, S, M | C, up to 1 minute | - | PHB
+A 100-foot-radius tremor: difficult terrain, creatures fall prone, concentration breaks, fissures open and structures collapse.
+Feeblemind | Enc | 1 action | 150 feet | V, S, M | Instantaneous | - | PHB
+A creature takes 4d6 psychic damage and makes an Intelligence save or its Intelligence and Charisma become 1, repeating the save every 30 days.
+Glibness | Tra | 1 action | Self | V | 1 hour | - | PHB
+Treat any Charisma check roll of 14 or lower as 15, and magic that detects lies shows you as truthful.
+Holy Aura | Abj | 1 action | Self | V, S, M(C) | C, up to 1 minute | - | PHB
+Creatures you choose within 30 feet have advantage on saves and attacks against them have disadvantage; fiends and undead that hit them may be blinded. Material: a reliquary worth 1,000 gp.
+Illusory Dragon | Ill | 1 action | 120 feet | S | C, up to 1 minute | - | XGtE
+A Huge illusory dragon frightens creatures (Wisdom save) and as a bonus action moves and breathes a 60-foot cone (Intelligence save, 7d6 of a type you choose).
+Incendiary Cloud | Con | 1 action | 150 feet | V, S | C, up to 1 minute | - | PHB
+A 20-foot-radius sphere of burning smoke that moves 10 feet each turn: Dexterity save, 10d8 fire damage (half on success).
+Maddening Darkness | Evo | 1 action | 150 feet | V, M | C, up to 10 minutes | - | XGtE
+A 60-foot-radius sphere of magical darkness; creatures starting their turn there make a Wisdom save or take 8d8 psychic damage (half on success).
+Maze | Con | 1 action | 60 feet | V, S | C, up to 10 minutes | - | PHB
+Banish a creature into a labyrinthine demiplane; it escapes with a DC 20 Intelligence check.
+Mighty Fortress | Con | 1 minute | 1 mile | V, S, M(C*) | Instantaneous | - | XGtE
+A stone fortress with walls, towers and a keep rises; it vanishes after 7 days unless cast there again each week. Material: a diamond worth 500 gp, consumed.
+Mind Blank | Abj | 1 action | Touch | V, S | 24 hours | - | PHB
+A creature is immune to psychic damage, charm, mind reading and divination.
+Power Word: Stun | Enc | 1 action | 60 feet | V | Instantaneous | - | PHB
+A creature with 150 HP or fewer is stunned, repeating a Constitution save each turn.
+Reality Break | Con | 1 action | 60 feet | V, S, M | C, up to 1 minute | - | EGW
+A creature makes a Wisdom save each turn or suffers a random effect (d10): stunned, 6d12 psychic, 8d12 force, or teleport and 10d12 cold.
+Sunburst | Evo | 1 action | 150 feet | V, S, M | Instantaneous | - | PHB
+A 60-foot-radius sphere of sunlight: Constitution save, 12d6 radiant damage and blinded for 1 minute (half on success).
+Telepathy | Evo | 1 action | Unlimited | V, S, M | 24 hours | - | PHB
+A telepathic link with a familiar willing creature on the same plane.
+Tsunami | Con | 1 minute | Sight | V, S | C, up to 6 rounds | - | PHB
+A wall of water 300 feet long and tall: Strength save, 6d10 bludgeoning (half on success), moving and shrinking each round.
+@level 9
+Astral Projection | Nec | 1 hour | 10 feet | V, S, M(C*) | Special | - | PHB
+You and up to eight creatures project astral bodies into the Astral Plane. Material: a jacinth worth 1,000 gp and a silver bar worth 100 gp per creature, consumed.
+Blade of Disaster | Con | 1 bonus action | 60 feet | V, S | C, up to 1 minute | - | TCoE
+A blade-shaped rift makes two melee spell attacks for 4d12 force damage each (critical on 18-20); move it 30 feet and attack again as a bonus action.
+Foresight | Div | 1 minute | Touch | V, S, M | 8 hours | - | PHB
+A creature can't be surprised, has advantage on attacks, checks and saves, and attacks against it have disadvantage.
+Gate | Con | 1 action | 60 feet | V, S, M(C) | C, up to 1 minute | - | PHB
+Open a portal to another plane; naming a creature pulls it through. Material: a diamond worth 5,000 gp.
+Imprisonment | Abj | 1 minute | 30 feet | V, S, M(C) | Until dispelled | - | PHB
+A creature makes a Wisdom save or is imprisoned: burial, chaining, hedged prison, minimus containment or slumber. Material: a statuette worth 500 gp per Hit Die.
+Invulnerability | Abj | 1 action | Self | V, S, M(C*) | C, up to 10 minutes | - | XGtE
+You are immune to all damage. Material: adamantine worth 500 gp, consumed.
+Mass Heal | Evo | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+Restore up to 700 hit points divided among creatures, curing disease, blindness and deafness.
+Mass Polymorph | Tra | 1 action | 120 feet | V, S, M | C, up to 1 hour | - | XGtE
+Up to ten creatures make a Wisdom save or turn into beasts of CR up to their CR or level.
+Meteor Swarm | Evo | 1 action | 1 mile | V, S | Instantaneous | - | PHB
+Four meteors explode in 40-foot-radius spheres: Dexterity save, 20d6 fire and 20d6 bludgeoning damage (half on success).
+Power Word: Heal | Evo | 1 action | Touch | V, S | Instantaneous | - | PHB
+A creature regains all its hit points and is freed from being charmed, frightened, paralyzed and stunned.
+Power Word: Kill | Enc | 1 action | 60 feet | V | Instantaneous | - | PHB
+A creature with 100 hit points or fewer dies.
+Prismatic Wall | Abj | 1 action | 60 feet | V, S | 10 minutes | - | PHB
+A seven-layered wall of light; each layer has its own effect and means of destruction.
+Psychic Scream | Enc | 1 action | 90 feet | S | Instantaneous | - | XGtE
+Up to ten creatures with Intelligence 3+ make an Intelligence save, taking 14d6 psychic damage and stunned (half on success). A creature killed has its head explode.
+Ravenous Void | Evo | 1 action | 1,000 feet | V, S, M | C, up to 1 minute | - | EGW
+A 20-foot-radius sphere of destructive gravity pulls creatures within 100 feet toward it; those starting their turn inside are restrained and take 5d10 force damage.
+Shapechange | Tra | 1 action | Self | V, S, M(C) | C, up to 1 hour | - | PHB
+Turn into a creature of CR up to your level and change form as an action. Material: a jade circlet worth 1,500 gp.
+Storm of Vengeance | Con | 1 action | Sight | V, S | C, up to 1 minute | - | PHB
+A 360-foot-radius storm cloud: thunder, acid rain, lightning, hail and freezing wind over several rounds.
+Time Ravage | Nec | 1 action | 90 feet | V, S, M(C*) | Instantaneous | - | EGW
+A creature makes a Constitution save, taking 10d12 necrotic damage (half on success); on a failure it ages to near death. Material: an hourglass with diamond dust worth 5,000 gp, consumed.
+Time Stop | Tra | 1 action | Self | V | Instantaneous | - | PHB
+Time stops for everyone else; you take 1d4 + 1 turns in a row.
+True Polymorph | Tra | 1 action | 30 feet | V, S, M | C, up to 1 hour | - | PHB
+Turn a creature or object into another creature or object; permanent if held for the full hour.
+True Resurrection | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | - | PHB
+A creature dead up to 200 years returns fully restored, even without a body. Material: diamonds worth 25,000 gp, consumed.
+Weird | Ill | 1 action | 120 feet | V, S | C, up to 1 minute | - | PHB
+Creatures in a 30-foot-radius sphere make a Wisdom save or are frightened, taking 4d10 psychic damage each turn they fail.
+Wish | Con | 1 action | Self | V | Instantaneous | - | PHB
+Duplicate any spell of 8th level or lower, or create another effect at great risk.

@@ -1,0 +1,111 @@
+@level 6
+Arcane Gate | Con | 1 action | 500 feet | V, S | C, up to 10 minutes | - | PHB
+Two linked 10-foot portals; anything entering one exits the other.
+Blade Barrier | Evo | 1 action | 90 feet | V, S | C, up to 10 minutes | - | PHB
+A wall of blades 100 feet long (or a ring): three-quarters cover; a creature entering or starting its turn there makes a Dexterity save, taking 6d10 slashing damage (half on success).
+Bones of the Earth | Tra | 1 action | 120 feet | V, S | Instantaneous | - | XGtE
+Up to six 5-foot-wide, 30-foot-tall stone pillars erupt; creatures on them are lifted (Dexterity save) and may be crushed against ceilings for 6d6 bludgeoning.
++ Two more pillars per slot level above 6.
+Chain Lightning | Evo | 1 action | 150 feet | V, S, M | Instantaneous | - | PHB
+A bolt hits a target and up to three others within 30 feet: Dexterity save, 10d8 lightning damage (half on success).
++ One more bolt per slot level above 6.
+Circle of Death | Nec | 1 action | 150 feet | V, S, M(C) | Instantaneous | - | PHB
+Each creature in a 60-foot-radius sphere makes a Constitution save, taking 8d6 necrotic damage (half on success). Material: black pearl powder worth 500 gp.
++ Damage increases by 2d6 per slot level above 6.
+Conjure Fey | Con | 1 minute | 90 feet | V, S | C, up to 1 hour | - | PHB
+Summon a fey of CR 6 or lower that obeys you; it turns hostile if you lose concentration.
++ CR increases by 1 per slot level above 6.
+Contingency | Evo | 10 minutes | Self | V, S, M(C) | 10 days | - | PHB
+Store a spell of 5th level or lower that targets you, to trigger on a condition you describe. Material: a statuette of you worth 1,500 gp.
+Create Homunculus | Tra | 1 hour | Touch | V, S, M(C) | Instantaneous | - | XGtE
+Create a homunculus bound to you; you take 2d4 piercing damage and your maximum HP drops by that while it lives. Material: a jewel worth 1,000 gp.
+Create Undead | Nec | 1 minute | 10 feet | V, S, M(C) | Instantaneous | - | PHB
+At night, raise up to three ghouls under your control for 24 hours. Material: a black onyx worth 150 gp per corpse.
++ Level 7: four ghouls. Level 8: five ghouls or two ghasts or wights. Level 9: six ghouls, three ghasts or wights, or two mummies.
+Disintegrate | Tra | 1 action | 60 feet | V, S, M | Instantaneous | - | PHB
+A creature makes a Dexterity save or takes 10d6 + 40 force damage; at 0 HP it turns to dust. Destroys force walls and objects.
++ Damage increases by 3d6 per slot level above 6.
+Drawmij's Instant Summons | Con | 1 minute or R | Touch | V, S, M(C) | Until dispelled | - | PHB
+Mark an object; crushing the sapphire summons it to your hand from anywhere on the plane. Material: a sapphire worth 1,000 gp.
+Druid Grove | Abj | 10 minutes | Touch | V, S, M(C*) | 24 hours | - | XGtE
+Protect an area up to a 90-foot cube with natural guardians: fog, grasping undergrowth, animated trees, and more. Material: mistletoe and gems worth 10 gp, consumed.
+Eyebite | Nec | 1 action | Self | V, S | C, up to 1 minute | - | PHB
+Each turn, as an action, a creature within 60 feet makes a Wisdom save or is put to sleep, panicked or sickened.
+Find the Path | Div | 1 minute | Self | V, S, M(C) | C, up to 1 day | - | PHB
+Know the most direct route to a location you name. Material: divination tools worth 100 gp.
+Fizban's Platinum Shield | Abj | 1 bonus action | 60 feet | V, S, M(C) | C, up to 1 minute | - | FTD
+A creature gains half cover, resistance to acid, cold, fire, lightning and poison, and evasion. Move the shield to another creature as a bonus action. Material: platinum-plated dragon scale worth 500 gp.
+Flesh to Stone | Tra | 1 action | 60 feet | V, S, M | C, up to 1 minute | - | PHB
+A creature makes a Constitution save or is restrained; three failures petrify it, three successes end it.
+Forbiddance | Abj | 10 minutes or R | Touch | V, S, M(C*) | 1 day | - | PHB
+Ward up to 40,000 square feet against teleportation and planar travel; chosen creature types take 5d10 radiant or necrotic damage on entering. Material: ruby dust worth 1,000 gp, consumed.
+Globe of Invulnerability | Abj | 1 action | Self (10-foot radius) | V, S, M | C, up to 1 minute | - | PHB
+Spells of 5th level or lower cast from outside can't affect anything inside a 10-foot barrier.
++ One more spell level is blocked per slot level above 6.
+Gravity Fissure | Evo | 1 action | Self (100-foot line) | V, S, M | Instantaneous | - | EGW
+A 100-foot-long, 5-foot-wide line of gravity: Constitution save, 8d8 force damage (half on success); creatures within 10 feet of the line are pulled toward it.
++ Damage increases by 1d8 per slot level above 6.
+Guards and Wards | Abj | 10 minutes | Touch | V, S, M | 24 hours | - | PHB
+Ward up to 2,500 square feet with fog, locked doors, webs, misleading passages and extra effects.
+Harm | Nec | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+A creature makes a Constitution save, taking 14d6 necrotic damage (half on success) and its hit point maximum drops by that much; it can't drop below 1 HP.
+Heal | Evo | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+A creature regains 70 hit points and is cured of blindness, deafness and diseases.
++ Healing increases by 10 per slot level above 6.
+Heroes' Feast | Con | 10 minutes | 30 feet | V, S, M(C*) | Instantaneous | - | PHB
+Up to twelve creatures feast: cured of disease and poison, immune to poison and fear, advantage on Wisdom saves and +2d10 max HP for 24 hours. Material: a bowl worth 1,000 gp, consumed.
+Investiture of Flame | Tra | 1 action | Self | V, S | C, up to 10 minutes | - | XGtE
+You burn: immune to fire, resistant to cold, creatures near you take 1d10 fire, and as an action you shoot a 15-foot line of fire (4d8, Dexterity save).
+Investiture of Ice | Tra | 1 action | Self | V, S | C, up to 10 minutes | - | XGtE
+Immune to cold, resistant to fire, you move across ice freely, the ground near you is difficult terrain, and as an action a 15-foot cone of cold (4d6, Constitution save, speed halved).
+Investiture of Stone | Tra | 1 action | Self | V, S | C, up to 10 minutes | - | XGtE
+Resistance to nonmagical bludgeoning, piercing and slashing, an action to make creatures within 15 feet fall prone (Dexterity save), and you move through earth and stone.
+Investiture of Wind | Tra | 1 action | Self | V, S | C, up to 10 minutes | - | XGtE
+Ranged weapon attacks against you have disadvantage, you gain a flying speed of 60 feet, and as an action a 15-foot cube of wind (2d10 bludgeoning, Constitution save, pushed).
+Magic Jar | Nec | 1 minute | Self | V, S, M(C) | Until dispelled | - | PHB
+Your soul moves into a container, from which you can possess a humanoid within 100 feet (Charisma save). Material: a gem or reliquary worth 500 gp.
+Mass Suggestion | Enc | 1 action | 60 feet | V, M | 24 hours | - | PHB
+Up to twelve creatures make a Wisdom save or follow a reasonable suggestion.
++ Level 7: 10 days. Level 8: 30 days. Level 9: a year and a day.
+Mental Prison | Ill | 1 action | 60 feet | S | C, up to 1 minute | - | XGtE
+A creature makes an Intelligence save, taking 5d10 psychic damage (half on success); on a failure it is restrained by an illusion and takes 10d10 if it tries to leave.
+Move Earth | Tra | 1 action | 120 feet | V, S, M | C, up to 2 hours | - | PHB
+Reshape dirt, sand or clay in a 40-foot square every 10 minutes.
+Otiluke's Freezing Sphere | Evo | 1 action | 300 feet | V, S, M | Instantaneous | - | PHB
+A frigid globe explodes in a 60-foot-radius sphere: Constitution save, 10d6 cold damage (half on success); it freezes water. It can be held to throw later.
++ Damage increases by 1d6 per slot level above 6.
+Otto's Irresistible Dance | Enc | 1 action | 30 feet | V | C, up to 1 minute | - | PHB
+A creature dances uncontrollably: it uses its movement dancing, has disadvantage on Dexterity saves and attacks, and attacks against it have advantage. It saves with an action.
+Planar Ally | Con | 10 minutes | 60 feet | V, S | Instantaneous | - | PHB
+Your deity sends a celestial, elemental or fiend to help with a task in exchange for payment.
+Primordial Ward | Abj | 1 action | Self | V, S | C, up to 1 minute | - | XGtE
+You have resistance to acid, cold, fire, lightning and thunder; you can end the spell as a reaction to gain immunity to one of them for a turn.
+Programmed Illusion | Ill | 1 action | 120 feet | V, S, M(C) | Until dispelled | - | PHB
+An illusion up to a 30-foot cube that performs a scripted 5-minute act when triggered. Material: jade dust worth 25 gp.
+Scatter | Con | 1 action | 30 feet | V | Instantaneous | - | XGtE
+Up to five creatures teleport to spaces you choose within 120 feet (Wisdom save if unwilling).
+Soul Cage | Nec | 1 reaction | 60 feet | V, S, M(C) | 8 hours | - | XGtE
+When a humanoid dies, trap its soul in a cage to heal yourself, ask questions, borrow its experience or see its last memories. Material: a silver cage worth 100 gp.
+Summon Fiend | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon a Fiendish Spirit (demon, devil or yugoloth) that obeys you. Its stats scale with the spell's level. Material: humanoid blood in a ruby vial worth 600 gp.
++ Uses the higher slot level in its stat block.
+Sunbeam | Evo | 1 action | Self (60-foot line) | V, S, M | C, up to 1 minute | - | PHB
+A 60-foot-long, 5-foot-wide line of sunlight: Constitution save, 6d8 radiant damage and blinded (half on success). Repeat as an action each turn.
+Tasha's Otherworldly Guise | Tra | 1 bonus action | Self | V, S, M(C) | C, up to 1 minute | - | TCoE
+Take on a celestial or fiendish form: immunities, a flying speed of 40 feet, +2 AC, magical weapon attacks using your spellcasting ability, and two attacks per Attack action. Material: an object with a celestial or fiendish symbol worth 500 gp.
+Tenser's Transformation | Tra | 1 action | Self | V, S, M | C, up to 10 minutes | - | XGtE
+You gain 50 temporary HP, advantage on weapon attacks, +2d12 force damage on weapon hits, proficiency with armor, weapons and Strength and Constitution saves, and two attacks. You can't cast spells; Constitution save or exhaustion when it ends.
+Transport via Plants | Con | 1 action | 10 feet | V, S | 1 round | - | PHB
+Link a large plant to another on the same plane; creatures can step through from one to the other.
+True Seeing | Div | 1 action | Touch | V, S, M(C*) | 1 hour | - | PHB
+A creature gains truesight out to 120 feet. Material: an ointment worth 25 gp, consumed.
+Wall of Ice | Evo | 1 action | 120 feet | V, S, M | C, up to 10 minutes | - | PHB
+A wall of ice (ten 10-foot panels or a dome): Dexterity save, 10d6 cold damage (half on success). Breaking a section leaves frigid air (5d6 cold).
++ Damage increases by 2d6 per slot level above 6.
+Wall of Thorns | Con | 1 action | 120 feet | V, S, M | C, up to 10 minutes | - | PHB
+A wall of thorny brush 60 feet long that blocks sight: Dexterity save, 7d8 piercing damage (half on success); moving through costs 4 feet per foot and deals 7d8 slashing.
++ Both damages increase by 1d8 per slot level above 6.
+Wind Walk | Tra | 1 minute | 30 feet | V, S, M | 8 hours | - | PHB
+You and up to ten creatures become clouds: flying speed 300 feet, resistance to nonmagical damage.
+Word of Recall | Con | 1 action | 5 feet | V | Instantaneous | - | PHB
+You and up to five willing creatures teleport to a sanctuary you designated.

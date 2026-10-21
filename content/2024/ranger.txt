@@ -1,0 +1,69 @@
+@class Ranger | hitDie 10 | caster half | spell wis | saves str dex | sublevel 3 | sublabel Ranger Subclass
+@prof armor light, medium, shields | weapons simple, martial | skills 3 from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival
+@mc armor light, medium, shields | weapons simple, martial | skills 1 from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival
+1 | Spellcasting | Prepare Ranger spells cast with Wisdom, using a Druidic Focus.
+1 | Favored Enemy | Hunter's Mark is always prepared, and you can cast it without a slot a limited number of times per Long Rest.
+1 | Weapon Mastery | Use the mastery properties of two kinds of weapons, changeable after a Long Rest.
+2 | Deft Explorer | Gain Expertise in one skill and learn two languages.
+2 | Fighting Style | Gain a Fighting Style feat, or Druidic Warrior to learn two Druid cantrips.
+4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+5 | Extra Attack | Attack twice when you take the Attack action.
+6 | Roving | While not in Heavy armor, your Speed increases by 10 feet and you gain Climb and Swim Speeds equal to it. {speed +10}
+8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+9 | Expertise | Gain Expertise in two more skills.
+10 | Tireless | As a Magic action, gain temp HP a limited number of times per Long Rest, and Short Rests reduce your Exhaustion.
+12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+13 | Relentless Hunter | Taking damage can't break your Concentration on Hunter's Mark.
+14 | Nature's Veil | As a Bonus Action, become Invisible until the end of your next turn. Limited uses per Long Rest.
+16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
+17 | Precise Hunter | You have advantage on attacks against the creature marked by your Hunter's Mark.
+18 | Feral Senses | You gain Blindsight out to 30 feet.
+19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
+20 | Foe Slayer | Hunter's Mark damage becomes a d10.
+
+@sub Beast Master | PHB 2024
+3 | Primal Companion | Summon a Beast of the Land, Sea or Sky that acts on your turn; it Dodges unless you use a Bonus Action to command it. You can revive or replace it.
+7 | Exceptional Training | Your command can also make the beast Dash, Disengage, Dodge or Help, and its hits can deal Force damage.
+11 | Bestial Fury | When you command Beast's Strike, the beast attacks twice, and its first hit each turn on your Hunter's Mark target deals extra Force damage.
+15 | Share Spells | When you cast a spell targeting yourself, it can also affect your beast within 30 feet.
+
+@sub Fey Wanderer | PHB 2024
+3 | Dreadful Strikes | Once per turn, a weapon hit deals extra Psychic damage (1d4, 1d6 from 11th level).
+3 | Fey Wanderer Spells | Always prepared. Level 3: Charm Person. Level 5: Misty Step. Level 9: Summon Fey. Level 13: Dimension Door. Level 17: Mislead.
+3 | Otherworldly Glamour | Add your Wisdom modifier to Charisma checks and gain proficiency in Deception, Performance or Persuasion.
+7 | Beguiling Twist | Advantage on saves against Charmed and Frightened, and when a creature near you resists one, use a Reaction to charm or frighten another creature.
+11 | Fey Reinforcements | Cast Summon Fey without material components, once per Long Rest without a slot, optionally without Concentration for 1 minute.
+15 | Misty Wanderer | Cast Misty Step without a slot Wisdom modifier times per Long Rest, and bring a willing creature with you.
+
+@sub Gloom Stalker | PHB 2024
+3 | Dread Ambusher | Add Wisdom modifier to Initiative; on your first turn of combat your Speed increases by 10 feet; once per turn add Dreadful Strike psychic damage (Wisdom modifier uses per Long Rest). {speed +10 cond}
+3 | Gloom Stalker Spells | Always prepared. Level 3: Disguise Self. Level 5: Rope Trick. Level 9: Fear. Level 13: Greater Invisibility. Level 17: Seeming.
+3 | Umbral Sight | Gain Darkvision 60 feet (or +60), and you are invisible to creatures relying on Darkvision to see you in darkness.
+7 | Iron Mind | Proficiency in Wisdom saves, or Intelligence or Charisma if you already have it.
+11 | Stalker's Flurry | Dreadful Strike becomes 2d8 and adds Sudden Strike (extra attack nearby) or Mass Fear (frighten nearby creatures).
+15 | Shadowy Dodge | When attacked, use a Reaction to impose disadvantage and then teleport up to 30 feet.
+
+@sub Hollow Warden | Ravenloft: The Horrors Within
+3 | Hollow Warden Spells | Always prepared. Level 3: Wrathful Smite. Level 5: Alter Self. Level 9: Phantom Steed. Level 13: Dominate Beast. Level 17: Steel Wind Strike.
+3 | Wrath of the Wild | As a Bonus Action, spend a Favored Enemy use to take a monstrous form for 1 minute: +1 AC (+2 at 11th), opportunity attacks when nearby creatures hurt allies, and an aura that frightens on a failed Wisdom save.
+7 | Hungering Might | Add Wisdom modifier to Constitution saves; while transformed and Bloodied, your hits heal you once per turn.
+11 | Menacing Aura | Creatures that fail your aura's save also can't regain HP or take Reactions.
+11 | Strangling Roots | Add the Sap or Slow mastery property to your weapon hits along with another mastery.
+15 | Ominous Strikes | Your hits against Frightened creatures add your Wisdom modifier to damage.
+15 | Persistent Wrath | While transformed, if you drop to 0 HP you instead return to HP equal to twice your Ranger level. Once per Long Rest or a level 4+ slot.
+15 | Timeless | You are immune to Exhaustion.
+
+@sub Hunter | PHB 2024
+3 | Hunter's Lore | You know the immunities, resistances and vulnerabilities of creatures marked by your Hunter's Mark.
+3 | Hunter's Prey | Choose Colossus Slayer (extra 1d8 once per turn on a damaged target) or Horde Breaker (an extra attack against a second nearby creature). Swap after a rest.
+7 | Defensive Tactics | Choose Escape the Horde (opportunity attacks against you have disadvantage) or Multiattack Defense (after a hit, the attacker's other attacks have disadvantage). Swap after a rest.
+11 | Superior Hunter's Prey | Once per turn, when you damage your marked target, deal Hunter's Mark's extra damage to another creature within 30 feet of it.
+15 | Superior Hunter's Defense | When you take damage, use a Reaction to gain resistance to that damage type for the rest of the turn.
+
+@sub Winter Walker | Heroes of Faerun
+3 | Frigid Explorer | Your Ranger attacks and spells ignore Cold resistance, you resist Cold, and once per turn your weapon hits add Cold damage (1d4, 1d6 at 11th).
+3 | Hunter's Rime | When you cast Hunter's Mark, gain 1d10 + Ranger level temp HP, and the marked creature can't Disengage.
+3 | Winter Walker Spells | Always prepared. Level 3: Ice Knife. Level 5: Hold Person. Level 9: Remove Curse. Level 13: Ice Storm. Level 17: Cone of Cold.
+7 | Fortifying Soul | As a Magic action, heal up to Wisdom modifier allies 1d10 + Ranger level and give them advantage against Frightened for 1 hour. Once per Long Rest.
+11 | Chilling Retribution | When an attack hits you, use a Reaction: the attacker makes a Wisdom save or is Stunned with Speed 0 until the end of your next turn. Wisdom modifier uses per Long Rest.
+15 | Frozen Haunt | When you cast Hunter's Mark, take a ghostly snow form: Cold immunity, a damaging 15-foot aura, and movement through creatures and objects. Once per Long Rest or a level 4+ slot.

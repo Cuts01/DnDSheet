@@ -1,0 +1,91 @@
+@level 6
+Arcane Gate | Con | Action | 500 feet | V, S | C, up to 10 minutes | Sor, Wlk, Wiz | PHB 2024
+Create two linked 10-foot portals within range, one within 10 feet of you. Anything entering one exits the other. You can rotate them as a Bonus Action.
+Blade Barrier | Evo | Action | 90 feet | V, S | C, up to 10 minutes | Clr | PHB 2024
+A wall of whirling blades (up to 100 feet long, 20 high and 5 thick, or a 60-foot-diameter ring) gives Three-Quarters Cover and is Difficult Terrain. A creature entering it or starting its turn there makes a Dexterity save, taking 6d10 Force damage (half on success).
+Chain Lightning | Evo | Action | 150 feet | V, S, M | Instantaneous | Sor, Wiz | PHB 2024
+A bolt strikes a target and leaps to up to three others within 30 feet of it. Each makes a Dexterity save, taking 10d8 Lightning damage on a failure or half on a success.
++ One more leap per slot level above 6.
+Circle of Death | Nec | Action | 150 feet | V, S, M(C) | Instantaneous | Sor, Wlk, Wiz | PHB 2024
+Each creature in a 60-foot-radius Sphere makes a Constitution save, taking 8d8 Necrotic damage on a failure or half on a success. Material: black pearl powder worth 500+ GP.
++ Damage increases by 2d8 per slot level above 6.
+Conjure Fey | Con | Action | 60 feet | V, S | C, up to 10 minutes | Drd | PHB 2024
+A Medium Fey spirit appears and makes a melee spell attack against a creature within 5 feet: 3d12 + your spellcasting modifier Psychic damage and Frightened until the start of your next turn. As a Bonus Action on later turns you teleport it 30 feet and attack again.
++ Damage increases by 1d12 per slot level above 6.
+Contingency | Abj | 10 minutes | Self | V, S, M(C) | 10 days | Wiz | PHB 2024
+Store a spell of level 5 or lower that targets you, with a trigger you describe. When it happens, the stored spell takes effect immediately. Material: a gem-encrusted statuette of you worth 1,500+ GP.
+Create Undead | Nec | 1 minute | 10 feet | V, S, M(C) | Instantaneous | Clr, Wlk, Wiz | PHB 2024
+Cast at night on up to three Medium or Small corpses to raise Ghouls under your control for 24 hours. Recasting renews control. Material: one black onyx worth 150+ GP per corpse.
++ Level 7: four Ghouls. Level 8: five Ghouls or two Ghasts or Wights. Level 9: six Ghouls, three Ghasts or Wights, or two Mummies.
+Dirge | Enc | Action | Self | V | C, up to 1 minute | Brd, Clr | FRHoF
+A 60-foot Emanation of mourning that creatures you choose can ignore. Others make a Constitution save: on a failure 3d10 Necrotic damage, Prone and 1 Exhaustion level; on a success half damage and Speed halved. Affected creatures can't regain Hit Points.
+Disintegrate | Tra | Action | 60 feet | V, S, M | Instantaneous | Sor, Wiz | PHB 2024
+A green ray: the target makes a Dexterity save or takes 10d6 + 40 Force damage. A creature reduced to 0 HP is turned to dust. It destroys a Large nonmagical object or a 10-foot Cube of it, and a Wall of Force.
++ Damage increases by 3d6 per slot level above 6.
+Drawmij's Instant Summons | Con | 1 minute or R | Touch | V, S, M(C) | Until dispelled | Wiz | PHB 2024
+Mark an object up to 10 pounds with an invisible sigil on a sapphire worth 1,000+ GP. Crushing the sapphire as an action summons the object to your hand from anywhere on the same plane.
+Elminster's Effulgent Spheres | Evo | Action | Self | V, S, M(C) | 1 hour | Drd, Sor, Wiz | FRHoF
+Six spheres orbit you. Spend one with your Reaction when you take Acid, Cold, Fire, Lightning or Thunder damage to gain Resistance to it until your next turn, or as a Bonus Action hurl one (ranged spell attack, 120 feet) for 3d6 damage of a type you choose.
++ One more sphere per slot level above 6.
+Eyebite | Nec | Action | Self | V, S | C, up to 1 minute | Brd, Sor, Wlk, Wiz | PHB 2024
+Each turn, as a Magic action (including when you cast it), one creature within 60 feet makes a Wisdom save or suffers Asleep (Unconscious), Panicked (Frightened, Dashes away) or Sickened (Poisoned).
+Find the Path | Div | 1 minute | Self | V, S, M(C*) | C, up to 1 day | Brd, Clr, Drd | PHB 2024
+You know the shortest, most direct physical route to a fixed location you name on the same plane. Material: divination tools worth 100+ GP.
+Flesh to Stone | Tra | Action | 60 feet | V, S, M | C, up to 1 minute | Drd, Sor, Wiz | PHB 2024
+A creature makes a Constitution save or is Restrained, repeating the save each turn. Three successes end the spell; three failures turn it to stone (Petrified) permanently if you keep Concentration the full minute.
+Forbiddance | Abj | 10 minutes or R | Touch | V, S, M(C) | 1 day | Clr | PHB 2024
+Ward up to 40,000 square feet against teleportation and planar travel, and choose creature types (Aberrations, Celestials, Elementals, Fey, Fiends, Undead) that take 5d10 Radiant or Necrotic damage when entering or starting a turn there. Material: ruby dust worth 1,000+ GP.
+Globe of Invulnerability | Abj | Action | Self | V, S, M | C, up to 1 minute | Sor, Wiz | PHB 2024
+A 10-foot Emanation barrier: spells of level 5 or lower cast from outside can't affect anything inside it.
++ Blocks one more spell level per slot level above 6.
+Guards and Wards | Abj | 1 hour | Touch | V, S, M | 24 hours | Brd, Wiz | PHB 2024
+Ward up to 2,500 square feet: fog in corridors, arcane locks on doors, webs on stairs, misleading paths, plus an extra effect such as Dancing Lights, Magic Mouth, Stinking Cloud, Gust of Wind or Suggestion. Casting it daily for a year makes it permanent.
+Harm | Nec | Action | 60 feet | V, S | Instantaneous | Clr | PHB 2024
+A creature makes a Constitution save, taking 14d6 Necrotic damage on a failure (half on success). The damage can't reduce it below 1 HP, and on a failure its Hit Point maximum drops by the damage for 1 hour.
+Heal | Abj | Action | 60 feet | V, S | Instantaneous | Clr, Drd | PHB 2024
+A creature regains 70 Hit Points and is cured of Blinded, Deafened and Poisoned.
++ Healing increases by 10 per slot level above 6.
+Heroes' Feast | Con | 10 minutes | Self | V, S, M(C*) | Instantaneous | Brd, Clr, Drd | PHB 2024
+A feast for up to twelve creatures, eaten over an hour. For 24 hours each has Resistance to Poison, immunity to Frightened and Poisoned, and +2d10 Hit Point maximum and current HP. Material: a gem-encrusted bowl worth 1,000+ GP, consumed.
+Leomund's Lamentable Belaborment | Enc | Action | 30 feet | V | 1 Minute | Brd, Sor, Wiz | DDB Drops
+A tedious lecture: creatures in a 10-foot-radius Sphere make an Intelligence save or are Charmed by you for the duration. Creatures that don't share your language or have Intelligence below 3 succeed automatically.
+Magic Jar | Nec | 1 minute | Self | V, S, M(C) | Until dispelled | Wiz | PHB 2024
+Your soul moves into a gem container; from there you can try to possess a Humanoid within 100 feet (Charisma save). While possessing it you use its body with your mind. Material: a gem worth 500+ GP.
+Mass Suggestion | Enc | Action | 60 feet | V, M | 24 hours | Brd, Sor, Wiz | PHB 2024
+Up to twelve creatures that understand you make a Wisdom save or follow a reasonable suggestion of up to 25 words.
++ Level 7: 10 days. Level 8: 30 days. Level 9: a year and a day.
+Move Earth | Tra | Action | 120 feet | V, S, M | C, up to 2 hours | Drd, Sor, Wiz | PHB 2024
+Every 10 minutes, reshape dirt, sand or clay in a 40-foot square: raise or lower it, dig trenches, build walls. It doesn't affect stone or move creatures violently.
+Otiluke's Freezing Sphere | Evo | Action | 300 feet | V, S, M | Instantaneous | Sor, Wiz | PHB 2024
+A frigid globe explodes in a 60-foot-radius Sphere: each creature makes a Constitution save, taking 10d6 Cold damage (half on success). It freezes water. You can instead hold it as a globe to throw later.
++ Damage increases by 1d6 per slot level above 6.
+Otto's Irresistible Dance | Enc | Action | 30 feet | V | C, up to 1 minute | Brd, Wiz | PHB 2024
+A creature makes a Wisdom save or is Charmed and dances: it must use all its movement dancing, has Disadvantage on Dexterity saves and attacks, and others have Advantage on attacks against it. On a success it dances only until the end of its next turn. It repeats the save each turn.
+Planar Ally | Con | 10 minutes | 60 feet | V, S | Instantaneous | Clr | PHB 2024
+Ask your deity or a powerful entity for aid: it sends a Celestial, Elemental or Fiend loyal to it, which helps with a task in exchange for payment proportional to the risk.
+Programmed Illusion | Ill | Action | 120 feet | V, S, M | Until dispelled | Brd, Wiz | PHB 2024
+Create an illusion of an object, creature or phenomenon (up to a 30-foot Cube) that plays a scripted 5-minute performance when a trigger you set occurs.
+Summon Dinosaur | Con | Action | 90 feet | V, S, M(C) | C, up to 1 hour | Drd | Arcana Unleashed
+Summon a Huge dinosaur spirit (Ankylosaur, Triceratops or Tyrannosaur) that acts after you, obeys your spoken commands and Dodges otherwise. Its stats scale with the spell's level.
++ 10 more HP per level above 6, and Multiattack equals half the slot level.
+Summon Fiend | Con | Action | 90 feet | V, S, M(C) | C, up to 1 hour | Wlk, Wiz | PHB 2024
+Summon a Fiendish Spirit (Demon, Devil or Yugoloth) that obeys you and acts after you. Its stats scale with the spell's level. Material: a bloody vial worth 600+ GP.
++ Uses the higher slot level in its stat block.
+Sunbeam | Evo | Action | Self | V, S, M | C, up to 1 minute | Clr, Drd, Sor, Wiz | PHB 2024
+A 60-foot-long, 5-foot-wide Line of sunlight. Each creature in it makes a Constitution save, taking 6d8 Radiant damage and being Blinded until your next turn on a failure, or half damage on a success. Repeat it as a Magic action on later turns. You shed Bright Light 30 feet.
+Tasha's Bubbling Cauldron | Con | Action | 5 feet | V, S, M(C) | 10 minutes | Wlk, Wiz | PHB 2024
+A cauldron holds copies of a Common or Uncommon potion you choose, up to your spellcasting modifier in doses. You or an ally can draw one as a Bonus Action; unused potions vanish at the end.
+Transport via Plants | Con | Action | 10 feet | V, S | 1 minute | Drd | PHB 2024
+Link a Large or larger living plant within range to another on the same plane you have seen or touched. Any creature can step into one and out of the other using 5 feet of movement.
+True Seeing | Div | Action | Touch | V, S, M(C*) | 1 hour | Brd, Clr, Sor, Wlk, Wiz | PHB 2024
+A willing creature gains Truesight 120 feet: it sees through illusions, Invisible creatures, shapechangers' true forms and into the Ethereal Plane. Material: mushroom powder worth 25+ GP, consumed.
+Wall of Ice | Evo | Action | 120 feet | V, S, M | C, up to 10 minutes | Wiz | PHB 2024
+A wall of ice (ten 10-foot panels or a 10-foot-radius dome). Creatures where it forms make a Dexterity save, taking 10d6 Cold damage (half on success). Each panel has AC 12 and 30 HP; breaking one leaves frigid air that deals 5d6 Cold to creatures moving through.
++ Damage increases by 2d6 (and the frigid air by 1d6) per slot level above 6.
+Wall of Thorns | Con | Action | 120 feet | V, S, M | C, up to 10 minutes | Drd | PHB 2024
+A wall of thorny brush up to 60 feet long, 10 high and 5 thick (or a ring) that blocks sight. Creatures where it forms make a Dexterity save, taking 7d8 Piercing damage (half on success). Moving through costs 4 feet per foot, and a creature entering or ending its turn there makes the save again for 7d8 Slashing.
++ Both damages increase by 1d8 per slot level above 6.
+Wind Walk | Tra | 1 minute | 30 feet | V, S, M | 8 hours | Drd | PHB 2024
+You and up to ten willing creatures turn into clouds: Fly Speed 300 feet (hover), Resistance to Bludgeoning, Piercing and Slashing, and only Dash or a Magic action to revert (which takes 1 minute).
+Word of Recall | Con | Action | 5 feet | V | Instantaneous | Clr | PHB 2024
+You and up to five willing creatures within 5 feet teleport to a sanctuary you designated beforehand (a temple of your deity or similar).

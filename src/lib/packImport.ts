@@ -2,7 +2,7 @@ import { compendium } from './compendium.svelte';
 import { parsePack, type Pack } from './model/pack';
 
 /* Los packs de la wiki generados antes de esta fecha no traen spells, passives, spells de subclass ni spells de feats. */
-export const MIN_WIKI_BUILT = '2026-10-21T01:41:00Z';
+export const MIN_WIKI_BUILT = '2026-10-21T03:22:00Z';
 export const isStale = (p: Pack) => p.pack.id.startsWith('wiki-') && (p.pack.built || '') < MIN_WIKI_BUILT;
 export const stalePacks = () => compendium.packs.filter(isStale);
 
@@ -46,43 +46,44 @@ export async function importFiles(files: File[]): Promise<ImportResult> {
   return { done: r.done, errors: [...errors, ...r.errors] };
 }
 
-/* Solo con npm run dev: lee content/dist directamente desde la carpeta del proyecto. */
-export const canLoadLocal = import.meta.env.DEV;
+/* Los packs de la wiki vienen con la app (public/packs). */
+export const canLoadLocal = true;
+const bundled = (name: string) => `${import.meta.env.BASE_URL}packs/${name}`;
+
 export async function importLocalWiki(): Promise<ImportResult> {
   const items: { name: string; raw: unknown }[] = [];
   const errors: string[] = [];
   for (const name of ['wiki-2014.json', 'wiki-2024.json']) {
     try {
-      const res = await fetch(`/__content/${name}`, { cache: 'no-store' });
+      const res = await fetch(bundled(name), { cache: 'no-cache' });
       if (!res.ok) throw new Error(String(res.status));
       items.push({ name, raw: await res.json() });
     } catch {
-      errors.push(`${name}: no se encontró en content/dist.`);
+      errors.push(`${name}: no se pudo cargar (¿sin conexión?).`);
     }
   }
   const r = await importRaws(items, false);
   return { done: r.done, errors: [...errors, ...r.errors] };
 }
 
-/* En npm run dev: si content/dist tiene un pack de la wiki más nuevo que el importado, lo carga solo. */
+/* Al abrir la app: importa los packs de la wiki que vienen con ella si faltan o si son más nuevos que los guardados.
+   Sin conexión no pasa nada: se siguen usando los de IndexedDB. */
 export async function autoSyncLocal(): Promise<string[]> {
-  if (!canLoadLocal) return [];
   const done: string[] = [];
   for (const name of ['wiki-2014.json', 'wiki-2024.json']) {
     try {
-      const res = await fetch(`/__content/${name}`, { cache: 'no-store' });
+      const res = await fetch(bundled(name), { cache: 'no-cache' });
       if (!res.ok) continue;
       const raw = await res.json();
       const r = parsePack(raw);
       if (!r.ok) continue;
       const old = compendium.packs.find((p) => p.pack.id === r.pack.pack.id);
-      // Solo actualiza packs que ya importaste, y solo si el de la carpeta es más nuevo.
-      if (old && (r.pack.pack.built || '') > (old.pack.built || '')) {
+      if (!old || (r.pack.pack.built || '') > (old.pack.built || '')) {
         await compendium.add(raw, r.pack);
         done.push(r.pack.pack.name);
       }
     } catch {
-      /* sin content/dist: nada que hacer */
+      /* offline */
     }
   }
   return done;

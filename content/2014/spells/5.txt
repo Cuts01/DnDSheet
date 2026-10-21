@@ -1,0 +1,146 @@
+@level 5
+Animate Objects | Tra | 1 action | 120 feet | V, S | C, up to 1 minute | - | PHB
+Animate up to ten nonmagical Tiny objects (Small counts as one, Medium two, Large four, Huge eight) that obey your bonus action commands and slam foes.
++ Two more objects per slot level above 5.
+Antilife Shell | Abj | 1 action | Self (10-foot radius) | V, S | C, up to 1 hour | - | PHB
+A 10-foot barrier that creatures other than undead and constructs can't pass or reach through.
+Awaken | Tra | 8 hours | Touch | V, S, M(C*) | Instantaneous | - | PHB
+A beast or plant gains Intelligence 10 and speech, and is charmed by you for 30 days. Material: an agate worth 1,000 gp, consumed.
+Banishing Smite | Abj | 1 bonus action | Self | V | C, up to 1 minute | - | PHB
+Your next weapon hit deals an extra 5d10 force damage; if the target drops to 50 HP or fewer, it is banished (to its home plane if from elsewhere).
+Bigby's Hand | Evo | 1 action | 120 feet | V, S, M | C, up to 1 minute | - | PHB
+A Large force hand you move as a bonus action: clenched fist (4d8 force), forceful hand (push), grasping hand (grapple, 2d6 + modifier crush) or interposing hand (cover).
++ Fist damage increases by 2d8 and grasp by 2d6 per slot level above 5.
+Circle of Power | Abj | 1 action | Self (30-foot radius) | V | C, up to 10 minutes | - | PHB
+Allies within 30 feet have advantage on saves against spells and magical effects; a success on a half-damage save means no damage.
+Cloudkill | Con | 1 action | 120 feet | V, S | C, up to 10 minutes | - | PHB
+A 20-foot-radius sphere of poison fog that moves 10 feet away each turn: Constitution save, 5d8 poison damage (half on success).
++ Damage increases by 1d8 per slot level above 5.
+Commune | Div | 1 minute or R | Self | V, S, M | 1 minute | - | PHB
+Ask your deity up to three yes-or-no questions.
+Commune with Nature | Div | 1 minute or R | Self | V, S | Instantaneous | - | PHB
+Learn up to three facts about the land within 3 miles (300 feet underground).
+Cone of Cold | Evo | 1 action | Self (60-foot cone) | V, S, M | Instantaneous | - | PHB
+Each creature in a 60-foot cone makes a Constitution save, taking 8d8 cold damage (half on success).
++ Damage increases by 1d8 per slot level above 5.
+Conjure Elemental | Con | 1 minute | 90 feet | V, S, M | C, up to 1 hour | - | PHB
+Summon an elemental of CR 5 or lower from a matching source of its element. If you lose concentration it turns hostile.
++ CR increases by 1 per slot level above 5.
+Conjure Volley | Con | 1 action | 150 feet | V, S, M | Instantaneous | - | PHB
+Each creature in a 40-foot-radius, 20-foot-high cylinder makes a Dexterity save, taking 8d8 damage of your ammunition's type (half on success).
+Contact Other Plane | Div | 1 minute or R | Self | V | 1 minute | - | PHB
+Ask an extraplanar entity five questions after a DC 15 Intelligence save; failing deals 6d6 psychic damage and madness.
+Contagion | Nec | 1 action | Touch | V, S | 7 days | - | PHB
+Melee spell attack: the target is poisoned and must save each turn; three failures give it a disease of your choice for 7 days.
+Control Winds | Tra | 1 action | 300 feet | V, S | C, up to 1 hour | - | XGtE
+Control air in a 100-foot cube: gusts, downdraft or updraft, each with its own effect.
+Create Spelljamming Helm | Tra | 1 minute | Touch | V, S, M(C*) | Instantaneous | - | AAG
+Turn a chair into a spelljamming helm that lets a ship move through space. Material: a crystal rod worth 5,000 gp, consumed.
+Creation | Ill | 1 minute | 30 feet | V, S, M | Special | - | PHB
+Create a nonliving object up to a 5-foot cube; its duration depends on the material.
++ The cube grows by 5 feet per slot level above 5.
+Danse Macabre | Nec | 1 action | 60 feet | V, S | C, up to 1 hour | - | XGtE
+Up to five Small or Medium corpses become zombies or skeletons that obey you and add your spellcasting modifier to attacks and damage.
++ Two more corpses per slot level above 5.
+Dawn | Evo | 1 action | 60 feet | V, S, M(C) | C, up to 1 minute | - | XGtE
+A 30-foot-radius, 40-foot-high cylinder of sunlight: Constitution save, 4d10 radiant damage (half on success) when it appears and at the end of each of your turns. Move it 60 feet as a bonus action.
+Destructive Wave | Evo | 1 action | Self (30-foot radius) | V | Instantaneous | - | PHB
+Creatures you choose within 30 feet make a Constitution save, taking 5d6 thunder and 5d6 radiant or necrotic damage and falling prone (half and not prone on success).
+Dispel Evil and Good | Abj | 1 action | Self | V, S, M | C, up to 1 minute | - | PHB
+Celestials, elementals, fey, fiends and undead have disadvantage against you; you can end the spell to break their charm or possession, or banish one with a touch.
+Dominate Person | Enc | 1 action | 60 feet | V, S | C, up to 1 minute | - | PHB
+A humanoid makes a Wisdom save or is charmed and follows your telepathic commands; it repeats the save when damaged.
++ Level 6: 10 minutes. Level 7: 1 hour. Level 8+: 8 hours.
+Dream | Ill | 1 minute | Special | V, S, M | 8 hours | - | PHB
+Shape the dreams of a creature you know: speak with it, or make it a nightmare (Wisdom save or no rest and 3d6 psychic damage).
+Enervation | Nec | 1 action | 60 feet | V, S | C, up to 1 minute | - | XGtE
+A tendril drains a creature: Dexterity save, 4d8 necrotic damage (2d8 on success, ending the spell); you heal half. Repeat as an action each turn.
++ Damage increases by 1d8 per slot level above 5.
+Far Step | Con | 1 bonus action | Self | V | C, up to 1 minute | - | XGtE
+Teleport up to 60 feet, and again as a bonus action on each turn before the spell ends.
+Flame Strike | Evo | 1 action | 60 feet | V, S, M | Instantaneous | - | PHB
+A 10-foot-radius, 40-foot-high cylinder of fire: Dexterity save, 4d6 fire and 4d6 radiant damage (half on success).
++ Fire or radiant damage increases by 1d6 per slot level above 5.
+Geas | Enc | 1 minute | 60 feet | V | 30 days | - | PHB
+A creature makes a Wisdom save or must follow a command, taking 5d10 psychic damage once a day when it acts against it.
++ Level 7-8: 1 year. Level 9: until ended.
+Greater Restoration | Abj | 1 action | Touch | V, S, M(C*) | Instantaneous | - | PHB
+Remove a level of exhaustion, charm or petrification, a curse, an ability score reduction or a hit point maximum reduction. Material: diamond dust worth 100 gp, consumed.
+Hallow | Evo | 24 hours | Touch | V, S, M(C*) | Until dispelled | - | PHB
+Consecrate a 60-foot-radius area against celestials, elementals, fey, fiends and undead, plus an extra effect. Material: herbs, oils and incense worth 1,000 gp, consumed.
+Hold Monster | Enc | 1 action | 90 feet | V, S, M | C, up to 1 minute | - | PHB
+A creature (not undead) makes a Wisdom save or is paralyzed, repeating the save each turn.
++ One additional creature per slot level above 5.
+Holy Weapon | Evo | 1 bonus action | Touch | V, S | C, up to 1 hour | - | XGtE
+A weapon deals an extra 2d8 radiant damage on a hit and sheds light. As a bonus action end it to blind creatures within 30 feet (Constitution save) and deal 4d8 radiant.
+Immolation | Evo | 1 action | 90 feet | V | C, up to 1 minute | - | XGtE
+A creature makes a Dexterity save, taking 8d6 fire damage (half on success) and burning for 4d6 each turn until it succeeds on a save.
+Infernal Calling | Con | 1 minute | 90 feet | V, S, M | C, up to 1 hour | - | XGtE
+Summon a devil of CR 6 or lower. It isn't controlled; you can command it if you know its true name.
++ CR increases by 1 per slot level above 5.
+Insect Plague | Con | 1 action | 300 feet | V, S, M | C, up to 10 minutes | - | PHB
+A 20-foot-radius sphere of locusts: lightly obscured, difficult terrain; Constitution save, 4d10 piercing damage (half on success).
++ Damage increases by 1d10 per slot level above 5.
+Legend Lore | Div | 10 minutes | Self | V, S, M(C*) | Instantaneous | - | PHB
+Learn significant lore about a famous person, place or object. Material: incense worth 250 gp (consumed) and ivory strips worth 50 gp each.
+Maelstrom | Evo | 1 action | 120 feet | V, S, M | C, up to 1 minute | - | XGtE
+A 30-foot-radius whirlpool: difficult terrain; creatures starting their turn there make a Strength save or take 6d6 bludgeoning damage and are pulled 10 feet toward the center.
+Mass Cure Wounds | Evo | 1 action | 60 feet | V, S | Instantaneous | - | PHB
+Up to six creatures in a 30-foot-radius sphere regain 3d8 + your spellcasting modifier hit points.
++ Healing increases by 1d8 per slot level above 5.
+Mislead | Ill | 1 action | Self | S | C, up to 1 hour | - | PHB
+You become invisible and an illusory double appears that you control and can see and hear through.
+Modify Memory | Enc | 1 action | 30 feet | V, S | C, up to 1 minute | - | PHB
+A creature makes a Wisdom save or you rewrite its memory of an event from the last 24 hours.
++ Level 6: 7 days. Level 7: 30 days. Level 8: 1 year. Level 9: any time.
+Negative Energy Flood | Nec | 1 action | 60 feet | V, M | Instantaneous | - | XGtE
+A creature makes a Constitution save, taking 5d12 necrotic damage (half on success); a creature killed rises as a zombie. Undead gain half the roll as temporary HP instead.
+Passwall | Tra | 1 action | 30 feet | V, S, M | 1 hour | - | PHB
+A passage up to 5 feet wide, 8 high and 20 deep opens through wood, plaster or stone.
+Planar Binding | Abj | 1 hour | 60 feet | V, S, M(C*) | 24 hours | - | PHB
+A celestial, elemental, fey or fiend makes a Charisma save or must serve you. Material: a jewel worth 1,000 gp, consumed.
++ Level 6: 10 days. Level 7: 30 days. Level 8: 180 days. Level 9: a year and a day.
+Raise Dead | Nec | 1 hour | Touch | V, S, M(C*) | Instantaneous | - | PHB
+A creature dead up to 10 days returns with 1 hit point and a -4 penalty that fades with long rests. Material: a diamond worth 500 gp, consumed.
+Rary's Telepathic Bond | Div | 1 action or R | 30 feet | V, S, M | 1 hour | - | PHB
+Up to eight willing creatures share a telepathic link on the same plane.
+Reincarnate | Tra | 1 hour | Touch | V, S, M(C*) | Instantaneous | - | PHB
+A creature dead up to 10 days returns in a new body of a random race. Material: oils worth 1,000 gp, consumed.
+Scrying | Div | 10 minutes | Self | V, S, M(C) | C, up to 10 minutes | - | PHB
+See and hear a creature on the same plane (Wisdom save modified by your knowledge of it). Material: a focus worth 1,000 gp.
+Seeming | Ill | 1 action | 30 feet | V, S | 8 hours | - | PHB
+Change the appearance of any number of creatures you can see (Charisma save if unwilling).
+Skill Empowerment | Tra | 1 action | Touch | V, S | C, up to 1 hour | - | XGtE
+A willing creature doubles its proficiency bonus for one skill it is proficient in.
+Steel Wind Strike | Con | 1 action | 30 feet | S, M | Instantaneous | - | XGtE
+Melee spell attack against up to five creatures, 6d10 force damage each; then teleport next to one of them.
+Summon Celestial | Con | 1 action | 90 feet | V, S, M(C) | C, up to 1 hour | - | TCoE
+Summon a Celestial Spirit (avenger or defender) that obeys you. Its stats scale with the spell's level. Material: a golden reliquary worth 500 gp.
++ Uses the higher slot level in its stat block.
+Summon Draconic Spirit | Con | 1 action | 60 feet | V, S, M(C) | C, up to 1 hour | - | FTD
+Summon a Draconic Spirit (chromatic, metallic or gem) that obeys you, with a breath weapon and resistances you share. Material: an object with a dragon image worth 500 gp.
++ Uses the higher slot level in its stat block.
+Swift Quiver | Tra | 1 bonus action | Touch | V, S, M | C, up to 1 minute | - | PHB
+Your quiver creates endless ammunition, and you can make two ranged weapon attacks as a bonus action each turn.
+Synaptic Static | Enc | 1 action | 120 feet | V, S | Instantaneous | - | XGtE
+Each creature in a 20-foot-radius sphere makes an Intelligence save, taking 8d6 psychic damage (half on success); on a failure it subtracts 1d6 from attacks, checks and concentration saves for 1 minute.
+Telekinesis | Tra | 1 action | 60 feet | V, S | C, up to 10 minutes | - | PHB
+Move a Huge or smaller creature (contested check) or an object up to 1,000 pounds 30 feet each turn as an action.
+Teleportation Circle | Con | 1 minute | 10 feet | V, M(C*) | 1 round | - | PHB
+Open a portal to a permanent teleportation circle whose sigil sequence you know. Material: rare chalks and inks worth 50 gp, consumed.
+Temporal Shunt | Tra | 1 reaction | 120 feet | V, S | 1 round | - | EGW
+When a creature attacks or casts a spell, it makes a Wisdom save or vanishes until the start of its next turn, wasting the attack or spell.
++ One additional creature per slot level above 5.
+Transmute Rock | Tra | 1 action | 120 feet | V, S, M | Until dispelled | - | XGtE
+Turn a 40-foot cube of rock into mud (difficult terrain, restrains) or mud into rock (traps creatures).
+Tree Stride | Con | 1 action | Self | V, S | C, up to 1 minute | - | PHB
+Step into a tree and out of another of the same kind within 500 feet, once per turn.
+Wall of Force | Evo | 1 action | 120 feet | V, S, M | C, up to 10 minutes | - | PHB
+An invisible, indestructible wall (or dome) of force that nothing physical passes through.
+Wall of Light | Evo | 1 action | 120 feet | V, S, M | C, up to 10 minutes | - | XGtE
+A wall of light 60 feet long, 10 high and 5 thick: Constitution save, 4d8 radiant damage and blinded (half on success). Shoot a ray from it as an action (4d8 radiant).
++ Damage increases by 1d8 per slot level above 5.
+Wall of Stone | Evo | 1 action | 120 feet | V, S, M | C, up to 10 minutes | - | PHB
+A stone wall of ten 10-by-10-foot panels, 6 inches thick. Permanent if concentration lasts the full duration.
+Wrath of Nature | Evo | 1 action | 120 feet | V, S | C, up to 1 minute | - | XGtE
+Nature in a 60-foot cube turns hostile: grasping undergrowth, trees that lash (4d6 slashing), roots and vines (restrain) and flying rocks (3d8 bludgeoning, prone).
