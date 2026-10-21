@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, CASTER_TYPES, HIT_DICE, MAX_LEVEL, classFromPreset, uid, type Character } from '../../lib/model/character';
   import { casterLevel, totalLevel } from '../../lib/rules/derive';
@@ -35,7 +36,7 @@
 
   function removeClass(i: number) {
     if (c.classes.length <= 1) return;
-    if (confirm(`¿Quitar ${c.classes[i].name}?`)) c.classes.splice(i, 1);
+    if (confirm(t('¿Quitar {name}?', { name: c.classes[i].name }))) c.classes.splice(i, 1);
   }
 
   // Cambiar la clase inicial desde la lista aplica su Hit Die, spellcasting y saves.
@@ -50,25 +51,25 @@
 </script>
 
 <div class="card stack">
-  <h2>Clases <span class="muted">· nivel {totalLevel(c)}/{MAX_LEVEL} · caster level {casterLevel(c)}</span></h2>
+  <h2>{t('Clases')} <span class="muted">· {t('nivel')} {totalLevel(c)}/{MAX_LEVEL} · caster level {casterLevel(c)}</span></h2>
   {#each c.classes as k, i (k.id)}
     <div class="class-row">
       <div class="grid2">
         {#if i === 0}
           <label class="field">
-            <span>Clase inicial</span>
+            <span>{t('Clase inicial')}</span>
             <select value={choices.some((p) => p.name === k.name) ? k.name : ''} onchange={(e) => setFirst(e.currentTarget.value)}>
-              {#if !choices.some((p) => p.name === k.name)}<option value="">{k.name || 'Personalizada'}</option>{/if}
+              {#if !choices.some((p) => p.name === k.name)}<option value="">{k.name || t('Personalizada')}</option>{/if}
               {#each choices as p (p.name)}<option value={p.name}>{p.name}</option>{/each}
             </select>
           </label>
         {:else}
-          <label class="field"><span>Clase</span><input bind:value={k.name} list="class-names" /></label>
+          <label class="field"><span>{t('Clase')}</span><input bind:value={k.name} list="class-names" /></label>
         {/if}
         <SubclassField bind:entry={c.classes[i]} ruleset={c.ruleset} />
       </div>
       <div class="grid4">
-        <NumField label="Nivel" bind:value={k.level} min={1} max={k.level + levelsLeft} />
+        <NumField label={t('Nivel')} bind:value={k.level} min={1} max={k.level + levelsLeft} />
         <label class="field">
           <span>Hit Die</span>
           <select bind:value={k.hitDie}>
@@ -78,19 +79,19 @@
         <label class="field">
           <span>Spellcasting</span>
           <select bind:value={k.caster}>
-            {#each CASTER_TYPES as t (t)}<option value={t}>{casterLabel[t]}</option>{/each}
+            {#each CASTER_TYPES as ct (ct)}<option value={ct}>{t(casterLabel[ct])}</option>{/each}
           </select>
         </label>
         <label class="field">
           <span>Spell ability</span>
           <select bind:value={k.spellAbility}>
-            <option value={null}>Ninguna</option>
+            <option value={null}>{t('Ninguna')}</option>
             {#each ABILITIES as a (a)}<option value={a}>{ABILITY_LABEL[a]}</option>{/each}
           </select>
         </label>
       </div>
       {#if c.classes.length > 1}
-        <button class="danger ghost remove" onclick={() => removeClass(i)}>Quitar clase</button>
+        <button class="danger ghost remove" onclick={() => removeClass(i)}>{t('Quitar clase')}</button>
       {/if}
     </div>
   {/each}
@@ -99,17 +100,17 @@
   </datalist>
   {#if levelsLeft > 0}
     <div class="row">
-      <select bind:value={newClass} aria-label="Clase a agregar">
-        <option value="">Agregar clase (multiclass)...</option>
+      <select bind:value={newClass} aria-label={t('Clase a agregar')}>
+        <option value="">{t('Agregar clase (multiclass)...')}</option>
         {#each choices as p (p.name)}<option value={p.name}>{p.name}</option>{/each}
-        <option value="__custom">Personalizada</option>
+        <option value="__custom">{t('Personalizada')}</option>
       </select>
-      <button onclick={addClass} disabled={!newClass}>Agregar</button>
+      <button onclick={addClass} disabled={!newClass}>{t('Agregar')}</button>
     </div>
   {:else}
-    <p class="muted small">Llegaste al nivel {MAX_LEVEL}: para agregar otra clase, baja niveles de una existente.</p>
+    <p class="muted small">{t('Llegaste al nivel {n}: para agregar otra clase, baja niveles de una existente.', { n: MAX_LEVEL })}</p>
   {/if}
-  <p class="muted small">La clase inicial define el HP de nivel 1, los saves y las proficiencies completas.</p>
+  <p class="muted small">{t('La clase inicial define el HP de nivel 1, los saves y las proficiencies completas.')}</p>
 </div>
 
 <style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { onDestroy } from 'svelte';
   import { store } from '../lib/store.svelte';
   import { AC_MODES, uid } from '../lib/model/character';
@@ -55,16 +56,16 @@
   };
 
   function addResource() {
-    store.c.resources.push({ id: uid(), name: 'Nuevo recurso', max: 1, used: 0, recharge: 'long' });
+    store.c.resources.push({ id: uid(), name: t('Nuevo recurso'), max: 1, used: 0, recharge: 'long' });
   }
 
   // Al salir de Editar, recorta consumos que quedaron por encima del nuevo maximo.
   onDestroy(() => store.apply(clampUsage));
 </script>
 
-<nav class="sections" aria-label="Secciones de edición">
+<nav class="sections" aria-label={t('Secciones de edición')}>
   {#each sections as [id, label] (id)}
-    <button class:on={section === id} aria-current={section === id ? 'true' : undefined} onclick={() => go(id)}>{label}</button>
+    <button class:on={section === id} aria-current={section === id ? 'true' : undefined} onclick={() => go(id)}>{t(label)}</button>
   {/each}
 </nav>
 
@@ -72,7 +73,7 @@
   {#if section === 'origin'}
     <div class="card stack">
       <h2>General</h2>
-      <label class="field"><span>Nombre</span><input bind:value={store.c.name} /></label>
+      <label class="field"><span>{t('Nombre')}</span><input bind:value={store.c.name} /></label>
       <label class="field">
         <span>Ruleset</span>
         <select bind:value={store.c.ruleset}>
@@ -80,7 +81,7 @@
           <option value="2024">2024</option>
         </select>
       </label>
-      <p class="muted small">El ruleset filtra el contenido de los packs y ajusta reglas como el Long Rest.</p>
+      <p class="muted small">{t('El ruleset filtra el contenido de los packs y ajusta reglas como el Long Rest.')}</p>
     </div>
     <SpeciesCard bind:c={store.c} />
     <BackgroundCard bind:c={store.c} />
@@ -95,29 +96,29 @@
     <div class="card stack">
       <h2>Hit Points</h2>
       <div class="grid2">
-        <NumField label="HP máximo" bind:value={store.c.hp.max} min={0} max={999} />
-        <NumField label="HP actual" bind:value={store.c.hp.current} min={-999} max={999} />
+        <NumField label={t('HP máximo')} bind:value={store.c.hp.max} min={0} max={999} />
+        <NumField label={t('HP actual')} bind:value={store.c.hp.current} min={-999} max={999} />
       </div>
       <div class="row">
-        <span class="muted small spacer">Promedio sugerido según clases y CON: <b class="num">{averageHp(c)}</b></span>
-        <button onclick={() => (store.c.hp.max = averageHp(c))}>Usar</button>
+        <span class="muted small spacer">{t('Promedio sugerido según clases y CON')}: <b class="num">{averageHp(c)}</b></span>
+        <button onclick={() => (store.c.hp.max = averageHp(c))}>{t('Usar')}</button>
       </div>
     </div>
 
     <div class="card stack">
-      <h2>Defensa e iniciativa <span class="muted">· AC {ac.total}</span></h2>
+      <h2>{t('Defensa e iniciativa')} <span class="muted">· AC {ac.total}</span></h2>
       <label class="field">
-        <span>Cálculo de AC</span>
+        <span>{t('Cálculo de AC')}</span>
         <select bind:value={store.c.ac.mode}>
-          {#each AC_MODES as m (m)}<option value={m}>{acLabel[m]}</option>{/each}
+          {#each AC_MODES as m (m)}<option value={m}>{t(acLabel[m])}</option>{/each}
         </select>
       </label>
       {#if c.ac.mode === 'auto'}
-        <p class="small muted">Ahora: {ac.label}. Equipa armor y shield en la pestaña Equipo.</p>
+        <p class="small muted">{t('Ahora')}: {ac.label}. {t('Equipa armor y shield en la pestaña Equipo.')}</p>
       {/if}
       <div class="grid3">
         {#if !['auto', 'unarmored', 'unarmored-con', 'unarmored-wis', 'unarmored-cha', 'mage'].includes(c.ac.mode)}
-          <NumField label={c.ac.mode === 'custom' ? 'AC' : 'Base de la armadura'} bind:value={store.c.ac.base} min={0} max={30} />
+          <NumField label={c.ac.mode === 'custom' ? 'AC' : t('Base de la armadura')} bind:value={store.c.ac.base} min={0} max={30} />
         {/if}
         <NumField label="Bonus AC" bind:value={store.c.ac.bonus} min={-10} max={10} />
         <NumField label="Bonus initiative" bind:value={store.c.initiativeBonus} min={-10} max={20} />
@@ -125,7 +126,7 @@
       {#if c.ac.mode !== 'auto'}
         <label class="check">
           <input type="checkbox" bind:checked={store.c.ac.shield} />
-          <span>Shield equipado (+2)</span>
+          <span>{t('Shield equipado (+2)')}</span>
         </label>
       {/if}
     </div>
@@ -133,38 +134,38 @@
     <SpeedCard />
 
     <div class="card stack">
-      <h2>Bonos de spellcasting</h2>
+      <h2>{t('Bonos de spellcasting')}</h2>
       <div class="grid2">
         <NumField label="Bonus spell attack" bind:value={store.c.spellBonus.attack} min={-10} max={10} />
         <NumField label="Bonus spell save DC" bind:value={store.c.spellBonus.dc} min={-10} max={10} />
       </div>
-      <p class="muted small">Para items mágicos que suben tu spell attack o tu DC.</p>
+      <p class="muted small">{t('Para items mágicos que suben tu spell attack o tu DC.')}</p>
     </div>
 
     <div class="card stack">
-      <h2>Recursos con usos</h2>
+      <h2>{t('Recursos con usos')}</h2>
       {#each store.c.resources as r, i (r.id)}
         <div class="res-row">
-          <label class="field name"><span>Nombre</span><input bind:value={r.name} /></label>
-          <NumField label="Usos" bind:value={r.max} min={0} max={99} />
+          <label class="field name"><span>{t('Nombre')}</span><input bind:value={r.name} /></label>
+          <NumField label={t('Usos')} bind:value={r.max} min={0} max={99} />
           <label class="field">
-            <span>Se recupera</span>
+            <span>{t('Se recupera')}</span>
             <select bind:value={r.recharge}>
               <option value="short">Short Rest</option>
               <option value="long">Long Rest</option>
               <option value="none">Manual</option>
             </select>
           </label>
-          <button class="danger ghost" aria-label={`Borrar ${r.name}`} onclick={() => store.c.resources.splice(i, 1)}>✕</button>
+          <button class="danger ghost" aria-label={`${t('Borrar')} ${r.name}`} onclick={() => store.c.resources.splice(i, 1)}>✕</button>
         </div>
       {/each}
-      <button onclick={addResource}>Agregar recurso</button>
-      <p class="muted small">Casts gratis de feats, Channel Divinity, Bladesong, cargas de items, etc.</p>
+      <button onclick={addResource}>{t('Agregar recurso')}</button>
+      <p class="muted small">{t('Casts gratis de feats, Channel Divinity, Bladesong, cargas de items, etc.')}</p>
     </div>
 
     <div class="card stack">
-      <h2>Notas</h2>
-      <textarea bind:value={store.c.notes} rows="6" placeholder="Aliados, pendientes, historia..."></textarea>
+      <h2>{t('Notas')}</h2>
+      <textarea bind:value={store.c.notes} rows="6" placeholder={t('Aliados, pendientes, historia...')}></textarea>
     </div>
   {/if}
 </section>

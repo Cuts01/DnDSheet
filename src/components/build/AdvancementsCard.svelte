@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
   import type { PackFeat } from '../../lib/model/pack';
@@ -56,9 +57,9 @@
 </script>
 
 <div class="card stack">
-  <h2>ASI y feats</h2>
+  <h2>{t('ASI y feats')}</h2>
   {#if !slots.length && !c.feats.length}
-    <p class="muted small">Todavía no tienes niveles de Ability Score Improvement.</p>
+    <p class="muted small">{t('Todavía no tienes niveles de Ability Score Improvement.')}</p>
   {/if}
 
   {#each slots as s (s.key)}
@@ -70,18 +71,18 @@
       </div>
       {#if !s.epic}
         <div class="seg">
-          <button class:on={!a || a.kind === 'asi'} onclick={() => setKind(s.key, 'asi')}>Subir abilities</button>
+          <button class:on={!a || a.kind === 'asi'} onclick={() => setKind(s.key, 'asi')}>{t('Subir abilities')}</button>
           <button class:on={a?.kind === 'feat'} onclick={() => setKind(s.key, 'feat')}>Feat</button>
         </div>
       {/if}
       {#if !s.epic && (!a || a.kind === 'asi')}
         {#if !a}
-          <button onclick={() => ensure(s.key, false)}>Elegir</button>
+          <button onclick={() => ensure(s.key, false)}>{t('Elegir')}</button>
         {:else}
           <div class="row wrap">
-            <select value={a.asi.length === 1 ? 'one' : 'two'} onchange={(e) => setAsiMode(s.key, e.currentTarget.value as 'one' | 'two')} aria-label="Modo">
-              <option value="one">+2 a una</option>
-              <option value="two">+1 a dos</option>
+            <select value={a.asi.length === 1 ? 'one' : 'two'} onchange={(e) => setAsiMode(s.key, e.currentTarget.value as 'one' | 'two')} aria-label={t('Modo')}>
+              <option value="one">{t('+2 a una')}</option>
+              <option value="two">{t('+1 a dos')}</option>
             </select>
             {#each a.asi as b, i (i)}
               <div class="bonus">
@@ -94,20 +95,20 @@
           </div>
         {/if}
       {:else if !a}
-        <button onclick={() => ensure(s.key, true)}>Elegir Epic Boon</button>
+        <button onclick={() => ensure(s.key, true)}>{t('Elegir Epic Boon')}</button>
       {:else}
         {@const f = featOf(a.featRef)}
         {#if feats.length}
           <RefSelect options={forSlot(s.epic)} value={a.featRef} label="Feat" onpick={(r) => pickFeat(c.advancements[s.key], r)} />
         {:else}
-          <label class="field"><span>Feat</span><input bind:value={c.advancements[s.key].featName} placeholder="Importa un pack con feats" /></label>
+          <label class="field"><span>Feat</span><input bind:value={c.advancements[s.key].featName} placeholder={t('Importa un pack con feats')} /></label>
         {/if}
         {#if f}
-          {#if f.prerequisite}<p class="small muted">Requisito: {f.prerequisite}</p>{/if}
+          {#if f.prerequisite}<p class="small muted">{t('Requisito')}: {f.prerequisite}</p>{/if}
           {#if f.asi}
             <div class="bonus self">
               <b class="num">+1</b>
-              <select bind:value={c.advancements[s.key].featAbility} aria-label="Ability del feat">
+              <select bind:value={c.advancements[s.key].featAbility} aria-label={t('Ability del feat')}>
                 {#each f.asi.from as x (x)}<option value={x}>{ABILITY_LABEL[x]}</option>{/each}
               </select>
             </div>
@@ -121,9 +122,9 @@
     {@const pf = featOf(f.ref)}
     <div class="slot">
       <div class="slot-head">
-        <b>{srcLabel[f.source]}</b>
+        <b>{t(srcLabel[f.source])}</b>
         {#if f.source === 'other'}
-          <button class="ghost danger del" aria-label="Quitar feat" onclick={() => c.feats.splice(i, 1)}>✕</button>
+          <button class="ghost danger del" aria-label={t('Quitar feat')} onclick={() => c.feats.splice(i, 1)}>✕</button>
         {/if}
       </div>
       {#if feats.length}
@@ -134,7 +135,7 @@
       {#if pf?.asi}
         <div class="bonus self">
           <b class="num">+1</b>
-          <select bind:value={c.feats[i].ability} aria-label="Ability del feat">
+          <select bind:value={c.feats[i].ability} aria-label={t('Ability del feat')}>
             {#each pf.asi.from as x (x)}<option value={x}>{ABILITY_LABEL[x]}</option>{/each}
           </select>
         </div>
@@ -142,8 +143,8 @@
     </div>
   {/each}
 
-  <button onclick={addOther}>Agregar feat adicional</button>
-  <p class="muted small">Para feats que no vienen de un ASI: Fighting Style 2024, bonus de un DM, etc.</p>
+  <button onclick={addOther}>{t('Agregar feat adicional')}</button>
+  <p class="muted small">{t('Para feats que no vienen de un ASI: Fighting Style 2024, bonus de un DM, etc.')}</p>
 </div>
 
 <style>

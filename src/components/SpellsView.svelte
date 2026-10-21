@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { compendium } from '../lib/compendium.svelte';
   import { uid, type SpellEntry } from '../lib/model/character';
@@ -34,7 +35,7 @@
   const casters = $derived(c.classes.filter((k) => k.caster !== 'none'));
   const slots = $derived(slotMax(c));
   const pact = $derived(pactSlots(c));
-  const LEVEL = (l: number) => (l === 0 ? 'Cantrips' : `Nivel ${l}`);
+  const LEVEL = (l: number) => (l === 0 ? 'Cantrips' : `${t('Nivel')} ${l}`);
 
   let mode = $state<'mine' | 'add'>('mine');
   let q = $state('');
@@ -58,7 +59,7 @@
   const freeOf = (s: SpellEntry) => {
     const g = feats.granted.find((x) => x.key === spellKey(s.name) && x.uses !== 'none' && x.freeKey);
     if (!g) return null;
-    if (g.uses === 'will') return { key: '', label: 'a voluntad', used: false };
+    if (g.uses === 'will') return { key: '', label: t('a voluntad'), used: false };
     return { key: g.freeKey!, label: g.uses === 'short' ? '1/SR' : '1/LR', used: !!c.freeUsed[g.freeKey!] };
   };
   const lineFor = (s: SpellEntry) => {
@@ -107,13 +108,13 @@
   let fileInput = $state<HTMLInputElement>();
   async function updateLocal() {
     const r = await importLocalWiki();
-    importMsg = r.done.length ? `Actualizado: ${r.done.join(', ')}.` : r.errors.join(' ');
+    importMsg = r.done.length ? `${t('Actualizado')}: ${r.done.join(', ')}.` : r.errors.join(' ');
   }
   async function onPackFile(e: Event & { currentTarget: HTMLInputElement }) {
     const files = [...(e.currentTarget.files ?? [])];
     e.currentTarget.value = '';
     const r = await importFiles(files);
-    importMsg = r.done.length ? `Importado: ${r.done.join(', ')}.` : r.errors.join(' ');
+    importMsg = r.done.length ? `${t('Importado')}: ${r.done.join(', ')}.` : r.errors.join(' ');
   }
 
   /* ---------- Mis spells ---------- */
@@ -139,7 +140,7 @@
   function castFree(s: SpellEntry, key: string) {
     cast(s, null);
     if (key) store.c.freeUsed[key] = true;
-    flash = `${s.name} lanzada gratis (sin slot).`;
+    flash = t('{name} lanzada gratis (sin slot).', { name: s.name });
   }
 
   function cast(s: SpellEntry, opt: SlotOption | null, ritual = false) {
@@ -148,8 +149,14 @@
     const prev = c.concentration;
     store.apply((x) => castSpell(x, ritual ? null : opt, conc));
     casting_ = null;
-    const how = ritual ? 'como ritual' : opt ? (opt.kind === 'pact' ? `con Pact slot (nivel ${opt.level})` : `con slot de nivel ${opt.level}`) : '';
-    flash = `${s.name} lanzada ${how}`.trim() + (conc && prev && prev !== s.name ? `. Terminó la concentration en ${prev}.` : '.');
+    const how = ritual
+      ? t('{name} lanzada como ritual', { name: s.name })
+      : opt
+        ? opt.kind === 'pact'
+          ? t('{name} lanzada con Pact slot (nivel {n})', { name: s.name, n: opt.level })
+          : t('{name} lanzada con slot de nivel {n}', { name: s.name, n: opt.level })
+        : t('{name} lanzada', { name: s.name });
+    flash = how + (conc && prev && prev !== s.name ? `. ${t('Terminó la concentration en {name}.', { name: prev })}` : '.');
     setTimeout(() => (flash = ''), 3500);
   }
 
@@ -212,8 +219,10 @@
     const lim = spellLimits(c, addTarget);
     const parts = [];
     if (full(addTarget, 0)) parts.push(`cantrips (${lim.cantrips})`);
-    if (full(addTarget, 1)) parts.push(`spells conocidas (${lim.spells})`);
-    return parts.length ? `Llegaste al máximo de ${parts.join(' y ')} de ${addTarget.name} ${addTarget.level}. Quita una para elegir otra.` : '';
+    if (full(addTarget, 1)) parts.push(`${t('spells conocidas')} (${lim.spells})`);
+    return parts.length
+      ? t('Llegaste al máximo de {what} de {cls}. Quita una para elegir otra.', { what: parts.join(` ${t('y')} `), cls: `${addTarget.name} ${addTarget.level}` })
+      : '';
   });
 
   function add(r: Ref<PackSpell>) {
@@ -232,8 +241,8 @@
   }
 
   const tags = (d: PackSpell | null) => [d?.concentration ? 'C' : '', d?.ritual ? 'R' : ''].filter(Boolean);
-  const shortTime = (t: string) =>
-    t.replace(/^(1 )?bonus action.*/i, 'BA').replace(/^(1 )?reaction.*/i, 'Reacción').replace(/^(1 )?action.*/i, 'Acción');
+  const shortTime = (ct: string) =>
+    ct.replace(/^(1 )?bonus action.*/i, 'BA').replace(/^(1 )?reaction.*/i, t('Reacción')).replace(/^(1 )?action.*/i, t('Acción'));
 </script>
 
 <section class="spells">
@@ -241,15 +250,15 @@
     <div class="card stack warnbox">
       <p class="small">
         {#if stale.length}
-          Tu pack <b>{stale.map((p) => p.pack.id).join(', ')}</b> es de una versión anterior y le faltan datos que esta app ya usa (por ejemplo, las spells de feats como Fey Touched).
+          {t('Tu pack {id} es de una versión anterior y le faltan datos que esta app ya usa (por ejemplo, las spells de feats como Fey Touched).', { id: stale.map((p) => p.pack.id).join(', ') })}
         {:else}
-          Ningún pack importado trae spells.
+          {t('Ningún pack importado trae spells.')}
         {/if}
-        Toca Actualizar para cargar los packs que vienen con la app.
+        {t('Toca Actualizar para cargar los packs que vienen con la app.')}
       </p>
       <div class="row-btns">
-        {#if canLoadLocal}<button class="primary" onclick={updateLocal}>Actualizar packs de la wiki</button>{/if}
-        <button onclick={() => fileInput?.click()}>Elegir archivo...</button>
+        {#if canLoadLocal}<button class="primary" onclick={updateLocal}>{t('Actualizar packs de la wiki')}</button>{/if}
+        <button onclick={() => fileInput?.click()}>{t('Elegir archivo...')}</button>
         <input bind:this={fileInput} type="file" accept="application/json,.json" multiple hidden onchange={onPackFile} />
       </div>
       {#if importMsg}<p class="small muted">{importMsg}</p>{/if}
@@ -259,8 +268,8 @@
   {#if lostFeats.length}
     <div class="card warnbox">
       <p class="small">
-        Estos feats no se encuentran en los packs importados, así que no pueden dar sus spells: <b>{lostFeats.join(', ')}</b>.
-        Elígelos de nuevo de la lista en Editar > Clases y mejoras.
+        {t('Estos feats no se encuentran en los packs importados, así que no pueden dar sus spells')}: <b>{lostFeats.join(', ')}</b>.
+        {t('Elígelos de nuevo de la lista en Editar > Clases y mejoras.')}
       </p>
     </div>
   {/if}
@@ -268,7 +277,7 @@
   {#if c.concentration}
     <div class="conc card">
       <span><small class="muted">Concentration</small><b>{c.concentration}</b></span>
-      <button onclick={() => (store.c.concentration = '')}>Terminar</button>
+      <button onclick={() => (store.c.concentration = '')}>{t('Terminar')}</button>
     </div>
   {/if}
   {#if flash}<p class="flash small" role="status">{flash}</p>{/if}
@@ -293,17 +302,17 @@
             {/if}
             {#if lim.spells !== null}
               <span class="pair num" class:over={use.spells > lim.spells}
-                ><small>{lim.kind === 'prepared' ? 'Preparadas' : 'Conocidas'}</small><b>{use.spells}/{lim.spells}</b></span
+                ><small>{lim.kind === 'prepared' ? t('Preparadas') : t('Conocidas')}</small><b>{use.spells}/{lim.spells}</b></span
               >
             {/if}
           </div>
         {/if}
         {#if (lim.cantrips !== null && use.cantrips > lim.cantrips) || (lim.spells !== null && use.spells > lim.spells)}
-          <p class="warn small">Tienes más de las permitidas: quita las que sobran en Mis spells.</p>
+          <p class="warn small">{t('Tienes más de las permitidas: quita las que sobran en Mis spells.')}</p>
         {/if}
         {#if variant}
           <label class="field variant">
-            <span>{variant.subclass}: terreno</span>
+            <span>{variant.subclass}: {t('terreno')}</span>
             <select value={variant.value} onchange={(e) => (store.c.spellVariants[k.id] = e.currentTarget.value)}>
               {#each variant.options as o (o)}<option value={o}>{o}</option>{/each}
             </select>
@@ -311,7 +320,7 @@
         {/if}
       </div>
     {:else}
-      <p class="muted small">Ninguna de tus clases lanza spells. Igual puedes agregar spells de feats o rasgos desde "Agregar".</p>
+      <p class="muted small">{t('Ninguna de tus clases lanza spells. Igual puedes agregar spells de feats o rasgos desde "Agregar".')}</p>
     {/each}
 
     {#if pact.count > 0 || slots.some((m) => m > 0)}
@@ -326,7 +335,7 @@
           {#if max > 0}
             <div class="slot-row">
               <span class="slot-lvl num">{i + 1}</span>
-              <Pips total={max} used={c.slotsUsed.levels[i]} label={`slot de nivel ${i + 1}`} onchange={(u) => (store.c.slotsUsed.levels[i] = u)} />
+              <Pips total={max} used={c.slotsUsed.levels[i]} label={t('slot de nivel {n}', { n: i + 1 })} onchange={(u) => (store.c.slotsUsed.levels[i] = u)} />
             </div>
           {/if}
         {/each}
@@ -340,9 +349,9 @@
       <div class="feat-opts">
         {#if f.lists.length > 1}
           <label class="field">
-            <span>Lista de clase</span>
+            <span>{t('Lista de clase')}</span>
             <select value={f.list} onchange={(e) => setList(f.key, e.currentTarget.value)}>
-              <option value="">Elegir...</option>
+              <option value="">{t('Elegir...')}</option>
               {#each f.lists as l (l)}<option value={l}>{l}</option>{/each}
             </select>
           </label>
@@ -361,32 +370,32 @@
           {#each Array.from({ length: p.count }, (_, n) => n) as n (n)}
             <label class="field">
               <span>
-                {p.level === 0 ? 'Cantrip' : `Nivel ${p.level}`}{p.schools.length ? ` (${p.schools.join(' o ')})` : ''}{p.attackOnly ? ' con attack roll' : ''}{p.uses === 'will' ? ', sin slot' : p.uses !== 'none' ? `, gratis ${p.uses === 'short' ? '1/SR' : '1/LR'}` : ''}{p.ritualOnly ? ' (ritual)' : ''}
+                {p.level === 0 ? 'Cantrip' : `${t('Nivel')} ${p.level}`}{p.schools.length ? ` (${p.schools.join(` ${t('o')} `)})` : ''}{p.attackOnly ? ` ${t('con attack roll')}` : ''}{p.uses === 'will' ? `, ${t('sin slot')}` : p.uses !== 'none' ? `, ${t('gratis')} ${p.uses === 'short' ? '1/SR' : '1/LR'}` : ''}{p.ritualOnly ? ' (ritual)' : ''}
               </span>
               <select value={p.chosen[n] ?? ''} disabled={p.lists.length > 0 && !f.list} onchange={(e) => pick(f.key, p.index, n, e.currentTarget.value)}>
-                <option value="">{p.lists.length > 0 && !f.list ? 'Elige la lista primero' : 'Elegir...'}</option>
+                <option value="">{p.lists.length > 0 && !f.list ? t('Elige la lista primero') : t('Elegir...')}</option>
                 {#each p.options as o (o.value)}<option value={o.item.name}>{o.item.name}</option>{/each}
               </select>
             </label>
           {/each}
         </div>
       {/each}
-      <p class="muted small">Se lanzan con {ABILITY_LABEL[f.ability]}: attack {fmt(abilityLine(c, f.ability, f.name).attack)}, DC {abilityLine(c, f.ability, f.name).dc}. Aparecen en tu lista con ★ y no cuentan para el límite.</p>
+      <p class="muted small">{t('Se lanzan con {ab}: attack {atk}, DC {dc}. Aparecen en tu lista con ★ y no cuentan para el límite.', { ab: ABILITY_LABEL[f.ability], atk: fmt(abilityLine(c, f.ability, f.name).attack), dc: abilityLine(c, f.ability, f.name).dc })}</p>
     </div>
   {/each}
 
   <div class="seg" role="tablist">
     <button role="tab" class:on={mode === 'mine'} aria-selected={mode === 'mine'} onclick={() => (mode = 'mine')}
-      >Mis spells ({c.spells.length + virtual.length})</button
+      >{t('Mis spells')} ({c.spells.length + virtual.length})</button
     >
-    <button role="tab" class:on={mode === 'add'} aria-selected={mode === 'add'} onclick={() => (mode = 'add')}>Agregar</button>
+    <button role="tab" class:on={mode === 'add'} aria-selected={mode === 'add'} onclick={() => (mode = 'add')}>{t('Agregar')}</button>
   </div>
-  <input bind:value={q} placeholder="Buscar spell..." aria-label="Buscar spell" />
+  <input bind:value={q} placeholder={t('Buscar spell...')} aria-label={t('Buscar spell')} />
 
   {#if mode === 'mine'}
     <label class="check">
       <input type="checkbox" bind:checked={onlyReady} />
-      <span>Solo las que puedo lanzar (cantrips, preparadas o conocidas)</span>
+      <span>{t('Solo las que puedo lanzar (cantrips, preparadas o conocidas)')}</span>
     </label>
 
     {#each groups as [lvl, list] (lvl)}
@@ -405,9 +414,9 @@
                   class="prep"
                   class:on={s.prepared}
                   aria-pressed={s.prepared}
-                  aria-label={s.prepared ? `Despreparar ${s.name}` : `Preparar ${s.name}`}
+                  aria-label={s.prepared ? `${t('Despreparar')} ${s.name}` : `${t('Preparar')} ${s.name}`}
                   disabled={prepFull(s)}
-                  title={prepFull(s) ? 'Ya tienes el máximo de spells preparadas' : undefined}
+                  title={prepFull(s) ? t('Ya tienes el máximo de spells preparadas') : undefined}
                   onclick={() => (s.prepared = !s.prepared)}>{s.prepared ? '●' : '○'}</button
                 >
               {:else}
@@ -417,13 +426,13 @@
                 <span class="nm">{s.name}</span>
                 <span class="meta muted small">
                   {#if d}{shortTime(d.castingTime)} · {d.range}{/if}
-                  {#each tags(d) as t (t)}<span class="tag">{t}</span>{/each}
+                  {#each tags(d) as tg (tg)}<span class="tag">{tg}</span>{/each}
                   {#if from}<span class="tag src">{from}</span>{/if}
-                  {#if free}<span class="tag free" class:used={free.used}>{free.used ? 'gratis usado' : free.key ? `gratis ${free.label}` : 'sin slot'}</span>{/if}
+                  {#if free}<span class="tag free" class:used={free.used}>{free.used ? t('gratis usado') : free.key ? `${t('gratis')} ${free.label}` : t('sin slot')}</span>{/if}
                 </span>
               </button>
               {#if s.level > 0 || d?.concentration || free}
-                <button class="cast" onclick={() => (s.level === 0 && !free ? cast(s, null) : (casting_ = casting_ === s.id ? null : s.id))}>Lanzar</button>
+                <button class="cast" onclick={() => (s.level === 0 && !free ? cast(s, null) : (casting_ = casting_ === s.id ? null : s.id))}>{t('Lanzar')}</button>
               {/if}
             </div>
 
@@ -431,14 +440,14 @@
               <div class="chooser">
                 {#each opts as o (o.kind + o.level)}
                   <button class:pact={o.kind === 'pact'} disabled={o.left <= 0} onclick={() => cast(s, o)}>
-                    {o.kind === 'pact' ? `Pact ${o.level}` : `Nivel ${o.level}`} <small class="muted">({o.left})</small>
+                    {o.kind === 'pact' ? `Pact ${o.level}` : `${t('Nivel')} ${o.level}`} <small class="muted">({o.left})</small>
                   </button>
                 {:else}
-                  <span class="muted small">No tienes slots de nivel {s.level} o mayor.</span>
+                  <span class="muted small">{t('No tienes slots de nivel {n} o mayor.', { n: s.level })}</span>
                 {/each}
-                {#if free}<button class="freebtn" disabled={free.used} onclick={() => castFree(s, free.key)}>{free.key ? `Gratis (${free.used ? 'usado' : free.label})` : 'Sin slot (a voluntad)'}</button>{/if}
+                {#if free}<button class="freebtn" disabled={free.used} onclick={() => castFree(s, free.key)}>{free.key ? `${t('Gratis')} (${free.used ? t('usado') : free.label})` : t('Sin slot (a voluntad)')}</button>{/if}
                 {#if d?.ritual}<button onclick={() => cast(s, null, true)}>Ritual (+10 min)</button>{/if}
-                <button class="ghost" onclick={() => cast(s, null)}>Sin slot</button>
+                <button class="ghost" onclick={() => cast(s, null)}>{t('Sin slot')}</button>
               </div>
             {/if}
 
@@ -452,22 +461,22 @@
                     <div><dt>Duration</dt><dd>{d.duration}</dd></div>
                     <div><dt>School</dt><dd>{d.school}{line ? ` · ${line.className}: ${fmt(line.attack)} / DC ${line.dc}` : ''}</dd></div>
                   </dl>
-                  <p class="text">{d.text || 'Sin texto.'}</p>
-                  {#if d.higher}<p class="text higher"><b>{s.level === 0 ? 'Mejora' : 'Slot mayor'}:</b> {d.higher}</p>{/if}
+                  <p class="text">{d.text || t('Sin texto.')}</p>
+                  {#if d.higher}<p class="text higher"><b>{s.level === 0 ? t('Mejora') : t('Slot mayor')}:</b> {d.higher}</p>{/if}
                   {#if d.source}<p class="muted small">{d.source} · {d.classes.join(', ')}</p>{/if}
                 {:else}
-                  <p class="muted small">{s.ref ? 'El pack de esta spell no está importado.' : 'Spell agregada a mano.'}</p>
+                  <p class="muted small">{s.ref ? t('El pack de esta spell no está importado.') : t('Spell agregada a mano.')}</p>
                 {/if}
                 {#if isVirtual(s)}
                   <p class="muted small">
-                    Siempre preparada por {from}. No cuenta para tu límite.{free ? (free.key ? ` Una vez gratis por ${free.label === '1/SR' ? 'Short o Long Rest' : 'Long Rest'}, o con tus slots.` : ' Se lanza sin gastar slot, cuando quieras.') : ''}
+                    {t('Siempre preparada por {src}. No cuenta para tu límite.', { src: from ?? '' })}{free ? (free.key ? ` ${free.label === '1/SR' ? t('Una vez gratis por Short o Long Rest, o con tus slots.') : t('Una vez gratis por Long Rest, o con tus slots.')}` : ` ${t('Se lanza sin gastar slot, cuando quieras.')}`) : ''}
                   </p>
                 {:else}
-                  <textarea bind:value={s.notes} placeholder="Notas (daño al subir de nivel, usos gratis, etc.)" aria-label="Notas"></textarea>
+                  <textarea bind:value={s.notes} placeholder={t('Notas (daño al subir de nivel, usos gratis, etc.)')} aria-label={t('Notas')}></textarea>
                   <div class="opts">
                     {#if casters.length > 1}
                       <label class="field small">
-                        <span>Clase</span>
+                        <span>{t('Clase')}</span>
                         <select bind:value={s.classId}>
                           {#each casters as k (k.id)}<option value={k.id}>{k.name}</option>{/each}
                         </select>
@@ -476,10 +485,10 @@
                     {#if s.level > 0 && !from}
                       <label class="check small">
                         <input type="checkbox" bind:checked={s.always} />
-                        <span>Siempre preparada (no cuenta)</span>
+                        <span>{t('Siempre preparada (no cuenta)')}</span>
                       </label>
                     {/if}
-                    <button class="danger" onclick={() => remove(s.id)}>Quitar</button>
+                    <button class="danger" onclick={() => remove(s.id)}>{t('Quitar')}</button>
                   </div>
                 {/if}
               </div>
@@ -490,7 +499,7 @@
     {:else}
       <div class="card">
         <p class="muted small">
-          {c.spells.length ? 'Ninguna spell coincide.' : 'Aún no tienes spells. Toca "Agregar" para elegirlas de tu lista de clase.'}
+          {c.spells.length ? t('Ninguna spell coincide.') : t('Aún no tienes spells. Toca "Agregar" para elegirlas de tu lista de clase.')}
         </p>
       </div>
     {/each}
@@ -498,26 +507,26 @@
     <div class="card stack">
       <div class="filters">
         <label class="field">
-          <span>Lista</span>
+          <span>{t('Lista')}</span>
           <select bind:value={addClass}>
-            {#each casters as k (k.id)}<option value={k.id}>{k.name} (hasta nivel {maxSpellLevel(c, k)})</option>{/each}
-            <option value="__all">Todas las listas</option>
+            {#each casters as k (k.id)}<option value={k.id}>{k.name} ({t('hasta nivel')} {maxSpellLevel(c, k)})</option>{/each}
+            <option value="__all">{t('Todas las listas')}</option>
           </select>
         </label>
         <label class="field">
-          <span>Nivel</span>
+          <span>{t('Nivel')}</span>
           <select
             value={addLevel === null ? '' : String(addLevel)}
             onchange={(e) => (addLevel = e.currentTarget.value === '' ? null : Number(e.currentTarget.value))}
           >
-            <option value="">Todos</option>
+            <option value="">{t('Todos')}</option>
             {#each Array.from({ length: (addTarget ? addMax : 9) + 1 }, (_, i) => i) as l (l)}<option value={String(l)}>{LEVEL(l)}</option>{/each}
           </select>
         </label>
       </div>
       <label class="check small">
         <input type="checkbox" bind:checked={otherRules} />
-        <span>Incluir spells del otro ruleset</span>
+        <span>{t('Incluir spells del otro ruleset')}</span>
       </label>
       {#if addLimitMsg}<p class="warn small">{addLimitMsg}</p>{/if}
       <ul class="results">
@@ -530,12 +539,12 @@
               <button class="ghost res-name" aria-expanded={open === r.value} onclick={() => (open = open === r.value ? null : r.value)}>
                 <span class="nm">{s.name}</span>
                 <span class="muted small"
-                  >{s.level === 0 ? 'Cantrip' : `Nivel ${s.level}`} · {s.school}{s.concentration ? ' · C' : ''}{s.ritual ? ' · R' : ''}{isExpanded(s)
-                    ? ' · lista expandida'
+                  >{s.level === 0 ? 'Cantrip' : `${t('Nivel')} ${s.level}`} · {s.school}{s.concentration ? ' · C' : ''}{s.ritual ? ' · R' : ''}{isExpanded(s)
+                    ? ` · ${t('lista expandida')}`
                     : ''}</span
                 >
               </button>
-              <button class="add" disabled={added || capped} aria-label={`Agregar ${s.name}`} title={capped ? 'Máximo alcanzado' : undefined} onclick={() => add(r)}
+              <button class="add" disabled={added || capped} aria-label={`${t('Agregar')} ${s.name}`} title={capped ? t('Máximo alcanzado') : undefined} onclick={() => add(r)}
                 >{added ? '✓' : capped ? '–' : '+'}</button
               >
             </div>
@@ -543,22 +552,22 @@
               <div class="body small">
                 <p class="muted">{s.castingTime}{s.ritual ? ' (ritual)' : ''} · {s.range} · {s.components}{s.material ? ` (${s.material})` : ''} · {s.duration}</p>
                 <p class="text">{s.text}</p>
-                {#if s.higher}<p class="text higher"><b>{s.level === 0 ? 'Mejora' : 'Slot mayor'}:</b> {s.higher}</p>{/if}
+                {#if s.higher}<p class="text higher"><b>{s.level === 0 ? t('Mejora') : t('Slot mayor')}:</b> {s.higher}</p>{/if}
                 <p class="muted">{s.source} · {s.classes.join(', ')}</p>
               </div>
             {/if}
           </li>
         {:else}
-          <li class="muted small">Sin resultados.</li>
+          <li class="muted small">{t('Sin resultados.')}</li>
         {/each}
       </ul>
     </div>
 
     <div class="card stack">
-      <h2>Agregar a mano</h2>
+      <h2>{t('Agregar a mano')}</h2>
       <div class="custom">
-        <input bind:value={customName} placeholder="Nombre (homebrew o de otra fuente)" aria-label="Nombre de la spell" />
-        <select bind:value={customLevel} aria-label="Nivel">
+        <input bind:value={customName} placeholder={t('Nombre (homebrew o de otra fuente)')} aria-label={t('Nombre de la spell')} />
+        <select bind:value={customLevel} aria-label={t('Nivel')}>
           {#each Array.from({ length: 10 }, (_, i) => i) as l (l)}<option value={l}>{l === 0 ? 'Cantrip' : l}</option>{/each}
         </select>
         <button onclick={addCustom}>+</button>

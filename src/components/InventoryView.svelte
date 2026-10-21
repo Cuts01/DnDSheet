@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { compendium } from '../lib/compendium.svelte';
   import { ABILITIES, uid, type ItemEntry } from '../lib/model/character';
@@ -72,7 +73,7 @@
   let acSwitched = $state(false);
 
   function remove(i: number) {
-    if (confirm(`¿Quitar ${store.c.inventory[i].name}?`)) store.c.inventory.splice(i, 1);
+    if (confirm(t('¿Quitar {name}?', { name: store.c.inventory[i].name }))) store.c.inventory.splice(i, 1);
   }
 
   // Item propio (homebrew o magic item): por defecto gear, se puede volver weapon o armor.
@@ -103,15 +104,15 @@
 
 <section class="inv">
   <div class="card stack">
-    <h2>Equipado <span class="muted">· AC {ac.total}</span></h2>
+    <h2>{t('Equipado')} <span class="muted">· AC {ac.total}</span></h2>
     <p class="small">{ac.label}</p>
     {#if c.ac.mode !== 'auto'}
       <p class="small warn">
-        El AC está en modo manual y no usa el inventario.
-        <button class="ghost small" onclick={() => (store.c.ac.mode = 'auto')}>Usar automático</button>
+        {t('El AC está en modo manual y no usa el inventario.')}
+        <button class="ghost small" onclick={() => (store.c.ac.mode = 'auto')}>{t('Usar automático')}</button>
       </p>
     {:else if acSwitched}
-      <p class="small muted">El AC pasó a modo automático para usar tu armor.</p>
+      <p class="small muted">{t('El AC pasó a modo automático para usar tu armor.')}</p>
     {/if}
     <div class="coins">
       {#each coins as k (k)}
@@ -119,85 +120,85 @@
       {/each}
     </div>
     <p class="small muted">
-      Peso <b class="num">{weight.toFixed(1)}</b> / {capacity} lb · Attunement <b class="num">{attuned}</b> / 3
+      {t('Peso')} <b class="num">{weight.toFixed(1)}</b> / {capacity} lb · Attunement <b class="num">{attuned}</b> / 3
     </p>
   </div>
 
   <div class="card stack list">
-    <h2>Inventario <span class="muted">· {c.inventory.length}</span></h2>
+    <h2>{t('Inventario')} <span class="muted">· {c.inventory.length}</span></h2>
     {#each sorted as { it, i } (it.id)}
       <div class="item" class:eq={it.equipped}>
         <div class="item-row">
           <button class="name ghost" onclick={() => (open = open === it.id ? null : it.id)} aria-expanded={open === it.id}>
             <span>{it.name}{it.bonus ? ` +${it.bonus}` : ''}</span>
             <small class="muted">
-              {kindLabel[it.kind]}{it.weapon ? ` · ${it.weapon.damage} ${it.weapon.damageType}` : ''}{it.armor ? ` · AC ${it.armor.category === 'shield' ? '+' : ''}${it.armor.ac}` : ''}{it.attuned ? ' · attuned' : ''}
+              {t(kindLabel[it.kind])}{it.weapon ? ` · ${it.weapon.damage} ${it.weapon.damageType}` : ''}{it.armor ? ` · AC ${it.armor.category === 'shield' ? '+' : ''}${it.armor.ac}` : ''}{it.attuned ? ' · attuned' : ''}
             </small>
           </button>
           {#if equippable(it)}
             <button class="eqbtn" class:on={it.equipped} aria-pressed={it.equipped} onclick={() => toggleEquip(i)}>
-              {it.equipped ? 'Equipado' : 'Equipar'}
+              {it.equipped ? t('Equipado') : t('Equipar')}
             </button>
           {:else}
             <div class="qty">
-              <button aria-label="Menos" onclick={() => (store.c.inventory[i].qty = Math.max(0, it.qty - 1))}>-</button>
+              <button aria-label={t('Menos')} onclick={() => (store.c.inventory[i].qty = Math.max(0, it.qty - 1))}>-</button>
               <b class="num">{it.qty}</b>
-              <button aria-label="Más" onclick={() => (store.c.inventory[i].qty = it.qty + 1)}>+</button>
+              <button aria-label={t('Más')} onclick={() => (store.c.inventory[i].qty = it.qty + 1)}>+</button>
             </div>
           {/if}
         </div>
 
         {#if open === it.id}
           <div class="details stack">
-            <label class="field"><span>Nombre</span><input bind:value={store.c.inventory[i].name} /></label>
+            <label class="field"><span>{t('Nombre')}</span><input bind:value={store.c.inventory[i].name} /></label>
             <div class="grid3">
-              <NumField label="Cantidad" bind:value={store.c.inventory[i].qty} min={0} max={9999} />
-              <NumField label="Bonus mágico" bind:value={store.c.inventory[i].bonus} min={-5} max={10} />
-              <label class="field"><span>Peso (lb)</span><input type="number" step="0.1" min="0" bind:value={store.c.inventory[i].weight} /></label>
+              <NumField label={t('Cantidad')} bind:value={store.c.inventory[i].qty} min={0} max={9999} />
+              <NumField label={t('Bonus mágico')} bind:value={store.c.inventory[i].bonus} min={-5} max={10} />
+              <label class="field"><span>{t('Peso (lb)')}</span><input type="number" step="0.1" min="0" bind:value={store.c.inventory[i].weight} /></label>
             </div>
 
             {#if it.weapon}
               <div class="grid3">
-                <label class="field"><span>Daño</span><input bind:value={store.c.inventory[i].weapon!.damage} /></label>
-                <label class="field"><span>Tipo</span><input bind:value={store.c.inventory[i].weapon!.damageType} /></label>
+                <label class="field"><span>{t('Daño')}</span><input bind:value={store.c.inventory[i].weapon!.damage} /></label>
+                <label class="field"><span>{t('Tipo')}</span><input bind:value={store.c.inventory[i].weapon!.damageType} /></label>
                 <label class="field">
-                  <span>Categoría</span>
+                  <span>{t('Categoría')}</span>
                   <select bind:value={store.c.inventory[i].weapon!.category}>
                     <option value="simple">Simple</option>
                     <option value="martial">Martial</option>
                   </select>
                 </label>
                 <label class="field">
-                  <span>Alcance</span>
+                  <span>{t('Alcance')}</span>
                   <select bind:value={store.c.inventory[i].weapon!.range}>
                     <option value="melee">Melee</option>
                     <option value="ranged">Ranged</option>
                   </select>
                 </label>
                 <label class="field">
-                  <span>Ability de ataque</span>
+                  <span>{t('Ability de ataque')}</span>
                   <select bind:value={store.c.inventory[i].attackAbility}>
-                    <option value={null}>Automática</option>
+                    <option value={null}>{t('Automática')}</option>
                     {#each ABILITIES as a (a)}<option value={a}>{ABILITY_LABEL[a]}</option>{/each}
                   </select>
                 </label>
               </div>
               <label class="field">
-                <span>Properties (separadas por coma)</span>
+                <span>{t('Properties (separadas por coma)')}</span>
                 <input
                   value={it.weapon.properties.join(', ')}
                   onchange={(e) => (store.c.inventory[i].weapon!.properties = e.currentTarget.value.split(',').map((x) => x.trim()).filter(Boolean))}
                 />
               </label>
               <p class="small muted">
-                Ability automática: DEX en ranged, la mejor en finesse, STR en el resto. Cámbiala para Hex Warrior, Pact of the Blade o Battle Smith.
+                {t('Ability automática: DEX en ranged, la mejor en finesse, STR en el resto. Cámbiala para Hex Warrior, Pact of the Blade o Battle Smith.')}
               </p>
             {/if}
 
             {#if it.armor}
               <div class="grid3">
                 <label class="field">
-                  <span>Tipo</span>
+                  <span>{t('Tipo')}</span>
                   <select bind:value={store.c.inventory[i].armor!.category}>
                     <option value="light">Light</option>
                     <option value="medium">Medium</option>
@@ -206,33 +207,33 @@
                   </select>
                 </label>
                 <NumField label={it.armor.category === 'shield' ? 'Bonus AC' : 'AC base'} bind:value={store.c.inventory[i].armor!.ac} min={0} max={30} />
-                <NumField label="STR requerida" value={it.armor.strength ?? 0} min={0} max={30} onchange={(n) => (store.c.inventory[i].armor!.strength = n || null)} />
+                <NumField label={t('STR requerida')} value={it.armor.strength ?? 0} min={0} max={30} onchange={(n) => (store.c.inventory[i].armor!.strength = n || null)} />
               </div>
             {/if}
 
             <label class="check"><input type="checkbox" bind:checked={store.c.inventory[i].attuned} /><span>Attuned</span></label>
-            <label class="field"><span>Notas</span><textarea rows="3" bind:value={store.c.inventory[i].notes}></textarea></label>
-            <button class="danger" onclick={() => remove(i)}>Quitar del inventario</button>
+            <label class="field"><span>{t('Notas')}</span><textarea rows="3" bind:value={store.c.inventory[i].notes}></textarea></label>
+            <button class="danger" onclick={() => remove(i)}>{t('Quitar del inventario')}</button>
           </div>
         {/if}
       </div>
     {:else}
-      <p class="muted small">Inventario vacío.</p>
+      <p class="muted small">{t('Inventario vacío.')}</p>
     {/each}
     <p class="small muted">
-      Weapon proficiencies: {profs.weapons.join(', ') || 'ninguna'} · Armor: {profs.armor.join(', ') || 'ninguna'}
+      Weapon proficiencies: {profs.weapons.join(', ') || t('ninguna')} · Armor: {profs.armor.join(', ') || t('ninguna')}
     </p>
   </div>
 
   <div class="card stack">
-    <h2>Agregar</h2>
+    <h2>{t('Agregar')}</h2>
     {#if all.length}
       <div class="seg">
         {#each tabs as [id, label] (id)}
           <button class:on={tab === id} onclick={() => (tab = id)}>{label}</button>
         {/each}
       </div>
-      <input bind:value={q} placeholder="Buscar..." aria-label="Buscar item" />
+      <input bind:value={q} placeholder={t('Buscar...')} aria-label={t('Buscar item')} />
       <ul class="results">
         {#each results as r (r.value)}
           <li>
@@ -240,36 +241,36 @@
               <span>{r.item.name}</span>
               <small class="muted">
                 {#if r.item.weapon}{r.item.weapon.category} {r.item.weapon.range} · {r.item.weapon.damage} {r.item.weapon.damageType}{r.item.weapon.properties.length ? ` · ${r.item.weapon.properties.join(', ')}` : ''}
-                {:else if r.item.armor}{r.item.armor.category} · AC {r.item.armor.category === 'shield' ? '+' : ''}{r.item.armor.ac}{r.item.armor.dexMax === null ? ' + DEX' : r.item.armor.dexMax ? ` + DEX (máx. ${r.item.armor.dexMax})` : ''}
+                {:else if r.item.armor}{r.item.armor.category} · AC {r.item.armor.category === 'shield' ? '+' : ''}{r.item.armor.ac}{r.item.armor.dexMax === null ? ' + DEX' : r.item.armor.dexMax ? ` + DEX (${t('máx.')} ${r.item.armor.dexMax})` : ''}
                 {:else}{r.item.category}{/if}{r.item.cost ? ` · ${r.item.cost}` : ''}
               </small>
             </div>
-            <button class="addbtn" aria-label={`Agregar ${r.item.name}`} onclick={() => add(r)}>+</button>
+            <button class="addbtn" aria-label={`${t('Agregar')} ${r.item.name}`} onclick={() => add(r)}>+</button>
           </li>
         {:else}
-          <li class="muted small">Sin resultados.</li>
+          <li class="muted small">{t('Sin resultados.')}</li>
         {/each}
       </ul>
     {:else}
-      <p class="small muted">Importa un pack con items para elegir de una lista.</p>
+      <p class="small muted">{t('Importa un pack con items para elegir de una lista.')}</p>
     {/if}
 
     {#if adding}
       <div class="grid2">
-        <label class="field"><span>Nombre</span><input bind:value={custom.name} placeholder="Ej. Pistol, Bag of Holding" /></label>
+        <label class="field"><span>{t('Nombre')}</span><input bind:value={custom.name} placeholder={t('Ej. Pistol, Bag of Holding')} /></label>
         <label class="field">
-          <span>Tipo</span>
+          <span>{t('Tipo')}</span>
           <select bind:value={custom.kind}>
-            {#each Object.entries(kindLabel) as [k, l] (k)}<option value={k}>{l}</option>{/each}
+            {#each Object.entries(kindLabel) as [k, l] (k)}<option value={k}>{t(l)}</option>{/each}
           </select>
         </label>
       </div>
       <div class="row">
-        <button onclick={() => (adding = false)}>Cancelar</button>
-        <button class="primary" onclick={addCustom} disabled={!custom.name.trim()}>Crear</button>
+        <button onclick={() => (adding = false)}>{t('Cancelar')}</button>
+        <button class="primary" onclick={addCustom} disabled={!custom.name.trim()}>{t('Crear')}</button>
       </div>
     {:else}
-      <button onclick={() => (adding = true)}>Item propio (homebrew o magic item)</button>
+      <button onclick={() => (adding = true)}>{t('Item propio (homebrew o magic item)')}</button>
     {/if}
   </div>
 </section>

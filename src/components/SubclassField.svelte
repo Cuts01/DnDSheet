@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { compendium } from '../lib/compendium.svelte';
   import type { ClassEntry } from '../lib/model/character';
   import { findClass, subclassOptions } from '../lib/rules/features';
@@ -43,8 +44,8 @@
     <label class="field">
       <span>{label}</span>
       <select value={selected} onchange={(e) => pick(e.currentTarget.value)}>
-        <option value="">Sin elegir</option>
-        <option value="__free">Otra (escribir)</option>
+        <option value="">{t('Sin elegir')}</option>
+        <option value="__free">{t('Otra (escribir)')}</option>
         {#each options as o (o.value)}
           <option value={o.value}>
             {o.sub.name} · {o.pack.pack.ruleset}{o.pack.pack.homebrew ? ' · homebrew' : ''}
@@ -53,16 +54,16 @@
       </select>
     </label>
     {#if selected === '__free'}
-      <input bind:value={entry.subclass} placeholder="Nombre (sin features automáticos)" aria-label="Subclass en texto libre" />
+      <input bind:value={entry.subclass} placeholder={t('Nombre (sin features automáticos)')} aria-label={t('Subclass en texto libre')} />
     {/if}
   {:else}
     <label class="field">
       <span>{label}</span>
-      <input bind:value={entry.subclass} placeholder="Importa un pack para elegir de una lista" />
+      <input bind:value={entry.subclass} placeholder={t('Importa un pack para elegir de una lista')} />
     </label>
   {/if}
   {#if early}
-    <p class="muted small">{entry.name} elige subclass en nivel {cls?.subclassLevel}.</p>
+    <p class="muted small">{t('{name} elige subclass en nivel {n}.', { name: entry.name, n: cls?.subclassLevel ?? '' })}</p>
   {/if}
 </div>
 

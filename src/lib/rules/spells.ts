@@ -2,6 +2,7 @@ import { uid, type Ability, type Character, type ClassEntry, type SpellEntry } f
 import type { Pack, PackFeat, PackSpell } from '../model/pack';
 import { abilityMod, pactSlots, pb, slotMax, spellcasting, type CastingLine } from './derive';
 import { featInstances, findRef, findSubclass, type Ref } from './features';
+import { t as tr } from '../i18n.svelte';
 
 /* Mecánicas genéricas de spellcasting: cuántos cantrips y spells corresponden por nivel de clase. */
 
@@ -269,11 +270,11 @@ export function spellAttacks(c: Character, packs: Pack[], granted: GrantedSpell[
     const mod = abilityMod(c, line.ability);
     const withMod = (d: string, m: number) => (m === 0 ? d : `${d} ${m > 0 ? '+' : '-'} ${Math.abs(m)}`);
     let damage = sp.damage.replace(/\s*\+\s*mod\b/, (x) => (mod === 0 ? '' : ` ${mod > 0 ? '+' : '-'} ${Math.abs(mod)}`));
-    let note = sp.level === 0 ? '' : `nivel ${sp.level}`;
+    let note = sp.level === 0 ? '' : `${tr('nivel')} ${sp.level}`;
     if (sp.level === 0 && sp.scaling === 'dice') damage = damage.replace(/^(\d+)d/, (_, n) => `${Number(n) * t}d`);
     const isEB = /eldritch blast/i.test(sp.name);
     if (isEB && agonizing) damage = damage.replace(/^(\S+)/, (d) => withMod(d, mod));
-    if (sp.level === 0 && sp.scaling === 'beams' && t > 1) note = `${t} rayos`;
+    if (sp.level === 0 && sp.scaling === 'beams' && t > 1) note = tr('{n} rayos', { n: t });
     out.push({
       id: e.id,
       name: sp.name,

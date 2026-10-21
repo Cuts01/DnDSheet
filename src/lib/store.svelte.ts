@@ -1,6 +1,7 @@
 import { db, MAIN_ID } from './db';
 import { CharacterSchema, blankCharacter, type Character } from './model/character';
 import { clampUsage } from './rules/rests';
+import { t as tr } from './i18n.svelte';
 
 /*
  * Estado global del personaje.
@@ -27,10 +28,10 @@ class CharacterStore {
         if (parsed.success) {
           this.c = parsed.data;
           this.hasCharacter = true;
-        } else this.loadError = 'El personaje guardado no pasó la validación. Se cargó uno nuevo: importa tu respaldo.';
+        } else this.loadError = tr('El personaje guardado no pasó la validación. Se cargó uno nuevo: importa tu respaldo.');
       }
     } catch (e) {
-      this.loadError = `No se pudo abrir IndexedDB: ${(e as Error).message}`;
+      this.loadError = `${tr('No se pudo abrir IndexedDB')}: ${(e as Error).message}`;
     }
     this.loaded = true;
     this.persisted = (await navigator.storage?.persisted?.()) ?? null;

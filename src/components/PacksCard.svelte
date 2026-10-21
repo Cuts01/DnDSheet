@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { compendium } from '../lib/compendium.svelte';
   import { canLoadLocal, importFiles, importLocalWiki, isStale, type ImportResult } from '../lib/packImport';
   const when = (iso: string) =>
@@ -16,7 +17,7 @@
 
   function show(r: ImportResult) {
     errors = r.errors;
-    message = r.done.length ? `Importado: ${r.done.join(', ')}.` : '';
+    message = r.done.length ? t('Importado: {name}.', { name: r.done.join(', ') }) : '';
   }
 
   let loading = $state(false);
@@ -37,38 +38,38 @@
   }
 
   async function remove(id: string, name: string) {
-    if (confirm(`¿Borrar el pack "${name}"? Los personajes que usen sus subclasses quedan con el nombre en texto libre.`)) {
+    if (confirm(t('¿Borrar el pack "{name}"? Los personajes que usen sus subclasses quedan con el nombre en texto libre.', { name }))) {
       await compendium.remove(id);
     }
   }
 
-  const count = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+  const count = (n: number, one: string, many: string) => `${n} ${n === 1 ? t(one) : t(many)}`;
 </script>
 
 <div class="card stack">
-  <h2>Contenido</h2>
+  <h2>{t('Contenido')}</h2>
   <p class="small muted">
-    Packs JSON con clases, subclasses, spells, razas, backgrounds, feats e items. Puedes importar varios a la vez (2014, 2024 y homebrew). Los de la wiki vienen con la app y se actualizan solos al abrirla con conexión.
+    {t('Packs JSON con clases, subclasses, spells, razas, backgrounds, feats e items. Puedes importar varios a la vez (2014, 2024 y homebrew). Los de la wiki vienen con la app y se actualizan solos al abrirla con conexión.')}
   </p>
   <div class="row wrap">
-    <button class="primary" onclick={() => input.click()}>Importar packs</button>
+    <button class="primary" onclick={() => input.click()}>{t('Importar packs')}</button>
     <input bind:this={input} type="file" accept="application/json,.json" multiple hidden onchange={onFile} />
     {#if canLoadLocal}
-      <button onclick={loadLocal} disabled={loading}>{loading ? 'Cargando...' : 'Actualizar packs de la wiki'}</button>
+      <button onclick={loadLocal} disabled={loading}>{loading ? t('Cargando...') : t('Actualizar packs de la wiki')}</button>
     {/if}
-    <a class="btn" href="./packs/ejemplo-homebrew.json" download>Plantilla de ejemplo</a>
+    <a class="btn" href="./packs/ejemplo-homebrew.json" download>{t('Plantilla de ejemplo')}</a>
     <a class="btn" href="./packs/pack.schema.json" download>JSON Schema</a>
   </div>
 
   {#if message}<p class="ok small">{message}</p>{/if}
   {#if errors.length}
     <div class="errors small">
-      <b>No se pudo importar:</b>
+      <b>{t('No se pudo importar:')}</b>
       <ul>{#each errors.slice(0, 12) as e (e)}<li>{e}</li>{/each}</ul>
     </div>
   {/if}
   {#if compendium.broken.length}
-    <p class="errors small">Packs guardados que ya no pasan la validación: {compendium.broken.join(', ')}. Vuelve a importarlos.</p>
+    <p class="errors small">{t('Packs guardados que ya no pasan la validación: {list}. Vuelve a importarlos.', { list: compendium.broken.join(', ') })}</p>
   {/if}
 
   {#if compendium.packs.length}
@@ -87,23 +88,23 @@
               {count(p.classes.length, 'clase', 'clases')} · {count(p.subclasses.length, 'subclass', 'subclasses')} ·
               {count(features, 'feature', 'features')} · {count(p.spells.length, 'spell', 'spells')} ·
               {count(p.feats.length, 'feat', 'feats')} · {count(p.items.length, 'item', 'items')}
-              {#if p.pack.built}· generado {when(p.pack.built)}{/if}
+              {#if p.pack.built}· {t('generado')} {when(p.pack.built)}{/if}
             </span>
             {#if isStale(p)}
               <span class="stale small"
-                >Versión vieja{p.pack.built ? ` (${when(p.pack.built)})` : ''}: le faltan datos que esta app ya usa (spells de feats como Fey Touched y otros). Toca "Actualizar packs de la wiki" para cargar el que viene con la app.</span
+                >{t('Versión vieja')}{p.pack.built ? ` (${when(p.pack.built)})` : ''}: {t('le faltan datos que esta app ya usa (spells de feats como Fey Touched y otros). Toca "Actualizar packs de la wiki" para cargar el que viene con la app.')}</span
               >
             {/if}
           </div>
           <div class="row">
-            <button onclick={() => exportPack(p.pack.id)}>Exportar</button>
-            <button class="danger ghost" aria-label={`Borrar ${p.pack.name}`} onclick={() => remove(p.pack.id, p.pack.name)}>✕</button>
+            <button onclick={() => exportPack(p.pack.id)}>{t('Exportar')}</button>
+            <button class="danger ghost" aria-label={`${t('Borrar')} ${p.pack.name}`} onclick={() => remove(p.pack.id, p.pack.name)}>✕</button>
           </div>
         </li>
       {/each}
     </ul>
   {:else}
-    <p class="small muted">Sin packs importados.</p>
+    <p class="small muted">{t('Sin packs importados.')}</p>
   {/if}
 </div>
 

@@ -1,5 +1,6 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry, type Effect, type ItemEntry, type ProfLevel } from '../model/character';
 import { SKILLS, SLOT_TABLE, pactTable, type SkillDef } from './tables';
+import { t as tr } from '../i18n.svelte';
 
 /* Funciones puras: reciben el personaje y devuelven valores derivados. */
 
@@ -272,7 +273,7 @@ function autoArmorClass(c: Character): AcBreakdown {
     label = armor.name;
   } else {
     // Sin armadura: la mejor opcion entre las que tienes por clase.
-    const options: [number, string][] = [[10 + dex, 'Sin armadura']];
+    const options: [number, string][] = [[10 + dex, tr('Sin armadura')]];
     if (classLevel(c, 'barbarian') > 0) options.push([10 + dex + abilityMod(c, 'con'), 'Unarmored Defense (Barbarian)']);
     if (classLevel(c, 'monk') > 0 && !shield) options.push([10 + dex + abilityMod(c, 'wis'), 'Unarmored Defense (Monk)']);
     options.sort((x, y) => y[0] - x[0]);
@@ -357,7 +358,7 @@ export function speedParts(c: Character, granted: Effect[] = []): SpeedPart[] {
       active: ok,
       kind: 'auto',
       conditional: false,
-      note: ok ? undefined : 'requiere no usar armadura ni shield'
+      note: ok ? undefined : tr('requiere no usar armadura ni shield')
     });
   }
 
@@ -370,7 +371,7 @@ export function speedParts(c: Character, granted: Effect[] = []): SpeedPart[] {
       active: ok,
       kind: 'auto',
       conditional: false,
-      note: ok ? undefined : 'no aplica con heavy armor'
+      note: ok ? undefined : tr('no aplica con heavy armor')
     });
   }
 
@@ -379,19 +380,19 @@ export function speedParts(c: Character, granted: Effect[] = []): SpeedPart[] {
   if (req && score(c, 'str') < req) {
     const dwarf = c.ruleset === '2014' && /dwarf|duergar/i.test(c.species.name);
     parts.push({
-      label: `${heavy!.name} (requiere STR ${req})`,
+      label: `${heavy!.name} (${tr('requiere STR {n}', { n: req })})`,
       value: -10,
       active: !dwarf,
       kind: 'auto',
       conditional: false,
-      note: dwarf ? 'los dwarves ignoran esta penalidad' : undefined
+      note: dwarf ? tr('los dwarves ignoran esta penalidad') : undefined
     });
   }
 
   for (const e of [...c.effects, ...granted]) {
     if (e.target !== 'speed') continue;
     parts.push({
-      label: e.source || 'Sin nombre',
+      label: e.source || tr('Sin nombre'),
       value: e.value,
       active: !e.conditional || e.active,
       kind: granted.includes(e) ? 'feature' : 'effect',
@@ -511,7 +512,7 @@ export function attacks(c: Character, weaponProfs: string[]): Attack[] {
     if (w.normalRange) notes.push(`${w.normalRange}/${w.longRange ?? w.normalRange} ft`);
     if (w.properties.length) notes.push(w.properties.join(', '));
     if (w.mastery) notes.push(`Mastery: ${w.mastery}`);
-    if (!proficient) notes.push('sin proficiency');
+    if (!proficient) notes.push(tr('sin proficiency'));
     out.push({
       id: it.id,
       name: it.bonus ? `${it.name} +${it.bonus}` : it.name,

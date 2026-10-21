@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t, i18n } from './lib/i18n.svelte';
   import { onMount } from 'svelte';
   import { store } from './lib/store.svelte';
   import { classSummary, totalLevel } from './lib/rules/derive';
@@ -29,27 +30,28 @@
   const tabs = $derived(
     (wide
       ? [
-          { id: 'combat' as View, label: 'Juego', icon: '⚔' },
+          { id: 'combat' as View, label: t('Juego'), icon: '⚔' },
           spellsTab,
-          { id: 'features' as View, label: 'Rasgos', icon: '✦' },
-          { id: 'gear' as View, label: 'Equipo', icon: '⚒' },
-          { id: 'edit' as View, label: 'Editar', icon: '✎' },
-          { id: 'data' as View, label: 'Datos', icon: '⇅' }
+          { id: 'features' as View, label: t('Rasgos'), icon: '✦' },
+          { id: 'gear' as View, label: t('Equipo'), icon: '⚒' },
+          { id: 'edit' as View, label: t('Editar'), icon: '✎' },
+          { id: 'data' as View, label: t('Datos'), icon: '⇅' }
         ]
       : [
-          { id: 'combat' as View, label: 'Combate', icon: '⚔' },
-          { id: 'sheet' as View, label: 'Hoja', icon: '☰' },
+          { id: 'combat' as View, label: t('Combate'), icon: '⚔' },
+          { id: 'sheet' as View, label: t('Hoja'), icon: '☰' },
           spellsTab,
-          { id: 'features' as View, label: 'Rasgos', icon: '✦' },
-          { id: 'gear' as View, label: 'Equipo', icon: '⚒' },
-          { id: 'edit' as View, label: 'Editar', icon: '✎' },
-          { id: 'data' as View, label: 'Datos', icon: '⇅' }
+          { id: 'features' as View, label: t('Rasgos'), icon: '✦' },
+          { id: 'gear' as View, label: t('Equipo'), icon: '⚒' },
+          { id: 'edit' as View, label: t('Editar'), icon: '✎' },
+          { id: 'data' as View, label: t('Datos'), icon: '⇅' }
         ]
-    ).filter((t) => t.id !== 'spells' || showSpells)
+    ).filter((x) => x.id !== 'spells' || showSpells)
   );
   const isActive = (id: View) => view === id || (wide && id === 'combat' && view === 'sheet');
 
   onMount(() => {
+    document.documentElement.lang = i18n.lang;
     const mq = matchMedia('(min-width: 768px)');
     wide = mq.matches;
     const onMq = (e: MediaQueryListEvent) => (wide = e.matches);
@@ -87,8 +89,8 @@
 <div class="app">
   <header class="top">
     <div class="who">
-      <h1>{store.c.name || 'Sin nombre'}</h1>
-      <p class="muted">{classSummary(store.c)} · nivel {totalLevel(store.c)} · {store.c.ruleset}</p>
+      <h1>{store.c.name || t('Sin nombre')}</h1>
+      <p class="muted">{classSummary(store.c)} · {t('nivel')} {totalLevel(store.c)} · {store.c.ruleset}</p>
     </div>
   </header>
 
@@ -98,7 +100,7 @@
 
   <main>
     {#if !store.loaded}
-      <p class="muted">Cargando...</p>
+      <p class="muted">{t('Cargando...')}</p>
     {:else if view === 'combat' || view === 'sheet'}
       {#if wide}
         <div class="play">
@@ -123,11 +125,11 @@
     {/if}
   </main>
 
-  <nav class="tabbar" aria-label="Secciones">
-    {#each tabs as t (t.id)}
-      <button class:active={isActive(t.id)} aria-current={isActive(t.id) ? 'page' : undefined} onclick={() => go(t.id)}>
-        <span class="icon" aria-hidden="true">{t.icon}</span>
-        <span>{t.label}</span>
+  <nav class="tabbar" aria-label={t('Secciones')}>
+    {#each tabs as tab (tab.id)}
+      <button class:active={isActive(tab.id)} aria-current={isActive(tab.id) ? 'page' : undefined} onclick={() => go(tab.id)}>
+        <span class="icon" aria-hidden="true">{tab.icon}</span>
+        <span>{tab.label}</span>
       </button>
     {/each}
   </nav>

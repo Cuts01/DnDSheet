@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { abilityMod, arcaneRecoveryBudget, fmt, hitDicePools, pactSlots } from '../lib/rules/derive';
   import { shortRest, validArcane, type HitDieSpend } from '../lib/rules/rests';
@@ -47,12 +48,12 @@
   <div class="wrap">
     <header>
       <h3>Short Rest</h3>
-      <button class="ghost" aria-label="Cerrar" onclick={() => (open = false)}>✕</button>
+      <button class="ghost" aria-label={t('Cerrar')} onclick={() => (open = false)}>✕</button>
     </header>
 
     <div class="body stack">
       <section>
-        <h4>Hit Dice <span class="muted small">CON {fmt(con)} por dado</span></h4>
+        <h4>Hit Dice <span class="muted small">CON {fmt(con)} {t('por dado')}</span></h4>
         {#each pools as p (p.die)}
           {@const left = p.available - pendingByDie(p.die)}
           <div class="hd-row">
@@ -64,26 +65,26 @@
                 inputmode="numeric"
                 min="1"
                 max={p.die}
-                placeholder="tirada"
-                aria-label={`Tirada de d${p.die}`}
+                placeholder={t('tirada')}
+                aria-label={t('Tirada de d{die}', { die: p.die })}
                 bind:value={rolls[p.die]}
                 disabled={left <= 0}
                 onkeydown={(e) => e.key === 'Enter' && addDie(p.die)}
               />
             {/if}
             <button onclick={() => addDie(p.die)} disabled={left <= 0 || (!maximize && !rolls[p.die])}>
-              Gastar{maximize ? ` (${p.die})` : ''}
+              {t('Gastar')}{maximize ? ` (${p.die})` : ''}
             </button>
           </div>
         {/each}
         <label class="check">
           <input type="checkbox" bind:checked={maximize} />
-          <span>Maximizar dados de curación <span class="muted small">(si un feature o invocation lo permite)</span></span>
+          <span>{t('Maximizar dados de curación')} <span class="muted small">({t('si un feature o invocation lo permite')})</span></span>
         </label>
         {#if spends.length}
           <p class="small">
-            Gastados: {spends.map((s) => `d${s.die}: ${s.roll}`).join(', ')}
-            <button class="ghost small undo" onclick={() => (spends = spends.slice(0, -1))}>Deshacer</button>
+            {t('Gastados')}: {spends.map((s) => `d${s.die}: ${s.roll}`).join(', ')}
+            <button class="ghost small undo" onclick={() => (spends = spends.slice(0, -1))}>{t('Deshacer')}</button>
           </p>
         {/if}
       </section>
@@ -92,21 +93,21 @@
         <section>
           <h4>
             Arcane Recovery
-            <span class="muted small">límite: {budget} {budget === 1 ? 'nivel' : 'niveles'} de slot en total, máx. nivel 5</span>
+            <span class="muted small">{t('límite: {n} niveles de slot en total, máx. nivel 5', { n: budget })}</span>
           </h4>
           {#if c.arcaneRecoveryUsed}
-            <p class="muted small">Ya usado. Se renueva con Long Rest.</p>
+            <p class="muted small">{t('Ya usado. Se renueva con Long Rest.')}</p>
           {:else}
             <div class="arc">
               {#each arcane as k, i (i)}
                 {#if c.slotsUsed.levels[i] > 0}
                   <div class="arc-lvl">
-                    <span class="num">Nivel {i + 1}</span>
+                    <span class="num">{t('Nivel')} {i + 1}</span>
                     <div class="row">
-                      <button aria-label="Menos" onclick={() => (arcane[i] = Math.max(0, k - 1))} disabled={k === 0}>-</button>
+                      <button aria-label={t('Menos')} onclick={() => (arcane[i] = Math.max(0, k - 1))} disabled={k === 0}>-</button>
                       <b class="num">{k}</b>
                       <button
-                        aria-label="Más"
+                        aria-label={t('Más')}
                         onclick={() => (arcane[i] = k + 1)}
                         disabled={k >= c.slotsUsed.levels[i] || arcaneSum + i + 1 > budget}>+</button
                       >
@@ -116,7 +117,7 @@
               {/each}
             </div>
             {#if c.slotsUsed.levels.slice(0, 5).every((u) => u === 0)}
-              <p class="muted small">No tienes slots de Wizard gastados.</p>
+              <p class="muted small">{t('No tienes slots de Wizard gastados.')}</p>
             {:else if arcaneLevels.length && arcaneError}
               <p class="err small">{arcaneError}</p>
             {/if}
@@ -125,19 +126,19 @@
       {/if}
 
       <section class="summary">
-        <h4>Al terminar</h4>
+        <h4>{t('Al terminar')}</h4>
         <ul class="small">
           <li>HP: {c.hp.current} → <b>{preview.hp.current}</b> / {c.hp.max}</li>
-          {#if pactSlots(c).count > 0}<li>Pact slots recuperados</li>{/if}
-          {#if c.resources.some((r) => r.recharge === 'short')}<li>Recursos de Short Rest recuperados</li>{/if}
-          {#if arcaneLevels.length && !arcaneError}<li>Arcane Recovery: niveles {arcaneLevels.join(', ')}</li>{/if}
+          {#if pactSlots(c).count > 0}<li>{t('Pact slots recuperados')}</li>{/if}
+          {#if c.resources.some((r) => r.recharge === 'short')}<li>{t('Recursos de Short Rest recuperados')}</li>{/if}
+          {#if arcaneLevels.length && !arcaneError}<li>Arcane Recovery: {t('niveles')} {arcaneLevels.join(', ')}</li>{/if}
         </ul>
       </section>
     </div>
 
     <footer>
-      <button onclick={() => (open = false)}>Cancelar</button>
-      <button class="primary" onclick={finish}>Terminar Short Rest</button>
+      <button onclick={() => (open = false)}>{t('Cancelar')}</button>
+      <button class="primary" onclick={finish}>{t('Terminar Short Rest')}</button>
     </footer>
   </div>
 </dialog>

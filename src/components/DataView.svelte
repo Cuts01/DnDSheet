@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t, i18n } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { canShareFiles, downloadCharacter, readCharacterFile, shareCharacter } from '../lib/io';
   import type { Character } from '../lib/model/character';
@@ -25,7 +26,7 @@
   function confirmImport() {
     if (!pending) return;
     store.replace(pending);
-    message = `Importado: ${pending.name}.`;
+    message = t('Importado: {name}.', { name: pending.name });
     pending = null;
   }
 
@@ -33,49 +34,57 @@
     try {
       await shareCharacter(store.snapshot());
     } catch (e) {
-      if ((e as Error).name !== 'AbortError') message = `No se pudo compartir: ${(e as Error).message}`;
+      if ((e as Error).name !== 'AbortError') message = t('No se pudo compartir: {msg}', { msg: (e as Error).message });
     }
   }
 
   async function startOver() {
-    if (confirm(`Esto borra a ${store.c.name} de este dispositivo y abre la creación de un personaje nuevo. ¿Exportaste un respaldo?`)) {
+    if (confirm(t('Esto borra a {name} de este dispositivo y abre la creación de un personaje nuevo. ¿Exportaste un respaldo?', { name: store.c.name }))) {
       await store.discard();
     }
   }
 
-  const updated = $derived(new Date(store.c.updatedAt).toLocaleString('es-PE'));
+  const updated = $derived(new Date(store.c.updatedAt).toLocaleString(i18n.lang === 'en' ? 'en-US' : 'es-PE'));
 </script>
 
 <section class="data">
   <div class="card stack">
-    <h2>Respaldo</h2>
+    <h2>{t('Idioma')}</h2>
+    <div class="row">
+      <button class:primary={i18n.lang === 'es'} aria-pressed={i18n.lang === 'es'} onclick={() => i18n.set('es')}>Español</button>
+      <button class:primary={i18n.lang === 'en'} aria-pressed={i18n.lang === 'en'} onclick={() => i18n.set('en')}>English</button>
+    </div>
+    <p class="small muted">{t('Los términos de D&D (spells, classes, feats) quedan en inglés en los dos idiomas.')}</p>
+  </div>
+
+  <div class="card stack">
+    <h2>{t('Respaldo')}</h2>
     <p class="small muted">
-      Los datos viven solo en este dispositivo. Exporta un JSON antes de limpiar el navegador, y úsalo para pasar
-      el personaje entre el teléfono y la tablet.
+      {t('Los datos viven solo en este dispositivo. Exporta un JSON antes de limpiar el navegador, y úsalo para pasar el personaje entre el teléfono y la tablet.')}
     </p>
     <div class="row wrap">
-      <button class="primary" onclick={() => downloadCharacter(store.snapshot())}>Exportar JSON</button>
+      <button class="primary" onclick={() => downloadCharacter(store.snapshot())}>{t('Exportar JSON')}</button>
       {#if shareable}
-        <button onclick={share}>Compartir...</button>
+        <button onclick={share}>{t('Compartir...')}</button>
       {/if}
-      <button onclick={() => fileInput.click()}>Importar JSON</button>
+      <button onclick={() => fileInput.click()}>{t('Importar JSON')}</button>
       <input bind:this={fileInput} type="file" accept="application/json,.json" hidden onchange={onFile} />
     </div>
     {#if pending}
       <div class="confirm">
         <p>
-          ¿Reemplazar <b>{store.c.name}</b> por <b>{pending.name}</b>
+          {t('¿Reemplazar a')} <b>{store.c.name}</b> {t('por')} <b>{pending.name}</b>
           <span class="muted">({classSummary(pending)})</span>?
         </p>
         <div class="row">
-          <button onclick={() => (pending = null)}>Cancelar</button>
-          <button class="primary" onclick={confirmImport}>Reemplazar</button>
+          <button onclick={() => (pending = null)}>{t('Cancelar')}</button>
+          <button class="primary" onclick={confirmImport}>{t('Reemplazar')}</button>
         </div>
       </div>
     {/if}
     {#if errors.length}
       <div class="errors small">
-        <b>El archivo no es un personaje válido:</b>
+        <b>{t('El archivo no es un personaje válido:')}</b>
         <ul>{#each errors as e (e)}<li>{e}</li>{/each}</ul>
       </div>
     {/if}
@@ -83,27 +92,27 @@
   </div>
 
   <div class="card stack">
-    <h2>Almacenamiento</h2>
+    <h2>{t('Almacenamiento')}</h2>
     <p class="small">
-      Persistente:
-      {#if store.persisted === null}<span class="muted">no disponible en este navegador</span>
-      {:else if store.persisted}<b class="ok">sí</b>, Android no lo borrará por falta de espacio
+      {t('Persistente')}:
+      {#if store.persisted === null}<span class="muted">{t('no disponible en este navegador')}</span>
+      {:else if store.persisted}<b class="ok">{t('sí')}</b>, {t('Android no lo borrará por falta de espacio')}
       {:else}<b class="warn">no</b>{/if}
     </p>
     {#if store.persisted === false}
-      <button onclick={() => store.requestPersist()}>Solicitar almacenamiento persistente</button>
-      <p class="small muted">Chrome suele concederlo cuando la app está instalada en la pantalla de inicio.</p>
+      <button onclick={() => store.requestPersist()}>{t('Solicitar almacenamiento persistente')}</button>
+      <p class="small muted">{t('Chrome suele concederlo cuando la app está instalada en la pantalla de inicio.')}</p>
     {/if}
-    <p class="small muted">Último guardado: {updated}</p>
-    <p class="small muted">Versión de la app: {__APP_VERSION__}</p>
+    <p class="small muted">{t('Último guardado')}: {updated}</p>
+    <p class="small muted">{t('Versión de la app')}: {__APP_VERSION__}</p>
   </div>
 
   <PacksCard />
 
   <div class="card stack">
-    <h2>Nuevo personaje</h2>
-    <p class="small muted">Por ahora la app guarda un personaje a la vez. Exporta este antes de crear otro.</p>
-    <button class="danger" onclick={startOver}>Borrar y crear uno nuevo</button>
+    <h2>{t('Nuevo personaje')}</h2>
+    <p class="small muted">{t('Por ahora la app guarda un personaje a la vez. Exporta este antes de crear otro.')}</p>
+    <button class="danger" onclick={startOver}>{t('Borrar y crear uno nuevo')}</button>
   </div>
 </section>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Character, type ProfLevel } from '../../lib/model/character';
   import { fmt, skillBonus, skillLevel, skillSources } from '../../lib/rules/derive';
@@ -17,7 +18,7 @@
     background: 'background',
     'background-choice': 'background'
   };
-  const srcLabel = (x: string) => (x.startsWith('feat') ? 'feat' : (srcName[x] ?? 'otro'));
+  const srcLabel = (x: string) => (x.startsWith('feat') ? 'feat' : t(srcName[x] ?? 'otro'));
   const mark: Record<ProfLevel, string> = { none: '', prof: '●', expertise: '◆' };
 
   // Fuentes con skills fijas que se pueden reemplazar si quedan repetidas (regla de backgrounds y razas).
@@ -78,14 +79,14 @@
     {@const list = c.skillPicks[src] ?? []}
     {#if list.length}
       <div class="slot">
-        <span class="small"><b>{label}</b>: skills otorgadas</span>
+        <span class="small"><b>{t(label)}</b>: {t('skills otorgadas')}</span>
         <div class="fixed">
           {#each list as id, i (i)}
             <div class="fx" class:dup={otherHas(src, id)}>
-              <select value={id} onchange={(e) => replaceFixed(src, i, e.currentTarget.value)} aria-label={`Skill ${i + 1} de ${label}`}>
+              <select value={id} onchange={(e) => replaceFixed(src, i, e.currentTarget.value)} aria-label={`Skill ${i + 1} · ${t(label)}`}>
                 {#each SKILLS as s (s.id)}<option value={s.id}>{s.name}</option>{/each}
               </select>
-              {#if otherHas(src, id)}<span class="small">Repetida: puedes cambiarla por otra</span>{/if}
+              {#if otherHas(src, id)}<span class="small">{t('Repetida: puedes cambiarla por otra')}</span>{/if}
             </div>
           {/each}
         </div>
@@ -97,7 +98,7 @@
     {@const picked = c.skillPicks[s.source] ?? []}
     <div class="slot">
       <span class="small">
-        <b>{s.label}</b>: elige {s.count}
+        <b>{t(s.label)}</b>: {t('elige')} {s.count}
         <span class="muted">({picked.length}/{s.count})</span>
       </span>
       <div class="chips">
@@ -109,10 +110,10 @@
             class:on
             class:taken={!dupOk && !on && otherHas(s.source, id)}
             disabled={!on && picked.length >= s.count}
-            title={!dupOk && !on && otherHas(s.source, id) ? 'Ya la tienes por otra fuente' : undefined}
+            title={!dupOk && !on && otherHas(s.source, id) ? t('Ya la tienes por otra fuente') : undefined}
             onclick={() => togglePick(s.source, id, s.count)}
           >
-            {skillName(id)}{on && otherHas(s.source, id) ? (dupOk ? ' (expertise)' : ' (repetida)') : ''}
+            {skillName(id)}{on && otherHas(s.source, id) ? (dupOk ? ' (expertise)' : ` (${t('repetida')})`) : ''}
           </button>
         {/each}
       </div>
@@ -133,7 +134,7 @@
       </button>
     {/each}
   </div>
-  <p class="muted small">Toca una skill para marcar expertise o agregar una proficiency extra. ● proficient · ◆ expertise</p>
+  <p class="muted small">{t('Toca una skill para marcar expertise o agregar una proficiency extra.')} ● proficient · ◆ expertise</p>
 
   <h2>Saving throws</h2>
   <div class="saves">
@@ -144,28 +145,28 @@
     {/each}
   </div>
 
-  <h2>Otras proficiencies</h2>
+  <h2>{t('Otras proficiencies')}</h2>
   {#each kinds as [k, label] (k)}
     <div class="prof">
-      <span class="small muted">{label}</span>
+      <span class="small muted">{t(label)}</span>
       <div class="chips">
         {#each profs[k] as p (p)}
           {@const extra = c.extraProficiencies[k].includes(p)}
           <span class="tag" class:extra>
             {p}
-            {#if extra}<button class="x" aria-label={`Quitar ${p}`} onclick={() => (c.extraProficiencies[k] = c.extraProficiencies[k].filter((x) => x !== p))}>✕</button>{/if}
+            {#if extra}<button class="x" aria-label={`${t('Quitar')} ${p}`} onclick={() => (c.extraProficiencies[k] = c.extraProficiencies[k].filter((x) => x !== p))}>✕</button>{/if}
           </span>
         {:else}
-          <span class="muted small">Ninguna</span>
+          <span class="muted small">{t('Ninguna')}</span>
         {/each}
       </div>
       <div class="row">
-        <input bind:value={adding[k]} placeholder="Agregar..." aria-label={`Agregar ${label}`} onkeydown={(e) => e.key === 'Enter' && addExtra(k)} />
+        <input bind:value={adding[k]} placeholder={t('Agregar...')} aria-label={`${t('Agregar')} ${t(label)}`} onkeydown={(e) => e.key === 'Enter' && addExtra(k)} />
         <button onclick={() => addExtra(k)}>+</button>
       </div>
     </div>
   {/each}
-  <p class="muted small">Las de clase, raza y background se calculan solas desde los packs. Las que agregues aquí se suman.</p>
+  <p class="muted small">{t('Las de clase, raza y background se calculan solas desde los packs. Las que agregues aquí se suman.')}</p>
 </div>
 
 <style>

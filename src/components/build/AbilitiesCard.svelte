@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { ABILITIES, type Ability, type Character } from '../../lib/model/character';
   import {
     POINT_BUY_BUDGET,
@@ -47,7 +48,7 @@
 
 <div class="card stack">
   <h2>Ability scores</h2>
-  <div class="seg" role="tablist" aria-label="Método">
+  <div class="seg" role="tablist" aria-label={t('Método')}>
     <button class:on={c.abilityMethod === 'pointbuy'} onclick={() => setMethod('pointbuy')}>Point buy</button>
     <button class:on={c.abilityMethod === 'array'} onclick={() => setMethod('array')}>Standard array</button>
     <button class:on={c.abilityMethod === 'manual'} onclick={() => setMethod('manual')}>Manual</button>
@@ -56,25 +57,25 @@
   {#if c.abilityMethod === 'pointbuy'}
     <p class="small" class:err={left !== null && left < 0}>
       {#if left === null}
-        Algún valor está fuera de 8 a 15: ajusta o usa Manual.
+        {t('Algún valor está fuera de 8 a 15: ajusta o usa Manual.')}
       {:else}
-        Puntos restantes: <b class="num">{left}</b> / {POINT_BUY_BUDGET}
+        {t('Puntos restantes')}: <b class="num">{left}</b> / {POINT_BUY_BUDGET}
       {/if}
     </p>
   {/if}
 
   <div class="table">
     <div class="head small muted">
-      <span></span><span>Base</span><span title="Raza y background">Origen</span><span title="ASI y feats">ASI</span><span>Total</span>
+      <span></span><span>Base</span><span title={t('Raza y background')}>{t('Origen')}</span><span title={t('ASI y feats')}>ASI</span><span>Total</span>
     </div>
     {#each rows as { a, b } (a)}
       <div class="r">
         <span class="ab">{ABILITY_LABEL[a]}</span>
         <span class="base">
           {#if c.abilityMethod === 'pointbuy'}
-            <button class="mini" aria-label={`Bajar ${a}`} onclick={() => step(a, -1)} disabled={c.abilities[a] <= 8}>-</button>
+            <button class="mini" aria-label={`${t('Bajar')} ${a}`} onclick={() => step(a, -1)} disabled={c.abilities[a] <= 8}>-</button>
             <b class="num">{c.abilities[a]}</b>
-            <button class="mini" aria-label={`Subir ${a}`} onclick={() => step(a, 1)} disabled={c.abilities[a] >= 15}>+</button>
+            <button class="mini" aria-label={`${t('Subir')} ${a}`} onclick={() => step(a, 1)} disabled={c.abilities[a] >= 15}>+</button>
           {:else if c.abilityMethod === 'array'}
             <select value={c.abilities[a]} onchange={(e) => assign(a, Number(e.currentTarget.value))} aria-label={a}>
               {#each STANDARD_ARRAY as v (v)}<option value={v}>{v}</option>{/each}
@@ -92,8 +93,7 @@
     {/each}
   </div>
   <p class="muted small">
-    Los incrementos de raza, background, ASI y feats se suman solos. Un total sobre 20 se marca en rojo (solo
-    algunos features lo permiten).
+    {t('Los incrementos de raza, background, ASI y feats se suman solos. Un total sobre 20 se marca en rojo (solo algunos features lo permiten).')}
   </p>
 </div>
 

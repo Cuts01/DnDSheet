@@ -43,6 +43,10 @@ El código no incluye contenido propietario. Las únicas tablas incluidas son me
 - Las spells de daño que puedes lanzar aparecen en la tarjeta de Ataques de Combate con to-hit o DC y daño. Los cantrips escalan solos en los niveles 5, 11 y 17, y Eldritch Blast suma CHA si tienes Agonizing Blast.
 - Lanzar: eliges el slot (o Pact slot, o ritual) y se descuenta. Las spells con concentration quedan marcadas en Combate y Spells hasta que las terminas o haces Long Rest.
 
+## Idioma
+
+En Datos > Idioma se cambia entre Español e English. Los términos de D&D quedan en inglés en ambos. Los textos de la app pasan por `t()` (`src/lib/i18n.svelte.ts`): la clave es el texto en español y la traducción vive en `src/lib/i18n/en.ts`. Un test revisa que todo texto nuevo tenga su traducción.
+
 ## Stack
 
 Svelte 5 (runes) + TypeScript, Vite, vite-plugin-pwa (Workbox), Dexie (IndexedDB), Zod y Vitest.

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import type { Ability, Character } from '../../lib/model/character';
   import { applyBackground, backgroundList, findBackground } from '../../lib/rules/features';
@@ -39,20 +40,20 @@
   {#if options.length}
     <RefSelect {options} value={c.background.ref} label="Background" onpick={pick} />
   {:else}
-    <label class="field"><span>Background</span><input bind:value={c.background.name} placeholder="Importa un pack para elegir de una lista" /></label>
+    <label class="field"><span>Background</span><input bind:value={c.background.name} placeholder={t('Importa un pack para elegir de una lista')} /></label>
   {/if}
 
   {#if bg}
     <div class="facts small">
       {#if bg.skills.length}<span>Skills <b>{bg.skills.join(', ')}</b></span>{/if}
       {#if bg.tools.length}<span>Tools <b>{bg.tools.join(', ')}</b></span>{/if}
-      {#if bg.languages.length}<span>Idiomas <b>{bg.languages.join(', ')}</b></span>{/if}
+      {#if bg.languages.length}<span>{t('Idiomas')} <b>{bg.languages.join(', ')}</b></span>{/if}
       {#if bg.feat}<span>Origin feat <b>{bg.feat}</b></span>{/if}
     </div>
 
     {#if bg.asi.length >= 3}
       <div class="stack tight">
-        <span class="small muted">Incrementos: {bg.asi.map((a) => ABILITY_LABEL[a]).join(', ')}</span>
+        <span class="small muted">{t('Incrementos')}: {bg.asi.map((a) => ABILITY_LABEL[a]).join(', ')}</span>
         <div class="seg">
           <button class:on={split === 'two'} onclick={() => setSplit('two')}>+2 / +1</button>
           <button class:on={split === 'three'} onclick={() => setSplit('three')}>+1 / +1 / +1</button>
@@ -73,15 +74,15 @@
     {/if}
 
     {#if bg.skillChoices}
-      <p class="small accent">Elige {bg.skillChoices.count} skill(s) en Proficiencies.</p>
+      <p class="small accent">{t('Elige {n} skill(s) en Proficiencies.', { n: bg.skillChoices.count })}</p>
     {/if}
 
     {#if bg.traits.length || bg.equipment}
-      <button class="ghost small toggle" onclick={() => (showTraits = !showTraits)}>{showTraits ? 'Ocultar' : 'Ver'} detalle</button>
+      <button class="ghost small toggle" onclick={() => (showTraits = !showTraits)}>{showTraits ? t('Ocultar detalle') : t('Ver detalle')}</button>
       {#if showTraits}
         <ul class="traits small">
-          {#each bg.traits as t (t.name)}<li><b>{t.name}.</b> {t.text}</li>{/each}
-          {#if bg.equipment}<li><b>Equipo.</b> {bg.equipment}</li>{/if}
+          {#each bg.traits as tr (tr.name)}<li><b>{tr.name}.</b> {tr.text}</li>{/each}
+          {#if bg.equipment}<li><b>{t('Equipo')}.</b> {bg.equipment}</li>{/if}
         </ul>
       {/if}
     {/if}

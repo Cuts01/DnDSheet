@@ -1,5 +1,6 @@
 import { compendium } from './compendium.svelte';
 import { parsePack, type Pack } from './model/pack';
+import { t as tr } from './i18n.svelte';
 
 /* Los packs de la wiki generados antes de esta fecha no traen spells, passives, spells de subclass ni spells de feats. */
 export const MIN_WIKI_BUILT = '2026-10-21T03:22:00Z';
@@ -21,12 +22,12 @@ export async function importRaws(items: { name: string; raw: unknown }[], ask = 
       continue;
     }
     const old = compendium.packs.find((p) => p.pack.id === r.pack.pack.id);
-    if (old && ask && !isStale(old) && !confirm(`Ya existe el pack "${r.pack.pack.id}". ¿Reemplazarlo?`)) continue;
+    if (old && ask && !isStale(old) && !confirm(tr('Ya existe el pack "{id}". ¿Reemplazarlo?', { id: r.pack.pack.id }))) continue;
     await compendium.add(raw, r.pack);
     out.done.push(r.pack.pack.name);
     if (isStale(r.pack))
       out.errors.push(
-        `${name} es una versión vieja (generado ${r.pack.pack.built ? new Date(r.pack.pack.built).toLocaleString() : 'antes de que los packs tuvieran fecha'}). Usa el archivo más reciente que te mandé.`
+        tr('{name} es una versión vieja (generado {date}). Usa el archivo más reciente.', { name, date: r.pack.pack.built ? new Date(r.pack.pack.built).toLocaleString() : tr('antes de que los packs tuvieran fecha') })
       );
   }
   return out;
@@ -39,7 +40,7 @@ export async function importFiles(files: File[]): Promise<ImportResult> {
     try {
       items.push({ name: f.name, raw: JSON.parse(await f.text()) });
     } catch {
-      errors.push(`${f.name}: no es JSON válido.`);
+      errors.push(`${f.name}: ${tr('no es JSON válido.')}`);
     }
   }
   const r = await importRaws(items);
@@ -59,7 +60,7 @@ export async function importLocalWiki(): Promise<ImportResult> {
       if (!res.ok) throw new Error(String(res.status));
       items.push({ name, raw: await res.json() });
     } catch {
-      errors.push(`${name}: no se pudo cargar (¿sin conexión?).`);
+      errors.push(`${name}: ${tr('no se pudo cargar (¿sin conexión?).')}`);
     }
   }
   const r = await importRaws(items, false);

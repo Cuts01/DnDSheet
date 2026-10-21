@@ -1,5 +1,6 @@
 import type { Character } from '../model/character';
 import { abilityMod, arcaneRecoveryBudget, hitDicePools, pactSlots, slotMax, totalLevel } from './derive';
+import { t as tr } from '../i18n.svelte';
 
 /* Acciones sobre el personaje. Todas son puras: devuelven una copia nueva. */
 
@@ -40,15 +41,15 @@ export interface ShortRestInput {
 
 export function validArcane(c: Character, levels: number[]): string | null {
   if (levels.length === 0) return null;
-  if (c.arcaneRecoveryUsed) return 'Arcane Recovery ya se usó desde el último Long Rest.';
+  if (c.arcaneRecoveryUsed) return tr('Arcane Recovery ya se usó desde el último Long Rest.');
   const budget = arcaneRecoveryBudget(c);
-  if (budget === 0) return 'No tienes niveles de Wizard.';
-  if (levels.some((l) => l < 1 || l > 5)) return 'Solo se recuperan slots de nivel 1 a 5.';
+  if (budget === 0) return tr('No tienes niveles de Wizard.');
+  if (levels.some((l) => l < 1 || l > 5)) return tr('Solo se recuperan slots de nivel 1 a 5.');
   const sum = levels.reduce((s, l) => s + l, 0);
-  if (sum > budget) return `La suma de niveles (${sum}) supera el límite (${budget}).`;
+  if (sum > budget) return tr('La suma de niveles ({sum}) supera el límite ({max}).', { sum, max: budget });
   const count = new Map<number, number>();
   for (const l of levels) count.set(l, (count.get(l) ?? 0) + 1);
-  for (const [l, k] of count) if (k > c.slotsUsed.levels[l - 1]) return `No hay suficientes slots de nivel ${l} gastados.`;
+  for (const [l, k] of count) if (k > c.slotsUsed.levels[l - 1]) return tr('No hay suficientes slots de nivel {n} gastados.', { n: l });
   return null;
 }
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { compendium } from '../lib/compendium.svelte';
   import { blankCharacter, type Character } from '../lib/model/character';
@@ -41,8 +42,8 @@
 
 <div class="create">
   <header>
-    <h1>Nuevo personaje</h1>
-    <p class="muted">Lo básico para empezar. Skills, feats, invocations y equipo se completan después en Editar y Equipo.</p>
+    <h1>{t('Nuevo personaje')}</h1>
+    <p class="muted">{t('Lo básico para empezar. Skills, feats, invocations y equipo se completan después en Editar y Equipo.')}</p>
   </header>
 
   {#if !compendium.packs.length}
@@ -50,8 +51,8 @@
   {/if}
 
   <div class="card stack">
-    <h2>Identidad</h2>
-    <label class="field"><span>Nombre</span><input bind:value={draft.name} placeholder="Nombre del personaje" /></label>
+    <h2>{t('Identidad')}</h2>
+    <label class="field"><span>{t('Nombre')}</span><input bind:value={draft.name} placeholder={t('Nombre del personaje')} /></label>
     <label class="field">
       <span>Ruleset</span>
       <select bind:value={draft.ruleset}>
@@ -67,14 +68,14 @@
   <AbilitiesCard bind:c={draft} />
 
   <div class="actions">
-    <p class="muted small center">HP máximo inicial (promedio): <b class="num">{hp}</b></p>
-    <button class="primary big" onclick={create} disabled={!canCreate}>Crear personaje</button>
-    {#if !draft.name.trim()}<p class="muted small center">Falta el nombre.</p>{/if}
-    <button class="ghost" onclick={() => fileInput.click()}>O importar un respaldo JSON</button>
+    <p class="muted small center">{t('HP máximo inicial (promedio)')}: <b class="num">{hp}</b></p>
+    <button class="primary big" onclick={create} disabled={!canCreate}>{t('Crear personaje')}</button>
+    {#if !draft.name.trim()}<p class="muted small center">{t('Falta el nombre.')}</p>{/if}
+    <button class="ghost" onclick={() => fileInput.click()}>{t('O importar un respaldo JSON')}</button>
     <input bind:this={fileInput} type="file" accept="application/json,.json" hidden onchange={onFile} />
     {#if errors.length}
       <div class="errors small">
-        <b>El archivo no es un personaje válido:</b>
+        <b>{t('El archivo no es un personaje válido:')}</b>
         <ul>{#each errors as e (e)}<li>{e}</li>{/each}</ul>
       </div>
     {/if}

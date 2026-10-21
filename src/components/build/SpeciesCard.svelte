@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Character } from '../../lib/model/character';
   import { applySpecies, findSpecies, speciesList } from '../../lib/rules/features';
@@ -21,30 +22,30 @@
 </script>
 
 <div class="card stack">
-  <h2>{c.ruleset === '2024' ? 'Species' : 'Raza'}</h2>
+  <h2>{c.ruleset === '2024' ? 'Species' : t('Raza')}</h2>
 
   {#if options.length}
-    <RefSelect {options} value={c.species.ref} label={c.ruleset === '2024' ? 'Species' : 'Raza'} onpick={pick} />
+    <RefSelect {options} value={c.species.ref} label={c.ruleset === '2024' ? 'Species' : t('Raza')} onpick={pick} />
   {:else}
-    <p class="muted small">Importa un pack con razas para elegir de una lista. Mientras tanto:</p>
+    <p class="muted small">{t('Importa un pack con razas para elegir de una lista. Mientras tanto:')}</p>
   {/if}
 
   {#if !sp}
     <div class="grid2">
-      <label class="field"><span>Nombre</span><input bind:value={c.species.name} placeholder="Ej. Wood Elf" /></label>
+      <label class="field"><span>{t('Nombre')}</span><input bind:value={c.species.name} placeholder={t('Ej. Wood Elf')} /></label>
       <NumField label="Speed base" bind:value={c.species.speed} min={0} max={200} />
     </div>
   {:else}
     <div class="facts small">
-      <span>Tamaño <b>{sp.size}</b></span>
+      <span>{t('Tamaño')} <b>{sp.size}</b></span>
       <span>Speed <b class="num">{sp.speed} ft</b></span>
       {#if sp.darkvision}<span>Darkvision <b class="num">{sp.darkvision} ft</b></span>{/if}
-      {#if sp.languages.length}<span>Idiomas <b>{sp.languages.join(', ')}</b></span>{/if}
+      {#if sp.languages.length}<span>{t('Idiomas')} <b>{sp.languages.join(', ')}</b></span>{/if}
     </div>
 
     {#if c.bonuses.species.length}
       <div class="bonuses">
-        <span class="small muted">Incrementos</span>
+        <span class="small muted">{t('Incrementos')}</span>
         {#each c.bonuses.species as b, i (i)}
           {@const locked = i < fixedCount && !custom}
           <div class="bonus">
@@ -58,25 +59,25 @@
       {#if fixedCount}
         <label class="check small">
           <input type="checkbox" bind:checked={custom} />
-          <span>Reasignar incrementos (Customizing Your Origin, Tasha's)</span>
+          <span>{t('Reasignar incrementos')} (Customizing Your Origin, Tasha's)</span>
         </label>
       {/if}
     {/if}
 
     {#if sp.originFeat}
-      <p class="small accent">Esta raza da un feat: elígelo en Clases y mejoras.</p>
+      <p class="small accent">{t('Esta raza da un feat: elígelo en Clases y mejoras.')}</p>
     {/if}
     {#if sp.skillChoices}
-      <p class="small accent">Elige {sp.skillChoices.count} skill(s) en Proficiencies.</p>
+      <p class="small accent">{t('Elige {n} skill(s) en Proficiencies.', { n: sp.skillChoices.count })}</p>
     {/if}
 
     {#if sp.traits.length}
       <button class="ghost small toggle" onclick={() => (showTraits = !showTraits)}>
-        {showTraits ? 'Ocultar' : 'Ver'} rasgos ({sp.traits.length})
+        {showTraits ? t('Ocultar rasgos') : t('Ver rasgos')} ({sp.traits.length})
       </button>
       {#if showTraits}
         <ul class="traits small">
-          {#each sp.traits as t (t.name)}<li><b>{t.name}.</b> {t.text}</li>{/each}
+          {#each sp.traits as tr (tr.name)}<li><b>{tr.name}.</b> {tr.text}</li>{/each}
         </ul>
       {/if}
     {/if}

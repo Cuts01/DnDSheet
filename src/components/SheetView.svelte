@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { ABILITIES } from '../lib/model/character';
   import { abilityMod, fmt, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
@@ -13,7 +14,7 @@
 
 <section class="sheet">
   <div class="card abil-card">
-    <h2>Abilities y saves</h2>
+    <h2>{t('Abilities y saves')}</h2>
     <div class="abilities">
       {#each ABILITIES as a (a)}
         {@const prof = c.saves.includes(a)}

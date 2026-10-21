@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { uid, type Character } from '../../lib/model/character';
   import type { PackInvocation } from '../../lib/model/pack';
@@ -31,7 +32,7 @@
       <label class="field">
         <span>Pact Boon</span>
         <select bind:value={c.pactBoon}>
-          <option value="none">Sin elegir</option>
+          <option value="none">{t('Sin elegir')}</option>
           <option value="blade">Pact of the Blade</option>
           <option value="chain">Pact of the Chain</option>
           <option value="tome">Pact of the Tome</option>
@@ -49,18 +50,18 @@
           {:else}
             <label class="field"><span>Invocation {i + 1}</span><input bind:value={c.invocations[i].name} /></label>
           {/if}
-          {#if it?.prerequisite}<p class="small muted">Requisito: {it.prerequisite}</p>{/if}
+          {#if it?.prerequisite}<p class="small muted">{t('Requisito')}: {it.prerequisite}</p>{/if}
         </div>
-        <button class="ghost danger del" aria-label="Quitar invocation" onclick={() => c.invocations.splice(i, 1)}>✕</button>
+        <button class="ghost danger del" aria-label={t('Quitar invocation')} onclick={() => c.invocations.splice(i, 1)}>✕</button>
       </div>
     {/each}
 
     {#if c.invocations.length < max}
-      <button onclick={() => c.invocations.push({ id: uid(), ref: null, name: '' })}>Agregar invocation</button>
+      <button onclick={() => c.invocations.push({ id: uid(), ref: null, name: '' })}>{t('Agregar invocation')}</button>
     {:else if c.invocations.length > max}
-      <p class="small err">Tienes más invocations de las que permite tu nivel de Warlock ({max}).</p>
+      <p class="small err">{t('Tienes más invocations de las que permite tu nivel de Warlock ({n}).', { n: max })}</p>
     {/if}
-    <p class="muted small">La lista solo muestra las que cumplen el nivel{c.ruleset === '2014' ? ' y tu Pact Boon' : ''}. Los demás requisitos se indican en cada una.</p>
+    <p class="muted small">{c.ruleset === '2014' ? t('La lista solo muestra las que cumplen el nivel y tu Pact Boon. Los demás requisitos se indican en cada una.') : t('La lista solo muestra las que cumplen el nivel. Los demás requisitos se indican en cada una.')}</p>
   </div>
 {/if}
 

@@ -1,4 +1,5 @@
 import { CharacterSchema, type Character } from './model/character';
+import { t as tr } from './i18n.svelte';
 
 function fileName(c: Character) {
   const slug = c.name.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'personaje';
@@ -46,7 +47,7 @@ export async function readCharacterFile(file: File): Promise<ImportResult> {
   try {
     raw = JSON.parse(await file.text());
   } catch {
-    return { ok: false, errors: ['El archivo no es JSON válido.'] };
+    return { ok: false, errors: [tr('El archivo no es JSON válido.')] };
   }
   const parsed = CharacterSchema.safeParse(raw);
   if (!parsed.success) {

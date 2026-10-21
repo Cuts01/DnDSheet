@@ -1,12 +1,13 @@
 <script lang="ts" generics="T extends { id: string; name: string; source?: string }">
   import type { Ref } from '../../lib/rules/features';
+  import { t } from '../../lib/i18n.svelte';
 
   /* Select de entradas del compendium agrupadas por pack, con filtro de texto si la lista es larga. */
   let {
     options,
     value,
     label,
-    placeholder = 'Elegir...',
+    placeholder,
     onpick
   }: { options: Ref<T>[]; value: string | null; label: string; placeholder?: string; onpick: (r: Ref<T> | null) => void } =
     $props();
@@ -33,7 +34,7 @@
       value={value ?? ''}
       onchange={(e) => onpick(options.find((o) => o.value === e.currentTarget.value) ?? null)}
     >
-      <option value="">{placeholder}</option>
+      <option value="">{placeholder ?? t('Elegir...')}</option>
       {#each groups as [pack, list] (pack)}
         <optgroup label={pack}>
           {#each list as o (o.value)}
@@ -44,7 +45,7 @@
     </select>
   </label>
   {#if options.length > 25 && (!value || q)}
-    <input class="filter" bind:value={q} placeholder="Filtrar lista..." aria-label={`Filtrar ${label}`} />
+    <input class="filter" bind:value={q} placeholder={t('Filtrar lista...')} aria-label={`${t('Filtrar')} ${label}`} />
   {/if}
 </div>
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import {
     armorClassInfo,
@@ -65,8 +66,8 @@
   }
 
   function doLongRest() {
-    const hd = c.ruleset === '2024' ? 'todos los Hit Dice' : 'la mitad de tus Hit Dice';
-    if (confirm(`Long Rest: HP al máximo, temp HP a 0, todos los slots y recursos, y ${hd}. ¿Continuar?`)) {
+    const hd = c.ruleset === '2024' ? t('todos los Hit Dice') : t('la mitad de tus Hit Dice');
+    if (confirm(t('Long Rest: HP al máximo, temp HP a 0, todos los slots y recursos, y {hd}. ¿Continuar?', { hd }))) {
       store.apply(longRest);
     }
   }
@@ -76,7 +77,7 @@
   {#if c.concentration}
     <div class="card conc">
       <span><small class="muted">Concentration</small> <b>{c.concentration}</b></span>
-      <button onclick={() => (store.c.concentration = '')}>Terminar</button>
+      <button onclick={() => (store.c.concentration = '')}>{t('Terminar')}</button>
     </div>
   {/if}
   <div class="rests">
@@ -105,15 +106,15 @@
         inputmode="numeric"
         min="0"
         placeholder="0"
-        aria-label="Cantidad"
+        aria-label={t('Cantidad')}
         bind:value={amount}
         onkeydown={(e) => e.key === 'Enter' && act('dmg')}
       />
-      <button class="danger" onclick={() => act('dmg')}>Daño</button>
-      <button class="heal" onclick={() => act('heal')}>Curar</button>
+      <button class="danger" onclick={() => act('dmg')}>{t('Daño')}</button>
+      <button class="heal" onclick={() => act('heal')}>{t('Curar')}</button>
       <button class="tempbtn" onclick={() => act('temp')}>Temp</button>
     </div>
-    <p class="muted small hint">Temp fija el valor. Los temp HP no se suman: quédate con el mayor.</p>
+    <p class="muted small hint">{t('Temp fija el valor. Los temp HP no se suman: quédate con el mayor.')}</p>
   </div>
 
   <div class="quick">
@@ -124,24 +125,24 @@
   </div>
 
   {#if toggles.length}
-    <div class="toggles" role="group" aria-label="Efectos condicionales">
+    <div class="toggles" role="group" aria-label={t('Efectos condicionales')}>
       {#each toggles as { e, fromFeature } (e.id)}
         <button class="toggle" class:on={e.active} aria-pressed={e.active} onclick={() => flip(e, fromFeature)}>
-          {e.source || 'Efecto'} <span class="num">{fmt(e.value)}{e.target === 'speed' ? ' ft' : e.target === 'ac' ? ' AC' : e.target === 'initiative' ? ' init' : ' ' + EFFECT_LABEL[e.target]}</span>
+          {e.source || t('Efecto')} <span class="num">{fmt(e.value)}{e.target === 'speed' ? ' ft' : e.target === 'ac' ? ' AC' : e.target === 'initiative' ? ' init' : ' ' + EFFECT_LABEL[e.target]}</span>
         </button>
       {/each}
     </div>
   {/if}
 
   <div class="card">
-    <h2>Ataques</h2>
+    <h2>{t('Ataques')}</h2>
     <ul class="attacks">
       {#each atk as w (w.id)}
         <li>
           <div class="atk-main">
             <span class="atk-name">{w.name}</span>
             <span class="pair num"><small>Hit</small><b>{fmt(w.toHit)}</b></span>
-            <span class="pair num dmg"><small>Daño</small><b>{w.damage}</b></span>
+            <span class="pair num dmg"><small>{t('Daño')}</small><b>{w.damage}</b></span>
           </div>
           <div class="atk-sub muted small">
             {w.damageType}{w.versatile ? ` · versatile ${w.versatile}` : ''}{w.notes.length ? ` · ${w.notes.join(' · ')}` : ''}
@@ -157,17 +158,17 @@
             {:else if s.kind === 'save'}
               <span class="pair num"><small>{s.save ? ABILITY_LABEL[s.save as keyof typeof ABILITY_LABEL] : 'Save'}</small><b>DC {s.dc}</b></span>
             {:else}
-              <span class="pair num"><small>Impacta</small><b>auto</b></span>
+              <span class="pair num"><small>{t('Impacta')}</small><b>auto</b></span>
             {/if}
-            <span class="pair num dmg"><small>Daño</small><b>{splitDmg(s.damage)[0]}</b></span>
+            <span class="pair num dmg"><small>{t('Daño')}</small><b>{splitDmg(s.damage)[0]}</b></span>
           </div>
           <div class="atk-sub muted small">
-            spell · {splitDmg(s.damage)[1] || 'daño'}{s.note ? ` · ${s.note}` : ''}
+            spell · {splitDmg(s.damage)[1] || t('daño')}{s.note ? ` · ${s.note}` : ''}
           </div>
         </li>
       {/each}
     </ul>
-    <p class="muted small hint">Equipa weapons en la pestaña Equipo. Los spells de daño que puedes lanzar aparecen aquí.</p>
+    <p class="muted small hint">{t('Equipa weapons en la pestaña Equipo. Los spells de daño que puedes lanzar aparecen aquí.')}</p>
   </div>
 
   {#if casting.length}
@@ -187,7 +188,7 @@
 
   {#if pact.count > 0}
     <div class="card">
-      <h2>Pact slots <span class="lvl">nivel {pact.slotLevel}</span></h2>
+      <h2>Pact slots <span class="lvl">{t('nivel')} {pact.slotLevel}</span></h2>
       <Pips
         total={pact.count}
         used={c.slotsUsed.pact}
@@ -195,7 +196,7 @@
         label="Pact slot"
         onchange={(u) => (store.c.slotsUsed.pact = u)}
       />
-      <p class="muted small hint">Se recuperan en Short Rest.</p>
+      <p class="muted small hint">{t('Se recuperan en Short Rest.')}</p>
     </div>
   {/if}
 
@@ -210,7 +211,7 @@
               <Pips
                 total={max}
                 used={c.slotsUsed.levels[i]}
-                label={`slot de nivel ${i + 1}`}
+                label={t('slot de nivel {n}', { n: i + 1 })}
                 onchange={(u) => (store.c.slotsUsed.levels[i] = u)}
               />
             </div>
@@ -222,7 +223,7 @@
 
   {#if c.resources.length}
     <div class="card">
-      <h2>Recursos</h2>
+      <h2>{t('Recursos')}</h2>
       <div class="resources">
         {#each c.resources as r, i (r.id)}
           {#if r.max > 0}
@@ -256,7 +257,7 @@
         </div>
       {/each}
     </div>
-    <p class="muted small hint">Se gastan desde Short Rest.</p>
+    <p class="muted small hint">{t('Se gastan desde Short Rest.')}</p>
   </div>
 </section>
 

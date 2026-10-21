@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { compendium } from '../lib/compendium.svelte';
   import { characterFeatures, findBackground, findFeat, findInvocation, findSpecies } from '../lib/rules/features';
@@ -23,7 +24,7 @@
     for (const e of store.c.feats) {
       if (!e.ref && !e.name) continue;
       const f = findFeat(compendium.packs, e.ref)?.item;
-      rows.push({ key: e.id, name: f?.name ?? e.name, tag: e.source === 'species' ? 'raza' : e.source === 'background' ? 'background' : 'extra', text: f?.text ?? '', prereq: f?.prerequisite ?? '' });
+      rows.push({ key: e.id, name: f?.name ?? e.name, tag: e.source === 'species' ? t('raza') : e.source === 'background' ? 'background' : 'extra', text: f?.text ?? '', prereq: f?.prerequisite ?? '' });
     }
     return rows;
   });
@@ -40,35 +41,32 @@
 <section class="features">
   {#if nothing}
     <div class="card stack">
-      <h2>Rasgos</h2>
-      <p class="small">
-        Aún no hay contenido importado. En <b>Datos</b> importa un pack con clases y subclasses para ver aquí tus
-        class features por nivel.
-      </p>
+      <h2>{t('Rasgos')}</h2>
+      <p class="small">{t('Aún no hay contenido importado. En Datos importa un pack con clases y subclasses para ver aquí tus class features por nivel.')}</p>
     </div>
   {/if}
 
   <label class="check">
     <input type="checkbox" bind:checked={showNext} />
-    <span>Mostrar también los features de niveles siguientes</span>
+    <span>{t('Mostrar también los features de niveles siguientes')}</span>
   </label>
 
   {#if sp || bg}
     <div class="card stack">
-      <h2>Origen</h2>
+      <h2>{t('Origen')}</h2>
       {#if sp}
-        {#each sp.traits as t (t.name)}
+        {#each sp.traits as tr (tr.name)}
           <details class="feat">
-            <summary><span class="lvl num">R</span><span class="name">{t.name}</span><span class="tag">{sp.name}</span></summary>
-            <div class="text">{t.text}</div>
+            <summary><span class="lvl num">R</span><span class="name">{tr.name}</span><span class="tag">{sp.name}</span></summary>
+            <div class="text">{tr.text}</div>
           </details>
         {/each}
       {/if}
       {#if bg}
-        {#each bg.traits as t (t.name)}
+        {#each bg.traits as tr (tr.name)}
           <details class="feat">
-            <summary><span class="lvl num">B</span><span class="name">{t.name}</span><span class="tag">{bg.name}</span></summary>
-            <div class="text">{t.text}</div>
+            <summary><span class="lvl num">B</span><span class="name">{tr.name}</span><span class="tag">{bg.name}</span></summary>
+            <div class="text">{tr.text}</div>
           </details>
         {/each}
       {/if}
@@ -81,8 +79,8 @@
       {#each featRows as f (f.key)}
         <details class="feat">
           <summary><span class="lvl num">F</span><span class="name">{f.name}</span><span class="tag">{f.tag}</span></summary>
-          {#if f.prereq}<div class="text muted small">Requisito: {f.prereq}</div>{/if}
-          <div class="text">{f.text || 'Sin texto.'}</div>
+          {#if f.prereq}<div class="text muted small">{t('Requisito')}: {f.prereq}</div>{/if}
+          <div class="text">{f.text || t('Sin texto.')}</div>
         </details>
       {/each}
     </div>
@@ -94,8 +92,8 @@
       {#each invRows as f (f.key)}
         <details class="feat">
           <summary><span class="lvl num">I</span><span class="name">{f.name}</span></summary>
-          {#if f.prereq}<div class="text muted small">Requisito: {f.prereq}</div>{/if}
-          <div class="text">{f.text || 'Sin texto.'}</div>
+          {#if f.prereq}<div class="text muted small">{t('Requisito')}: {f.prereq}</div>{/if}
+          <div class="text">{f.text || t('Sin texto.')}</div>
         </details>
       {/each}
     </div>
@@ -110,13 +108,13 @@
       </h2>
 
       {#if !g.cls && !g.sub && !nothing}
-        <p class="muted small">Ningún pack tiene la clase "{g.entry.name}" ni una subclass elegida para ella.</p>
+        <p class="muted small">{t('Ningún pack tiene la clase "{name}" ni una subclass elegida para ella.', { name: g.entry.name })}</p>
       {/if}
       {#if g.cls && !g.sub && g.entry.level >= g.subclassLevel}
-        <p class="warn small">Elige tu {g.subclassLabel} en Editar para ver sus features.</p>
+        <p class="warn small">{t('Elige tu {label} en Editar para ver sus features.', { label: g.subclassLabel })}</p>
       {/if}
       {#if g.entry.subclass && !g.sub}
-        <p class="muted small">"{g.entry.subclass}" está en texto libre: sus features no se cargan solos.</p>
+        <p class="muted small">{t('"{name}" está en texto libre: sus features no se cargan solos.', { name: g.entry.subclass })}</p>
       {/if}
 
       {#each list as f (f.feature.id)}
@@ -125,23 +123,23 @@
             <span class="lvl num">{f.feature.level}</span>
             <span class="name">{f.feature.name}</span>
             {#if f.source === 'subclass'}<span class="tag">{f.sourceName}</span>{/if}
-            {#if f.feature.effects.length}<span class="tag fx">efecto</span>{/if}
+            {#if f.feature.effects.length}<span class="tag fx">{t('efecto')}</span>{/if}
           </summary>
           {#if f.feature.text}
             <div class="text">{f.feature.text}</div>
           {:else}
-            <div class="text muted">Sin texto.</div>
+            <div class="text muted">{t('Sin texto.')}</div>
           {/if}
           {#if f.feature.effects.length}
             <ul class="fx-list small">
               {#each f.feature.effects as e, i (i)}
-                <li>{EFFECT_LABEL[e.target]} {e.value >= 0 ? '+' : ''}{e.value}{e.target === 'speed' ? ' ft' : ''}{e.conditional ? ' (se activa desde Combate)' : ''}</li>
+                <li>{EFFECT_LABEL[e.target]} {e.value >= 0 ? '+' : ''}{e.value}{e.target === 'speed' ? ' ft' : ''}{e.conditional ? ` (${t('se activa desde Combate')})` : ''}</li>
               {/each}
             </ul>
           {/if}
         </details>
       {:else}
-        {#if g.cls || g.sub}<p class="muted small">Sin features en estos niveles.</p>{/if}
+        {#if g.cls || g.sub}<p class="muted small">{t('Sin features en estos niveles.')}</p>{/if}
       {/each}
     </div>
   {/each}

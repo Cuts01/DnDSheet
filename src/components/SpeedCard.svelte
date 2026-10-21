@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { EFFECT_SOURCES, uid, type EffectSource } from '../lib/model/character';
   import { fmt, speed, speedParts } from '../lib/rules/derive';
@@ -12,15 +13,15 @@
   const auto = $derived(parts.filter((p) => p.kind === 'auto' || p.kind === 'feature'));
   const effects = $derived(store.c.effects.filter((e) => e.target === 'speed'));
 
-  const sourceLabel: Record<EffectSource, string> = {
-    species: 'Raza',
-    class: 'Clase',
+  const sourceLabel: Record<EffectSource, string> = $derived({
+    species: t('Raza'),
+    class: t('Clase'),
     subclass: 'Subclass',
     feat: 'Feat',
     spell: 'Spell',
     item: 'Item',
-    other: 'Otro'
-  };
+    other: t('Otro')
+  });
 
   function add() {
     store.c.effects.push({
@@ -41,10 +42,10 @@
 </script>
 
 <div class="card stack">
-  <h2>Speed <span class="muted">· total {speed(c, granted)} ft</span></h2>
+  <h2>Speed <span class="muted">· {t('total')} {speed(c, granted)} ft</span></h2>
 
   <div class="grid2">
-    <label class="field"><span>Raza</span><input value={store.c.species.name || 'Sin elegir'} disabled /></label>
+    <label class="field"><span>{t('Raza')}</span><input value={store.c.species.name || t('Sin elegir')} disabled /></label>
     <NumField label="Speed base" bind:value={store.c.species.speed} min={0} max={200} />
   </div>
 
@@ -54,39 +55,38 @@
         <li class:off={!p.active}>
           <span
             >{p.label}{#if p.note}<span class="muted small"> · {p.note}</span>{/if}{#if p.conditional}<span
-                class="muted small"> · {p.active ? 'activo' : 'inactivo'}, se cambia en Combate</span
+                class="muted small"> · {p.active ? t('activo') : t('inactivo')}, {t('se cambia en Combate')}</span
               >{/if}</span
           >
           <b class="num">{fmt(p.value)}</b>
         </li>
       {/each}
     </ul>
-    <p class="muted small">Automático: según tus niveles, tu armadura y los features de tus packs.</p>
+    <p class="muted small">{t('Automático: según tus niveles, tu armadura y los features de tus packs.')}</p>
   {/if}
 
   {#each effects as e (e.id)}
     {@const i = store.c.effects.findIndex((x) => x.id === e.id)}
     <div class="effect">
-      <label class="field name"><span>Fuente</span><input bind:value={store.c.effects[i].source} placeholder="Ej. Mobile" /></label>
+      <label class="field name"><span>{t('Fuente')}</span><input bind:value={store.c.effects[i].source} placeholder={t('Ej. Mobile')} /></label>
       <label class="field">
-        <span>Tipo</span>
+        <span>{t('Tipo')}</span>
         <select bind:value={store.c.effects[i].sourceType}>
           {#each EFFECT_SOURCES as s (s)}<option value={s}>{sourceLabel[s]}</option>{/each}
         </select>
       </label>
       <NumField label="Bonus (ft)" bind:value={store.c.effects[i].value} min={-200} max={200} />
-      <button class="danger ghost del" aria-label={`Borrar ${e.source || 'efecto'}`} onclick={() => remove(e.id)}>✕</button>
+      <button class="danger ghost del" aria-label={`${t('Borrar')} ${e.source || t('efecto')}`} onclick={() => remove(e.id)}>✕</button>
       <label class="check full">
         <input type="checkbox" bind:checked={store.c.effects[i].conditional} />
-        <span>Condicional <span class="muted small">(se activa desde Combate, ej. Bladesong o Longstrider)</span></span>
+        <span>{t('Condicional')} <span class="muted small">({t('se activa desde Combate, ej. Bladesong o Longstrider')})</span></span>
       </label>
     </div>
   {/each}
 
-  <button onclick={add}>Agregar bonus de speed</button>
+  <button onclick={add}>{t('Agregar bonus de speed')}</button>
   <p class="muted small">
-    Para feats, subclass, spells o items que cambian tu speed. Cuando importes el compendium, estos bonos vendrán
-    incluidos en cada raza o feat y se agregarán solos.
+    {t('Para feats, subclass, spells o items que cambian tu speed y que los packs no traen.')}
   </p>
 </div>
 

@@ -3,6 +3,7 @@ import { sameName, slug, type Feature, type Pack, type PackBackground, type Pack
 
 import { asiSlots, featSource, skillSources } from './derive';
 import { SKILLS } from './tables';
+import { t as tr } from '../i18n.svelte';
 
 const SKILL_IDS = SKILLS.map((s) => s.id);
 
@@ -246,7 +247,7 @@ export function skillChoiceSlots(c: Character, packs: Pack[]): SkillChoiceSlot[]
   const bg = findBackground(packs, c.background.ref)?.item;
   if (bg?.skillChoices) out.push({ source: 'background-choice', label: bg.name, count: bg.skillChoices.count, from: ids(bg.skillChoices.from) });
   // Feats con skills a elección (Skilled, Skill Expert, Observant 2024, Keen Mind 2024...).
-  const modeLabel = { prof: 'proficiency', expertise: 'expertise', either: 'proficiency o expertise' } as const;
+  const modeLabel = { prof: 'proficiency', expertise: 'expertise', either: tr('proficiency o expertise') };
   for (const { owner, ref } of featInstances(c, packs)) {
     const f = findFeat(packs, ref);
     f?.item.skills.forEach((g, i) => {
