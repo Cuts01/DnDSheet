@@ -1,11 +1,11 @@
 @class Sorcerer | hitDie 6 | caster full | spell cha | saves con cha | sublevel 3 | sublabel Sorcerer Subclass
 @prof weapons simple | skills 2 from Arcana, Deception, Insight, Intimidation, Persuasion, Religion
 1 | Spellcasting | Prepare Sorcerer spells cast with Charisma, using an Arcane Focus.
-1 | Innate Sorcery | As a Bonus Action, for 1 minute your Sorcerer spell save DC rises by 1 and you have advantage on Sorcerer spell attacks. Twice per Long Rest.
-2 | Font of Magic | Sorcery Points equal to your Sorcerer level; convert them into spell slots and slots into points.
-2 | Metamagic | Learn two Metamagic options to alter spells with Sorcery Points; more at 10th and 17th level.
+1 | Innate Sorcery | As a Bonus Action, for 1 minute your Sorcerer spell save DC rises by 1 and you have advantage on Sorcerer spell attacks. Twice per Long Rest. {res long 2 Innate Sorcery}
+2 | Font of Magic | Sorcery Points equal to your Sorcerer level; convert them into spell slots and slots into points. {res long level Sorcery Points}
+2 | Metamagic | Learn two Metamagic options to alter spells with Sorcery Points; more at 10th and 17th level. {pick metamagic 2@2,4@10,6@17 Metamagic}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
-5 | Sorcerous Restoration | Once per Long Rest, when you finish a Short Rest, regain Sorcery Points up to half your Sorcerer level.
+5 | Sorcerous Restoration | Once per Long Rest, when you finish a Short Rest, regain Sorcery Points up to half your Sorcerer level. {res long 1 Sorcerous Restoration}
 7 | Sorcery Incarnate | Spend 2 Sorcery Points to use Innate Sorcery without uses left, and apply two Metamagic options to a spell while it's active.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
@@ -19,40 +19,40 @@
 6 | Psionic Sorcery | Cast your Psionic Spells by spending Sorcery Points equal to the spell's level instead of a slot, with no Verbal, Somatic or most Material components.
 6 | Psychic Defenses | Resistance to Psychic damage and advantage on saves to avoid or end Charmed and Frightened.
 14 | Revelation in Flesh | As a Bonus Action, spend Sorcery Points for 10 minutes of bodily changes: flying, swimming and water breathing, seeing invisible creatures, or squeezing through tight spaces.
-18 | Warping Implosion | As a Magic action, teleport up to 120 feet and pull nearby creatures toward the spot you left, damaging them on a failed Strength save. Once per Long Rest or 5 Sorcery Points.
+18 | Warping Implosion | As a Magic action, teleport up to 120 feet and pull nearby creatures toward the spot you left, damaging them on a failed Strength save. Once per Long Rest or 5 Sorcery Points. {res long 1 Warping Implosion}
 
 @sub Clockwork Sorcery | PHB 2024
 3 | Clockwork Spells | Always prepared. Level 3: Aid, Alarm, Lesser Restoration, Protection from Evil and Good. Level 5: Dispel Magic, Protection from Energy. Level 7: Freedom of Movement, Summon Construct. Level 9: Greater Restoration, Wall of Force.
-3 | Restore Balance | As a Reaction, cancel advantage or disadvantage on a d20 roll of a creature within 60 feet. Charisma modifier uses per Long Rest.
+3 | Restore Balance | As a Reaction, cancel advantage or disadvantage on a d20 roll of a creature within 60 feet. Charisma modifier uses per Long Rest. {res long cha Restore Balance}
 6 | Bastion of Law | Spend 1 to 5 Sorcery Points to give yourself or a creature within 30 feet that many d8s to reduce incoming damage.
-14 | Trance of Order | As a Bonus Action, for 1 minute attacks against you can't have advantage and your d20 rolls of 9 or lower count as 10. Once per Long Rest or 5 Sorcery Points.
-18 | Clockwork Cavalcade | As a Magic action, summon spirits of order in a 30-foot cube that heal up to 100 HP, repair objects and end spells of level 6 or lower. Once per Long Rest or 7 Sorcery Points.
+14 | Trance of Order | As a Bonus Action, for 1 minute attacks against you can't have advantage and your d20 rolls of 9 or lower count as 10. Once per Long Rest or 5 Sorcery Points. {res long 1 Trance of Order}
+18 | Clockwork Cavalcade | As a Magic action, summon spirits of order in a 30-foot cube that heal up to 100 HP, repair objects and end spells of level 6 or lower. Once per Long Rest or 7 Sorcery Points. {res long 1 Clockwork Cavalcade}
 
 @sub Draconic Sorcery | PHB 2024
 3 | Draconic Resilience | Your HP maximum increases by 3 plus 1 per later Sorcerer level, and without armor your AC is 10 + Dexterity modifier + Charisma modifier.
 3 | Draconic Spells | Always prepared. Level 3: Alter Self, Chromatic Orb, Command, Dragon's Breath. Level 5: Fear, Fly. Level 7: Arcane Eye, Charm Monster. Level 9: Legend Lore, Summon Dragon.
 6 | Elemental Affinity | Choose a dragon damage type: gain resistance to it and add your Charisma modifier to one damage roll of spells that deal it.
-14 | Dragon Wings | As a Bonus Action, sprout wings for 1 hour and gain a 60-foot Fly Speed. Once per Long Rest or 3 Sorcery Points.
-18 | Dragon Companion | Cast Summon Dragon without material components, once per Long Rest without a slot, optionally without Concentration for 1 minute.
+14 | Dragon Wings | As a Bonus Action, sprout wings for 1 hour and gain a 60-foot Fly Speed. Once per Long Rest or 3 Sorcery Points. {res long 1 Dragon Wings}
+18 | Dragon Companion | Cast Summon Dragon without material components, once per Long Rest without a slot, optionally without Concentration for 1 minute. {res long 1 Summon Dragon (free)}
 
 @sub Shadow Sorcery | Ravenloft: The Horrors Within
 3 | Shadow Spells | Always prepared. Level 3: Bane, Darkness, Inflict Wounds, Pass without Trace. Level 5: Hunger of Hadar, Nondetection. Level 7: Greater Invisibility, Phantasmal Killer. Level 9: Contagion, Creation.
 3 | Eyes of the Dark | Darkvision 120 feet and Blindsight 10 feet, and you see through Darkness you create.
-3 | Strength of the Grave | When you drop to 0 HP but don't die, make a Charisma save (DC 5 + damage) to have HP equal to Charisma modifier + Sorcerer level instead. Once per Long Rest.
+3 | Strength of the Grave | When you drop to 0 HP but don't die, make a Charisma save (DC 5 + damage) to have HP equal to Charisma modifier + Sorcerer level instead. Once per Long Rest. {res long 1 Strength of the Grave}
 6 | Beasts of Ill Omen | Spend 3 Sorcery Points as a Bonus Action to summon a shadowy beast without a slot; enemies near it have disadvantage on saves against your spells.
 14 | Shadow Walk | As a Bonus Action while in dim light or darkness, teleport up to 120 feet to another dim or dark space you can see.
-18 | Umbral Form | While Innate Sorcery is active, take a shadow form: move through creatures and objects and resist most damage. Once per Long Rest or 6 Sorcery Points.
+18 | Umbral Form | While Innate Sorcery is active, take a shadow form: move through creatures and objects and resist most damage. Once per Long Rest or 6 Sorcery Points. {res long 1 Umbral Form}
 
 @sub Spellfire Sorcery | Heroes of Faerun
 3 | Spellfire Burst | Once per turn, when you spend Sorcery Points on a Magic action or Bonus Action, release Bolstering Flames (temp HP) or Radiant Fire (1d4 damage).
 3 | Spellfire Spells | Always prepared. Level 3: Cure Wounds, Guiding Bolt, Lesser Restoration, Scorching Ray. Level 5: Aura of Vitality, Dispel Magic. Level 7: Fire Shield, Wall of Fire. Level 9: Flame Strike, Greater Restoration.
 6 | Absorb Spells | Counterspell is always prepared, and you regain 1d4 Sorcery Points when a creature fails its save against your Counterspell.
 14 | Honed Spellfire | Bolstering Flames adds your Sorcerer level to the temp HP, and Radiant Fire becomes 1d8.
-18 | Crown of Spellfire | Enhance Innate Sorcery once per Long Rest (or 5 Sorcery Points) to gain damage reduction with Hit Dice, a 60-foot Fly Speed with hover, and no damage on successful half-damage saves.
+18 | Crown of Spellfire | Enhance Innate Sorcery once per Long Rest (or 5 Sorcery Points) to gain damage reduction with Hit Dice, a 60-foot Fly Speed with hover, and no damage on successful half-damage saves. {res long 1 Crown of Spellfire}
 
 @sub Wild Magic Sorcery | PHB 2024
 3 | Wild Magic Surge | Once per turn after casting a Sorcerer spell with a slot, roll a d20; on a 20, roll on the Wild Magic Surge table.
-3 | Tides of Chaos | Give yourself advantage on one d20 Test. It recharges on a Long Rest, or when the GM has you roll on the surge table after casting a Sorcerer spell.
+3 | Tides of Chaos | Give yourself advantage on one d20 Test. It recharges on a Long Rest, or when the GM has you roll on the surge table after casting a Sorcerer spell. {res long 1 Tides of Chaos}
 6 | Bend Luck | As a Reaction and 1 Sorcery Point, add or subtract 1d4 from another creature's d20 Test.
 14 | Controlled Chaos | When you roll on the surge table, roll twice and pick either result.
-18 | Tamed Surge | Once per Long Rest, after casting a Sorcerer spell with a slot, choose a surge effect from the table instead of rolling.
+18 | Tamed Surge | Once per Long Rest, after casting a Sorcerer spell with a slot, choose a surge effect from the table instead of rolling. {res long 1 Tamed Surge}

@@ -4,6 +4,7 @@ import { sameName, slug, type Feature, type Pack, type PackBackground, type Pack
 import { asiSlots, featSource, skillSources } from './derive';
 import { SKILLS } from './tables';
 import { t as tr } from '../i18n.svelte';
+import { featureProficiencies, featureSkillSlots } from './grants';
 
 const SKILL_IDS = SKILLS.map((s) => s.id);
 
@@ -194,6 +195,11 @@ export function proficiencies(c: Character, packs: Pack[]): Proficiencies {
     out.tools.push(...bg.tools);
     out.languages.push(...bg.languages);
   }
+  const fp = featureProficiencies(c, packs);
+  out.armor.push(...fp.armor);
+  out.weapons.push(...fp.weapons);
+  out.tools.push(...fp.tools);
+  out.languages.push(...fp.languages);
   const x = c.extraProficiencies;
   return {
     armor: uniq([...out.armor, ...x.armor]),
@@ -259,6 +265,8 @@ export function skillChoiceSlots(c: Character, packs: Pack[]): SkillChoiceSlot[]
       out.push({ source, label: `${f.item.name} (${modeLabel[g.mode]})`, count: g.count, from, mode: g.mode });
     });
   }
+  // Class features con skills a elección (Rogue Expertise, Bonus Proficiency, Blessings of Knowledge...).
+  out.push(...featureSkillSlots(c, packs));
   return out;
 }
 

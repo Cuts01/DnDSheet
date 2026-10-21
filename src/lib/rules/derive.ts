@@ -121,8 +121,9 @@ export function profAmount(level: ProfLevel, bonus: number): number {
   }
 }
 
-export const saveBonus = (c: Character, a: Ability) =>
-  abilityMod(c, a) + (c.saves.includes(a) ? pb(c) : 0);
+/* Proficient en un save: los marcados a mano más los que dan los features (autoSaves). */
+export const hasSave = (c: Character, a: Ability) => c.saves.includes(a) || c.autoSaves.includes(a);
+export const saveBonus = (c: Character, a: Ability) => abilityMod(c, a) + (hasSave(c, a) ? pb(c) : 0);
 
 /*
  * Skills: lo marcado a mano manda (expertise); si no, cuenta como proficient si alguna fuente la otorga.
@@ -130,10 +131,22 @@ export const saveBonus = (c: Character, a: Ability) =>
  * o e (proficiency, o expertise si otra fuente ya la daba). Si el feat ya no está en ese slot, la fuente se ignora.
  */
 const FEAT_SOURCE = /^feat([pxe]):([^|]+)\|([^|]*)\|\d+$/;
+/*
+ * Fuentes de class features: ftr<modo>:<classId>@<nivel>@<subclassId>|<featureId>|<n>.
+ * Valen mientras tengas esa clase en ese nivel (y esa subclass, si el feature es de subclass).
+ */
+const FTR_SOURCE = /^ftr([pxe]):([^@|]+)@(\d+)@([^|]*)\|/;
+export const featureSource = (mode: 'prof' | 'expertise' | 'either', classId: string, level: number, subId: string, featureId: string, n: string | number) =>
+  `ftr${mode === 'prof' ? 'p' : mode === 'expertise' ? 'x' : 'e'}:${classId}@${level}@${subId}|${featureId}|${n}`;
 export const featSource = (mode: 'prof' | 'expertise' | 'either', owner: string, ref: string, i: number) =>
   `feat${mode === 'prof' ? 'p' : mode === 'expertise' ? 'x' : 'e'}:${owner}|${ref}|${i}`;
 
 function liveSource(c: Character, src: string): boolean {
+  const ftr = FTR_SOURCE.exec(src);
+  if (ftr) {
+    const k = c.classes.find((x) => x.id === ftr[2]);
+    return !!k && k.level >= Number(ftr[3]) && (!ftr[4] || k.subclassId === ftr[4]);
+  }
   const m = FEAT_SOURCE.exec(src);
   if (!m) return true;
   const [, , owner, ref] = m;
@@ -153,8 +166,8 @@ export function skillLevel(c: Character, s: SkillDef): ProfLevel {
   if (manual) return manual;
   const src = skillSources(c, s.id);
   if (!src.length) return 'none';
-  if (src.some((x) => x.startsWith('featx:'))) return 'expertise';
-  if (src.some((x) => x.startsWith('feate:')) && src.length > 1) return 'expertise';
+  if (src.some((x) => x.startsWith('featx:') || x.startsWith('ftrx:'))) return 'expertise';
+  if (src.some((x) => x.startsWith('feate:') || x.startsWith('ftre:')) && src.length > 1) return 'expertise';
   return 'prof';
 }
 export const skillBonus = (c: Character, s: SkillDef) =>

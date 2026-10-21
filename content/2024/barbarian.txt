@@ -1,12 +1,12 @@
 @class Barbarian | hitDie 12 | caster none | spell none | saves str con | sublevel 3 | sublabel Barbarian Subclass
 @prof armor light, medium, shields | weapons simple, martial | skills 2 from Animal Handling, Athletics, Intimidation, Nature, Perception, Survival
 @mc armor shields | weapons simple, martial
-1 | Rage | As a Bonus Action, rage: resistance to Bludgeoning, Piercing and Slashing, extra Strength damage and advantage on Strength checks and saves. You can't cast or concentrate. Limited uses per rest.
+1 | Rage | As a Bonus Action, rage: resistance to Bludgeoning, Piercing and Slashing, extra Strength damage and advantage on Strength checks and saves. You can't cast or concentrate. Limited uses per rest. {res short1 2@1,3@3,4@6,5@12,6@17 Rage}
 1 | Unarmored Defense | Without armor, your AC is 10 + Dexterity modifier + Constitution modifier. Shields still apply.
 1 | Weapon Mastery | Use the mastery properties of two kinds of melee weapons, changeable after a Long Rest; more kinds at higher levels.
 2 | Danger Sense | Advantage on Dexterity saving throws unless you are Incapacitated.
 2 | Reckless Attack | On your first attack of a turn, gain advantage on Strength attacks, but attacks against you have advantage until your next turn.
-3 | Primal Knowledge | Gain another skill proficiency, and while raging you can use Strength for some Dexterity, Wisdom and Charisma skill checks.
+3 | Primal Knowledge | Gain another skill proficiency, and while raging you can use Strength for some Dexterity, Wisdom and Charisma skill checks. {skillpick 1 prof Animal Handling, Athletics, Intimidation, Nature, Perception, Survival}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Extra Attack | Attack twice when you take the Attack action.
 5 | Fast Movement | Your Speed increases by 10 feet while you aren't wearing Heavy armor. The app already adds this automatically.
@@ -28,12 +28,12 @@
 3 | Frenzy | When you use Reckless Attack while raging, your first Strength hit each turn deals extra d6s equal to your Rage Damage bonus.
 6 | Mindless Rage | While raging, you're immune to Charmed and Frightened, and entering Rage ends them.
 10 | Retaliation | When a creature within 5 feet damages you, use a Reaction to make a melee attack against it.
-14 | Intimidating Presence | As a Bonus Action, frighten creatures of your choice within 30 feet on a failed Wisdom save. Once per Long Rest or a Rage use.
+14 | Intimidating Presence | As a Bonus Action, frighten creatures of your choice within 30 feet on a failed Wisdom save. Once per Long Rest or a Rage use. {res long 1 Intimidating Presence}
 
 @sub Path of the Wild Heart | PHB 2024
 3 | Animal Speaker | Cast Beast Sense and Speak with Animals as rituals using Wisdom.
 3 | Rage of the Wilds | Each time you rage, choose Bear (resist almost all damage), Eagle (Dash and Disengage as a Bonus Action) or Wolf (allies have advantage against foes next to you).
-6 | Aspect of the Wilds | Choose Owl (Darkvision 60 feet), Panther (Climb Speed) or Salmon (Swim Speed); change after a Long Rest.
+6 | Aspect of the Wilds | Choose Owl (Darkvision 60 feet), Panther (Climb Speed) or Salmon (Swim Speed); change after a Long Rest. {pick aspect-of-the-wilds 1 Aspect of the Wilds}
 10 | Nature Speaker | Cast Commune with Nature as a ritual using Wisdom.
 14 | Power of the Wilds | Each time you rage, choose Falcon (fly while unarmored), Lion (enemies near you have disadvantage attacking others) or Ram (knock creatures Prone on hit).
 
@@ -46,7 +46,7 @@
 
 @sub Path of the Zealot | PHB 2024
 3 | Divine Fury | While raging, your first hit each turn deals extra 1d6 + half your Barbarian level Necrotic or Radiant damage.
-3 | Warrior of the Gods | A pool of d12s you can spend as a Bonus Action to heal yourself; it grows at 6th, 12th and 17th level and refills on a Long Rest.
+3 | Warrior of the Gods | A pool of d12s you can spend as a Bonus Action to heal yourself; it grows at 6th, 12th and 17th level and refills on a Long Rest. {res long 4@3,5@6,6@12,7@17 die:d12 Warrior of the Gods}
 6 | Fanatical Focus | Once per Rage, reroll a failed save with a bonus equal to your Rage Damage.
-10 | Zealous Presence | As a Bonus Action, up to ten creatures within 60 feet gain advantage on attacks and saves until your next turn. Once per Long Rest or a Rage use.
-14 | Rage of the Gods | Once per Long Rest, when you rage, take a divine form for 1 minute: fly, resist Necrotic, Psychic and Radiant, and spend Rage uses to save creatures from dropping to 0 HP.
+10 | Zealous Presence | As a Bonus Action, up to ten creatures within 60 feet gain advantage on attacks and saves until your next turn. Once per Long Rest or a Rage use. {res long 1 Zealous Presence}
+14 | Rage of the Gods | Once per Long Rest, when you rage, take a divine form for 1 minute: fly, resist Necrotic, Psychic and Radiant, and spend Rage uses to save creatures from dropping to 0 HP. {res long 1 Rage of the Gods}

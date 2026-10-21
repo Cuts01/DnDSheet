@@ -43,6 +43,12 @@ El código no incluye contenido propietario. Las únicas tablas incluidas son me
 - Las spells de daño que puedes lanzar aparecen en la tarjeta de Ataques de Combate con to-hit o DC y daño. Los cantrips escalan solos en los niveles 5, 11 y 17, y Eldritch Blast suma CHA si tienes Agonizing Blast.
 - Lanzar: eliges el slot (o Pact slot, o ritual) y se descuenta. Las spells con concentration quedan marcadas en Combate y Spells hasta que las terminas o haces Long Rest.
 
+## Class features automáticos
+
+Los features de los packs dan solos sus proficiencies (skills, expertise, armor, weapons, tools, idiomas y saves), sus recursos con usos (Superiority Dice, Rage, Ki, Channel Divinity, Lay on Hands...) y sus elecciones (maneuvers, fighting styles, metamagic, infusions, runes, arcane shots...). Los recursos aparecen en Combate y se recuperan con Short o Long Rest; las elecciones se hacen en Rasgos; las skills a elección, en Editar > Proficiencies.
+
+En `content/<ruleset>/<clase>.txt` se marcan con tokens al final del texto del feature, por ejemplo `{expertise Nature, Survival}`, `{skillpick 2@1,4@6 expertise}`, `{toolpick 1 artisan}`, `{save wis}`, `{res short 4@3,5@7 die:d8@3,d10@10 Superiority Dice}` o `{pick maneuvers 3@3,5@7 Maneuvers}`. Las listas de opciones están en `content/<ruleset>/_options.txt`.
+
 ## Varios personajes
 
 La app guarda todos los personajes que quieras en el dispositivo. Toca el nombre arriba (o ve a Datos > Personajes) para cambiar de personaje, crear uno nuevo, duplicarlo o borrarlo. Importar un respaldo lo agrega como personaje nuevo, o reemplaza al que tenga el mismo nombre.

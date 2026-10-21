@@ -19,29 +19,29 @@
 14 | Spell Resistance | Advantage on saves against spells and resistance to spell damage.
 
 @sub Bladesinging | TCoE
-2 | Training in War and Song | Proficiency with light armor, one one-handed melee weapon, and Performance.
-2 | Bladesong | As a bonus action without medium or heavy armor or a shield, for 1 minute: add Intelligence modifier to AC and concentration saves, +10 feet walking speed, and advantage on Acrobatics. Proficiency bonus uses per long rest. {speed +10 cond}
+2 | Training in War and Song | Proficiency with light armor, one one-handed melee weapon, and Performance. {armor light} {skill Performance}
+2 | Bladesong | As a bonus action without medium or heavy armor or a shield, for 1 minute: add Intelligence modifier to AC and concentration saves, +10 feet walking speed, and advantage on Acrobatics. Proficiency bonus uses per long rest. {speed +10 cond} {res long pb Bladesong}
 6 | Extra Attack | Attack twice when you take the Attack action, and one attack can be replaced with a cantrip.
 10 | Song of Defense | While Bladesong is active, use your reaction and a spell slot to reduce damage by five times the slot's level.
 14 | Song of Victory | While Bladesong is active, add your Intelligence modifier to melee weapon damage.
 
 @sub Chronurgy Magic | EGtW
-2 | Chronal Shift | As a reaction, force a creature within 30 feet to reroll an attack, check or save. Twice per long rest.
+2 | Chronal Shift | As a reaction, force a creature within 30 feet to reroll an attack, check or save. Twice per long rest. {res long 2 Chronal Shift}
 2 | Temporal Awareness | Add your Intelligence modifier to initiative rolls.
-6 | Momentary Stasis | As an action, a Large or smaller creature within 60 feet makes a Constitution save or is incapacitated with speed 0 until your next turn. Intelligence modifier uses per long rest.
-10 | Arcane Abeyance | When you cast a 4th-level or lower spell, store it in a bead for 1 hour so another creature can release it. Once per short or long rest.
+6 | Momentary Stasis | As an action, a Large or smaller creature within 60 feet makes a Constitution save or is incapacitated with speed 0 until your next turn. Intelligence modifier uses per long rest. {res long int Momentary Stasis}
+10 | Arcane Abeyance | When you cast a 4th-level or lower spell, store it in a bead for 1 hour so another creature can release it. Once per short or long rest. {res short 1 Arcane Abeyance}
 14 | Convergent Future | As a reaction, make an attack, check or save near you succeed or fail; you gain a level of exhaustion.
 
 @sub School of Conjuration | PHB
 2 | Conjuration Savant | Copying conjuration spells costs half the gold and time.
 2 | Minor Conjuration | As an action, conjure a nonmagical object up to 3 feet on a side that lasts 1 hour.
-6 | Benign Transportation | As an action, teleport up to 30 feet or swap places with a willing creature. Once per long rest or after casting a conjuration spell.
+6 | Benign Transportation | As an action, teleport up to 30 feet or swap places with a willing creature. Once per long rest or after casting a conjuration spell. {res long 1 Benign Transportation}
 10 | Focused Conjuration | Damage can't break your concentration on conjuration spells.
 14 | Durable Summons | Creatures you summon with conjuration spells gain 30 temp HP.
 
 @sub School of Divination | PHB
 2 | Divination Savant | Copying divination spells costs half the gold and time.
-2 | Portent | After a long rest, roll two d20s and record them; replace any attack roll, check or save you can see with one of them. Three dice at 14th level.
+2 | Portent | After a long rest, roll two d20s and record them; replace any attack roll, check or save you can see with one of them. Three dice at 14th level. {res long 2@2,3@14 Portent}
 6 | Expert Divination | When you cast a divination spell of 2nd level or higher, regain a lower-level spell slot (up to 5th).
 10 | The Third Eye | As an action, gain darkvision, ethereal sight, the ability to read any language, or see invisibility until your next rest.
 14 | Greater Portent | Roll three d20s for Portent.
@@ -63,14 +63,14 @@
 @sub Graviturgy Magic | EGtW
 2 | Adjust Density | As an action, halve or double a creature's weight for 1 minute, changing its speed, jumps and Strength checks.
 6 | Gravity Well | When you cast a spell on a creature, you can move it 5 feet.
-10 | Violent Attraction | As a reaction, add 1d10 to a weapon attack's damage or 2d10 to falling damage. Intelligence modifier uses per long rest.
-14 | Event Horizon | As an action, for 1 minute hostile creatures that start their turn within 30 feet take 2d10 force damage and have speed 0 on a failed Strength save. Once per long rest or a 3rd-level slot.
+10 | Violent Attraction | As a reaction, add 1d10 to a weapon attack's damage or 2d10 to falling damage. Intelligence modifier uses per long rest. {res long int Violent Attraction}
+14 | Event Horizon | As an action, for 1 minute hostile creatures that start their turn within 30 feet take 2d10 force damage and have speed 0 on a failed Strength save. Once per long rest or a 3rd-level slot. {res long 1 Event Horizon}
 
 @sub School of Illusion | PHB
 2 | Illusion Savant | Copying illusion spells costs half the gold and time.
 2 | Improved Minor Illusion | You learn Minor Illusion, and it creates both a sound and an image.
 6 | Malleable Illusions | As an action, change the nature of an illusion spell you cast with a duration of 1 minute or more.
-10 | Illusory Self | As a reaction, create an illusory duplicate that makes an attack miss you. Once per short or long rest.
+10 | Illusory Self | As a reaction, create an illusory duplicate that makes an attack miss you. Once per short or long rest. {res short 1 Illusory Self}
 14 | Illusory Reality | As a bonus action, make one inanimate, nonmagical object in your illusion real for 1 minute.
 
 @sub School of Necromancy | PHB
@@ -83,7 +83,7 @@
 @sub Order of Scribes | TCoE
 2 | Wizardly Quill | As a bonus action, create a magical quill that writes without ink and copies spells faster.
 2 | Awakened Spellbook | Your spellbook is a focus; you can change a spell's damage type to that of another spell in your book, and cast rituals at normal speed once per long rest.
-6 | Manifest Mind | As a bonus action, manifest your spellbook's mind within 60 feet; cast spells from its space proficiency bonus times per long rest.
+6 | Manifest Mind | As a bonus action, manifest your spellbook's mind within 60 feet; cast spells from its space proficiency bonus times per long rest. {res long pb Manifest Mind}
 10 | Master Scrivener | After a long rest, create a scroll from your spellbook that casts the spell one level higher.
 14 | One with the Word | Advantage on Arcana checks, and when you take damage while your mind is manifested, dismiss it to prevent damage by removing spells from your book temporarily.
 
@@ -91,7 +91,7 @@
 2 | Transmutation Savant | Copying transmutation spells costs half the gold and time.
 2 | Minor Alchemy | Temporarily change an object's material (wood, stone, iron, copper or silver) for 1 hour.
 6 | Transmuter's Stone | Create a stone that grants darkvision, +10 feet speed, Constitution save proficiency, or resistance to an element. {speed +10 cond}
-10 | Shapechanger | Polymorph is in your spellbook, and you can cast it on yourself without a slot once per short or long rest (CR 1 or lower beast).
+10 | Shapechanger | Polymorph is in your spellbook, and you can cast it on yourself without a slot once per short or long rest (CR 1 or lower beast). {res short 1 Polymorph (Shapechanger)}
 14 | Master Transmuter | Consume your stone for a major effect: Major Transformation, Panacea, Restore Life or Restore Youth.
 
 @sub War Magic | XGtE

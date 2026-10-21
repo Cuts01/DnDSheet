@@ -26,12 +26,82 @@ export const PackEffectSchema = z.object({
 });
 export type PackEffect = z.infer<typeof PackEffectSchema>;
 
+const strs = z.array(z.string()).default([]);
+
+/* Lo que otorga un feature al tenerlo: proficiencies fijas o a elección. */
+export const FeatureGrantsSchema = z
+  .object({
+    skills: strs.describe('Skills con proficiency'),
+    expertise: strs.describe('Skills con expertise (también dan proficiency)'),
+    skillChoices: z
+      .array(
+        z.object({
+          count: z.union([z.number().int().min(1).max(18), z.string().min(1)]).describe('Número o tabla por nivel, ej. "2@1,4@6"'),
+          from: strs.describe('vacío = cualquier skill (en modo expertise: las que ya tienes)'),
+          mode: z.enum(['prof', 'expertise', 'either']).default('prof')
+        })
+      )
+      .default([]),
+    armor: strs,
+    weapons: strs,
+    tools: strs,
+    languages: strs,
+    saves: z.array(z.enum(ABILITIES)).default([]),
+    toolChoices: z.array(z.object({ count: z.number().int().min(1).max(6), from: strs.describe('Nombres; "artisan" = artisan tools') })).default([]),
+    languageChoices: z.number().int().min(0).max(6).default(0),
+    saveChoices: z.array(z.object({ count: z.number().int().min(1).max(6), from: z.array(z.enum(ABILITIES)).default([...ABILITIES]) })).default([])
+  })
+  .nullable()
+  .default(null);
+export type FeatureGrants = NonNullable<z.infer<typeof FeatureGrantsSchema>>;
+
+/*
+ * Cantidades que cambian con el nivel de la clase. Una tabla "4@3,5@7,6@15" toma el valor del mayor nivel alcanzado.
+ * Cada valor puede ser un número, pb, level, una ability (su modificador, mínimo 1) o sumas y productos simples:
+ * "level*5", "pb*2", "1+cha", "level/2" (redondea abajo).
+ */
+export const AmountSchema = z.string().min(1);
+
+export const FeatureResourceSchema = z
+  .object({
+    name: z.string().min(1).describe('Ej. Superiority Dice, Rage, Ki Points'),
+    uses: AmountSchema,
+    recharge: z.string().default('long').describe('short, long o short1 (uno por Short Rest, todos por Long Rest). Acepta tabla: "long@1,short@5"'),
+    die: z.string().default('').describe('Dado del recurso, puede ser tabla: "d8@3,d10@10,d12@18"')
+  })
+  .nullable()
+  .default(null);
+
+/* Elegir opciones de una lista del pack (maneuvers, fighting styles, metamagic...). "feat:<categoría>" usa feats del pack. */
+export const FeatureChooseSchema = z
+  .object({
+    list: z.string().min(1),
+    count: AmountSchema,
+    label: z.string().default('').describe('Nombre para mostrar; por defecto el de la lista')
+  })
+  .nullable()
+  .default(null);
+
 export const FeatureSchema = z.object({
   id: z.string().optional().describe('Opcional. Si falta se genera desde el nivel y el nombre'),
   level: z.number().int().min(1).max(20),
   name: z.string().min(1),
   text: z.string().default('').describe('Texto del feature. Usa \\n\\n para separar parrafos'),
-  effects: z.array(PackEffectSchema).default([])
+  effects: z.array(PackEffectSchema).default([]),
+  grants: FeatureGrantsSchema,
+  resource: FeatureResourceSchema,
+  choose: FeatureChooseSchema
+});
+
+/* Opciones elegibles por features: maneuvers, fighting styles, metamagic, arcane shots, runes... */
+export const PackOptionSchema = z.object({
+  list: z.string().min(1).describe('Clave de la lista, ej. maneuvers'),
+  listName: z.string().default('').describe('Nombre visible de la lista'),
+  name: z.string().min(1),
+  prerequisite: z.string().default(''),
+  minLevel: z.number().int().min(1).max(20).default(1),
+  text: z.string().default(''),
+  grants: FeatureGrantsSchema
 });
 export type Feature = z.infer<typeof FeatureSchema> & { id: string };
 
@@ -265,7 +335,8 @@ export const PackSchema = z.object({
   feats: z.array(PackFeatSchema).default([]),
   invocations: z.array(PackInvocationSchema).default([]),
   items: z.array(PackItemSchema).default([]),
-  spells: z.array(PackSpellSchema).default([])
+  spells: z.array(PackSpellSchema).default([]),
+  options: z.array(PackOptionSchema).default([])
 });
 export type PackInput = z.input<typeof PackSchema>;
 type PackParsed = z.infer<typeof PackSchema>;
@@ -285,13 +356,14 @@ export type PackFeat = WithId<z.infer<typeof PackFeatSchema>>;
 export type PackInvocation = WithId<z.infer<typeof PackInvocationSchema>>;
 export type PackItem = WithId<z.infer<typeof PackItemSchema>>;
 export type PackSpell = WithId<z.infer<typeof PackSpellSchema>>;
+export type PackOption = z.infer<typeof PackOptionSchema>;
 export type WeaponData = z.infer<typeof WeaponDataSchema>;
 export type ArmorData = z.infer<typeof ArmorDataSchema>;
 export type ProfSet = z.infer<typeof ProfSetSchema>;
 export type SkillChoice = z.infer<typeof SkillChoiceSchema>;
 
 export interface Pack
-  extends Omit<PackParsed, 'classes' | 'subclasses' | 'species' | 'backgrounds' | 'feats' | 'invocations' | 'items' | 'spells' | '$schema'> {
+  extends Omit<PackParsed, 'classes' | 'subclasses' | 'species' | 'backgrounds' | 'feats' | 'invocations' | 'items' | 'spells' | 'options' | '$schema'> {
   classes: PackClass[];
   subclasses: PackSubclass[];
   species: PackSpecies[];
@@ -300,6 +372,7 @@ export interface Pack
   invocations: PackInvocation[];
   items: PackItem[];
   spells: PackSpell[];
+  options: PackOption[];
 }
 
 /* Ids estables por nombre; si se repite un nombre se agrega un sufijo. */
@@ -337,7 +410,8 @@ export function normalizePack(p: PackParsed): Pack {
     feats: withIds(p.feats),
     invocations: withIds(p.invocations),
     items: withIds(p.items),
-    spells: withIds(p.spells)
+    spells: withIds(p.spells),
+    options: p.options
   };
 }
 

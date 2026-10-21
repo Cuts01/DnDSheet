@@ -1,8 +1,8 @@
 @class Sorcerer | hitDie 6 | caster full | spell cha | saves con cha | sublevel 1 | sublabel Sorcerous Origin
 @prof weapons dagger, dart, sling, quarterstaff, light crossbow | skills 2 from Arcana, Deception, Insight, Intimidation, Persuasion, Religion
 1 | Spellcasting | You know sorcerer cantrips and spells and cast them with Charisma, using an arcane focus.
-2 | Font of Magic | Gain sorcery points equal to your sorcerer level. Convert them into spell slots or slots into points. Points return on a long rest.
-3 | Metamagic | Learn two Metamagic options to modify spells with sorcery points; more at 10th and 17th level. One option per spell, except Empowered Spell.
+2 | Font of Magic | Gain sorcery points equal to your sorcerer level. Convert them into spell slots or slots into points. Points return on a long rest. {res long level Sorcery Points}
+3 | Metamagic | Learn two Metamagic options to modify spells with sorcery points; more at 10th and 17th level. One option per spell, except Empowered Spell. {pick metamagic 2@3,3@10,4@17 Metamagic}
 4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 4 | Sorcerous Versatility (Optional) | When you gain an ASI, you can replace a Metamagic option or a sorcerer cantrip.
 5 | Magical Guidance (Optional) | When you fail an ability check, spend 1 sorcery point to reroll it.
@@ -18,17 +18,17 @@
 6 | Psionic Sorcery | Cast your Psionic Spells with sorcery points equal to their level and without verbal, somatic or most material components.
 6 | Psychic Defenses | Resistance to psychic damage and advantage on saves against charmed and frightened.
 14 | Revelation in Flesh | As a bonus action, spend sorcery points for 10 minutes of changes: see invisible, fly, swim and breathe water, or squeeze through tight spaces.
-18 | Warping Implosion | As an action, teleport up to 120 feet and pull creatures near your old spot, dealing force damage. Once per long rest or 5 sorcery points.
+18 | Warping Implosion | As an action, teleport up to 120 feet and pull creatures near your old spot, dealing force damage. Once per long rest or 5 sorcery points. {res long 1 Warping Implosion}
 
 @sub Clockwork Soul | TCoE
 1 | Clockwork Magic | Learn spells at set levels that you can swap for abjuration or transmutation spells. 1st: Alarm, Protection from Evil and Good. 3rd: Aid, Lesser Restoration. 5th: Dispel Magic, Protection from Energy. 7th: Freedom of Movement, Summon Construct. 9th: Greater Restoration, Wall of Force.
-1 | Restore Balance | As a reaction, cancel advantage or disadvantage on a roll of a creature within 60 feet. Proficiency bonus uses per long rest.
+1 | Restore Balance | As a reaction, cancel advantage or disadvantage on a roll of a creature within 60 feet. Proficiency bonus uses per long rest. {res long pb Restore Balance}
 6 | Bastion of Law | Spend 1 to 5 sorcery points to give a creature that many d8s to reduce damage.
-14 | Trance of Order | As a bonus action, for 1 minute attacks against you can't have advantage and your d20 rolls of 9 or lower count as 10. Once per long rest or 5 sorcery points.
-18 | Clockwork Cavalcade | As an action, summon spirits in a 30-foot cube that heal 100 HP, repair objects and end spells of 6th level or lower. Once per long rest or 7 sorcery points.
+14 | Trance of Order | As a bonus action, for 1 minute attacks against you can't have advantage and your d20 rolls of 9 or lower count as 10. Once per long rest or 5 sorcery points. {res long 1 Trance of Order}
+18 | Clockwork Cavalcade | As an action, summon spirits in a 30-foot cube that heal 100 HP, repair objects and end spells of 6th level or lower. Once per long rest or 7 sorcery points. {res long 1 Clockwork Cavalcade}
 
 @sub Draconic Bloodline | PHB
-1 | Dragon Ancestor | Choose a dragon type for its damage type; you speak Draconic and double proficiency on Charisma checks with dragons.
+1 | Dragon Ancestor | Choose a dragon type for its damage type; you speak Draconic and double proficiency on Charisma checks with dragons. {lang Draconic}
 1 | Draconic Resilience | Your HP maximum increases by 1 per sorcerer level, and without armor your AC is 13 + Dexterity modifier (use Mage Armor mode in Editar).
 6 | Elemental Affinity | Add your Charisma modifier to one damage roll of spells of your ancestry's type, and spend 1 sorcery point for resistance to it for 1 hour.
 14 | Dragon Wings | As a bonus action, sprout wings and gain a flying speed equal to your speed.
@@ -36,28 +36,28 @@
 
 @sub Divine Soul | XGtE
 1 | Divine Magic | You can learn cleric spells as sorcerer spells, and gain one bonus spell based on your affinity (good, evil, law, chaos or neutrality).
-1 | Favored by the Gods | When you fail a save or miss an attack, add 2d4 to the roll. Once per short or long rest.
+1 | Favored by the Gods | When you fail a save or miss an attack, add 2d4 to the roll. Once per short or long rest. {res short 1 Favored by the Gods}
 6 | Empowered Healing | Spend 1 sorcery point to reroll healing dice for you or an ally within 5 feet. Once per turn.
 14 | Otherworldly Wings | As a bonus action, gain a 30-foot flying speed.
-18 | Unearthly Recovery | As a bonus action when below half HP, regain half your HP maximum. Once per long rest.
+18 | Unearthly Recovery | As a bonus action when below half HP, regain half your HP maximum. Once per long rest. {res long 1 Unearthly Recovery}
 
 @sub Lunar Sorcery | DSotDQ
 1 | Lunar Embodiment | Learn spells by moon phase (Full Moon, New Moon, Crescent Moon) and choose a phase after each rest; you can cast one of that phase's 1st-level spells free once per long rest.
 1 | Moon Fire | You learn Sacred Flame, and it can target two creatures within 5 feet of each other.
-6 | Lunar Boons | Spend less sorcery points on Metamagic for spells of your current phase's schools. Proficiency bonus uses per long rest.
+6 | Lunar Boons | Spend less sorcery points on Metamagic for spells of your current phase's schools. Proficiency bonus uses per long rest. {res long pb Lunar Boons}
 6 | Waxing and Waning | As a bonus action, spend 1 sorcery point to change your lunar phase.
 14 | Lunar Empowerment | Gain a passive benefit from your current phase (bright light, advantage on Stealth, or resistance to radiant and necrotic).
-18 | Lunar Phenomenon | As a bonus action, unleash your phase's power (heal and blind, invisible teleport, or resistance and teleport). Once per long rest or 5 sorcery points.
+18 | Lunar Phenomenon | As a bonus action, unleash your phase's power (heal and blind, invisible teleport, or resistance and teleport). Once per long rest or 5 sorcery points. {res long 1 Lunar Phenomenon}
 
 @sub Shadow Magic | XGtE
 1 | Eyes of the Dark | Darkvision 120 feet; from 3rd level, cast Darkness for 2 sorcery points and see through it.
-1 | Strength of the Grave | When reduced to 0 HP (not by radiant or a critical), make a Charisma save to drop to 1 HP instead. Once per long rest.
+1 | Strength of the Grave | When reduced to 0 HP (not by radiant or a critical), make a Charisma save to drop to 1 HP instead. Once per long rest. {res long 1 Strength of the Grave}
 6 | Hound of Ill Omen | As a bonus action, spend 3 sorcery points to summon a hound that hunts a creature; it has disadvantage on saves against your spells while the hound is near.
 14 | Shadow Walk | As a bonus action in dim light or darkness, teleport up to 120 feet to another dim or dark space.
 18 | Umbral Form | Spend 6 sorcery points to become shadowy for 1 minute: resist all damage but force and radiant and move through creatures and objects.
 
 @sub Storm Sorcery | XGtE
-1 | Wind Speaker | You speak Primordial and its dialects.
+1 | Wind Speaker | You speak Primordial and its dialects. {lang Primordial}
 1 | Tempestuous Magic | Before or after casting a 1st-level or higher spell, fly up to 10 feet without provoking opportunity attacks.
 6 | Heart of the Storm | Resistance to lightning and thunder; when you cast a lightning or thunder spell, nearby creatures take damage equal to half your sorcerer level.
 6 | Storm Guide | Stop rain around you or control the direction of wind as an action.
@@ -66,7 +66,7 @@
 
 @sub Wild Magic | PHB
 1 | Wild Magic Surge | After you cast a 1st-level or higher sorcerer spell, the DM can have you roll a d20; on a 1, roll on the Wild Magic Surge table.
-1 | Tides of Chaos | Gain advantage on one attack, check or save. It recharges on a long rest or after a Wild Magic Surge.
+1 | Tides of Chaos | Gain advantage on one attack, check or save. It recharges on a long rest or after a Wild Magic Surge. {res long 1 Tides of Chaos}
 6 | Bend Luck | As a reaction, spend 2 sorcery points to add or subtract 1d4 from another creature's attack, check or save.
 14 | Controlled Chaos | When you roll on the Wild Magic Surge table, roll twice and use either result.
 18 | Spell Bombardment | When you roll damage for a spell and get the maximum on a die, roll it again and add it, once per turn.

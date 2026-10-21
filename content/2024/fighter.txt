@@ -1,17 +1,17 @@
 @class Fighter | hitDie 10 | caster none | spell none | saves str con | sublevel 3 | sublabel Fighter Subclass
 @prof armor light, medium, heavy, shields | weapons simple, martial | skills 2 from Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Persuasion, Perception, Survival
 @mc armor light, medium, shields | weapons simple, martial
-1 | Fighting Style | Gain a Fighting Style feat; you can swap it when you gain a Fighter level.
-1 | Second Wind | As a Bonus Action, regain 1d10 + Fighter level HP. Limited uses: one returns on a Short Rest, all on a Long Rest.
+1 | Fighting Style | Gain a Fighting Style feat; you can swap it when you gain a Fighter level. {pick feat:fighting-style 1 Fighting Style}
+1 | Second Wind | As a Bonus Action, regain 1d10 + Fighter level HP. Limited uses: one returns on a Short Rest, all on a Long Rest. {res short1 2@1,3@4,4@10 Second Wind}
 1 | Weapon Mastery | Use the mastery properties of three kinds of weapons, changeable after a Long Rest; more kinds at higher levels.
-2 | Action Surge | Take one additional action on your turn (not the Magic action). Once per Short or Long Rest; twice from 17th level.
+2 | Action Surge | Take one additional action on your turn (not the Magic action). Once per Short or Long Rest; twice from 17th level. {res short 1@2,2@17 Action Surge}
 2 | Tactical Mind | When you fail an ability check, spend a Second Wind use to add 1d10 to it.
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Extra Attack | Attack twice when you take the Attack action.
 5 | Tactical Shift | When you use Second Wind, move up to half your Speed without provoking Opportunity Attacks.
 6 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
-9 | Indomitable | Reroll a failed save with a bonus equal to your Fighter level. Once per Long Rest; more uses at 13th and 17th level.
+9 | Indomitable | Reroll a failed save with a bonus equal to your Fighter level. Once per Long Rest; more uses at 13th and 17th level. {res long 1@9,2@13,3@17 Indomitable}
 9 | Tactical Master | When you attack with a weapon whose mastery you use, you can replace its property with Push, Sap or Slow.
 11 | Two Extra Attacks | Attack three times when you take the Attack action.
 12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
@@ -22,35 +22,34 @@
 20 | Three Extra Attacks | Attack four times when you take the Attack action.
 
 @sub Arcane Archer | Arcana Unleashed
-3 | Arcane Archer Lore | Learn Druidcraft or Prestidigitation (Intelligence) and gain proficiency in Arcana or Nature.
-3 | Arcane Shot | Learn two Arcane Shot options; once per turn, when you hit with ammunition, apply one. Intelligence modifier uses per Short or Long Rest; more options as you level.
+3 | Arcane Archer Lore | Learn Druidcraft or Prestidigitation (Intelligence) and gain proficiency in Arcana or Nature. {skillpick 1 prof Arcana, Nature}
+3 | Arcane Shot | Learn two Arcane Shot options; once per turn, when you hit with ammunition, apply one. Intelligence modifier uses per Short or Long Rest; more options as you level. {res short int Arcane Shot} {pick arcane-shots 2@3,3@7,4@10,5@15,6@18 Arcane Shots}
 7 | Curving Shot | When you miss with a magic arrow, use a Bonus Action to reroll the attack against a different target within 60 feet.
-7 | Magical Ammunition | As an action, imbue ammunition to create darkness, unlock an object or grow a climbable vine. Once per rest or by spending a Second Wind use.
+7 | Magical Ammunition | As an action, imbue ammunition to create darkness, unlock an object or grow a climbable vine. Once per rest or by spending a Second Wind use. {res short 1 Magical Ammunition}
 10 | Ever-Ready Shot | When you roll Initiative, regain one Arcane Shot use.
 15 | Indomitable Teleport | When you succeed on a save using Indomitable, teleport up to 60 feet.
 18 | Masterful Shots | When a creature you can see misses you, use a Reaction to move half your Speed and possibly attack it with a ranged weapon.
 
 @sub Banneret | Heroes of Faerun
-3 | Knightly Envoy | Cast Comprehend Languages as a ritual with Charisma, learn a language, and gain proficiency in a social skill.
-3 | Group Recovery | When you use Second Wind, up to Charisma modifier allies within 30 feet regain 1d4 + Fighter level HP. Once per rest.
+3 | Knightly Envoy | Cast Comprehend Languages as a ritual with Charisma, learn a language, and gain proficiency in a social skill. {langpick 1} {skillpick 1 prof Deception, Intimidation, Performance, Persuasion}
+3 | Group Recovery | When you use Second Wind, up to Charisma modifier allies within 30 feet regain 1d4 + Fighter level HP. Once per rest. {res short 1 Group Recovery}
 7 | Team Tactics | Allies who regain HP from Group Recovery have advantage on d20 Tests until your next turn.
 10 | Rallying Surge | When you use Action Surge, up to Charisma modifier allies within 30 feet can use a Reaction to attack or move half their Speed.
 15 | Shared Resilience | When an ally within 60 feet fails a save, spend an Indomitable use to let them reroll with a bonus equal to your Fighter level.
 18 | Inspiring Commander | Group Recovery and Rallying Surge reach 60 feet, and you're immune to Charmed and Frightened.
 
 @sub Battle Master | PHB 2024
-3 | Combat Superiority | Learn three maneuvers and gain four d8 Superiority Dice that return on a Short or Long Rest; more maneuvers and dice as you level.
-3 | Student of War | Proficiency with one Artisan's Tool and one Fighter skill.
-7 | Know Your Enemy | As a Bonus Action, learn a creature's immunities, resistances and vulnerabilities. Once per Long Rest or a Superiority Die.
+3 | Combat Superiority | Learn three maneuvers and gain four d8 Superiority Dice that return on a Short or Long Rest; more maneuvers and dice as you level. {res short 4@3,5@7,6@15 die:d8@3,d10@10,d12@18 Superiority Dice} {pick maneuvers 3@3,5@7,7@10,9@15 Maneuvers}
+3 | Student of War | Proficiency with one Artisan's Tool and one Fighter skill. {toolpick 1 artisan} {skillpick 1 prof Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Persuasion, Perception, Survival}
+7 | Know Your Enemy | As a Bonus Action, learn a creature's immunities, resistances and vulnerabilities. Once per Long Rest or a Superiority Die. {res long 1 Know Your Enemy}
 10 | Improved Combat Superiority | Your Superiority Dice become d10s.
 15 | Relentless | Once per turn, use a d8 instead of spending a Superiority Die.
 18 | Ultimate Combat Superiority | Your Superiority Dice become d12s.
-3 | Maneuver Options | Ambush, Bait and Switch, Commander's Strike, Commanding Presence, Disarming Attack, Distracting Strike, Evasive Footwork, Feinting Attack, Goading Attack, Lunging Attack, Maneuvering Attack, Menacing Attack, Parry, Precision Attack, Pushing Attack, Rally, Riposte, Sweeping Attack, Tactical Assessment, Trip Attack.
 
 @sub Champion | PHB 2024
 3 | Improved Critical | Your weapon attacks and Unarmed Strikes score a Critical Hit on a 19 or 20.
 3 | Remarkable Athlete | Advantage on Initiative and Athletics checks, and after a Critical Hit you can move half your Speed without provoking Opportunity Attacks.
-7 | Additional Fighting Style | Gain another Fighting Style feat.
+7 | Additional Fighting Style | Gain another Fighting Style feat. {pick feat:fighting-style 1 Fighting Style}
 10 | Heroic Warrior | In combat, gain Heroic Inspiration at the start of your turn if you don't have it.
 15 | Superior Critical | Your attacks score a Critical Hit on an 18 to 20.
 18 | Survivor | Advantage on Death Saves (18 to 20 counts as a 20), and while Bloodied you regain 5 + Constitution modifier HP at the start of your turns.
@@ -64,16 +63,16 @@
 18 | Improved War Magic | When you take the Attack action, replace two attacks with a level 1 or 2 Wizard spell that takes an action.
 
 @sub Psi Warrior | PHB 2024
-3 | Psionic Power | Gain Psionic Energy Dice that fuel this subclass and return on rests: Protective Field (reduce damage), Psionic Strike (extra Force damage) and Telekinetic Movement (move objects or creatures).
+3 | Psionic Power | Gain Psionic Energy Dice that fuel this subclass and return on rests: Protective Field (reduce damage), Psionic Strike (extra Force damage) and Telekinetic Movement (move objects or creatures). {res short1 4@3,6@5,8@9,10@13,12@17 die:d6@3,d8@5,d10@11,d12@17 Psionic Energy Dice}
 7 | Telekinetic Adept | Psi-Powered Leap gives a Fly Speed of twice your Speed for the turn, and Telekinetic Thrust can knock targets Prone or push them.
 10 | Guarded Mind | Resistance to Psychic damage, and you can spend a die to end Charmed or Frightened on yourself.
-15 | Bulwark of Force | As a Bonus Action, give up to Intelligence modifier creatures Half Cover for 1 minute. Once per Long Rest or a die.
-18 | Telekinetic Master | Telekinesis is always prepared and castable without a slot; while concentrating on it, make a weapon attack as a Bonus Action.
+15 | Bulwark of Force | As a Bonus Action, give up to Intelligence modifier creatures Half Cover for 1 minute. Once per Long Rest or a die. {res long 1 Bulwark of Force}
+18 | Telekinetic Master | Telekinesis is always prepared and castable without a slot; while concentrating on it, make a weapon attack as a Bonus Action. {res long 1 Telekinesis (free)}
 
 @sub Sorrow Knight | D&D Beyond Drops 2026
 3 | Despairing Strikes | Spend a die after a weapon hit to add Psychic damage and an optional rider effect; dice return on a Short or Long Rest.
 3 | Solemn Gaze | Gain Darkvision 60 feet (or +60), and a few times per Long Rest sense a creature's dominant emotion on a failed Wisdom save.
-7 | Dreaded Appearance | Tactical Shift can teleport you 30 feet, and nearby enemies take Psychic damage and become Frightened on a failed Wisdom save. Once per rest.
+7 | Dreaded Appearance | Tactical Shift can teleport you 30 feet, and nearby enemies take Psychic damage and become Frightened on a failed Wisdom save. Once per rest. {res short 1 Dreaded Appearance}
 10 | Unsettled Strikes | New Despairing Strike riders: Apathetic (Incapacitated), Lost (Blinded and Speed 0) and Weary (Exhaustion, up to 2).
 15 | Grim Constitution | Resistance to Necrotic and Psychic damage, and a Constitution save can stop effects that reduce your HP maximum.
 18 | Grieving Mantle | After Action Surge, for 1 minute you're immune to Charmed and Frightened and can use a Reaction to turn insubstantial and negate an attack's damage.

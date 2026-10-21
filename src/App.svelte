@@ -16,6 +16,7 @@
   import { autoSyncLocal } from './lib/packImport';
   import { compendium } from './lib/compendium.svelte';
   import CharacterSwitcher from './components/CharacterSwitcher.svelte';
+  import { syncGrants } from './lib/rules/grants';
 
   type View = 'combat' | 'sheet' | 'spells' | 'features' | 'gear' | 'edit' | 'data';
 
@@ -71,6 +72,16 @@
       document.removeEventListener('visibilitychange', onHide);
       window.removeEventListener('pagehide', onHide);
     };
+  });
+
+  // Lo que dan los class features sin elegir (skills fijas, saves) se escribe en el personaje.
+  $effect(() => {
+    if (!store.loaded || !store.hasCharacter) return;
+    const next = syncGrants(store.c, compendium.packs);
+    if (next) {
+      store.c.skillPicks = next.skillPicks;
+      store.c.autoSaves = next.autoSaves;
+    }
   });
 
   // Autoguardado: cualquier cambio en el personaje se encola para IndexedDB.

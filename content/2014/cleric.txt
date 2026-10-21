@@ -2,7 +2,7 @@
 @prof armor light, medium, shields | weapons simple | skills 2 from History, Insight, Medicine, Persuasion, Religion
 @mc armor light, medium, shields
 1 | Spellcasting | Prepare cleric spells each day and cast them with Wisdom, using a holy symbol as a focus.
-2 | Channel Divinity | Channel divine energy for effects such as Turn Undead and your domain's options. Uses recharge on a short or long rest; more uses at 6th and 18th level.
+2 | Channel Divinity | Channel divine energy for effects such as Turn Undead and your domain's options. Uses recharge on a short or long rest; more uses at 6th and 18th level. {res short 1@2,2@6,3@18 Channel Divinity}
 2 | Harness Divine Power (Optional) | As a bonus action, spend a Channel Divinity use to regain a spell slot of a level up to half your proficiency bonus, rounded up.
 4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 4 | Cantrip Versatility (Optional) | When you gain an ASI, you can replace a cleric cantrip with another.
@@ -17,7 +17,7 @@
 
 @sub Arcana Domain | SCAG
 1 | Domain Spells | Always prepared. 1st: Detect Magic, Magic Missile. 3rd: Magic Weapon, Nystul's Magic Aura. 5th: Dispel Magic, Magic Circle. 7th: Arcane Eye, Leomund's Secret Chest. 9th: Planar Binding, Teleportation Circle.
-1 | Arcane Initiate | Gain proficiency in Arcana and learn two wizard cantrips that count as cleric cantrips.
+1 | Arcane Initiate | Gain proficiency in Arcana and learn two wizard cantrips that count as cleric cantrips. {skill Arcana}
 2 | Channel Divinity: Arcane Abjuration | As an action, a celestial, elemental, fey or fiend within 30 feet makes a Wisdom save or is turned for 1 minute; at 5th level, low-CR creatures are banished.
 6 | Spell Breaker | When you heal an ally with a slot spell, you can also end one spell on them of a level up to the slot you used.
 8 | Potent Spellcasting | Add your Wisdom modifier to damage of cleric cantrips.
@@ -25,7 +25,7 @@
 
 @sub Death Domain | DMG
 1 | Domain Spells | Always prepared. 1st: False Life, Ray of Sickness. 3rd: Blindness/Deafness, Ray of Enfeeblement. 5th: Animate Dead, Vampiric Touch. 7th: Blight, Death Ward. 9th: Antilife Shell, Cloudkill.
-1 | Bonus Proficiency | Proficiency with martial weapons.
+1 | Bonus Proficiency | Proficiency with martial weapons. {weapons martial}
 1 | Reaper | Learn a necromancy cantrip; your single-target necromancy cantrips can target two creatures within 5 feet of each other.
 2 | Channel Divinity: Touch of Death | When you hit with a melee attack, deal extra necrotic damage equal to 5 + twice your cleric level.
 6 | Inescapable Destruction | Your necrotic damage from cleric spells and Channel Divinity ignores resistance.
@@ -34,7 +34,7 @@
 
 @sub Forge Domain | XGtE
 1 | Domain Spells | Always prepared. 1st: Identify, Searing Smite. 3rd: Heat Metal, Magic Weapon. 5th: Elemental Weapon, Protection from Energy. 7th: Fabricate, Wall of Fire. 9th: Animate Objects, Creation.
-1 | Bonus Proficiencies | Proficiency with heavy armor and smith's tools.
+1 | Bonus Proficiencies | Proficiency with heavy armor and smith's tools. {armor heavy} {tools Smith's Tools}
 1 | Blessing of the Forge | After a long rest, touch a nonmagical weapon or armor to give it +1 to attack and damage or +1 AC until your next long rest.
 2 | Channel Divinity: Artisan's Blessing | In a 1-hour ritual, craft a nonmagical metal item worth up to 100 gp using metal of equal value.
 6 | Soul of the Forge | Resistance to fire damage and +1 AC while wearing heavy armor.
@@ -44,15 +44,15 @@
 @sub Grave Domain | XGtE
 1 | Domain Spells | Always prepared. 1st: Bane, False Life. 3rd: Gentle Repose, Ray of Enfeeblement. 5th: Revivify, Vampiric Touch. 7th: Blight, Death Ward. 9th: Antilife Shell, Raise Dead.
 1 | Circle of Mortality | Healing dice on creatures at 0 HP use their maximum, and you can cast Spare the Dying as a bonus action at 30 feet.
-1 | Eyes of the Grave | As an action, sense undead within 60 feet. Wisdom modifier uses per long rest.
+1 | Eyes of the Grave | As an action, sense undead within 60 feet. Wisdom modifier uses per long rest. {res long wis Eyes of the Grave}
 2 | Channel Divinity: Path to the Grave | As an action, curse a creature within 30 feet so the next attack against it deals double damage.
-6 | Sentinel at Death's Door | As a reaction, turn a critical hit against you or an ally within 30 feet into a normal hit. Wisdom modifier uses per long rest.
+6 | Sentinel at Death's Door | As a reaction, turn a critical hit against you or an ally within 30 feet into a normal hit. Wisdom modifier uses per long rest. {res long wis Sentinel at Death's Door}
 8 | Potent Spellcasting | Add your Wisdom modifier to damage of cleric cantrips.
 17 | Keeper of Souls | Once per round, when an enemy dies within 60 feet, you or an ally regains HP equal to the enemy's Hit Dice.
 
 @sub Knowledge Domain | PHB
 1 | Domain Spells | Always prepared. 1st: Command, Identify. 3rd: Augury, Suggestion. 5th: Nondetection, Speak with Dead. 7th: Arcane Eye, Confusion. 9th: Legend Lore, Scrying.
-1 | Blessings of Knowledge | Learn two languages and gain expertise in two of Arcana, History, Nature or Religion.
+1 | Blessings of Knowledge | Learn two languages and gain expertise in two of Arcana, History, Nature or Religion. {langpick 2} {skillpick 2 expertise Arcana, History, Nature, Religion}
 2 | Channel Divinity: Knowledge of the Ages | As an action, gain proficiency with a skill or tool for 10 minutes.
 6 | Channel Divinity: Read Thoughts | Read a creature's surface thoughts within 60 feet on a failed Wisdom save, and you can cast Suggestion on it without a slot.
 8 | Potent Spellcasting | Add your Wisdom modifier to damage of cleric cantrips.
@@ -60,7 +60,7 @@
 
 @sub Life Domain | PHB
 1 | Domain Spells | Always prepared. 1st: Bless, Cure Wounds. 3rd: Lesser Restoration, Spiritual Weapon. 5th: Beacon of Hope, Revivify. 7th: Death Ward, Guardian of Faith. 9th: Mass Cure Wounds, Raise Dead.
-1 | Bonus Proficiency | Proficiency with heavy armor.
+1 | Bonus Proficiency | Proficiency with heavy armor. {armor heavy}
 1 | Disciple of Life | Healing spells of 1st level or higher restore an extra 2 + the spell's level.
 2 | Channel Divinity: Preserve Life | As an action, divide five times your cleric level in healing among creatures within 30 feet, up to half their HP max.
 6 | Blessed Healer | When you heal another creature with a slot spell, you regain 2 + the spell's level.
@@ -70,7 +70,7 @@
 @sub Light Domain | PHB
 1 | Domain Spells | Always prepared. 1st: Burning Hands, Faerie Fire. 3rd: Flaming Sphere, Scorching Ray. 5th: Daylight, Fireball. 7th: Guardian of Faith, Wall of Fire. 9th: Flame Strike, Scrying.
 1 | Bonus Cantrip | You learn the Light cantrip.
-1 | Warding Flare | As a reaction, impose disadvantage on an attack against you from a creature within 30 feet. Wisdom modifier uses per long rest.
+1 | Warding Flare | As a reaction, impose disadvantage on an attack against you from a creature within 30 feet. Wisdom modifier uses per long rest. {res long wis Warding Flare}
 2 | Channel Divinity: Radiance of the Dawn | As an action, dispel magical darkness within 30 feet and deal 2d10 + cleric level radiant damage to hostile creatures (Constitution save for half).
 6 | Improved Flare | You can use Warding Flare to protect allies within 30 feet.
 8 | Potent Spellcasting | Add your Wisdom modifier to damage of cleric cantrips.
@@ -78,8 +78,8 @@
 
 @sub Nature Domain | PHB
 1 | Domain Spells | Always prepared. 1st: Animal Friendship, Speak with Animals. 3rd: Barkskin, Spike Growth. 5th: Plant Growth, Wind Wall. 7th: Dominate Beast, Grasping Vine. 9th: Insect Plague, Tree Stride.
-1 | Acolyte of Nature | Learn a druid cantrip and gain proficiency in Animal Handling, Nature or Survival.
-1 | Bonus Proficiency | Proficiency with heavy armor.
+1 | Acolyte of Nature | Learn a druid cantrip and gain proficiency in Animal Handling, Nature or Survival. {skillpick 1 prof Animal Handling, Nature, Survival}
+1 | Bonus Proficiency | Proficiency with heavy armor. {armor heavy}
 2 | Channel Divinity: Charm Animals and Plants | As an action, beasts and plants within 30 feet make a Wisdom save or are charmed for 1 minute.
 6 | Dampen Elements | As a reaction, give a creature within 30 feet resistance to acid, cold, fire, lightning or thunder damage against one hit.
 8 | Divine Strike | Once per turn, a weapon hit deals an extra 1d8 cold, fire or lightning damage (2d8 at 14th).
@@ -87,17 +87,17 @@
 
 @sub Order Domain | TCoE
 1 | Domain Spells | Always prepared. 1st: Command, Heroism. 3rd: Hold Person, Zone of Truth. 5th: Mass Healing Word, Slow. 7th: Compulsion, Locate Creature. 9th: Commune, Dominate Person.
-1 | Bonus Proficiencies | Proficiency with heavy armor and Intimidation or Persuasion.
+1 | Bonus Proficiencies | Proficiency with heavy armor and Intimidation or Persuasion. {armor heavy} {skillpick 1 prof Intimidation, Persuasion}
 1 | Voice of Authority | When you cast a 1st-level or higher spell on an ally, that ally can use its reaction to make a weapon attack.
 2 | Channel Divinity: Order's Demand | As an action, creatures within 30 feet make a Wisdom save or are charmed until your next turn and can drop what they hold.
-6 | Embodiment of the Law | Cast enchantment spells of 1st level or higher as a bonus action. Wisdom modifier uses per long rest.
+6 | Embodiment of the Law | Cast enchantment spells of 1st level or higher as a bonus action. Wisdom modifier uses per long rest. {res long wis Embodiment of the Law}
 8 | Divine Strike | Once per turn, a weapon hit deals an extra 1d8 psychic damage (2d8 at 14th).
 17 | Order's Wrath | Once per turn, a creature you hit with Divine Strike is cursed; the next ally hit on it deals an extra 2d8 psychic damage.
 
 @sub Peace Domain | TCoE
 1 | Domain Spells | Always prepared. 1st: Heroism, Sanctuary. 3rd: Aid, Warding Bond. 5th: Beacon of Hope, Sending. 7th: Aura of Purity, Otiluke's Resilient Sphere. 9th: Greater Restoration, Rary's Telepathic Bond.
-1 | Implement of Peace | Proficiency in Insight, Performance or Persuasion.
-1 | Emboldening Bond | As an action, bond up to proficiency bonus creatures for 10 minutes; once per turn, a bonded creature near another adds 1d4 to an attack, check or save. Proficiency bonus uses per long rest.
+1 | Implement of Peace | Proficiency in Insight, Performance or Persuasion. {skillpick 1 prof Insight, Performance, Persuasion}
+1 | Emboldening Bond | As an action, bond up to proficiency bonus creatures for 10 minutes; once per turn, a bonded creature near another adds 1d4 to an attack, check or save. Proficiency bonus uses per long rest. {res long pb Emboldening Bond}
 2 | Channel Divinity: Balm of Peace | As an action, move up to your speed without provoking opportunity attacks and heal each creature you pass within 5 feet 2d6 + Wisdom modifier.
 6 | Protective Bond | When a bonded creature is about to take damage, another bonded creature within 30 feet can teleport next to it and take the damage instead.
 8 | Potent Spellcasting | Add your Wisdom modifier to damage of cleric cantrips.
@@ -105,8 +105,8 @@
 
 @sub Tempest Domain | PHB
 1 | Domain Spells | Always prepared. 1st: Fog Cloud, Thunderwave. 3rd: Gust of Wind, Shatter. 5th: Call Lightning, Sleet Storm. 7th: Control Water, Ice Storm. 9th: Destructive Wave, Insect Plague.
-1 | Bonus Proficiencies | Proficiency with martial weapons and heavy armor.
-1 | Wrath of the Storm | As a reaction when a creature within 5 feet hits you, deal 2d8 lightning or thunder damage (Dexterity save for half). Wisdom modifier uses per long rest.
+1 | Bonus Proficiencies | Proficiency with martial weapons and heavy armor. {weapons martial} {armor heavy}
+1 | Wrath of the Storm | As a reaction when a creature within 5 feet hits you, deal 2d8 lightning or thunder damage (Dexterity save for half). Wisdom modifier uses per long rest. {res long wis Wrath of the Storm}
 2 | Channel Divinity: Destructive Wrath | When you roll lightning or thunder damage, deal maximum damage instead.
 6 | Thunderbolt Strike | When you deal lightning damage to a Large or smaller creature, you can push it up to 10 feet.
 8 | Divine Strike | Once per turn, a weapon hit deals an extra 1d8 thunder damage (2d8 at 14th).
@@ -122,18 +122,18 @@
 
 @sub Twilight Domain | TCoE
 1 | Domain Spells | Always prepared. 1st: Faerie Fire, Sleep. 3rd: Moonbeam, See Invisibility. 5th: Aura of Vitality, Leomund's Tiny Hut. 7th: Aura of Life, Greater Invisibility. 9th: Circle of Power, Mislead.
-1 | Bonus Proficiencies | Proficiency with martial weapons and heavy armor.
-1 | Eyes of Night | Darkvision 300 feet, which you can share with allies as an action once per long rest.
+1 | Bonus Proficiencies | Proficiency with martial weapons and heavy armor. {weapons martial} {armor heavy}
+1 | Eyes of Night | Darkvision 300 feet, which you can share with allies as an action once per long rest. {res long 1 Share Darkvision}
 1 | Vigilant Blessing | As an action, give a creature advantage on its next initiative roll.
 2 | Channel Divinity: Twilight Sanctuary | As an action, create a 30-foot sphere of twilight for 1 minute; creatures ending their turn in it gain 1d6 + cleric level temp HP or end charmed or frightened.
-6 | Steps of Night | As a bonus action in dim light or darkness, gain a flying speed equal to your walking speed for 1 minute. Proficiency bonus uses per long rest.
+6 | Steps of Night | As a bonus action in dim light or darkness, gain a flying speed equal to your walking speed for 1 minute. Proficiency bonus uses per long rest. {res long pb Steps of Night}
 8 | Divine Strike | Once per turn, a weapon hit deals an extra 1d8 radiant damage (2d8 at 14th).
 17 | Twilight Shroud | Your Twilight Sanctuary also gives half cover to you and allies inside.
 
 @sub War Domain | PHB
 1 | Domain Spells | Always prepared. 1st: Divine Favor, Shield of Faith. 3rd: Magic Weapon, Spiritual Weapon. 5th: Crusader's Mantle, Spirit Guardians. 7th: Freedom of Movement, Stoneskin. 9th: Flame Strike, Hold Monster.
-1 | Bonus Proficiencies | Proficiency with martial weapons and heavy armor.
-1 | War Priest | When you take the Attack action, make one weapon attack as a bonus action. Wisdom modifier uses per long rest.
+1 | Bonus Proficiencies | Proficiency with martial weapons and heavy armor. {weapons martial} {armor heavy}
+1 | War Priest | When you take the Attack action, make one weapon attack as a bonus action. Wisdom modifier uses per long rest. {res long wis War Priest}
 2 | Channel Divinity: Guided Strike | Add +10 to one of your attack rolls after seeing the roll.
 6 | Channel Divinity: War God's Blessing | As a reaction, add +10 to the attack roll of a creature within 30 feet.
 8 | Divine Strike | Once per turn, a weapon hit deals an extra 1d8 damage of the weapon's type (2d8 at 14th).

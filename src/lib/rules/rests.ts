@@ -73,6 +73,11 @@ export function shortRest(c: Character, input: ShortRestInput): Character {
   n.slotsUsed.pact = 0;
   for (const r of n.resources) if (r.recharge === 'short') r.used = 0;
   for (const k of Object.keys(n.freeUsed)) if (k.startsWith('S:')) delete n.freeUsed[k];
+  // Recursos de features: S se recupera entero, O recupera uno.
+  for (const [k, v] of Object.entries(n.featureUsed)) {
+    if (k.startsWith('S:')) delete n.featureUsed[k];
+    else if (k.startsWith('O:')) n.featureUsed[k] = Math.max(0, v - 1);
+  }
   return n;
 }
 
@@ -85,6 +90,7 @@ export function longRest(c: Character): Character {
   n.arcaneRecoveryUsed = false;
   n.concentration = '';
   n.freeUsed = {};
+  n.featureUsed = {};
   for (const r of n.resources) if (r.recharge !== 'none') r.used = 0;
   // Los efectos condicionales (Bladesong, Longstrider...) no sobreviven a un Long Rest.
   for (const e of n.effects) if (e.conditional) e.active = false;

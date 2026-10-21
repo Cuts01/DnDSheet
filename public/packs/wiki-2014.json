@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-10-21T03:23:40Z"
+    "built": "2026-10-21T12:59:20Z"
   },
   "classes": [
     {
@@ -35,7 +35,12 @@
         {
           "level": 2,
           "name": "Infuse Item",
-          "text": "Learn artificer infusions and imbue nonmagical items with them at the end of a long rest. You learn more infusions and can maintain more items as you level."
+          "text": "Learn artificer infusions and imbue nonmagical items with them at the end of a long rest. You learn more infusions and can maintain more items as you level.",
+          "choose": {
+            "list": "infusions",
+            "count": "4@2,6@6,8@10,10@14,12@18",
+            "label": "Infusions"
+          }
         },
         {
           "level": 3,
@@ -60,7 +65,13 @@
         {
           "level": 7,
           "name": "Flash of Genius",
-          "text": "As a reaction, add your Intelligence modifier to an ability check or saving throw of a creature you see within 30 feet. Uses equal your Intelligence modifier per long rest."
+          "text": "As a reaction, add your Intelligence modifier to an ability check or saving throw of a creature you see within 30 feet. Uses equal your Intelligence modifier per long rest.",
+          "resource": {
+            "name": "Flash of Genius",
+            "uses": "int",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 8,
@@ -164,7 +175,13 @@
         {
           "level": 1,
           "name": "Rage",
-          "text": "As a bonus action, rage for 1 minute: advantage on Strength checks and saves, bonus melee damage and resistance to bludgeoning, piercing and slashing. Limited uses per long rest."
+          "text": "As a bonus action, rage for 1 minute: advantage on Strength checks and saves, bonus melee damage and resistance to bludgeoning, piercing and slashing. Limited uses per long rest.",
+          "resource": {
+            "name": "Rage",
+            "uses": "2@1,3@3,4@6,5@12,6@17",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 1,
@@ -184,7 +201,23 @@
         {
           "level": 3,
           "name": "Primal Knowledge (Optional)",
-          "text": "Gain proficiency in one more skill from the barbarian list."
+          "text": "Gain proficiency in one more skill from the barbarian list.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Animal Handling",
+                  "Athletics",
+                  "Intimidation",
+                  "Nature",
+                  "Perception",
+                  "Survival"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 3,
@@ -317,7 +350,13 @@
         {
           "level": 1,
           "name": "Bardic Inspiration",
-          "text": "As a bonus action, give a creature within 60 feet an inspiration die to add to one ability check, attack or save within 10 minutes. Charisma modifier uses per long rest; the die grows with level."
+          "text": "As a bonus action, give a creature within 60 feet an inspiration die to add to one ability check, attack or save within 10 minutes. Charisma modifier uses per long rest; the die grows with level.",
+          "resource": {
+            "name": "Bardic Inspiration",
+            "uses": "cha",
+            "recharge": "long@1,short@5",
+            "die": "d6@1,d8@5,d10@10,d12@15"
+          }
         },
         {
           "level": 2,
@@ -337,7 +376,16 @@
         {
           "level": 3,
           "name": "Expertise",
-          "text": "Double your proficiency bonus for two skill proficiencies; choose two more at 10th level."
+          "text": "Double your proficiency bonus for two skill proficiencies; choose two more at 10th level.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": "2@3,4@10",
+                "mode": "expertise",
+                "from": []
+              }
+            ]
+          }
         },
         {
           "level": 3,
@@ -453,7 +501,13 @@
         {
           "level": 2,
           "name": "Channel Divinity",
-          "text": "Channel divine energy for effects such as Turn Undead and your domain's options. Uses recharge on a short or long rest; more uses at 6th and 18th level."
+          "text": "Channel divine energy for effects such as Turn Undead and your domain's options. Uses recharge on a short or long rest; more uses at 6th and 18th level.",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1@2,2@6,3@18",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -568,7 +622,13 @@
         {
           "level": 2,
           "name": "Wild Shape",
-          "text": "As an action, transform into a beast you have seen, twice per short or long rest. CR and movement limits loosen as you level."
+          "text": "As an action, transform into a beast you have seen, twice per short or long rest. CR and movement limits loosen as you level.",
+          "resource": {
+            "name": "Wild Shape",
+            "uses": "2",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -687,17 +747,34 @@
         {
           "level": 1,
           "name": "Fighting Style",
-          "text": "Choose a fighting style such as Archery, Defense, Dueling or Great Weapon Fighting."
+          "text": "Choose a fighting style such as Archery, Defense, Dueling or Great Weapon Fighting.",
+          "choose": {
+            "list": "fighting-style",
+            "count": "1",
+            "label": "Fighting Style"
+          }
         },
         {
           "level": 1,
           "name": "Second Wind",
-          "text": "As a bonus action, regain 1d10 + fighter level HP. Once per short or long rest."
+          "text": "As a bonus action, regain 1d10 + fighter level HP. Once per short or long rest.",
+          "resource": {
+            "name": "Second Wind",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 2,
           "name": "Action Surge",
-          "text": "Take one additional action on your turn. Once per short or long rest; twice before a rest from 17th level."
+          "text": "Take one additional action on your turn. Once per short or long rest; twice before a rest from 17th level.",
+          "resource": {
+            "name": "Action Surge",
+            "uses": "1@2,2@17",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 3,
@@ -732,7 +809,13 @@
         {
           "level": 9,
           "name": "Indomitable",
-          "text": "Reroll a failed saving throw and use the new roll. Once per long rest; two uses at 13th level and three at 17th."
+          "text": "Reroll a failed saving throw and use the new roll. Once per long rest; two uses at 13th level and three at 17th.",
+          "resource": {
+            "name": "Indomitable",
+            "uses": "1@9,2@13,3@17",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 12,
@@ -820,7 +903,13 @@
         {
           "level": 2,
           "name": "Ki",
-          "text": "Spend ki points on Flurry of Blows, Patient Defense and Step of the Wind. Points equal your monk level and return on a short or long rest."
+          "text": "Spend ki points on Flurry of Blows, Patient Defense and Step of the Wind. Points equal your monk level and return on a short or long rest.",
+          "resource": {
+            "name": "Ki Points",
+            "uses": "level",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -920,7 +1009,17 @@
         {
           "level": 14,
           "name": "Diamond Soul",
-          "text": "You gain proficiency in all saving throws and can spend 1 ki to reroll a failed save."
+          "text": "You gain proficiency in all saving throws and can spend 1 ki to reroll a failed save.",
+          "grants": {
+            "saves": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ]
+          }
         },
         {
           "level": 15,
@@ -994,17 +1093,34 @@
         {
           "level": 1,
           "name": "Divine Sense",
-          "text": "As an action, sense celestials, fiends and undead within 60 feet. Uses equal 1 + Charisma modifier per long rest."
+          "text": "As an action, sense celestials, fiends and undead within 60 feet. Uses equal 1 + Charisma modifier per long rest.",
+          "resource": {
+            "name": "Divine Sense",
+            "uses": "1+cha",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 1,
           "name": "Lay on Hands",
-          "text": "A healing pool of five times your paladin level HP, spent by touch; 5 points cure a disease or neutralize a poison."
+          "text": "A healing pool of five times your paladin level HP, spent by touch; 5 points cure a disease or neutralize a poison.",
+          "resource": {
+            "name": "Lay on Hands",
+            "uses": "level*5",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
           "name": "Fighting Style",
-          "text": "Choose a fighting style such as Defense, Dueling, Great Weapon Fighting or Protection."
+          "text": "Choose a fighting style such as Defense, Dueling, Great Weapon Fighting or Protection.",
+          "choose": {
+            "list": "fighting-style",
+            "count": "1",
+            "label": "Fighting Style"
+          }
         },
         {
           "level": 2,
@@ -1074,7 +1190,13 @@
         {
           "level": 14,
           "name": "Cleansing Touch",
-          "text": "As an action, end one spell on yourself or a willing creature you touch. Charisma modifier uses per long rest."
+          "text": "As an action, end one spell on yourself or a willing creature you touch. Charisma modifier uses per long rest.",
+          "resource": {
+            "name": "Cleansing Touch",
+            "uses": "cha",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 16,
@@ -1160,12 +1282,27 @@
         {
           "level": 1,
           "name": "Deft Explorer (Optional)",
-          "text": "Replaces Natural Explorer. Canny: double proficiency in one skill and learn two languages. Roving at 6th and Tireless at 10th."
+          "text": "Replaces Natural Explorer. Canny: double proficiency in one skill and learn two languages. Roving at 6th and Tireless at 10th.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "expertise",
+                "from": []
+              }
+            ],
+            "languageChoices": 2
+          }
         },
         {
           "level": 2,
           "name": "Fighting Style",
-          "text": "Choose a fighting style such as Archery, Defense, Dueling or Two-Weapon Fighting."
+          "text": "Choose a fighting style such as Archery, Defense, Dueling or Two-Weapon Fighting.",
+          "choose": {
+            "list": "fighting-style",
+            "count": "1",
+            "label": "Fighting Style"
+          }
         },
         {
           "level": 2,
@@ -1334,7 +1471,16 @@
         {
           "level": 1,
           "name": "Expertise",
-          "text": "Double your proficiency bonus for two skills or thieves' tools; two more at 6th level."
+          "text": "Double your proficiency bonus for two skills or thieves' tools; two more at 6th level.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": "2@1,4@6",
+                "mode": "expertise",
+                "from": []
+              }
+            ]
+          }
         },
         {
           "level": 1,
@@ -1404,7 +1550,12 @@
         {
           "level": 15,
           "name": "Slippery Mind",
-          "text": "You gain proficiency in Wisdom saving throws."
+          "text": "You gain proficiency in Wisdom saving throws.",
+          "grants": {
+            "saves": [
+              "wis"
+            ]
+          }
         },
         {
           "level": 16,
@@ -1424,7 +1575,13 @@
         {
           "level": 20,
           "name": "Stroke of Luck",
-          "text": "Turn a miss into a hit or treat a failed ability check as a 20. Once per short or long rest."
+          "text": "Turn a miss into a hit or treat a failed ability check as a 20. Once per short or long rest.",
+          "resource": {
+            "name": "Stroke of Luck",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         }
       ],
       "proficiencies": {
@@ -1509,12 +1666,23 @@
         {
           "level": 2,
           "name": "Font of Magic",
-          "text": "Gain sorcery points equal to your sorcerer level. Convert them into spell slots or slots into points. Points return on a long rest."
+          "text": "Gain sorcery points equal to your sorcerer level. Convert them into spell slots or slots into points. Points return on a long rest.",
+          "resource": {
+            "name": "Sorcery Points",
+            "uses": "level",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 3,
           "name": "Metamagic",
-          "text": "Learn two Metamagic options to modify spells with sorcery points; more at 10th and 17th level. One option per spell, except Empowered Spell."
+          "text": "Learn two Metamagic options to modify spells with sorcery points; more at 10th and 17th level. One option per spell, except Empowered Spell.",
+          "choose": {
+            "list": "metamagic",
+            "count": "2@3,3@10,4@17",
+            "label": "Metamagic"
+          }
         },
         {
           "level": 4,
@@ -1650,7 +1818,13 @@
         {
           "level": 20,
           "name": "Eldritch Master",
-          "text": "Spend one minute entreating your patron to regain all expended Pact Magic slots. Once per long rest."
+          "text": "Spend one minute entreating your patron to regain all expended Pact Magic slots. Once per long rest.",
+          "resource": {
+            "name": "Eldritch Master",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "proficiencies": {
@@ -1785,7 +1959,12 @@
         {
           "level": 3,
           "name": "Tool Proficiency",
-          "text": "Proficiency with alchemist's supplies (or another artisan's tool if you already have it)."
+          "text": "Proficiency with alchemist's supplies (or another artisan's tool if you already have it).",
+          "grants": {
+            "tools": [
+              "Alchemist's Supplies"
+            ]
+          }
         },
         {
           "level": 3,
@@ -1802,7 +1981,13 @@
               "value": 10,
               "conditional": true
             }
-          ]
+          ],
+          "resource": {
+            "name": "Free Elixirs",
+            "uses": "1@3,2@6,3@15",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 5,
@@ -1812,7 +1997,13 @@
         {
           "level": 9,
           "name": "Restorative Reagents",
-          "text": "Your elixirs grant temp HP, and you can cast Lesser Restoration without a slot Intelligence modifier times per long rest."
+          "text": "Your elixirs grant temp HP, and you can cast Lesser Restoration without a slot Intelligence modifier times per long rest.",
+          "resource": {
+            "name": "Lesser Restoration (Reagents)",
+            "uses": "int",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 15,
@@ -1870,7 +2061,15 @@
         {
           "level": 3,
           "name": "Tools of the Trade",
-          "text": "Proficiency with heavy armor and smith's tools."
+          "text": "Proficiency with heavy armor and smith's tools.",
+          "grants": {
+            "armor": [
+              "heavy"
+            ],
+            "tools": [
+              "Smith's Tools"
+            ]
+          }
         },
         {
           "level": 3,
@@ -1960,7 +2159,12 @@
         {
           "level": 3,
           "name": "Tool Proficiency",
-          "text": "Proficiency with woodcarver's tools."
+          "text": "Proficiency with woodcarver's tools.",
+          "grants": {
+            "tools": [
+              "Woodcarver's Tools"
+            ]
+          }
         },
         {
           "level": 3,
@@ -1970,7 +2174,13 @@
         {
           "level": 3,
           "name": "Eldritch Cannon",
-          "text": "Create a magical cannon for 1 hour (Flamethrower, Force Ballista or Protector) and activate it with a bonus action. Once per long rest or by spending a slot."
+          "text": "Create a magical cannon for 1 hour (Flamethrower, Force Ballista or Protector) and activate it with a bonus action. Once per long rest or by spending a slot.",
+          "resource": {
+            "name": "Eldritch Cannon",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 5,
@@ -2038,7 +2248,12 @@
         {
           "level": 3,
           "name": "Tool Proficiency",
-          "text": "Proficiency with smith's tools."
+          "text": "Proficiency with smith's tools.",
+          "grants": {
+            "tools": [
+              "Smith's Tools"
+            ]
+          }
         },
         {
           "level": 3,
@@ -2048,7 +2263,12 @@
         {
           "level": 3,
           "name": "Battle Ready",
-          "text": "Proficiency with martial weapons, and you can use Intelligence for attack and damage rolls with magic weapons."
+          "text": "Proficiency with martial weapons, and you can use Intelligence for attack and damage rolls with magic weapons.",
+          "grants": {
+            "weapons": [
+              "martial"
+            ]
+          }
         },
         {
           "level": 3,
@@ -2063,7 +2283,13 @@
         {
           "level": 9,
           "name": "Arcane Jolt",
-          "text": "Once per turn, when your magic weapon or defender hits, deal 2d6 extra force damage or heal a creature within 30 feet 2d6. Intelligence modifier uses per long rest."
+          "text": "Once per turn, when your magic weapon or defender hits, deal 2d6 extra force damage or heal a creature within 30 feet 2d6. Intelligence modifier uses per long rest.",
+          "resource": {
+            "name": "Arcane Jolt",
+            "uses": "int",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 15,
@@ -2131,7 +2357,13 @@
         {
           "level": 10,
           "name": "Consult the Spirits",
-          "text": "Cast Augury or Clairvoyance without a slot or components. Once per short or long rest."
+          "text": "Cast Augury or Clairvoyance without a slot or components. Once per short or long rest.",
+          "resource": {
+            "name": "Consult the Spirits",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -2183,12 +2415,24 @@
         {
           "level": 10,
           "name": "Infectious Fury",
-          "text": "When you hit with natural weapons while raging, the target makes a Wisdom save or must attack another creature or take 2d12 psychic damage. Proficiency bonus uses per long rest."
+          "text": "When you hit with natural weapons while raging, the target makes a Wisdom save or must attack another creature or take 2d12 psychic damage. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Infectious Fury",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Call the Hunt",
-          "text": "When you rage, up to Constitution modifier allies within 30 feet gain a d6 bonus damage once per turn, and you gain 5 temp HP per ally. Proficiency bonus uses per long rest."
+          "text": "When you rage, up to Constitution modifier allies within 30 feet gain a d6 bonus damage once per turn, and you gain 5 temp HP per ally. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Call the Hunt",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -2225,7 +2469,12 @@
         {
           "level": 3,
           "name": "Giant's Power",
-          "text": "You learn Druidcraft or Thaumaturgy and one language (Giant)."
+          "text": "You learn Druidcraft or Thaumaturgy and one language (Giant).",
+          "grants": {
+            "languages": [
+              "Giant"
+            ]
+          }
         },
         {
           "level": 3,
@@ -2256,7 +2505,12 @@
         {
           "level": 3,
           "name": "Storm Aura",
-          "text": "While raging, emanate a 10-foot aura: Desert (fire damage), Sea (lightning damage on a failed Dexterity save) or Tundra (temp HP to allies). Choose the environment when you gain the feature."
+          "text": "While raging, emanate a 10-foot aura: Desert (fire damage), Sea (lightning damage on a failed Dexterity save) or Tundra (temp HP to allies). Choose the environment when you gain the feature.",
+          "choose": {
+            "list": "storm-aura",
+            "count": "1",
+            "label": "Environment"
+          }
         },
         {
           "level": 6,
@@ -2294,12 +2548,22 @@
               "value": 15,
               "conditional": true
             }
-          ]
+          ],
+          "choose": {
+            "list": "totem-spirit",
+            "count": "1",
+            "label": "Totem Spirit"
+          }
         },
         {
           "level": 6,
           "name": "Aspect of the Beast",
-          "text": "Choose an exploration benefit: Bear (carry more), Eagle (see far), Elk (fast travel), Tiger (extra skills) or Wolf (track at fast pace)."
+          "text": "Choose an exploration benefit: Bear (carry more), Eagle (see far), Elk (fast travel), Tiger (extra skills) or Wolf (track at fast pace).",
+          "choose": {
+            "list": "totem-aspect",
+            "count": "1",
+            "label": "Aspect of the Beast"
+          }
         },
         {
           "level": 10,
@@ -2309,7 +2573,12 @@
         {
           "level": 14,
           "name": "Totemic Attunement",
-          "text": "Choose a powerful rage benefit: Bear (enemies near you have disadvantage attacking others), Eagle (fly), Elk (knock creatures prone as you move), Tiger (bonus attack after moving) or Wolf (knock Large or smaller creatures prone)."
+          "text": "Choose a powerful rage benefit: Bear (enemies near you have disadvantage attacking others), Eagle (fly), Elk (knock creatures prone as you move), Tiger (bonus attack after moving) or Wolf (knock Large or smaller creatures prone).",
+          "choose": {
+            "list": "totem-attunement",
+            "count": "1",
+            "label": "Totemic Attunement"
+          }
         }
       ]
     },
@@ -2320,7 +2589,13 @@
         {
           "level": 3,
           "name": "Magic Awareness",
-          "text": "As an action, sense spells and magic items within 60 feet. Proficiency bonus uses per long rest."
+          "text": "As an action, sense spells and magic items within 60 feet. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Magic Awareness",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 3,
@@ -2330,7 +2605,13 @@
         {
           "level": 6,
           "name": "Bolstering Magic",
-          "text": "As an action, give a creature 1d3 to attack rolls and checks for 10 minutes, or restore a spell slot of level 1d3. Proficiency bonus uses per long rest."
+          "text": "As an action, give a creature 1d3 to attack rolls and checks for 10 minutes, or restore a spell slot of level 1d3. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Bolstering Magic",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -2366,7 +2647,13 @@
         {
           "level": 10,
           "name": "Zealous Presence",
-          "text": "As a bonus action, up to ten creatures within 60 feet gain advantage on attacks and saves until your next turn. Once per long rest."
+          "text": "As a bonus action, up to ten creatures within 60 feet gain advantage on attacks and saves until your next turn. Once per long rest.",
+          "resource": {
+            "name": "Zealous Presence",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -2387,12 +2674,24 @@
         {
           "level": 3,
           "name": "Performance of Creation",
-          "text": "As an action, create a nonmagical Medium or smaller item worth up to 20 times your bard level; it lasts proficiency bonus hours. Once per long rest or by spending a 2nd-level slot."
+          "text": "As an action, create a nonmagical Medium or smaller item worth up to 20 times your bard level; it lasts proficiency bonus hours. Once per long rest or by spending a 2nd-level slot.",
+          "resource": {
+            "name": "Performance of Creation",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
           "name": "Animating Performance",
-          "text": "As an action, animate a Large or smaller nonmagical item as a Dancing Item construct for 1 hour; command it with a bonus action. Once per long rest or a 3rd-level slot."
+          "text": "As an action, animate a Large or smaller nonmagical item as a Dancing Item construct for 1 hour; command it with a bonus action. Once per long rest or a 3rd-level slot.",
+          "resource": {
+            "name": "Animating Performance",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -2423,12 +2722,24 @@
         {
           "level": 6,
           "name": "Universal Speech",
-          "text": "As an action, up to Charisma modifier creatures within 60 feet understand you for 1 hour. Once per long rest or by spending a spell slot."
+          "text": "As an action, up to Charisma modifier creatures within 60 feet understand you for 1 hour. Once per long rest or by spending a spell slot.",
+          "resource": {
+            "name": "Universal Speech",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Infectious Inspiration",
-          "text": "When a creature within 60 feet succeeds using your Bardic Inspiration, use your reaction to give another creature a die for free. Charisma modifier uses per long rest."
+          "text": "When a creature within 60 feet succeeds using your Bardic Inspiration, use your reaction to give another creature a die for free. Charisma modifier uses per long rest.",
+          "resource": {
+            "name": "Infectious Inspiration",
+            "uses": "cha",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -2444,17 +2755,35 @@
         {
           "level": 3,
           "name": "Enthralling Performance",
-          "text": "After performing for 1 minute, humanoids who watched must make a Wisdom save or be charmed by you for 1 hour. Once per short or long rest."
+          "text": "After performing for 1 minute, humanoids who watched must make a Wisdom save or be charmed by you for 1 hour. Once per short or long rest.",
+          "resource": {
+            "name": "Enthralling Performance",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 6,
           "name": "Mantle of Majesty",
-          "text": "As a bonus action, cast Command without a slot and keep casting it as a bonus action each turn for 1 minute (concentration). Once per long rest."
+          "text": "As a bonus action, cast Command without a slot and keep casting it as a bonus action each turn for 1 minute (concentration). Once per long rest.",
+          "resource": {
+            "name": "Mantle of Majesty",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Unbreakable Majesty",
-          "text": "As a bonus action, for 1 minute a creature that first attacks you each turn must make a Charisma save or choose another target. Once per short or long rest."
+          "text": "As a bonus action, for 1 minute a creature that first attacks you each turn must make a Charisma save or choose another target. Once per short or long rest.",
+          "resource": {
+            "name": "Unbreakable Majesty",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         }
       ]
     },
@@ -2465,7 +2794,16 @@
         {
           "level": 3,
           "name": "Bonus Proficiencies",
-          "text": "Gain proficiency in three skills of your choice."
+          "text": "Gain proficiency in three skills of your choice.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 3,
+                "mode": "prof",
+                "from": []
+              }
+            ]
+          }
         },
         {
           "level": 3,
@@ -2506,7 +2844,13 @@
         {
           "level": 6,
           "name": "Spirit Session",
-          "text": "Run a 1-hour ritual with willing creatures to temporarily learn a Divination or Necromancy spell whose level is at most the number of participants. Once per long rest."
+          "text": "Run a 1-hour ritual with willing creatures to temporarily learn a Divination or Necromancy spell whose level is at most the number of participants. Once per long rest.",
+          "resource": {
+            "name": "Spirit Session",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -2522,12 +2866,25 @@
         {
           "level": 3,
           "name": "Bonus Proficiencies",
-          "text": "Gain proficiency with medium armor and the scimitar; a melee weapon you're proficient with can be your spellcasting focus."
+          "text": "Gain proficiency with medium armor and the scimitar; a melee weapon you're proficient with can be your spellcasting focus.",
+          "grants": {
+            "armor": [
+              "medium"
+            ],
+            "weapons": [
+              "scimitar"
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Fighting Style",
-          "text": "Choose Dueling or Two-Weapon Fighting."
+          "text": "Choose Dueling or Two-Weapon Fighting.",
+          "choose": {
+            "list": "fighting-style",
+            "count": "1",
+            "label": "Fighting Style"
+          }
         },
         {
           "level": 3,
@@ -2560,7 +2917,16 @@
         {
           "level": 3,
           "name": "Bonus Proficiencies",
-          "text": "Gain proficiency with medium armor, shields and martial weapons."
+          "text": "Gain proficiency with medium armor, shields and martial weapons.",
+          "grants": {
+            "armor": [
+              "medium",
+              "shields"
+            ],
+            "weapons": [
+              "martial"
+            ]
+          }
         },
         {
           "level": 3,
@@ -2591,17 +2957,35 @@
         {
           "level": 3,
           "name": "Words of Terror",
-          "text": "After speaking alone with a humanoid for 1 minute, it makes a Wisdom save or is frightened of you or a creature you choose for 1 hour. Once per short or long rest."
+          "text": "After speaking alone with a humanoid for 1 minute, it makes a Wisdom save or is frightened of you or a creature you choose for 1 hour. Once per short or long rest.",
+          "resource": {
+            "name": "Words of Terror",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 6,
           "name": "Mantle of Whispers",
-          "text": "As a reaction when a humanoid dies within 30 feet, capture its shadow to later disguise yourself as it for 1 hour with surface knowledge of its life. Once per short or long rest."
+          "text": "As a reaction when a humanoid dies within 30 feet, capture its shadow to later disguise yourself as it for 1 hour with surface knowledge of its life. Once per short or long rest.",
+          "resource": {
+            "name": "Mantle of Whispers",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Shadow Lore",
-          "text": "As an action, a creature within 30 feet makes a Wisdom save or is charmed for 8 hours, obeying you for fear its darkest secret is revealed. Once per long rest."
+          "text": "As an action, a creature within 30 feet makes a Wisdom save or is charmed for 8 hours, obeying you for fear its darkest secret is revealed. Once per long rest.",
+          "resource": {
+            "name": "Shadow Lore",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -2617,7 +3001,12 @@
         {
           "level": 1,
           "name": "Arcane Initiate",
-          "text": "Gain proficiency in Arcana and learn two wizard cantrips that count as cleric cantrips."
+          "text": "Gain proficiency in Arcana and learn two wizard cantrips that count as cleric cantrips.",
+          "grants": {
+            "skills": [
+              "Arcana"
+            ]
+          }
         },
         {
           "level": 2,
@@ -2695,7 +3084,12 @@
         {
           "level": 1,
           "name": "Bonus Proficiency",
-          "text": "Proficiency with martial weapons."
+          "text": "Proficiency with martial weapons.",
+          "grants": {
+            "weapons": [
+              "martial"
+            ]
+          }
         },
         {
           "level": 1,
@@ -2778,7 +3172,15 @@
         {
           "level": 1,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with heavy armor and smith's tools."
+          "text": "Proficiency with heavy armor and smith's tools.",
+          "grants": {
+            "armor": [
+              "heavy"
+            ],
+            "tools": [
+              "Smith's Tools"
+            ]
+          }
         },
         {
           "level": 1,
@@ -2866,7 +3268,13 @@
         {
           "level": 1,
           "name": "Eyes of the Grave",
-          "text": "As an action, sense undead within 60 feet. Wisdom modifier uses per long rest."
+          "text": "As an action, sense undead within 60 feet. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Eyes of the Grave",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -2876,7 +3284,13 @@
         {
           "level": 6,
           "name": "Sentinel at Death's Door",
-          "text": "As a reaction, turn a critical hit against you or an ally within 30 feet into a normal hit. Wisdom modifier uses per long rest."
+          "text": "As a reaction, turn a critical hit against you or an ally within 30 feet into a normal hit. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Sentinel at Death's Door",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 8,
@@ -2944,7 +3358,22 @@
         {
           "level": 1,
           "name": "Blessings of Knowledge",
-          "text": "Learn two languages and gain expertise in two of Arcana, History, Nature or Religion."
+          "text": "Learn two languages and gain expertise in two of Arcana, History, Nature or Religion.",
+          "grants": {
+            "languageChoices": 2,
+            "skillChoices": [
+              {
+                "count": 2,
+                "mode": "expertise",
+                "from": [
+                  "Arcana",
+                  "History",
+                  "Nature",
+                  "Religion"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 2,
@@ -3022,7 +3451,12 @@
         {
           "level": 1,
           "name": "Bonus Proficiency",
-          "text": "Proficiency with heavy armor."
+          "text": "Proficiency with heavy armor.",
+          "grants": {
+            "armor": [
+              "heavy"
+            ]
+          }
         },
         {
           "level": 1,
@@ -3110,7 +3544,13 @@
         {
           "level": 1,
           "name": "Warding Flare",
-          "text": "As a reaction, impose disadvantage on an attack against you from a creature within 30 feet. Wisdom modifier uses per long rest."
+          "text": "As a reaction, impose disadvantage on an attack against you from a creature within 30 feet. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Warding Flare",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -3188,12 +3628,30 @@
         {
           "level": 1,
           "name": "Acolyte of Nature",
-          "text": "Learn a druid cantrip and gain proficiency in Animal Handling, Nature or Survival."
+          "text": "Learn a druid cantrip and gain proficiency in Animal Handling, Nature or Survival.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Animal Handling",
+                  "Nature",
+                  "Survival"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 1,
           "name": "Bonus Proficiency",
-          "text": "Proficiency with heavy armor."
+          "text": "Proficiency with heavy armor.",
+          "grants": {
+            "armor": [
+              "heavy"
+            ]
+          }
         },
         {
           "level": 2,
@@ -3271,7 +3729,22 @@
         {
           "level": 1,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with heavy armor and Intimidation or Persuasion."
+          "text": "Proficiency with heavy armor and Intimidation or Persuasion.",
+          "grants": {
+            "armor": [
+              "heavy"
+            ],
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Intimidation",
+                  "Persuasion"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 1,
@@ -3286,7 +3759,13 @@
         {
           "level": 6,
           "name": "Embodiment of the Law",
-          "text": "Cast enchantment spells of 1st level or higher as a bonus action. Wisdom modifier uses per long rest."
+          "text": "Cast enchantment spells of 1st level or higher as a bonus action. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Embodiment of the Law",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 8,
@@ -3354,12 +3833,31 @@
         {
           "level": 1,
           "name": "Implement of Peace",
-          "text": "Proficiency in Insight, Performance or Persuasion."
+          "text": "Proficiency in Insight, Performance or Persuasion.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Insight",
+                  "Performance",
+                  "Persuasion"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 1,
           "name": "Emboldening Bond",
-          "text": "As an action, bond up to proficiency bonus creatures for 10 minutes; once per turn, a bonded creature near another adds 1d4 to an attack, check or save. Proficiency bonus uses per long rest."
+          "text": "As an action, bond up to proficiency bonus creatures for 10 minutes; once per turn, a bonded creature near another adds 1d4 to an attack, check or save. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Emboldening Bond",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -3437,12 +3935,26 @@
         {
           "level": 1,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with martial weapons and heavy armor."
+          "text": "Proficiency with martial weapons and heavy armor.",
+          "grants": {
+            "weapons": [
+              "martial"
+            ],
+            "armor": [
+              "heavy"
+            ]
+          }
         },
         {
           "level": 1,
           "name": "Wrath of the Storm",
-          "text": "As a reaction when a creature within 5 feet hits you, deal 2d8 lightning or thunder damage (Dexterity save for half). Wisdom modifier uses per long rest."
+          "text": "As a reaction when a creature within 5 feet hits you, deal 2d8 lightning or thunder damage (Dexterity save for half). Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Wrath of the Storm",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -3598,12 +4110,26 @@
         {
           "level": 1,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with martial weapons and heavy armor."
+          "text": "Proficiency with martial weapons and heavy armor.",
+          "grants": {
+            "weapons": [
+              "martial"
+            ],
+            "armor": [
+              "heavy"
+            ]
+          }
         },
         {
           "level": 1,
           "name": "Eyes of Night",
-          "text": "Darkvision 300 feet, which you can share with allies as an action once per long rest."
+          "text": "Darkvision 300 feet, which you can share with allies as an action once per long rest.",
+          "resource": {
+            "name": "Share Darkvision",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 1,
@@ -3618,7 +4144,13 @@
         {
           "level": 6,
           "name": "Steps of Night",
-          "text": "As a bonus action in dim light or darkness, gain a flying speed equal to your walking speed for 1 minute. Proficiency bonus uses per long rest."
+          "text": "As a bonus action in dim light or darkness, gain a flying speed equal to your walking speed for 1 minute. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Steps of Night",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 8,
@@ -3686,12 +4218,26 @@
         {
           "level": 1,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with martial weapons and heavy armor."
+          "text": "Proficiency with martial weapons and heavy armor.",
+          "grants": {
+            "weapons": [
+              "martial"
+            ],
+            "armor": [
+              "heavy"
+            ]
+          }
         },
         {
           "level": 1,
           "name": "War Priest",
-          "text": "When you take the Attack action, make one weapon attack as a bonus action. Wisdom modifier uses per long rest."
+          "text": "When you take the Attack action, make one weapon attack as a bonus action. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "War Priest",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -3764,7 +4310,13 @@
         {
           "level": 2,
           "name": "Balm of the Summer Court",
-          "text": "A pool of d6s equal to your druid level: as a bonus action, heal a creature within 120 feet by spending up to half your level in dice, plus 1 temp HP per die. Refills on a long rest."
+          "text": "A pool of d6s equal to your druid level: as a bonus action, heal a creature within 120 feet by spending up to half your level in dice, plus 1 temp HP per die. Refills on a long rest.",
+          "resource": {
+            "name": "Balm of the Summer Court",
+            "uses": "level",
+            "recharge": "long",
+            "die": "d6"
+          }
         },
         {
           "level": 6,
@@ -3774,12 +4326,24 @@
         {
           "level": 10,
           "name": "Hidden Paths",
-          "text": "As a bonus action, teleport up to 60 feet, or as an action teleport a willing creature you touch 30 feet. Wisdom modifier uses per long rest."
+          "text": "As a bonus action, teleport up to 60 feet, or as an action teleport a willing creature you touch 30 feet. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Hidden Paths",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Walker in Dreams",
-          "text": "After a short rest, cast Dream, Scrying or Teleportation Circle without a slot or components (the circle leads to your last long rest spot). Once per long rest."
+          "text": "After a short rest, cast Dream, Scrying or Teleportation Circle without a slot or components (the circle leads to your last long rest spot). Once per long rest.",
+          "resource": {
+            "name": "Walker in Dreams",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -3795,7 +4359,13 @@
         {
           "level": 2,
           "name": "Natural Recovery",
-          "text": "Once per long rest during a short rest, recover spell slots with combined levels up to half your druid level (rounded up), none 6th level or higher."
+          "text": "Once per long rest during a short rest, recover spell slots with combined levels up to half your druid level (rounded up), none 6th level or higher.",
+          "resource": {
+            "name": "Natural Recovery",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 3,
@@ -4147,12 +4717,23 @@
         {
           "level": 2,
           "name": "Speech of the Woods",
-          "text": "You learn Sylvan and can speak with beasts, which can understand you."
+          "text": "You learn Sylvan and can speak with beasts, which can understand you.",
+          "grants": {
+            "languages": [
+              "Sylvan"
+            ]
+          }
         },
         {
           "level": 2,
           "name": "Spirit Totem",
-          "text": "As a bonus action, summon a 30-foot spirit aura for 1 minute: Bear (temp HP and Strength advantage), Hawk (reaction to grant advantage on an attack) or Unicorn (Perception advantage and extra healing). Once per short or long rest."
+          "text": "As a bonus action, summon a 30-foot spirit aura for 1 minute: Bear (temp HP and Strength advantage), Hawk (reaction to grant advantage on an attack) or Unicorn (Perception advantage and extra healing). Once per short or long rest.",
+          "resource": {
+            "name": "Spirit Totem",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -4167,7 +4748,13 @@
         {
           "level": 14,
           "name": "Faithful Summons",
-          "text": "When you drop to 0 HP or are incapacitated against your will, gain the benefits of Conjure Animals as if cast with a 9th-level slot. Once per long rest."
+          "text": "When you drop to 0 HP or are incapacitated against your will, gain the benefits of Conjure Animals as if cast with a 9th-level slot. Once per long rest.",
+          "resource": {
+            "name": "Faithful Summons",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -4193,7 +4780,13 @@
         {
           "level": 6,
           "name": "Fungal Infestation",
-          "text": "As a reaction, animate a Small or Medium beast or humanoid that dies within 10 feet as a 1-HP zombie for 1 hour. Wisdom modifier uses per long rest."
+          "text": "As a reaction, animate a Small or Medium beast or humanoid that dies within 10 feet as a 1-HP zombie for 1 hour. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Fungal Infestation",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -4255,7 +4848,13 @@
         {
           "level": 2,
           "name": "Star Map",
-          "text": "Your star chart is a focus; you know Guidance, always have Guiding Bolt prepared, and can cast it without a slot proficiency bonus times per long rest."
+          "text": "Your star chart is a focus; you know Guidance, always have Guiding Bolt prepared, and can cast it without a slot proficiency bonus times per long rest.",
+          "resource": {
+            "name": "Guiding Bolt (Star Map)",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -4265,7 +4864,13 @@
         {
           "level": 6,
           "name": "Cosmic Omen",
-          "text": "After a long rest, roll a die: even lets you add 1d6 to a creature's roll as a reaction, odd subtract 1d6. Proficiency bonus uses."
+          "text": "After a long rest, roll a die: even lets you add 1d6 to a creature's roll as a reaction, odd subtract 1d6. Proficiency bonus uses.",
+          "resource": {
+            "name": "Cosmic Omen",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -4301,12 +4906,24 @@
         {
           "level": 10,
           "name": "Cauterizing Flames",
-          "text": "When a creature dies near you or your spirit, a flame appears; as a reaction, a creature entering it is healed or burned 2d10 + Wisdom modifier. Proficiency bonus uses per long rest."
+          "text": "When a creature dies near you or your spirit, a flame appears; as a reaction, a creature entering it is healed or burned 2d10 + Wisdom modifier. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Cauterizing Flames",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Blazing Revival",
-          "text": "If you drop to 0 HP while your spirit is within 120 feet, it drops to 0 instead and you regain half your HP and stand up. Once per long rest."
+          "text": "If you drop to 0 HP while your spirit is within 120 feet, it drops to 0 instead and you regain half your HP and stand up. Once per long rest.",
+          "resource": {
+            "name": "Blazing Revival",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -4359,12 +4976,35 @@
         {
           "level": 3,
           "name": "Arcane Archer Lore",
-          "text": "Proficiency in Arcana or Nature, and learn Prestidigitation or Druidcraft."
+          "text": "Proficiency in Arcana or Nature, and learn Prestidigitation or Druidcraft.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Arcana",
+                  "Nature"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Arcane Shot",
-          "text": "Learn two Arcane Shot options; once per turn, apply one when you hit with a bow. Two uses per short or long rest; more options at 7th, 10th, 15th and 18th level, and damage grows at 18th."
+          "text": "Learn two Arcane Shot options; once per turn, apply one when you hit with a bow. Two uses per short or long rest; more options at 7th, 10th, 15th and 18th level, and damage grows at 18th.",
+          "resource": {
+            "name": "Arcane Shot",
+            "uses": "2",
+            "recharge": "short",
+            "die": ""
+          },
+          "choose": {
+            "list": "arcane-shots",
+            "count": "2@3,3@7,4@10,5@15,6@18",
+            "label": "Arcane Shots"
+          }
         },
         {
           "level": 7,
@@ -4395,7 +5035,12 @@
         {
           "level": 7,
           "name": "Royal Envoy",
-          "text": "Proficiency in Persuasion (or another social skill), with double proficiency on Persuasion checks."
+          "text": "Proficiency in Persuasion (or another social skill), with double proficiency on Persuasion checks.",
+          "grants": {
+            "expertise": [
+              "Persuasion"
+            ]
+          }
         },
         {
           "level": 10,
@@ -4416,17 +5061,33 @@
         {
           "level": 3,
           "name": "Combat Superiority",
-          "text": "Learn three maneuvers and gain four d8 superiority dice that return on a short or long rest. More maneuvers at 7th, 10th and 15th; more dice at 7th and 15th."
+          "text": "Learn three maneuvers and gain four d8 superiority dice that return on a short or long rest. More maneuvers at 7th, 10th and 15th; more dice at 7th and 15th.",
+          "resource": {
+            "name": "Superiority Dice",
+            "uses": "4@3,5@7,6@15",
+            "recharge": "short",
+            "die": "d8@3,d10@10,d12@18"
+          },
+          "choose": {
+            "list": "maneuvers",
+            "count": "3@3,5@7,7@10,9@15",
+            "label": "Maneuvers"
+          }
         },
         {
           "level": 3,
           "name": "Student of War",
-          "text": "Proficiency with one type of artisan's tools."
-        },
-        {
-          "level": 3,
-          "name": "Maneuver Options",
-          "text": "Ambush, Bait and Switch, Brace, Commander's Strike, Commanding Presence, Disarming Attack, Distracting Strike, Evasive Footwork, Feinting Attack, Goading Attack, Grappling Strike, Lunging Attack, Maneuvering Attack, Menacing Attack, Parry, Precision Attack, Pushing Attack, Quick Toss, Rally, Riposte, Sweeping Attack, Tactical Assessment, Trip Attack."
+          "text": "Proficiency with one type of artisan's tools.",
+          "grants": {
+            "toolChoices": [
+              {
+                "count": 1,
+                "from": [
+                  "artisan"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 7,
@@ -4452,7 +5113,22 @@
         {
           "level": 3,
           "name": "Bonus Proficiency",
-          "text": "Proficiency in Animal Handling, History, Insight, Performance or Persuasion, or a language."
+          "text": "Proficiency in Animal Handling, History, Insight, Performance or Persuasion, or a language.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Animal Handling",
+                  "History",
+                  "Insight",
+                  "Performance",
+                  "Persuasion"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 3,
@@ -4462,12 +5138,24 @@
         {
           "level": 3,
           "name": "Unwavering Mark",
-          "text": "When you hit a creature, mark it: it has disadvantage attacking others, and if it does, you can make a bonus action attack with extra damage. Strength modifier uses per long rest."
+          "text": "When you hit a creature, mark it: it has disadvantage attacking others, and if it does, you can make a bonus action attack with extra damage. Strength modifier uses per long rest.",
+          "resource": {
+            "name": "Unwavering Mark",
+            "uses": "str",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 7,
           "name": "Warding Maneuver",
-          "text": "As a reaction, add 1d8 to the AC of you or an adjacent ally against an attack and give resistance if it hits. Constitution modifier uses per long rest."
+          "text": "As a reaction, add 1d8 to the AC of you or an adjacent ally against an attack and give resistance if it hits. Constitution modifier uses per long rest.",
+          "resource": {
+            "name": "Warding Maneuver",
+            "uses": "con",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -4503,7 +5191,12 @@
         {
           "level": 10,
           "name": "Additional Fighting Style",
-          "text": "Choose a second Fighting Style."
+          "text": "Choose a second Fighting Style.",
+          "choose": {
+            "list": "fighting-style",
+            "count": "1",
+            "label": "Fighting Style"
+          }
         },
         {
           "level": 15,
@@ -4529,7 +5222,13 @@
         {
           "level": 3,
           "name": "Unleash Incarnation",
-          "text": "When you take the Attack action, make an extra melee attack from your echo's position. Constitution modifier uses per long rest."
+          "text": "When you take the Attack action, make an extra melee attack from your echo's position. Constitution modifier uses per long rest.",
+          "resource": {
+            "name": "Unleash Incarnation",
+            "uses": "con",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -4539,12 +5238,24 @@
         {
           "level": 10,
           "name": "Shadow Martyr",
-          "text": "As a reaction, teleport your echo next to an ally so an attack targets the echo instead. Once per short or long rest."
+          "text": "As a reaction, teleport your echo next to an ally so an attack targets the echo instead. Once per short or long rest.",
+          "resource": {
+            "name": "Shadow Martyr",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 15,
           "name": "Reclaim Potential",
-          "text": "When your echo is destroyed, gain temp HP 2d6 + Constitution modifier. Constitution modifier uses per long rest."
+          "text": "When your echo is destroyed, gain temp HP 2d6 + Constitution modifier. Constitution modifier uses per long rest.",
+          "resource": {
+            "name": "Reclaim Potential",
+            "uses": "con",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 18,
@@ -4598,7 +5309,13 @@
         {
           "level": 3,
           "name": "Psionic Power",
-          "text": "Psionic Energy dice (twice your proficiency bonus) fuel Protective Field (reduce damage), Psionic Strike (extra force damage) and Telekinetic Movement. Dice return on a long rest, one on a short rest."
+          "text": "Psionic Energy dice (twice your proficiency bonus) fuel Protective Field (reduce damage), Psionic Strike (extra force damage) and Telekinetic Movement. Dice return on a long rest, one on a short rest.",
+          "resource": {
+            "name": "Psionic Energy Dice",
+            "uses": "pb*2",
+            "recharge": "short1",
+            "die": "d6@3,d8@5,d10@11,d12@17"
+          }
         },
         {
           "level": 7,
@@ -4613,12 +5330,24 @@
         {
           "level": 15,
           "name": "Bulwark of Force",
-          "text": "As a bonus action, give up to Intelligence modifier creatures half cover for 1 minute. Once per long rest or a die."
+          "text": "As a bonus action, give up to Intelligence modifier creatures half cover for 1 minute. Once per long rest or a die.",
+          "resource": {
+            "name": "Bulwark of Force",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 18,
           "name": "Telekinetic Master",
-          "text": "Cast Telekinesis without a slot once per long rest (or by spending a die), and make a weapon attack as a bonus action while concentrating on it."
+          "text": "Cast Telekinesis without a slot once per long rest (or by spending a die), and make a weapon attack as a bonus action while concentrating on it.",
+          "resource": {
+            "name": "Telekinesis (free)",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -4629,22 +5358,47 @@
         {
           "level": 3,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with smith's tools and the Giant language."
+          "text": "Proficiency with smith's tools and the Giant language.",
+          "grants": {
+            "tools": [
+              "Smith's Tools"
+            ],
+            "languages": [
+              "Giant"
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Rune Carver",
-          "text": "Learn two runes and inscribe them on gear; each gives a passive benefit and an activated effect once per short or long rest. More runes at 7th, 10th and 15th level."
+          "text": "Learn two runes and inscribe them on gear; each gives a passive benefit and an activated effect once per short or long rest. More runes at 7th, 10th and 15th level.",
+          "choose": {
+            "list": "runes",
+            "count": "2@3,3@7,4@10,5@15",
+            "label": "Runes"
+          }
         },
         {
           "level": 3,
           "name": "Giant's Might",
-          "text": "As a bonus action, become Large for 1 minute: advantage on Strength checks and saves and an extra 1d6 damage once per turn. Proficiency bonus uses per long rest."
+          "text": "As a bonus action, become Large for 1 minute: advantage on Strength checks and saves and an extra 1d6 damage once per turn. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Giant's Might",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 7,
           "name": "Runic Shield",
-          "text": "As a reaction, force a creature to reroll an attack against an ally within 60 feet. Proficiency bonus uses per long rest."
+          "text": "As a reaction, force a creature to reroll an attack against an ally within 60 feet. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Runic Shield",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -4670,17 +5424,49 @@
         {
           "level": 3,
           "name": "Bonus Proficiency",
-          "text": "Proficiency in History, Insight, Performance or Persuasion, or a language."
+          "text": "Proficiency in History, Insight, Performance or Persuasion, or a language.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "History",
+                  "Insight",
+                  "Performance",
+                  "Persuasion"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Fighting Spirit",
-          "text": "As a bonus action, gain advantage on weapon attacks this turn and temp HP (5, growing with level). Three uses per long rest."
+          "text": "As a bonus action, gain advantage on weapon attacks this turn and temp HP (5, growing with level). Three uses per long rest.",
+          "resource": {
+            "name": "Fighting Spirit",
+            "uses": "3",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 7,
           "name": "Elegant Courtier",
-          "text": "Add your Wisdom modifier to Persuasion checks, and gain proficiency in Wisdom saves (or Intelligence or Charisma)."
+          "text": "Add your Wisdom modifier to Persuasion checks, and gain proficiency in Wisdom saves (or Intelligence or Charisma).",
+          "grants": {
+            "saveChoices": [
+              {
+                "count": 1,
+                "from": [
+                  "wis",
+                  "int",
+                  "cha"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 10,
@@ -4695,7 +5481,13 @@
         {
           "level": 18,
           "name": "Strength before Death",
-          "text": "When reduced to 0 HP, use your reaction to take an extra turn immediately. Once per long rest."
+          "text": "When reduced to 0 HP, use your reaction to take an extra turn immediately. Once per long rest.",
+          "resource": {
+            "name": "Strength before Death",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -4706,7 +5498,16 @@
         {
           "level": 3,
           "name": "Implements of Mercy",
-          "text": "Proficiency in Insight, Medicine and the herbalism kit, plus a special mask."
+          "text": "Proficiency in Insight, Medicine and the herbalism kit, plus a special mask.",
+          "grants": {
+            "skills": [
+              "Insight",
+              "Medicine"
+            ],
+            "tools": [
+              "Herbalism Kit"
+            ]
+          }
         },
         {
           "level": 3,
@@ -4731,7 +5532,13 @@
         {
           "level": 17,
           "name": "Hand of Ultimate Mercy",
-          "text": "Spend 5 ki to revive a creature that died within 24 hours with 4d10 + Wisdom modifier HP. Once per long rest."
+          "text": "Spend 5 ki to revive a creature that died within 24 hours with 4d10 + Wisdom modifier HP. Once per long rest.",
+          "resource": {
+            "name": "Hand of Ultimate Mercy",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -4742,22 +5549,45 @@
         {
           "level": 3,
           "name": "Draconic Disciple",
-          "text": "Unarmed strikes can deal acid, cold, fire, lightning or poison damage, you can reroll failed Intimidation or Persuasion checks, and you learn Draconic."
+          "text": "Unarmed strikes can deal acid, cold, fire, lightning or poison damage, you can reroll failed Intimidation or Persuasion checks, and you learn Draconic.",
+          "grants": {
+            "languages": [
+              "Draconic"
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Breath of the Dragon",
-          "text": "Replace an attack with a 20-foot cone or 30-foot line of elemental breath. Proficiency bonus uses per long rest, or 2 ki."
+          "text": "Replace an attack with a 20-foot cone or 30-foot line of elemental breath. Proficiency bonus uses per long rest, or 2 ki.",
+          "resource": {
+            "name": "Breath of the Dragon",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
           "name": "Wings Unfurled",
-          "text": "When you use Step of the Wind, gain a flying speed equal to your walking speed until the end of the turn. Proficiency bonus uses per long rest."
+          "text": "When you use Step of the Wind, gain a flying speed equal to your walking speed until the end of the turn. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Wings Unfurled",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 11,
           "name": "Aspect of the Wyrm",
-          "text": "As a bonus action, create a 10-foot aura for 1 minute that frightens creatures or gives allies resistance to an element. Once per long rest or 3 ki."
+          "text": "As a bonus action, create a 10-foot aura for 1 minute that frightens creatures or gives allies resistance to an element. Once per long rest or 3 ki.",
+          "resource": {
+            "name": "Aspect of the Wyrm",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 17,
@@ -4799,7 +5629,15 @@
         {
           "level": 3,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency in Performance and with brewer's supplies."
+          "text": "Proficiency in Performance and with brewer's supplies.",
+          "grants": {
+            "skills": [
+              "Performance"
+            ],
+            "tools": [
+              "Brewer's Supplies"
+            ]
+          }
         },
         {
           "level": 3,
@@ -4837,12 +5675,12 @@
         {
           "level": 3,
           "name": "Disciple of the Elements",
-          "text": "Learn Elemental Attunement and elemental disciplines that cost ki (some cast spells like Burning Hands or Fireball). More disciplines at 6th, 11th and 17th level."
-        },
-        {
-          "level": 3,
-          "name": "Elemental Disciplines",
-          "text": "Options include Fangs of the Fire Snake, Fist of Four Thunders, Water Whip, Shape the Flowing River, Gong of the Summit, Ride the Wind, Breath of Winter and more."
+          "text": "Learn Elemental Attunement and elemental disciplines that cost ki (some cast spells like Burning Hands or Fireball). More disciplines at 6th, 11th and 17th level.",
+          "choose": {
+            "list": "elemental-disciplines",
+            "count": "2@3,3@6,4@11,5@17",
+            "label": "Elemental Disciplines"
+          }
         },
         {
           "level": 6,
@@ -4868,7 +5706,18 @@
         {
           "level": 3,
           "name": "Path of the Kensei",
-          "text": "Choose kensei weapons; gain AC while dual-wielding with an unarmed strike (Agile Parry), longer range as a bonus action (Kensei's Shot), and proficiency with calligrapher's or painter's supplies."
+          "text": "Choose kensei weapons; gain AC while dual-wielding with an unarmed strike (Agile Parry), longer range as a bonus action (Kensei's Shot), and proficiency with calligrapher's or painter's supplies.",
+          "grants": {
+            "toolChoices": [
+              {
+                "count": 1,
+                "from": [
+                  "Calligrapher's Supplies",
+                  "Painter's Supplies"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 6,
@@ -4925,7 +5774,13 @@
         {
           "level": 6,
           "name": "Wholeness of Body",
-          "text": "As an action, regain HP equal to three times your monk level. Once per long rest."
+          "text": "As an action, regain HP equal to three times your monk level. Once per long rest.",
+          "resource": {
+            "name": "Wholeness of Body",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 11,
@@ -5003,7 +5858,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Nature's Wrath (restrain a creature with vines on a failed save) or Turn the Faithless (turn fey and fiends)."
+          "text": "Nature's Wrath (restrain a creature with vines on a failed save) or Turn the Faithless (turn fey and fiends).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5013,12 +5874,24 @@
         {
           "level": 15,
           "name": "Undying Sentinel",
-          "text": "When reduced to 0 HP, drop to 1 instead once per long rest; you also stop aging."
+          "text": "When reduced to 0 HP, drop to 1 instead once per long rest; you also stop aging.",
+          "resource": {
+            "name": "Undying Sentinel",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 20,
           "name": "Elder Champion",
-          "text": "Transform for 1 minute: regain 10 HP each turn, cast action spells as a bonus action, and enemies within 10 feet have disadvantage on saves against your spells. Once per long rest."
+          "text": "Transform for 1 minute: regain 10 HP each turn, cast action spells as a bonus action, and enemies within 10 feet have disadvantage on saves against your spells. Once per long rest.",
+          "resource": {
+            "name": "Elder Champion",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5076,7 +5949,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Conquering Presence (frighten creatures within 30 feet) or Guided Strike (+10 to an attack roll)."
+          "text": "Conquering Presence (frighten creatures within 30 feet) or Guided Strike (+10 to an attack roll).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5091,7 +5970,13 @@
         {
           "level": 20,
           "name": "Invincible Conqueror",
-          "text": "For 1 minute: resistance to all damage, an extra attack when you take the Attack action, and crits on 19 or 20. Once per long rest."
+          "text": "For 1 minute: resistance to all damage, an extra attack when you take the Attack action, and crits on 19 or 20. Once per long rest.",
+          "resource": {
+            "name": "Invincible Conqueror",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5149,7 +6034,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Champion Challenge (creatures within 30 feet can't move away from you) or Turn the Tide (heal creatures within 30 feet that are at half HP or less)."
+          "text": "Champion Challenge (creatures within 30 feet can't move away from you) or Turn the Tide (heal creatures within 30 feet that are at half HP or less).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5164,7 +6055,13 @@
         {
           "level": 20,
           "name": "Exalted Champion",
-          "text": "For 1 hour: resistance to nonmagical weapon damage, and you and allies within 30 feet have advantage on death saves and Wisdom saves. Once per long rest."
+          "text": "For 1 hour: resistance to nonmagical weapon damage, and you and allies within 30 feet have advantage on death saves and Wisdom saves. Once per long rest.",
+          "resource": {
+            "name": "Exalted Champion",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5222,7 +6119,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Sacred Weapon (add Charisma modifier to attacks with a weapon for 1 minute) or Turn the Unholy (turn fiends and undead)."
+          "text": "Sacred Weapon (add Charisma modifier to attacks with a weapon for 1 minute) or Turn the Unholy (turn fiends and undead).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5237,7 +6140,13 @@
         {
           "level": 20,
           "name": "Holy Nimbus",
-          "text": "For 1 minute, emit sunlight that deals 10 radiant damage to enemies starting their turn within 30 feet, with advantage on saves against fiends' and undead spells. Once per long rest."
+          "text": "For 1 minute, emit sunlight that deals 10 radiant damage to enemies starting their turn within 30 feet, with advantage on saves against fiends' and undead spells. Once per long rest.",
+          "resource": {
+            "name": "Holy Nimbus",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5295,7 +6204,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Peerless Athlete (advantage on Athletics and Acrobatics and better carrying and jumping for 10 minutes) or Inspiring Smite (share temp HP after a Divine Smite)."
+          "text": "Peerless Athlete (advantage on Athletics and Acrobatics and better carrying and jumping for 10 minutes) or Inspiring Smite (share temp HP after a Divine Smite).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5312,12 +6227,24 @@
         {
           "level": 15,
           "name": "Glorious Defense",
-          "text": "As a reaction, add your Charisma modifier to AC for you or an ally; if the attack misses, make a weapon attack against the attacker. Charisma modifier uses per long rest."
+          "text": "As a reaction, add your Charisma modifier to AC for you or an ally; if the attack misses, make a weapon attack against the attacker. Charisma modifier uses per long rest.",
+          "resource": {
+            "name": "Glorious Defense",
+            "uses": "cha",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 20,
           "name": "Living Legend",
-          "text": "For 1 minute: advantage on Charisma checks, turn a miss into a hit once per turn, and reroll failed saves. Once per long rest or a 5th-level slot."
+          "text": "For 1 minute: advantage on Charisma checks, turn a miss into a hit once per turn, and reroll failed saves. Once per long rest or a 5th-level slot.",
+          "resource": {
+            "name": "Living Legend",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5375,7 +6302,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Emissary of Peace (+5 to Persuasion for 10 minutes) or Rebuke the Violent (an attacker takes radiant damage equal to what it dealt)."
+          "text": "Emissary of Peace (+5 to Persuasion for 10 minutes) or Rebuke the Violent (an attacker takes radiant damage equal to what it dealt).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5448,7 +6381,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Abjure Enemy (frighten a creature and reduce its speed to 0) or Vow of Enmity (advantage on attacks against a creature for 1 minute)."
+          "text": "Abjure Enemy (frighten a creature and reduce its speed to 0) or Vow of Enmity (advantage on attacks against a creature for 1 minute).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5463,7 +6402,13 @@
         {
           "level": 20,
           "name": "Avenging Angel",
-          "text": "For 1 hour, gain a 60-foot flying speed and a 30-foot frightening aura. Once per long rest."
+          "text": "For 1 hour, gain a 60-foot flying speed and a 30-foot frightening aura. Once per long rest.",
+          "resource": {
+            "name": "Avenging Angel",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5521,7 +6466,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Watcher's Will (advantage on mental saves for you and allies for 1 minute) or Abjure the Extraplanar (turn aberrations, celestials, elementals, fey and fiends)."
+          "text": "Watcher's Will (advantage on mental saves for you and allies for 1 minute) or Abjure the Extraplanar (turn aberrations, celestials, elementals, fey and fiends).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5536,7 +6487,13 @@
         {
           "level": 20,
           "name": "Mortal Bulwark",
-          "text": "For 1 minute: truesight 120 feet, advantage against aberrations, celestials, elementals, fey and fiends, and banish them on a hit. Once per long rest."
+          "text": "For 1 minute: truesight 120 feet, advantage against aberrations, celestials, elementals, fey and fiends, and banish them on a hit. Once per long rest.",
+          "resource": {
+            "name": "Mortal Bulwark",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5594,7 +6551,13 @@
         {
           "level": 3,
           "name": "Channel Divinity",
-          "text": "Control Undead (control an undead for 24 hours) or Dreadful Aspect (frighten creatures within 30 feet)."
+          "text": "Control Undead (control an undead for 24 hours) or Dreadful Aspect (frighten creatures within 30 feet).",
+          "resource": {
+            "name": "Channel Divinity",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5609,7 +6572,13 @@
         {
           "level": 20,
           "name": "Dread Lord",
-          "text": "For 1 minute, a 30-foot aura of gloom reduces bright light, frightened enemies take psychic damage, and you can make shadowy necrotic attacks as a bonus action. Once per long rest."
+          "text": "For 1 minute, a 30-foot aura of gloom reduces bright light, frightened enemies take psychic damage, and you can make shadowy necrotic attacks as a bonus action. Once per long rest.",
+          "resource": {
+            "name": "Dread Lord",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5688,12 +6657,23 @@
         {
           "level": 3,
           "name": "Draconic Gift",
-          "text": "Learn Thaumaturgy and Draconic."
+          "text": "Learn Thaumaturgy and Draconic.",
+          "grants": {
+            "languages": [
+              "Draconic"
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Drake Companion",
-          "text": "As an action, summon a drake companion that acts on your turn and gives Infused Strikes; once per long rest or a slot."
+          "text": "As an action, summon a drake companion that acts on your turn and gives Infused Strikes; once per long rest or a slot.",
+          "resource": {
+            "name": "Drake Companion",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 7,
@@ -5703,7 +6683,13 @@
         {
           "level": 11,
           "name": "Drake's Breath",
-          "text": "As an action, you or the drake exhale a 30-foot cone of elemental damage. Once per long rest or a 3rd-level slot."
+          "text": "As an action, you or the drake exhale a 30-foot cone of elemental damage. Once per long rest or a 3rd-level slot.",
+          "resource": {
+            "name": "Drake's Breath",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 15,
@@ -5729,7 +6715,20 @@
         {
           "level": 3,
           "name": "Otherworldly Glamour",
-          "text": "Add your Wisdom modifier to Charisma checks and gain proficiency in Deception, Performance or Persuasion."
+          "text": "Add your Wisdom modifier to Charisma checks and gain proficiency in Deception, Performance or Persuasion.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": [
+                  "Deception",
+                  "Performance",
+                  "Persuasion"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 7,
@@ -5739,12 +6738,24 @@
         {
           "level": 11,
           "name": "Fey Reinforcements",
-          "text": "Summon Fey is always prepared and castable once per long rest without a slot or material; you can make it non-concentration for 1 minute."
+          "text": "Summon Fey is always prepared and castable once per long rest without a slot or material; you can make it non-concentration for 1 minute.",
+          "resource": {
+            "name": "Summon Fey (free)",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 15,
           "name": "Misty Wanderer",
-          "text": "Cast Misty Step without a slot Wisdom modifier times per long rest, bringing a willing creature along."
+          "text": "Cast Misty Step without a slot Wisdom modifier times per long rest, bringing a willing creature along.",
+          "resource": {
+            "name": "Misty Step (Misty Wanderer)",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -5814,7 +6825,19 @@
         {
           "level": 7,
           "name": "Iron Mind",
-          "text": "Proficiency in Wisdom saves (or Intelligence or Charisma if you have it)."
+          "text": "Proficiency in Wisdom saves (or Intelligence or Charisma if you have it).",
+          "grants": {
+            "saveChoices": [
+              {
+                "count": 1,
+                "from": [
+                  "wis",
+                  "int",
+                  "cha"
+                ]
+              }
+            ]
+          }
         },
         {
           "level": 11,
@@ -5877,7 +6900,13 @@
         {
           "level": 3,
           "name": "Detect Portal",
-          "text": "As an action, sense the distance and direction of the nearest planar portal within 1 mile. Once per short or long rest."
+          "text": "As an action, sense the distance and direction of the nearest planar portal within 1 mile. Once per short or long rest.",
+          "resource": {
+            "name": "Detect Portal",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 3,
@@ -5887,7 +6916,13 @@
         {
           "level": 7,
           "name": "Ethereal Step",
-          "text": "As a bonus action, cast Etherealness until the end of the turn. Once per short or long rest."
+          "text": "As a bonus action, cast Etherealness until the end of the turn. Once per short or long rest.",
+          "resource": {
+            "name": "Ethereal Step",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 11,
@@ -5945,22 +6980,42 @@
         {
           "level": 3,
           "name": "Hunter's Prey",
-          "text": "Choose Colossus Slayer (extra 1d8 once per turn on a wounded target), Giant Killer (reaction attack against Large creatures) or Horde Breaker (an extra attack on an adjacent target)."
+          "text": "Choose Colossus Slayer (extra 1d8 once per turn on a wounded target), Giant Killer (reaction attack against Large creatures) or Horde Breaker (an extra attack on an adjacent target).",
+          "choose": {
+            "list": "hunters-prey",
+            "count": "1",
+            "label": "Hunter's Prey"
+          }
         },
         {
           "level": 7,
           "name": "Defensive Tactics",
-          "text": "Choose Escape the Horde, Multiattack Defense (+4 AC after a hit) or Steel Will (advantage against frightened)."
+          "text": "Choose Escape the Horde, Multiattack Defense (+4 AC after a hit) or Steel Will (advantage against frightened).",
+          "choose": {
+            "list": "defensive-tactics",
+            "count": "1",
+            "label": "Defensive Tactics"
+          }
         },
         {
           "level": 11,
           "name": "Multiattack",
-          "text": "Choose Volley (ranged attack against every creature in a 10-foot radius) or Whirlwind Attack (melee attack against every creature within 5 feet)."
+          "text": "Choose Volley (ranged attack against every creature in a 10-foot radius) or Whirlwind Attack (melee attack against every creature within 5 feet).",
+          "choose": {
+            "list": "multiattack",
+            "count": "1",
+            "label": "Multiattack"
+          }
         },
         {
           "level": 15,
           "name": "Superior Hunter's Defense",
-          "text": "Choose Evasion, Stand Against the Tide (redirect a missed attack) or Uncanny Dodge."
+          "text": "Choose Evasion, Stand Against the Tide (redirect a missed attack) or Uncanny Dodge.",
+          "choose": {
+            "list": "superior-hunters-defense",
+            "count": "1",
+            "label": "Superior Hunter's Defense"
+          }
         }
       ]
     },
@@ -5976,7 +7031,13 @@
         {
           "level": 3,
           "name": "Hunter's Sense",
-          "text": "As an action, learn a creature's immunities, resistances and vulnerabilities. Wisdom modifier uses per long rest."
+          "text": "As an action, learn a creature's immunities, resistances and vulnerabilities. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Hunter's Sense",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 3,
@@ -5991,7 +7052,13 @@
         {
           "level": 11,
           "name": "Magic-User's Nemesis",
-          "text": "As a reaction, foil a spell or teleport by a creature within 60 feet on a failed Wisdom save. Once per short or long rest."
+          "text": "As a reaction, foil a spell or teleport by a creature within 60 feet on a failed Wisdom save. Once per short or long rest.",
+          "resource": {
+            "name": "Magic-User's Nemesis",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 15,
@@ -6054,7 +7121,13 @@
         {
           "level": 7,
           "name": "Writhing Tide",
-          "text": "As a bonus action, gain a 10-foot flying speed with hover for 1 minute. Proficiency bonus uses per long rest."
+          "text": "As a bonus action, gain a 10-foot flying speed with hover for 1 minute. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Writhing Tide",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 11,
@@ -6064,7 +7137,13 @@
         {
           "level": 15,
           "name": "Swarming Dispersal",
-          "text": "When you take damage, use your reaction to gain resistance and teleport 30 feet. Proficiency bonus uses per long rest."
+          "text": "When you take damage, use your reaction to gain resistance and teleport 30 feet. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Swarming Dispersal",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -6095,7 +7174,13 @@
         {
           "level": 17,
           "name": "Spell Thief",
-          "text": "When a creature casts a spell targeting you, use your reaction to force a save; on a failure you negate it and can steal it for 8 hours. Once per long rest."
+          "text": "When a creature casts a spell targeting you, use your reaction to force a save; on a failure you negate it and can steal it for 8 hours. Once per long rest.",
+          "resource": {
+            "name": "Spell Thief",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "caster": "third",
@@ -6108,7 +7193,13 @@
         {
           "level": 3,
           "name": "Bonus Proficiencies",
-          "text": "Proficiency with the disguise kit and the poisoner's kit."
+          "text": "Proficiency with the disguise kit and the poisoner's kit.",
+          "grants": {
+            "tools": [
+              "Disguise Kit",
+              "Poisoner's Kit"
+            ]
+          }
         },
         {
           "level": 3,
@@ -6159,7 +7250,13 @@
         {
           "level": 13,
           "name": "Unerring Eye",
-          "text": "As an action, sense illusions, shapechangers and deceptive magic within 30 feet. Wisdom modifier uses per long rest."
+          "text": "As an action, sense illusions, shapechangers and deceptive magic within 30 feet. Wisdom modifier uses per long rest.",
+          "resource": {
+            "name": "Unerring Eye",
+            "uses": "wis",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 17,
@@ -6175,7 +7272,22 @@
         {
           "level": 3,
           "name": "Master of Intrigue",
-          "text": "Proficiency with the disguise kit, forgery kit and a gaming set, two languages, and you can mimic speech patterns."
+          "text": "Proficiency with the disguise kit, forgery kit and a gaming set, two languages, and you can mimic speech patterns.",
+          "grants": {
+            "tools": [
+              "Disguise Kit",
+              "Forgery Kit"
+            ],
+            "toolChoices": [
+              {
+                "count": 1,
+                "from": [
+                  "gaming"
+                ]
+              }
+            ],
+            "languageChoices": 2
+          }
         },
         {
           "level": 3,
@@ -6206,12 +7318,27 @@
         {
           "level": 3,
           "name": "Whispers of the Dead",
-          "text": "After a rest, gain proficiency with one skill or tool of your choice."
+          "text": "After a rest, gain proficiency with one skill or tool of your choice.",
+          "grants": {
+            "skillChoices": [
+              {
+                "count": 1,
+                "mode": "prof",
+                "from": []
+              }
+            ]
+          }
         },
         {
           "level": 3,
           "name": "Wails from the Grave",
-          "text": "After you deal Sneak Attack, deal necrotic damage equal to half your Sneak Attack dice to a second creature within 30 feet. Proficiency bonus uses per long rest."
+          "text": "After you deal Sneak Attack, deal necrotic damage equal to half your Sneak Attack dice to a second creature within 30 feet. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Wails from the Grave",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 9,
@@ -6221,7 +7348,13 @@
         {
           "level": 13,
           "name": "Ghost Walk",
-          "text": "As a bonus action, become spectral for 10 minutes: fly 10 feet, move through objects, and attacks against you have disadvantage. Once per long rest or a trinket."
+          "text": "As a bonus action, become spectral for 10 minutes: fly 10 feet, move through objects, and attacks against you have disadvantage. Once per long rest or a trinket.",
+          "resource": {
+            "name": "Ghost Walk",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 17,
@@ -6242,7 +7375,13 @@
         {
           "level": 3,
           "name": "Survivalist",
-          "text": "Proficiency and expertise in Nature and Survival."
+          "text": "Proficiency and expertise in Nature and Survival.",
+          "grants": {
+            "expertise": [
+              "Nature",
+              "Survival"
+            ]
+          }
         },
         {
           "level": 9,
@@ -6275,7 +7414,13 @@
         {
           "level": 3,
           "name": "Psionic Power",
-          "text": "Psionic Energy dice (twice your proficiency bonus) fuel Psi-Bolstered Knack and Psychic Whispers. One returns on a short rest, all on a long rest."
+          "text": "Psionic Energy dice (twice your proficiency bonus) fuel Psi-Bolstered Knack and Psychic Whispers. One returns on a short rest, all on a long rest.",
+          "resource": {
+            "name": "Psionic Energy Dice",
+            "uses": "pb*2",
+            "recharge": "short1",
+            "die": "d6@3,d8@5,d10@11,d12@17"
+          }
         },
         {
           "level": 3,
@@ -6290,12 +7435,24 @@
         {
           "level": 13,
           "name": "Psychic Veil",
-          "text": "As an action, become invisible for 1 hour or until you damage or force a save. Once per long rest or a die."
+          "text": "As an action, become invisible for 1 hour or until you damage or force a save. Once per long rest or a die.",
+          "resource": {
+            "name": "Psychic Veil",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 17,
           "name": "Rend Mind",
-          "text": "When your blades deal Sneak Attack, the target makes a Wisdom save or is stunned for 1 minute. Once per long rest or three dice."
+          "text": "When your blades deal Sneak Attack, the target makes a Wisdom save or is stunned for 1 minute. Once per long rest or three dice.",
+          "resource": {
+            "name": "Rend Mind",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -6326,7 +7483,13 @@
         {
           "level": 17,
           "name": "Master Duelist",
-          "text": "When you miss an attack, reroll it with advantage. Once per short or long rest."
+          "text": "When you miss an attack, reroll it with advantage. Once per short or long rest.",
+          "resource": {
+            "name": "Master Duelist",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         }
       ]
     },
@@ -6393,7 +7556,13 @@
         {
           "level": 18,
           "name": "Warping Implosion",
-          "text": "As an action, teleport up to 120 feet and pull creatures near your old spot, dealing force damage. Once per long rest or 5 sorcery points."
+          "text": "As an action, teleport up to 120 feet and pull creatures near your old spot, dealing force damage. Once per long rest or 5 sorcery points.",
+          "resource": {
+            "name": "Warping Implosion",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -6451,7 +7620,13 @@
         {
           "level": 1,
           "name": "Restore Balance",
-          "text": "As a reaction, cancel advantage or disadvantage on a roll of a creature within 60 feet. Proficiency bonus uses per long rest."
+          "text": "As a reaction, cancel advantage or disadvantage on a roll of a creature within 60 feet. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Restore Balance",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -6461,12 +7636,24 @@
         {
           "level": 14,
           "name": "Trance of Order",
-          "text": "As a bonus action, for 1 minute attacks against you can't have advantage and your d20 rolls of 9 or lower count as 10. Once per long rest or 5 sorcery points."
+          "text": "As a bonus action, for 1 minute attacks against you can't have advantage and your d20 rolls of 9 or lower count as 10. Once per long rest or 5 sorcery points.",
+          "resource": {
+            "name": "Trance of Order",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 18,
           "name": "Clockwork Cavalcade",
-          "text": "As an action, summon spirits in a 30-foot cube that heal 100 HP, repair objects and end spells of 6th level or lower. Once per long rest or 7 sorcery points."
+          "text": "As an action, summon spirits in a 30-foot cube that heal 100 HP, repair objects and end spells of 6th level or lower. Once per long rest or 7 sorcery points.",
+          "resource": {
+            "name": "Clockwork Cavalcade",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -6519,7 +7706,12 @@
         {
           "level": 1,
           "name": "Dragon Ancestor",
-          "text": "Choose a dragon type for its damage type; you speak Draconic and double proficiency on Charisma checks with dragons."
+          "text": "Choose a dragon type for its damage type; you speak Draconic and double proficiency on Charisma checks with dragons.",
+          "grants": {
+            "languages": [
+              "Draconic"
+            ]
+          }
         },
         {
           "level": 1,
@@ -6555,7 +7747,13 @@
         {
           "level": 1,
           "name": "Favored by the Gods",
-          "text": "When you fail a save or miss an attack, add 2d4 to the roll. Once per short or long rest."
+          "text": "When you fail a save or miss an attack, add 2d4 to the roll. Once per short or long rest.",
+          "resource": {
+            "name": "Favored by the Gods",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -6570,7 +7768,13 @@
         {
           "level": 18,
           "name": "Unearthly Recovery",
-          "text": "As a bonus action when below half HP, regain half your HP maximum. Once per long rest."
+          "text": "As a bonus action when below half HP, regain half your HP maximum. Once per long rest.",
+          "resource": {
+            "name": "Unearthly Recovery",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -6591,7 +7795,13 @@
         {
           "level": 6,
           "name": "Lunar Boons",
-          "text": "Spend less sorcery points on Metamagic for spells of your current phase's schools. Proficiency bonus uses per long rest."
+          "text": "Spend less sorcery points on Metamagic for spells of your current phase's schools. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Lunar Boons",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -6606,7 +7816,13 @@
         {
           "level": 18,
           "name": "Lunar Phenomenon",
-          "text": "As a bonus action, unleash your phase's power (heal and blind, invisible teleport, or resistance and teleport). Once per long rest or 5 sorcery points."
+          "text": "As a bonus action, unleash your phase's power (heal and blind, invisible teleport, or resistance and teleport). Once per long rest or 5 sorcery points.",
+          "resource": {
+            "name": "Lunar Phenomenon",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -6622,7 +7838,13 @@
         {
           "level": 1,
           "name": "Strength of the Grave",
-          "text": "When reduced to 0 HP (not by radiant or a critical), make a Charisma save to drop to 1 HP instead. Once per long rest."
+          "text": "When reduced to 0 HP (not by radiant or a critical), make a Charisma save to drop to 1 HP instead. Once per long rest.",
+          "resource": {
+            "name": "Strength of the Grave",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -6648,7 +7870,12 @@
         {
           "level": 1,
           "name": "Wind Speaker",
-          "text": "You speak Primordial and its dialects."
+          "text": "You speak Primordial and its dialects.",
+          "grants": {
+            "languages": [
+              "Primordial"
+            ]
+          }
         },
         {
           "level": 1,
@@ -6689,7 +7916,13 @@
         {
           "level": 1,
           "name": "Tides of Chaos",
-          "text": "Gain advantage on one attack, check or save. It recharges on a long rest or after a Wild Magic Surge."
+          "text": "Gain advantage on one attack, check or save. It recharges on a long rest or after a Wild Magic Surge.",
+          "resource": {
+            "name": "Tides of Chaos",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -6720,12 +7953,24 @@
         {
           "level": 1,
           "name": "Fey Presence",
-          "text": "As an action, creatures in a 10-foot cube from you make a Wisdom save or are charmed or frightened by you until the end of your next turn. Once per short or long rest."
+          "text": "As an action, creatures in a 10-foot cube from you make a Wisdom save or are charmed or frightened by you until the end of your next turn. Once per short or long rest.",
+          "resource": {
+            "name": "Fey Presence",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 6,
           "name": "Misty Escape",
-          "text": "When you take damage, use your reaction to turn invisible and teleport up to 60 feet. You stay invisible until your next turn starts or you attack or cast. Once per short or long rest."
+          "text": "When you take damage, use your reaction to turn invisible and teleport up to 60 feet. You stay invisible until your next turn starts or you attack or cast. Once per short or long rest.",
+          "resource": {
+            "name": "Misty Escape",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -6735,7 +7980,13 @@
         {
           "level": 14,
           "name": "Dark Delirium",
-          "text": "As an action, a creature within 60 feet makes a Wisdom save or is charmed or frightened for 1 minute, lost in an illusion. Once per short or long rest."
+          "text": "As an action, a creature within 60 feet makes a Wisdom save or is charmed or frightened for 1 minute, lost in an illusion. Once per short or long rest.",
+          "resource": {
+            "name": "Dark Delirium",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -6798,7 +8049,13 @@
         {
           "level": 1,
           "name": "Healing Light",
-          "text": "You have a pool of d6s equal to 1 + your warlock level. As a bonus action, heal a creature within 60 feet by spending dice, up to your Charisma modifier per use. Recharges on a long rest."
+          "text": "You have a pool of d6s equal to 1 + your warlock level. As a bonus action, heal a creature within 60 feet by spending dice, up to your Charisma modifier per use. Recharges on a long rest.",
+          "resource": {
+            "name": "Healing Light",
+            "uses": "1+level",
+            "recharge": "long",
+            "die": "d6"
+          }
         },
         {
           "level": 6,
@@ -6813,7 +8070,13 @@
         {
           "level": 14,
           "name": "Searing Vengeance",
-          "text": "When you make a death save at the start of your turn, you can instead rise with half your HP max and blast nearby enemies with radiant damage, blinding them. Once per long rest."
+          "text": "When you make a death save at the start of your turn, you can instead rise with half your HP max and blast nearby enemies with radiant damage, blinding them. Once per long rest.",
+          "resource": {
+            "name": "Searing Vengeance",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -6871,7 +8134,13 @@
         {
           "level": 1,
           "name": "Tentacle of the Deep",
-          "text": "As a bonus action, summon a spectral tentacle that makes a cold-damage spell attack and reduces the target's speed. Uses equal your proficiency bonus per long rest."
+          "text": "As a bonus action, summon a spectral tentacle that makes a cold-damage spell attack and reduces the target's speed. Uses equal your proficiency bonus per long rest.",
+          "resource": {
+            "name": "Tentacle of the Deep",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 1,
@@ -6891,12 +8160,24 @@
         {
           "level": 10,
           "name": "Grasping Tentacles",
-          "text": "You learn Evard's Black Tentacles and can cast it once per long rest without a slot. Casting it grants temp HP and damage can't break its concentration."
+          "text": "You learn Evard's Black Tentacles and can cast it once per long rest without a slot. Casting it grants temp HP and damage can't break its concentration.",
+          "resource": {
+            "name": "Grasping Tentacles",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Fathomless Plunge",
-          "text": "As an action, teleport yourself and up to five willing creatures to a body of water you've seen within 1 mile. Once per short or long rest."
+          "text": "As an action, teleport yourself and up to five willing creatures to a body of water you've seen within 1 mile. Once per short or long rest.",
+          "resource": {
+            "name": "Fathomless Plunge",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -6959,7 +8240,13 @@
         {
           "level": 6,
           "name": "Dark One's Own Luck",
-          "text": "Add a d10 to an ability check or saving throw after seeing the roll but before the outcome. Once per short or long rest."
+          "text": "Add a d10 to an ability check or saving throw after seeing the roll but before the outcome. Once per short or long rest.",
+          "resource": {
+            "name": "Dark One's Own Luck",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -6969,7 +8256,13 @@
         {
           "level": 14,
           "name": "Hurl Through Hell",
-          "text": "When you hit a creature, send it through the lower planes until the end of your next turn; non-fiends take 10d10 psychic damage. Once per long rest."
+          "text": "When you hit a creature, send it through the lower planes until the end of your next turn; non-fiends take 10d10 psychic damage. Once per long rest.",
+          "resource": {
+            "name": "Hurl Through Hell",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -7032,7 +8325,13 @@
         {
           "level": 1,
           "name": "Bottled Respite",
-          "text": "As an action, vanish into your vessel's extradimensional space for up to twice your proficiency bonus in hours. Once per long rest."
+          "text": "As an action, vanish into your vessel's extradimensional space for up to twice your proficiency bonus in hours. Once per long rest.",
+          "resource": {
+            "name": "Bottled Respite",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 1,
@@ -7042,7 +8341,13 @@
         {
           "level": 6,
           "name": "Elemental Gift",
-          "text": "Gain resistance to your genie's damage type. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest."
+          "text": "Gain resistance to your genie's damage type. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.",
+          "resource": {
+            "name": "Elemental Gift (flight)",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -7073,7 +8378,13 @@
         {
           "level": 6,
           "name": "Entropic Ward",
-          "text": "Use your reaction to impose disadvantage on an attack against you; if it misses, you have advantage on your next attack against that creature. Once per short or long rest."
+          "text": "Use your reaction to impose disadvantage on an attack against you; if it misses, you have advantage on your next attack against that creature. Once per short or long rest.",
+          "resource": {
+            "name": "Entropic Ward",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -7141,17 +8452,38 @@
         {
           "level": 1,
           "name": "Hexblade's Curse",
-          "text": "As a bonus action, curse a creature within 30 feet for 1 minute: extra damage equal to your proficiency bonus, crits on 19-20, and healing when it dies. Once per short or long rest."
+          "text": "As a bonus action, curse a creature within 30 feet for 1 minute: extra damage equal to your proficiency bonus, crits on 19-20, and healing when it dies. Once per short or long rest.",
+          "resource": {
+            "name": "Hexblade's Curse",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 1,
           "name": "Hex Warrior",
-          "text": "Gain proficiency with medium armor, shields and martial weapons. After a long rest, bind a one-handed weapon you're proficient with to use Charisma for its attack and damage."
+          "text": "Gain proficiency with medium armor, shields and martial weapons. After a long rest, bind a one-handed weapon you're proficient with to use Charisma for its attack and damage.",
+          "grants": {
+            "armor": [
+              "medium",
+              "shields"
+            ],
+            "weapons": [
+              "martial"
+            ]
+          }
         },
         {
           "level": 6,
           "name": "Accursed Specter",
-          "text": "When you slay a humanoid, you can raise its spirit as a specter that obeys you until your next long rest. Once per long rest."
+          "text": "When you slay a humanoid, you can raise its spirit as a specter that obeys you until your next long rest. Once per long rest.",
+          "resource": {
+            "name": "Accursed Specter",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -7219,7 +8551,13 @@
         {
           "level": 1,
           "name": "Form of Dread",
-          "text": "As a bonus action, transform for 1 minute: gain temp HP, immunity to frightened, and once per turn a hit can frighten the target on a failed Wisdom save. Proficiency bonus uses per long rest."
+          "text": "As a bonus action, transform for 1 minute: gain temp HP, immunity to frightened, and once per turn a hit can frighten the target on a failed Wisdom save. Proficiency bonus uses per long rest.",
+          "resource": {
+            "name": "Form of Dread",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -7234,7 +8572,13 @@
         {
           "level": 14,
           "name": "Spirit Projection",
-          "text": "As an action, project your spirit from your body for up to 1 hour, gaining resistance to physical damage, flying, and other benefits. Once per long rest."
+          "text": "As an action, project your spirit from your body for up to 1 hour, gaining resistance to physical damage, flying, and other benefits. Once per long rest.",
+          "resource": {
+            "name": "Spirit Projection",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -7297,7 +8641,13 @@
         {
           "level": 6,
           "name": "Defy Death",
-          "text": "When you succeed on a death save or stabilize someone with Spare the Dying, regain 1d8 + Constitution modifier HP. Once per long rest."
+          "text": "When you succeed on a death save or stabilize someone with Spare the Dying, regain 1d8 + Constitution modifier HP. Once per long rest.",
+          "resource": {
+            "name": "Defy Death",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -7307,7 +8657,13 @@
         {
           "level": 14,
           "name": "Indestructible Life",
-          "text": "As a bonus action, regain 1d8 + warlock level HP and reattach severed body parts. Once per short or long rest."
+          "text": "As a bonus action, regain 1d8 + warlock level HP and reattach severed body parts. Once per short or long rest.",
+          "resource": {
+            "name": "Indestructible Life",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         }
       ],
       "spells": [
@@ -7391,7 +8747,15 @@
         {
           "level": 2,
           "name": "Training in War and Song",
-          "text": "Proficiency with light armor, one one-handed melee weapon, and Performance."
+          "text": "Proficiency with light armor, one one-handed melee weapon, and Performance.",
+          "grants": {
+            "armor": [
+              "light"
+            ],
+            "skills": [
+              "Performance"
+            ]
+          }
         },
         {
           "level": 2,
@@ -7403,7 +8767,13 @@
               "value": 10,
               "conditional": true
             }
-          ]
+          ],
+          "resource": {
+            "name": "Bladesong",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -7429,7 +8799,13 @@
         {
           "level": 2,
           "name": "Chronal Shift",
-          "text": "As a reaction, force a creature within 30 feet to reroll an attack, check or save. Twice per long rest."
+          "text": "As a reaction, force a creature within 30 feet to reroll an attack, check or save. Twice per long rest.",
+          "resource": {
+            "name": "Chronal Shift",
+            "uses": "2",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 2,
@@ -7439,12 +8815,24 @@
         {
           "level": 6,
           "name": "Momentary Stasis",
-          "text": "As an action, a Large or smaller creature within 60 feet makes a Constitution save or is incapacitated with speed 0 until your next turn. Intelligence modifier uses per long rest."
+          "text": "As an action, a Large or smaller creature within 60 feet makes a Constitution save or is incapacitated with speed 0 until your next turn. Intelligence modifier uses per long rest.",
+          "resource": {
+            "name": "Momentary Stasis",
+            "uses": "int",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
           "name": "Arcane Abeyance",
-          "text": "When you cast a 4th-level or lower spell, store it in a bead for 1 hour so another creature can release it. Once per short or long rest."
+          "text": "When you cast a 4th-level or lower spell, store it in a bead for 1 hour so another creature can release it. Once per short or long rest.",
+          "resource": {
+            "name": "Arcane Abeyance",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -7470,7 +8858,13 @@
         {
           "level": 6,
           "name": "Benign Transportation",
-          "text": "As an action, teleport up to 30 feet or swap places with a willing creature. Once per long rest or after casting a conjuration spell."
+          "text": "As an action, teleport up to 30 feet or swap places with a willing creature. Once per long rest or after casting a conjuration spell.",
+          "resource": {
+            "name": "Benign Transportation",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -7496,7 +8890,13 @@
         {
           "level": 2,
           "name": "Portent",
-          "text": "After a long rest, roll two d20s and record them; replace any attack roll, check or save you can see with one of them. Three dice at 14th level."
+          "text": "After a long rest, roll two d20s and record them; replace any attack roll, check or save you can see with one of them. Three dice at 14th level.",
+          "resource": {
+            "name": "Portent",
+            "uses": "2@2,3@14",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 6,
@@ -7594,12 +8994,24 @@
         {
           "level": 10,
           "name": "Violent Attraction",
-          "text": "As a reaction, add 1d10 to a weapon attack's damage or 2d10 to falling damage. Intelligence modifier uses per long rest."
+          "text": "As a reaction, add 1d10 to a weapon attack's damage or 2d10 to falling damage. Intelligence modifier uses per long rest.",
+          "resource": {
+            "name": "Violent Attraction",
+            "uses": "int",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 14,
           "name": "Event Horizon",
-          "text": "As an action, for 1 minute hostile creatures that start their turn within 30 feet take 2d10 force damage and have speed 0 on a failed Strength save. Once per long rest or a 3rd-level slot."
+          "text": "As an action, for 1 minute hostile creatures that start their turn within 30 feet take 2d10 force damage and have speed 0 on a failed Strength save. Once per long rest or a 3rd-level slot.",
+          "resource": {
+            "name": "Event Horizon",
+            "uses": "1",
+            "recharge": "long",
+            "die": ""
+          }
         }
       ]
     },
@@ -7625,7 +9037,13 @@
         {
           "level": 10,
           "name": "Illusory Self",
-          "text": "As a reaction, create an illusory duplicate that makes an attack miss you. Once per short or long rest."
+          "text": "As a reaction, create an illusory duplicate that makes an attack miss you. Once per short or long rest.",
+          "resource": {
+            "name": "Illusory Self",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -7682,7 +9100,13 @@
         {
           "level": 6,
           "name": "Manifest Mind",
-          "text": "As a bonus action, manifest your spellbook's mind within 60 feet; cast spells from its space proficiency bonus times per long rest."
+          "text": "As a bonus action, manifest your spellbook's mind within 60 feet; cast spells from its space proficiency bonus times per long rest.",
+          "resource": {
+            "name": "Manifest Mind",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
         },
         {
           "level": 10,
@@ -7725,7 +9149,13 @@
         {
           "level": 10,
           "name": "Shapechanger",
-          "text": "Polymorph is in your spellbook, and you can cast it on yourself without a slot once per short or long rest (CR 1 or lower beast)."
+          "text": "Polymorph is in your spellbook, and you can cast it on yourself without a slot once per short or long rest (CR 1 or lower beast).",
+          "resource": {
+            "name": "Polymorph (Shapechanger)",
+            "uses": "1",
+            "recharge": "short",
+            "die": ""
+          }
         },
         {
           "level": 14,
@@ -15906,6 +17336,768 @@
       "category": "Musical Instrument",
       "cost": "30 gp",
       "weight": 1.0
+    }
+  ],
+  "options": [
+    {
+      "list": "fighting-style",
+      "name": "Archery",
+      "listName": "Fighting Style",
+      "text": "+2 to attack rolls with ranged weapons."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Blind Fighting",
+      "listName": "Fighting Style",
+      "prerequisite": "TCoE",
+      "text": "Blindsight out to 10 feet."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Blessed Warrior",
+      "listName": "Fighting Style",
+      "prerequisite": "Paladin (TCoE)",
+      "text": "Learn two cleric cantrips; they count as paladin spells and use Charisma."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Defense",
+      "listName": "Fighting Style",
+      "text": "+1 AC while you wear armor."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Druidic Warrior",
+      "listName": "Fighting Style",
+      "prerequisite": "Ranger (TCoE)",
+      "text": "Learn two druid cantrips; they count as ranger spells and use Wisdom."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Dueling",
+      "listName": "Fighting Style",
+      "text": "+2 damage with a melee weapon held in one hand when you wield no other weapon."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Great Weapon Fighting",
+      "listName": "Fighting Style",
+      "text": "Reroll 1s and 2s on damage dice of two-handed or versatile melee weapons used with two hands."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Interception",
+      "listName": "Fighting Style",
+      "prerequisite": "TCoE",
+      "text": "With a shield or weapon in hand, use your reaction to reduce damage to a nearby ally by 1d10 + proficiency bonus."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Protection",
+      "listName": "Fighting Style",
+      "text": "With a shield, use your reaction to impose disadvantage on an attack against an ally within 5 feet."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Superior Technique",
+      "listName": "Fighting Style",
+      "prerequisite": "Fighter (TCoE)",
+      "text": "Learn one maneuver and gain one d6 superiority die that returns on a short or long rest."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Thrown Weapon Fighting",
+      "listName": "Fighting Style",
+      "prerequisite": "TCoE",
+      "text": "Draw a thrown weapon as part of the attack, and +2 damage on ranged attacks with thrown weapons."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Two-Weapon Fighting",
+      "listName": "Fighting Style",
+      "text": "Add your ability modifier to the damage of your off-hand attack."
+    },
+    {
+      "list": "fighting-style",
+      "name": "Unarmed Fighting",
+      "listName": "Fighting Style",
+      "prerequisite": "TCoE",
+      "text": "Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Ambush",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "Add a superiority die to a Stealth check or initiative roll."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Bait and Switch",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "Swap places with an ally within 5 feet using 5 feet of movement; one of you adds the die to AC until your next turn."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Brace",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "When a creature moves into your reach, use your reaction to attack it, adding the die to damage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Commander's Strike",
+      "listName": "Maneuvers",
+      "text": "Give up one attack so an ally can use its reaction to attack, adding the die to its damage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Commanding Presence",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "Add a superiority die to an Intimidation, Performance or Persuasion check."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Disarming Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; the target makes a Strength save or drops an item it holds."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Distracting Strike",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; the next ally attack against the target before your next turn has advantage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Evasive Footwork",
+      "listName": "Maneuvers",
+      "text": "When you move, add the die to your AC until you stop moving."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Feinting Attack",
+      "listName": "Maneuvers",
+      "text": "As a bonus action, gain advantage on your next attack against a creature within 5 feet and add the die to its damage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Goading Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; the target makes a Wisdom save or has disadvantage attacking anyone but you."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Grappling Strike",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "After hitting with a melee attack, try to grapple as a bonus action, adding the die to the Athletics check."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Lunging Attack",
+      "listName": "Maneuvers",
+      "text": "Increase your reach by 5 feet for one melee attack and add the die to its damage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Maneuvering Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; an ally can use its reaction to move half its speed without provoking from the target."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Menacing Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; the target makes a Wisdom save or is frightened until your next turn ends."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Parry",
+      "listName": "Maneuvers",
+      "text": "When hit by a melee attack, use your reaction to reduce the damage by the die + Dexterity modifier."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Precision Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to a weapon attack roll, before or after rolling but before the result."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Pushing Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; a Large or smaller target makes a Strength save or is pushed 15 feet."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Quick Toss",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "As a bonus action, draw and throw a thrown weapon, adding the die to its damage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Rally",
+      "listName": "Maneuvers",
+      "text": "As a bonus action, an ally who can hear you gains temp HP equal to the die + Charisma modifier."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Riposte",
+      "listName": "Maneuvers",
+      "text": "When a creature misses you in melee, use your reaction to attack it, adding the die to damage."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Sweeping Attack",
+      "listName": "Maneuvers",
+      "text": "When you hit, another creature within 5 feet of you and the target takes the die as damage if your roll would hit it."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Tactical Assessment",
+      "listName": "Maneuvers",
+      "prerequisite": "TCoE",
+      "text": "Add a superiority die to an Investigation, History or Insight check."
+    },
+    {
+      "list": "maneuvers",
+      "name": "Trip Attack",
+      "listName": "Maneuvers",
+      "text": "Add the die to damage; a Large or smaller target makes a Strength save or is knocked prone."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Banishing Arrow",
+      "listName": "Arcane Shots",
+      "text": "The target makes a Charisma save or is banished to the Feywild until your next turn ends (2d6 force at 18th)."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Beguiling Arrow",
+      "listName": "Arcane Shots",
+      "text": "Extra 2d6 psychic damage; the target makes a Wisdom save or is charmed by an ally you choose."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Bursting Arrow",
+      "listName": "Arcane Shots",
+      "text": "The arrow explodes: the target and creatures within 10 feet take 2d6 force damage."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Enfeebling Arrow",
+      "listName": "Arcane Shots",
+      "text": "Extra 2d6 necrotic damage; the target makes a Constitution save or deals half damage with weapons."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Grasping Arrow",
+      "listName": "Arcane Shots",
+      "text": "Extra 2d6 poison damage; brambles slow the target and hurt it when it moves until removed."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Piercing Arrow",
+      "listName": "Arcane Shots",
+      "text": "The arrow passes through objects in a 30-foot line; each creature in it makes a Dexterity save or takes the weapon damage + 1d6 piercing."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Seeking Arrow",
+      "listName": "Arcane Shots",
+      "text": "Choose a creature you've seen in the last minute; it makes a Dexterity save or takes the damage + 1d6 force and you learn its location."
+    },
+    {
+      "list": "arcane-shots",
+      "name": "Shadow Arrow",
+      "listName": "Arcane Shots",
+      "text": "Extra 2d6 psychic damage; the target makes a Wisdom save or can't see beyond 5 feet until your next turn."
+    },
+    {
+      "list": "runes",
+      "name": "Cloud Rune",
+      "listName": "Runes",
+      "text": "Advantage on Sleight of Hand and Deception. Activated: redirect an attack that hits a creature near you to another creature."
+    },
+    {
+      "list": "runes",
+      "name": "Fire Rune",
+      "listName": "Runes",
+      "text": "Double proficiency with tools. Activated: when you hit, fiery shackles deal 2d6 fire and restrain the target on a failed Strength save."
+    },
+    {
+      "list": "runes",
+      "name": "Frost Rune",
+      "listName": "Runes",
+      "text": "Advantage on Animal Handling and Intimidation. Activated: +2 to Strength and Constitution checks and saves for 10 minutes."
+    },
+    {
+      "list": "runes",
+      "name": "Stone Rune",
+      "listName": "Runes",
+      "text": "Advantage on Insight and darkvision 120 feet. Activated: charm a creature within 30 feet into a dreamy stupor on a failed Wisdom save."
+    },
+    {
+      "list": "runes",
+      "name": "Hill Rune",
+      "listName": "Runes",
+      "minLevel": 7,
+      "text": "Advantage against being poisoned and resistance to poison. Activated: resistance to bludgeoning, piercing and slashing for 1 minute."
+    },
+    {
+      "list": "runes",
+      "name": "Storm Rune",
+      "listName": "Runes",
+      "minLevel": 7,
+      "text": "Advantage on Arcana and can't be surprised. Activated: for 1 minute, use your reaction to give advantage or disadvantage on rolls near you."
+    },
+    {
+      "list": "metamagic",
+      "name": "Careful Spell",
+      "listName": "Metamagic",
+      "text": "1 point: up to Charisma modifier creatures automatically succeed on the spell's save."
+    },
+    {
+      "list": "metamagic",
+      "name": "Distant Spell",
+      "listName": "Metamagic",
+      "text": "1 point: double the spell's range, or make a touch spell reach 30 feet."
+    },
+    {
+      "list": "metamagic",
+      "name": "Empowered Spell",
+      "listName": "Metamagic",
+      "text": "1 point: reroll up to Charisma modifier damage dice. Can combine with another option."
+    },
+    {
+      "list": "metamagic",
+      "name": "Extended Spell",
+      "listName": "Metamagic",
+      "text": "1 point: double a duration of 1 minute or longer, up to 24 hours."
+    },
+    {
+      "list": "metamagic",
+      "name": "Heightened Spell",
+      "listName": "Metamagic",
+      "text": "3 points: one target has disadvantage on its first save against the spell."
+    },
+    {
+      "list": "metamagic",
+      "name": "Quickened Spell",
+      "listName": "Metamagic",
+      "text": "2 points: cast a spell with a casting time of 1 action as a bonus action."
+    },
+    {
+      "list": "metamagic",
+      "name": "Seeking Spell",
+      "listName": "Metamagic",
+      "prerequisite": "TCoE",
+      "text": "2 points: reroll the d20 of a missed spell attack."
+    },
+    {
+      "list": "metamagic",
+      "name": "Subtle Spell",
+      "listName": "Metamagic",
+      "text": "1 point: cast without verbal or somatic components."
+    },
+    {
+      "list": "metamagic",
+      "name": "Transmuted Spell",
+      "listName": "Metamagic",
+      "prerequisite": "TCoE",
+      "text": "1 point: change the damage type to acid, cold, fire, lightning, poison or thunder."
+    },
+    {
+      "list": "metamagic",
+      "name": "Twinned Spell",
+      "listName": "Metamagic",
+      "text": "Points equal to the spell's level (1 for cantrips): target a second creature with a single-target spell."
+    },
+    {
+      "list": "infusions",
+      "name": "Armor of Magical Strength",
+      "listName": "Infusions",
+      "minLevel": 10,
+      "text": "Armor with charges: add a charge as bonus to Strength checks and saves, or avoid being knocked prone."
+    },
+    {
+      "list": "infusions",
+      "name": "Boots of the Winding Path",
+      "listName": "Infusions",
+      "minLevel": 6,
+      "text": "As a bonus action, teleport back to a space you occupied this turn."
+    },
+    {
+      "list": "infusions",
+      "name": "Enhanced Arcane Focus",
+      "listName": "Infusions",
+      "text": "+1 to spell attacks (+2 at 10th level) and ignore half cover."
+    },
+    {
+      "list": "infusions",
+      "name": "Enhanced Defense",
+      "listName": "Infusions",
+      "text": "Armor or shield gains +1 AC (+2 at 10th level)."
+    },
+    {
+      "list": "infusions",
+      "name": "Enhanced Weapon",
+      "listName": "Infusions",
+      "text": "A simple or martial weapon gains +1 to attack and damage (+2 at 10th level)."
+    },
+    {
+      "list": "infusions",
+      "name": "Helm of Awareness",
+      "listName": "Infusions",
+      "minLevel": 10,
+      "text": "Advantage on initiative and you can't be surprised while not incapacitated."
+    },
+    {
+      "list": "infusions",
+      "name": "Homunculus Servant",
+      "listName": "Infusions",
+      "text": "Create a homunculus companion from a gem worth 100 gp."
+    },
+    {
+      "list": "infusions",
+      "name": "Mind Sharpener",
+      "listName": "Infusions",
+      "text": "Armor or robes with charges: spend one to succeed on a failed concentration save."
+    },
+    {
+      "list": "infusions",
+      "name": "Radiant Weapon",
+      "listName": "Infusions",
+      "minLevel": 6,
+      "text": "+1 weapon that sheds light; as a reaction when hit, blind the attacker on a failed Constitution save."
+    },
+    {
+      "list": "infusions",
+      "name": "Repeating Shot",
+      "listName": "Infusions",
+      "text": "+1 ranged weapon that ignores loading and makes its own ammunition."
+    },
+    {
+      "list": "infusions",
+      "name": "Replicate Magic Item",
+      "listName": "Infusions",
+      "text": "Learn a magic item plan (Bag of Holding, Goggles of Night, Sending Stones...) and make it with an infusion. Can be taken several times."
+    },
+    {
+      "list": "infusions",
+      "name": "Repulsion Shield",
+      "listName": "Infusions",
+      "minLevel": 6,
+      "text": "+1 shield; as a reaction when hit in melee, push the attacker 15 feet."
+    },
+    {
+      "list": "infusions",
+      "name": "Resistant Armor",
+      "listName": "Infusions",
+      "minLevel": 6,
+      "text": "Armor grants resistance to one damage type you choose."
+    },
+    {
+      "list": "infusions",
+      "name": "Returning Weapon",
+      "listName": "Infusions",
+      "text": "+1 thrown weapon that flies back to your hand after the attack."
+    },
+    {
+      "list": "infusions",
+      "name": "Spell-Refueling Ring",
+      "listName": "Infusions",
+      "minLevel": 6,
+      "text": "Once per long rest, regain a spell slot of 3rd level or lower."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Elemental Attunement",
+      "listName": "Elemental Disciplines",
+      "text": "Free: create minor elemental effects (sparks, breezes, small flames, shaped water or earth)."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Breath of Winter",
+      "listName": "Elemental Disciplines",
+      "minLevel": 17,
+      "text": "6 ki: cast Cone of Cold."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Clench of the North Wind",
+      "listName": "Elemental Disciplines",
+      "minLevel": 6,
+      "text": "3 ki: cast Hold Person."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Eternal Mountain Defense",
+      "listName": "Elemental Disciplines",
+      "minLevel": 11,
+      "text": "5 ki: cast Stoneskin on yourself."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Fangs of the Fire Snake",
+      "listName": "Elemental Disciplines",
+      "text": "1 ki: your unarmed strikes reach 10 feet this turn and deal fire damage; 1 more ki adds 1d10 fire to a hit."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Fist of Four Thunders",
+      "listName": "Elemental Disciplines",
+      "text": "2 ki: cast Thunderwave."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Fist of Unbroken Air",
+      "listName": "Elemental Disciplines",
+      "text": "2 ki: a creature within 30 feet takes 3d10 bludgeoning, is pushed 20 feet and knocked prone on a failed Strength save."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Flames of the Phoenix",
+      "listName": "Elemental Disciplines",
+      "minLevel": 11,
+      "text": "4 ki: cast Fireball."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Gong of the Summit",
+      "listName": "Elemental Disciplines",
+      "minLevel": 6,
+      "text": "3 ki: cast Shatter."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Mist Stance",
+      "listName": "Elemental Disciplines",
+      "minLevel": 11,
+      "text": "4 ki: cast Gaseous Form on yourself."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Ride the Wind",
+      "listName": "Elemental Disciplines",
+      "minLevel": 11,
+      "text": "4 ki: cast Fly on yourself."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "River of Hungry Flame",
+      "listName": "Elemental Disciplines",
+      "minLevel": 17,
+      "text": "5 ki: cast Wall of Fire."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Rush of the Gale Spirits",
+      "listName": "Elemental Disciplines",
+      "text": "2 ki: cast Gust of Wind."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Shape the Flowing River",
+      "listName": "Elemental Disciplines",
+      "text": "1 ki: reshape or move water and ice within 120 feet."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Sweeping Cinder Strike",
+      "listName": "Elemental Disciplines",
+      "text": "2 ki: cast Burning Hands."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Water Whip",
+      "listName": "Elemental Disciplines",
+      "text": "2 ki: a creature within 30 feet takes 3d10 bludgeoning and is pulled 25 feet or knocked prone on a failed Dexterity save."
+    },
+    {
+      "list": "elemental-disciplines",
+      "name": "Wave of Rolling Earth",
+      "listName": "Elemental Disciplines",
+      "minLevel": 17,
+      "text": "6 ki: cast Wall of Stone."
+    },
+    {
+      "list": "hunters-prey",
+      "name": "Colossus Slayer",
+      "listName": "Hunter's Prey",
+      "text": "Once per turn, a weapon hit on a creature below its HP maximum deals an extra 1d8."
+    },
+    {
+      "list": "hunters-prey",
+      "name": "Giant Killer",
+      "listName": "Hunter's Prey",
+      "text": "When a Large or larger creature within 5 feet attacks you, use your reaction to attack it."
+    },
+    {
+      "list": "hunters-prey",
+      "name": "Horde Breaker",
+      "listName": "Hunter's Prey",
+      "text": "Once per turn, make another attack against a different creature within 5 feet of the original target."
+    },
+    {
+      "list": "defensive-tactics",
+      "name": "Escape the Horde",
+      "listName": "Defensive Tactics",
+      "text": "Opportunity attacks against you have disadvantage."
+    },
+    {
+      "list": "defensive-tactics",
+      "name": "Multiattack Defense",
+      "listName": "Defensive Tactics",
+      "text": "After a creature hits you, you gain +4 AC against its other attacks this turn."
+    },
+    {
+      "list": "defensive-tactics",
+      "name": "Steel Will",
+      "listName": "Defensive Tactics",
+      "text": "Advantage on saves against being frightened."
+    },
+    {
+      "list": "multiattack",
+      "name": "Volley",
+      "listName": "Multiattack",
+      "text": "As an action, make a ranged attack against any number of creatures within 10 feet of a point."
+    },
+    {
+      "list": "multiattack",
+      "name": "Whirlwind Attack",
+      "listName": "Multiattack",
+      "text": "As an action, make a melee attack against every creature within 5 feet."
+    },
+    {
+      "list": "superior-hunters-defense",
+      "name": "Evasion",
+      "listName": "Superior Hunter's Defense",
+      "text": "On a Dexterity save for half damage, take none on a success and half on a failure."
+    },
+    {
+      "list": "superior-hunters-defense",
+      "name": "Stand Against the Tide",
+      "listName": "Superior Hunter's Defense",
+      "text": "When a melee attack misses you, use your reaction to make it hit another creature of your choice."
+    },
+    {
+      "list": "superior-hunters-defense",
+      "name": "Uncanny Dodge",
+      "listName": "Superior Hunter's Defense",
+      "text": "When an attacker you can see hits you, use your reaction to halve the damage."
+    },
+    {
+      "list": "totem-spirit",
+      "name": "Bear",
+      "listName": "Totem Spirit",
+      "text": "While raging, resistance to all damage except psychic."
+    },
+    {
+      "list": "totem-spirit",
+      "name": "Eagle",
+      "listName": "Totem Spirit",
+      "text": "While raging without heavy armor, opportunity attacks against you have disadvantage and you can Dash as a bonus action."
+    },
+    {
+      "list": "totem-spirit",
+      "name": "Elk",
+      "listName": "Totem Spirit",
+      "text": "While raging without heavy armor, your walking speed increases by 15 feet."
+    },
+    {
+      "list": "totem-spirit",
+      "name": "Tiger",
+      "listName": "Totem Spirit",
+      "text": "While raging, long jumps gain 10 feet and high jumps 3 feet."
+    },
+    {
+      "list": "totem-spirit",
+      "name": "Wolf",
+      "listName": "Totem Spirit",
+      "text": "While raging, allies have advantage on melee attacks against enemies within 5 feet of you."
+    },
+    {
+      "list": "totem-aspect",
+      "name": "Bear",
+      "listName": "Aspect of the Beast",
+      "text": "Double carrying capacity and advantage on Strength checks to push, pull, lift or break."
+    },
+    {
+      "list": "totem-aspect",
+      "name": "Eagle",
+      "listName": "Aspect of the Beast",
+      "text": "See up to a mile away clearly, and dim light doesn't hinder your Perception."
+    },
+    {
+      "list": "totem-aspect",
+      "name": "Elk",
+      "listName": "Aspect of the Beast",
+      "text": "You and up to ten companions travel at double pace."
+    },
+    {
+      "list": "totem-aspect",
+      "name": "Tiger",
+      "listName": "Aspect of the Beast",
+      "text": "Proficiency in two of Athletics, Acrobatics, Stealth and Survival."
+    },
+    {
+      "list": "totem-aspect",
+      "name": "Wolf",
+      "listName": "Aspect of the Beast",
+      "text": "Track at a fast pace and move stealthily at a normal pace."
+    },
+    {
+      "list": "totem-attunement",
+      "name": "Bear",
+      "listName": "Totemic Attunement",
+      "text": "While raging, enemies within 5 feet have disadvantage attacking anyone but you."
+    },
+    {
+      "list": "totem-attunement",
+      "name": "Eagle",
+      "listName": "Totemic Attunement",
+      "text": "While raging, you have a flying speed equal to your walking speed."
+    },
+    {
+      "list": "totem-attunement",
+      "name": "Elk",
+      "listName": "Totemic Attunement",
+      "text": "While raging, as a bonus action move through a Large or smaller creature's space; it makes a Strength save or is knocked prone and takes damage."
+    },
+    {
+      "list": "totem-attunement",
+      "name": "Tiger",
+      "listName": "Totemic Attunement",
+      "text": "While raging, after moving 20 feet straight toward a target, make one extra melee attack as a bonus action."
+    },
+    {
+      "list": "totem-attunement",
+      "name": "Wolf",
+      "listName": "Totemic Attunement",
+      "text": "While raging, when you hit with a melee attack, knock a Large or smaller creature prone as a bonus action."
+    },
+    {
+      "list": "storm-aura",
+      "name": "Desert",
+      "listName": "Storm Aura",
+      "text": "Aura deals fire damage to creatures when you activate it; later, resistance to fire."
+    },
+    {
+      "list": "storm-aura",
+      "name": "Sea",
+      "listName": "Storm Aura",
+      "text": "Aura strikes one creature with lightning on a failed Dexterity save; later, resistance to lightning."
+    },
+    {
+      "list": "storm-aura",
+      "name": "Tundra",
+      "listName": "Storm Aura",
+      "text": "Aura gives temp HP to you and allies; later, resistance to cold."
     }
   ],
   "spells": [

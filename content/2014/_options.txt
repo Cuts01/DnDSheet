@@ -1,0 +1,265 @@
+# Opciones que eligen los class features (resúmenes propios).
+# @option <lista> | <Nombre> | listname <Nombre visible> | prereq <texto> | level <nivel mínimo>
+# La línea siguiente es el texto. Las opciones pueden dar proficiencies con los mismos tokens que los features.
+
+# ---------- Fighting Styles ----------
+@option fighting-style | Archery | listname Fighting Style
++2 to attack rolls with ranged weapons.
+@option fighting-style | Blind Fighting | listname Fighting Style | prereq TCoE
+Blindsight out to 10 feet.
+@option fighting-style | Blessed Warrior | listname Fighting Style | prereq Paladin (TCoE)
+Learn two cleric cantrips; they count as paladin spells and use Charisma.
+@option fighting-style | Defense | listname Fighting Style
++1 AC while you wear armor.
+@option fighting-style | Druidic Warrior | listname Fighting Style | prereq Ranger (TCoE)
+Learn two druid cantrips; they count as ranger spells and use Wisdom.
+@option fighting-style | Dueling | listname Fighting Style
++2 damage with a melee weapon held in one hand when you wield no other weapon.
+@option fighting-style | Great Weapon Fighting | listname Fighting Style
+Reroll 1s and 2s on damage dice of two-handed or versatile melee weapons used with two hands.
+@option fighting-style | Interception | listname Fighting Style | prereq TCoE
+With a shield or weapon in hand, use your reaction to reduce damage to a nearby ally by 1d10 + proficiency bonus.
+@option fighting-style | Protection | listname Fighting Style
+With a shield, use your reaction to impose disadvantage on an attack against an ally within 5 feet.
+@option fighting-style | Superior Technique | listname Fighting Style | prereq Fighter (TCoE)
+Learn one maneuver and gain one d6 superiority die that returns on a short or long rest.
+@option fighting-style | Thrown Weapon Fighting | listname Fighting Style | prereq TCoE
+Draw a thrown weapon as part of the attack, and +2 damage on ranged attacks with thrown weapons.
+@option fighting-style | Two-Weapon Fighting | listname Fighting Style
+Add your ability modifier to the damage of your off-hand attack.
+@option fighting-style | Unarmed Fighting | listname Fighting Style | prereq TCoE
+Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn.
+
+# ---------- Battle Master maneuvers ----------
+@option maneuvers | Ambush | listname Maneuvers | prereq TCoE
+Add a superiority die to a Stealth check or initiative roll.
+@option maneuvers | Bait and Switch | listname Maneuvers | prereq TCoE
+Swap places with an ally within 5 feet using 5 feet of movement; one of you adds the die to AC until your next turn.
+@option maneuvers | Brace | listname Maneuvers | prereq TCoE
+When a creature moves into your reach, use your reaction to attack it, adding the die to damage.
+@option maneuvers | Commander's Strike | listname Maneuvers
+Give up one attack so an ally can use its reaction to attack, adding the die to its damage.
+@option maneuvers | Commanding Presence | listname Maneuvers | prereq TCoE
+Add a superiority die to an Intimidation, Performance or Persuasion check.
+@option maneuvers | Disarming Attack | listname Maneuvers
+Add the die to damage; the target makes a Strength save or drops an item it holds.
+@option maneuvers | Distracting Strike | listname Maneuvers
+Add the die to damage; the next ally attack against the target before your next turn has advantage.
+@option maneuvers | Evasive Footwork | listname Maneuvers
+When you move, add the die to your AC until you stop moving.
+@option maneuvers | Feinting Attack | listname Maneuvers
+As a bonus action, gain advantage on your next attack against a creature within 5 feet and add the die to its damage.
+@option maneuvers | Goading Attack | listname Maneuvers
+Add the die to damage; the target makes a Wisdom save or has disadvantage attacking anyone but you.
+@option maneuvers | Grappling Strike | listname Maneuvers | prereq TCoE
+After hitting with a melee attack, try to grapple as a bonus action, adding the die to the Athletics check.
+@option maneuvers | Lunging Attack | listname Maneuvers
+Increase your reach by 5 feet for one melee attack and add the die to its damage.
+@option maneuvers | Maneuvering Attack | listname Maneuvers
+Add the die to damage; an ally can use its reaction to move half its speed without provoking from the target.
+@option maneuvers | Menacing Attack | listname Maneuvers
+Add the die to damage; the target makes a Wisdom save or is frightened until your next turn ends.
+@option maneuvers | Parry | listname Maneuvers
+When hit by a melee attack, use your reaction to reduce the damage by the die + Dexterity modifier.
+@option maneuvers | Precision Attack | listname Maneuvers
+Add the die to a weapon attack roll, before or after rolling but before the result.
+@option maneuvers | Pushing Attack | listname Maneuvers
+Add the die to damage; a Large or smaller target makes a Strength save or is pushed 15 feet.
+@option maneuvers | Quick Toss | listname Maneuvers | prereq TCoE
+As a bonus action, draw and throw a thrown weapon, adding the die to its damage.
+@option maneuvers | Rally | listname Maneuvers
+As a bonus action, an ally who can hear you gains temp HP equal to the die + Charisma modifier.
+@option maneuvers | Riposte | listname Maneuvers
+When a creature misses you in melee, use your reaction to attack it, adding the die to damage.
+@option maneuvers | Sweeping Attack | listname Maneuvers
+When you hit, another creature within 5 feet of you and the target takes the die as damage if your roll would hit it.
+@option maneuvers | Tactical Assessment | listname Maneuvers | prereq TCoE
+Add a superiority die to an Investigation, History or Insight check.
+@option maneuvers | Trip Attack | listname Maneuvers
+Add the die to damage; a Large or smaller target makes a Strength save or is knocked prone.
+
+# ---------- Arcane Shots (Arcane Archer) ----------
+@option arcane-shots | Banishing Arrow | listname Arcane Shots
+The target makes a Charisma save or is banished to the Feywild until your next turn ends (2d6 force at 18th).
+@option arcane-shots | Beguiling Arrow | listname Arcane Shots
+Extra 2d6 psychic damage; the target makes a Wisdom save or is charmed by an ally you choose.
+@option arcane-shots | Bursting Arrow | listname Arcane Shots
+The arrow explodes: the target and creatures within 10 feet take 2d6 force damage.
+@option arcane-shots | Enfeebling Arrow | listname Arcane Shots
+Extra 2d6 necrotic damage; the target makes a Constitution save or deals half damage with weapons.
+@option arcane-shots | Grasping Arrow | listname Arcane Shots
+Extra 2d6 poison damage; brambles slow the target and hurt it when it moves until removed.
+@option arcane-shots | Piercing Arrow | listname Arcane Shots
+The arrow passes through objects in a 30-foot line; each creature in it makes a Dexterity save or takes the weapon damage + 1d6 piercing.
+@option arcane-shots | Seeking Arrow | listname Arcane Shots
+Choose a creature you've seen in the last minute; it makes a Dexterity save or takes the damage + 1d6 force and you learn its location.
+@option arcane-shots | Shadow Arrow | listname Arcane Shots
+Extra 2d6 psychic damage; the target makes a Wisdom save or can't see beyond 5 feet until your next turn.
+
+# ---------- Runes (Rune Knight) ----------
+@option runes | Cloud Rune | listname Runes
+Advantage on Sleight of Hand and Deception. Activated: redirect an attack that hits a creature near you to another creature.
+@option runes | Fire Rune | listname Runes
+Double proficiency with tools. Activated: when you hit, fiery shackles deal 2d6 fire and restrain the target on a failed Strength save.
+@option runes | Frost Rune | listname Runes
+Advantage on Animal Handling and Intimidation. Activated: +2 to Strength and Constitution checks and saves for 10 minutes.
+@option runes | Stone Rune | listname Runes
+Advantage on Insight and darkvision 120 feet. Activated: charm a creature within 30 feet into a dreamy stupor on a failed Wisdom save.
+@option runes | Hill Rune | listname Runes | level 7
+Advantage against being poisoned and resistance to poison. Activated: resistance to bludgeoning, piercing and slashing for 1 minute.
+@option runes | Storm Rune | listname Runes | level 7
+Advantage on Arcana and can't be surprised. Activated: for 1 minute, use your reaction to give advantage or disadvantage on rolls near you.
+
+# ---------- Metamagic ----------
+@option metamagic | Careful Spell | listname Metamagic
+1 point: up to Charisma modifier creatures automatically succeed on the spell's save.
+@option metamagic | Distant Spell | listname Metamagic
+1 point: double the spell's range, or make a touch spell reach 30 feet.
+@option metamagic | Empowered Spell | listname Metamagic
+1 point: reroll up to Charisma modifier damage dice. Can combine with another option.
+@option metamagic | Extended Spell | listname Metamagic
+1 point: double a duration of 1 minute or longer, up to 24 hours.
+@option metamagic | Heightened Spell | listname Metamagic
+3 points: one target has disadvantage on its first save against the spell.
+@option metamagic | Quickened Spell | listname Metamagic
+2 points: cast a spell with a casting time of 1 action as a bonus action.
+@option metamagic | Seeking Spell | listname Metamagic | prereq TCoE
+2 points: reroll the d20 of a missed spell attack.
+@option metamagic | Subtle Spell | listname Metamagic
+1 point: cast without verbal or somatic components.
+@option metamagic | Transmuted Spell | listname Metamagic | prereq TCoE
+1 point: change the damage type to acid, cold, fire, lightning, poison or thunder.
+@option metamagic | Twinned Spell | listname Metamagic
+Points equal to the spell's level (1 for cantrips): target a second creature with a single-target spell.
+
+# ---------- Artificer infusions ----------
+@option infusions | Armor of Magical Strength | listname Infusions | level 10
+Armor with charges: add a charge as bonus to Strength checks and saves, or avoid being knocked prone.
+@option infusions | Boots of the Winding Path | listname Infusions | level 6
+As a bonus action, teleport back to a space you occupied this turn.
+@option infusions | Enhanced Arcane Focus | listname Infusions
++1 to spell attacks (+2 at 10th level) and ignore half cover.
+@option infusions | Enhanced Defense | listname Infusions
+Armor or shield gains +1 AC (+2 at 10th level).
+@option infusions | Enhanced Weapon | listname Infusions
+A simple or martial weapon gains +1 to attack and damage (+2 at 10th level).
+@option infusions | Helm of Awareness | listname Infusions | level 10
+Advantage on initiative and you can't be surprised while not incapacitated.
+@option infusions | Homunculus Servant | listname Infusions
+Create a homunculus companion from a gem worth 100 gp.
+@option infusions | Mind Sharpener | listname Infusions
+Armor or robes with charges: spend one to succeed on a failed concentration save.
+@option infusions | Radiant Weapon | listname Infusions | level 6
++1 weapon that sheds light; as a reaction when hit, blind the attacker on a failed Constitution save.
+@option infusions | Repeating Shot | listname Infusions
++1 ranged weapon that ignores loading and makes its own ammunition.
+@option infusions | Replicate Magic Item | listname Infusions
+Learn a magic item plan (Bag of Holding, Goggles of Night, Sending Stones...) and make it with an infusion. Can be taken several times.
+@option infusions | Repulsion Shield | listname Infusions | level 6
++1 shield; as a reaction when hit in melee, push the attacker 15 feet.
+@option infusions | Resistant Armor | listname Infusions | level 6
+Armor grants resistance to one damage type you choose.
+@option infusions | Returning Weapon | listname Infusions
++1 thrown weapon that flies back to your hand after the attack.
+@option infusions | Spell-Refueling Ring | listname Infusions | level 6
+Once per long rest, regain a spell slot of 3rd level or lower.
+
+# ---------- Way of the Four Elements ----------
+@option elemental-disciplines | Elemental Attunement | listname Elemental Disciplines
+Free: create minor elemental effects (sparks, breezes, small flames, shaped water or earth).
+@option elemental-disciplines | Breath of Winter | listname Elemental Disciplines | level 17
+6 ki: cast Cone of Cold.
+@option elemental-disciplines | Clench of the North Wind | listname Elemental Disciplines | level 6
+3 ki: cast Hold Person.
+@option elemental-disciplines | Eternal Mountain Defense | listname Elemental Disciplines | level 11
+5 ki: cast Stoneskin on yourself.
+@option elemental-disciplines | Fangs of the Fire Snake | listname Elemental Disciplines
+1 ki: your unarmed strikes reach 10 feet this turn and deal fire damage; 1 more ki adds 1d10 fire to a hit.
+@option elemental-disciplines | Fist of Four Thunders | listname Elemental Disciplines
+2 ki: cast Thunderwave.
+@option elemental-disciplines | Fist of Unbroken Air | listname Elemental Disciplines
+2 ki: a creature within 30 feet takes 3d10 bludgeoning, is pushed 20 feet and knocked prone on a failed Strength save.
+@option elemental-disciplines | Flames of the Phoenix | listname Elemental Disciplines | level 11
+4 ki: cast Fireball.
+@option elemental-disciplines | Gong of the Summit | listname Elemental Disciplines | level 6
+3 ki: cast Shatter.
+@option elemental-disciplines | Mist Stance | listname Elemental Disciplines | level 11
+4 ki: cast Gaseous Form on yourself.
+@option elemental-disciplines | Ride the Wind | listname Elemental Disciplines | level 11
+4 ki: cast Fly on yourself.
+@option elemental-disciplines | River of Hungry Flame | listname Elemental Disciplines | level 17
+5 ki: cast Wall of Fire.
+@option elemental-disciplines | Rush of the Gale Spirits | listname Elemental Disciplines
+2 ki: cast Gust of Wind.
+@option elemental-disciplines | Shape the Flowing River | listname Elemental Disciplines
+1 ki: reshape or move water and ice within 120 feet.
+@option elemental-disciplines | Sweeping Cinder Strike | listname Elemental Disciplines
+2 ki: cast Burning Hands.
+@option elemental-disciplines | Water Whip | listname Elemental Disciplines
+2 ki: a creature within 30 feet takes 3d10 bludgeoning and is pulled 25 feet or knocked prone on a failed Dexterity save.
+@option elemental-disciplines | Wave of Rolling Earth | listname Elemental Disciplines | level 17
+6 ki: cast Wall of Stone.
+
+# ---------- Hunter ----------
+@option hunters-prey | Colossus Slayer | listname Hunter's Prey
+Once per turn, a weapon hit on a creature below its HP maximum deals an extra 1d8.
+@option hunters-prey | Giant Killer | listname Hunter's Prey
+When a Large or larger creature within 5 feet attacks you, use your reaction to attack it.
+@option hunters-prey | Horde Breaker | listname Hunter's Prey
+Once per turn, make another attack against a different creature within 5 feet of the original target.
+@option defensive-tactics | Escape the Horde | listname Defensive Tactics
+Opportunity attacks against you have disadvantage.
+@option defensive-tactics | Multiattack Defense | listname Defensive Tactics
+After a creature hits you, you gain +4 AC against its other attacks this turn.
+@option defensive-tactics | Steel Will | listname Defensive Tactics
+Advantage on saves against being frightened.
+@option multiattack | Volley | listname Multiattack
+As an action, make a ranged attack against any number of creatures within 10 feet of a point.
+@option multiattack | Whirlwind Attack | listname Multiattack
+As an action, make a melee attack against every creature within 5 feet.
+@option superior-hunters-defense | Evasion | listname Superior Hunter's Defense
+On a Dexterity save for half damage, take none on a success and half on a failure.
+@option superior-hunters-defense | Stand Against the Tide | listname Superior Hunter's Defense
+When a melee attack misses you, use your reaction to make it hit another creature of your choice.
+@option superior-hunters-defense | Uncanny Dodge | listname Superior Hunter's Defense
+When an attacker you can see hits you, use your reaction to halve the damage.
+
+# ---------- Path of the Totem Warrior ----------
+@option totem-spirit | Bear | listname Totem Spirit
+While raging, resistance to all damage except psychic.
+@option totem-spirit | Eagle | listname Totem Spirit
+While raging without heavy armor, opportunity attacks against you have disadvantage and you can Dash as a bonus action.
+@option totem-spirit | Elk | listname Totem Spirit
+While raging without heavy armor, your walking speed increases by 15 feet.
+@option totem-spirit | Tiger | listname Totem Spirit
+While raging, long jumps gain 10 feet and high jumps 3 feet.
+@option totem-spirit | Wolf | listname Totem Spirit
+While raging, allies have advantage on melee attacks against enemies within 5 feet of you.
+@option totem-aspect | Bear | listname Aspect of the Beast
+Double carrying capacity and advantage on Strength checks to push, pull, lift or break.
+@option totem-aspect | Eagle | listname Aspect of the Beast
+See up to a mile away clearly, and dim light doesn't hinder your Perception.
+@option totem-aspect | Elk | listname Aspect of the Beast
+You and up to ten companions travel at double pace.
+@option totem-aspect | Tiger | listname Aspect of the Beast
+Proficiency in two of Athletics, Acrobatics, Stealth and Survival.
+@option totem-aspect | Wolf | listname Aspect of the Beast
+Track at a fast pace and move stealthily at a normal pace.
+@option totem-attunement | Bear | listname Totemic Attunement
+While raging, enemies within 5 feet have disadvantage attacking anyone but you.
+@option totem-attunement | Eagle | listname Totemic Attunement
+While raging, you have a flying speed equal to your walking speed.
+@option totem-attunement | Elk | listname Totemic Attunement
+While raging, as a bonus action move through a Large or smaller creature's space; it makes a Strength save or is knocked prone and takes damage.
+@option totem-attunement | Tiger | listname Totemic Attunement
+While raging, after moving 20 feet straight toward a target, make one extra melee attack as a bonus action.
+@option totem-attunement | Wolf | listname Totemic Attunement
+While raging, when you hit with a melee attack, knock a Large or smaller creature prone as a bonus action.
+
+# ---------- Path of the Storm Herald ----------
+@option storm-aura | Desert | listname Storm Aura
+Aura deals fire damage to creatures when you activate it; later, resistance to fire.
+@option storm-aura | Sea | listname Storm Aura
+Aura strikes one creature with lightning on a failed Dexterity save; later, resistance to lightning.
+@option storm-aura | Tundra | listname Storm Aura
+Aura gives temp HP to you and allies; later, resistance to cold.

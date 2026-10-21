@@ -1,0 +1,103 @@
+# Opciones que eligen los class features 2024 (resúmenes propios).
+# Los Fighting Styles 2024 son feats (categoría fighting style) y se eligen de la lista de feats.
+# Las listas que no están aquí (Arcane Shots, Elemental Disciplines...) se toman del pack 2014.
+
+# ---------- Battle Master maneuvers ----------
+@option maneuvers | Ambush | listname Maneuvers
+Add a Superiority Die to a Dexterity (Stealth) check or an Initiative roll.
+@option maneuvers | Bait and Switch | listname Maneuvers
+Swap places with an ally within 5 feet; one of you adds the die to AC until your next turn starts.
+@option maneuvers | Commander's Strike | listname Maneuvers
+Give up one attack and a Bonus Action so an ally can use its Reaction to attack, adding the die to damage.
+@option maneuvers | Commanding Presence | listname Maneuvers
+Add the die to an Intimidation, Performance or Persuasion check.
+@option maneuvers | Disarming Attack | listname Maneuvers
+Add the die to damage; the target makes a Strength save or drops an object it holds.
+@option maneuvers | Distracting Strike | listname Maneuvers
+Add the die to damage; the next attack by someone else against the target has advantage.
+@option maneuvers | Evasive Footwork | listname Maneuvers
+As a Bonus Action, Disengage and add the die to your AC until your next turn starts.
+@option maneuvers | Feinting Attack | listname Maneuvers
+As a Bonus Action, gain advantage on your next attack against a creature within 5 feet and add the die to its damage.
+@option maneuvers | Goading Attack | listname Maneuvers
+Add the die to damage; the target makes a Wisdom save or has disadvantage attacking anyone but you.
+@option maneuvers | Lunging Attack | listname Maneuvers
+As a Bonus Action, Dash; if you then hit with a melee attack, add the die to damage.
+@option maneuvers | Maneuvering Attack | listname Maneuvers
+Add the die to damage; an ally can use its Reaction to move half its Speed without provoking from the target.
+@option maneuvers | Menacing Attack | listname Maneuvers
+Add the die to damage; the target makes a Wisdom save or is Frightened until your next turn ends.
+@option maneuvers | Parry | listname Maneuvers
+When hit by a melee attack, use your Reaction to reduce the damage by the die + your Strength or Dexterity modifier.
+@option maneuvers | Precision Attack | listname Maneuvers
+When you miss, add the die to the attack roll, possibly turning it into a hit.
+@option maneuvers | Pushing Attack | listname Maneuvers
+Add the die to damage; a Large or smaller target makes a Strength save or is pushed 15 feet.
+@option maneuvers | Rally | listname Maneuvers
+As a Bonus Action, an ally within 30 feet gains temp HP equal to the die + half your Fighter level.
+@option maneuvers | Riposte | listname Maneuvers
+When a creature misses you in melee, use your Reaction to attack it, adding the die to damage.
+@option maneuvers | Sweeping Attack | listname Maneuvers
+When you hit, another creature within 5 feet of you and the target takes the die as damage if your roll would hit it.
+@option maneuvers | Tactical Assessment | listname Maneuvers
+Add the die to a History, Insight or Investigation check.
+@option maneuvers | Trip Attack | listname Maneuvers
+Add the die to damage; a Large or smaller target makes a Strength save or has the Prone condition.
+
+# ---------- Metamagic ----------
+@option metamagic | Careful Spell | listname Metamagic
+1 point: up to Charisma modifier creatures automatically succeed on the save and take no damage on a success.
+@option metamagic | Distant Spell | listname Metamagic
+1 point: increase the range by 60 feet, or make a touch spell reach 30 feet.
+@option metamagic | Empowered Spell | listname Metamagic
+1 point: reroll up to Charisma modifier damage dice. Can combine with another option.
+@option metamagic | Extended Spell | listname Metamagic
+1 point: double a duration of 1 minute or longer (up to 24 hours) and gain advantage on Concentration saves for it.
+@option metamagic | Heightened Spell | listname Metamagic
+2 points: one target has disadvantage on saves against the spell.
+@option metamagic | Quickened Spell | listname Metamagic
+2 points: cast an action spell as a Bonus Action, but not if you've already cast a level 1+ spell this turn.
+@option metamagic | Seeking Spell | listname Metamagic
+1 point: reroll a missed spell attack. Can combine with another option.
+@option metamagic | Subtle Spell | listname Metamagic
+1 point: cast without Verbal, Somatic or Material components (except costly ones).
+@option metamagic | Transmuted Spell | listname Metamagic
+1 point: change the damage type to Acid, Cold, Fire, Lightning, Poison or Thunder.
+@option metamagic | Twinned Spell | listname Metamagic
+1 point: when a spell cast with a slot can target more creatures at a higher level, add one more target.
+
+# ---------- Hunter ----------
+@option hunters-prey | Colossus Slayer | listname Hunter's Prey
+Once per turn, a weapon hit on a creature missing HP deals an extra 1d8.
+@option hunters-prey | Horde Breaker | listname Hunter's Prey
+Once per turn, make another attack with the same weapon against a different creature within 5 feet of the first.
+@option defensive-tactics | Escape the Horde | listname Defensive Tactics
+Opportunity attacks against you have disadvantage.
+@option defensive-tactics | Multiattack Defense | listname Defensive Tactics
+After a creature hits you, its other attacks this turn have disadvantage.
+
+# ---------- Cleric, Druid ----------
+@option divine-order | Protector | listname Divine Order
+Training with Martial weapons and Heavy armor. {weapons martial} {armor heavy}
+@option divine-order | Thaumaturge | listname Divine Order
+One extra Cleric cantrip, and add your Wisdom modifier (minimum +1) to Intelligence (Arcana or Religion) checks.
+@option blessed-strikes | Divine Strike | listname Blessed Strikes
+Once per turn, a weapon hit deals an extra 1d8 Necrotic or Radiant damage.
+@option blessed-strikes | Potent Spellcasting | listname Blessed Strikes
+Add your Wisdom modifier to the damage of Cleric cantrips.
+@option primal-order | Magician | listname Primal Order
+One extra Druid cantrip, and add your Wisdom modifier (minimum +1) to Intelligence (Arcana or Nature) checks.
+@option primal-order | Warden | listname Primal Order
+Training with Martial weapons and Medium armor. {weapons martial} {armor medium}
+@option elemental-fury | Potent Spellcasting | listname Elemental Fury
+Add your Wisdom modifier to the damage of Druid cantrips.
+@option elemental-fury | Primal Strike | listname Elemental Fury
+Once per turn, a weapon or Wild Shape hit deals an extra 1d8 Cold, Fire, Lightning or Thunder damage.
+
+# ---------- Path of the Wild Heart ----------
+@option aspect-of-the-wilds | Owl | listname Aspect of the Wilds
+Darkvision 60 feet, or +60 feet if you already have it.
+@option aspect-of-the-wilds | Panther | listname Aspect of the Wilds
+A Climb Speed equal to your Speed.
+@option aspect-of-the-wilds | Salmon | listname Aspect of the Wilds
+A Swim Speed equal to your Speed.

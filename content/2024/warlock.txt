@@ -3,10 +3,10 @@
 @mc armor light
 1 | Eldritch Invocations | Learn one Eldritch Invocation, with more as you level. You can swap one when you gain a Warlock level.
 1 | Pact Magic | Cast Warlock spells with Charisma using a few slots of the same level that return on a Short or Long Rest.
-2 | Magical Cunning | Perform a 1-minute rite to regain expended Pact Magic slots up to half your maximum. Once per Long Rest.
+2 | Magical Cunning | Perform a 1-minute rite to regain expended Pact Magic slots up to half your maximum. Once per Long Rest. {res long 1 Magical Cunning}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
-9 | Contact Patron | Contact Other Plane is always prepared; once per Long Rest cast it without a slot and automatically succeed on its save.
+9 | Contact Patron | Contact Other Plane is always prepared; once per Long Rest cast it without a slot and automatically succeed on its save. {res long 1 Contact Patron}
 11 | Mystic Arcanum | Choose a level 6 Warlock spell to cast once per Long Rest without a slot; more arcana at levels 13, 15 and 17.
 12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
@@ -15,41 +15,41 @@
 
 @sub Archfey Patron | PHB 2024
 3 | Archfey Spells | Always prepared. Level 3: Calm Emotions, Faerie Fire, Misty Step, Phantasmal Force, Sleep. Level 5: Blink, Plant Growth. Level 7: Dominate Beast, Greater Invisibility. Level 9: Dominate Person, Seeming.
-3 | Steps of the Fey | Cast Misty Step without a slot Charisma modifier times per Long Rest (minimum once), adding a Refreshing Step (temp HP) or Taunting Step (disadvantage) effect.
+3 | Steps of the Fey | Cast Misty Step without a slot Charisma modifier times per Long Rest (minimum once), adding a Refreshing Step (temp HP) or Taunting Step (disadvantage) effect. {res long cha Steps of the Fey}
 6 | Misty Escape | Cast Misty Step as a Reaction when you take damage, and add Disappearing Step (invisibility) and Dreadful Step (psychic damage nearby) options.
-10 | Beguiling Defenses | Immune to Charmed. When a creature you see hits you, use your Reaction to halve the damage and force a Wisdom save or it takes psychic damage equal to what you took. Once per Long Rest or by spending a Pact slot.
+10 | Beguiling Defenses | Immune to Charmed. When a creature you see hits you, use your Reaction to halve the damage and force a Wisdom save or it takes psychic damage equal to what you took. Once per Long Rest or by spending a Pact slot. {res long 1 Beguiling Defenses}
 14 | Bewitching Magic | When you cast an Enchantment or Illusion spell with an action and a slot, you can also cast Misty Step without a slot.
 
 @sub Celestial Patron | PHB 2024
 3 | Celestial Spells | Always prepared. Level 3: Aid, Cure Wounds, Guiding Bolt, Lesser Restoration, Light, Sacred Flame. Level 5: Daylight, Revivify. Level 7: Guardian of Faith, Wall of Fire. Level 9: Greater Restoration, Summon Celestial.
-3 | Healing Light | A pool of d6s equal to 1 + Warlock level. As a Bonus Action, heal yourself or a creature within 60 feet by spending up to your Charisma modifier in dice. Refills on a Long Rest.
+3 | Healing Light | A pool of d6s equal to 1 + Warlock level. As a Bonus Action, heal yourself or a creature within 60 feet by spending up to your Charisma modifier in dice. Refills on a Long Rest. {res long 1+level die:d6 Healing Light}
 6 | Radiant Soul | Resistance to Radiant damage. Once per turn, add your Charisma modifier to a spell's Radiant or Fire damage against one target.
 10 | Celestial Resilience | When you use Magical Cunning or finish a rest, gain temp HP equal to Warlock level + Charisma modifier; up to five creatures gain half.
-14 | Searing Vengeance | When you or an ally within 60 feet would make a Death Saving Throw, restore half their HP max instead and blast nearby enemies with Radiant damage, Blinding them. Once per Long Rest.
+14 | Searing Vengeance | When you or an ally within 60 feet would make a Death Saving Throw, restore half their HP max instead and blast nearby enemies with Radiant damage, Blinding them. Once per Long Rest. {res long 1 Searing Vengeance}
 
 @sub Fiend Patron | PHB 2024
 3 | Fiend Spells | Always prepared. Level 3: Burning Hands, Command, Scorching Ray, Suggestion. Level 5: Fireball, Stinking Cloud. Level 7: Fire Shield, Wall of Fire. Level 9: Geas, Insect Plague.
 3 | Dark One's Blessing | When an enemy drops to 0 HP by you or within 10 feet of you, gain temp HP equal to Charisma modifier + Warlock level (minimum 1).
-6 | Dark One's Own Luck | Add 1d10 to an ability check or save after seeing the roll. Charisma modifier uses per Long Rest, at most once per roll.
+6 | Dark One's Own Luck | Add 1d10 to an ability check or save after seeing the roll. Charisma modifier uses per Long Rest, at most once per roll. {res long cha Dark One's Own Luck}
 10 | Fiendish Resilience | After a Short or Long Rest, choose one damage type other than Force to resist.
-14 | Hurl Through Hell | Once per turn when you hit, the target makes a Charisma save or is sent through the Lower Planes, taking psychic damage and becoming Incapacitated until your next turn ends. Once per Long Rest or by spending a Pact slot.
+14 | Hurl Through Hell | Once per turn when you hit, the target makes a Charisma save or is sent through the Lower Planes, taking psychic damage and becoming Incapacitated until your next turn ends. Once per Long Rest or by spending a Pact slot. {res long 1 Hurl Through Hell}
 
 @sub Great Old One Patron | PHB 2024
 3 | Great Old One Spells | Always prepared. Level 3: Detect Thoughts, Dissonant Whispers, Phantasmal Force, Tasha's Hideous Laughter. Level 5: Clairvoyance, Hunger of Hadar. Level 7: Confusion, Summon Aberration. Level 9: Modify Memory, Telekinesis.
 3 | Awakened Mind | As a Bonus Action, form a telepathic link with a creature within 30 feet that lasts for minutes equal to your Warlock level.
 3 | Psychic Spells | Your Warlock damage spells can deal Psychic damage, and Enchantment or Illusion Warlock spells need no Verbal or Somatic components.
-6 | Clairvoyant Combatant | When you link with Awakened Mind, the creature makes a Wisdom save or has disadvantage attacking you and you have advantage against it. Once per rest or by spending a Pact slot.
+6 | Clairvoyant Combatant | When you link with Awakened Mind, the creature makes a Wisdom save or has disadvantage attacking you and you have advantage against it. Once per rest or by spending a Pact slot. {res short 1 Clairvoyant Combatant}
 10 | Eldritch Hex | Hex is always prepared; when you cast it, the target also has disadvantage on saves of the chosen ability.
 10 | Thought Shield | Your thoughts can't be read unless you allow it, you resist Psychic damage, and creatures that deal Psychic damage to you take the same amount.
 14 | Create Thrall | When you cast Summon Aberration, it needs no Concentration, lasts 1 minute, gains temp HP, and deals extra Psychic damage to targets under your Hex.
 
 @sub Undead Patron | Ravenloft: The Horrors Within
 3 | Undead Spells | Always prepared. Level 3: Bane, Blindness/Deafness, Phantasmal Force, Ray of Sickness. Level 5: Speak with Dead, Summon Undead. Level 7: Greater Invisibility, Phantasmal Killer. Level 9: Antilife Shell, Cloudkill.
-3 | Form of Dread | As a Bonus Action, transform for 1 minute: gain 1d10 + Warlock level temp HP, immunity to Frightened, and once per turn a hit can frighten the target on a failed Wisdom save. Charisma modifier uses per Long Rest.
+3 | Form of Dread | As a Bonus Action, transform for 1 minute: gain 1d10 + Warlock level temp HP, immunity to Frightened, and once per turn a hit can frighten the target on a failed Wisdom save. Charisma modifier uses per Long Rest. {res long cha Form of Dread}
 6 | Arcane Necrosis | Your Necrotic damage ignores resistance, and once per turn you can change a spell's damage to Necrotic. While transformed, Necrotic hits deal an extra die once per turn.
 6 | Undead Endurance | You don't need sleep and don't gain Exhaustion from lack of air, food or water.
 10 | Necrotic Resilience | Resistance to Necrotic damage, immunity while transformed.
-10 | Unholy Resuscitation | When you drop to 0 HP without dying, burst necrotic energy at nearby creatures and return with HP equal to twice your Warlock level, gaining 1 Exhaustion. Once per Short or Long Rest.
+10 | Unholy Resuscitation | When you drop to 0 HP without dying, burst necrotic energy at nearby creatures and return with HP equal to twice your Warlock level, gaining 1 Exhaustion. Once per Short or Long Rest. {res short 1 Unholy Resuscitation}
 14 | Spectral Form | While transformed, resist Bludgeoning, Piercing and Slashing, fly and hover at your Speed, move through objects, and cast Conjuration and Necromancy spells without most components.
 
 @sub Vestige Patron | Arcana Unleashed

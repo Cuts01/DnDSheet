@@ -1,9 +1,9 @@
 @class Paladin | hitDie 10 | caster half | spell cha | saves wis cha | sublevel 3 | sublabel Sacred Oath
 @prof armor light, medium, heavy, shields | weapons simple, martial | skills 2 from Athletics, Insight, Intimidation, Medicine, Persuasion, Religion
 @mc armor light, medium, shields | weapons simple, martial
-1 | Divine Sense | As an action, sense celestials, fiends and undead within 60 feet. Uses equal 1 + Charisma modifier per long rest.
-1 | Lay on Hands | A healing pool of five times your paladin level HP, spent by touch; 5 points cure a disease or neutralize a poison.
-2 | Fighting Style | Choose a fighting style such as Defense, Dueling, Great Weapon Fighting or Protection.
+1 | Divine Sense | As an action, sense celestials, fiends and undead within 60 feet. Uses equal 1 + Charisma modifier per long rest. {res long 1+cha Divine Sense}
+1 | Lay on Hands | A healing pool of five times your paladin level HP, spent by touch; 5 points cure a disease or neutralize a poison. {res long level*5 Lay on Hands}
+2 | Fighting Style | Choose a fighting style such as Defense, Dueling, Great Weapon Fighting or Protection. {pick fighting-style 1 Fighting Style}
 2 | Spellcasting | Prepare paladin spells and cast them with Charisma, using a holy symbol as a focus.
 2 | Divine Smite | When you hit with a melee weapon attack, spend a spell slot to deal extra radiant damage, more against undead and fiends.
 3 | Divine Health | You are immune to disease.
@@ -16,70 +16,70 @@
 10 | Aura of Courage | You and allies within 10 feet can't be frightened while you're conscious.
 11 | Improved Divine Smite | Your melee weapon hits deal an extra 1d8 radiant damage.
 12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
-14 | Cleansing Touch | As an action, end one spell on yourself or a willing creature you touch. Charisma modifier uses per long rest.
+14 | Cleansing Touch | As an action, end one spell on yourself or a willing creature you touch. Charisma modifier uses per long rest. {res long cha Cleansing Touch}
 16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 18 | Aura Improvements | Your Aura of Protection and Aura of Courage extend to 30 feet.
 19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 
 @sub Oath of the Ancients | PHB
 3 | Oath Spells | Always prepared. 3rd: Ensnaring Strike, Speak with Animals. 5th: Misty Step, Moonbeam. 9th: Plant Growth, Protection from Energy. 13th: Ice Storm, Stoneskin. 17th: Commune with Nature, Tree Stride.
-3 | Channel Divinity | Nature's Wrath (restrain a creature with vines on a failed save) or Turn the Faithless (turn fey and fiends).
+3 | Channel Divinity | Nature's Wrath (restrain a creature with vines on a failed save) or Turn the Faithless (turn fey and fiends). {res short 1 Channel Divinity}
 7 | Aura of Warding | You and allies within 10 feet resist damage from spells (30 feet at 18th).
-15 | Undying Sentinel | When reduced to 0 HP, drop to 1 instead once per long rest; you also stop aging.
-20 | Elder Champion | Transform for 1 minute: regain 10 HP each turn, cast action spells as a bonus action, and enemies within 10 feet have disadvantage on saves against your spells. Once per long rest.
+15 | Undying Sentinel | When reduced to 0 HP, drop to 1 instead once per long rest; you also stop aging. {res long 1 Undying Sentinel}
+20 | Elder Champion | Transform for 1 minute: regain 10 HP each turn, cast action spells as a bonus action, and enemies within 10 feet have disadvantage on saves against your spells. Once per long rest. {res long 1 Elder Champion}
 
 @sub Oath of Conquest | XGtE
 3 | Oath Spells | Always prepared. 3rd: Armor of Agathys, Command. 5th: Hold Person, Spiritual Weapon. 9th: Bestow Curse, Fear. 13th: Dominate Beast, Stoneskin. 17th: Cloudkill, Dominate Person.
-3 | Channel Divinity | Conquering Presence (frighten creatures within 30 feet) or Guided Strike (+10 to an attack roll).
+3 | Channel Divinity | Conquering Presence (frighten creatures within 30 feet) or Guided Strike (+10 to an attack roll). {res short 1 Channel Divinity}
 7 | Aura of Conquest | Frightened enemies within 10 feet have speed 0 and take psychic damage equal to half your paladin level on their turns (30 feet at 18th).
 15 | Scornful Rebuke | When a creature hits you, it takes psychic damage equal to your Charisma modifier.
-20 | Invincible Conqueror | For 1 minute: resistance to all damage, an extra attack when you take the Attack action, and crits on 19 or 20. Once per long rest.
+20 | Invincible Conqueror | For 1 minute: resistance to all damage, an extra attack when you take the Attack action, and crits on 19 or 20. Once per long rest. {res long 1 Invincible Conqueror}
 
 @sub Oath of the Crown | SCAG
 3 | Oath Spells | Always prepared. 3rd: Command, Compelled Duel. 5th: Warding Bond, Zone of Truth. 9th: Aura of Vitality, Spirit Guardians. 13th: Banishment, Guardian of Faith. 17th: Circle of Power, Geas.
-3 | Channel Divinity | Champion Challenge (creatures within 30 feet can't move away from you) or Turn the Tide (heal creatures within 30 feet that are at half HP or less).
+3 | Channel Divinity | Champion Challenge (creatures within 30 feet can't move away from you) or Turn the Tide (heal creatures within 30 feet that are at half HP or less). {res short 1 Channel Divinity}
 7 | Divine Allegiance | When a creature within 5 feet takes damage, use your reaction to take it instead.
 15 | Unyielding Spirit | Advantage on saves against paralyzed and stunned.
-20 | Exalted Champion | For 1 hour: resistance to nonmagical weapon damage, and you and allies within 30 feet have advantage on death saves and Wisdom saves. Once per long rest.
+20 | Exalted Champion | For 1 hour: resistance to nonmagical weapon damage, and you and allies within 30 feet have advantage on death saves and Wisdom saves. Once per long rest. {res long 1 Exalted Champion}
 
 @sub Oath of Devotion | PHB
 3 | Oath Spells | Always prepared. 3rd: Protection from Evil and Good, Sanctuary. 5th: Lesser Restoration, Zone of Truth. 9th: Beacon of Hope, Dispel Magic. 13th: Freedom of Movement, Guardian of Faith. 17th: Commune, Flame Strike.
-3 | Channel Divinity | Sacred Weapon (add Charisma modifier to attacks with a weapon for 1 minute) or Turn the Unholy (turn fiends and undead).
+3 | Channel Divinity | Sacred Weapon (add Charisma modifier to attacks with a weapon for 1 minute) or Turn the Unholy (turn fiends and undead). {res short 1 Channel Divinity}
 7 | Aura of Devotion | You and allies within 10 feet can't be charmed (30 feet at 18th).
 15 | Purity of Spirit | You are always under the effects of Protection from Evil and Good.
-20 | Holy Nimbus | For 1 minute, emit sunlight that deals 10 radiant damage to enemies starting their turn within 30 feet, with advantage on saves against fiends' and undead spells. Once per long rest.
+20 | Holy Nimbus | For 1 minute, emit sunlight that deals 10 radiant damage to enemies starting their turn within 30 feet, with advantage on saves against fiends' and undead spells. Once per long rest. {res long 1 Holy Nimbus}
 
 @sub Oath of Glory | TCoE
 3 | Oath Spells | Always prepared. 3rd: Guiding Bolt, Heroism. 5th: Enhance Ability, Magic Weapon. 9th: Haste, Protection from Energy. 13th: Compulsion, Freedom of Movement. 17th: Commune, Flame Strike.
-3 | Channel Divinity | Peerless Athlete (advantage on Athletics and Acrobatics and better carrying and jumping for 10 minutes) or Inspiring Smite (share temp HP after a Divine Smite).
+3 | Channel Divinity | Peerless Athlete (advantage on Athletics and Acrobatics and better carrying and jumping for 10 minutes) or Inspiring Smite (share temp HP after a Divine Smite). {res short 1 Channel Divinity}
 7 | Aura of Alacrity | Your walking speed increases by 10 feet, and allies who start their turn within 5 feet gain the same bonus (10 feet at 18th). {speed +10}
-15 | Glorious Defense | As a reaction, add your Charisma modifier to AC for you or an ally; if the attack misses, make a weapon attack against the attacker. Charisma modifier uses per long rest.
-20 | Living Legend | For 1 minute: advantage on Charisma checks, turn a miss into a hit once per turn, and reroll failed saves. Once per long rest or a 5th-level slot.
+15 | Glorious Defense | As a reaction, add your Charisma modifier to AC for you or an ally; if the attack misses, make a weapon attack against the attacker. Charisma modifier uses per long rest. {res long cha Glorious Defense}
+20 | Living Legend | For 1 minute: advantage on Charisma checks, turn a miss into a hit once per turn, and reroll failed saves. Once per long rest or a 5th-level slot. {res long 1 Living Legend}
 
 @sub Oath of Redemption | XGtE
 3 | Oath Spells | Always prepared. 3rd: Sanctuary, Sleep. 5th: Calm Emotions, Hold Person. 9th: Counterspell, Hypnotic Pattern. 13th: Otiluke's Resilient Sphere, Stoneskin. 17th: Hold Monster, Wall of Force.
-3 | Channel Divinity | Emissary of Peace (+5 to Persuasion for 10 minutes) or Rebuke the Violent (an attacker takes radiant damage equal to what it dealt).
+3 | Channel Divinity | Emissary of Peace (+5 to Persuasion for 10 minutes) or Rebuke the Violent (an attacker takes radiant damage equal to what it dealt). {res short 1 Channel Divinity}
 7 | Aura of the Guardian | As a reaction, take the damage dealt to an ally within 10 feet instead (30 feet at 18th).
 15 | Protective Spirit | At the end of your turn, if you're below half HP, regain 1d6 + half your paladin level.
 20 | Emissary of Redemption | Resistance to all damage from creatures, and they take radiant damage equal to half what they deal to you, until you attack or harm them.
 
 @sub Oath of Vengeance | PHB
 3 | Oath Spells | Always prepared. 3rd: Bane, Hunter's Mark. 5th: Hold Person, Misty Step. 9th: Haste, Protection from Energy. 13th: Banishment, Dimension Door. 17th: Hold Monster, Scrying.
-3 | Channel Divinity | Abjure Enemy (frighten a creature and reduce its speed to 0) or Vow of Enmity (advantage on attacks against a creature for 1 minute).
+3 | Channel Divinity | Abjure Enemy (frighten a creature and reduce its speed to 0) or Vow of Enmity (advantage on attacks against a creature for 1 minute). {res short 1 Channel Divinity}
 7 | Relentless Avenger | When you hit with an opportunity attack, move up to half your speed as part of the reaction without provoking.
 15 | Soul of Vengeance | When the target of your Vow of Enmity attacks, use your reaction to make a melee attack against it.
-20 | Avenging Angel | For 1 hour, gain a 60-foot flying speed and a 30-foot frightening aura. Once per long rest.
+20 | Avenging Angel | For 1 hour, gain a 60-foot flying speed and a 30-foot frightening aura. Once per long rest. {res long 1 Avenging Angel}
 
 @sub Oath of the Watchers | TCoE
 3 | Oath Spells | Always prepared. 3rd: Alarm, Detect Magic. 5th: Moonbeam, See Invisibility. 9th: Counterspell, Nondetection. 13th: Aura of Purity, Banishment. 17th: Hold Monster, Scrying.
-3 | Channel Divinity | Watcher's Will (advantage on mental saves for you and allies for 1 minute) or Abjure the Extraplanar (turn aberrations, celestials, elementals, fey and fiends).
+3 | Channel Divinity | Watcher's Will (advantage on mental saves for you and allies for 1 minute) or Abjure the Extraplanar (turn aberrations, celestials, elementals, fey and fiends). {res short 1 Channel Divinity}
 7 | Aura of the Sentinel | You and allies within 10 feet add your proficiency bonus to initiative (30 feet at 18th).
 15 | Vigilant Rebuke | When you or an ally within 30 feet succeeds on an Intelligence, Wisdom or Charisma save, deal 2d8 + Charisma modifier force damage to the source.
-20 | Mortal Bulwark | For 1 minute: truesight 120 feet, advantage against aberrations, celestials, elementals, fey and fiends, and banish them on a hit. Once per long rest.
+20 | Mortal Bulwark | For 1 minute: truesight 120 feet, advantage against aberrations, celestials, elementals, fey and fiends, and banish them on a hit. Once per long rest. {res long 1 Mortal Bulwark}
 
 @sub Oathbreaker | DMG
 3 | Oath Spells | Always prepared. 3rd: Hellish Rebuke, Inflict Wounds. 5th: Crown of Madness, Darkness. 9th: Animate Dead, Bestow Curse. 13th: Blight, Confusion. 17th: Contagion, Dominate Person.
-3 | Channel Divinity | Control Undead (control an undead for 24 hours) or Dreadful Aspect (frighten creatures within 30 feet).
+3 | Channel Divinity | Control Undead (control an undead for 24 hours) or Dreadful Aspect (frighten creatures within 30 feet). {res short 1 Channel Divinity}
 7 | Aura of Hate | You and fiends and undead within 10 feet add your Charisma modifier to melee weapon damage (30 feet at 18th).
 15 | Supernatural Resistance | Resistance to nonmagical bludgeoning, piercing and slashing damage.
-20 | Dread Lord | For 1 minute, a 30-foot aura of gloom reduces bright light, frightened enemies take psychic damage, and you can make shadowy necrotic attacks as a bonus action. Once per long rest.
+20 | Dread Lord | For 1 minute, a 30-foot aura of gloom reduces bright light, frightened enemies take psychic damage, and you can make shadowy necrotic attacks as a bonus action. Once per long rest. {res long 1 Dread Lord}

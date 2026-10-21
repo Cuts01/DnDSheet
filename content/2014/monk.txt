@@ -3,7 +3,7 @@
 @mc weapons simple, shortsword
 1 | Unarmored Defense | Without armor or shield, your AC is 10 + Dexterity modifier + Wisdom modifier.
 1 | Martial Arts | Use Dexterity for unarmed strikes and monk weapons, roll a Martial Arts die for their damage, and make an unarmed strike as a bonus action after attacking.
-2 | Ki | Spend ki points on Flurry of Blows, Patient Defense and Step of the Wind. Points equal your monk level and return on a short or long rest.
+2 | Ki | Spend ki points on Flurry of Blows, Patient Defense and Step of the Wind. Points equal your monk level and return on a short or long rest. {res short level Ki Points}
 2 | Unarmored Movement | Your speed increases while you wear no armor and no shield, from +10 feet up to +30 feet at 18th level. The app already adds this automatically.
 2 | Dedicated Weapon (Optional) | After a rest, choose a simple or martial weapon you're proficient with to count as a monk weapon.
 3 | Deflect Missiles | Use your reaction to reduce ranged weapon damage; if reduced to 0, catch the missile and you can spend ki to throw it back.
@@ -22,7 +22,7 @@
 10 | Purity of Body | You are immune to disease and poison.
 12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 13 | Tongue of the Sun and Moon | You understand all spoken languages, and any creature that knows a language understands you.
-14 | Diamond Soul | You gain proficiency in all saving throws and can spend 1 ki to reroll a failed save.
+14 | Diamond Soul | You gain proficiency in all saving throws and can spend 1 ki to reroll a failed save. {save all}
 15 | Timeless Body | You suffer none of the frailty of old age, can't be aged magically, and don't need food or water.
 16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 18 | Empty Body | Spend 4 ki to become invisible and resistant to all damage but force for 1 minute, or 8 ki to cast Astral Projection on yourself.
@@ -30,18 +30,18 @@
 20 | Perfect Self | When you roll initiative with no ki points, you regain 4.
 
 @sub Way of Mercy | TCoE
-3 | Implements of Mercy | Proficiency in Insight, Medicine and the herbalism kit, plus a special mask.
+3 | Implements of Mercy | Proficiency in Insight, Medicine and the herbalism kit, plus a special mask. {skill Insight, Medicine} {tools Herbalism Kit}
 3 | Hand of Healing | Spend 1 ki to heal a creature a Martial Arts die + Wisdom modifier; you can replace a Flurry of Blows strike with it for free.
 3 | Hand of Harm | Once per turn when you hit with an unarmed strike, spend 1 ki to add a Martial Arts die + Wisdom modifier necrotic damage.
 6 | Physician's Touch | Hand of Healing can end a disease or blinded, deafened, paralyzed, poisoned or stunned; Hand of Harm can poison the target.
 11 | Flurry of Healing and Harm | Replace each Flurry of Blows strike with Hand of Healing without ki, and add Hand of Harm to one strike for free.
-17 | Hand of Ultimate Mercy | Spend 5 ki to revive a creature that died within 24 hours with 4d10 + Wisdom modifier HP. Once per long rest.
+17 | Hand of Ultimate Mercy | Spend 5 ki to revive a creature that died within 24 hours with 4d10 + Wisdom modifier HP. Once per long rest. {res long 1 Hand of Ultimate Mercy}
 
 @sub Way of the Ascendant Dragon | FToD
-3 | Draconic Disciple | Unarmed strikes can deal acid, cold, fire, lightning or poison damage, you can reroll failed Intimidation or Persuasion checks, and you learn Draconic.
-3 | Breath of the Dragon | Replace an attack with a 20-foot cone or 30-foot line of elemental breath. Proficiency bonus uses per long rest, or 2 ki.
-6 | Wings Unfurled | When you use Step of the Wind, gain a flying speed equal to your walking speed until the end of the turn. Proficiency bonus uses per long rest.
-11 | Aspect of the Wyrm | As a bonus action, create a 10-foot aura for 1 minute that frightens creatures or gives allies resistance to an element. Once per long rest or 3 ki.
+3 | Draconic Disciple | Unarmed strikes can deal acid, cold, fire, lightning or poison damage, you can reroll failed Intimidation or Persuasion checks, and you learn Draconic. {lang Draconic}
+3 | Breath of the Dragon | Replace an attack with a 20-foot cone or 30-foot line of elemental breath. Proficiency bonus uses per long rest, or 2 ki. {res long pb Breath of the Dragon}
+6 | Wings Unfurled | When you use Step of the Wind, gain a flying speed equal to your walking speed until the end of the turn. Proficiency bonus uses per long rest. {res long pb Wings Unfurled}
+11 | Aspect of the Wyrm | As a bonus action, create a 10-foot aura for 1 minute that frightens creatures or gives allies resistance to an element. Once per long rest or 3 ki. {res long 1 Aspect of the Wyrm}
 17 | Ascendant Aspect | Gain blindsight 10 feet, Breath of the Dragon deals more damage, and a reaction lets you deal damage when hit while Aspect of the Wyrm is active.
 
 @sub Way of the Astral Self | TCoE
@@ -51,21 +51,20 @@
 17 | Awakened Astral Self | Spend 5 ki to summon all three: +2 AC, and three arm attacks when you take the Attack action.
 
 @sub Way of the Drunken Master | XGtE
-3 | Bonus Proficiencies | Proficiency in Performance and with brewer's supplies.
+3 | Bonus Proficiencies | Proficiency in Performance and with brewer's supplies. {skill Performance} {tools Brewer's Supplies}
 3 | Drunken Technique | When you use Flurry of Blows, you gain Disengage and your walking speed increases by 10 feet until the end of the turn. {speed +10 cond}
 6 | Tipsy Sway | Stand up from prone with 5 feet of movement, and when a creature misses you, spend 1 ki to redirect the attack to another creature.
 11 | Drunkard's Luck | Spend 2 ki to cancel disadvantage on an ability check, attack roll or saving throw.
 17 | Intoxicated Frenzy | When you use Flurry of Blows, make up to three more attacks if each targets a different creature.
 
 @sub Way of the Four Elements | PHB
-3 | Disciple of the Elements | Learn Elemental Attunement and elemental disciplines that cost ki (some cast spells like Burning Hands or Fireball). More disciplines at 6th, 11th and 17th level.
-3 | Elemental Disciplines | Options include Fangs of the Fire Snake, Fist of Four Thunders, Water Whip, Shape the Flowing River, Gong of the Summit, Ride the Wind, Breath of Winter and more.
+3 | Disciple of the Elements | Learn Elemental Attunement and elemental disciplines that cost ki (some cast spells like Burning Hands or Fireball). More disciplines at 6th, 11th and 17th level. {pick elemental-disciplines 2@3,3@6,4@11,5@17 Elemental Disciplines}
 6 | Additional Discipline | Learn another elemental discipline; you can also swap one you know.
 11 | Additional Discipline | Learn another elemental discipline; you can also swap one you know.
 17 | Additional Discipline | Learn another elemental discipline; you can also swap one you know.
 
 @sub Way of the Kensei | XGtE
-3 | Path of the Kensei | Choose kensei weapons; gain AC while dual-wielding with an unarmed strike (Agile Parry), longer range as a bonus action (Kensei's Shot), and proficiency with calligrapher's or painter's supplies.
+3 | Path of the Kensei | Choose kensei weapons; gain AC while dual-wielding with an unarmed strike (Agile Parry), longer range as a bonus action (Kensei's Shot), and proficiency with calligrapher's or painter's supplies. {toolpick 1 Calligrapher's Supplies, Painter's Supplies}
 6 | One with the Blade | Kensei weapons count as magical, and when you hit you can spend 1 ki to add a Martial Arts die to damage (Deft Strike).
 11 | Sharpen the Blade | As a bonus action, spend up to 3 ki to grant a kensei weapon that bonus to attack and damage for 1 minute.
 17 | Unerring Accuracy | Once per turn, reroll a missed attack with a monk weapon.
@@ -78,7 +77,7 @@
 
 @sub Way of the Open Hand | PHB
 3 | Open Hand Technique | When you hit with Flurry of Blows, you can knock the target prone, push it 15 feet, or stop it from taking reactions.
-6 | Wholeness of Body | As an action, regain HP equal to three times your monk level. Once per long rest.
+6 | Wholeness of Body | As an action, regain HP equal to three times your monk level. Once per long rest. {res long 1 Wholeness of Body}
 11 | Tranquility | After a long rest, gain a Sanctuary effect until your next long rest or until you attack.
 17 | Quivering Palm | Spend 3 ki on an unarmed hit to set lethal vibrations; later, as an action, the target makes a Constitution save or drops to 0 HP (10d10 necrotic on a success).
 

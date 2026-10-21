@@ -2,7 +2,7 @@
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { ABILITIES } from '../lib/model/character';
-  import { abilityMod, fmt, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
+  import { abilityMod, fmt, hasSave, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
   import { ABILITY_LABEL, SKILLS } from '../lib/rules/tables';
   import { compendium } from '../lib/compendium.svelte';
   import { allGrantedEffects } from '../lib/rules/features';
@@ -17,7 +17,7 @@
     <h2>{t('Abilities y saves')}</h2>
     <div class="abilities">
       {#each ABILITIES as a (a)}
-        {@const prof = c.saves.includes(a)}
+        {@const prof = hasSave(c, a)}
         <div class="ab">
           <span class="ab-name">{ABILITY_LABEL[a]}</span>
           <b class="ab-mod num">{fmt(abilityMod(c, a))}</b>

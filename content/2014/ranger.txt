@@ -4,8 +4,8 @@
 1 | Favored Enemy | Choose a creature type (or two humanoid races): advantage on Survival checks to track them and Intelligence checks to recall information, plus a language. More at 6th and 14th level.
 1 | Natural Explorer | Choose a favored terrain: double proficiency on related checks and travel benefits there. More terrains at 6th and 10th level.
 1 | Favored Foe (Optional) | Replaces Favored Enemy. When you hit, mark the target for 1 minute (concentration) and deal an extra 1d4 on your first hit each turn. Proficiency bonus uses per long rest.
-1 | Deft Explorer (Optional) | Replaces Natural Explorer. Canny: double proficiency in one skill and learn two languages. Roving at 6th and Tireless at 10th.
-2 | Fighting Style | Choose a fighting style such as Archery, Defense, Dueling or Two-Weapon Fighting.
+1 | Deft Explorer (Optional) | Replaces Natural Explorer. Canny: double proficiency in one skill and learn two languages. Roving at 6th and Tireless at 10th. {skillpick 1 expertise} {langpick 2}
+2 | Fighting Style | Choose a fighting style such as Archery, Defense, Dueling or Two-Weapon Fighting. {pick fighting-style 1 Fighting Style}
 2 | Spellcasting | You know ranger spells and cast them with Wisdom.
 2 | Spellcasting Focus (Optional) | You can use a druidic focus for ranger spells.
 3 | Primeval Awareness | Spend a spell slot to sense certain creature types within 1 mile (6 in favored terrain) for 1 minute per slot level.
@@ -33,53 +33,53 @@
 15 | Share Spells | Spells you cast on yourself can also affect your beast within 30 feet.
 
 @sub Drakewarden | FToD
-3 | Draconic Gift | Learn Thaumaturgy and Draconic.
-3 | Drake Companion | As an action, summon a drake companion that acts on your turn and gives Infused Strikes; once per long rest or a slot.
+3 | Draconic Gift | Learn Thaumaturgy and Draconic. {lang Draconic}
+3 | Drake Companion | As an action, summon a drake companion that acts on your turn and gives Infused Strikes; once per long rest or a slot. {res long 1 Drake Companion}
 7 | Bond of Fang and Scale | The drake grows Medium, can be ridden, gains a flying speed, resistance to its element, and extra bite damage.
-11 | Drake's Breath | As an action, you or the drake exhale a 30-foot cone of elemental damage. Once per long rest or a 3rd-level slot.
+11 | Drake's Breath | As an action, you or the drake exhale a 30-foot cone of elemental damage. Once per long rest or a 3rd-level slot. {res long 1 Drake's Breath}
 15 | Perfected Bond | The drake becomes Large, adds 1d6 to bites, and can use its reaction to give you resistance to an attack's damage.
 
 @sub Fey Wanderer | TCoE
 3 | Dreadful Strikes | Once per turn per creature, a weapon hit deals an extra 1d4 psychic damage (1d6 at 11th).
 3 | Fey Wanderer Magic | Always prepared. 3rd: Charm Person. 5th: Misty Step. 9th: Dispel Magic. 13th: Dimension Door. 17th: Mislead. You also gain a fey trait.
-3 | Otherworldly Glamour | Add your Wisdom modifier to Charisma checks and gain proficiency in Deception, Performance or Persuasion.
+3 | Otherworldly Glamour | Add your Wisdom modifier to Charisma checks and gain proficiency in Deception, Performance or Persuasion. {skillpick 1 prof Deception, Performance, Persuasion}
 7 | Beguiling Twist | Advantage on saves against charmed and frightened, and when a creature succeeds against them, use a reaction to charm or frighten another creature.
-11 | Fey Reinforcements | Summon Fey is always prepared and castable once per long rest without a slot or material; you can make it non-concentration for 1 minute.
-15 | Misty Wanderer | Cast Misty Step without a slot Wisdom modifier times per long rest, bringing a willing creature along.
+11 | Fey Reinforcements | Summon Fey is always prepared and castable once per long rest without a slot or material; you can make it non-concentration for 1 minute. {res long 1 Summon Fey (free)}
+15 | Misty Wanderer | Cast Misty Step without a slot Wisdom modifier times per long rest, bringing a willing creature along. {res long wis Misty Step (Misty Wanderer)}
 
 @sub Gloom Stalker | XGtE
 3 | Gloom Stalker Magic | Always prepared. 3rd: Disguise Self. 5th: Rope Trick. 9th: Fear. 13th: Greater Invisibility. 17th: Seeming.
 3 | Dread Ambusher | Add your Wisdom modifier to initiative; on your first turn of combat your walking speed increases by 10 feet and an Attack can make one extra attack dealing 1d8 more. {speed +10 cond}
 3 | Umbral Sight | Darkvision 60 feet (or +30), and you're invisible to creatures relying on darkvision to see you in darkness.
-7 | Iron Mind | Proficiency in Wisdom saves (or Intelligence or Charisma if you have it).
+7 | Iron Mind | Proficiency in Wisdom saves (or Intelligence or Charisma if you have it). {savepick 1 wis, int, cha}
 11 | Stalker's Flurry | Once per turn, when you miss with a weapon attack, make another attack.
 15 | Shadowy Dodge | When attacked without advantage, use your reaction to impose disadvantage on the attack.
 
 @sub Horizon Walker | XGtE
 3 | Horizon Walker Magic | Always prepared. 3rd: Protection from Evil and Good. 5th: Misty Step. 9th: Haste. 13th: Banishment. 17th: Teleportation Circle.
-3 | Detect Portal | As an action, sense the distance and direction of the nearest planar portal within 1 mile. Once per short or long rest.
+3 | Detect Portal | As an action, sense the distance and direction of the nearest planar portal within 1 mile. Once per short or long rest. {res short 1 Detect Portal}
 3 | Planar Warrior | As a bonus action, choose a creature within 30 feet; your next hit on it this turn deals force damage plus 1d8 (2d8 at 11th).
-7 | Ethereal Step | As a bonus action, cast Etherealness until the end of the turn. Once per short or long rest.
+7 | Ethereal Step | As a bonus action, cast Etherealness until the end of the turn. Once per short or long rest. {res short 1 Ethereal Step}
 11 | Distant Strike | When you take the Attack action, teleport 10 feet before each attack, and attack a third creature if you hit two different ones.
 15 | Spectral Defense | When you take damage from an attack, use your reaction to gain resistance to it.
 
 @sub Hunter | PHB
-3 | Hunter's Prey | Choose Colossus Slayer (extra 1d8 once per turn on a wounded target), Giant Killer (reaction attack against Large creatures) or Horde Breaker (an extra attack on an adjacent target).
-7 | Defensive Tactics | Choose Escape the Horde, Multiattack Defense (+4 AC after a hit) or Steel Will (advantage against frightened).
-11 | Multiattack | Choose Volley (ranged attack against every creature in a 10-foot radius) or Whirlwind Attack (melee attack against every creature within 5 feet).
-15 | Superior Hunter's Defense | Choose Evasion, Stand Against the Tide (redirect a missed attack) or Uncanny Dodge.
+3 | Hunter's Prey | Choose Colossus Slayer (extra 1d8 once per turn on a wounded target), Giant Killer (reaction attack against Large creatures) or Horde Breaker (an extra attack on an adjacent target). {pick hunters-prey 1 Hunter's Prey}
+7 | Defensive Tactics | Choose Escape the Horde, Multiattack Defense (+4 AC after a hit) or Steel Will (advantage against frightened). {pick defensive-tactics 1 Defensive Tactics}
+11 | Multiattack | Choose Volley (ranged attack against every creature in a 10-foot radius) or Whirlwind Attack (melee attack against every creature within 5 feet). {pick multiattack 1 Multiattack}
+15 | Superior Hunter's Defense | Choose Evasion, Stand Against the Tide (redirect a missed attack) or Uncanny Dodge. {pick superior-hunters-defense 1 Superior Hunter's Defense}
 
 @sub Monster Slayer | XGtE
 3 | Monster Slayer Magic | Always prepared. 3rd: Protection from Evil and Good. 5th: Zone of Truth. 9th: Magic Circle. 13th: Banishment. 17th: Hold Monster.
-3 | Hunter's Sense | As an action, learn a creature's immunities, resistances and vulnerabilities. Wisdom modifier uses per long rest.
+3 | Hunter's Sense | As an action, learn a creature's immunities, resistances and vulnerabilities. Wisdom modifier uses per long rest. {res long wis Hunter's Sense}
 3 | Slayer's Prey | As a bonus action, designate a creature within 60 feet; the first hit on it each turn deals an extra 1d6.
 7 | Supernatural Defense | Add 1d6 to saves and grapple escapes forced by your Slayer's Prey target.
-11 | Magic-User's Nemesis | As a reaction, foil a spell or teleport by a creature within 60 feet on a failed Wisdom save. Once per short or long rest.
+11 | Magic-User's Nemesis | As a reaction, foil a spell or teleport by a creature within 60 feet on a failed Wisdom save. Once per short or long rest. {res short 1 Magic-User's Nemesis}
 15 | Slayer's Counter | When your Slayer's Prey target forces you to save, use your reaction to attack it; a hit makes your save succeed.
 
 @sub Swarmkeeper | TCoE
 3 | Gathered Swarm | Your swarm of spirits adds once per turn on a hit: an extra 1d6 piercing, a 15-foot push, or moving you 5 feet.
 3 | Swarmkeeper Magic | You learn Mage Hand; always prepared: 3rd Faerie Fire, 5th Web, 9th Gaseous Form, 13th Arcane Eye, 17th Insect Plague.
-7 | Writhing Tide | As a bonus action, gain a 10-foot flying speed with hover for 1 minute. Proficiency bonus uses per long rest.
+7 | Writhing Tide | As a bonus action, gain a 10-foot flying speed with hover for 1 minute. Proficiency bonus uses per long rest. {res long pb Writhing Tide}
 11 | Mighty Swarm | Gathered Swarm deals 1d8, the push knocks prone, and moving with it gives half cover.
-15 | Swarming Dispersal | When you take damage, use your reaction to gain resistance and teleport 30 feet. Proficiency bonus uses per long rest.
+15 | Swarming Dispersal | When you take damage, use your reaction to gain resistance and teleport 30 feet. Proficiency bonus uses per long rest. {res long pb Swarming Dispersal}

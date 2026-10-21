@@ -236,6 +236,12 @@ const CharacterObject = z.object({
   /* Spell con concentration activa ('' = ninguna). */
   concentration: z.string().default(''),
   resources: z.array(ResourceSchema),
+  /* Usos gastados de recursos de features (Superiority Dice, Rage...). Clave "<S|L|O>:<featureId>" según cómo se recupera. */
+  featureUsed: z.record(z.string(), z.number().int().min(0).max(999)).default({}),
+  /* Elecciones de features: opciones (maneuvers...), tools, idiomas y saves, por id de feature. */
+  featureChoices: z.record(z.string(), z.array(z.string())).default({}),
+  /* Saves que dan los features (Diamond Soul, Slippery Mind...). Se calculan solos desde los packs. */
+  autoSaves: z.array(abilityEnum).default([]),
   notes: z.string(),
   updatedAt: z.string()
 });
@@ -353,6 +359,9 @@ export function blankCharacter(): Character {
     concentration: '',
     arcaneRecoveryUsed: false,
     resources: [],
+    featureUsed: {},
+    featureChoices: {},
+    autoSaves: [],
     notes: '',
     updatedAt: new Date().toISOString()
   };

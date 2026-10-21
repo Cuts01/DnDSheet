@@ -5,8 +5,40 @@
   import { characterFeatures, findBackground, findFeat, findInvocation, findSpecies } from '../lib/rules/features';
   import { asiSlots } from '../lib/rules/derive';
   import { EFFECT_LABEL } from '../lib/model/character';
+  import { extraChoices, featureChoiceSlots, featureResources, featureSkillSlots } from '../lib/rules/grants';
+  import FeatureChoices from './FeatureChoices.svelte';
 
   let showNext = $state(false);
+  const slots = $derived(new Map(featureChoiceSlots(store.c, compendium.packs).map((x) => [x.featureId, x])));
+  const extras = $derived(extraChoices(store.c, compendium.packs));
+  const resources = $derived(new Map(featureResources(store.c, compendium.packs).map((r) => [r.featureId, r])));
+  // Skills a elección de features: se eligen en Editar > Proficiencies; aquí solo se avisa si falta.
+  const skillSlots = $derived(featureSkillSlots(store.c, compendium.packs));
+  const skillPending = (fid: string) =>
+    skillSlots.filter((s) => s.source.includes(`|${fid}|`)).reduce((n, s) => n + Math.max(0, s.count - (store.c.skillPicks[s.source]?.length ?? 0)), 0);
+  const extrasOf = (fid: string) => extras.filter((x) => x.key.startsWith(`${fid}#`));
+  const pending = (fid: string) => {
+    const sl = slots.get(fid);
+    return (
+      (sl ? Math.max(0, sl.count - sl.chosen.length) : 0) +
+      extrasOf(fid).reduce((n, x) => n + Math.max(0, x.count - x.chosen.length), 0) +
+      skillPending(fid)
+    );
+  };
+  const grantLine = (f: (typeof groups)[number]['features'][number]['feature']) => {
+    const g = f.grants;
+    if (!g) return '';
+    const parts = [
+      g.skills.length ? `Skills: ${g.skills.join(', ')}` : '',
+      g.expertise.length ? `Expertise: ${g.expertise.join(', ')}` : '',
+      g.armor.length ? `Armor: ${g.armor.join(', ')}` : '',
+      g.weapons.length ? `Weapons: ${g.weapons.join(', ')}` : '',
+      g.tools.length ? `Tools: ${g.tools.join(', ')}` : '',
+      g.languages.length ? `${t('Idiomas')}: ${g.languages.join(', ')}` : '',
+      g.saves.length ? `Saves: ${g.saves.map((a) => a.toUpperCase()).join(', ')}` : ''
+    ].filter(Boolean);
+    return parts.join(' · ');
+  };
   const groups = $derived(characterFeatures(store.c, compendium.packs));
   const nothing = $derived(compendium.packs.length === 0);
   const sp = $derived(findSpecies(compendium.packs, store.c.species.ref)?.item ?? null);
@@ -123,12 +155,24 @@
             <span class="lvl num">{f.feature.level}</span>
             <span class="name">{f.feature.name}</span>
             {#if f.source === 'subclass'}<span class="tag">{f.sourceName}</span>{/if}
-            {#if f.feature.effects.length}<span class="tag fx">{t('efecto')}</span>{/if}
+            {#if f.owned && pending(f.feature.id) > 0 && !/\(optional\)/i.test(f.feature.name)}<span class="tag todo">{t('elegir {n}', { n: pending(f.feature.id) })}</span>
+            {:else if f.feature.effects.length}<span class="tag fx">{t('efecto')}</span>{/if}
           </summary>
           {#if f.feature.text}
             <div class="text">{f.feature.text}</div>
           {:else}
             <div class="text muted">{t('Sin texto.')}</div>
+          {/if}
+          {#if f.owned}
+            {@const res = resources.get(f.feature.id)}
+            {@const gl = grantLine(f.feature)}
+            {#if res || gl}
+              <p class="grant small">
+                {#if res}<b>{res.name}</b>: {res.max}{res.die ? ` × ${res.die}` : ''} · {res.recharge === 'short' ? 'Short Rest' : res.recharge === 'short1' ? t('1 por Short Rest, todos por Long Rest') : 'Long Rest'}{gl ? ' · ' : ''}{/if}{gl}
+              </p>
+            {/if}
+            {#if skillPending(f.feature.id) > 0}<p class="grant small todo">{t('Elige las skills en Editar > Proficiencies.')}</p>{/if}
+            <FeatureChoices slot={slots.get(f.feature.id) ?? null} extras={extrasOf(f.feature.id)} />
           {/if}
           {#if f.feature.effects.length}
             <ul class="fx-list small">
@@ -238,6 +282,17 @@
     line-height: 1.5;
     padding: 0 0 12px 38px;
     font-size: 0.95rem;
+  }
+  .tag.todo {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .grant {
+    margin: -6px 0 12px 38px;
+    color: var(--good);
+  }
+  .grant.todo {
+    color: var(--accent);
   }
   .fx-list {
     margin: -6px 0 12px 38px;

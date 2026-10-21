@@ -1,7 +1,7 @@
 @class Rogue | hitDie 8 | caster none | spell none | saves dex int | sublevel 3 | sublabel Roguish Archetype
 @prof armor light | weapons simple, hand crossbow, longsword, rapier, shortsword | tools Thieves' Tools | skills 4 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth
 @mc armor light | tools Thieves' Tools | skills 1 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth
-1 | Expertise | Double your proficiency bonus for two skills or thieves' tools; two more at 6th level.
+1 | Expertise | Double your proficiency bonus for two skills or thieves' tools; two more at 6th level. {skillpick 2@1,4@6 expertise}
 1 | Sneak Attack | Once per turn, deal extra damage with a finesse or ranged weapon hit if you have advantage or an ally is next to the target. The dice grow every odd level.
 1 | Thieves' Cant | You know the secret mix of jargon and signs rogues use to pass hidden messages.
 2 | Cunning Action | Take the Dash, Disengage or Hide action as a bonus action.
@@ -14,21 +14,21 @@
 11 | Reliable Talent | On ability checks with proficiency, treat a d20 roll of 9 or lower as a 10.
 12 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 14 | Blindsense | If you can hear, you know the location of hidden or invisible creatures within 10 feet.
-15 | Slippery Mind | You gain proficiency in Wisdom saving throws.
+15 | Slippery Mind | You gain proficiency in Wisdom saving throws. {save wis}
 16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 18 | Elusive | No attack roll has advantage against you while you aren't incapacitated.
 19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
-20 | Stroke of Luck | Turn a miss into a hit or treat a failed ability check as a 20. Once per short or long rest.
+20 | Stroke of Luck | Turn a miss into a hit or treat a failed ability check as a 20. Once per short or long rest. {res short 1 Stroke of Luck}
 
 @sub Arcane Trickster | PHB | caster third int
 3 | Spellcasting | Learn wizard cantrips and spells (mostly enchantment and illusion) cast with Intelligence. The app sets this class as a Third caster with INT when you choose this subclass.
 3 | Mage Hand Legerdemain | Your Mage Hand is invisible and can stow or retrieve objects, pick locks and disarm traps; control it with Cunning Action.
 9 | Magical Ambush | If you are hidden when you cast a spell, the target has disadvantage on its save.
 13 | Versatile Trickster | As a bonus action, use your Mage Hand to distract a creature within 5 feet of it, gaining advantage on attacks against it.
-17 | Spell Thief | When a creature casts a spell targeting you, use your reaction to force a save; on a failure you negate it and can steal it for 8 hours. Once per long rest.
+17 | Spell Thief | When a creature casts a spell targeting you, use your reaction to force a save; on a failure you negate it and can steal it for 8 hours. Once per long rest. {res long 1 Spell Thief}
 
 @sub Assassin | PHB
-3 | Bonus Proficiencies | Proficiency with the disguise kit and the poisoner's kit.
+3 | Bonus Proficiencies | Proficiency with the disguise kit and the poisoner's kit. {tools Disguise Kit, Poisoner's Kit}
 3 | Assassinate | Advantage against creatures that haven't acted yet, and any hit against a surprised creature is a critical hit.
 9 | Infiltration Expertise | Spend time and money to create a false identity.
 13 | Impostor | Unerringly mimic another person's speech, writing and behavior after studying them.
@@ -39,43 +39,43 @@
 3 | Eye for Detail | Use a bonus action to make a Perception check to spot hidden things or an Investigation check to find clues.
 3 | Insightful Fighting | As a bonus action, an Insight check against a creature's Deception lets you Sneak Attack it without advantage for 1 minute.
 9 | Steady Eye | Advantage on Perception and Investigation checks if you move no more than half your speed.
-13 | Unerring Eye | As an action, sense illusions, shapechangers and deceptive magic within 30 feet. Wisdom modifier uses per long rest.
+13 | Unerring Eye | As an action, sense illusions, shapechangers and deceptive magic within 30 feet. Wisdom modifier uses per long rest. {res long wis Unerring Eye}
 17 | Eye for Weakness | Your Sneak Attack against a creature you've read with Insightful Fighting deals an extra 3d6.
 
 @sub Mastermind | XGtE
-3 | Master of Intrigue | Proficiency with the disguise kit, forgery kit and a gaming set, two languages, and you can mimic speech patterns.
+3 | Master of Intrigue | Proficiency with the disguise kit, forgery kit and a gaming set, two languages, and you can mimic speech patterns. {tools Disguise Kit, Forgery Kit} {toolpick 1 gaming} {langpick 2}
 3 | Master of Tactics | You can use the Help action as a bonus action, and help an ally attacking a creature within 30 feet.
 9 | Insightful Manipulator | After observing a creature for 1 minute, learn how it compares to you in two characteristics.
 13 | Misdirection | When targeted by an attack while a creature gives you cover, use your reaction to make the attack target that creature.
 17 | Soul of Deceit | Your thoughts can't be read, you can present false thoughts, and magic can't force you to tell the truth.
 
 @sub Phantom | TCoE
-3 | Whispers of the Dead | After a rest, gain proficiency with one skill or tool of your choice.
-3 | Wails from the Grave | After you deal Sneak Attack, deal necrotic damage equal to half your Sneak Attack dice to a second creature within 30 feet. Proficiency bonus uses per long rest.
+3 | Whispers of the Dead | After a rest, gain proficiency with one skill or tool of your choice. {skillpick 1 prof}
+3 | Wails from the Grave | After you deal Sneak Attack, deal necrotic damage equal to half your Sneak Attack dice to a second creature within 30 feet. Proficiency bonus uses per long rest. {res long pb Wails from the Grave}
 9 | Tokens of the Departed | When a creature dies near you, create a soul trinket; it gives advantage on death and Constitution saves and fuels Wails from the Grave or questions to the spirit.
-13 | Ghost Walk | As a bonus action, become spectral for 10 minutes: fly 10 feet, move through objects, and attacks against you have disadvantage. Once per long rest or a trinket.
+13 | Ghost Walk | As a bonus action, become spectral for 10 minutes: fly 10 feet, move through objects, and attacks against you have disadvantage. Once per long rest or a trinket. {res long 1 Ghost Walk}
 17 | Death's Friend | Wails from the Grave hits both creatures, and you get a soul trinket after a long rest if you have none.
 
 @sub Scout | XGtE
 3 | Skirmisher | When an enemy ends its turn within 5 feet, use your reaction to move half your speed without provoking opportunity attacks.
-3 | Survivalist | Proficiency and expertise in Nature and Survival.
+3 | Survivalist | Proficiency and expertise in Nature and Survival. {expertise Nature, Survival}
 9 | Superior Mobility | Your walking speed increases by 10 feet, along with your climbing and swimming speeds. {speed +10}
 13 | Ambush Master | Advantage on initiative, and the first creature you hit in the first round gives allies advantage against it.
 17 | Sudden Strike | When you take the Attack action, make a bonus action attack that can also deal Sneak Attack, against a different target.
 
 @sub Soulknife | TCoE
-3 | Psionic Power | Psionic Energy dice (twice your proficiency bonus) fuel Psi-Bolstered Knack and Psychic Whispers. One returns on a short rest, all on a long rest.
+3 | Psionic Power | Psionic Energy dice (twice your proficiency bonus) fuel Psi-Bolstered Knack and Psychic Whispers. One returns on a short rest, all on a long rest. {res short1 pb*2 die:d6@3,d8@5,d10@11,d12@17 Psionic Energy Dice}
 3 | Psychic Blades | When you attack, manifest a psychic blade (1d6 psychic, finesse, thrown), and throw a second one as a bonus action (1d4).
 9 | Soul Blades | Homing Strikes (add a die to a missed blade attack) and Psychic Teleportation (spend a die to teleport by throwing a blade).
-13 | Psychic Veil | As an action, become invisible for 1 hour or until you damage or force a save. Once per long rest or a die.
-17 | Rend Mind | When your blades deal Sneak Attack, the target makes a Wisdom save or is stunned for 1 minute. Once per long rest or three dice.
+13 | Psychic Veil | As an action, become invisible for 1 hour or until you damage or force a save. Once per long rest or a die. {res long 1 Psychic Veil}
+17 | Rend Mind | When your blades deal Sneak Attack, the target makes a Wisdom save or is stunned for 1 minute. Once per long rest or three dice. {res long 1 Rend Mind}
 
 @sub Swashbuckler | XGtE
 3 | Fancy Footwork | When you make a melee attack against a creature, it can't make opportunity attacks against you for the rest of the turn.
 3 | Rakish Audacity | Add your Charisma modifier to initiative, and you can Sneak Attack a creature when no other creature is within 5 feet of you.
 9 | Panache | Use Persuasion against Insight to charm a non-hostile creature or make a hostile one focus on you.
 13 | Elegant Maneuver | As a bonus action, gain advantage on your next Acrobatics or Athletics check this turn.
-17 | Master Duelist | When you miss an attack, reroll it with advantage. Once per short or long rest.
+17 | Master Duelist | When you miss an attack, reroll it with advantage. Once per short or long rest. {res short 1 Master Duelist}
 
 @sub Thief | PHB
 3 | Fast Hands | Use Cunning Action for Sleight of Hand checks, thieves' tools, or the Use an Object action.

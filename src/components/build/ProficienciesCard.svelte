@@ -139,8 +139,16 @@
   <h2>Saving throws</h2>
   <div class="saves">
     {#each ABILITIES as a (a)}
-      <button class="chip big" class:on={c.saves.includes(a)} aria-pressed={c.saves.includes(a)} onclick={() => toggleSave(a)}>
-        {ABILITY_LABEL[a]}
+      {@const auto = c.autoSaves.includes(a) && !c.saves.includes(a)}
+      <button
+        class="chip big"
+        class:on={c.saves.includes(a) || auto}
+        aria-pressed={c.saves.includes(a) || auto}
+        disabled={auto}
+        title={auto ? t('Lo da un class feature') : undefined}
+        onclick={() => toggleSave(a)}
+      >
+        {ABILITY_LABEL[a]}{auto ? ' ★' : ''}
       </button>
     {/each}
   </div>

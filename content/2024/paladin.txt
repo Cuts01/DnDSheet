@@ -1,15 +1,15 @@
 @class Paladin | hitDie 10 | caster half | spell cha | saves wis cha | sublevel 3 | sublabel Paladin Subclass
 @prof armor light, medium, heavy, shields | weapons simple, martial | skills 2 from Athletics, Insight, Intimidation, Medicine, Persuasion, Religion
 @mc armor light, medium, shields | weapons simple, martial
-1 | Lay On Hands | A healing pool of five times your Paladin level, spent by touch as a Bonus Action; 5 points remove the Poisoned condition. Refills on a Long Rest.
+1 | Lay On Hands | A healing pool of five times your Paladin level, spent by touch as a Bonus Action; 5 points remove the Poisoned condition. Refills on a Long Rest. {res long level*5 Lay On Hands}
 1 | Spellcasting | Prepare Paladin spells cast with Charisma, using a Holy Symbol as a focus.
 1 | Weapon Mastery | Use the mastery properties of two kinds of weapons, changeable after a Long Rest.
-2 | Fighting Style | Gain a Fighting Style feat, or Blessed Warrior to learn two Cleric cantrips.
-2 | Paladin's Smite | Divine Smite is always prepared, and you can cast it once per Long Rest without a slot.
-3 | Channel Divinity | Two uses that return on a Short or Long Rest, starting with Divine Sense, plus your Oath's options.
+2 | Fighting Style | Gain a Fighting Style feat, or Blessed Warrior to learn two Cleric cantrips. {pick feat:fighting-style 1 Fighting Style}
+2 | Paladin's Smite | Divine Smite is always prepared, and you can cast it once per Long Rest without a slot. {res long 1 Divine Smite (free)}
+3 | Channel Divinity | Two uses that return on a Short or Long Rest, starting with Divine Sense, plus your Oath's options. {res short1 2@3,3@11 Channel Divinity}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Extra Attack | Attack twice when you take the Attack action.
-5 | Faithful Steed | Find Steed is always prepared, and you can cast it once per Long Rest without a slot.
+5 | Faithful Steed | Find Steed is always prepared, and you can cast it once per Long Rest without a slot. {res long 1 Find Steed (free)}
 6 | Aura of Protection | You and allies within 10 feet add your Charisma modifier (minimum +1) to saving throws.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 9 | Abjure Foes | Spend Channel Divinity to frighten up to Charisma modifier creatures within 60 feet on a failed Wisdom save.
@@ -26,34 +26,34 @@
 3 | Sacred Weapon | When you take the Attack action, spend Channel Divinity to empower your melee weapon for 10 minutes: add Charisma modifier to attacks, it sheds light, and can deal Radiant damage.
 7 | Aura of Devotion | You and allies in your Aura of Protection are immune to Charmed.
 15 | Smite of Protection | When you cast Divine Smite, you and allies in your aura gain Half Cover until your next turn.
-20 | Holy Nimbus | As a Bonus Action, for 10 minutes your aura sheds sunlight, damages enemies that start there, and gives advantage on saves against fiends and undead. Once per Long Rest or a level 5 slot.
+20 | Holy Nimbus | As a Bonus Action, for 10 minutes your aura sheds sunlight, damages enemies that start there, and gives advantage on saves against fiends and undead. Once per Long Rest or a level 5 slot. {res long 1 Holy Nimbus}
 
 @sub Oath of Glory | PHB 2024
 3 | Oath of Glory Spells | Always prepared. Level 3: Guiding Bolt, Heroism. Level 5: Enhance Ability, Magic Weapon. Level 9: Haste, Protection from Energy. Level 13: Compulsion, Freedom of Movement. Level 17: Legend Lore, Yolande's Regal Presence.
 3 | Inspiring Smite | After casting Divine Smite, spend Channel Divinity to share 2d8 + Paladin level temp HP among creatures within 30 feet.
 3 | Peerless Athlete | As a Bonus Action, spend Channel Divinity for 1 hour of advantage on Athletics and Acrobatics and longer jumps.
 7 | Aura of Alacrity | Your Speed increases by 10 feet, and allies who start their turn in your aura gain the same bonus. {speed +10}
-15 | Glorious Defense | As a Reaction, add your Charisma modifier to AC for you or an ally against an attack; if it misses, you can attack the attacker. Charisma modifier uses per Long Rest.
-20 | Living Legend | As a Bonus Action, for 10 minutes gain advantage on Charisma checks, turn a miss into a hit once per turn, and reroll failed saves. Once per Long Rest or a level 5 slot.
+15 | Glorious Defense | As a Reaction, add your Charisma modifier to AC for you or an ally against an attack; if it misses, you can attack the attacker. Charisma modifier uses per Long Rest. {res long cha Glorious Defense}
+20 | Living Legend | As a Bonus Action, for 10 minutes gain advantage on Charisma checks, turn a miss into a hit once per turn, and reroll failed saves. Once per Long Rest or a level 5 slot. {res long 1 Living Legend}
 
 @sub Oath of the Ancients | PHB 2024
 3 | Oath of the Ancients Spells | Always prepared. Level 3: Ensnaring Strike, Speak with Animals. Level 5: Misty Step, Moonbeam. Level 9: Plant Growth, Protection from Energy. Level 13: Ice Storm, Stoneskin. Level 17: Commune with Nature, Tree Stride.
 3 | Nature's Wrath | Spend Channel Divinity: creatures of your choice within 15 feet make a Strength save or are Restrained by vines for 1 minute.
 7 | Aura of Warding | You and allies in your aura resist Necrotic, Psychic and Radiant damage.
-15 | Undying Sentinel | When you drop to 0 HP, drop to 1 HP instead and heal. Once per Long Rest. You also stop showing signs of age.
-20 | Elder Champion | As a Bonus Action, for 1 minute regain 10 HP each turn, cast action spells as Bonus Actions, and enemies in your aura have disadvantage on saves against your spells. Once per Long Rest or a level 5 slot.
+15 | Undying Sentinel | When you drop to 0 HP, drop to 1 HP instead and heal. Once per Long Rest. You also stop showing signs of age. {res long 1 Undying Sentinel}
+20 | Elder Champion | As a Bonus Action, for 1 minute regain 10 HP each turn, cast action spells as Bonus Actions, and enemies in your aura have disadvantage on saves against your spells. Once per Long Rest or a level 5 slot. {res long 1 Elder Champion}
 
 @sub Oath of the Noble Genies | Heroes of Faerun
 3 | Oath of the Noble Genies Spells | Always prepared. Level 3: Chromatic Orb, Elementalism, Thunderous Smite. Level 5: Mirror Image, Phantasmal Force. Level 9: Fly, Gaseous Form. Level 13: Conjure Minor Elementals, Summon Elemental. Level 17: Banishing Smite, Contact Other Plane.
 3 | Elemental Smite | After casting Divine Smite, spend Channel Divinity to add an elemental effect: restrain, teleport, burn nearby foes, or push.
-3 | Genie's Splendor | Without armor, your AC is 10 + Dexterity modifier + Charisma modifier (shields still apply), and you gain one of Acrobatics, Intimidation, Performance or Persuasion.
+3 | Genie's Splendor | Without armor, your AC is 10 + Dexterity modifier + Charisma modifier (shields still apply), and you gain one of Acrobatics, Intimidation, Performance or Persuasion. {skillpick 1 prof Acrobatics, Intimidation, Performance, Persuasion}
 7 | Aura of Elemental Shielding | Choose acid, cold, fire, lightning or thunder each turn; you and allies in your aura resist it.
-15 | Elemental Rebuke | As a Reaction, halve an attack's damage and force a Dexterity save or the attacker takes 2d10 + Charisma modifier elemental damage. Charisma modifier uses per Long Rest.
-20 | Noble Scion | As a Bonus Action, for 10 minutes gain a 60-foot Fly Speed with hover and turn a failed d20 Test of yours or an ally's into a success with a Reaction. Once per Long Rest.
+15 | Elemental Rebuke | As a Reaction, halve an attack's damage and force a Dexterity save or the attacker takes 2d10 + Charisma modifier elemental damage. Charisma modifier uses per Long Rest. {res long cha Elemental Rebuke}
+20 | Noble Scion | As a Bonus Action, for 10 minutes gain a 60-foot Fly Speed with hover and turn a failed d20 Test of yours or an ally's into a success with a Reaction. Once per Long Rest. {res long 1 Noble Scion}
 
 @sub Oath of Vengeance | PHB 2024
 3 | Oath of Vengeance Spells | Always prepared. Level 3: Bane, Hunter's Mark. Level 5: Hold Person, Misty Step. Level 9: Haste, Protection from Energy. Level 13: Banishment, Dimension Door. Level 17: Hold Monster, Scrying.
 3 | Vow of Enmity | When you take the Attack action, spend Channel Divinity to get advantage on attacks against a creature for 1 minute; you can move the vow if it drops to 0 HP.
 7 | Relentless Avenger | When you hit with an Opportunity Attack, reduce the target's Speed to 0 and move up to half your Speed as part of the Reaction.
 15 | Soul of Vengeance | When the target of your Vow of Enmity attacks, use your Reaction to make a melee attack against it.
-20 | Avenging Angel | As a Bonus Action, for 10 minutes gain a 60-foot Fly Speed with hover and a frightening aura. Once per Long Rest or a level 5 slot.
+20 | Avenging Angel | As a Bonus Action, for 10 minutes gain a 60-foot Fly Speed with hover and a frightening aura. Once per Long Rest or a level 5 slot. {res long 1 Avenging Angel}

@@ -29,6 +29,59 @@ def parse_header(line: str) -> dict:
     return head
 
 
+GRANT = re.compile(r"\{(skill|expertise|skillpick|armor|weapons|tools|lang|toolpick|langpick|save|savepick|res|pick)\s+([^}]*)\}")
+ABBR = ["str", "dex", "con", "int", "wis", "cha"]
+
+
+def grant_tokens(text: str, where: str):
+    """Tokens de un feature (ver README de content):
+    {skill A, B} {expertise A, B} {skillpick 2 expertise [A, B]} {armor heavy} {weapons martial} {tools Smith's Tools}
+    {lang Giant} {toolpick 1 artisan} {langpick 1} {save wis} {save all} {savepick 1 wis, int, cha}
+    {res short 4@3,5@7,6@15 die:d8@3,d10@10 Superiority Dice}  {pick maneuvers 3@3,5@7 Maneuvers}"""
+    grants, resource, choose = {}, None, None
+    for m in GRANT.finditer(text):
+        kind, arg = m.group(1), m.group(2).strip()
+        if kind in ("skill", "expertise", "armor", "weapons", "tools"):
+            key = {"skill": "skills"}.get(kind, kind)
+            grants.setdefault(key, []).extend(csv(arg))
+        elif kind == "lang":
+            grants.setdefault("languages", []).extend(csv(arg))
+        elif kind == "skillpick":
+            bits = arg.split(None, 2)
+            if bits[1] not in ("prof", "expertise", "either"):
+                raise SystemExit(f"{where}: skillpick sin modo: {arg!r}")
+            count = int(bits[0]) if bits[0].isdigit() else bits[0]
+            grants.setdefault("skillChoices", []).append({"count": count, "mode": bits[1], "from": csv(bits[2]) if len(bits) > 2 else []})
+        elif kind == "toolpick":
+            bits = arg.split(None, 1)
+            grants.setdefault("toolChoices", []).append({"count": int(bits[0]), "from": csv(bits[1]) if len(bits) > 1 else []})
+        elif kind == "langpick":
+            grants["languageChoices"] = int(arg)
+        elif kind == "save":
+            grants.setdefault("saves", []).extend(ABBR if arg == "all" else csv(arg))
+        elif kind == "savepick":
+            bits = arg.split(None, 1)
+            grants.setdefault("saveChoices", []).append({"count": int(bits[0]), "from": csv(bits[1]) if len(bits) > 1 else ABBR})
+        elif kind == "res":
+            bits = arg.split()
+            rest, uses, rest_bits = bits[0], bits[1], bits[2:]
+            die = ""
+            if rest_bits and rest_bits[0].startswith("die:"):
+                die = rest_bits.pop(0)[4:]
+            if not rest_bits:
+                raise SystemExit(f"{where}: res sin nombre: {arg!r}")
+            resource = {"name": " ".join(rest_bits), "uses": uses, "recharge": rest, "die": die}
+        elif kind == "pick":
+            bits = arg.split(None, 2)
+            choose = {"list": bits[0], "count": bits[1], "label": bits[2] if len(bits) > 2 else ""}
+    for k in ("saves",):
+        if k in grants:
+            bad = [x for x in grants[k] if x not in ABBR]
+            if bad:
+                raise SystemExit(f"{where}: save desconocido {bad}")
+    return grants or None, resource, choose, GRANT.sub("", text)
+
+
 def feature(line: str, where: str) -> dict:
     parts = [p.strip() for p in line.split("|", 2)]
     if len(parts) != 3:
@@ -38,10 +91,18 @@ def feature(line: str, where: str) -> dict:
     effects = []
     for m in EFFECT.finditer(text):
         effects.append({"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(3))})
-    text = EFFECT.sub("", text).strip()
+    text = EFFECT.sub("", text)
+    grants, resource, choose, text = grant_tokens(text, where)
+    text = re.sub(r"\s{2,}", " ", text).strip()
     f = {"level": level, "name": parts[1], "text": text}
     if effects:
         f["effects"] = effects
+    if grants:
+        f["grants"] = grants
+    if resource:
+        f["resource"] = resource
+    if choose:
+        f["choose"] = choose
     return f
 
 
@@ -289,6 +350,20 @@ def armor_entry(name, parts, f):
     return {"name": name, "kind": "armor", "category": label, "cost": f.get("cost", ""), "weight": float(f.get("weight", 0) or 0), "armor": a}
 
 
+def option_entry(lst, parts, f):
+    # @option maneuvers | Ambush | listname Maneuvers | prereq ... | level 3
+    if len(parts) < 2:
+        raise SystemExit("option sin nombre")
+    e = {"list": lst, "name": parts[1]}
+    if "listname" in f:
+        e["listName"] = f["listname"]
+    if "prereq" in f:
+        e["prerequisite"] = f["prereq"]
+    if "level" in f:
+        e["minLevel"] = int(f["level"])
+    return e
+
+
 def simple_item(kind):
     def make(name, parts, f):
         return {"name": name, "kind": kind, "category": f.get("cat", ""), "cost": f.get("cost", ""), "weight": float(f.get("weight", 0) or 0)}
@@ -304,11 +379,12 @@ GENERIC = {
     "@armor ": ("items", armor_entry),
     "@gear ": ("items", simple_item("gear")),
     "@tool ": ("items", simple_item("tool")),
+    "@option ": ("options", option_entry),
 }
 
 
 def build_generic(ruleset: str) -> dict:
-    out = {k: [] for k in ("species", "backgrounds", "feats", "invocations", "items")}
+    out = {k: [] for k in ("species", "backgrounds", "feats", "invocations", "items", "options")}
     for path in sorted((ROOT / ruleset).glob("_*.txt")):
         current = None
         for n, raw in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
@@ -329,6 +405,13 @@ def build_generic(ruleset: str) -> dict:
                 if current is None:
                     raise SystemExit(f"{where}: texto fuera de una entrada")
                 entry_body(current, line, where)
+    # Las opciones pueden dar proficiencies con los mismos tokens que los features.
+    for o in out["options"]:
+        grants, _, _, text = grant_tokens(o.get("text", ""), f"opción {o['name']}")
+        o["text"] = re.sub(r"\s{2,}", " ", text).strip()
+        o.pop("effects", None)
+        if grants:
+            o["grants"] = grants
     return out
 
 
@@ -554,5 +637,5 @@ if __name__ == "__main__":
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps(pack, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     nf = sum(len(c["features"]) for c in pack["classes"]) + sum(len(s["features"]) for s in pack["subclasses"])
-    extra = ", ".join(f"{len(pack[k])} {k}" for k in ("species", "backgrounds", "feats", "invocations", "items", "spells"))
+    extra = ", ".join(f"{len(pack[k])} {k}" for k in ("species", "backgrounds", "feats", "invocations", "items", "spells", "options"))
     print(f"{out}: {len(pack['classes'])} clases, {len(pack['subclasses'])} subclasses, {nf} features, {extra}")

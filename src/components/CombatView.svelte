@@ -22,6 +22,7 @@
   import { EFFECT_LABEL, type Effect } from '../lib/model/character';
   import ShortRestDialog from './ShortRestDialog.svelte';
   import { featSpells, spellAttacks, subclassSpells } from '../lib/rules/spells';
+  import { featureChoiceSlots, featureResources } from '../lib/rules/grants';
 
   const c = $derived(store.c);
   const pact = $derived(pactSlots(c));
@@ -54,6 +55,13 @@
       if (i >= 0) store.c.effects[i].active = !e.active;
     }
   }
+
+  const fres = $derived(featureResources(c, compendium.packs));
+  const optionText = $derived(
+    new Map(featureChoiceSlots(c, compendium.packs).flatMap((s) => s.options.map((o) => [`${s.featureId}|${o.name}`, o.text] as const)))
+  );
+  let openPick = $state<string | null>(null);
+  const rechargeLabel = (r: string) => (r === 'short' ? 'Short Rest' : r === 'short1' ? t('1 por Short Rest') : r === 'long' ? 'Long Rest' : 'manual');
 
   let amount = $state<number | null>(null);
   let shortOpen = $state(false);
@@ -221,17 +229,37 @@
     </div>
   {/if}
 
-  {#if c.resources.length}
+  {#if c.resources.length || fres.length}
     <div class="card">
       <h2>{t('Recursos')}</h2>
       <div class="resources">
+        {#each fres as r (r.key)}
+          <div class="res">
+            <div class="res-name">
+              <span>{r.name}{#if r.die}<span class="die num">{r.die}</span>{/if}</span>
+              <span class="muted small">{rechargeLabel(r.recharge)}</span>
+            </div>
+            <Pips total={r.max} used={r.used} color="var(--good)" label={r.name} onchange={(u) => (store.c.featureUsed[r.key] = u)} />
+          </div>
+          {#if r.picks.length}
+            <div class="picks">
+              {#each r.picks as p (p)}
+                {@const k = `${r.featureId}|${p}`}
+                <button class="pickchip" class:open={openPick === k} aria-expanded={openPick === k} onclick={() => (openPick = openPick === k ? null : k)}>{p}</button>
+              {/each}
+            </div>
+            {#each r.picks as p (p)}
+              {#if openPick === `${r.featureId}|${p}`}<p class="pick-text small">{optionText.get(`${r.featureId}|${p}`) || t('Sin texto.')}</p>{/if}
+            {/each}
+          {/if}
+        {/each}
         {#each c.resources as r, i (r.id)}
           {#if r.max > 0}
             <div class="res">
               <div class="res-name">
                 {r.name}
                 <span class="muted small"
-                  >{r.recharge === 'short' ? 'Short Rest' : r.recharge === 'long' ? 'Long Rest' : 'manual'}</span
+                  >{rechargeLabel(r.recharge)}</span
                 >
               </div>
               <Pips
@@ -488,6 +516,35 @@
   .res-name {
     display: flex;
     flex-direction: column;
+  }
+  .die {
+    margin-left: 8px;
+    font-size: 0.8rem;
+    padding: 1px 7px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .picks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: -2px;
+  }
+  .pickchip {
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+  .pickchip.open {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .pick-text {
+    margin: 0;
+    line-height: 1.45;
+    color: var(--muted);
   }
 
   .hd {

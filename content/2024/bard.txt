@@ -1,9 +1,9 @@
 @class Bard | hitDie 8 | caster full | spell cha | saves dex cha | sublevel 3 | sublabel Bard Subclass
 @prof armor light | weapons simple | tools three musical instruments | skills 3 from any
 @mc armor light | tools one musical instrument | skills 1 from any
-1 | Bardic Inspiration | As a Bonus Action, give a creature within 60 feet a die it can add after failing a d20 Test within the next hour. Charisma modifier uses per Long Rest; the die grows with level.
+1 | Bardic Inspiration | As a Bonus Action, give a creature within 60 feet a die it can add after failing a d20 Test within the next hour. Charisma modifier uses per Long Rest; the die grows with level. {res long@1,short@5 cha die:d6@1,d8@5,d10@10,d12@15 Bardic Inspiration}
 1 | Spellcasting | Prepare Bard spells cast with Charisma, using a musical instrument as a focus.
-2 | Expertise | Gain Expertise in two skills you are proficient in; two more at 9th level.
+2 | Expertise | Gain Expertise in two skills you are proficient in; two more at 9th level. {skillpick 2@2,4@9 expertise}
 2 | Jack of All Trades | Add half your Proficiency Bonus to ability checks with skills you aren't proficient in.
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Font of Inspiration | Bardic Inspiration returns on a Short or Long Rest, and you can spend a spell slot to regain a use.
@@ -23,13 +23,13 @@
 14 | Leading Evasion | On Dexterity saves for half damage, take none on a success and half on a failure; nearby creatures making the same save share it.
 
 @sub College of Glamour | PHB 2024
-3 | Beguiling Magic | Charm Person and Mirror Image are always prepared. After casting an Enchantment or Illusion spell with a slot, charm or frighten a creature within 60 feet on a failed Wisdom save. Once per Long Rest or a Bardic Inspiration use.
+3 | Beguiling Magic | Charm Person and Mirror Image are always prepared. After casting an Enchantment or Illusion spell with a slot, charm or frighten a creature within 60 feet on a failed Wisdom save. Once per Long Rest or a Bardic Inspiration use. {res long 1 Beguiling Magic}
 3 | Mantle of Inspiration | As a Bonus Action, spend Bardic Inspiration to give allies temp HP equal to twice the roll and let them move without provoking Opportunity Attacks.
-6 | Mantle of Majesty | Command is always prepared. As a Bonus Action, cast it without a slot and keep casting it each turn for 1 minute. Once per Long Rest or a level 3+ slot.
-14 | Unbreakable Majesty | As a Bonus Action, for 1 minute the first creature that attacks you each turn must succeed on a Charisma save or miss. Once per Short or Long Rest.
+6 | Mantle of Majesty | Command is always prepared. As a Bonus Action, cast it without a slot and keep casting it each turn for 1 minute. Once per Long Rest or a level 3+ slot. {res long 1 Mantle of Majesty}
+14 | Unbreakable Majesty | As a Bonus Action, for 1 minute the first creature that attacks you each turn must succeed on a Charisma save or miss. Once per Short or Long Rest. {res short 1 Unbreakable Majesty}
 
 @sub College of Lore | PHB 2024
-3 | Bonus Proficiencies | Proficiency in three skills of your choice.
+3 | Bonus Proficiencies | Proficiency in three skills of your choice. {skillpick 3 prof}
 3 | Cutting Words | As a Reaction, spend a Bardic Inspiration die to subtract it from a creature's attack roll, ability check or damage roll within 60 feet.
 6 | Magical Discoveries | Learn two spells from the Cleric, Druid or Wizard lists; they are always prepared.
 14 | Peerless Skill | When you fail an ability check or attack roll, add a Bardic Inspiration die; it's spent only if you then succeed.
@@ -39,18 +39,18 @@
 3 | Spiritual Focus | Use a card set, crystal, candle or ink pen as a spellcasting focus.
 3 | Spirits from Beyond | When you give Bardic Inspiration, you can roll to channel a random spirit (or spend a use to choose one) and later unleash it on a creature within 30 feet as a Magic action.
 6 | Power from Beyond | Once per turn, add 1d6 to damage or healing of a Bard spell cast with a slot.
-6 | Spiritual Manifestation | Spirit Guardians is always prepared and castable once per Long Rest without a slot, optionally granting Half Cover to allies inside.
+6 | Spiritual Manifestation | Spirit Guardians is always prepared and castable once per Long Rest without a slot, optionally granting Half Cover to allies inside. {res long 1 Spirit Guardians (free)}
 14 | Mystical Connection | When you roll for Spirits from Beyond, roll twice and choose; doubles let you pick any spirit.
 
 @sub College of the Moon | Heroes of Faerun
 3 | Inspired Eclipse | When you give Bardic Inspiration, you can also turn Invisible and teleport 30 feet.
 3 | Lunar Vitality | Once per turn, when a spell restores HP, spend a Bardic Inspiration die to add healing and give the target +10 feet of Speed.
-3 | Primal Lore | Learn Druidic and one Druid cantrip, and gain proficiency in one nature-related skill.
-6 | Blessing of Moonlight | Moonbeam is always prepared; once per Long Rest, your Moonbeam can also heal an ally when an enemy fails its save.
+3 | Primal Lore | Learn Druidic and one Druid cantrip, and gain proficiency in one nature-related skill. {lang Druidic} {skillpick 1 prof Animal Handling, Insight, Medicine, Nature, Perception, Survival}
+6 | Blessing of Moonlight | Moonbeam is always prepared; once per Long Rest, your Moonbeam can also heal an ally when an enemy fails its save. {res long 1 Blessing of Moonlight}
 14 | Eclipse and Full Moon | Inspired Eclipse also lets the ally turn Invisible and teleport, and Lunar Vitality can use a d6 instead of spending a die.
 
 @sub College of Valor | PHB 2024
 3 | Combat Inspiration | A creature with your Bardic Inspiration die can add it to a weapon damage roll or to its AC against an attack.
-3 | Martial Training | Proficiency with Martial weapons, Medium armor and Shields; a weapon can be your spellcasting focus.
+3 | Martial Training | Proficiency with Martial weapons, Medium armor and Shields; a weapon can be your spellcasting focus. {weapons martial} {armor medium, shields}
 6 | Extra Attack | Attack twice when you take the Attack action, and you can replace one attack with a cantrip that takes an action.
 14 | Battle Magic | After casting a spell that takes an action, you can make one weapon attack as a Bonus Action.

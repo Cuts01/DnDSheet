@@ -125,3 +125,56 @@ describe.skipIf(!p14 || !p24)('pact boons e invocations', () => {
     expect(featSpells(c, [p24!]).granted.map((x) => [x.name, x.uses])).toEqual([['Find Familiar', 'will']]);
   });
 });
+
+describe.skipIf(!p14 || !p24)('class features con proficiencies, recursos y elecciones', () => {
+  it('Scout 2014 da expertise en Nature y Survival', async () => {
+    const { syncGrants } = await import('./grants');
+    const { skillLevel } = await import('./derive');
+    const { SKILLS } = await import('./tables');
+    const k = cls('Rogue', 3);
+    k.subclassId = 'wiki-2014:rogue/scout';
+    const c: Character = { ...blankCharacter(), classes: [k] };
+    const next = syncGrants(c, [p14!])!;
+    const n: Character = { ...c, skillPicks: next.skillPicks };
+    expect(skillLevel(n, SKILLS.find((s) => s.id === 'nature')!)).toBe('expertise');
+    expect(skillLevel(n, SKILLS.find((s) => s.id === 'survival')!)).toBe('expertise');
+    // Al bajar a nivel 2 deja de valer.
+    n.classes = [{ ...k, level: 2 }];
+    expect(skillLevel(n, SKILLS.find((s) => s.id === 'nature')!)).toBe('none');
+  });
+
+  it('Battle Master tiene Superiority Dice y elige maneuvers según nivel', async () => {
+    const { featureResources, featureChoiceSlots, extraChoices } = await import('./grants');
+    const k = cls('Fighter', 7);
+    k.subclassId = 'wiki-2014:fighter/battle-master';
+    const c: Character = { ...blankCharacter(), classes: [k] };
+    const dice = featureResources(c, [p14!]).find((r) => r.name === 'Superiority Dice')!;
+    expect(dice).toMatchObject({ max: 5, die: 'd8', recharge: 'short' });
+    const man = featureChoiceSlots(c, [p14!]).find((s) => s.label === 'Maneuvers')!;
+    expect(man.count).toBe(5);
+    expect(man.options.map((o) => o.name)).toContain('Riposte');
+    expect(extraChoices(c, [p14!]).some((x) => x.kind === 'tool' && x.options.includes("Smith's Tools"))).toBe(true);
+    const ac = featureResources(c, [p14!]).find((r) => r.name === 'Action Surge')!;
+    expect(ac.max).toBe(1);
+  });
+
+  it('Monk 14 2014 es proficient en todos los saves; 2024 Protector da Heavy armor', async () => {
+    const { syncGrants } = await import('./grants');
+    const { proficiencies } = await import('./features');
+    const m: Character = { ...blankCharacter(), classes: [cls('Monk', 14)] };
+    expect(syncGrants(m, [p14!])!.autoSaves).toEqual(['str', 'dex', 'con', 'int', 'wis', 'cha']);
+    const k = cls('Cleric', 1);
+    const c: Character = { ...blankCharacter(), ruleset: '2024', classes: [k] };
+    const fid = 'wiki-2024/cleric/1-divine-order';
+    c.featureChoices = { [fid]: ['Protector'] };
+    expect(proficiencies(c, [p24!]).armor).toContain('heavy');
+  });
+
+  it('las rests recuperan los recursos de features', async () => {
+    const { shortRest, longRest } = await import('./rests');
+    const c: Character = { ...blankCharacter(), featureUsed: { 'S:a': 2, 'L:b': 1, 'O:c': 3 } };
+    const s = shortRest(c, { hitDice: [], arcane: [] });
+    expect(s.featureUsed).toEqual({ 'L:b': 1, 'O:c': 2 });
+    expect(longRest(s).featureUsed).toEqual({});
+  });
+});

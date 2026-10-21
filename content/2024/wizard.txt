@@ -3,7 +3,7 @@
 1 | Spellcasting | Keep a spellbook, prepare Wizard spells from it and cast them with Intelligence.
 1 | Ritual Adept | Cast any Ritual spell in your spellbook as a ritual without preparing it.
 1 | Arcane Recovery | Once per Long Rest, after a Short Rest, recover spell slots with combined levels up to half your Wizard level (none level 6+). The app handles this in Short Rest.
-2 | Scholar | Gain Expertise in one of Arcana, History, Investigation, Medicine, Nature or Religion.
+2 | Scholar | Gain Expertise in one of Arcana, History, Investigation, Medicine, Nature or Religion. {skillpick 1 expertise Arcana, History, Investigation, Medicine, Nature, Religion}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Memorize Spell | When you finish a Short Rest, swap one prepared spell for another in your spellbook.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
@@ -21,33 +21,33 @@
 14 | Spell Resistance | Advantage on saves against spells and resistance to spell damage.
 
 @sub Bladesinger | Heroes of Faerun
-3 | Bladesong | As a Bonus Action while wearing no armor or shield, for 1 minute add Intelligence modifier to AC and Concentration saves, gain +10 feet of Speed and advantage on Acrobatics. Limited uses per Long Rest. {speed +10 cond}
-3 | Training in War and Song | Proficiency with one-handed martial melee weapons and one skill; a melee weapon can be your spellcasting focus.
+3 | Bladesong | As a Bonus Action while wearing no armor or shield, for 1 minute add Intelligence modifier to AC and Concentration saves, gain +10 feet of Speed and advantage on Acrobatics. Limited uses per Long Rest. {speed +10 cond} {res long pb Bladesong}
+3 | Training in War and Song | Proficiency with one-handed martial melee weapons and one skill; a melee weapon can be your spellcasting focus. {skillpick 1 prof}
 6 | Extra Attack | Attack twice when you take the Attack action, and you can replace one attack with a Wizard cantrip that takes an action.
 10 | Song of Defense | While Bladesong is active, when you take damage spend a Reaction and a slot to reduce it by five times the slot's level.
 14 | Song of Victory | After casting a spell with an action, you can make one weapon attack as a Bonus Action.
 
 @sub Conjurer | Arcana Unleashed
 3 | Conjuration Savant | Add two Conjuration spells of level 2 or lower to your spellbook for free, and one more each new spell slot level.
-3 | Benign Transposition | As a Bonus Action, teleport up to 30 feet or swap places with a willing Medium or smaller creature. Limited uses per Long Rest.
+3 | Benign Transposition | As a Bonus Action, teleport up to 30 feet or swap places with a willing Medium or smaller creature. Limited uses per Long Rest. {res long int Benign Transposition}
 6 | Distant Transposition | Benign Transposition reaches 60 feet, and spending a level 3+ slot restores a use.
 6 | Durable Summons | Creatures you summon with a Conjuration spell gain temp HP equal to twice your Wizard level and resistance to most damage while they have them.
 10 | Focused Conjuration | Taking damage can't break your Concentration on Conjuration spells.
-14 | Splintered Summons | When you cast a summoning spell, conjure two copies of the creature, each with half HP. Once per Long Rest or by spending a level 5+ slot.
+14 | Splintered Summons | When you cast a summoning spell, conjure two copies of the creature, each with half HP. Once per Long Rest or by spending a level 5+ slot. {res long 1 Splintered Summons}
 
 @sub Diviner | PHB 2024
 3 | Divination Savant | Add two Divination spells of level 2 or lower to your spellbook for free, and one more each new spell slot level.
-3 | Portent | After a Long Rest, roll two d20s and record them. Once per turn, replace any D20 Test of a creature you can see with one of those rolls.
+3 | Portent | After a Long Rest, roll two d20s and record them. Once per turn, replace any D20 Test of a creature you can see with one of those rolls. {res long 2@3,3@14 Portent}
 6 | Expert Divination | When you cast a Divination spell with a level 2+ slot, regain a lower-level spent slot (up to level 5).
-10 | The Third Eye | As a Bonus Action, gain Darkvision 120 feet, read any language, or see invisible things until your next rest. Once per Short or Long Rest.
+10 | The Third Eye | As a Bonus Action, gain Darkvision 120 feet, read any language, or see invisible things until your next rest. Once per Short or Long Rest. {res short 1 The Third Eye}
 14 | Greater Portent | Roll three d20s for Portent instead of two.
 
 @sub Enchanter | Arcana Unleashed
-3 | Enchanting Conversationalist | Gain proficiency in Deception, Intimidation or Persuasion, and add your Intelligence modifier (minimum +1) to checks with it.
+3 | Enchanting Conversationalist | Gain proficiency in Deception, Intimidation or Persuasion, and add your Intelligence modifier (minimum +1) to checks with it. {skillpick 1 prof Deception, Intimidation, Persuasion}
 3 | Enchantment Savant | Add two Enchantment spells of level 2 or lower to your spellbook for free, and one more each new spell slot level.
-3 | Hypnotic Presence | As a Magic action, a creature within 10 feet makes a Wisdom save or is Charmed, Incapacitated and has Speed 0. Intelligence modifier uses per Long Rest.
-6 | Split Enchantment | When you cast an Enchantment spell with a slot, treat it as one level higher to add a target. Intelligence modifier uses per Long Rest.
-10 | Instinctive Charm | As a Reaction when a creature within 30 feet attacks you, it makes a Wisdom save or the attack misses or is redirected. Recharges on a Long Rest or by casting an Enchantment spell.
+3 | Hypnotic Presence | As a Magic action, a creature within 10 feet makes a Wisdom save or is Charmed, Incapacitated and has Speed 0. Intelligence modifier uses per Long Rest. {res long int Hypnotic Presence}
+6 | Split Enchantment | When you cast an Enchantment spell with a slot, treat it as one level higher to add a target. Intelligence modifier uses per Long Rest. {res long int Split Enchantment}
+10 | Instinctive Charm | As a Reaction when a creature within 30 feet attacks you, it makes a Wisdom save or the attack misses or is redirected. Recharges on a Long Rest or by casting an Enchantment spell. {res long 1 Instinctive Charm}
 14 | Alter Memories | Creatures charmed by your Enchantment spells don't realize it, and you can make one erase memories from the spell's duration on a failed Intelligence save.
 
 @sub Evoker | PHB 2024
@@ -61,7 +61,7 @@
 3 | Illusion Savant | Add two Illusion spells of level 2 or lower to your spellbook for free, and one more each new spell slot level.
 3 | Improved Illusions | Your Illusion spells need no Verbal components and gain 60 feet of range; you know Minor Illusion, can cast it as a Bonus Action, and it can make both sound and image.
 6 | Phantasmal Creatures | Summon Beast and Summon Fey are always prepared; once per Long Rest each, cast an illusory version without a slot at half HP.
-10 | Illusory Self | As a Reaction when a creature attacks you, an illusory duplicate makes the attack miss. Once per Short or Long Rest or by spending a level 2+ slot.
+10 | Illusory Self | As a Reaction when a creature attacks you, an illusory duplicate makes the attack miss. Once per Short or Long Rest or by spending a level 2+ slot. {res short 1 Illusory Self}
 14 | Illusory Reality | When you cast an Illusion spell with a slot, use a Bonus Action to make one inanimate, nonmagical object in it real for 1 minute.
 
 @sub Necromancer | Arcana Unleashed
@@ -70,15 +70,15 @@
 3 | Undead Familiar | Find Familiar is in your spellbook with skeleton and zombie forms, and your familiar can attack in place of one of your attacks.
 3 | Undead Vitality | When you cast a Necromancy spell with a slot, an Undead you see within 60 feet regains HP equal to slot level + Wizard level.
 6 | Grave Power | While holding your spellbook, Arcane Recovery also removes 1 Exhaustion, and your Wizard spells ignore Necrotic resistance.
-6 | Undead Thralls | Animate Dead is always prepared and castable once per Long Rest without a slot as one level higher; your undead gain extra HP and Necrotic damage.
+6 | Undead Thralls | Animate Dead is always prepared and castable once per Long Rest without a slot as one level higher; your undead gain extra HP and Necrotic damage. {res long 1 Animate Dead (free)}
 10 | Harvest Undead | When you become Bloodied, use a Reaction to destroy one of your undead and regain HP equal to your Wizard level.
-14 | Death's Master | Once per Long Rest give your undead temp HP as a Bonus Action, and your undead explode in Necrotic damage when destroyed.
+14 | Death's Master | Once per Long Rest give your undead temp HP as a Bonus Action, and your undead explode in Necrotic damage when destroyed. {res long 1 Death's Master}
 
 @sub Transmuter | Arcana Unleashed
 3 | Transmutation Savant | Add two Transmutation spells of level 2 or lower to your spellbook for free, and one more each new spell slot level.
 3 | Transmuter's Stone | After a Long Rest, craft a stone that acts as a focus and grants Constitution save proficiency plus Darkvision, a resistance, or +10 feet of Speed to its bearer. {speed +10 cond}
-3 | Wondrous Alteration | Alter Self is always prepared and castable once per Long Rest without a slot, with extra benefits for each of its options.
+3 | Wondrous Alteration | Alter Self is always prepared and castable once per Long Rest without a slot, with extra benefits for each of its options. {res long 1 Alter Self (free)}
 6 | Empowered Transmutation | Cast certain Transmutation spells as if one level higher, a limited number of times per Long Rest.
 10 | Potent Stone | Your stone can hold two benefits and gains Mighty Build and Tremorsense options; swap them when you cast Transmutation spells.
-10 | Shape-Shifter | Polymorph is always prepared and castable once per Long Rest without a slot; targeting yourself keeps your mind and some spellcasting.
+10 | Shape-Shifter | Polymorph is always prepared and castable once per Long Rest without a slot; targeting yourself keeps your mind and some spellcasting. {res long 1 Polymorph (free)}
 14 | Master Transmuter | Consume your stone for a major effect: Major Transformation, Panacea, Restore Life or Restore Youth.
