@@ -1,0 +1,160 @@
+:root {
+  --bg: #121318;
+  --surface: #1b1d24;
+  --surface-2: #242731;
+  --line: #2f3340;
+  --text: #ecebe6;
+  --muted: #9a9caa;
+  --accent: #e0a94a;
+  --accent-ink: #1b1406;
+  --pact: #a98bf0;
+  --good: #6fcf97;
+  --bad: #f07070;
+  --temp: #5fb8e8;
+  --radius: 14px;
+  --gap: 12px;
+  --tap: 48px;
+  --tabbar-h: 64px;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: contain;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  border-radius: 10px;
+  min-height: var(--tap);
+  padding: 0 16px;
+  touch-action: manipulation;
+}
+button:active {
+  transform: translateY(1px);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+button.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  font-weight: 650;
+}
+button.danger {
+  border-color: color-mix(in srgb, var(--bad) 50%, var(--line));
+  color: var(--bad);
+}
+button.ghost {
+  background: transparent;
+}
+
+input,
+select,
+textarea {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  min-height: var(--tap);
+  padding: 0 12px;
+  width: 100%;
+}
+textarea {
+  padding: 12px;
+  min-height: 120px;
+  resize: vertical;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px;
+  container-type: inline-size;
+}
+.card > h2 {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.muted {
+  color: var(--muted);
+}
+.small {
+  font-size: 0.85rem;
+}
+.spacer {
+  flex: 1;
+}
+
+label.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+label.field > :not(span) {
+  color: var(--text);
+}
+
+dialog {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0;
+  width: min(560px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+}
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.6);
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "./pack.schema.json",
+  "format": "cuts5e-pack",
+  "version": 1,
+  "pack": {
+    "id": "ejemplo-homebrew",
+    "name": "Ejemplo homebrew",
+    "ruleset": "2014",
+    "homebrew": true
+  },
+  "classes": [
+    {
+      "name": "Steamwright",
+      "hitDie": 8,
+      "caster": "half",
+      "spellAbility": "int",
+      "saves": ["con", "int"],
+      "subclassLevel": 3,
+      "subclassLabel": "Workshop",
+      "features": [
+        {
+          "level": 1,
+          "name": "Pressure Gauge",
+          "text": "Clase inventada para mostrar el formato. Como bonus action puedes leer la presión de una máquina que puedas ver a 30 ft.\n\nUn feature puede tener varios párrafos separados con una línea en blanco."
+        },
+        {
+          "level": 2,
+          "name": "Release Valve",
+          "text": "Una vez por Short Rest, cuando recibes daño puedes liberar vapor y reducirlo en 1d6 + tu INT modifier."
+        }
+      ]
+    }
+  ],
+  "subclasses": [
+    {
+      "class": "Steamwright",
+      "name": "Boiler Workshop",
+      "features": [
+        {
+          "level": 3,
+          "name": "Furnace Heart",
+          "text": "Tus herramientas de calderero cuentan como arcane focus."
+        }
+      ]
+    },
+    {
+      "class": "Fighter",
+      "name": "Clockwork Duelist",
+      "features": [
+        {
+          "level": 3,
+          "name": "Wound Spring",
+          "text": "Subclass inventada para una clase de los presets de la app. Como bonus action das cuerda a tus botas: hasta el final de tu turno tu speed aumenta 10 ft.",
+          "effects": [{ "target": "speed", "value": 10, "conditional": true }]
+        },
+        {
+          "level": 7,
+          "name": "Balanced Gears",
+          "text": "Tu speed aumenta 5 ft mientras no uses heavy armor.",
+          "effects": [{ "target": "speed", "value": 5 }]
+        },
+        {
+          "level": 10,
+          "name": "Escapement",
+          "text": "Feature de nivel 10: aparece como próximo mientras tu Fighter sea de menor nivel."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "hoja5e",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "schema": "tsx scripts/gen-schema.ts"
+  },
+  "dependencies": {
+    "dexie": "^4.4.6",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tsconfig/svelte": "^5.0.8",
+    "svelte": "^5.57.2",
+    "svelte-check": "^4.7.7",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.4",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^5.0.5"
+  }
+}

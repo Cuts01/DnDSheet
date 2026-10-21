@@ -1,0 +1,1583 @@
+{
+  "title": "Hoja 5e content pack",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string",
+      "const": "cuts5e-pack"
+    },
+    "version": {
+      "type": "number",
+      "const": 1
+    },
+    "pack": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Identificador unico. Importar otro pack con el mismo id lo reemplaza"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ruleset": {
+          "type": "string",
+          "enum": [
+            "2014",
+            "2024"
+          ]
+        },
+        "homebrew": {
+          "default": false,
+          "type": "boolean"
+        },
+        "built": {
+          "default": "",
+          "description": "Fecha de generación (ISO). Sirve para avisar si un pack quedó viejo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "ruleset"
+      ]
+    },
+    "classes": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Nombre de la clase. Se compara sin mayusculas con la clase del personaje"
+          },
+          "hitDie": {
+            "anyOf": [
+              {
+                "type": "number",
+                "const": 6
+              },
+              {
+                "type": "number",
+                "const": 8
+              },
+              {
+                "type": "number",
+                "const": 10
+              },
+              {
+                "type": "number",
+                "const": 12
+              }
+            ],
+            "description": "6, 8, 10 o 12"
+          },
+          "caster": {
+            "type": "string",
+            "enum": [
+              "none",
+              "full",
+              "half",
+              "third",
+              "artificer",
+              "pact"
+            ]
+          },
+          "spellAbility": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "str",
+                  "dex",
+                  "con",
+                  "int",
+                  "wis",
+                  "cha"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "saves": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "str",
+                "dex",
+                "con",
+                "int",
+                "wis",
+                "cha"
+              ]
+            }
+          },
+          "subclassLevel": {
+            "default": 3,
+            "description": "Nivel en que se elige la subclass",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "subclassLabel": {
+            "default": "Subclass",
+            "description": "Ej. Otherworldly Patron, Arcane Tradition",
+            "type": "string"
+          },
+          "proficiencies": {
+            "default": {
+              "armor": [],
+              "weapons": [],
+              "tools": [],
+              "skills": null
+            },
+            "description": "Lo que otorga como clase inicial",
+            "type": "object",
+            "properties": {
+              "armor": {
+                "default": [],
+                "description": "light, medium, heavy, shields",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "weapons": {
+                "default": [],
+                "description": "simple, martial, o nombres de armas",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tools": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "skills": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 18
+                      },
+                      "from": {
+                        "default": [],
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "count"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          },
+          "multiclass": {
+            "default": {
+              "armor": [],
+              "weapons": [],
+              "tools": [],
+              "skills": null
+            },
+            "description": "Lo que otorga al tomarla como multiclass",
+            "type": "object",
+            "properties": {
+              "armor": {
+                "default": [],
+                "description": "light, medium, heavy, shields",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "weapons": {
+                "default": [],
+                "description": "simple, martial, o nombres de armas",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tools": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "skills": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 18
+                      },
+                      "from": {
+                        "default": [],
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "count"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          },
+          "features": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Opcional. Si falta se genera desde el nivel y el nombre",
+                  "type": "string"
+                },
+                "level": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 20
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "default": "",
+                  "description": "Texto del feature. Usa \\n\\n para separar parrafos",
+                  "type": "string"
+                },
+                "effects": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "target": {
+                        "type": "string",
+                        "enum": [
+                          "speed",
+                          "initiative",
+                          "ac",
+                          "passive-perception",
+                          "passive-investigation",
+                          "passive-insight"
+                        ],
+                        "description": "speed en ft; initiative, ac y passives como bonus"
+                      },
+                      "value": {
+                        "type": "integer",
+                        "minimum": -200,
+                        "maximum": 200,
+                        "description": "Bonus, puede ser negativo"
+                      },
+                      "conditional": {
+                        "default": false,
+                        "description": "true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre",
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "target",
+                      "value"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "level",
+                "name"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "hitDie",
+          "caster"
+        ]
+      }
+    },
+    "subclasses": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Opcional. Si falta se genera como clase/nombre",
+            "type": "string"
+          },
+          "class": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Nombre de la clase a la que pertenece"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caster": {
+            "description": "Opcional. Cambia el spellcasting de la clase al elegir esta subclass (ej. Eldritch Knight: third)",
+            "type": "string",
+            "enum": [
+              "none",
+              "full",
+              "half",
+              "third",
+              "artificer",
+              "pact"
+            ]
+          },
+          "spellAbility": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "str",
+                  "dex",
+                  "con",
+                  "int",
+                  "wis",
+                  "cha"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "features": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Opcional. Si falta se genera desde el nivel y el nombre",
+                  "type": "string"
+                },
+                "level": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 20
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "default": "",
+                  "description": "Texto del feature. Usa \\n\\n para separar parrafos",
+                  "type": "string"
+                },
+                "effects": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "target": {
+                        "type": "string",
+                        "enum": [
+                          "speed",
+                          "initiative",
+                          "ac",
+                          "passive-perception",
+                          "passive-investigation",
+                          "passive-insight"
+                        ],
+                        "description": "speed en ft; initiative, ac y passives como bonus"
+                      },
+                      "value": {
+                        "type": "integer",
+                        "minimum": -200,
+                        "maximum": 200,
+                        "description": "Bonus, puede ser negativo"
+                      },
+                      "conditional": {
+                        "default": false,
+                        "description": "true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre",
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "target",
+                      "value"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "level",
+                "name"
+              ]
+            }
+          },
+          "spells": {
+            "default": [],
+            "description": "Domain, Oath, Circle o Patron spells",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 20,
+                  "description": "always: nivel de clase. expanded: nivel de spell"
+                },
+                "spells": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "mode": {
+                  "default": "always",
+                  "description": "always: siempre preparadas. expanded: se suman a tu lista de clase",
+                  "type": "string",
+                  "enum": [
+                    "always",
+                    "expanded"
+                  ]
+                },
+                "variant": {
+                  "default": "",
+                  "description": "Opción a elegir, ej. el terreno de Circle of the Land",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "level"
+              ]
+            }
+          }
+        },
+        "required": [
+          "class",
+          "name"
+        ]
+      }
+    },
+    "species": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "size": {
+            "default": "Medium",
+            "type": "string"
+          },
+          "speed": {
+            "default": 30,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 120
+          },
+          "darkvision": {
+            "default": 0,
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 300
+          },
+          "asi": {
+            "default": {
+              "fixed": {},
+              "choose": []
+            },
+            "description": "2014: incrementos de la raza. 2024: vacio (los da el background)",
+            "type": "object",
+            "properties": {
+              "fixed": {
+                "default": {},
+                "type": "object",
+                "propertyNames": {
+                  "type": "string",
+                  "enum": [
+                    "str",
+                    "dex",
+                    "con",
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "integer",
+                  "minimum": -9007199254740991,
+                  "maximum": 9007199254740991
+                }
+              },
+              "choose": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "count": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 6
+                    },
+                    "amount": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 2
+                    },
+                    "from": {
+                      "default": [
+                        "str",
+                        "dex",
+                        "con",
+                        "int",
+                        "wis",
+                        "cha"
+                      ],
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "str",
+                          "dex",
+                          "con",
+                          "int",
+                          "wis",
+                          "cha"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "count",
+                    "amount"
+                  ]
+                }
+              }
+            }
+          },
+          "skills": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "skillChoices": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 18
+                  },
+                  "from": {
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "count"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "proficiencies": {
+            "default": {
+              "armor": [],
+              "weapons": [],
+              "tools": [],
+              "skills": null
+            },
+            "type": "object",
+            "properties": {
+              "armor": {
+                "default": [],
+                "description": "light, medium, heavy, shields",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "weapons": {
+                "default": [],
+                "description": "simple, martial, o nombres de armas",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "tools": {
+                "default": [],
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "skills": {
+                "default": null,
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "count": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 18
+                      },
+                      "from": {
+                        "default": [],
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "required": [
+                      "count"
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          },
+          "languages": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "originFeat": {
+            "default": false,
+            "description": "true si la raza da un feat a eleccion (Variant Human, Human 2024)",
+            "type": "boolean"
+          },
+          "traits": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "default": "",
+                  "type": "string"
+                },
+                "effects": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "target": {
+                        "type": "string",
+                        "enum": [
+                          "speed",
+                          "initiative",
+                          "ac",
+                          "passive-perception",
+                          "passive-investigation",
+                          "passive-insight"
+                        ],
+                        "description": "speed en ft; initiative, ac y passives como bonus"
+                      },
+                      "value": {
+                        "type": "integer",
+                        "minimum": -200,
+                        "maximum": 200,
+                        "description": "Bonus, puede ser negativo"
+                      },
+                      "conditional": {
+                        "default": false,
+                        "description": "true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre",
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "target",
+                      "value"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          },
+          "source": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "backgrounds": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "skills": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "skillChoices": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 18
+                  },
+                  "from": {
+                    "default": [],
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": [
+                  "count"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "tools": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "languages": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "asi": {
+            "default": [],
+            "description": "2024: las tres abilities que puede subir (+2/+1 o +1/+1/+1)",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "str",
+                "dex",
+                "con",
+                "int",
+                "wis",
+                "cha"
+              ]
+            }
+          },
+          "feat": {
+            "default": null,
+            "description": "2024: nombre del origin feat que otorga",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "traits": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "text": {
+                  "default": "",
+                  "type": "string"
+                },
+                "effects": {
+                  "default": [],
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "target": {
+                        "type": "string",
+                        "enum": [
+                          "speed",
+                          "initiative",
+                          "ac",
+                          "passive-perception",
+                          "passive-investigation",
+                          "passive-insight"
+                        ],
+                        "description": "speed en ft; initiative, ac y passives como bonus"
+                      },
+                      "value": {
+                        "type": "integer",
+                        "minimum": -200,
+                        "maximum": 200,
+                        "description": "Bonus, puede ser negativo"
+                      },
+                      "conditional": {
+                        "default": false,
+                        "description": "true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre",
+                        "type": "boolean"
+                      }
+                    },
+                    "required": [
+                      "target",
+                      "value"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
+          },
+          "equipment": {
+            "default": "",
+            "type": "string"
+          },
+          "source": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "feats": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "default": "general",
+            "description": "origin, general, fighting style, epic boon, racial...",
+            "type": "string"
+          },
+          "prerequisite": {
+            "default": "",
+            "type": "string"
+          },
+          "minLevel": {
+            "default": 1,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "asi": {
+            "default": null,
+            "description": "Half-feats: +1 a una de estas abilities",
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "default": 1,
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 2
+                  },
+                  "from": {
+                    "minItems": 1,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "str",
+                        "dex",
+                        "con",
+                        "int",
+                        "wis",
+                        "cha"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "from"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "repeatable": {
+            "default": false,
+            "type": "boolean"
+          },
+          "skills": {
+            "default": [],
+            "description": "Skills que otorga el feat a elección",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "count": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 18
+                },
+                "from": {
+                  "default": [],
+                  "description": "vacío = cualquier skill",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "mode": {
+                  "default": "prof",
+                  "description": "either: proficiency, o expertise si ya eras proficient",
+                  "type": "string",
+                  "enum": [
+                    "prof",
+                    "expertise",
+                    "either"
+                  ]
+                }
+              },
+              "required": [
+                "count"
+              ]
+            }
+          },
+          "spells": {
+            "default": [],
+            "description": "Spells que otorga el feat (Fey Touched, Magic Initiate...)",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "spell": {
+                  "default": "",
+                  "description": "Spell fija por nombre. Vacío = a elegir",
+                  "type": "string"
+                },
+                "count": {
+                  "default": 1,
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 10
+                },
+                "level": {
+                  "default": 0,
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9
+                },
+                "schools": {
+                  "default": [],
+                  "description": "Schools permitidas al elegir",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "lists": {
+                  "default": [],
+                  "description": "Listas de clase permitidas; si hay varias, el feat pide elegir una",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "attackOnly": {
+                  "default": false,
+                  "description": "Solo cantrips con attack roll (Spell Sniper)",
+                  "type": "boolean"
+                },
+                "uses": {
+                  "default": "none",
+                  "description": "Lanzamiento gratis por Long o Short Rest",
+                  "type": "string",
+                  "enum": [
+                    "none",
+                    "long",
+                    "short"
+                  ]
+                }
+              }
+            }
+          },
+          "spellAbility": {
+            "default": "",
+            "description": "Ability para estas spells: int, wis, cha, con, \"asi\" (la que sube el feat) o \"list\" (según la lista elegida)",
+            "type": "string"
+          },
+          "text": {
+            "default": "",
+            "type": "string"
+          },
+          "effects": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "speed",
+                    "initiative",
+                    "ac",
+                    "passive-perception",
+                    "passive-investigation",
+                    "passive-insight"
+                  ],
+                  "description": "speed en ft; initiative, ac y passives como bonus"
+                },
+                "value": {
+                  "type": "integer",
+                  "minimum": -200,
+                  "maximum": 200,
+                  "description": "Bonus, puede ser negativo"
+                },
+                "conditional": {
+                  "default": false,
+                  "description": "true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "target",
+                "value"
+              ]
+            }
+          },
+          "source": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "invocations": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prerequisite": {
+            "default": "",
+            "type": "string"
+          },
+          "minLevel": {
+            "default": 1,
+            "description": "Nivel de Warlock minimo",
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          },
+          "pact": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "blade",
+                  "chain",
+                  "tome",
+                  "talisman"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "repeatable": {
+            "default": false,
+            "type": "boolean"
+          },
+          "text": {
+            "default": "",
+            "type": "string"
+          },
+          "effects": {
+            "default": [],
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "speed",
+                    "initiative",
+                    "ac",
+                    "passive-perception",
+                    "passive-investigation",
+                    "passive-insight"
+                  ],
+                  "description": "speed en ft; initiative, ac y passives como bonus"
+                },
+                "value": {
+                  "type": "integer",
+                  "minimum": -200,
+                  "maximum": 200,
+                  "description": "Bonus, puede ser negativo"
+                },
+                "conditional": {
+                  "default": false,
+                  "description": "true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "target",
+                "value"
+              ]
+            }
+          },
+          "source": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    "items": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "weapon",
+              "armor",
+              "gear",
+              "tool",
+              "other"
+            ]
+          },
+          "category": {
+            "default": "",
+            "description": "Para agrupar: Adventuring Gear, Ammunition, Artisan Tools...",
+            "type": "string"
+          },
+          "cost": {
+            "default": "",
+            "type": "string"
+          },
+          "weight": {
+            "default": 0,
+            "type": "number",
+            "minimum": 0
+          },
+          "text": {
+            "default": "",
+            "type": "string"
+          },
+          "weapon": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "enum": [
+                      "simple",
+                      "martial"
+                    ]
+                  },
+                  "range": {
+                    "type": "string",
+                    "enum": [
+                      "melee",
+                      "ranged"
+                    ]
+                  },
+                  "damage": {
+                    "type": "string",
+                    "description": "Ej. 1d8, 2d6 o 1"
+                  },
+                  "damageType": {
+                    "type": "string"
+                  },
+                  "versatile": {
+                    "default": null,
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "properties": {
+                    "default": [],
+                    "description": "finesse, light, heavy, two-handed, reach, thrown, ammunition, loading, versatile...",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "normalRange": {
+                    "default": null,
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "longRange": {
+                    "default": null,
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": -9007199254740991,
+                        "maximum": 9007199254740991
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "mastery": {
+                    "default": null,
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "category",
+                  "range",
+                  "damage",
+                  "damageType"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "armor": {
+            "default": null,
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "type": "string",
+                    "enum": [
+                      "light",
+                      "medium",
+                      "heavy",
+                      "shield"
+                    ]
+                  },
+                  "ac": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 30
+                  },
+                  "dexMax": {
+                    "default": null,
+                    "description": "null = DEX completo, 0 = sin DEX",
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "strength": {
+                    "default": null,
+                    "anyOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 30
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "stealthDisadvantage": {
+                    "default": false,
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "category",
+                  "ac"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "kind"
+        ]
+      }
+    },
+    "spells": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "level": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9,
+            "description": "0 = cantrip"
+          },
+          "school": {
+            "type": "string",
+            "enum": [
+              "Abjuration",
+              "Conjuration",
+              "Divination",
+              "Enchantment",
+              "Evocation",
+              "Illusion",
+              "Necromancy",
+              "Transmutation"
+            ]
+          },
+          "classes": {
+            "default": [],
+            "description": "Listas de clase que la incluyen, ej. [\"Wizard\", \"Sorcerer\"]",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "castingTime": {
+            "default": "Action",
+            "type": "string"
+          },
+          "range": {
+            "default": "Self",
+            "type": "string"
+          },
+          "components": {
+            "default": "V, S",
+            "description": "V, S, M",
+            "type": "string"
+          },
+          "material": {
+            "default": "",
+            "description": "Componente material, si importa (costo o se consume)",
+            "type": "string"
+          },
+          "duration": {
+            "default": "Instantaneous",
+            "type": "string"
+          },
+          "concentration": {
+            "default": false,
+            "type": "boolean"
+          },
+          "ritual": {
+            "default": false,
+            "type": "boolean"
+          },
+          "text": {
+            "default": "",
+            "type": "string"
+          },
+          "higher": {
+            "default": "",
+            "description": "Qué cambia al lanzarla con un slot mayor o al subir de nivel (cantrips)",
+            "type": "string"
+          },
+          "attack": {
+            "default": null,
+            "description": "Tipo de ataque, para la tarjeta de Ataques",
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "melee",
+                  "ranged",
+                  "auto"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "save": {
+            "default": null,
+            "description": "Saving throw que pide",
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "str",
+                  "dex",
+                  "con",
+                  "int",
+                  "wis",
+                  "cha"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "damage": {
+            "default": "",
+            "description": "Daño base, ej. \"1d10 force\" o \"1d4 + 1 force\"",
+            "type": "string"
+          },
+          "scaling": {
+            "default": "none",
+            "description": "Cantrips: dados o rayos extra en niveles 5, 11 y 17",
+            "type": "string",
+            "enum": [
+              "none",
+              "dice",
+              "beams"
+            ]
+          },
+          "source": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "level",
+          "school"
+        ]
+      }
+    }
+  },
+  "required": [
+    "format",
+    "version",
+    "pack"
+  ]
+}
