@@ -21,12 +21,12 @@
   const hp = $derived(averageHp(draft));
   const canCreate = $derived(draft.name.trim().length > 0 && draft.classes[0].name.trim().length > 0);
 
-  function create() {
+  async function create() {
     if (!canCreate) return;
     const c = $state.snapshot(draft) as Character;
     c.name = c.name.trim();
     c.hp = { max: hp, current: hp, temp: 0 };
-    store.replace(c);
+    await store.add(c);
     oncreated?.();
   }
 
@@ -35,14 +35,17 @@
     e.currentTarget.value = '';
     if (!file) return;
     const r = await readCharacterFile(file);
-    if (r.ok) store.replace(r.character);
+    if (r.ok) await store.add(r.character);
     else errors = r.errors;
   }
 </script>
 
 <div class="create">
   <header>
-    <h1>{t('Nuevo personaje')}</h1>
+    <div class="title-row">
+      <h1>{t('Nuevo personaje')}</h1>
+      {#if store.currentId}<button onclick={() => store.cancelNew()}>{t('Volver a {name}', { name: store.c.name || t('Sin nombre') })}</button>{/if}
+    </div>
     <p class="muted">{t('Lo básico para empezar. Skills, feats, invocations y equipo se completan después en Editar y Equipo.')}</p>
   </header>
 
@@ -83,6 +86,13 @@
 </div>
 
 <style>
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
   .create {
     max-width: 640px;
     margin: 0 auto;

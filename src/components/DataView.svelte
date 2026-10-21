@@ -5,6 +5,7 @@
   import type { Character } from '../lib/model/character';
   import { classSummary } from '../lib/rules/derive';
   import PacksCard from './PacksCard.svelte';
+  import CharacterList from './CharacterList.svelte';
 
   let fileInput: HTMLInputElement;
   let pending = $state<Character | null>(null);
@@ -23,11 +24,20 @@
     else errors = r.errors;
   }
 
-  function confirmImport() {
+  async function confirmImport(asNew: boolean) {
     if (!pending) return;
-    store.replace(pending);
-    message = t('Importado: {name}.', { name: pending.name });
+    const c = pending;
     pending = null;
+    if (asNew) await store.add(c);
+    else store.replace(c);
+    message = t('Importado: {name}.', { name: c.name });
+  }
+  // Si ya hay un personaje con el mismo nombre, se sugiere reemplazarlo (respaldo del mismo personaje).
+  const sameName = $derived(pending ? store.list.find((x) => x.valid && x.name.trim().toLowerCase() === pending!.name.trim().toLowerCase()) : undefined);
+  async function replaceSame() {
+    if (!pending || !sameName) return;
+    await store.select(sameName.id);
+    await confirmImport(false);
   }
 
   async function share() {
@@ -38,11 +48,6 @@
     }
   }
 
-  async function startOver() {
-    if (confirm(t('Esto borra a {name} de este dispositivo y abre la creación de un personaje nuevo. ¿Exportaste un respaldo?', { name: store.c.name }))) {
-      await store.discard();
-    }
-  }
 
   const updated = $derived(new Date(store.c.updatedAt).toLocaleString(i18n.lang === 'en' ? 'en-US' : 'es-PE'));
 </script>
@@ -58,9 +63,15 @@
   </div>
 
   <div class="card stack">
+    <h2>{t('Personajes')}</h2>
+    <CharacterList />
+    <p class="small muted">{t('También puedes cambiar de personaje tocando su nombre arriba.')}</p>
+  </div>
+
+  <div class="card stack">
     <h2>{t('Respaldo')}</h2>
     <p class="small muted">
-      {t('Los datos viven solo en este dispositivo. Exporta un JSON antes de limpiar el navegador, y úsalo para pasar el personaje entre el teléfono y la tablet.')}
+      {t('Los datos viven solo en este dispositivo. Exporta un JSON antes de limpiar el navegador, y úsalo para pasar el personaje entre el teléfono y la tablet.')} {t('Exportar guarda el personaje abierto.')}
     </p>
     <div class="row wrap">
       <button class="primary" onclick={() => downloadCharacter(store.snapshot())}>{t('Exportar JSON')}</button>
@@ -73,12 +84,19 @@
     {#if pending}
       <div class="confirm">
         <p>
-          {t('¿Reemplazar a')} <b>{store.c.name}</b> {t('por')} <b>{pending.name}</b>
-          <span class="muted">({classSummary(pending)})</span>?
+          <b>{pending.name}</b> <span class="muted">({classSummary(pending)})</span>
         </p>
-        <div class="row">
+        {#if sameName}
+          <p class="small muted">{t('Ya tienes un personaje con ese nombre. Si es un respaldo del mismo, reemplázalo para no duplicarlo.')}</p>
+        {/if}
+        <div class="row wrap">
           <button onclick={() => (pending = null)}>{t('Cancelar')}</button>
-          <button class="primary" onclick={confirmImport}>{t('Reemplazar')}</button>
+          {#if sameName}
+            <button class="primary" onclick={replaceSame}>{t('Reemplazar a {name}', { name: sameName.name })}</button>
+            <button onclick={() => confirmImport(true)}>{t('Agregar como nuevo')}</button>
+          {:else}
+            <button class="primary" onclick={() => confirmImport(true)}>{t('Agregar como nuevo')}</button>
+          {/if}
         </div>
       </div>
     {/if}
@@ -109,11 +127,7 @@
 
   <PacksCard />
 
-  <div class="card stack">
-    <h2>{t('Nuevo personaje')}</h2>
-    <p class="small muted">{t('Por ahora la app guarda un personaje a la vez. Exporta este antes de crear otro.')}</p>
-    <button class="danger" onclick={startOver}>{t('Borrar y crear uno nuevo')}</button>
-  </div>
+
 </section>
 
 <style>

@@ -15,10 +15,12 @@
   import { featSpells } from './lib/rules/spells';
   import { autoSyncLocal } from './lib/packImport';
   import { compendium } from './lib/compendium.svelte';
+  import CharacterSwitcher from './components/CharacterSwitcher.svelte';
 
   type View = 'combat' | 'sheet' | 'spells' | 'features' | 'gear' | 'edit' | 'data';
 
   let view = $state<View>('combat');
+  let switching = $state(false);
   // Desde 768 px de ancho de ventana (Tab S9 vertical u horizontal) Combate y Hoja se ven juntos.
   let wide = $state(false);
 
@@ -88,11 +90,12 @@
 {:else}
 <div class="app">
   <header class="top">
-    <div class="who">
-      <h1>{store.c.name || t('Sin nombre')}</h1>
-      <p class="muted">{classSummary(store.c)} · {t('nivel')} {totalLevel(store.c)} · {store.c.ruleset}</p>
-    </div>
+    <button class="who ghost" aria-haspopup="dialog" aria-label={t('Cambiar de personaje')} onclick={() => (switching = true)}>
+      <span class="name-row"><span class="h1">{store.c.name || t('Sin nombre')}</span><span class="swap" aria-hidden="true">▾</span></span>
+      <p class="muted">{classSummary(store.c)} · {t('nivel')} {totalLevel(store.c)} · {store.c.ruleset}{store.list.length > 1 ? ` · ${t('{n} personajes', { n: store.list.length })}` : ''}</p>
+    </button>
   </header>
+  <CharacterSwitcher bind:open={switching} />
 
   {#if store.loadError}
     <p class="banner">{store.loadError}</p>
@@ -146,12 +149,33 @@
     max-width: 1400px;
     margin: 0 auto;
   }
-  h1 {
+  .h1 {
     margin: 0;
+    font-weight: 700;
     font-size: 1.35rem;
     line-height: 1.2;
   }
+  .who {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: 0;
+    padding: 4px 6px;
+    margin: -4px -6px;
+    min-height: 0;
+    border-radius: 10px;
+  }
+  .name-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .swap {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
   .who p {
+    font-weight: 400;
     margin: 2px 0 0;
     font-size: 0.85rem;
   }

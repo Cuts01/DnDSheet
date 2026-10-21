@@ -169,9 +169,10 @@
   let addClass = $state<string>(''); // classId o '__all'
   let addLevel = $state<number | null>(null);
   let otherRules = $state(false);
+  // También corrige la lista elegida al cambiar de personaje o quitar una clase.
   $effect(() => {
-    if (!addClass && casters.length) addClass = casters[0].id;
-    if (!addClass && !casters.length) addClass = '__all';
+    if (addClass === '__all' || casters.some((k) => k.id === addClass)) return;
+    addClass = casters[0]?.id ?? '__all';
   });
   const addTarget = $derived(casters.find((k) => k.id === addClass) ?? null);
   const addMax = $derived(addTarget ? maxSpellLevel(c, addTarget) : 9);
