@@ -4,7 +4,7 @@
 1 | Favored Enemy | Choose a creature type (or two humanoid races): advantage on Survival checks to track them and Intelligence checks to recall information, plus a language. More at 6th and 14th level.
 1 | Natural Explorer | Choose a favored terrain: double proficiency on related checks and travel benefits there. More terrains at 6th and 10th level.
 1 | Favored Foe (Optional) | Replaces Favored Enemy. When you hit, mark the target for 1 minute (concentration) and deal an extra 1d4 on your first hit each turn. Proficiency bonus uses per long rest.
-1 | Deft Explorer (Optional) | Replaces Natural Explorer. Canny: double proficiency in one skill and learn two languages. Roving at 6th and Tireless at 10th. {skillpick 1 expertise} {langpick 2}
+1 | Deft Explorer (Optional) | Replaces Natural Explorer. Canny: double proficiency in one skill and learn two languages. Roving at 6th and Tireless at 10th. {skillpick 1 upgrade} {langpick 2}
 2 | Fighting Style | Choose a fighting style such as Archery, Defense, Dueling or Two-Weapon Fighting. {pick fighting-style 1 Fighting Style}
 2 | Spellcasting | You know ranger spells and cast them with Wisdom.
 2 | Spellcasting Focus (Optional) | You can use a druidic focus for ranger spells.

@@ -104,7 +104,7 @@
       <div class="chips">
         {#each s.from.length ? s.from : SKILLS.map((x) => x.id) as id (id)}
           {@const on = picked.includes(id)}
-          {@const dupOk = s.mode === 'either' || s.mode === 'expertise'}
+          {@const dupOk = s.mode === 'either' || s.mode === 'expertise' || s.mode === 'upgrade'}
           <button
             class="chip"
             class:on

@@ -6,7 +6,7 @@
 2 | Jack of All Trades | Add half your proficiency bonus, rounded down, to ability checks that don't already include it.
 2 | Song of Rest | Allies who spend Hit Dice during a short rest with you regain an extra 1d6 HP, growing at higher levels.
 2 | Magical Inspiration (Optional) | A creature holding your Bardic Inspiration can add the die to a spell's healing or damage roll.
-3 | Expertise | Double your proficiency bonus for two skill proficiencies; choose two more at 10th level. {skillpick 2@3,4@10 expertise}
+3 | Expertise | Double your proficiency bonus for two skill proficiencies; choose two more at 10th level. {skillpick 2@3,4@10 upgrade}
 4 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 4 | Bardic Versatility (Optional) | When you gain an ASI, you can replace an Expertise skill or a bard cantrip.
 5 | Font of Inspiration | You regain all Bardic Inspiration uses on a short or long rest.

@@ -4,13 +4,13 @@
 1 | Spellcasting | Prepare Ranger spells cast with Wisdom, using a Druidic Focus.
 1 | Favored Enemy | Hunter's Mark is always prepared, and you can cast it without a slot a limited number of times per Long Rest. {res long 2@1,3@5,4@9,5@13,6@17 Hunter's Mark (free)}
 1 | Weapon Mastery | Use the mastery properties of two kinds of weapons, changeable after a Long Rest.
-2 | Deft Explorer | Gain Expertise in one skill and learn two languages. {skillpick 1 expertise} {langpick 2}
+2 | Deft Explorer | Gain Expertise in one skill and learn two languages. {skillpick 1 upgrade} {langpick 2}
 2 | Fighting Style | Gain a Fighting Style feat, or Druidic Warrior to learn two Druid cantrips. {pick feat:fighting-style 1 Fighting Style}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Extra Attack | Attack twice when you take the Attack action.
 6 | Roving | While not in Heavy armor, your Speed increases by 10 feet and you gain Climb and Swim Speeds equal to it. {speed +10}
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
-9 | Expertise | Gain Expertise in two more skills. {skillpick 2 expertise}
+9 | Expertise | Gain Expertise in two more skills. {skillpick 2 upgrade}
 10 | Tireless | As a Magic action, gain temp HP a limited number of times per Long Rest, and Short Rests reduce your Exhaustion. {res long wis Tireless}
 12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 13 | Relentless Hunter | Taking damage can't break your Concentration on Hunter's Mark.

@@ -130,16 +130,19 @@ export const saveBonus = (c: Character, a: Ability) => abilityMod(c, a) + (hasSa
  * Las fuentes de feats tienen la forma feat<modo>:<dueño>|<ref>|<n>, con modo p (proficiency), x (expertise)
  * o e (proficiency, o expertise si otra fuente ya la daba). Si el feat ya no está en ese slot, la fuente se ignora.
  */
-const FEAT_SOURCE = /^feat([pxe]):([^|]+)\|([^|]*)\|\d+$/;
+const FEAT_SOURCE = /^feat([pxeu]):([^|]+)\|([^|]*)\|\d+$/;
 /*
  * Fuentes de class features: ftr<modo>:<classId>@<nivel>@<subclassId>|<featureId>|<n>.
  * Valen mientras tengas esa clase en ese nivel (y esa subclass, si el feature es de subclass).
  */
-const FTR_SOURCE = /^ftr([pxe]):([^@|]+)@(\d+)@([^|]*)\|/;
-export const featureSource = (mode: 'prof' | 'expertise' | 'either', classId: string, level: number, subId: string, featureId: string, n: string | number) =>
-  `ftr${mode === 'prof' ? 'p' : mode === 'expertise' ? 'x' : 'e'}:${classId}@${level}@${subId}|${featureId}|${n}`;
-export const featSource = (mode: 'prof' | 'expertise' | 'either', owner: string, ref: string, i: number) =>
-  `feat${mode === 'prof' ? 'p' : mode === 'expertise' ? 'x' : 'e'}:${owner}|${ref}|${i}`;
+const FTR_SOURCE = /^ftr([pxeu]):([^@|]+)@(\d+)@([^|]*)\|/;
+/* Modo u (upgrade): expertise en una skill que ya tienes por otra fuente. No da proficiency por sí sola. */
+export type SkillMode = 'prof' | 'expertise' | 'either' | 'upgrade';
+const LETTER: Record<SkillMode, string> = { prof: 'p', expertise: 'x', either: 'e', upgrade: 'u' };
+export const featureSource = (mode: SkillMode, classId: string, level: number, subId: string, featureId: string, n: string | number) =>
+  `ftr${LETTER[mode]}:${classId}@${level}@${subId}|${featureId}|${n}`;
+export const featSource = (mode: SkillMode, owner: string, ref: string, i: number) => `feat${LETTER[mode]}:${owner}|${ref}|${i}`;
+const isUpgrade = (src: string) => src.startsWith('ftru:') || src.startsWith('featu:');
 
 function liveSource(c: Character, src: string): boolean {
   const ftr = FTR_SOURCE.exec(src);
@@ -156,16 +159,26 @@ function liveSource(c: Character, src: string): boolean {
   return !!f && (f.ref ?? '') === ref;
 }
 
+/* Fuentes que te dan proficiency en la skill (no incluye las de expertise sobre una proficiency que ya tienes). */
 export const skillSources = (c: Character, id: string) =>
   Object.entries(c.skillPicks)
-    .filter(([src, list]) => list.includes(id) && liveSource(c, src))
+    .filter(([src, list]) => list.includes(id) && !isUpgrade(src) && liveSource(c, src))
+    .map(([src]) => src);
+
+/* Elecciones de expertise sobre una skill que ya tienes (Rogue y Bard Expertise, Deft Explorer, Scholar...). */
+export const upgradeSources = (c: Character, id: string) =>
+  Object.entries(c.skillPicks)
+    .filter(([src, list]) => list.includes(id) && isUpgrade(src) && liveSource(c, src))
     .map(([src]) => src);
 
 export function skillLevel(c: Character, s: SkillDef): ProfLevel {
   const manual = c.skills[s.id];
-  if (manual) return manual;
+  if (manual === 'expertise') return manual;
   const src = skillSources(c, s.id);
-  if (!src.length) return 'none';
+  if (!src.length && manual !== 'prof') return 'none';
+  // Solo sube a expertise si ya eras proficient por otra fuente o a mano.
+  if (upgradeSources(c, s.id).length) return 'expertise';
+  if (manual) return manual;
   if (src.some((x) => x.startsWith('featx:') || x.startsWith('ftrx:'))) return 'expertise';
   if (src.some((x) => x.startsWith('feate:') || x.startsWith('ftre:')) && src.length > 1) return 'expertise';
   return 'prof';

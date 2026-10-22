@@ -1,7 +1,7 @@
 import { CLASS_PRESETS, uid, type Ability, type Character, type ClassEntry, type ClassPreset, type Effect, type ItemEntry } from '../model/character';
 import { sameName, slug, type Feature, type Pack, type PackBackground, type PackClass, type PackFeat, type PackItem, type PackSpecies, type PackSubclass } from '../model/pack';
 
-import { asiSlots, featSource, skillSources } from './derive';
+import { asiSlots, featSource, skillSources, type SkillMode } from './derive';
 import { SKILLS } from './tables';
 import { t as tr } from '../i18n.svelte';
 import { featureProficiencies, featureSkillSlots } from './grants';
@@ -235,7 +235,7 @@ export interface SkillChoiceSlot {
   label: string;
   count: number;
   from: string[]; // ids de skill; vacio = cualquiera
-  mode?: 'prof' | 'expertise' | 'either';
+  mode?: SkillMode;
 }
 
 export function skillChoiceSlots(c: Character, packs: Pack[]): SkillChoiceSlot[] {

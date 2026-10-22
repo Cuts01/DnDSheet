@@ -1,6 +1,6 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry } from '../model/character';
 import { slug, type Feature, type FeatureGrants, type Pack, type PackOption } from '../model/pack';
-import { abilityMod, featureSource, pb, skillSources } from './derive';
+import { abilityMod, featureSource, pb, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
 import { findClass, findSubclass, featList } from './features';
 import { SKILLS } from './tables';
 
@@ -277,12 +277,12 @@ export interface FeatureSkillSlot {
   label: string;
   count: number;
   from: string[];
-  mode: 'prof' | 'expertise' | 'either';
+  mode: SkillMode;
 }
 
 const SKILL_IDS = SKILLS.map((s) => s.id);
 const ids = (names: string[]) => names.map((n) => slug(n));
-const modeLabel = { prof: 'proficiency', expertise: 'expertise', either: 'proficiency / expertise' } as const;
+const modeLabel = { prof: 'proficiency', expertise: 'expertise', either: 'proficiency / expertise', upgrade: 'expertise' } as const;
 
 export function featureSkillSlots(c: Character, packs: Pack[]): FeatureSkillSlot[] {
   const out: FeatureSkillSlot[] = [];
@@ -295,6 +295,18 @@ export function featureSkillSlots(c: Character, packs: Pack[]): FeatureSkillSlot
       // Expertise sin lista: entre las skills donde ya eres proficient por otra fuente.
       if (g.mode === 'expertise' && !from.length)
         from = SKILL_IDS.filter((id) => c.skills[id] || skillSources(c, id).some((x) => x !== source));
+      // Upgrade: solo skills donde ya eres proficient y que no tienen expertise por otra vía (las ya elegidas se mantienen).
+      if (g.mode === 'upgrade') {
+        const mine = c.skillPicks[source] ?? [];
+        const proficient = (id: string) => c.skills[id] === 'prof' || skillSources(c, id).length > 0;
+        const expertElsewhere = (id: string) => {
+          const s = SKILLS.find((x) => x.id === id)!;
+          const others = upgradeSources(c, id).filter((x) => x !== source);
+          return others.length > 0 || c.skills[id] === 'expertise' || (skillLevel({ ...c, skillPicks: { ...c.skillPicks, [source]: [] } }, s) === 'expertise' && !mine.includes(id));
+        };
+        const base = from.length ? from : SKILL_IDS;
+        from = base.filter((id) => mine.includes(id) || (proficient(id) && !expertElsewhere(id)));
+      }
       out.push({ source, label: `${o.feature.name} (${modeLabel[g.mode]})`, count, from, mode: g.mode });
     });
   }
@@ -322,7 +334,13 @@ export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character
   for (const x of extraChoices(c, packs)) if (x.kind === 'save') x.chosen.forEach((a) => saves.add(a as Ability));
   // Quita elecciones de skills de features que ya no tienes (bajaste de nivel o cambiaste de subclass).
   const live = new Set(featureSkillSlots(c, packs).map((s) => s.source));
-  for (const k of Object.keys(picks)) if (/^ftr[pxe]:/.test(k) && !FIXED.test(k) && !live.has(k)) delete picks[k];
+  for (const k of Object.keys(picks)) {
+    if (!/^ftr[pxeu]:/.test(k) || FIXED.test(k) || live.has(k)) continue;
+    // Elecciones guardadas antes de que existiera el modo upgrade: se pasan a la nueva clave.
+    const moved = k.replace(/^ftr[pxe]:/, 'ftru:');
+    if (live.has(moved) && !picks[moved]) picks[moved] = picks[k];
+    delete picks[k];
+  }
   const autoSaves = ABILITIES.filter((a) => saves.has(a));
   const canon = (o: Record<string, string[]>) => JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
   const same = canon(picks) === canon(c.skillPicks) && JSON.stringify(autoSaves) === JSON.stringify(c.autoSaves);

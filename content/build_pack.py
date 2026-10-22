@@ -48,7 +48,7 @@ def grant_tokens(text: str, where: str):
             grants.setdefault("languages", []).extend(csv(arg))
         elif kind == "skillpick":
             bits = arg.split(None, 2)
-            if bits[1] not in ("prof", "expertise", "either"):
+            if bits[1] not in ("prof", "expertise", "either", "upgrade"):
                 raise SystemExit(f"{where}: skillpick sin modo: {arg!r}")
             count = int(bits[0]) if bits[0].isdigit() else bits[0]
             grants.setdefault("skillChoices", []).append({"count": count, "mode": bits[1], "from": csv(bits[2]) if len(bits) > 2 else []})

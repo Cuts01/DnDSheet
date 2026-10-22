@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-10-21T12:59:20Z"
+    "built": "2026-10-22T20:08:56Z"
   },
   "classes": [
     {
@@ -381,7 +381,7 @@
             "skillChoices": [
               {
                 "count": "2@3,4@10",
-                "mode": "expertise",
+                "mode": "upgrade",
                 "from": []
               }
             ]
@@ -1287,7 +1287,7 @@
             "skillChoices": [
               {
                 "count": 1,
-                "mode": "expertise",
+                "mode": "upgrade",
                 "from": []
               }
             ],
@@ -1476,7 +1476,7 @@
             "skillChoices": [
               {
                 "count": "2@1,4@6",
-                "mode": "expertise",
+                "mode": "upgrade",
                 "from": []
               }
             ]

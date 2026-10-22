@@ -37,8 +37,11 @@ export const FeatureGrantsSchema = z
       .array(
         z.object({
           count: z.union([z.number().int().min(1).max(18), z.string().min(1)]).describe('Número o tabla por nivel, ej. "2@1,4@6"'),
-          from: strs.describe('vacío = cualquier skill (en modo expertise: las que ya tienes)'),
-          mode: z.enum(['prof', 'expertise', 'either']).default('prof')
+          from: strs.describe('vacío = cualquier skill (en modo upgrade: las que ya tienes)'),
+          mode: z
+            .enum(['prof', 'expertise', 'either', 'upgrade'])
+            .default('prof')
+            .describe('expertise: proficiency y expertise. upgrade: expertise en una skill que ya tienes. either: proficiency, o expertise si ya la tenías')
         })
       )
       .default([]),

@@ -3,7 +3,7 @@
 1 | Spellcasting | Keep a spellbook, prepare Wizard spells from it and cast them with Intelligence.
 1 | Ritual Adept | Cast any Ritual spell in your spellbook as a ritual without preparing it.
 1 | Arcane Recovery | Once per Long Rest, after a Short Rest, recover spell slots with combined levels up to half your Wizard level (none level 6+). The app handles this in Short Rest.
-2 | Scholar | Gain Expertise in one of Arcana, History, Investigation, Medicine, Nature or Religion. {skillpick 1 expertise Arcana, History, Investigation, Medicine, Nature, Religion}
+2 | Scholar | Gain Expertise in one of Arcana, History, Investigation, Medicine, Nature or Religion. {skillpick 1 upgrade Arcana, History, Investigation, Medicine, Nature, Religion}
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Memorize Spell | When you finish a Short Rest, swap one prepared spell for another in your spellbook.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.

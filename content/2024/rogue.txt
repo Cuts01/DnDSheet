@@ -1,7 +1,7 @@
 @class Rogue | hitDie 8 | caster none | spell none | saves dex int | sublevel 3 | sublabel Rogue Subclass
 @prof armor light | weapons simple, martial weapons with the Finesse or Light property | tools Thieves' Tools | skills 4 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, Stealth
 @mc armor light | tools Thieves' Tools | skills 1 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Persuasion, Sleight of Hand, Stealth
-1 | Expertise | Gain Expertise in two skills; two more at 6th level. {skillpick 2@1,4@6 expertise}
+1 | Expertise | Gain Expertise in two skills; two more at 6th level. {skillpick 2@1,4@6 upgrade}
 1 | Sneak Attack | Once per turn, deal extra damage with a Finesse or Ranged weapon hit if you have advantage or an ally is next to the target. The dice grow every odd level.
 1 | Thieves' Cant | You know Thieves' Cant and one other language. {lang Thieves' Cant} {langpick 1}
 1 | Weapon Mastery | Use the mastery properties of two kinds of weapons, changeable after a Long Rest.

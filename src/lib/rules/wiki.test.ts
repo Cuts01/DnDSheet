@@ -178,3 +178,30 @@ describe.skipIf(!p14 || !p24)('class features con proficiencies, recursos y elec
     expect(longRest(s).featureUsed).toEqual({});
   });
 });
+
+describe.skipIf(!p14)('Expertise de Rogue', () => {
+  it('solo sube skills que ya tienes y no da proficiency por sí sola', async () => {
+    const { featureSkillSlots, syncGrants } = await import('./grants');
+    const { skillLevel } = await import('./derive');
+    const { SKILLS } = await import('./tables');
+    const sk = (id: string) => SKILLS.find((s) => s.id === id)!;
+    const k = cls('Rogue', 3);
+    k.subclassId = 'wiki-2014:rogue/scout';
+    let c: Character = { ...blankCharacter(), classes: [k], skillPicks: { class: ['stealth', 'acrobatics', 'insight', 'sleight-of-hand'] } };
+    c = { ...c, skillPicks: syncGrants(c, [p14!])!.skillPicks };
+    const slot = featureSkillSlots(c, [p14!]).find((s) => s.label.startsWith('Expertise'))!;
+    expect(slot.count).toBe(2);
+    expect(slot.from).toContain('stealth');
+    expect(slot.from).not.toContain('athletics'); // no es proficient
+    expect(slot.from).not.toContain('nature'); // ya tiene expertise por Survivalist
+    // Aunque una elección vieja apunte a una skill sin proficiency, no la vuelve proficient.
+    c.skillPicks[slot.source] = ['stealth', 'athletics'];
+    expect(skillLevel(c, sk('stealth'))).toBe('expertise');
+    expect(skillLevel(c, sk('athletics'))).toBe('none');
+    // Las elecciones guardadas con la clave anterior (ftrx) se conservan.
+    const old = slot.source.replace(/^ftru:/, 'ftrx:');
+    const legacy: Character = { ...c, skillPicks: { ...c.skillPicks, [old]: ['insight'] } };
+    delete legacy.skillPicks[slot.source];
+    expect(syncGrants(legacy, [p14!])!.skillPicks[slot.source]).toEqual(['insight']);
+  });
+});

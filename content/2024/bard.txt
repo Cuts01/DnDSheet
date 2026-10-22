@@ -3,7 +3,7 @@
 @mc armor light | tools one musical instrument | skills 1 from any
 1 | Bardic Inspiration | As a Bonus Action, give a creature within 60 feet a die it can add after failing a d20 Test within the next hour. Charisma modifier uses per Long Rest; the die grows with level. {res long@1,short@5 cha die:d6@1,d8@5,d10@10,d12@15 Bardic Inspiration}
 1 | Spellcasting | Prepare Bard spells cast with Charisma, using a musical instrument as a focus.
-2 | Expertise | Gain Expertise in two skills you are proficient in; two more at 9th level. {skillpick 2@2,4@9 expertise}
+2 | Expertise | Gain Expertise in two skills you are proficient in; two more at 9th level. {skillpick 2@2,4@9 upgrade}
 2 | Jack of All Trades | Add half your Proficiency Bonus to ability checks with skills you aren't proficient in.
 4 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 5 | Font of Inspiration | Bardic Inspiration returns on a Short or Long Rest, and you can spend a spell slot to regain a use.
