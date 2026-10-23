@@ -256,6 +256,8 @@ const CharacterObject = z.object({
   autoSaves: z.array(abilityEnum).default([]),
   /* HP máximo extra de feats, rasgos y features (Tough, Dwarven Toughness...). Se calcula solo; hp.max es la base. */
   hpBonus: z.number().int().min(0).max(999).default(0),
+  /* Regla de la casa: permitir feats raciales de otras razas (si el DM lo permite). */
+  anyRacialFeats: z.boolean().default(false),
   notes: z.string(),
   updatedAt: z.string()
 });
@@ -377,6 +379,7 @@ export function blankCharacter(): Character {
     featureChoices: {},
     autoSaves: [],
     hpBonus: 0,
+    anyRacialFeats: false,
     notes: '',
     updatedAt: new Date().toISOString()
   };

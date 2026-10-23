@@ -279,3 +279,21 @@ describe.skipIf(!p14 || !p24)('recursos de feats', () => {
     expect(featureResources(c24, [p24!]).find((r) => r.name === 'Luck Points')?.max).toBe(3);
   });
 });
+
+describe.skipIf(!p14)('feats raciales', () => {
+  it('solo los permite a su raza', async () => {
+    const { racialFeatAllowed, featList } = await import('./features');
+    const f = (n: string) => featList([p14!], '2014').find((x) => x.item.name === n)!.item;
+    const as = (name: string, size = 'Medium'): Character => ({ ...blankCharacter(), species: { ...blankCharacter().species, name, size } });
+    expect(racialFeatAllowed(f('Drow High Magic'), as('Drow'))).toBe(true);
+    expect(racialFeatAllowed(f('Drow High Magic'), as('Wood Elf'))).toBe(false);
+    expect(racialFeatAllowed(f('Elven Accuracy'), as('Half-Elf'))).toBe(true);
+    expect(racialFeatAllowed(f('Dwarven Fortitude'), as('Duergar'))).toBe(true);
+    expect(racialFeatAllowed(f('Fade Away'), as('Autognome', 'Small'))).toBe(false);
+    expect(racialFeatAllowed(f('Squat Nimbleness'), as('Lightfoot Halfling', 'Small'))).toBe(true);
+    expect(racialFeatAllowed(f('Prodigy'), as('Variant Human'))).toBe(true);
+    expect(racialFeatAllowed(f('Orcish Fury'), as('Human'))).toBe(false);
+    expect(racialFeatAllowed(f('Svirfneblin Magic'), as('Deep Gnome'))).toBe(true);
+    expect(racialFeatAllowed(f('Lucky'), as('Human'))).toBe(true);
+  });
+});

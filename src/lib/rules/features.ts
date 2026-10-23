@@ -161,6 +161,32 @@ export const findBackground = (packs: Pack[], v: string | null) => findRef(packs
 export const findFeat = (packs: Pack[], v: string | null) => findRef(packs, v, (p) => p.feats);
 export const findInvocation = (packs: Pack[], v: string | null) => findRef(packs, v, (p) => p.invocations);
 
+/*
+ * Feats raciales: solo si tu raza cumple el requisito ("Elf (drow)", "Dwarf or a Small race", "Half-elf, half-orc or human").
+ * Las subrazas de Monsters of the Multiverse cuentan como su raza base (Duergar es dwarf, Eladrin es elf...).
+ */
+const RACE_ALIAS: Record<string, string> = { duergar: 'dwarf', eladrin: 'elf', 'shadar-kai': 'elf', svirfneblin: 'gnome deep gnome' };
+export function racialFeatAllowed(feat: PackFeat, c: Character): boolean {
+  if (feat.category.toLowerCase() !== 'racial' || !feat.prerequisite.trim()) return true;
+  let name = c.species.name.toLowerCase();
+  for (const [k, v] of Object.entries(RACE_ALIAS)) if (name.includes(k)) name += ` ${v}`;
+  const has = (w: string) => new RegExp(`(^|[^a-z])${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^a-z])`).test(name);
+  return feat.prerequisite
+    .toLowerCase()
+    .split(/,| or /)
+    .map((x) => x.trim().replace(/^an? /, ''))
+    .filter(Boolean)
+    .some((alt) => {
+      if (/small race/.test(alt)) return c.species.size.toLowerCase() === 'small';
+      const m = /^([a-z-]+)(?:\s*\(([^)]+)\))?/.exec(alt);
+      if (!m) return false;
+      const [, base, subrace] = m;
+      if (has(base) && (!subrace || name.includes(subrace))) return true;
+      // "Elf (drow)": también vale si la raza se llama solo Drow (o Deep Gnome); "high" y "wood" necesitan la raza base.
+      return !!subrace && !['high', 'wood'].includes(subrace) && has(subrace);
+    });
+}
+
 /* Busca un feat por nombre (para el origin feat que nombra un background 2024). */
 export function featByName(packs: Pack[], name: string, ruleset: string): Ref<PackFeat> | null {
   const base = name.replace(/\s*\(.*\)$/, '');

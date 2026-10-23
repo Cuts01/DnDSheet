@@ -4,7 +4,7 @@
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
   import type { PackFeat } from '../../lib/model/pack';
   import { asiSlots } from '../../lib/rules/derive';
-  import { featList, findFeat, packAsiLevels, type Ref } from '../../lib/rules/features';
+  import { featList, findFeat, packAsiLevels, racialFeatAllowed, type Ref } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
 
@@ -13,13 +13,19 @@
   const slots = $derived(asiSlots(c, packAsiLevels(compendium.packs, c.ruleset)));
   const feats = $derived(featList(compendium.packs, c.ruleset));
   const is2024 = $derived(c.ruleset === '2024');
-  const forSlot = (epic: boolean) =>
+  // Feats raciales solo de tu raza, salvo que actives la regla de la casa. El feat ya elegido siempre queda en la lista.
+  const raceOk = (f: Ref<PackFeat>, current: string | null) => c.anyRacialFeats || f.value === current || racialFeatAllowed(f.item, c);
+  const forSlot = (epic: boolean, current: string | null) =>
     feats.filter((f) => {
+      if (!raceOk(f, current)) return false;
       const cat = f.item.category.toLowerCase();
       if (!is2024) return true;
       return epic ? true : !cat.includes('epic');
     });
-  const forOrigin = $derived(is2024 ? feats.filter((f) => f.item.category.toLowerCase().includes('origin')) : feats);
+  const forOrigin = (current: string | null) =>
+    (is2024 ? feats.filter((f) => f.item.category.toLowerCase().includes('origin')) : feats).filter((f) => raceOk(f, current));
+  const forOther = (current: string | null) => feats.filter((f) => raceOk(f, current));
+  const hasRacial = $derived(feats.some((f) => f.item.category.toLowerCase() === 'racial'));
 
   const emptyAdv = (): Advancement => ({ kind: 'asi', asi: [{ ability: 'str', amount: 2 }], featRef: null, featName: '', featAbility: null });
   const adv = (key: string) => c.advancements[key];
@@ -99,12 +105,13 @@
       {:else}
         {@const f = featOf(a.featRef)}
         {#if feats.length}
-          <RefSelect options={forSlot(s.epic)} value={a.featRef} label="Feat" onpick={(r) => pickFeat(c.advancements[s.key], r)} />
+          <RefSelect options={forSlot(s.epic, a.featRef)} value={a.featRef} label="Feat" onpick={(r) => pickFeat(c.advancements[s.key], r)} />
         {:else}
           <label class="field"><span>Feat</span><input bind:value={c.advancements[s.key].featName} placeholder={t('Importa un pack con feats')} /></label>
         {/if}
         {#if f}
           {#if f.prerequisite}<p class="small muted">{t('Requisito')}: {f.prerequisite}</p>{/if}
+          {#if !racialFeatAllowed(f, c)}<p class="small warn">{t('Tu raza no cumple el requisito de este feat racial.')}</p>{/if}
           {#if f.asi}
             <div class="bonus self">
               <b class="num">+1</b>
@@ -128,10 +135,11 @@
         {/if}
       </div>
       {#if feats.length}
-        <RefSelect options={f.source === 'other' ? feats : forOrigin} value={f.ref} label="Feat" onpick={(r) => pickOther(i, r)} />
+        <RefSelect options={f.source === 'other' ? forOther(f.ref) : forOrigin(f.ref)} value={f.ref} label="Feat" onpick={(r) => pickOther(i, r)} />
       {:else}
         <label class="field"><span>Feat</span><input bind:value={c.feats[i].name} /></label>
       {/if}
+      {#if pf && !racialFeatAllowed(pf, c)}<p class="small warn">{t('Tu raza no cumple el requisito de este feat racial.')}</p>{/if}
       {#if pf?.asi}
         <div class="bonus self">
           <b class="num">+1</b>
@@ -143,11 +151,32 @@
     </div>
   {/each}
 
+  {#if hasRacial}
+    <label class="check small">
+      <input type="checkbox" bind:checked={c.anyRacialFeats} />
+      <span>{t('Permitir feats raciales de otras razas (si tu DM lo permite)')}</span>
+    </label>
+  {/if}
   <button onclick={addOther}>{t('Agregar feat adicional')}</button>
   <p class="muted small">{t('Para feats que no vienen de un ASI: Fighting Style 2024, bonus de un DM, etc.')}</p>
 </div>
 
 <style>
+  .warn {
+    color: var(--accent);
+    margin: 0;
+  }
+  .check {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    min-height: var(--tap);
+  }
+  .check input {
+    width: 22px;
+    min-height: 22px;
+    accent-color: var(--accent);
+  }
   .card h2 {
     margin-bottom: 0;
   }
