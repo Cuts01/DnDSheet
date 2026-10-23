@@ -1,6 +1,6 @@
 # Feats 2024 (PHB). Resúmenes propios. "asi" = el +1 que da el feat.
 @feat Alert | cat origin | source PHB 2024
-Add your Proficiency Bonus to Initiative (add it in Editar > Ajustes > Bonus initiative), and you can swap your Initiative with a willing ally at the start of combat.
+Add your Proficiency Bonus to Initiative, and you can swap your Initiative with a willing ally at the start of combat. {init +1 pb}
 @feat Crafter | cat origin | source PHB 2024
 Proficiency with three Artisan's Tools, a 20% discount on nonmagical items, and you can craft simple items during a Long Rest.
 @feat Healer | cat origin | source PHB 2024
@@ -16,9 +16,9 @@ Once per turn, roll a weapon's damage dice twice and use either roll.
 @feat Skilled | cat origin | repeatable | skills 3 prof | source PHB 2024
 Proficiency in any combination of three skills or tools.
 @feat Tavern Brawler | cat origin | source PHB 2024
-Unarmed strikes deal 1d4 + Strength, reroll 1s on their damage, proficiency with improvised weapons, and push a creature 5 feet on a hit once per turn.
+Unarmed strikes deal 1d4 + Strength, reroll 1s on their damage, proficiency with improvised weapons, and push a creature 5 feet on a hit once per turn. {weapons improvised} {unarmed +4}
 @feat Tough | cat origin | source PHB 2024
-Your HP maximum increases by twice your level, and by 2 more each level.
+Your HP maximum increases by twice your level, and by 2 more each level. {hp +2 level}
 @feat Actor | cat general | prereq Level 4+, Charisma 13+ | level 4 | asi cha | source PHB 2024
 Advantage on Deception and Performance checks to pass as someone else, and you can mimic voices.
 @feat Athlete | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
@@ -26,7 +26,7 @@ Gain a Climb Speed equal to your Speed, stand up from Prone with 5 feet of movem
 @feat Charger | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
 Dash adds 10 feet of Speed; after moving 10 feet in a straight line, a melee hit deals 1d8 extra or pushes 10 feet, once per turn.
 @feat Chef | cat general | prereq Level 4+ | level 4 | asi con, wis | source PHB 2024
-Proficiency with Cook's Utensils; cook food that gives extra healing on Short Rests and treats that grant temp HP.
+Proficiency with Cook's Utensils; cook food that gives extra healing on Short Rests and treats that grant temp HP. {tools Cook's Utensils}
 @feat Crossbow Expert | cat general | prereq Level 4+, Dexterity 13+ | level 4 | asi dex | source PHB 2024
 Ignore Loading on crossbows, no disadvantage firing in melee, and add your ability modifier to the Light extra attack damage.
 @feat Crusher | cat general | prereq Level 4+ | level 4 | asi str, con | source PHB 2024
@@ -46,7 +46,7 @@ Grapple as part of an Unarmed Strike, advantage on attacks against creatures you
 @feat Great Weapon Master | cat general | prereq Level 4+, Strength 13+ | level 4 | asi str | source PHB 2024
 Heavy weapon hits deal extra damage equal to your Proficiency Bonus, and a critical or a kill grants a Bonus Action attack.
 @feat Heavily Armored | cat general | prereq Level 4+, Medium Armor training | level 4 | asi str, con | source PHB 2024
-Gain training with Heavy armor.
+Gain training with Heavy armor. {armor heavy}
 @feat Heavy Armor Master | cat general | prereq Level 4+, Heavy Armor training | level 4 | asi str, con | source PHB 2024
 While wearing Heavy armor, reduce Bludgeoning, Piercing and Slashing damage by your Proficiency Bonus.
 @feat Inspiring Leader | cat general | prereq Level 4+, Wisdom or Charisma 13+ | level 4 | asi wis, cha | source PHB 2024
@@ -54,7 +54,7 @@ After a rest, give up to six allies temp HP equal to your level + the ability mo
 @feat Keen Mind | cat general | prereq Level 4+, Intelligence 13+ | level 4 | asi int | skills 1 either arcana, history, investigation, nature, religion | source PHB 2024
 Proficiency or Expertise in a knowledge skill, and you can take the Study action as a Bonus Action.
 @feat Lightly Armored | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
-Gain training with Light armor and Shields.
+Gain training with Light armor and Shields. {armor light, shields}
 @feat Mage Slayer | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
 Your hits impose disadvantage on concentration saves, and once per Long Rest turn a failed mental save into a success.
 @feat Martial Weapon Training | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
@@ -62,7 +62,7 @@ Proficiency with Martial weapons.
 @feat Medium Armor Master | cat general | prereq Level 4+, Medium Armor training | level 4 | asi str, dex | source PHB 2024
 Medium armor lets you add up to +3 Dexterity to AC.
 @feat Moderately Armored | cat general | prereq Level 4+, Light Armor training | level 4 | asi str, dex | source PHB 2024
-Gain training with Medium armor.
+Gain training with Medium armor. {armor medium}
 @feat Mounted Combatant | cat general | prereq Level 4+ | level 4 | asi str, dex, wis | source PHB 2024
 Advantage against unmounted creatures smaller than your mount, redirect attacks to you, and your mount gets Evasion.
 @feat Observant | cat general | prereq Level 4+, Intelligence or Wisdom 13+ | level 4 | asi int, wis | skills 1 either insight, investigation, perception | source PHB 2024
@@ -73,7 +73,7 @@ Once per turn reroll one Piercing damage die, and critical hits with Piercing da
 Your poison damage ignores resistance, and you can brew poisons that deal 2d8 and poison on a failed save.
 @feat Polearm Master | cat general | prereq Level 4+, Strength or Dexterity 13+ | level 4 | asi str, dex | source PHB 2024
 Make a Bonus Action attack with the butt of a Quarterstaff, Spear or Heavy Reach weapon, and creatures entering your reach provoke an attack.
-@feat Resilient | cat general | prereq Level 4+ | level 4 | asi any | source PHB 2024
+@feat Resilient | cat general | prereq Level 4+ | level 4 | asi any | saveasi | source PHB 2024
 Gain proficiency in saving throws of the ability you increase.
 @feat Ritual Caster | cat general | prereq Level 4+, Intelligence, Wisdom or Charisma 13+ | level 4 | asi int, wis, cha | source PHB 2024
 Learn level 1 Ritual spells equal to your Proficiency Bonus, and cast one quickly once per Long Rest.
@@ -104,25 +104,25 @@ Advantage on concentration saves, perform somatic components with full hands, an
 @feat Weapon Master | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
 Use the mastery property of one weapon kind, changeable after a Long Rest.
 @feat Archery | cat fighting style | prereq Fighting Style feature | source PHB 2024
-+2 to attack rolls with Ranged weapons.
++2 to attack rolls with Ranged weapons. {atkranged +2}
 @feat Blind Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
 Blindsight 10 feet.
 @feat Defense | cat fighting style | prereq Fighting Style feature | source PHB 2024
-+1 AC while wearing Light, Medium or Heavy armor. Add it in Editar > Ajustes > Bonus AC.
++1 AC while wearing Light, Medium or Heavy armor. {acarmor +1}
 @feat Dueling | cat fighting style | prereq Fighting Style feature | source PHB 2024
-+2 damage with a melee weapon in one hand and no other weapon.
++2 damage with a melee weapon in one hand and no other weapon. {dmgduel +2}
 @feat Great Weapon Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
-Treat 1s and 2s on damage dice of two-handed or versatile melee weapons as 3s.
+Treat 1s and 2s on damage dice of two-handed or versatile melee weapons as 3s. {gwf +1}
 @feat Interception | cat fighting style | prereq Fighting Style feature | source PHB 2024
 As a Reaction, reduce damage to a nearby ally by 1d10 + your Proficiency Bonus.
 @feat Protection | cat fighting style | prereq Fighting Style feature | source PHB 2024
 With a Shield, use your Reaction to impose disadvantage on an attack against a nearby ally and give it resistance.
 @feat Thrown Weapon Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
-Draw thrown weapons as part of the attack, and +2 damage with them.
+Draw thrown weapons as part of the attack, and +2 damage with them. {dmgthrown +2}
 @feat Two-Weapon Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
-Add your ability modifier to the damage of the extra Light weapon attack.
+Add your ability modifier to the damage of the extra Light weapon attack. {twf +1}
 @feat Unarmed Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
-Unarmed strikes deal 1d6 (1d8 with both hands free) + Strength, and you damage creatures you grapple.
+Unarmed strikes deal 1d6 (1d8 with both hands free) + Strength, and you damage creatures you grapple. {unarmed +6}
 @feat Boon of Combat Prowess | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 Once per turn, turn a missed attack into a hit.
 @feat Boon of Dimensional Travel | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
@@ -132,7 +132,7 @@ Resistance to two damage types, and redirect damage of those types to another cr
 @feat Boon of Fate | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 When a creature fails or succeeds on a d20 Test, add or subtract 2d4. Once per Initiative or rest.
 @feat Boon of Fortitude | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
-Your HP maximum increases by 40, and healing gives you extra HP equal to your Constitution modifier once per turn.
+Your HP maximum increases by 40, and healing gives you extra HP equal to your Constitution modifier once per turn. {hp +40}
 @feat Boon of Irresistible Offense | cat epic boon | prereq Level 19+ | level 19 | asi str, dex | source PHB 2024
 Your Bludgeoning, Piercing and Slashing damage ignores resistance, and a natural 20 adds damage equal to the ability score you raised.
 @feat Boon of Recovery | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024

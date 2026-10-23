@@ -1,7 +1,7 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry } from '../model/character';
-import { slug, type Feature, type FeatureGrants, type Pack, type PackOption } from '../model/pack';
+import { slug, type Feature, type FeatureGrants, type Pack, type PackEffect, type PackOption } from '../model/pack';
 import { abilityMod, featureSource, pb, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
-import { findClass, findSubclass, featList, proficiencies } from './features';
+import { allGrantedEffects, featInstances, findClass, findSubclass, featList, proficiencies } from './features';
 import { SKILLS } from './tables';
 
 /*
@@ -130,6 +130,7 @@ export interface ChoiceOption {
   prerequisite: string;
   minLevel: number;
   grants: FeatureGrants | null;
+  effects?: PackEffect[];
 }
 
 export function optionList(packs: Pack[], ruleset: string, list: string): { name: string; options: ChoiceOption[] } {
@@ -140,7 +141,7 @@ export function optionList(packs: Pack[], ruleset: string, list: string): { name
     const options = featList(sorted, ruleset)
       .filter((f) => f.item.category.toLowerCase() === cat && f.pack.pack.ruleset === ruleset)
       .filter((f) => !seen.has(f.item.name) && seen.add(f.item.name))
-      .map((f) => ({ name: f.item.name, text: f.item.text, prerequisite: '', minLevel: 1, grants: null }));
+      .map((f) => ({ name: f.item.name, text: f.item.text, prerequisite: '', minLevel: 1, grants: null, effects: f.item.effects }));
     return { name: cat.replace(/\b\w/g, (m) => m.toUpperCase()), options };
   }
   // Las listas del mismo ruleset primero; si no hay, las del otro.
@@ -197,6 +198,28 @@ function grantUnits(c: Character, packs: Pack[]): GrantUnit[] {
     if (!ch || !chosen.length) continue;
     for (const opt of optionList(packs, c.ruleset, ch.list).options)
       if (opt.grants && chosen.includes(opt.name)) out.push({ o, id: `${o.feature.id}~${slug(opt.name)}`, grants: opt.grants });
+  }
+  return out;
+}
+
+/* Efectos de las opciones elegidas: de la lista del pack o de feats (Fighting Style 2024 se elige como feat). */
+export function chosenOptionEffects(c: Character, packs: Pack[]) {
+  const out: { id: string; name: string; effects: PackEffect[] }[] = [];
+  for (const o of ownedFeatures(c, packs)) {
+    const ch = o.feature.choose;
+    const chosen = c.featureChoices[o.feature.id] ?? [];
+    if (!ch || !chosen.length) continue;
+    if (ch.list.startsWith('feat:')) {
+      for (const name of chosen) {
+        const f = featList(packs, c.ruleset).find((x) => x.item.name === name && x.pack.pack.ruleset === c.ruleset) ?? featList(packs, c.ruleset).find((x) => x.item.name === name);
+        if (f?.item.effects.length) out.push({ id: `${o.feature.id}~${f.item.id}`, name: f.item.name, effects: f.item.effects });
+      }
+      continue;
+    }
+    for (const opt of optionList(packs, c.ruleset, ch.list).options) {
+      const effects = (opt as ChoiceOption & { effects?: PackEffect[] }).effects ?? [];
+      if (effects.length && chosen.includes(opt.name)) out.push({ id: `${o.feature.id}~${slug(opt.name)}`, name: opt.name, effects });
+    }
   }
   return out;
 }
@@ -330,7 +353,7 @@ const FIXED = /^ftr[px]:.*\|f[px]?$/;
  * Escribe en el personaje lo que los features dan sin elegir: skills fijas (en skillPicks) y saves (autoSaves).
  * Devuelve null si no hay cambios, para no disparar guardados de más.
  */
-export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character['skillPicks']; autoSaves: Ability[] } | null {
+export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character['skillPicks']; autoSaves: Ability[]; hpBonus: number } | null {
   if (!packs.length) return null;
   const picks: Character['skillPicks'] = {};
   for (const [k, v] of Object.entries(c.skillPicks)) if (!FIXED.test(k)) picks[k] = v;
@@ -341,6 +364,12 @@ export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character
     g.saves.forEach((a) => saves.add(a));
   }
   for (const x of extraChoices(c, packs)) if (x.kind === 'save') x.chosen.forEach((a) => saves.add(a as Ability));
+  // Feats: saves fijos y Resilient (el save de la ability que sube).
+  for (const fi of featInstances(c, packs)) {
+    fi.feat?.item.grants?.saves.forEach((a) => saves.add(a));
+    if (fi.feat?.item.saveFromAsi && fi.ability) saves.add(fi.ability);
+  }
+  const hpBonus = Math.max(0, allGrantedEffects(c, packs).reduce((s, e) => s + (e.target === 'hp' && (!e.conditional || e.active) ? e.value : 0), 0));
   // Quita elecciones de skills de features que ya no tienes (bajaste de nivel o cambiaste de subclass).
   const live = new Set(featureSkillSlots(c, packs).map((s) => s.source));
   for (const k of Object.keys(picks)) {
@@ -352,6 +381,6 @@ export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character
   }
   const autoSaves = ABILITIES.filter((a) => saves.has(a));
   const canon = (o: Record<string, string[]>) => JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
-  const same = canon(picks) === canon(c.skillPicks) && JSON.stringify(autoSaves) === JSON.stringify(c.autoSaves);
-  return same ? null : { skillPicks: picks, autoSaves };
+  const same = canon(picks) === canon(c.skillPicks) && JSON.stringify(autoSaves) === JSON.stringify(c.autoSaves) && hpBonus === c.hpBonus;
+  return same ? null : { skillPicks: picks, autoSaves, hpBonus };
 }

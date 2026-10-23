@@ -51,7 +51,11 @@ export const AC_MODES = ['auto', 'unarmored', 'unarmored-con', 'unarmored-wis', 
  * Hoy solo afectan speed; en etapas siguientes se suman initiative, AC, etc.
  * Los packs del compendium traeran sus efectos y se agregaran solos al elegir la entrada.
  */
-export const EFFECT_TARGETS = ['speed', 'initiative', 'ac', 'passive-perception', 'passive-investigation', 'passive-insight'] as const;
+export const EFFECT_TARGETS = [
+  'speed', 'initiative', 'ac', 'passive-perception', 'passive-investigation', 'passive-insight',
+  /* hp: HP máximo extra. ac-armor: solo con armadura (Defense). El resto ajusta los ataques (fighting styles). */
+  'hp', 'ac-armor', 'attack-ranged', 'damage-dueling', 'damage-thrown', 'unarmed-die', 'great-weapon-fighting', 'two-weapon-fighting'
+] as const;
 export type EffectTarget = (typeof EFFECT_TARGETS)[number];
 export const EFFECT_LABEL: Record<EffectTarget, string> = {
   speed: 'Speed',
@@ -59,7 +63,15 @@ export const EFFECT_LABEL: Record<EffectTarget, string> = {
   ac: 'AC',
   'passive-perception': 'Passive Perception',
   'passive-investigation': 'Passive Investigation',
-  'passive-insight': 'Passive Insight'
+  'passive-insight': 'Passive Insight',
+  hp: 'HP max',
+  'ac-armor': 'AC (armor)',
+  'attack-ranged': 'Ranged attack',
+  'damage-dueling': 'Dueling damage',
+  'damage-thrown': 'Thrown damage',
+  'unarmed-die': 'Unarmed die',
+  'great-weapon-fighting': 'Great Weapon Fighting',
+  'two-weapon-fighting': 'Two-Weapon Fighting'
 };
 export const EFFECT_SOURCES = ['species', 'class', 'subclass', 'feat', 'spell', 'item', 'other'] as const;
 export type EffectSource = (typeof EFFECT_SOURCES)[number];
@@ -242,6 +254,8 @@ const CharacterObject = z.object({
   featureChoices: z.record(z.string(), z.array(z.string())).default({}),
   /* Saves que dan los features (Diamond Soul, Slippery Mind...). Se calculan solos desde los packs. */
   autoSaves: z.array(abilityEnum).default([]),
+  /* HP máximo extra de feats, rasgos y features (Tough, Dwarven Toughness...). Se calcula solo; hp.max es la base. */
+  hpBonus: z.number().int().min(0).max(999).default(0),
   notes: z.string(),
   updatedAt: z.string()
 });
@@ -362,6 +376,7 @@ export function blankCharacter(): Character {
     featureUsed: {},
     featureChoices: {},
     autoSaves: [],
+    hpBonus: 0,
     notes: '',
     updatedAt: new Date().toISOString()
   };

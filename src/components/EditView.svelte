@@ -3,7 +3,7 @@
   import { onDestroy } from 'svelte';
   import { store } from '../lib/store.svelte';
   import { AC_MODES, uid } from '../lib/model/character';
-  import { armorClassInfo, averageHp } from '../lib/rules/derive';
+  import { armorClassInfo, averageHp, maxHp } from '../lib/rules/derive';
   import { clampUsage } from '../lib/rules/rests';
   import NumField from './NumField.svelte';
   import SpeedCard from './SpeedCard.svelte';
@@ -96,13 +96,16 @@
     <div class="card stack">
       <h2>Hit Points</h2>
       <div class="grid2">
-        <NumField label={t('HP máximo')} bind:value={store.c.hp.max} min={0} max={999} />
+        <NumField label={c.hpBonus ? t('HP máximo (base)') : t('HP máximo')} bind:value={store.c.hp.max} min={0} max={999} />
         <NumField label={t('HP actual')} bind:value={store.c.hp.current} min={-999} max={999} />
       </div>
       <div class="row">
         <span class="muted small spacer">{t('Promedio sugerido según clases y CON')}: <b class="num">{averageHp(c)}</b></span>
         <button onclick={() => (store.c.hp.max = averageHp(c))}>{t('Usar')}</button>
       </div>
+      {#if c.hpBonus}
+        <p class="small accent">{t('+{n} de feats, rasgos y features (Tough, Dwarven Toughness...): HP máximo {total}.', { n: c.hpBonus, total: maxHp(c) })}</p>
+      {/if}
     </div>
 
     <div class="card stack">
@@ -171,6 +174,10 @@
 </section>
 
 <style>
+  .accent {
+    color: var(--accent);
+    margin: 0;
+  }
   .sections {
     display: flex;
     gap: 6px;

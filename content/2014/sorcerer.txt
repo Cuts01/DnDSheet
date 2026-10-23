@@ -29,7 +29,7 @@
 
 @sub Draconic Bloodline | PHB
 1 | Dragon Ancestor | Choose a dragon type for its damage type; you speak Draconic and double proficiency on Charisma checks with dragons. {lang Draconic}
-1 | Draconic Resilience | Your HP maximum increases by 1 per sorcerer level, and without armor your AC is 13 + Dexterity modifier (use Mage Armor mode in Editar).
+1 | Draconic Resilience | Your HP maximum increases by 1 per sorcerer level, and without armor your AC is 13 + Dexterity modifier (use Mage Armor mode in Editar). {hp +1 level}
 6 | Elemental Affinity | Add your Charisma modifier to one damage roll of spells of your ancestry's type, and spend 1 sorcery point for resistance to it for 1 hour.
 14 | Dragon Wings | As a bonus action, sprout wings and gain a flying speed equal to your speed.
 18 | Draconic Presence | Spend 5 sorcery points for a 60-foot aura that charms or frightens creatures for 1 minute on a failed Wisdom save.

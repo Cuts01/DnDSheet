@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-10-23T03:24:12Z"
+    "built": "2026-10-23T17:35:46Z"
   },
   "classes": [
     {
@@ -7732,7 +7732,15 @@
         {
           "level": 1,
           "name": "Draconic Resilience",
-          "text": "Your HP maximum increases by 1 per sorcerer level, and without armor your AC is 13 + Dexterity modifier (use Mage Armor mode in Editar)."
+          "text": "Your HP maximum increases by 1 per sorcerer level, and without armor your AC is 13 + Dexterity modifier (use Mage Armor mode in Editar).",
+          "effects": [
+            {
+              "target": "hp",
+              "value": 1,
+              "conditional": false,
+              "scale": "level"
+            }
+          ]
         },
         {
           "level": 6,
@@ -9548,7 +9556,14 @@
         {
           "name": "Dwarven Toughness",
           "text": "Your HP maximum increases by 1 per level.",
-          "effects": []
+          "effects": [
+            {
+              "target": "hp",
+              "value": 1,
+              "conditional": false,
+              "scale": "level"
+            }
+          ]
         },
         {
           "name": "Speed",
@@ -13796,6 +13811,13 @@
       "name": "Dual Wielder",
       "category": "general",
       "source": "PHB",
+      "effects": [
+        {
+          "target": "ac",
+          "value": 1,
+          "conditional": true
+        }
+      ],
       "text": "+1 AC while dual-wielding, two-weapon fighting with non-light one-handed weapons, and draw or stow two weapons at once."
     },
     {
@@ -13854,7 +13876,12 @@
         ]
       },
       "source": "PHB",
-      "text": "Gain proficiency with heavy armor."
+      "text": "Gain proficiency with heavy armor.",
+      "grants": {
+        "armor": [
+          "heavy"
+        ]
+      }
     },
     {
       "name": "Heavy Armor Master",
@@ -13899,7 +13926,12 @@
         ]
       },
       "source": "PHB",
-      "text": "Gain proficiency with light armor."
+      "text": "Gain proficiency with light armor.",
+      "grants": {
+        "armor": [
+          "light"
+        ]
+      }
     },
     {
       "name": "Linguist",
@@ -14005,7 +14037,13 @@
         ]
       },
       "source": "PHB",
-      "text": "Gain proficiency with medium armor and shields."
+      "text": "Gain proficiency with medium armor and shields.",
+      "grants": {
+        "armor": [
+          "medium",
+          "shields"
+        ]
+      }
     },
     {
       "name": "Mounted Combatant",
@@ -14058,6 +14096,7 @@
           "cha"
         ]
       },
+      "saveFromAsi": true,
       "source": "PHB",
       "text": "Gain proficiency in saving throws of the ability you increase."
     },
@@ -14149,12 +14188,32 @@
         ]
       },
       "source": "PHB",
-      "text": "Proficiency with improvised weapons, unarmed strikes deal 1d4, and grapple as a bonus action after a hit."
+      "effects": [
+        {
+          "target": "unarmed-die",
+          "value": 4,
+          "conditional": false
+        }
+      ],
+      "text": "Proficiency with improvised weapons, unarmed strikes deal 1d4, and grapple as a bonus action after a hit.",
+      "grants": {
+        "weapons": [
+          "improvised"
+        ]
+      }
     },
     {
       "name": "Tough",
       "category": "general",
       "source": "PHB",
+      "effects": [
+        {
+          "target": "hp",
+          "value": 2,
+          "conditional": false,
+          "scale": "level"
+        }
+      ],
       "text": "Your HP maximum increases by twice your level, and by 2 more each level."
     },
     {
@@ -14477,7 +14536,12 @@
         ]
       },
       "source": "TCoE",
-      "text": "Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP."
+      "text": "Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP.",
+      "grants": {
+        "tools": [
+          "Cook's Utensils"
+        ]
+      }
     },
     {
       "name": "Crusher",
@@ -17359,6 +17423,13 @@
       "list": "fighting-style",
       "name": "Archery",
       "listName": "Fighting Style",
+      "effects": [
+        {
+          "target": "attack-ranged",
+          "value": 2,
+          "conditional": false
+        }
+      ],
       "text": "+2 to attack rolls with ranged weapons."
     },
     {
@@ -17379,6 +17450,13 @@
       "list": "fighting-style",
       "name": "Defense",
       "listName": "Fighting Style",
+      "effects": [
+        {
+          "target": "ac-armor",
+          "value": 1,
+          "conditional": false
+        }
+      ],
       "text": "+1 AC while you wear armor."
     },
     {
@@ -17392,12 +17470,26 @@
       "list": "fighting-style",
       "name": "Dueling",
       "listName": "Fighting Style",
+      "effects": [
+        {
+          "target": "damage-dueling",
+          "value": 2,
+          "conditional": false
+        }
+      ],
       "text": "+2 damage with a melee weapon held in one hand when you wield no other weapon."
     },
     {
       "list": "fighting-style",
       "name": "Great Weapon Fighting",
       "listName": "Fighting Style",
+      "effects": [
+        {
+          "target": "great-weapon-fighting",
+          "value": 1,
+          "conditional": false
+        }
+      ],
       "text": "Reroll 1s and 2s on damage dice of two-handed or versatile melee weapons used with two hands."
     },
     {
@@ -17425,12 +17517,26 @@
       "name": "Thrown Weapon Fighting",
       "listName": "Fighting Style",
       "prerequisite": "TCoE",
+      "effects": [
+        {
+          "target": "damage-thrown",
+          "value": 2,
+          "conditional": false
+        }
+      ],
       "text": "Draw a thrown weapon as part of the attack, and +2 damage on ranged attacks with thrown weapons."
     },
     {
       "list": "fighting-style",
       "name": "Two-Weapon Fighting",
       "listName": "Fighting Style",
+      "effects": [
+        {
+          "target": "two-weapon-fighting",
+          "value": 1,
+          "conditional": false
+        }
+      ],
       "text": "Add your ability modifier to the damage of your off-hand attack."
     },
     {
@@ -17438,6 +17544,13 @@
       "name": "Unarmed Fighting",
       "listName": "Fighting Style",
       "prerequisite": "TCoE",
+      "effects": [
+        {
+          "target": "unarmed-die",
+          "value": 6,
+          "conditional": false
+        }
+      ],
       "text": "Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn."
     },
     {

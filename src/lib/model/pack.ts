@@ -22,7 +22,11 @@ export const PackEffectSchema = z.object({
   conditional: z
     .boolean()
     .default(false)
-    .describe('true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre')
+    .describe('true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre'),
+  scale: z
+    .enum(['none', 'level', 'pb'])
+    .default('none')
+    .describe('Multiplica el valor: level = nivel total (o de la clase en class features), pb = proficiency bonus. Ej. Tough: hp 2 por level')
 });
 export type PackEffect = z.infer<typeof PackEffectSchema>;
 
@@ -105,7 +109,8 @@ export const PackOptionSchema = z.object({
   prerequisite: z.string().default(''),
   minLevel: z.number().int().min(1).max(20).default(1),
   text: z.string().default(''),
-  grants: FeatureGrantsSchema
+  grants: FeatureGrantsSchema,
+  effects: z.array(PackEffectSchema).default([])
 });
 export type Feature = z.infer<typeof FeatureSchema> & { id: string };
 
@@ -208,6 +213,8 @@ export const PackFeatSchema = z.object({
     .default([])
     .describe('Skills que otorga el feat a elección'),
   spells: z.array(GrantSpellSchema).default([]).describe('Spells que otorga el feat (Fey Touched, Magic Initiate...)'),
+  grants: FeatureGrantsSchema.describe('Proficiencies fijas que da el feat (armor, weapons, tools, saves...)'),
+  saveFromAsi: z.boolean().default(false).describe('Resilient: proficiency en el save de la ability que sube el feat'),
   spellAbility: z
     .string()
     .default('')

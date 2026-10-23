@@ -29,7 +29,7 @@
 18 | Clockwork Cavalcade | As a Magic action, summon spirits of order in a 30-foot cube that heal up to 100 HP, repair objects and end spells of level 6 or lower. Once per Long Rest or 7 Sorcery Points. {res long 1 Clockwork Cavalcade}
 
 @sub Draconic Sorcery | PHB 2024
-3 | Draconic Resilience | Your HP maximum increases by 3 plus 1 per later Sorcerer level, and without armor your AC is 10 + Dexterity modifier + Charisma modifier.
+3 | Draconic Resilience | Your HP maximum increases by 3 plus 1 per later Sorcerer level, and without armor your AC is 10 + Dexterity modifier + Charisma modifier. {hp +1 level}
 3 | Draconic Spells | Always prepared. Level 3: Alter Self, Chromatic Orb, Command, Dragon's Breath. Level 5: Fear, Fly. Level 7: Arcane Eye, Charm Monster. Level 9: Legend Lore, Summon Dragon.
 6 | Elemental Affinity | Choose a dragon damage type: gain resistance to it and add your Charisma modifier to one damage roll of spells that deal it.
 14 | Dragon Wings | As a Bonus Action, sprout wings for 1 hour and gain a 60-foot Fly Speed. Once per Long Rest or 3 Sorcery Points. {res long 1 Dragon Wings}

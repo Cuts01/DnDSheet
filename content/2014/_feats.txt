@@ -12,7 +12,7 @@ Ignore loading on crossbows, no disadvantage in melee with ranged attacks, and a
 @feat Defensive Duelist | prereq Dexterity 13 | source PHB
 With a finesse weapon, use your reaction to add your proficiency bonus to AC against one melee attack.
 @feat Dual Wielder | source PHB
-+1 AC while dual-wielding, two-weapon fighting with non-light one-handed weapons, and draw or stow two weapons at once.
++1 AC while dual-wielding, two-weapon fighting with non-light one-handed weapons, and draw or stow two weapons at once. {ac +1 cond}
 @feat Dungeon Delver | source PHB
 Advantage to detect secret doors and on saves against traps, resistance to trap damage, and search for traps at normal pace.
 @feat Durable | asi con | source PHB
@@ -26,7 +26,7 @@ A critical hit or kill grants a bonus action melee attack; with heavy weapons yo
 @feat Healer | source PHB
 A healer's kit can stabilize and restore 1 HP, or heal 1d6 + 4 + the creature's max Hit Dice once per rest.
 @feat Heavily Armored | prereq Proficiency with medium armor | asi str | source PHB
-Gain proficiency with heavy armor.
+Gain proficiency with heavy armor. {armor heavy}
 @feat Heavy Armor Master | prereq Proficiency with heavy armor | asi str | source PHB
 In heavy armor, reduce nonmagical bludgeoning, piercing and slashing damage by 3.
 @feat Inspiring Leader | prereq Charisma 13 | source PHB
@@ -34,7 +34,7 @@ Spend 10 minutes to give up to six creatures temp HP equal to your level + Chari
 @feat Keen Mind | asi int | source PHB
 Always know north and the hours until sunrise or sunset, and recall anything from the past month.
 @feat Lightly Armored | asi str, dex | source PHB
-Gain proficiency with light armor.
+Gain proficiency with light armor. {armor light}
 @feat Linguist | asi int | source PHB
 Learn three languages and create written ciphers.
 @feat Lucky | source PHB
@@ -50,14 +50,14 @@ Medium armor doesn't impose Stealth disadvantage, and you can add up to +3 Dexte
 @feat Mobile | source PHB
 Your speed increases by 10 feet, Dash ignores difficult terrain, and creatures you attack can't make opportunity attacks against you. {speed +10}
 @feat Moderately Armored | prereq Proficiency with light armor | asi str, dex | source PHB
-Gain proficiency with medium armor and shields.
+Gain proficiency with medium armor and shields. {armor medium, shields}
 @feat Mounted Combatant | source PHB
 Advantage against unmounted creatures smaller than your mount, redirect attacks to yourself, and your mount gets evasion.
 @feat Observant | asi int, wis | source PHB
 +5 to passive Perception and Investigation, and you can read lips. {pperc +5} {pinv +5}
 @feat Polearm Master | source PHB
 Bonus action attack with the butt of a glaive, halberd, quarterstaff or spear (1d4), and creatures entering your reach provoke.
-@feat Resilient | asi any | source PHB
+@feat Resilient | asi any | saveasi | source PHB
 Gain proficiency in saving throws of the ability you increase.
 @feat Ritual Caster | prereq Intelligence or Wisdom 13 | source PHB
 Gain a ritual book with two 1st-level rituals from a chosen class and add more you find.
@@ -76,9 +76,9 @@ Hide when lightly obscured, missing a ranged attack doesn't reveal you, and dim 
 @feat Spell Sniper | prereq The ability to cast at least one spell | spells pick 1 L0 attack list:Bard,Cleric,Druid,Sorcerer,Warlock,Wizard | castwith list | source PHB
 Double the range of attack spells, ignore half and three-quarters cover, and learn an attack cantrip.
 @feat Tavern Brawler | asi str, con | source PHB
-Proficiency with improvised weapons, unarmed strikes deal 1d4, and grapple as a bonus action after a hit.
+Proficiency with improvised weapons, unarmed strikes deal 1d4, and grapple as a bonus action after a hit. {weapons improvised} {unarmed +4}
 @feat Tough | source PHB
-Your HP maximum increases by twice your level, and by 2 more each level.
+Your HP maximum increases by twice your level, and by 2 more each level. {hp +2 level}
 @feat War Caster | prereq The ability to cast at least one spell | source PHB
 Advantage on concentration saves, somatic components with full hands, and cast a spell as an opportunity attack.
 @feat Weapon Master | asi str, dex | source PHB
@@ -116,7 +116,7 @@ Learn a druid cantrip and cast Longstrider and Pass without Trace once per long 
 @feat Artificer Initiate | spells pick 1 L0 list:Artificer; pick 1 L1 list:Artificer long | castwith int | source TCoE
 Learn an artificer cantrip and a 1st-level artificer spell (once per long rest), plus proficiency with one artisan's tool.
 @feat Chef | asi con, wis | source TCoE
-Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP.
+Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP. {tools Cook's Utensils}
 @feat Crusher | asi str, con | source TCoE
 Once per turn bludgeoning hits push 5 feet, and critical hits give attacks against the target advantage.
 @feat Eldritch Adept | prereq Spellcasting or Pact Magic feature | source TCoE

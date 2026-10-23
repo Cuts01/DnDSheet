@@ -8,6 +8,7 @@
     fmt,
     hitDicePools,
     initiative,
+    maxHp,
     pactSlots,
     pb,
     speed,
@@ -30,11 +31,12 @@
   const hasSlots = $derived(casterLevel(c) > 0);
   const casting = $derived(spellcasting(c));
   const pools = $derived(hitDicePools(c));
-  const hpPct = $derived(c.hp.max > 0 ? Math.max(0, Math.min(1, c.hp.current / c.hp.max)) : 0);
+  const hpMax = $derived(maxHp(c));
+  const hpPct = $derived(hpMax > 0 ? Math.max(0, Math.min(1, c.hp.current / hpMax)) : 0);
 
   const granted = $derived(grantedEffects(c, compendium.packs));
   const ac = $derived(armorClassInfo(c, granted));
-  const atk = $derived(attacks(c, proficiencies(c, compendium.packs).weapons));
+  const atk = $derived(attacks(c, proficiencies(c, compendium.packs).weapons, granted));
   const splitDmg = (d: string): [string, string] => {
     const m = /^(\d+d\d+(?:\s*[+-]\s*\d+)?)\s*(.*)$/.exec(d);
     return m ? [m[1], m[2]] : [d, ''];
@@ -98,7 +100,7 @@
     <div class="hp-top">
       <div class="hp-num num">
         <b class:low={hpPct <= 0.25} class:zero={c.hp.current <= 0}>{c.hp.current}</b>
-        <span class="muted">/ {c.hp.max}</span>
+        <span class="muted">/ {hpMax}</span>
       </div>
       {#if c.hp.temp > 0}
         <div class="temp num" title="Temp HP">+{c.hp.temp} temp</div>

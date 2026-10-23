@@ -1,5 +1,5 @@
 import type { Character } from '../model/character';
-import { abilityMod, arcaneRecoveryBudget, hitDicePools, pactSlots, slotMax, totalLevel } from './derive';
+import { abilityMod, maxHp, arcaneRecoveryBudget, hitDicePools, pactSlots, slotMax, totalLevel } from './derive';
 import { t as tr } from '../i18n.svelte';
 
 /* Acciones sobre el personaje. Todas son puras: devuelven una copia nueva. */
@@ -18,7 +18,7 @@ export function damage(c: Character, amount: number): Character {
 
 export function heal(c: Character, amount: number): Character {
   const n = clone(c);
-  n.hp.current = Math.min(n.hp.max, Math.max(0, n.hp.current) + Math.max(0, Math.floor(amount)));
+  n.hp.current = Math.min(maxHp(n), Math.max(0, n.hp.current) + Math.max(0, Math.floor(amount)));
   return n;
 }
 
@@ -62,7 +62,7 @@ export function shortRest(c: Character, input: ShortRestInput): Character {
     if (!pool || pool.available <= 0) continue;
     n.hitDiceUsed[String(die)] = pool.used + 1;
     const gained = Math.max(0, Math.min(die, Math.max(1, roll)) + con);
-    n.hp.current = Math.min(n.hp.max, Math.max(0, n.hp.current) + gained);
+    n.hp.current = Math.min(maxHp(n), Math.max(0, n.hp.current) + gained);
   }
 
   if (input.arcane.length && validArcane(n, input.arcane) === null) {
@@ -83,7 +83,7 @@ export function shortRest(c: Character, input: ShortRestInput): Character {
 
 export function longRest(c: Character): Character {
   const n = clone(c);
-  n.hp.current = n.hp.max;
+  n.hp.current = maxHp(n);
   n.hp.temp = 0;
   n.slotsUsed.pact = 0;
   n.slotsUsed.levels = n.slotsUsed.levels.map(() => 0);
@@ -121,6 +121,6 @@ export function clampUsage(c: Character): Character {
   const used: Record<string, number> = {};
   for (const p of pools) if (p.used > 0) used[String(p.die)] = p.used;
   n.hitDiceUsed = used;
-  n.hp.current = Math.min(n.hp.current, n.hp.max);
+  n.hp.current = Math.min(n.hp.current, maxHp(n));
   return n;
 }

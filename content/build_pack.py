@@ -16,8 +16,21 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-EFFECT = re.compile(r"\{(speed|init|ac|pperc|pinv|pins)\s*([+-]\d+)(\s+cond)?\}")
-TARGET = {"speed": "speed", "init": "initiative", "ac": "ac", "pperc": "passive-perception", "pinv": "passive-investigation", "pins": "passive-insight"}
+# {speed +10} {hp +2 level} {init +1 pb} {ac +1 cond}. level = nivel total (o de la clase en class features); pb = proficiency bonus.
+EFFECT = re.compile(r"\{(speed|init|ac|pperc|pinv|pins|hp|acarmor|atkranged|dmgduel|dmgthrown|unarmed|gwf|twf)\s*([+-]\d+)(\s+(?:level|pb))?(\s+cond)?\}")
+TARGET = {"speed": "speed", "init": "initiative", "ac": "ac", "pperc": "passive-perception", "pinv": "passive-investigation", "pins": "passive-insight",
+          "hp": "hp", "acarmor": "ac-armor", "atkranged": "attack-ranged", "dmgduel": "damage-dueling", "dmgthrown": "damage-thrown",
+          "unarmed": "unarmed-die", "gwf": "great-weapon-fighting", "twf": "two-weapon-fighting"}
+
+
+def effects_of(text: str) -> list:
+    out = []
+    for m in EFFECT.finditer(text):
+        e = {"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(4))}
+        if m.group(3):
+            e["scale"] = m.group(3).strip()
+        out.append(e)
+    return out
 
 
 def parse_header(line: str) -> dict:
@@ -92,9 +105,7 @@ def feature(line: str, where: str) -> dict:
         raise SystemExit(f"{where}: linea invalida: {line!r}")
     level = int(re.sub(r"\D", "", parts[0]))
     text = parts[2]
-    effects = []
-    for m in EFFECT.finditer(text):
-        effects.append({"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(3))})
+    effects = effects_of(text)
     text = EFFECT.sub("", text)
     grants, resource, choose, text = grant_tokens(text, where)
     text = re.sub(r"\s{2,}", " ", text).strip()
@@ -198,14 +209,10 @@ def head_fields(line: str):
 def entry_body(entry: dict, line: str, where: str):
     if line.startswith("- "):
         name, _, text = line[2:].partition(" | ")
-        effects = [
-            {"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(3))} for m in EFFECT.finditer(text)
-        ]
+        effects = effects_of(text)
         entry.setdefault("traits", []).append({"name": name.strip(), "text": EFFECT.sub("", text).strip(), "effects": effects})
     else:
-        effects = [
-            {"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(3))} for m in EFFECT.finditer(line)
-        ]
+        effects = effects_of(line)
         if effects:
             entry.setdefault("effects", []).extend(effects)
         text = EFFECT.sub("", line).strip()
@@ -272,6 +279,8 @@ def feat_entry(name, parts, f):
         e["asi"] = {"amount": 1, "from": ABILITIES if f["asi"] == "any" else csv(f["asi"])}
     if "repeatable" in parts:
         e["repeatable"] = True
+    if "saveasi" in parts:
+        e["saveFromAsi"] = True
     # skills <n> <prof|expertise|either> [skill, skill...]; varias separadas por ;
     if "skills" in f:
         e["skills"] = []
@@ -413,9 +422,14 @@ def build_generic(ruleset: str) -> dict:
     for o in out["options"]:
         grants, _, _, text = grant_tokens(o.get("text", ""), f"opción {o['name']}")
         o["text"] = re.sub(r"\s{2,}", " ", text).strip()
-        o.pop("effects", None)
         if grants:
             o["grants"] = grants
+    # Los feats también: Heavily Armored da heavy armor, Chef da Cook's Utensils...
+    for f in out["feats"]:
+        grants, _, _, text = grant_tokens(f.get("text", ""), f"feat {f['name']}")
+        f["text"] = re.sub(r"\s{2,}", " ", text).strip()
+        if grants:
+            f["grants"] = grants
     return out
 
 

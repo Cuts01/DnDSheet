@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-10-23T03:24:12Z"
+    "built": "2026-10-23T17:35:46Z"
   },
   "classes": [
     {
@@ -5853,7 +5853,15 @@
         {
           "level": 3,
           "name": "Draconic Resilience",
-          "text": "Your HP maximum increases by 3 plus 1 per later Sorcerer level, and without armor your AC is 10 + Dexterity modifier + Charisma modifier."
+          "text": "Your HP maximum increases by 3 plus 1 per later Sorcerer level, and without armor your AC is 10 + Dexterity modifier + Charisma modifier.",
+          "effects": [
+            {
+              "target": "hp",
+              "value": 1,
+              "conditional": false,
+              "scale": "level"
+            }
+          ]
         },
         {
           "level": 3,
@@ -7094,7 +7102,14 @@
         {
           "name": "Dwarven Toughness",
           "text": "Your HP maximum increases by 1 per level.",
-          "effects": []
+          "effects": [
+            {
+              "target": "hp",
+              "value": 1,
+              "conditional": false,
+              "scale": "level"
+            }
+          ]
         },
         {
           "name": "Stonecunning",
@@ -7796,7 +7811,15 @@
       "name": "Alert",
       "category": "origin",
       "source": "PHB 2024",
-      "text": "Add your Proficiency Bonus to Initiative (add it in Editar > Ajustes > Bonus initiative), and you can swap your Initiative with a willing ally at the start of combat."
+      "effects": [
+        {
+          "target": "initiative",
+          "value": 1,
+          "conditional": false,
+          "scale": "pb"
+        }
+      ],
+      "text": "Add your Proficiency Bonus to Initiative, and you can swap your Initiative with a willing ally at the start of combat."
     },
     {
       "name": "Crafter",
@@ -7882,12 +7905,32 @@
       "name": "Tavern Brawler",
       "category": "origin",
       "source": "PHB 2024",
-      "text": "Unarmed strikes deal 1d4 + Strength, reroll 1s on their damage, proficiency with improvised weapons, and push a creature 5 feet on a hit once per turn."
+      "effects": [
+        {
+          "target": "unarmed-die",
+          "value": 4,
+          "conditional": false
+        }
+      ],
+      "text": "Unarmed strikes deal 1d4 + Strength, reroll 1s on their damage, proficiency with improvised weapons, and push a creature 5 feet on a hit once per turn.",
+      "grants": {
+        "weapons": [
+          "improvised"
+        ]
+      }
     },
     {
       "name": "Tough",
       "category": "origin",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "hp",
+          "value": 2,
+          "conditional": false,
+          "scale": "level"
+        }
+      ],
       "text": "Your HP maximum increases by twice your level, and by 2 more each level."
     },
     {
@@ -7947,7 +7990,12 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Proficiency with Cook's Utensils; cook food that gives extra healing on Short Rests and treats that grant temp HP."
+      "text": "Proficiency with Cook's Utensils; cook food that gives extra healing on Short Rests and treats that grant temp HP.",
+      "grants": {
+        "tools": [
+          "Cook's Utensils"
+        ]
+      }
     },
     {
       "name": "Crossbow Expert",
@@ -8115,7 +8163,12 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Gain training with Heavy armor."
+      "text": "Gain training with Heavy armor.",
+      "grants": {
+        "armor": [
+          "heavy"
+        ]
+      }
     },
     {
       "name": "Heavy Armor Master",
@@ -8187,7 +8240,13 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Gain training with Light armor and Shields."
+      "text": "Gain training with Light armor and Shields.",
+      "grants": {
+        "armor": [
+          "light",
+          "shields"
+        ]
+      }
     },
     {
       "name": "Mage Slayer",
@@ -8247,7 +8306,12 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Gain training with Medium armor."
+      "text": "Gain training with Medium armor.",
+      "grants": {
+        "armor": [
+          "medium"
+        ]
+      }
     },
     {
       "name": "Mounted Combatant",
@@ -8352,6 +8416,7 @@
           "cha"
         ]
       },
+      "saveFromAsi": true,
       "source": "PHB 2024",
       "text": "Gain proficiency in saving throws of the ability you increase."
     },
@@ -8629,6 +8694,13 @@
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "attack-ranged",
+          "value": 2,
+          "conditional": false
+        }
+      ],
       "text": "+2 to attack rolls with Ranged weapons."
     },
     {
@@ -8643,13 +8715,27 @@
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
-      "text": "+1 AC while wearing Light, Medium or Heavy armor. Add it in Editar > Ajustes > Bonus AC."
+      "effects": [
+        {
+          "target": "ac-armor",
+          "value": 1,
+          "conditional": false
+        }
+      ],
+      "text": "+1 AC while wearing Light, Medium or Heavy armor."
     },
     {
       "name": "Dueling",
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "damage-dueling",
+          "value": 2,
+          "conditional": false
+        }
+      ],
       "text": "+2 damage with a melee weapon in one hand and no other weapon."
     },
     {
@@ -8657,6 +8743,13 @@
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "great-weapon-fighting",
+          "value": 1,
+          "conditional": false
+        }
+      ],
       "text": "Treat 1s and 2s on damage dice of two-handed or versatile melee weapons as 3s."
     },
     {
@@ -8678,6 +8771,13 @@
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "damage-thrown",
+          "value": 2,
+          "conditional": false
+        }
+      ],
       "text": "Draw thrown weapons as part of the attack, and +2 damage with them."
     },
     {
@@ -8685,6 +8785,13 @@
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "two-weapon-fighting",
+          "value": 1,
+          "conditional": false
+        }
+      ],
       "text": "Add your ability modifier to the damage of the extra Light weapon attack."
     },
     {
@@ -8692,6 +8799,13 @@
       "category": "fighting style",
       "prerequisite": "Fighting Style feature",
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "unarmed-die",
+          "value": 6,
+          "conditional": false
+        }
+      ],
       "text": "Unarmed strikes deal 1d6 (1d8 with both hands free) + Strength, and you damage creatures you grapple."
     },
     {
@@ -8787,6 +8901,13 @@
         ]
       },
       "source": "PHB 2024",
+      "effects": [
+        {
+          "target": "hp",
+          "value": 40,
+          "conditional": false
+        }
+      ],
       "text": "Your HP maximum increases by 40, and healing gives you extra HP equal to your Constitution modifier once per turn."
     },
     {

@@ -321,7 +321,8 @@ function autoArmorClass(c: Character): AcBreakdown {
 }
 
 export function armorClassInfo(c: Character, granted: Effect[] = []): AcBreakdown {
-  const extra = effectSum(c, granted, 'ac');
+  // Defense (fighting style) solo cuenta con armadura puesta.
+  const extra = effectSum(c, granted, 'ac') + (wearingArmor(c) ? effectSum(c, granted, 'ac-armor') : 0);
   const base = AUTO(c) ? autoArmorClass(c) : { label: 'Manual', total: manualArmorClass(c) };
   return extra ? { label: `${base.label} ${extra > 0 ? '+' : ''}${extra} (features)`, total: base.total + extra } : base;
 }
@@ -461,7 +462,10 @@ export function hitDicePools(c: Character): HitDiePool[] {
     });
 }
 
-/* HP maximo promedio: dado completo en nivel 1 de la primera clase, promedio redondeado arriba despues. */
+/* HP máximo real: la base que anotas (hp.max) más lo que dan feats, rasgos y features (Tough, Dwarven Toughness...). */
+export const maxHp = (c: Character) => c.hp.max + (c.hpBonus ?? 0);
+
+/* HP maximo promedio: dado completo en nivel 1 de la primera clase, promedio redondeado arriba despues. Sin el bonus de feats. */
 export function averageHp(c: Character): number {
   const con = abilityMod(c, 'con');
   let hp = 0;
@@ -518,12 +522,21 @@ export function proficientWith(weaponName: string, category: string, weaponProfs
   });
 }
 
-export function attacks(c: Character, weaponProfs: string[]): Attack[] {
+export function attacks(c: Character, weaponProfs: string[], granted: Effect[] = []): Attack[] {
   const out: Attack[] = [];
   const str = abilityMod(c, 'str');
   const dex = abilityMod(c, 'dex');
   const p = pb(c);
   const monkDie = martialArtsDie(c);
+  // Fighting styles y feats que ajustan ataques.
+  const archery = effectSum(c, granted, 'attack-ranged');
+  const dueling = effectSum(c, granted, 'damage-dueling');
+  const thrown = effectSum(c, granted, 'damage-thrown');
+  const gwf = effectSum(c, granted, 'great-weapon-fighting') > 0;
+  const twf = effectSum(c, granted, 'two-weapon-fighting') > 0;
+  const equippedWeapons = c.inventory.filter((i) => i.equipped && i.weapon);
+  const meleeCount = equippedWeapons.filter((i) => i.weapon!.range === 'melee').length;
+  const has = (w: NonNullable<ItemEntry['weapon']>, prop: string) => w.properties.some((x) => x.toLowerCase().startsWith(prop));
 
   for (const it of c.inventory) {
     const w = it.weapon;
@@ -547,14 +560,31 @@ export function attacks(c: Character, weaponProfs: string[]): Attack[] {
     if (w.properties.length) notes.push(w.properties.join(', '));
     if (w.mastery) notes.push(`Mastery: ${w.mastery}`);
     if (!proficient) notes.push(tr('sin proficiency'));
+    let hit = 0;
+    let dmgBonus = 0;
+    const ranged = w.range === 'ranged';
+    if (ranged && archery) hit += archery;
+    if (has(w, 'thrown') && thrown) {
+      if (ranged) dmgBonus += thrown;
+      else notes.push(tr('Thrown Weapon Fighting: +{n} al lanzarla', { n: thrown }));
+    }
+    // Dueling: arma melee en una mano y ninguna otra arma equipada (el versatile a dos manos no cuenta).
+    const oneHanded = !ranged && !has(w, 'two-handed');
+    if (dueling && oneHanded) {
+      if (meleeCount <= 1) dmgBonus += dueling;
+      else notes.push(tr('Dueling: +{n} si es tu única arma', { n: dueling }));
+    }
+    if (gwf && !ranged && (has(w, 'two-handed') || has(w, 'versatile'))) notes.push(tr('Great Weapon Fighting: 1 y 2 en los dados cuentan como 3'));
+    if (twf && has(w, 'light')) notes.push(tr('Two-Weapon Fighting: el ataque extra suma el modificador'));
     out.push({
       id: it.id,
       name: it.bonus ? `${it.name} +${it.bonus}` : it.name,
       ability,
       proficient,
-      toHit: m + (proficient ? p : 0) + it.bonus,
-      damage: dmg(dice, m + it.bonus),
-      versatile: w.versatile ? dmg(w.versatile, m + it.bonus) : null,
+      toHit: m + (proficient ? p : 0) + it.bonus + hit,
+      damage: dmg(dice, m + it.bonus + dmgBonus),
+      // Dueling no aplica al usar un arma versatile con las dos manos.
+      versatile: w.versatile ? dmg(w.versatile, m + it.bonus + dmgBonus - (oneHanded && meleeCount <= 1 ? dueling : 0)) : null,
       damageType: w.damageType,
       notes
     });
@@ -562,16 +592,24 @@ export function attacks(c: Character, weaponProfs: string[]): Attack[] {
 
   const unarmedAbility: Ability = monkDie && dex > str ? 'dex' : 'str';
   const um = abilityMod(c, unarmedAbility);
+  // Unarmed Fighting (d6, d8 sin armas ni shield) y Tavern Brawler (d4): se usa el dado mayor, también contra Martial Arts.
+  let ud = Math.max(0, ...[...c.effects, ...granted].filter((e) => e.target === 'unarmed-die' && (!e.conditional || e.active)).map((e) => e.value));
+  const unarmedNotes: string[] = monkDie ? ['Martial Arts'] : [];
+  if (ud === 6) {
+    if (!equippedWeapons.length && !usingShield(c)) ud = 8;
+    else unarmedNotes.push(tr('Unarmed Fighting: d8 con las dos manos libres'));
+  }
+  const die = Math.max(ud, monkDie ?? 0);
   out.push({
     id: 'unarmed',
     name: 'Unarmed Strike',
     ability: unarmedAbility,
     proficient: true,
     toHit: um + p,
-    damage: monkDie ? dmg(`1d${monkDie}`, um) : `${Math.max(1, 1 + um)}`,
+    damage: die ? dmg(`1d${die}`, um) : `${Math.max(1, 1 + um)}`,
     versatile: null,
     damageType: 'bludgeoning',
-    notes: monkDie ? ['Martial Arts'] : []
+    notes: unarmedNotes
   });
   return out;
 }

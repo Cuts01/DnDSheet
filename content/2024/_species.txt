@@ -11,7 +11,7 @@
 - Draconic Flight | From level 5, as a Bonus Action sprout wings for 10 minutes and gain a Fly Speed equal to your Speed. Once per Long Rest.
 @species Dwarf | size Medium | speed 30 | darkvision 120 | lang Common | source PHB 2024
 - Dwarven Resilience | Resistance to Poison damage and advantage on saves to avoid or end Poisoned.
-- Dwarven Toughness | Your HP maximum increases by 1 per level.
+- Dwarven Toughness | Your HP maximum increases by 1 per level. {hp +1 level}
 - Stonecunning | As a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on stone. Proficiency Bonus uses per Long Rest.
 @species Elf (Drow) | size Medium | speed 30 | darkvision 120 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
 - Drow Lineage | Darkvision 120 feet and the Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each once per Long Rest without a slot.

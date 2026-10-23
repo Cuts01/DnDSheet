@@ -1,10 +1,10 @@
 import { CLASS_PRESETS, uid, type Ability, type Character, type ClassEntry, type ClassPreset, type Effect, type ItemEntry } from '../model/character';
 import { sameName, slug, type Feature, type Pack, type PackBackground, type PackClass, type PackFeat, type PackItem, type PackSpecies, type PackSubclass } from '../model/pack';
 
-import { asiSlots, featSource, skillSources, type SkillMode } from './derive';
+import { asiSlots, featSource, pb, skillSources, totalLevel, type SkillMode } from './derive';
 import { SKILLS } from './tables';
 import { t as tr } from '../i18n.svelte';
-import { featureProficiencies, featureSkillSlots } from './grants';
+import { chosenOptionEffects, featureProficiencies, featureSkillSlots } from './grants';
 
 const SKILL_IDS = SKILLS.map((s) => s.id);
 
@@ -82,6 +82,11 @@ export function characterFeatures(c: Character, packs: Pack[]): ClassFeatures[] 
   });
 }
 
+/* Valor de un efecto con escala: level usa el nivel de la clase (class features) o el total (feats, raza). */
+type ScaledEffect = { value: number; scale?: 'none' | 'level' | 'pb' };
+export const scaled = (c: Character, e: ScaledEffect, level = totalLevel(c)) =>
+  e.scale === 'level' ? e.value * level : e.scale === 'pb' ? e.value * pb(c) : e.value;
+
 /* Efectos de los features que ya tienes. Los condicionales leen su estado de c.toggles. */
 export function grantedEffects(c: Character, packs: Pack[]): Effect[] {
   const out: Effect[] = [];
@@ -95,7 +100,7 @@ export function grantedEffects(c: Character, packs: Pack[]): Effect[] {
           source: own.feature.name,
           sourceType: own.source,
           target: e.target,
-          value: e.value,
+          value: scaled(c, e, group.entry.level),
           conditional: e.conditional,
           active: e.conditional ? (c.toggles[id] ?? false) : true
         });
@@ -194,6 +199,14 @@ export function proficiencies(c: Character, packs: Pack[]): Proficiencies {
   if (bg) {
     out.tools.push(...bg.tools);
     out.languages.push(...bg.languages);
+  }
+  for (const { feat: f } of featInstances(c, packs)) {
+    const g = f?.item.grants;
+    if (!g) continue;
+    out.armor.push(...g.armor);
+    out.weapons.push(...g.weapons);
+    out.tools.push(...g.tools);
+    out.languages.push(...g.languages);
   }
   const fp = featureProficiencies(c, packs);
   out.armor.push(...fp.armor);
@@ -334,10 +347,10 @@ export function applyBackground(c: Character, ref: Ref<PackBackground> | null, p
 /* Efectos de raza, feats e invocations (por ahora speed). Se suman a los de class features. */
 export function otherGrantedEffects(c: Character, packs: Pack[]): Effect[] {
   const out: Effect[] = [];
-  const push = (prefix: string, source: string, type: Effect['sourceType'], effects: { target: Effect['target']; value: number; conditional: boolean }[]) =>
+  const push = (prefix: string, source: string, type: Effect['sourceType'], effects: (ScaledEffect & { target: Effect['target']; conditional: boolean })[]) =>
     effects.forEach((e, i) => {
       const id = `${prefix}#${i}`;
-      out.push({ id, source, sourceType: type, target: e.target, value: e.value, conditional: e.conditional, active: e.conditional ? (c.toggles[id] ?? false) : true });
+      out.push({ id, source, sourceType: type, target: e.target, value: scaled(c, e), conditional: e.conditional, active: e.conditional ? (c.toggles[id] ?? false) : true });
     });
   const sp = findSpecies(packs, c.species.ref);
   sp?.item.traits.forEach((t, i) => push(`${sp.value}/t${i}`, t.name, 'species', t.effects));
@@ -348,6 +361,8 @@ export function otherGrantedEffects(c: Character, packs: Pack[]): Effect[] {
     const f = findInvocation(packs, inv.ref);
     if (f) push(f.value, f.item.name, 'other', f.item.effects);
   }
+  // Opciones elegidas en class features (Fighting Style de Fighter: Defense, Archery, Dueling...).
+  for (const o of chosenOptionEffects(c, packs)) push(o.id, o.name, 'class', o.effects);
   return out;
 }
 

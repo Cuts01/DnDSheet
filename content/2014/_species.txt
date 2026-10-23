@@ -26,7 +26,7 @@
 @species Hill Dwarf | speed 25 | darkvision 60 | asi con+2 wis+1 | weapons battleaxe, handaxe, light hammer, warhammer | tools one of smith's tools, brewer's supplies or mason's tools | lang Common, Dwarvish | source PHB
 - Dwarven Resilience | Advantage on saves against poison and resistance to poison damage.
 - Stonecunning | Double proficiency on History checks about stonework.
-- Dwarven Toughness | Your HP maximum increases by 1 per level.
+- Dwarven Toughness | Your HP maximum increases by 1 per level. {hp +1 level}
 - Speed | Heavy armor doesn't reduce your speed.
 @species Mountain Dwarf | speed 25 | darkvision 60 | asi con+2 str+2 | armor light, medium | weapons battleaxe, handaxe, light hammer, warhammer | tools one of smith's tools, brewer's supplies or mason's tools | lang Common, Dwarvish | source PHB
 - Dwarven Resilience | Advantage on saves against poison and resistance to poison damage.

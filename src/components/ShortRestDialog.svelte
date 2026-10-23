@@ -1,7 +1,7 @@
 <script lang="ts">
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
-  import { abilityMod, arcaneRecoveryBudget, fmt, hitDicePools, pactSlots } from '../lib/rules/derive';
+  import { maxHp, abilityMod, arcaneRecoveryBudget, fmt, hitDicePools, pactSlots } from '../lib/rules/derive';
   import { shortRest, validArcane, type HitDieSpend } from '../lib/rules/rests';
 
   let { open = $bindable(false) }: { open?: boolean } = $props();
@@ -128,7 +128,7 @@
       <section class="summary">
         <h4>{t('Al terminar')}</h4>
         <ul class="small">
-          <li>HP: {c.hp.current} → <b>{preview.hp.current}</b> / {c.hp.max}</li>
+          <li>HP: {c.hp.current} → <b>{preview.hp.current}</b> / {maxHp(c)}</li>
           {#if pactSlots(c).count > 0}<li>{t('Pact slots recuperados')}</li>{/if}
           {#if c.resources.some((r) => r.recharge === 'short')}<li>{t('Recursos de Short Rest recuperados')}</li>{/if}
           {#if arcaneLevels.length && !arcaneError}<li>Arcane Recovery: {t('niveles')} {arcaneLevels.join(', ')}</li>{/if}

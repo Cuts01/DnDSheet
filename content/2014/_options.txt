@@ -4,19 +4,19 @@
 
 # ---------- Fighting Styles ----------
 @option fighting-style | Archery | listname Fighting Style
-+2 to attack rolls with ranged weapons.
++2 to attack rolls with ranged weapons. {atkranged +2}
 @option fighting-style | Blind Fighting | listname Fighting Style | prereq TCoE
 Blindsight out to 10 feet.
 @option fighting-style | Blessed Warrior | listname Fighting Style | prereq Paladin (TCoE)
 Learn two cleric cantrips; they count as paladin spells and use Charisma.
 @option fighting-style | Defense | listname Fighting Style
-+1 AC while you wear armor.
++1 AC while you wear armor. {acarmor +1}
 @option fighting-style | Druidic Warrior | listname Fighting Style | prereq Ranger (TCoE)
 Learn two druid cantrips; they count as ranger spells and use Wisdom.
 @option fighting-style | Dueling | listname Fighting Style
-+2 damage with a melee weapon held in one hand when you wield no other weapon.
++2 damage with a melee weapon held in one hand when you wield no other weapon. {dmgduel +2}
 @option fighting-style | Great Weapon Fighting | listname Fighting Style
-Reroll 1s and 2s on damage dice of two-handed or versatile melee weapons used with two hands.
+Reroll 1s and 2s on damage dice of two-handed or versatile melee weapons used with two hands. {gwf +1}
 @option fighting-style | Interception | listname Fighting Style | prereq TCoE
 With a shield or weapon in hand, use your reaction to reduce damage to a nearby ally by 1d10 + proficiency bonus.
 @option fighting-style | Protection | listname Fighting Style
@@ -24,11 +24,11 @@ With a shield, use your reaction to impose disadvantage on an attack against an 
 @option fighting-style | Superior Technique | listname Fighting Style | prereq Fighter (TCoE)
 Learn one maneuver and gain one d6 superiority die that returns on a short or long rest.
 @option fighting-style | Thrown Weapon Fighting | listname Fighting Style | prereq TCoE
-Draw a thrown weapon as part of the attack, and +2 damage on ranged attacks with thrown weapons.
+Draw a thrown weapon as part of the attack, and +2 damage on ranged attacks with thrown weapons. {dmgthrown +2}
 @option fighting-style | Two-Weapon Fighting | listname Fighting Style
-Add your ability modifier to the damage of your off-hand attack.
+Add your ability modifier to the damage of your off-hand attack. {twf +1}
 @option fighting-style | Unarmed Fighting | listname Fighting Style | prereq TCoE
-Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn.
+Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn. {unarmed +6}
 
 # ---------- Battle Master maneuvers ----------
 @option maneuvers | Ambush | listname Maneuvers | prereq TCoE

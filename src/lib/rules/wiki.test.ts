@@ -219,3 +219,48 @@ describe.skipIf(!p14 || !p24)('Expertise con Thieves Tools', () => {
     expect(featureSkillSlots(c24, [p24!]).find((s) => s.label.startsWith('Expertise'))!.from).toEqual(['stealth']);
   });
 });
+
+describe.skipIf(!p14 || !p24)('feats y fighting styles con números', () => {
+  it('Tough suma 2 HP por nivel y Resilient da el save', async () => {
+    const { syncGrants } = await import('./grants');
+    const { maxHp } = await import('./derive');
+    const c: Character = { ...blankCharacter(), classes: [cls('Fighter', 4)] };
+    const slot = asiSlots(c)[0];
+    c.advancements[slot.key] = { kind: 'feat', asi: [], featRef: 'wiki-2014:tough', featName: 'Tough', featAbility: null } as Character['advancements'][string];
+    c.hp.max = 36;
+    const s = syncGrants(c, [p14!])!;
+    expect(s.hpBonus).toBe(8);
+    expect(maxHp({ ...c, hpBonus: s.hpBonus })).toBe(44);
+    c.advancements[slot.key] = { kind: 'feat', asi: [], featRef: 'wiki-2014:resilient', featName: 'Resilient', featAbility: 'wis' } as Character['advancements'][string];
+    expect(syncGrants(c, [p14!])!.autoSaves).toContain('wis');
+  });
+
+  it('Fighting Style Defense suma AC con armadura; Archery y Dueling ajustan ataques', async () => {
+    const { armorClassInfo, attacks } = await import('./derive');
+    const { itemList } = await import('./features');
+    const item = (n: string) => {
+      const r = itemList([p14!], '2014').find((x) => x.item.name === n)!;
+      return { id: n, ref: r.value, name: n, kind: r.item.kind, qty: 1, equipped: true, attuned: false, bonus: 0, attackAbility: null, weight: 0, notes: '', weapon: r.item.weapon, armor: r.item.armor } as Character['inventory'][number];
+    };
+    const c: Character = { ...blankCharacter(), classes: [cls('Fighter', 1)], abilities: { str: 16, dex: 14, con: 14, int: 10, wis: 10, cha: 10 } };
+    const fs = 'wiki-2014/fighter/1-fighting-style';
+    c.inventory = [item('Chain Mail')];
+    const before = armorClassInfo(c, allGrantedEffects(c, [p14!])).total;
+    c.featureChoices = { [fs]: ['Defense'] };
+    expect(armorClassInfo(c, allGrantedEffects(c, [p14!])).total).toBe(before + 1);
+    c.inventory = [item('Longbow')];
+    c.featureChoices = { [fs]: ['Archery'] };
+    const bow = attacks(c, ['simple', 'martial'], allGrantedEffects(c, [p14!])).find((a) => a.name === 'Longbow')!;
+    expect(bow.toHit).toBe(2 + 2 + 2);
+    c.inventory = [item('Longsword')];
+    c.featureChoices = { [fs]: ['Dueling'] };
+    const ls = attacks(c, ['simple', 'martial'], allGrantedEffects(c, [p14!])).find((a) => a.name === 'Longsword')!;
+    expect(ls.damage).toBe('1d8 + 5');
+    expect(ls.versatile).toBe('1d10 + 3');
+    // 2024: el Fighting Style se elige como feat.
+    const c24: Character = { ...c, ruleset: '2024', featureChoices: { 'wiki-2024/fighter/1-fighting-style': ['Dueling'] } };
+    c24.inventory = [{ ...item('Longsword') }];
+    const ls24 = attacks(c24, ['simple', 'martial'], allGrantedEffects(c24, [p24!])).find((a) => a.name === 'Longsword')!;
+    expect(ls24.damage).toBe('1d8 + 5');
+  });
+});
