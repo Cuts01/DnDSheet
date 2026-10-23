@@ -1,7 +1,7 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry } from '../model/character';
 import { slug, type Feature, type FeatureGrants, type Pack, type PackEffect, type PackOption } from '../model/pack';
 import { abilityMod, featureSource, pb, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
-import { allGrantedEffects, featInstances, findClass, findSubclass, featList, proficiencies } from './features';
+import { allGrantedEffects, featInstances, findClass, findSpecies, findSubclass, featList, proficiencies } from './features';
 import { SKILLS } from './tables';
 
 /*
@@ -121,6 +121,17 @@ export function featureResources(c: Character, packs: Pack[]): FeatureResource[]
   }
   // Recursos de feats (Lucky, Martial Adept, Metamagic Adept...). Cada instancia del feat tiene los suyos.
   const total = c.classes.reduce((s, k) => s + k.level, 0);
+  // Rasgos de raza (Healing Hands, Breath Weapon, Relentless Endurance...).
+  const sp = findSpecies(packs, c.species.ref);
+  sp?.item.traits.forEach((tr, ti) => {
+    tr.resources.forEach((r, i) => {
+      const recharge = (tableValue(r.recharge, total) ?? 'long') as Recharge;
+      const max = evalAmount(r.uses, c, total);
+      if (max <= 0) return;
+      const key = `${PREFIX[recharge] ?? 'L'}:sp:${sp.value}#${ti}#${i}`;
+      out.push({ key, name: r.name, max, used: Math.min(max, c.featureUsed[key] ?? 0), die: r.die ? (tableValue(r.die, total) ?? '') : '', recharge, featureId: `sp:${sp.value}#${ti}`, picks: [] });
+    });
+  });
   for (const fi of featInstances(c, packs)) {
     const f = fi.feat?.item;
     if (!f?.resources.length) continue;
@@ -425,4 +436,14 @@ export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character
   const canon = (o: Record<string, string[]>) => JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
   const same = canon(picks) === canon(c.skillPicks) && JSON.stringify(autoSaves) === JSON.stringify(c.autoSaves) && hpBonus === c.hpBonus;
   return same ? null : { skillPicks: picks, autoSaves, hpBonus };
+}
+
+/* Resistencias a daño de raza, class features, feats y opciones elegidas. */
+export function resistances(c: Character, packs: Pack[]): string[] {
+  const out = new Set<string>();
+  const add = (g: FeatureGrants | null | undefined) => g?.resistances.forEach((x) => out.add(x.toLowerCase()));
+  findSpecies(packs, c.species.ref)?.item.traits.forEach((tr) => add(tr.grants));
+  for (const u of grantUnits(c, packs)) add(u.grants);
+  for (const fi of featInstances(c, packs)) add(fi.feat?.item.grants);
+  return [...out].sort();
 }

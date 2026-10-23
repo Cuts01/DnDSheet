@@ -4,10 +4,11 @@
   import { ABILITIES, type Character, type ProfLevel } from '../../lib/model/character';
   import { fmt, skillBonus, skillLevel, skillSources, toolExpertise } from '../../lib/rules/derive';
   import { slug } from '../../lib/model/pack';
-  import { proficiencies, skillChoiceSlots } from '../../lib/rules/features';
+  import { findBackground, findSpecies, proficiencies, skillChoiceSlots } from '../../lib/rules/features';
   import { ABILITY_LABEL, SKILLS } from '../../lib/rules/tables';
 
-  let { c = $bindable() }: { c: Character } = $props();
+  /* creating: en la creación del personaje se pueden reemplazar las skills fijas repetidas; después quedan fijas. */
+  let { c = $bindable(), creating = false }: { c: Character; creating?: boolean } = $props();
 
   const slots = $derived(skillChoiceSlots(c, compendium.packs));
   const profs = $derived(proficiencies(c, compendium.packs));
@@ -31,6 +32,15 @@
   ];
   const sourcesOf = (id: string) => skillSources(c, id);
   const otherHas = (src: string, id: string) => sourcesOf(id).some((s) => s !== src);
+  // Skills originales del background o la raza (para saber si una ya se reemplazó).
+  const original = $derived<Record<string, string[]>>({
+    background: (findBackground(compendium.packs, c.background.ref)?.item.skills ?? []).map((x) => slug(x)),
+    species: (findSpecies(compendium.packs, c.species.ref)?.item.skills ?? []).map((x) => slug(x))
+  });
+  // Regla de 2014 y 2024: si la misma proficiency te llega por dos fuentes, puedes cambiar una por otra skill.
+  const canSwap = (src: string, i: number, id: string) => creating && (otherHas(src, id) || (original[src]?.[i] !== undefined && original[src][i] !== id));
+  const swapOptions = (src: string, i: number, id: string) =>
+    SKILLS.filter((s) => s.id === id || s.id === original[src]?.[i] || (!sourcesOf(s.id).length && !c.skills[s.id]));
 
   function replaceFixed(src: string, i: number, id: string) {
     const list = [...(c.skillPicks[src] ?? [])];
@@ -86,10 +96,15 @@
         <div class="fixed">
           {#each list as id, i (i)}
             <div class="fx" class:dup={otherHas(src, id)}>
-              <select value={id} onchange={(e) => replaceFixed(src, i, e.currentTarget.value)} aria-label={`Skill ${i + 1} · ${t(label)}`}>
-                {#each SKILLS as s (s.id)}<option value={s.id}>{s.name}</option>{/each}
-              </select>
-              {#if otherHas(src, id)}<span class="small">{t('Repetida: puedes cambiarla por otra')}</span>{/if}
+              {#if canSwap(src, i, id)}
+                <select value={id} onchange={(e) => replaceFixed(src, i, e.currentTarget.value)} aria-label={`Skill ${i + 1} · ${t(label)}`}>
+                  {#each swapOptions(src, i, id) as s (s.id)}<option value={s.id}>{s.name}</option>{/each}
+                </select>
+                {#if otherHas(src, id)}<span class="small">{t('Repetida: puedes cambiarla por otra')}</span>{/if}
+              {:else}
+                <span class="fixed-skill">{skillName(id)}</span>
+                {#if otherHas(src, id)}<span class="small">{t('Repetida: solo se puede cambiar al crear el personaje')}</span>{/if}
+              {/if}
             </div>
           {/each}
         </div>
@@ -181,6 +196,15 @@
 </div>
 
 <style>
+  .fixed-skill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+  }
   .card h2 {
     margin-bottom: 0;
   }

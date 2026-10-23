@@ -27,7 +27,8 @@
 
   // La pestaña Spells aparece si alguna clase lanza spells o ya hay spells en la lista.
   const showSpells = $derived(
-    spellcasting(store.c).length > 0 || store.c.spells.length > 0 || featSpells(store.c, compendium.packs).slots.length > 0
+    spellcasting(store.c).length > 0 || store.c.spells.length > 0 || featSpells(store.c, compendium.packs).slots.length > 0 ||
+      featSpells(store.c, compendium.packs).granted.length > 0
   );
   const spellsTab = { id: 'spells' as View, label: 'Spells', icon: '✧' };
   const tabs = $derived(

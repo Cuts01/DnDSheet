@@ -23,7 +23,7 @@
   import { EFFECT_LABEL, type Effect } from '../lib/model/character';
   import ShortRestDialog from './ShortRestDialog.svelte';
   import { featSpells, spellAttacks, subclassSpells } from '../lib/rules/spells';
-  import { featureChoiceSlots, featureResources } from '../lib/rules/grants';
+  import { featureChoiceSlots, featureResources, resistances } from '../lib/rules/grants';
 
   const c = $derived(store.c);
   const pact = $derived(pactSlots(c));
@@ -59,6 +59,7 @@
   }
 
   const fres = $derived(featureResources(c, compendium.packs));
+  const resist = $derived(resistances(c, compendium.packs));
   const optionText = $derived(
     new Map(featureChoiceSlots(c, compendium.packs).flatMap((s) => s.options.map((o) => [`${s.featureId}|${o.name}`, o.text] as const)))
   );
@@ -133,6 +134,10 @@
     <div class="stat"><span>Speed</span><b class="num">{speed(c, granted)}</b></div>
     <div class="stat"><span>Prof.</span><b class="num">{fmt(pb(c))}</b></div>
   </div>
+
+  {#if resist.length}
+    <p class="resist small"><span class="muted">{t('Resistencias')}:</span> {resist.join(', ')}</p>
+  {/if}
 
   {#if toggles.length}
     <div class="toggles" role="group" aria-label={t('Efectos condicionales')}>
@@ -518,6 +523,10 @@
   .res-name {
     display: flex;
     flex-direction: column;
+  }
+  .resist {
+    margin: 0;
+    padding: 0 4px;
   }
   .die {
     margin-left: 8px;

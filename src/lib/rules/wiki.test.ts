@@ -297,3 +297,32 @@ describe.skipIf(!p14)('feats raciales', () => {
     expect(racialFeatAllowed(f('Lucky'), as('Human'))).toBe(true);
   });
 });
+
+describe.skipIf(!p14 || !p24)('rasgos de raza', () => {
+  it('Aasimar da resistencias, Healing Hands, Light y Celestial Revelation desde nivel 3', async () => {
+    const { featureResources, resistances } = await import('./grants');
+    const { featSpells } = await import('./spells');
+    const { speciesList, applySpecies } = await import('./features');
+    for (const [p, rs] of [[p14!, '2014'], [p24!, '2024']] as const) {
+      const ref = speciesList([p], rs).find((x) => x.item.name === 'Aasimar')!;
+      let c: Character = { ...blankCharacter(), ruleset: rs, classes: [cls('Cleric', 2)] };
+      c = applySpecies(c, ref);
+      expect(resistances(c, [p])).toEqual(['necrotic', 'radiant']);
+      expect(featureResources(c, [p]).map((r) => r.name)).toContain('Healing Hands');
+      expect(featureResources(c, [p]).map((r) => r.name)).not.toContain('Celestial Revelation');
+      expect(featSpells(c, [p]).granted.map((g) => g.name)).toContain('Light');
+      c.classes = [cls('Cleric', 3)];
+      expect(featureResources(c, [p]).map((r) => r.name)).toContain('Celestial Revelation');
+    }
+  });
+
+  it('Tiefling 2014 suma Hellish Rebuke en nivel 3 y Darkness en 5', async () => {
+    const { featSpells } = await import('./spells');
+    const { speciesList, applySpecies } = await import('./features');
+    const ref = speciesList([p14!], '2014').find((x) => x.item.name === 'Tiefling')!;
+    let c: Character = applySpecies({ ...blankCharacter(), classes: [cls('Fighter', 3)] }, ref);
+    expect(featSpells(c, [p14!]).granted.map((g) => g.name).sort()).toEqual(['Hellish Rebuke', 'Thaumaturgy']);
+    c = { ...c, classes: [cls('Fighter', 5)] };
+    expect(featSpells(c, [p14!]).granted.map((g) => g.name)).toContain('Darkness');
+  });
+});

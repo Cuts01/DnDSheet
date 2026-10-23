@@ -57,7 +57,8 @@ export const FeatureGrantsSchema = z
     saves: z.array(z.enum(ABILITIES)).default([]),
     toolChoices: z.array(z.object({ count: z.number().int().min(1).max(6), from: strs.describe('Nombres; "artisan" = artisan tools') })).default([]),
     languageChoices: z.number().int().min(0).max(6).default(0),
-    saveChoices: z.array(z.object({ count: z.number().int().min(1).max(6), from: z.array(z.enum(ABILITIES)).default([...ABILITIES]) })).default([])
+    saveChoices: z.array(z.object({ count: z.number().int().min(1).max(6), from: z.array(z.enum(ABILITIES)).default([...ABILITIES]) })).default([]),
+    resistances: strs.describe('Tipos de daño con resistance, ej. necrotic, radiant')
   })
   .nullable()
   .default(null);
@@ -130,10 +131,29 @@ export const ProfSetSchema = z
   })
   .default({ armor: [], weapons: [], tools: [], skills: null });
 
+export const GrantSpellSchema = z.object({
+  spell: z.string().default('').describe('Spell fija por nombre. Vacío = a elegir'),
+  count: z.number().int().min(1).max(10).default(1),
+  level: z.number().int().min(0).max(9).default(0),
+  schools: strings.describe('Schools permitidas al elegir'),
+  lists: strings.describe('Listas de clase permitidas; si hay varias, se pide elegir una'),
+  attackOnly: z.boolean().default(false).describe('Solo cantrips con attack roll (Spell Sniper)'),
+  ritualOnly: z.boolean().default(false).describe('Solo spells ritual (Pact of the Tome 2024)'),
+  minLevel: z.number().int().min(1).max(20).default(1).describe('Nivel total desde el que se tiene (spells de raza: nivel 3 y 5)'),
+  uses: z
+    .enum(['none', 'long', 'short', 'will'])
+    .default('none')
+    .describe('none: con slots. long/short: una vez gratis por descanso. will: sin slot cuando quieras')
+});
+
 const TraitSchema = z.object({
   name: z.string().min(1),
   text: z.string().default(''),
-  effects: z.array(PackEffectSchema).default([])
+  effects: z.array(PackEffectSchema).default([]),
+  grants: FeatureGrantsSchema,
+  resources: z.array(ResourceDefSchema).default([]).describe('Usos del rasgo; "level" es el nivel total'),
+  spells: z.array(GrantSpellSchema).default([]).describe('Spells del rasgo (Light Bearer, Infernal Legacy, Drow Magic...)'),
+  spellAbility: z.string().default('').describe('Ability para esas spells: int, wis, cha o "pick" (a elegir)')
 });
 
 export const AsiChoiceSchema = z.object({
@@ -176,19 +196,6 @@ export const PackBackgroundSchema = z.object({
   source: z.string().default('')
 });
 
-export const GrantSpellSchema = z.object({
-  spell: z.string().default('').describe('Spell fija por nombre. Vacío = a elegir'),
-  count: z.number().int().min(1).max(10).default(1),
-  level: z.number().int().min(0).max(9).default(0),
-  schools: strings.describe('Schools permitidas al elegir'),
-  lists: strings.describe('Listas de clase permitidas; si hay varias, se pide elegir una'),
-  attackOnly: z.boolean().default(false).describe('Solo cantrips con attack roll (Spell Sniper)'),
-  ritualOnly: z.boolean().default(false).describe('Solo spells ritual (Pact of the Tome 2024)'),
-  uses: z
-    .enum(['none', 'long', 'short', 'will'])
-    .default('none')
-    .describe('none: con slots. long/short: una vez gratis por descanso. will: sin slot cuando quieras')
-});
 
 export const PackFeatSchema = z.object({
   name: z.string().min(1),

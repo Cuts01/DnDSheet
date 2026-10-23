@@ -90,10 +90,15 @@
     <div class="card stack">
       <h2>{t('Origen')}</h2>
       {#if sp}
-        {#each sp.traits as tr (tr.name)}
+        {#each sp.traits as tr, ti (tr.name)}
           <details class="feat">
             <summary><span class="lvl num">R</span><span class="name">{tr.name}</span><span class="tag">{sp.name}</span></summary>
             <div class="text">{tr.text}</div>
+            {#each allRes.filter((r) => r.featureId.endsWith(`#${ti}`) && r.featureId.startsWith('sp:')) as r (r.key)}
+              <p class="grant small"><b>{r.name}</b>: {resLine(r)}</p>
+            {/each}
+            {#if tr.grants?.resistances.length}<p class="grant small">{t('Resistencias')}: {tr.grants.resistances.join(', ')}</p>{/if}
+            {#if tr.spells.length}<p class="grant small">Spells: {tr.spells.map((g) => g.spell || t('a elegir')).join(', ')} · {t('en la pestaña Spells')}</p>{/if}
           </details>
         {/each}
       {/if}

@@ -1,42 +1,42 @@
 # Species 2024 (PHB). Resúmenes propios. Los incrementos de ability vienen del background.
 @species Aasimar | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
-- Celestial Resistance | Resistance to Necrotic and Radiant damage.
-- Healing Hands | As a Magic action, touch a creature to heal it a number of d4s equal to your Proficiency Bonus. Once per Long Rest.
-- Light Bearer | You know the Light cantrip (Charisma).
-- Celestial Revelation | From level 3, as a Bonus Action transform for 1 minute: Heavenly Wings (fly), Inner Radiance (radiant aura) or Necrotic Shroud (frighten); once per turn add damage equal to your Proficiency Bonus. Once per Long Rest.
+- Celestial Resistance | Resistance to Necrotic and Radiant damage. {resist necrotic, radiant}
+- Healing Hands | As a Magic action, touch a creature to heal it a number of d4s equal to your Proficiency Bonus. Once per Long Rest. {res long 1 Healing Hands}
+- Light Bearer | You know the Light cantrip (Charisma). {spells Light} {castwith cha}
+- Celestial Revelation | From level 3, as a Bonus Action transform for 1 minute: Heavenly Wings (fly), Inner Radiance (radiant aura) or Necrotic Shroud (frighten); once per turn add damage equal to your Proficiency Bonus. Once per Long Rest. {res long 1@3 Celestial Revelation}
 @species Dragonborn | size Medium | speed 30 | darkvision 60 | lang Common | source PHB 2024
 - Draconic Ancestry | Choose a dragon type; it sets your breath weapon and resistance damage type.
-- Breath Weapon | Replace one attack with a 15-foot cone or 30-foot line: Dexterity save, 1d10 damage (2d10 at 5th, 3d10 at 11th, 4d10 at 17th). Proficiency Bonus uses per Long Rest.
+- Breath Weapon | Replace one attack with a 15-foot cone or 30-foot line: Dexterity save, 1d10 damage (2d10 at 5th, 3d10 at 11th, 4d10 at 17th). Proficiency Bonus uses per Long Rest. {res long pb Breath Weapon}
 - Damage Resistance | Resistance to your ancestry's damage type.
-- Draconic Flight | From level 5, as a Bonus Action sprout wings for 10 minutes and gain a Fly Speed equal to your Speed. Once per Long Rest.
+- Draconic Flight | From level 5, as a Bonus Action sprout wings for 10 minutes and gain a Fly Speed equal to your Speed. Once per Long Rest. {res long 1@5 Draconic Flight}
 @species Dwarf | size Medium | speed 30 | darkvision 120 | lang Common | source PHB 2024
-- Dwarven Resilience | Resistance to Poison damage and advantage on saves to avoid or end Poisoned.
+- Dwarven Resilience | Resistance to Poison damage and advantage on saves to avoid or end Poisoned. {resist poison}
 - Dwarven Toughness | Your HP maximum increases by 1 per level. {hp +1 level}
-- Stonecunning | As a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on stone. Proficiency Bonus uses per Long Rest.
+- Stonecunning | As a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on stone. Proficiency Bonus uses per Long Rest. {res long pb Stonecunning}
 @species Elf (Drow) | size Medium | speed 30 | darkvision 120 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
-- Drow Lineage | Darkvision 120 feet and the Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each once per Long Rest without a slot.
+- Drow Lineage | Darkvision 120 feet and the Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each once per Long Rest without a slot. {spells Dancing Lights; Faerie Fire long @3; Darkness long @5} {castwith pick}
 - Fey Ancestry | Advantage on saves to avoid or end Charmed.
 - Keen Senses | Proficiency in Insight, Perception or Survival.
 - Trance | You don't need sleep; a Long Rest takes 4 hours of trance.
 @species Elf (High Elf) | size Medium | speed 30 | darkvision 60 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
-- High Elf Lineage | Prestidigitation (swap it after a Long Rest); Detect Magic at level 3 and Misty Step at level 5, each once per Long Rest without a slot.
+- High Elf Lineage | Prestidigitation (swap it after a Long Rest); Detect Magic at level 3 and Misty Step at level 5, each once per Long Rest without a slot. {spells Prestidigitation; Detect Magic long @3; Misty Step long @5} {castwith pick}
 - Fey Ancestry | Advantage on saves to avoid or end Charmed.
 - Keen Senses | Proficiency in Insight, Perception or Survival.
 - Trance | You don't need sleep; a Long Rest takes 4 hours of trance.
 @species Elf (Wood Elf) | size Medium | speed 35 | darkvision 60 | skillchoice 1 from Insight, Perception, Survival | lang Common | source PHB 2024
-- Wood Elf Lineage | Speed 35 feet and the Druidcraft cantrip; Longstrider at level 3 and Pass without Trace at level 5, each once per Long Rest without a slot.
+- Wood Elf Lineage | Speed 35 feet and the Druidcraft cantrip; Longstrider at level 3 and Pass without Trace at level 5, each once per Long Rest without a slot. {spells Druidcraft; Longstrider long @3; Pass without Trace long @5} {castwith pick}
 - Fey Ancestry | Advantage on saves to avoid or end Charmed.
 - Keen Senses | Proficiency in Insight, Perception or Survival.
 - Trance | You don't need sleep; a Long Rest takes 4 hours of trance.
 @species Gnome (Forest Gnome) | size Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
 - Gnomish Cunning | Advantage on Intelligence, Wisdom and Charisma saving throws.
-- Forest Gnome Lineage | You know Minor Illusion and always have Speak with Animals prepared, castable without a slot Proficiency Bonus times per Long Rest.
+- Forest Gnome Lineage | You know Minor Illusion and always have Speak with Animals prepared, castable without a slot Proficiency Bonus times per Long Rest. {spells Minor Illusion; Speak with Animals} {castwith pick} {res long pb Speak with Animals (free)}
 @species Gnome (Rock Gnome) | size Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
 - Gnomish Cunning | Advantage on Intelligence, Wisdom and Charisma saving throws.
-- Rock Gnome Lineage | You know Mending and Prestidigitation, and can spend 10 minutes to make a Tiny clockwork device with a simple effect.
+- Rock Gnome Lineage | You know Mending and Prestidigitation, and can spend 10 minutes to make a Tiny clockwork device with a simple effect. {spells Mending; Prestidigitation} {castwith pick}
 @species Goliath | size Medium | speed 35 | lang Common | source PHB 2024
-- Giant Ancestry | Choose a boon used Proficiency Bonus times per Long Rest: Cloud's Jaunt (teleport), Fire's Burn (fire damage), Frost's Chill (cold and slow), Hill's Tumble (knock prone), Stone's Endurance (reduce damage) or Storm's Thunder (thunder reaction).
-- Large Form | From level 5, as a Bonus Action become Large for 10 minutes: advantage on Strength checks and +10 feet of Speed. Once per Long Rest. {speed +10 cond}
+- Giant Ancestry | Choose a boon used Proficiency Bonus times per Long Rest: Cloud's Jaunt (teleport), Fire's Burn (fire damage), Frost's Chill (cold and slow), Hill's Tumble (knock prone), Stone's Endurance (reduce damage) or Storm's Thunder (thunder reaction). {res long pb Giant Ancestry}
+- Large Form | From level 5, as a Bonus Action become Large for 10 minutes: advantage on Strength checks and +10 feet of Speed. Once per Long Rest. {speed +10 cond} {res long 1@5 Large Form}
 - Powerful Build | Advantage to end Grappled, and you count as one size larger for carrying capacity.
 @species Halfling | size Small | speed 30 | lang Common | source PHB 2024
 - Brave | Advantage on saves to avoid or end Frightened.
@@ -48,14 +48,14 @@
 - Skillful | Proficiency in one skill of your choice.
 - Versatile | You gain an Origin feat of your choice (Skilled is recommended).
 @species Orc | size Medium | speed 30 | darkvision 120 | lang Common | source PHB 2024
-- Adrenaline Rush | Take the Dash action as a Bonus Action and gain temp HP equal to your Proficiency Bonus. Proficiency Bonus uses per Short or Long Rest.
-- Relentless Endurance | When you drop to 0 HP but don't die, drop to 1 HP instead. Once per Long Rest.
+- Adrenaline Rush | Take the Dash action as a Bonus Action and gain temp HP equal to your Proficiency Bonus. Proficiency Bonus uses per Short or Long Rest. {res short pb Adrenaline Rush}
+- Relentless Endurance | When you drop to 0 HP but don't die, drop to 1 HP instead. Once per Long Rest. {res long 1 Relentless Endurance}
 @species Tiefling (Abyssal) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
-- Abyssal Legacy | Resistance to Poison and the Poison Spray cantrip; Ray of Sickness at level 3 and Hold Person at level 5, once per Long Rest each.
-- Otherworldly Presence | You know Thaumaturgy.
+- Abyssal Legacy | Resistance to Poison and the Poison Spray cantrip; Ray of Sickness at level 3 and Hold Person at level 5, once per Long Rest each. {resist poison} {spells Poison Spray; Ray of Sickness long @3; Hold Person long @5} {castwith pick}
+- Otherworldly Presence | You know Thaumaturgy. {spells Thaumaturgy} {castwith pick}
 @species Tiefling (Chthonic) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
-- Chthonic Legacy | Resistance to Necrotic and the Chill Touch cantrip; False Life at level 3 and Ray of Enfeeblement at level 5, once per Long Rest each.
-- Otherworldly Presence | You know Thaumaturgy.
+- Chthonic Legacy | Resistance to Necrotic and the Chill Touch cantrip; False Life at level 3 and Ray of Enfeeblement at level 5, once per Long Rest each. {resist necrotic} {spells Chill Touch; False Life long @3; Ray of Enfeeblement long @5} {castwith pick}
+- Otherworldly Presence | You know Thaumaturgy. {spells Thaumaturgy} {castwith pick}
 @species Tiefling (Infernal) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
-- Infernal Legacy | Resistance to Fire and the Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, once per Long Rest each.
-- Otherworldly Presence | You know Thaumaturgy.
+- Infernal Legacy | Resistance to Fire and the Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, once per Long Rest each. {resist fire} {spells Fire Bolt; Hellish Rebuke long @3; Darkness long @5} {castwith pick}
+- Otherworldly Presence | You know Thaumaturgy. {spells Thaumaturgy} {castwith pick}

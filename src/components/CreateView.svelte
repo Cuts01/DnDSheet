@@ -7,6 +7,7 @@
   import { readCharacterFile } from '../lib/io';
   import AbilitiesCard from './build/AbilitiesCard.svelte';
   import BackgroundCard from './build/BackgroundCard.svelte';
+  import ProficienciesCard from './build/ProficienciesCard.svelte';
   import ClassesCard from './build/ClassesCard.svelte';
   import SpeciesCard from './build/SpeciesCard.svelte';
   import PacksCard from './PacksCard.svelte';
@@ -46,7 +47,7 @@
       <h1>{t('Nuevo personaje')}</h1>
       {#if store.currentId}<button onclick={() => store.cancelNew()}>{t('Volver a {name}', { name: store.c.name || t('Sin nombre') })}</button>{/if}
     </div>
-    <p class="muted">{t('Lo básico para empezar. Skills, feats, invocations y equipo se completan después en Editar y Equipo.')}</p>
+    <p class="muted">{t('Lo básico para empezar, incluidas tus skills. Feats, invocations y equipo se completan después en Editar y Equipo.')}</p>
   </header>
 
   {#if !compendium.packs.length}
@@ -69,6 +70,7 @@
   <ClassesCard bind:c={draft} />
   <BackgroundCard bind:c={draft} />
   <AbilitiesCard bind:c={draft} />
+  <ProficienciesCard bind:c={draft} creating />
 
   <div class="actions">
     <p class="muted small center">{t('HP máximo inicial (promedio)')}: <b class="num">{hp}</b></p>

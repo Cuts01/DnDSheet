@@ -28,7 +28,7 @@ Draw a thrown weapon as part of the attack, and +2 damage on ranged attacks with
 @option fighting-style | Two-Weapon Fighting | listname Fighting Style
 Add your ability modifier to the damage of your off-hand attack. {twf +1}
 @option fighting-style | Unarmed Fighting | listname Fighting Style | prereq TCoE
-Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn. {unarmed +6}
+Unarmed strikes deal 1d6 (1d8 with both hands free), and you deal 1d4 bludgeoning to a creature you grapple each turn. {unarmed +8}
 
 # ---------- Battle Master maneuvers ----------
 @option maneuvers | Ambush | listname Maneuvers | prereq TCoE

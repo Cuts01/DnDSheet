@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-10-23T17:42:44Z"
+    "built": "2026-10-23T17:56:13Z"
   },
   "classes": [
     {
@@ -7024,23 +7024,52 @@
       "traits": [
         {
           "name": "Celestial Resistance",
-          "text": "Resistance to Necrotic and Radiant damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "necrotic",
+              "radiant"
+            ]
+          },
+          "text": "Resistance to Necrotic and Radiant damage."
         },
         {
           "name": "Healing Hands",
-          "text": "As a Magic action, touch a creature to heal it a number of d4s equal to your Proficiency Bonus. Once per Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Healing Hands",
+              "uses": "1",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a Magic action, touch a creature to heal it a number of d4s equal to your Proficiency Bonus. Once per Long Rest."
         },
         {
           "name": "Light Bearer",
-          "text": "You know the Light cantrip (Charisma).",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Light",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "cha",
+          "text": "You know the Light cantrip (Charisma)."
         },
         {
           "name": "Celestial Revelation",
-          "text": "From level 3, as a Bonus Action transform for 1 minute: Heavenly Wings (fly), Inner Radiance (radiant aura) or Necrotic Shroud (frighten); once per turn add damage equal to your Proficiency Bonus. Once per Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Celestial Revelation",
+              "uses": "1@3",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From level 3, as a Bonus Action transform for 1 minute: Heavenly Wings (fly), Inner Radiance (radiant aura) or Necrotic Shroud (frighten); once per turn add damage equal to your Proficiency Bonus. Once per Long Rest."
         }
       ]
     },
@@ -7060,23 +7089,39 @@
       "traits": [
         {
           "name": "Draconic Ancestry",
-          "text": "Choose a dragon type; it sets your breath weapon and resistance damage type.",
-          "effects": []
+          "effects": [],
+          "text": "Choose a dragon type; it sets your breath weapon and resistance damage type."
         },
         {
           "name": "Breath Weapon",
-          "text": "Replace one attack with a 15-foot cone or 30-foot line: Dexterity save, 1d10 damage (2d10 at 5th, 3d10 at 11th, 4d10 at 17th). Proficiency Bonus uses per Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Breath Weapon",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Replace one attack with a 15-foot cone or 30-foot line: Dexterity save, 1d10 damage (2d10 at 5th, 3d10 at 11th, 4d10 at 17th). Proficiency Bonus uses per Long Rest."
         },
         {
           "name": "Damage Resistance",
-          "text": "Resistance to your ancestry's damage type.",
-          "effects": []
+          "effects": [],
+          "text": "Resistance to your ancestry's damage type."
         },
         {
           "name": "Draconic Flight",
-          "text": "From level 5, as a Bonus Action sprout wings for 10 minutes and gain a Fly Speed equal to your Speed. Once per Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Draconic Flight",
+              "uses": "1@5",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From level 5, as a Bonus Action sprout wings for 10 minutes and gain a Fly Speed equal to your Speed. Once per Long Rest."
         }
       ]
     },
@@ -7096,12 +7141,16 @@
       "traits": [
         {
           "name": "Dwarven Resilience",
-          "text": "Resistance to Poison damage and advantage on saves to avoid or end Poisoned.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Resistance to Poison damage and advantage on saves to avoid or end Poisoned."
         },
         {
           "name": "Dwarven Toughness",
-          "text": "Your HP maximum increases by 1 per level.",
           "effects": [
             {
               "target": "hp",
@@ -7109,12 +7158,21 @@
               "conditional": false,
               "scale": "level"
             }
-          ]
+          ],
+          "text": "Your HP maximum increases by 1 per level."
         },
         {
           "name": "Stonecunning",
-          "text": "As a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on stone. Proficiency Bonus uses per Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Stonecunning",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a Bonus Action, gain Tremorsense 60 feet for 10 minutes while on stone. Proficiency Bonus uses per Long Rest."
         }
       ]
     },
@@ -7142,23 +7200,40 @@
       "traits": [
         {
           "name": "Drow Lineage",
-          "text": "Darkvision 120 feet and the Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each once per Long Rest without a slot.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Dancing Lights",
+              "uses": "none"
+            },
+            {
+              "spell": "Faerie Fire",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Darkness",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Darkvision 120 feet and the Dancing Lights cantrip; Faerie Fire at level 3 and Darkness at level 5, each once per Long Rest without a slot."
         },
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end Charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end Charmed."
         },
         {
           "name": "Keen Senses",
-          "text": "Proficiency in Insight, Perception or Survival.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in Insight, Perception or Survival."
         },
         {
           "name": "Trance",
-          "text": "You don't need sleep; a Long Rest takes 4 hours of trance.",
-          "effects": []
+          "effects": [],
+          "text": "You don't need sleep; a Long Rest takes 4 hours of trance."
         }
       ]
     },
@@ -7186,23 +7261,40 @@
       "traits": [
         {
           "name": "High Elf Lineage",
-          "text": "Prestidigitation (swap it after a Long Rest); Detect Magic at level 3 and Misty Step at level 5, each once per Long Rest without a slot.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Prestidigitation",
+              "uses": "none"
+            },
+            {
+              "spell": "Detect Magic",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Misty Step",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Prestidigitation (swap it after a Long Rest); Detect Magic at level 3 and Misty Step at level 5, each once per Long Rest without a slot."
         },
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end Charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end Charmed."
         },
         {
           "name": "Keen Senses",
-          "text": "Proficiency in Insight, Perception or Survival.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in Insight, Perception or Survival."
         },
         {
           "name": "Trance",
-          "text": "You don't need sleep; a Long Rest takes 4 hours of trance.",
-          "effects": []
+          "effects": [],
+          "text": "You don't need sleep; a Long Rest takes 4 hours of trance."
         }
       ]
     },
@@ -7230,23 +7322,40 @@
       "traits": [
         {
           "name": "Wood Elf Lineage",
-          "text": "Speed 35 feet and the Druidcraft cantrip; Longstrider at level 3 and Pass without Trace at level 5, each once per Long Rest without a slot.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Druidcraft",
+              "uses": "none"
+            },
+            {
+              "spell": "Longstrider",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Pass without Trace",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Speed 35 feet and the Druidcraft cantrip; Longstrider at level 3 and Pass without Trace at level 5, each once per Long Rest without a slot."
         },
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end Charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end Charmed."
         },
         {
           "name": "Keen Senses",
-          "text": "Proficiency in Insight, Perception or Survival.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in Insight, Perception or Survival."
         },
         {
           "name": "Trance",
-          "text": "You don't need sleep; a Long Rest takes 4 hours of trance.",
-          "effects": []
+          "effects": [],
+          "text": "You don't need sleep; a Long Rest takes 4 hours of trance."
         }
       ]
     },
@@ -7266,13 +7375,32 @@
       "traits": [
         {
           "name": "Gnomish Cunning",
-          "text": "Advantage on Intelligence, Wisdom and Charisma saving throws.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Intelligence, Wisdom and Charisma saving throws."
         },
         {
           "name": "Forest Gnome Lineage",
-          "text": "You know Minor Illusion and always have Speak with Animals prepared, castable without a slot Proficiency Bonus times per Long Rest.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Minor Illusion",
+              "uses": "none"
+            },
+            {
+              "spell": "Speak with Animals",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "pick",
+          "resources": [
+            {
+              "name": "Speak with Animals (free)",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "You know Minor Illusion and always have Speak with Animals prepared, castable without a slot Proficiency Bonus times per Long Rest."
         }
       ]
     },
@@ -7292,13 +7420,24 @@
       "traits": [
         {
           "name": "Gnomish Cunning",
-          "text": "Advantage on Intelligence, Wisdom and Charisma saving throws.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Intelligence, Wisdom and Charisma saving throws."
         },
         {
           "name": "Rock Gnome Lineage",
-          "text": "You know Mending and Prestidigitation, and can spend 10 minutes to make a Tiny clockwork device with a simple effect.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Mending",
+              "uses": "none"
+            },
+            {
+              "spell": "Prestidigitation",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "You know Mending and Prestidigitation, and can spend 10 minutes to make a Tiny clockwork device with a simple effect."
         }
       ]
     },
@@ -7318,24 +7457,40 @@
       "traits": [
         {
           "name": "Giant Ancestry",
-          "text": "Choose a boon used Proficiency Bonus times per Long Rest: Cloud's Jaunt (teleport), Fire's Burn (fire damage), Frost's Chill (cold and slow), Hill's Tumble (knock prone), Stone's Endurance (reduce damage) or Storm's Thunder (thunder reaction).",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Giant Ancestry",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Choose a boon used Proficiency Bonus times per Long Rest: Cloud's Jaunt (teleport), Fire's Burn (fire damage), Frost's Chill (cold and slow), Hill's Tumble (knock prone), Stone's Endurance (reduce damage) or Storm's Thunder (thunder reaction)."
         },
         {
           "name": "Large Form",
-          "text": "From level 5, as a Bonus Action become Large for 10 minutes: advantage on Strength checks and +10 feet of Speed. Once per Long Rest.",
           "effects": [
             {
               "target": "speed",
               "value": 10,
               "conditional": true
             }
-          ]
+          ],
+          "resources": [
+            {
+              "name": "Large Form",
+              "uses": "1@5",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From level 5, as a Bonus Action become Large for 10 minutes: advantage on Strength checks and +10 feet of Speed. Once per Long Rest."
         },
         {
           "name": "Powerful Build",
-          "text": "Advantage to end Grappled, and you count as one size larger for carrying capacity.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage to end Grappled, and you count as one size larger for carrying capacity."
         }
       ]
     },
@@ -7355,23 +7510,23 @@
       "traits": [
         {
           "name": "Brave",
-          "text": "Advantage on saves to avoid or end Frightened.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end Frightened."
         },
         {
           "name": "Halfling Nimbleness",
-          "text": "You can move through the space of any creature larger than you.",
-          "effects": []
+          "effects": [],
+          "text": "You can move through the space of any creature larger than you."
         },
         {
           "name": "Luck",
-          "text": "When you roll a 1 on a d20 Test, you can reroll it and must use the new roll.",
-          "effects": []
+          "effects": [],
+          "text": "When you roll a 1 on a d20 Test, you can reroll it and must use the new roll."
         },
         {
           "name": "Naturally Stealthy",
-          "text": "You can Hide behind a creature at least one size larger than you.",
-          "effects": []
+          "effects": [],
+          "text": "You can Hide behind a creature at least one size larger than you."
         }
       ]
     },
@@ -7396,18 +7551,18 @@
       "traits": [
         {
           "name": "Resourceful",
-          "text": "You gain Heroic Inspiration when you finish a Long Rest.",
-          "effects": []
+          "effects": [],
+          "text": "You gain Heroic Inspiration when you finish a Long Rest."
         },
         {
           "name": "Skillful",
-          "text": "Proficiency in one skill of your choice.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in one skill of your choice."
         },
         {
           "name": "Versatile",
-          "text": "You gain an Origin feat of your choice (Skilled is recommended).",
-          "effects": []
+          "effects": [],
+          "text": "You gain an Origin feat of your choice (Skilled is recommended)."
         }
       ]
     },
@@ -7427,13 +7582,29 @@
       "traits": [
         {
           "name": "Adrenaline Rush",
-          "text": "Take the Dash action as a Bonus Action and gain temp HP equal to your Proficiency Bonus. Proficiency Bonus uses per Short or Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Adrenaline Rush",
+              "uses": "pb",
+              "recharge": "short",
+              "die": ""
+            }
+          ],
+          "text": "Take the Dash action as a Bonus Action and gain temp HP equal to your Proficiency Bonus. Proficiency Bonus uses per Short or Long Rest."
         },
         {
           "name": "Relentless Endurance",
-          "text": "When you drop to 0 HP but don't die, drop to 1 HP instead. Once per Long Rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Relentless Endurance",
+              "uses": "1",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "When you drop to 0 HP but don't die, drop to 1 HP instead. Once per Long Rest."
         }
       ]
     },
@@ -7453,13 +7624,42 @@
       "traits": [
         {
           "name": "Abyssal Legacy",
-          "text": "Resistance to Poison and the Poison Spray cantrip; Ray of Sickness at level 3 and Hold Person at level 5, once per Long Rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Poison Spray",
+              "uses": "none"
+            },
+            {
+              "spell": "Ray of Sickness",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Hold Person",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Resistance to Poison and the Poison Spray cantrip; Ray of Sickness at level 3 and Hold Person at level 5, once per Long Rest each."
         },
         {
           "name": "Otherworldly Presence",
-          "text": "You know Thaumaturgy.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Thaumaturgy",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "You know Thaumaturgy."
         }
       ]
     },
@@ -7479,13 +7679,42 @@
       "traits": [
         {
           "name": "Chthonic Legacy",
-          "text": "Resistance to Necrotic and the Chill Touch cantrip; False Life at level 3 and Ray of Enfeeblement at level 5, once per Long Rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Chill Touch",
+              "uses": "none"
+            },
+            {
+              "spell": "False Life",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Ray of Enfeeblement",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "grants": {
+            "resistances": [
+              "necrotic"
+            ]
+          },
+          "text": "Resistance to Necrotic and the Chill Touch cantrip; False Life at level 3 and Ray of Enfeeblement at level 5, once per Long Rest each."
         },
         {
           "name": "Otherworldly Presence",
-          "text": "You know Thaumaturgy.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Thaumaturgy",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "You know Thaumaturgy."
         }
       ]
     },
@@ -7505,13 +7734,42 @@
       "traits": [
         {
           "name": "Infernal Legacy",
-          "text": "Resistance to Fire and the Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, once per Long Rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Fire Bolt",
+              "uses": "none"
+            },
+            {
+              "spell": "Hellish Rebuke",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Darkness",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "grants": {
+            "resistances": [
+              "fire"
+            ]
+          },
+          "text": "Resistance to Fire and the Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, once per Long Rest each."
         },
         {
           "name": "Otherworldly Presence",
-          "text": "You know Thaumaturgy.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Thaumaturgy",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "You know Thaumaturgy."
         }
       ]
     }
@@ -8834,7 +9092,7 @@
       "effects": [
         {
           "target": "unarmed-die",
-          "value": 6,
+          "value": 8,
           "conditional": false
         }
       ],

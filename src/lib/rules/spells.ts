@@ -348,9 +348,14 @@ export function featSpells(c: Character, packs: Pack[]): { slots: FeatSpellSlot[
     if (f?.item.spells.length) sources.push({ key: `inv:${inv.id}`, ability: null, feat: f.item });
   }
   const PACT_2014: Record<string, PackFeat['spells']> = {
-    chain: [{ spell: 'Find Familiar', count: 1, level: 1, schools: [], lists: [], attackOnly: false, ritualOnly: false, uses: 'none' }],
-    tome: [{ spell: '', count: 3, level: 0, schools: [], lists: [], attackOnly: false, ritualOnly: false, uses: 'none' }]
+    chain: [{ spell: 'Find Familiar', count: 1, level: 1, schools: [], lists: [], attackOnly: false, ritualOnly: false, uses: 'none', minLevel: 1 }],
+    tome: [{ spell: '', count: 3, level: 0, schools: [], lists: [], attackOnly: false, ritualOnly: false, uses: 'none', minLevel: 1 }]
   };
+  // Rasgos de raza con spells (Light Bearer, Infernal Legacy, Drow Magic...).
+  const sp = findRef(packs, c.species.ref, (p) => p.species);
+  sp?.item.traits.forEach((tr, i) => {
+    if (tr.spells.length) sources.push({ key: `sp:${sp.value}#${i}`, ability: null, feat: { name: tr.name, spells: tr.spells, spellAbility: tr.spellAbility || 'pick' } });
+  });
   if (c.ruleset === '2014' && PACT_2014[c.pactBoon] && c.classes.some((k) => k.caster === 'pact' && k.level >= 3)) {
     const name = `Pact of the ${c.pactBoon[0].toUpperCase()}${c.pactBoon.slice(1)}`;
     sources.push({ key: `pact:${c.pactBoon}`, ability: null, feat: { name, spells: PACT_2014[c.pactBoon], spellAbility: 'cha' } });
@@ -373,7 +378,9 @@ export function featSpells(c: Character, packs: Pack[]): { slots: FeatSpellSlot[
               ? (how as Ability)
               : 'cha';
     const picks: FeatPick[] = [];
+    const lvl = c.classes.reduce((s, k) => s + k.level, 0);
     feat.spells.forEach((g, i) => {
+      if ((g.minLevel ?? 1) > lvl) return;
       const base = { source: feat.name, ability, uses: g.uses, classId: '' };
       if (g.spell) {
         const ref = index.get(spellKey(g.spell)) ?? null;

@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-10-23T17:42:44Z"
+    "built": "2026-10-23T17:56:13Z"
   },
   "classes": [
     {
@@ -9245,8 +9245,8 @@
       "traits": [
         {
           "name": "Versatile",
-          "text": "+1 to all ability scores.",
-          "effects": []
+          "effects": [],
+          "text": "+1 to all ability scores."
         }
       ]
     },
@@ -9285,8 +9285,8 @@
       "traits": [
         {
           "name": "Variant Traits",
-          "text": "+1 to two abilities, one skill proficiency and one feat of your choice.",
-          "effects": []
+          "effects": [],
+          "text": "+1 to two abilities, one skill proficiency and one feat of your choice."
         }
       ]
     },
@@ -9310,18 +9310,26 @@
       "traits": [
         {
           "name": "Draconic Ancestry",
-          "text": "Choose a dragon color; it sets your breath weapon and resistance.",
-          "effects": []
+          "effects": [],
+          "text": "Choose a dragon color; it sets your breath weapon and resistance."
         },
         {
           "name": "Breath Weapon",
-          "text": "As an action, exhale a cone or line: 2d6 damage (Dexterity or Constitution save for half), growing at 6th, 11th and 16th level. Once per short or long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Breath Weapon",
+              "uses": "1",
+              "recharge": "short",
+              "die": ""
+            }
+          ],
+          "text": "As an action, exhale a cone or line: 2d6 damage (Dexterity or Constitution save for half), growing at 6th, 11th and 16th level. Once per short or long rest."
         },
         {
           "name": "Damage Resistance",
-          "text": "Resistance to your ancestry's damage type.",
-          "effects": []
+          "effects": [],
+          "text": "Resistance to your ancestry's damage type."
         }
       ]
     },
@@ -9367,23 +9375,39 @@
       "traits": [
         {
           "name": "Chromatic Ancestry",
-          "text": "Choose black, blue, green, red or white for your breath and resistance.",
-          "effects": []
+          "effects": [],
+          "text": "Choose black, blue, green, red or white for your breath and resistance."
         },
         {
           "name": "Breath Weapon",
-          "text": "Replace one attack with a 30-foot line: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Breath Weapon",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Replace one attack with a 30-foot line: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest."
         },
         {
           "name": "Draconic Resistance",
-          "text": "Resistance to your ancestry's damage type.",
-          "effects": []
+          "effects": [],
+          "text": "Resistance to your ancestry's damage type."
         },
         {
           "name": "Chromatic Warding",
-          "text": "From 5th level, become immune to your ancestry's damage for 1 minute. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Chromatic Warding",
+              "uses": "1@5",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From 5th level, become immune to your ancestry's damage for 1 minute. Once per long rest."
         }
       ]
     },
@@ -9429,23 +9453,39 @@
       "traits": [
         {
           "name": "Metallic Ancestry",
-          "text": "Choose brass, bronze, copper, gold or silver for your breath and resistance.",
-          "effects": []
+          "effects": [],
+          "text": "Choose brass, bronze, copper, gold or silver for your breath and resistance."
         },
         {
           "name": "Breath Weapon",
-          "text": "Replace one attack with a 15-foot cone: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Breath Weapon",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Replace one attack with a 15-foot cone: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest."
         },
         {
           "name": "Draconic Resistance",
-          "text": "Resistance to your ancestry's damage type.",
-          "effects": []
+          "effects": [],
+          "text": "Resistance to your ancestry's damage type."
         },
         {
           "name": "Metallic Breath Weapon",
-          "text": "From 5th level, a second breath that pushes or incapacitates creatures. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Metallic Breath Weapon",
+              "uses": "1@5",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From 5th level, a second breath that pushes or incapacitates creatures. Once per long rest."
         }
       ]
     },
@@ -9491,23 +9531,39 @@
       "traits": [
         {
           "name": "Gem Ancestry",
-          "text": "Choose amethyst, crystal, emerald, sapphire or topaz for your breath and resistance.",
-          "effects": []
+          "effects": [],
+          "text": "Choose amethyst, crystal, emerald, sapphire or topaz for your breath and resistance."
         },
         {
           "name": "Breath Weapon",
-          "text": "Replace one attack with a 15-foot cone: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Breath Weapon",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Replace one attack with a 15-foot cone: 1d10 damage (Dexterity save for half), growing with level. Proficiency bonus uses per long rest."
         },
         {
           "name": "Psionic Mind",
-          "text": "Telepathy 30 feet.",
-          "effects": []
+          "effects": [],
+          "text": "Telepathy 30 feet."
         },
         {
           "name": "Gem Flight",
-          "text": "From 5th level, as a bonus action gain a flying speed equal to your walking speed for 1 minute. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Gem Flight",
+              "uses": "1@5",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From 5th level, as a bonus action gain a flying speed equal to your walking speed for 1 minute. Once per long rest."
         }
       ]
     },
@@ -9545,17 +9601,21 @@
       "traits": [
         {
           "name": "Dwarven Resilience",
-          "text": "Advantage on saves against poison and resistance to poison damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage on saves against poison and resistance to poison damage."
         },
         {
           "name": "Stonecunning",
-          "text": "Double proficiency on History checks about stonework.",
-          "effects": []
+          "effects": [],
+          "text": "Double proficiency on History checks about stonework."
         },
         {
           "name": "Dwarven Toughness",
-          "text": "Your HP maximum increases by 1 per level.",
           "effects": [
             {
               "target": "hp",
@@ -9563,12 +9623,13 @@
               "conditional": false,
               "scale": "level"
             }
-          ]
+          ],
+          "text": "Your HP maximum increases by 1 per level."
         },
         {
           "name": "Speed",
-          "text": "Heavy armor doesn't reduce your speed.",
-          "effects": []
+          "effects": [],
+          "text": "Heavy armor doesn't reduce your speed."
         }
       ]
     },
@@ -9609,18 +9670,23 @@
       "traits": [
         {
           "name": "Dwarven Resilience",
-          "text": "Advantage on saves against poison and resistance to poison damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage on saves against poison and resistance to poison damage."
         },
         {
           "name": "Stonecunning",
-          "text": "Double proficiency on History checks about stonework.",
-          "effects": []
+          "effects": [],
+          "text": "Double proficiency on History checks about stonework."
         },
         {
           "name": "Speed",
-          "text": "Heavy armor doesn't reduce your speed.",
-          "effects": []
+          "effects": [],
+          "text": "Heavy armor doesn't reduce your speed."
         }
       ]
     },
@@ -9666,18 +9732,36 @@
       "traits": [
         {
           "name": "Duergar Magic",
-          "text": "From 3rd level cast Enlarge/Reduce on yourself and from 5th level Invisibility on yourself, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Enlarge/Reduce",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Invisibility",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "From 3rd level cast Enlarge/Reduce on yourself and from 5th level Invisibility on yourself, once per long rest each."
         },
         {
           "name": "Dwarven Resilience",
-          "text": "Advantage on saves against poison and resistance to poison damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage on saves against poison and resistance to poison damage."
         },
         {
           "name": "Psionic Fortitude",
-          "text": "Advantage on saves to avoid or end charmed and stunned.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed and stunned."
         }
       ]
     },
@@ -9716,18 +9800,32 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves against charmed, and magic can't put you to sleep.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against charmed, and magic can't put you to sleep."
         },
         {
           "name": "Trance",
-          "text": "You meditate 4 hours instead of sleeping.",
-          "effects": []
+          "effects": [],
+          "text": "You meditate 4 hours instead of sleeping."
         },
         {
           "name": "Cantrip",
-          "text": "You know one wizard cantrip (Intelligence).",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "count": 1,
+              "level": 0,
+              "uses": "none",
+              "schools": [],
+              "lists": [
+                "Wizard"
+              ],
+              "attackOnly": false,
+              "ritualOnly": false
+            }
+          ],
+          "spellAbility": "int",
+          "text": "You know one wizard cantrip (Intelligence)."
         }
       ]
     },
@@ -9765,18 +9863,18 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves against charmed, and magic can't put you to sleep.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against charmed, and magic can't put you to sleep."
         },
         {
           "name": "Trance",
-          "text": "You meditate 4 hours instead of sleeping.",
-          "effects": []
+          "effects": [],
+          "text": "You meditate 4 hours instead of sleeping."
         },
         {
           "name": "Mask of the Wild",
-          "text": "You can try to hide when lightly obscured by natural phenomena.",
-          "effects": []
+          "effects": [],
+          "text": "You can try to hide when lightly obscured by natural phenomena."
         }
       ]
     },
@@ -9813,23 +9911,40 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves against charmed, and magic can't put you to sleep.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against charmed, and magic can't put you to sleep."
         },
         {
           "name": "Trance",
-          "text": "You meditate 4 hours instead of sleeping.",
-          "effects": []
+          "effects": [],
+          "text": "You meditate 4 hours instead of sleeping."
         },
         {
           "name": "Sunlight Sensitivity",
-          "text": "Disadvantage on attacks and sight-based Perception in direct sunlight.",
-          "effects": []
+          "effects": [],
+          "text": "Disadvantage on attacks and sight-based Perception in direct sunlight."
         },
         {
           "name": "Drow Magic",
-          "text": "Dancing Lights; Faerie Fire at 3rd and Darkness at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Dancing Lights",
+              "uses": "none"
+            },
+            {
+              "spell": "Faerie Fire",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Darkness",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "cha",
+          "text": "Dancing Lights; Faerie Fire at 3rd and Darkness at 5th, once per long rest each."
         }
       ]
     },
@@ -9878,18 +9993,26 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         },
         {
           "name": "Fey Step",
-          "text": "As a bonus action, teleport 30 feet with a seasonal effect (Autumn, Winter, Spring, Summer). Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Fey Step",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, teleport 30 feet with a seasonal effect (Autumn, Winter, Spring, Summer). Proficiency bonus uses per long rest."
         },
         {
           "name": "Trance",
-          "text": "You meditate 4 hours instead of sleeping.",
-          "effects": []
+          "effects": [],
+          "text": "You meditate 4 hours instead of sleeping."
         }
       ]
     },
@@ -9938,23 +10061,28 @@
       "traits": [
         {
           "name": "Child of the Sea",
-          "text": "Swimming speed equal to your walking speed, breathe air and water, and resistance to cold.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "cold"
+            ]
+          },
+          "text": "Swimming speed equal to your walking speed, breathe air and water, and resistance to cold."
         },
         {
           "name": "Friend of the Sea",
-          "text": "Communicate simple ideas to beasts with a swimming speed.",
-          "effects": []
+          "effects": [],
+          "text": "Communicate simple ideas to beasts with a swimming speed."
         },
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         },
         {
           "name": "Trance",
-          "text": "You meditate 4 hours instead of sleeping.",
-          "effects": []
+          "effects": [],
+          "text": "You meditate 4 hours instead of sleeping."
         }
       ]
     },
@@ -10003,23 +10131,36 @@
       "traits": [
         {
           "name": "Blessing of the Raven Queen",
-          "text": "As a bonus action, teleport 30 feet; from 3rd level you also gain resistance to all damage until your next turn. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Blessing of the Raven Queen",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, teleport 30 feet; from 3rd level you also gain resistance to all damage until your next turn. Proficiency bonus uses per long rest."
         },
         {
           "name": "Necrotic Resistance",
-          "text": "Resistance to necrotic damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "necrotic"
+            ]
+          },
+          "text": "Resistance to necrotic damage."
         },
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         },
         {
           "name": "Trance",
-          "text": "You meditate 4 hours instead of sleeping.",
-          "effects": []
+          "effects": [],
+          "text": "You meditate 4 hours instead of sleeping."
         }
       ]
     },
@@ -10073,23 +10214,31 @@
       "traits": [
         {
           "name": "Astral Fire",
-          "text": "Learn Dancing Lights, Light or Sacred Flame.",
-          "effects": []
+          "effects": [],
+          "text": "Learn Dancing Lights, Light or Sacred Flame."
         },
         {
           "name": "Starlight Step",
-          "text": "As a bonus action, teleport 30 feet. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Starlight Step",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, teleport 30 feet. Proficiency bonus uses per long rest."
         },
         {
           "name": "Astral Trance",
-          "text": "After resting, gain proficiency with one skill and one weapon or tool.",
-          "effects": []
+          "effects": [],
+          "text": "After resting, gain proficiency with one skill and one weapon or tool."
         },
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         }
       ]
     },
@@ -10113,18 +10262,25 @@
       "traits": [
         {
           "name": "Gnome Cunning",
-          "text": "Advantage on Intelligence, Wisdom and Charisma saves against magic.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Intelligence, Wisdom and Charisma saves against magic."
         },
         {
           "name": "Natural Illusionist",
-          "text": "You know Minor Illusion.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Minor Illusion",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "int",
+          "text": "You know Minor Illusion."
         },
         {
           "name": "Speak with Small Beasts",
-          "text": "Communicate simple ideas with Small or smaller beasts.",
-          "effects": []
+          "effects": [],
+          "text": "Communicate simple ideas with Small or smaller beasts."
         }
       ]
     },
@@ -10156,18 +10312,18 @@
       "traits": [
         {
           "name": "Gnome Cunning",
-          "text": "Advantage on Intelligence, Wisdom and Charisma saves against magic.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Intelligence, Wisdom and Charisma saves against magic."
         },
         {
           "name": "Artificer's Lore",
-          "text": "Double proficiency on History checks about magic items, alchemical objects and technology.",
-          "effects": []
+          "effects": [],
+          "text": "Double proficiency on History checks about magic items, alchemical objects and technology."
         },
         {
           "name": "Tinker",
-          "text": "Build Tiny clockwork devices with tinker's tools.",
-          "effects": []
+          "effects": [],
+          "text": "Build Tiny clockwork devices with tinker's tools."
         }
       ]
     },
@@ -10213,18 +10369,39 @@
       "traits": [
         {
           "name": "Gift of the Svirfneblin",
-          "text": "From 3rd level cast Disguise Self and from 5th level Nondetection, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Disguise Self",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Nondetection",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "From 3rd level cast Disguise Self and from 5th level Nondetection, once per long rest each."
         },
         {
           "name": "Gnomish Magic Resistance",
-          "text": "Advantage on Intelligence, Wisdom and Charisma saves against spells.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Intelligence, Wisdom and Charisma saves against spells."
         },
         {
           "name": "Svirfneblin Camouflage",
-          "text": "Advantage on a Stealth check. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Svirfneblin Camouflage",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Advantage on a Stealth check. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -10264,13 +10441,13 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves against charmed, and magic can't put you to sleep.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against charmed, and magic can't put you to sleep."
         },
         {
           "name": "Skill Versatility",
-          "text": "Proficiency in two skills of your choice.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in two skills of your choice."
         }
       ]
     },
@@ -10297,13 +10474,21 @@
       "traits": [
         {
           "name": "Relentless Endurance",
-          "text": "When reduced to 0 HP but not killed, drop to 1 HP instead. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Relentless Endurance",
+              "uses": "1",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "When reduced to 0 HP but not killed, drop to 1 HP instead. Once per long rest."
         },
         {
           "name": "Savage Attacks",
-          "text": "On a melee weapon critical hit, roll one extra weapon damage die.",
-          "effects": []
+          "effects": [],
+          "text": "On a melee weapon critical hit, roll one extra weapon damage die."
         }
       ]
     },
@@ -10327,23 +10512,23 @@
       "traits": [
         {
           "name": "Lucky",
-          "text": "When you roll a 1 on an attack, check or save, reroll it.",
-          "effects": []
+          "effects": [],
+          "text": "When you roll a 1 on an attack, check or save, reroll it."
         },
         {
           "name": "Brave",
-          "text": "Advantage on saves against frightened.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against frightened."
         },
         {
           "name": "Halfling Nimbleness",
-          "text": "Move through the space of larger creatures.",
-          "effects": []
+          "effects": [],
+          "text": "Move through the space of larger creatures."
         },
         {
           "name": "Naturally Stealthy",
-          "text": "Hide behind a creature at least one size larger than you.",
-          "effects": []
+          "effects": [],
+          "text": "Hide behind a creature at least one size larger than you."
         }
       ]
     },
@@ -10367,23 +10552,28 @@
       "traits": [
         {
           "name": "Lucky",
-          "text": "When you roll a 1 on an attack, check or save, reroll it.",
-          "effects": []
+          "effects": [],
+          "text": "When you roll a 1 on an attack, check or save, reroll it."
         },
         {
           "name": "Brave",
-          "text": "Advantage on saves against frightened.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against frightened."
         },
         {
           "name": "Halfling Nimbleness",
-          "text": "Move through the space of larger creatures.",
-          "effects": []
+          "effects": [],
+          "text": "Move through the space of larger creatures."
         },
         {
           "name": "Stout Resilience",
-          "text": "Advantage on saves against poison and resistance to poison damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage on saves against poison and resistance to poison damage."
         }
       ]
     },
@@ -10407,13 +10597,35 @@
       "traits": [
         {
           "name": "Hellish Resistance",
-          "text": "Resistance to fire damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "fire"
+            ]
+          },
+          "text": "Resistance to fire damage."
         },
         {
           "name": "Infernal Legacy",
-          "text": "Thaumaturgy; Hellish Rebuke at 3rd and Darkness at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Thaumaturgy",
+              "uses": "none"
+            },
+            {
+              "spell": "Hellish Rebuke",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Darkness",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "cha",
+          "text": "Thaumaturgy; Hellish Rebuke at 3rd and Darkness at 5th, once per long rest each."
         }
       ]
     },
@@ -10459,18 +10671,32 @@
       "traits": [
         {
           "name": "Flight",
-          "text": "Flying speed equal to your walking speed, but not in medium or heavy armor.",
-          "effects": []
+          "effects": [],
+          "text": "Flying speed equal to your walking speed, but not in medium or heavy armor."
         },
         {
           "name": "Talons",
-          "text": "Unarmed strikes deal 1d6 slashing.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d6 slashing."
         },
         {
           "name": "Wind Caller",
-          "text": "From 3rd level, cast Gust of Wind once per long rest without a slot.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Gust of Wind",
+              "uses": "long",
+              "minLevel": 3
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "From 3rd level, cast Gust of Wind once per long rest without a slot."
         }
       ]
     },
@@ -10516,23 +10742,52 @@
       "traits": [
         {
           "name": "Celestial Resistance",
-          "text": "Resistance to necrotic and radiant damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "necrotic",
+              "radiant"
+            ]
+          },
+          "text": "Resistance to necrotic and radiant damage."
         },
         {
           "name": "Healing Hands",
-          "text": "As an action, heal a creature d4s equal to your proficiency bonus. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Healing Hands",
+              "uses": "1",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As an action, heal a creature d4s equal to your proficiency bonus. Once per long rest."
         },
         {
           "name": "Light Bearer",
-          "text": "You know the Light cantrip.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Light",
+              "uses": "none"
+            }
+          ],
+          "spellAbility": "cha",
+          "text": "You know the Light cantrip."
         },
         {
           "name": "Celestial Revelation",
-          "text": "From 3rd level, transform for 1 minute (Heavenly Wings, Inner Radiance or Necrotic Shroud) and add damage equal to your proficiency bonus once per turn. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Celestial Revelation",
+              "uses": "1@3",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "From 3rd level, transform for 1 minute (Heavenly Wings, Inner Radiance or Necrotic Shroud) and add damage equal to your proficiency bonus once per turn. Once per long rest."
         }
       ]
     },
@@ -10581,23 +10836,23 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         },
         {
           "name": "Long-Limbed",
-          "text": "Your reach is 5 feet longer on your turn.",
-          "effects": []
+          "effects": [],
+          "text": "Your reach is 5 feet longer on your turn."
         },
         {
           "name": "Powerful Build",
-          "text": "You count as one size larger for carrying capacity.",
-          "effects": []
+          "effects": [],
+          "text": "You count as one size larger for carrying capacity."
         },
         {
           "name": "Surprise Attack",
-          "text": "Deal an extra 2d6 damage to a creature that hasn't taken a turn yet in the combat.",
-          "effects": []
+          "effects": [],
+          "text": "Deal an extra 2d6 damage to a creature that hasn't taken a turn yet in the combat."
         }
       ]
     },
@@ -10652,18 +10907,24 @@
       "traits": [
         {
           "name": "Charge",
-          "text": "After moving 30 feet straight, make a hooves attack as a bonus action.",
-          "effects": []
+          "effects": [],
+          "text": "After moving 30 feet straight, make a hooves attack as a bonus action."
         },
         {
           "name": "Equine Build",
-          "text": "You count as Large for carrying, and climbing costs 4 extra feet per foot.",
-          "effects": []
+          "effects": [],
+          "text": "You count as Large for carrying, and climbing costs 4 extra feet per foot."
         },
         {
           "name": "Hooves",
-          "text": "Unarmed strikes deal 1d6 bludgeoning.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d6 bludgeoning."
         }
       ]
     },
@@ -10719,8 +10980,8 @@
       "traits": [
         {
           "name": "Shapechanger",
-          "text": "As an action, change your appearance and voice.",
-          "effects": []
+          "effects": [],
+          "text": "As an action, change your appearance and voice."
         }
       ]
     },
@@ -10766,13 +11027,30 @@
       "traits": [
         {
           "name": "Fairy Magic",
-          "text": "Druidcraft; Faerie Fire at 3rd and Enlarge/Reduce at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Druidcraft",
+              "uses": "none"
+            },
+            {
+              "spell": "Faerie Fire",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Enlarge/Reduce",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Druidcraft; Faerie Fire at 3rd and Enlarge/Reduce at 5th, once per long rest each."
         },
         {
           "name": "Flight",
-          "text": "Flying speed equal to your walking speed, but not in medium or heavy armor.",
-          "effects": []
+          "effects": [],
+          "text": "Flying speed equal to your walking speed, but not in medium or heavy armor."
         }
       ]
     },
@@ -10818,23 +11096,42 @@
       "traits": [
         {
           "name": "Firbolg Magic",
-          "text": "Cast Detect Magic and Disguise Self once each per long rest without a slot.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Detect Magic",
+              "uses": "long"
+            },
+            {
+              "spell": "Disguise Self",
+              "uses": "long"
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Cast Detect Magic and Disguise Self once each per long rest without a slot."
         },
         {
           "name": "Hidden Step",
-          "text": "As a bonus action, turn invisible until the start of your next turn. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Hidden Step",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, turn invisible until the start of your next turn. Proficiency bonus uses per long rest."
         },
         {
           "name": "Powerful Build",
-          "text": "You count as one size larger for carrying capacity.",
-          "effects": []
+          "effects": [],
+          "text": "You count as one size larger for carrying capacity."
         },
         {
           "name": "Speech of Beast and Leaf",
-          "text": "Communicate simply with beasts and plants.",
-          "effects": []
+          "effects": [],
+          "text": "Communicate simply with beasts and plants."
         }
       ]
     },
@@ -10880,18 +11177,40 @@
       "traits": [
         {
           "name": "Unending Breath",
-          "text": "You can hold your breath indefinitely.",
-          "effects": []
+          "effects": [],
+          "text": "You can hold your breath indefinitely."
         },
         {
           "name": "Lightning Resistance",
-          "text": "Resistance to lightning damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "lightning"
+            ]
+          },
+          "text": "Resistance to lightning damage."
         },
         {
           "name": "Mingle with the Wind",
-          "text": "Shocking Grasp; Feather Fall at 3rd and Levitate at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Shocking Grasp",
+              "uses": "none"
+            },
+            {
+              "spell": "Feather Fall",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Levitate",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Shocking Grasp; Feather Fall at 3rd and Levitate at 5th, once per long rest each."
         }
       ]
     },
@@ -10937,13 +11256,25 @@
       "traits": [
         {
           "name": "Earth Walk",
-          "text": "Ignore difficult terrain made of earth or stone.",
-          "effects": []
+          "effects": [],
+          "text": "Ignore difficult terrain made of earth or stone."
         },
         {
           "name": "Merge with Stone",
-          "text": "Blade Ward as a bonus action, and Pass without Trace at 5th once per long rest.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Blade Ward",
+              "uses": "none"
+            },
+            {
+              "spell": "Pass without Trace",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Blade Ward as a bonus action, and Pass without Trace at 5th once per long rest."
         }
       ]
     },
@@ -10989,13 +11320,35 @@
       "traits": [
         {
           "name": "Fire Resistance",
-          "text": "Resistance to fire damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "fire"
+            ]
+          },
+          "text": "Resistance to fire damage."
         },
         {
           "name": "Reach to the Blaze",
-          "text": "Produce Flame; Burning Hands at 3rd and Flame Blade at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Produce Flame",
+              "uses": "none"
+            },
+            {
+              "spell": "Burning Hands",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Flame Blade",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Produce Flame; Burning Hands at 3rd and Flame Blade at 5th, once per long rest each."
         }
       ]
     },
@@ -11041,18 +11394,40 @@
       "traits": [
         {
           "name": "Acid Resistance",
-          "text": "Resistance to acid damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "acid"
+            ]
+          },
+          "text": "Resistance to acid damage."
         },
         {
           "name": "Amphibious",
-          "text": "Breathe air and water, and swimming speed equal to your walking speed.",
-          "effects": []
+          "effects": [],
+          "text": "Breathe air and water, and swimming speed equal to your walking speed."
         },
         {
           "name": "Call to the Wave",
-          "text": "Acid Splash; Create or Destroy Water at 3rd and Water Walk at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Acid Splash",
+              "uses": "none"
+            },
+            {
+              "spell": "Create or Destroy Water",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Water Walk",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Acid Splash; Create or Destroy Water at 3rd and Water Walk at 5th, once per long rest each."
         }
       ]
     },
@@ -11102,18 +11477,40 @@
       "traits": [
         {
           "name": "Astral Knowledge",
-          "text": "After a long rest, gain proficiency with one skill and one weapon or tool.",
-          "effects": []
+          "effects": [],
+          "text": "After a long rest, gain proficiency with one skill and one weapon or tool."
         },
         {
           "name": "Githyanki Psionics",
-          "text": "Mage Hand (invisible); Jump at 3rd and Misty Step at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Mage Hand",
+              "uses": "none"
+            },
+            {
+              "spell": "Jump",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Misty Step",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Mage Hand (invisible); Jump at 3rd and Misty Step at 5th, once per long rest each."
         },
         {
           "name": "Psychic Resilience",
-          "text": "Resistance to psychic damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "psychic"
+            ]
+          },
+          "text": "Resistance to psychic damage."
         }
       ]
     },
@@ -11159,18 +11556,40 @@
       "traits": [
         {
           "name": "Githzerai Psionics",
-          "text": "Mage Hand (invisible); Shield at 3rd and Detect Thoughts at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Mage Hand",
+              "uses": "none"
+            },
+            {
+              "spell": "Shield",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Detect Thoughts",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Mage Hand (invisible); Shield at 3rd and Detect Thoughts at 5th, once per long rest each."
         },
         {
           "name": "Mental Discipline",
-          "text": "Advantage on saves against charmed and frightened.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against charmed and frightened."
         },
         {
           "name": "Psychic Resilience",
-          "text": "Resistance to psychic damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "psychic"
+            ]
+          },
+          "text": "Resistance to psychic damage."
         }
       ]
     },
@@ -11216,18 +11635,26 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         },
         {
           "name": "Fury of the Small",
-          "text": "Once per turn, add damage equal to your proficiency bonus to a creature larger than you. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Fury of the Small",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Once per turn, add damage equal to your proficiency bonus to a creature larger than you. Proficiency bonus uses per long rest."
         },
         {
           "name": "Nimble Escape",
-          "text": "Disengage or Hide as a bonus action.",
-          "effects": []
+          "effects": [],
+          "text": "Disengage or Hide as a bonus action."
         }
       ]
     },
@@ -11276,18 +11703,31 @@
       "traits": [
         {
           "name": "Little Giant",
-          "text": "Proficiency in Athletics, and you count as one size larger for carrying capacity.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in Athletics, and you count as one size larger for carrying capacity."
         },
         {
           "name": "Mountain Born",
-          "text": "Resistance to cold damage and acclimated to high altitude.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "cold"
+            ]
+          },
+          "text": "Resistance to cold damage and acclimated to high altitude."
         },
         {
           "name": "Stone's Endurance",
-          "text": "As a reaction, reduce damage by 1d12 + Constitution modifier. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Stone's Endurance",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a reaction, reduce damage by 1d12 + Constitution modifier. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -11336,18 +11776,33 @@
       "traits": [
         {
           "name": "Hare-Trigger",
-          "text": "Add your proficiency bonus to initiative.",
-          "effects": []
+          "effects": [
+            {
+              "target": "initiative",
+              "value": 1,
+              "conditional": false,
+              "scale": "pb"
+            }
+          ],
+          "text": "Add your proficiency bonus to initiative."
         },
         {
           "name": "Lucky Footwork",
-          "text": "When you fail a Dexterity save, use your reaction to add 1d4.",
-          "effects": []
+          "effects": [],
+          "text": "When you fail a Dexterity save, use your reaction to add 1d4."
         },
         {
           "name": "Rabbit Hop",
-          "text": "As a bonus action, jump feet equal to five times your proficiency bonus without provoking. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Rabbit Hop",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, jump feet equal to five times your proficiency bonus without provoking. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -11393,18 +11848,34 @@
       "traits": [
         {
           "name": "Fey Ancestry",
-          "text": "Advantage on saves to avoid or end charmed.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves to avoid or end charmed."
         },
         {
           "name": "Fey Gift",
-          "text": "Help as a bonus action, and from 3rd level add a Hospitality, Passage or Spite benefit. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Fey Gift",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Help as a bonus action, and from 3rd level add a Hospitality, Passage or Spite benefit. Proficiency bonus uses per long rest."
         },
         {
           "name": "Fortune from the Many",
-          "text": "When you miss or fail, add a bonus equal to the number of allies you see (max +3). Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Fortune from the Many",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "When you miss or fail, add a bonus equal to the number of allies you see (max +3). Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -11459,18 +11930,26 @@
       "traits": [
         {
           "name": "Expert Duplication",
-          "text": "Advantage on checks to produce copies of writing or craftwork.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on checks to produce copies of writing or craftwork."
         },
         {
           "name": "Kenku Recall",
-          "text": "Proficiency in two skills, and you can give yourself advantage on a check with a proficient skill. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Kenku Recall",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Proficiency in two skills, and you can give yourself advantage on a check with a proficient skill. Proficiency bonus uses per long rest."
         },
         {
           "name": "Mimicry",
-          "text": "Accurately mimic sounds and voices you have heard.",
-          "effects": []
+          "effects": [],
+          "text": "Accurately mimic sounds and voices you have heard."
         }
       ]
     },
@@ -11516,13 +11995,21 @@
       "traits": [
         {
           "name": "Draconic Cry",
-          "text": "As a bonus action, give allies advantage against enemies within 10 feet until your next turn. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Draconic Cry",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, give allies advantage against enemies within 10 feet until your next turn. Proficiency bonus uses per long rest."
         },
         {
           "name": "Kobold Legacy",
-          "text": "Choose Craftiness (a skill), Defiance (advantage against frightened) or Draconic Sorcery (a sorcerer cantrip).",
-          "effects": []
+          "effects": [],
+          "text": "Choose Craftiness (a skill), Defiance (advantage against frightened) or Draconic Sorcery (a sorcerer cantrip)."
         }
       ]
     },
@@ -11579,28 +12066,42 @@
       "traits": [
         {
           "name": "Bite",
-          "text": "Unarmed strikes deal 1d6 slashing.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d6 slashing."
         },
         {
           "name": "Hold Breath",
-          "text": "Hold your breath for 15 minutes, and swimming speed equal to your walking speed.",
-          "effects": []
+          "effects": [],
+          "text": "Hold your breath for 15 minutes, and swimming speed equal to your walking speed."
         },
         {
           "name": "Hungry Jaws",
-          "text": "As a bonus action, bite and gain temp HP equal to your proficiency bonus. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Hungry Jaws",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, bite and gain temp HP equal to your proficiency bonus. Proficiency bonus uses per long rest."
         },
         {
           "name": "Natural Armor",
-          "text": "Without armor, your AC is 13 + Dexterity modifier.",
-          "effects": []
+          "effects": [],
+          "text": "Without armor, your AC is 13 + Dexterity modifier."
         },
         {
           "name": "Nature's Intuition",
-          "text": "Proficiency in two skills from the list.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in two skills from the list."
         }
       ]
     },
@@ -11646,23 +12147,29 @@
       "traits": [
         {
           "name": "Horns",
-          "text": "Unarmed strikes deal 1d6 piercing.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d6 piercing."
         },
         {
           "name": "Goring Rush",
-          "text": "After you Dash 20 feet, make a horn attack as a bonus action.",
-          "effects": []
+          "effects": [],
+          "text": "After you Dash 20 feet, make a horn attack as a bonus action."
         },
         {
           "name": "Hammering Horns",
-          "text": "After hitting with a melee attack, shove a creature 10 feet as a bonus action.",
-          "effects": []
+          "effects": [],
+          "text": "After hitting with a melee attack, shove a creature 10 feet as a bonus action."
         },
         {
           "name": "Labyrinthine Recall",
-          "text": "You always know north and have advantage to find your way.",
-          "effects": []
+          "effects": [],
+          "text": "You always know north and have advantage to find your way."
         }
       ]
     },
@@ -11708,18 +12215,34 @@
       "traits": [
         {
           "name": "Adrenaline Rush",
-          "text": "Dash as a bonus action and gain temp HP equal to your proficiency bonus. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Adrenaline Rush",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Dash as a bonus action and gain temp HP equal to your proficiency bonus. Proficiency bonus uses per long rest."
         },
         {
           "name": "Powerful Build",
-          "text": "You count as one size larger for carrying capacity.",
-          "effects": []
+          "effects": [],
+          "text": "You count as one size larger for carrying capacity."
         },
         {
           "name": "Relentless Endurance",
-          "text": "When reduced to 0 HP but not killed, drop to 1 HP instead. Once per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Relentless Endurance",
+              "uses": "1",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "When reduced to 0 HP but not killed, drop to 1 HP instead. Once per long rest."
         }
       ]
     },
@@ -11777,23 +12300,29 @@
       "traits": [
         {
           "name": "Fey",
-          "text": "Your creature type is fey.",
-          "effects": []
+          "effects": [],
+          "text": "Your creature type is fey."
         },
         {
           "name": "Ram",
-          "text": "Unarmed strikes deal 1d6 bludgeoning.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d6 bludgeoning."
         },
         {
           "name": "Magic Resistance",
-          "text": "Advantage on saves against spells.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against spells."
         },
         {
           "name": "Mirthful Leaps",
-          "text": "Jumps go farther by 1d8 feet.",
-          "effects": []
+          "effects": [],
+          "text": "Jumps go farther by 1d8 feet."
         }
       ]
     },
@@ -11848,8 +12377,16 @@
       "traits": [
         {
           "name": "Shifting",
-          "text": "As a bonus action, shift for 1 minute: temp HP and a benefit by type (Beasthide, Longtooth, Swiftstride, Wildhunt). Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Shifting",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, shift for 1 minute: temp HP and a benefit by type (Beasthide, Longtooth, Swiftstride, Wildhunt). Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -11899,13 +12436,19 @@
       "traits": [
         {
           "name": "Cat's Claws",
-          "text": "Climbing speed equal to your walking speed, and unarmed strikes deal 1d6 slashing.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Climbing speed equal to your walking speed, and unarmed strikes deal 1d6 slashing."
         },
         {
           "name": "Feline Agility",
-          "text": "Double your speed until the end of the turn; recharge by not moving for a turn.",
-          "effects": []
+          "effects": [],
+          "text": "Double your speed until the end of the turn; recharge by not moving for a turn."
         }
       ]
     },
@@ -11962,23 +12505,29 @@
       "traits": [
         {
           "name": "Claws",
-          "text": "Unarmed strikes deal 1d6 slashing.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 6,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d6 slashing."
         },
         {
           "name": "Hold Breath",
-          "text": "Hold your breath for 1 hour.",
-          "effects": []
+          "effects": [],
+          "text": "Hold your breath for 1 hour."
         },
         {
           "name": "Natural Armor",
-          "text": "Your AC is 17 and you can't wear armor (use Valor manual in AC). Shields still apply.",
-          "effects": []
+          "effects": [],
+          "text": "Your AC is 17 and you can't wear armor (use Valor manual in AC). Shields still apply."
         },
         {
           "name": "Shell Defense",
-          "text": "As an action, withdraw into your shell for +4 AC and advantage on Strength and Constitution saves.",
-          "effects": []
+          "effects": [],
+          "text": "As an action, withdraw into your shell for +4 AC and advantage on Strength and Constitution saves."
         }
       ]
     },
@@ -12024,23 +12573,45 @@
       "traits": [
         {
           "name": "Amphibious",
-          "text": "Breathe air and water, swimming speed equal to your walking speed.",
-          "effects": []
+          "effects": [],
+          "text": "Breathe air and water, swimming speed equal to your walking speed."
         },
         {
           "name": "Control Air and Water",
-          "text": "Fog Cloud; Gust of Wind at 3rd and Water Walk at 5th, once per long rest each.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Fog Cloud",
+              "uses": "long"
+            },
+            {
+              "spell": "Gust of Wind",
+              "uses": "long",
+              "minLevel": 3
+            },
+            {
+              "spell": "Water Walk",
+              "uses": "long",
+              "minLevel": 5
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Fog Cloud; Gust of Wind at 3rd and Water Walk at 5th, once per long rest each."
         },
         {
           "name": "Emissary of the Sea",
-          "text": "Communicate simple ideas with beasts that can breathe water.",
-          "effects": []
+          "effects": [],
+          "text": "Communicate simple ideas with beasts that can breathe water."
         },
         {
           "name": "Guardian of the Depths",
-          "text": "Resistance to cold damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "cold"
+            ]
+          },
+          "text": "Resistance to cold damage."
         }
       ]
     },
@@ -12086,18 +12657,39 @@
       "traits": [
         {
           "name": "Magic Resistance",
-          "text": "Advantage on saves against spells.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on saves against spells."
         },
         {
           "name": "Poison Resilience",
-          "text": "Advantage on saves against poisoned and resistance to poison damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage on saves against poisoned and resistance to poison damage."
         },
         {
           "name": "Serpentine Spellcasting",
-          "text": "Poison Spray; Animal Friendship (snakes) at will; Suggestion at 3rd once per long rest.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Poison Spray",
+              "uses": "none"
+            },
+            {
+              "spell": "Animal Friendship",
+              "uses": "will"
+            },
+            {
+              "spell": "Suggestion",
+              "uses": "long",
+              "minLevel": 3
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Poison Spray; Animal Friendship (snakes) at will; Suggestion at 3rd once per long rest."
         }
       ]
     },
@@ -12122,23 +12714,28 @@
       "traits": [
         {
           "name": "Dual Mind",
-          "text": "Advantage on Wisdom saves.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Wisdom saves."
         },
         {
           "name": "Mental Discipline",
-          "text": "Resistance to psychic damage.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "psychic"
+            ]
+          },
+          "text": "Resistance to psychic damage."
         },
         {
           "name": "Mind Link",
-          "text": "Telepathy with creatures within 10 feet times your level.",
-          "effects": []
+          "effects": [],
+          "text": "Telepathy with creatures within 10 feet times your level."
         },
         {
           "name": "Severed from Dreams",
-          "text": "Immune to spells that require you to dream.",
-          "effects": []
+          "effects": [],
+          "text": "Immune to spells that require you to dream."
         }
       ]
     },
@@ -12185,24 +12782,29 @@
       "traits": [
         {
           "name": "Constructed Resilience",
-          "text": "Advantage against poison, resistance to poison damage, no need to eat, drink or breathe, immune to disease and magical sleep.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage against poison, resistance to poison damage, no need to eat, drink or breathe, immune to disease and magical sleep."
         },
         {
           "name": "Sentry's Rest",
-          "text": "Your long rest is 6 hours of inactive but conscious state.",
-          "effects": []
+          "effects": [],
+          "text": "Your long rest is 6 hours of inactive but conscious state."
         },
         {
           "name": "Integrated Protection",
-          "text": "+1 to AC, and armor takes an hour to don or doff.",
           "effects": [
             {
               "target": "ac",
               "value": 1,
               "conditional": false
             }
-          ]
+          ],
+          "text": "+1 to AC, and armor takes an hour to don or doff."
         }
       ]
     },
@@ -12235,13 +12837,27 @@
       "traits": [
         {
           "name": "Claws",
-          "text": "Unarmed strikes deal 1d4 slashing.",
-          "effects": []
+          "effects": [
+            {
+              "target": "unarmed-die",
+              "value": 4,
+              "conditional": false
+            }
+          ],
+          "text": "Unarmed strikes deal 1d4 slashing."
         },
         {
           "name": "Daunting Roar",
-          "text": "As a bonus action, frighten creatures within 10 feet on a failed Wisdom save. Once per short or long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Daunting Roar",
+              "uses": "1",
+              "recharge": "short",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, frighten creatures within 10 feet on a failed Wisdom save. Once per short or long rest."
         }
       ]
     },
@@ -12290,13 +12906,13 @@
       "traits": [
         {
           "name": "Flight",
-          "text": "Flying speed equal to your walking speed, but not in medium or heavy armor.",
-          "effects": []
+          "effects": [],
+          "text": "Flying speed equal to your walking speed, but not in medium or heavy armor."
         },
         {
           "name": "Silent Feathers",
-          "text": "Proficiency in Stealth.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in Stealth."
         }
       ]
     },
@@ -12346,18 +12962,26 @@
       "traits": [
         {
           "name": "Deathless Nature",
-          "text": "You don't need to breathe.",
-          "effects": []
+          "effects": [],
+          "text": "You don't need to breathe."
         },
         {
           "name": "Spider Climb",
-          "text": "Climbing speed equal to your walking speed; from 3rd level you can climb ceilings.",
-          "effects": []
+          "effects": [],
+          "text": "Climbing speed equal to your walking speed; from 3rd level you can climb ceilings."
         },
         {
           "name": "Vampiric Bite",
-          "text": "Bite (1d4 + Con) that can heal you or empower your next check or attack. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Vampiric Bite",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Bite (1d4 + Con) that can heal you or empower your next check or attack. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -12403,13 +13027,24 @@
       "traits": [
         {
           "name": "Eerie Token",
-          "text": "Detach a token to communicate telepathically or see through it.",
-          "effects": []
+          "effects": [],
+          "text": "Detach a token to communicate telepathically or see through it."
         },
         {
           "name": "Hex Magic",
-          "text": "Cast Disguise Self and Hex once each per long rest without a slot.",
-          "effects": []
+          "effects": [],
+          "spells": [
+            {
+              "spell": "Disguise Self",
+              "uses": "long"
+            },
+            {
+              "spell": "Hex",
+              "uses": "long"
+            }
+          ],
+          "spellAbility": "pick",
+          "text": "Cast Disguise Self and Hex once each per long rest without a slot."
         }
       ]
     },
@@ -12455,13 +13090,26 @@
       "traits": [
         {
           "name": "Deathless Nature",
-          "text": "Advantage against disease and poison, resistance to poison, and no need to eat, drink, breathe or sleep.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Advantage against disease and poison, resistance to poison, and no need to eat, drink, breathe or sleep."
         },
         {
           "name": "Knowledge from a Past Life",
-          "text": "Add 1d6 to an ability check. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Knowledge from a Past Life",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Add 1d6 to an ability check. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -12517,18 +13165,34 @@
       "traits": [
         {
           "name": "Fearless",
-          "text": "Advantage against frightened, and once per long rest succeed on a failed save against it.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Fearless",
+              "uses": "1",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Advantage against frightened, and once per long rest succeed on a failed save against it."
         },
         {
           "name": "Kender Aptitude",
-          "text": "Proficiency in one skill from the list.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency in one skill from the list."
         },
         {
           "name": "Taunt",
-          "text": "As a bonus action, a creature within 60 feet makes a Wisdom save or has disadvantage attacking others. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Taunt",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a bonus action, a creature within 60 feet makes a Wisdom save or has disadvantage attacking others. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -12582,23 +13246,36 @@
       "traits": [
         {
           "name": "Armored Casing",
-          "text": "Without armor, your AC is 13 + Dexterity modifier (use Mage Armor mode).",
-          "effects": []
+          "effects": [],
+          "text": "Without armor, your AC is 13 + Dexterity modifier (use Mage Armor mode)."
         },
         {
           "name": "Built for Success",
-          "text": "Add 1d4 to an attack, check or save. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Built for Success",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Add 1d4 to an attack, check or save. Proficiency bonus uses per long rest."
         },
         {
           "name": "Mechanical Nature",
-          "text": "Resistance to poison, advantage against paralysis, poison and disease, no need to eat or breathe.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "poison"
+            ]
+          },
+          "text": "Resistance to poison, advantage against paralysis, poison and disease, no need to eat or breathe."
         },
         {
           "name": "Sentry's Rest",
-          "text": "Your long rest is 6 hours of inactive but conscious state.",
-          "effects": []
+          "effects": [],
+          "text": "Your long rest is 6 hours of inactive but conscious state."
         }
       ]
     },
@@ -12644,18 +13321,26 @@
       "traits": [
         {
           "name": "Astral Spark",
-          "text": "Once per turn, a simple or martial weapon hit adds force damage equal to your proficiency bonus. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Astral Spark",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "Once per turn, a simple or martial weapon hit adds force damage equal to your proficiency bonus. Proficiency bonus uses per long rest."
         },
         {
           "name": "Firearms Mastery",
-          "text": "Proficiency with all firearms, ignore loading, and no disadvantage at long range.",
-          "effects": []
+          "effects": [],
+          "text": "Proficiency with all firearms, ignore loading, and no disadvantage at long range."
         },
         {
           "name": "Hippo Build",
-          "text": "Advantage on Strength checks and saves, and count as larger for carrying.",
-          "effects": []
+          "effects": [],
+          "text": "Advantage on Strength checks and saves, and count as larger for carrying."
         }
       ]
     },
@@ -12701,18 +13386,26 @@
       "traits": [
         {
           "name": "Dexterous Feet",
-          "text": "Use an object as a bonus action.",
-          "effects": []
+          "effects": [],
+          "text": "Use an object as a bonus action."
         },
         {
           "name": "Glide",
-          "text": "Glide 5 feet horizontally per 1 foot of descent and take no falling damage.",
-          "effects": []
+          "effects": [],
+          "text": "Glide 5 feet horizontally per 1 foot of descent and take no falling damage."
         },
         {
           "name": "Hadozee Dodge",
-          "text": "As a reaction, reduce damage by 1d6 + proficiency bonus. Proficiency bonus uses per long rest.",
-          "effects": []
+          "effects": [],
+          "resources": [
+            {
+              "name": "Hadozee Dodge",
+              "uses": "pb",
+              "recharge": "long",
+              "die": ""
+            }
+          ],
+          "text": "As a reaction, reduce damage by 1d6 + proficiency bonus. Proficiency bonus uses per long rest."
         }
       ]
     },
@@ -12758,23 +13451,29 @@
       "traits": [
         {
           "name": "Amorphous",
-          "text": "Squeeze through 1-inch spaces and advantage to escape grapples.",
-          "effects": []
+          "effects": [],
+          "text": "Squeeze through 1-inch spaces and advantage to escape grapples."
         },
         {
           "name": "Hold Breath",
-          "text": "Hold your breath for 1 hour.",
-          "effects": []
+          "effects": [],
+          "text": "Hold your breath for 1 hour."
         },
         {
           "name": "Natural Resilience",
-          "text": "Resistance to acid and poison damage, and advantage against poisoned.",
-          "effects": []
+          "effects": [],
+          "grants": {
+            "resistances": [
+              "acid",
+              "poison"
+            ]
+          },
+          "text": "Resistance to acid and poison damage, and advantage against poisoned."
         },
         {
           "name": "Shape Self",
-          "text": "Reshape your body and form pseudopods.",
-          "effects": []
+          "effects": [],
+          "text": "Reshape your body and form pseudopods."
         }
       ]
     },
@@ -12820,23 +13519,23 @@
       "traits": [
         {
           "name": "Chameleon Carapace",
-          "text": "Without armor your AC is 13 + Dexterity modifier (use Mage Armor mode), and you can blend in for advantage on Stealth.",
-          "effects": []
+          "effects": [],
+          "text": "Without armor your AC is 13 + Dexterity modifier (use Mage Armor mode), and you can blend in for advantage on Stealth."
         },
         {
           "name": "Secondary Arms",
-          "text": "Two smaller arms that can wield light weapons.",
-          "effects": []
+          "effects": [],
+          "text": "Two smaller arms that can wield light weapons."
         },
         {
           "name": "Sleepless",
-          "text": "You don't need to sleep.",
-          "effects": []
+          "effects": [],
+          "text": "You don't need to sleep."
         },
         {
           "name": "Thri-kreen Telepathy",
-          "text": "Telepathy with a creature within 120 feet.",
-          "effects": []
+          "effects": [],
+          "text": "Telepathy with a creature within 120 feet."
         }
       ]
     },
@@ -12875,13 +13574,13 @@
       "traits": [
         {
           "name": "Variable Trait",
-          "text": "Choose darkvision 60 feet or proficiency in one skill.",
-          "effects": []
+          "effects": [],
+          "text": "Choose darkvision 60 feet or proficiency in one skill."
         },
         {
           "name": "Feat",
-          "text": "You gain one feat of your choice.",
-          "effects": []
+          "effects": [],
+          "text": "You gain one feat of your choice."
         }
       ]
     }
@@ -12901,8 +13600,8 @@
       "traits": [
         {
           "name": "Shelter of the Faithful",
-          "text": "You and your companions can receive free healing and care at temples of your faith.",
-          "effects": []
+          "effects": [],
+          "text": "You and your companions can receive free healing and care at temples of your faith."
         }
       ]
     },
@@ -12921,8 +13620,8 @@
       "traits": [
         {
           "name": "False Identity",
-          "text": "You have a second identity with documentation and contacts.",
-          "effects": []
+          "effects": [],
+          "text": "You have a second identity with documentation and contacts."
         }
       ]
     },
@@ -12941,8 +13640,8 @@
       "traits": [
         {
           "name": "Criminal Contact",
-          "text": "You have a reliable contact in a criminal network.",
-          "effects": []
+          "effects": [],
+          "text": "You have a reliable contact in a criminal network."
         }
       ]
     },
@@ -12961,8 +13660,8 @@
       "traits": [
         {
           "name": "Criminal Contact",
-          "text": "Variant of Criminal: you have a contact in a spy network.",
-          "effects": []
+          "effects": [],
+          "text": "Variant of Criminal: you have a contact in a spy network."
         }
       ]
     },
@@ -12981,8 +13680,8 @@
       "traits": [
         {
           "name": "By Popular Demand",
-          "text": "You can find a place to perform and receive free lodging and food.",
-          "effects": []
+          "effects": [],
+          "text": "You can find a place to perform and receive free lodging and food."
         }
       ]
     },
@@ -13001,8 +13700,8 @@
       "traits": [
         {
           "name": "By Popular Demand",
-          "text": "Variant of Entertainer: you perform in arenas.",
-          "effects": []
+          "effects": [],
+          "text": "Variant of Entertainer: you perform in arenas."
         }
       ]
     },
@@ -13021,8 +13720,8 @@
       "traits": [
         {
           "name": "Rustic Hospitality",
-          "text": "Common folk will shelter and hide you, as long as you don't endanger them.",
-          "effects": []
+          "effects": [],
+          "text": "Common folk will shelter and hide you, as long as you don't endanger them."
         }
       ]
     },
@@ -13043,8 +13742,8 @@
       "traits": [
         {
           "name": "Guild Membership",
-          "text": "Your guild offers lodging, legal help and access to influential contacts.",
-          "effects": []
+          "effects": [],
+          "text": "Your guild offers lodging, legal help and access to influential contacts."
         }
       ]
     },
@@ -13065,8 +13764,8 @@
       "traits": [
         {
           "name": "Guild Membership",
-          "text": "Variant of Guild Artisan for merchants.",
-          "effects": []
+          "effects": [],
+          "text": "Variant of Guild Artisan for merchants."
         }
       ]
     },
@@ -13087,8 +13786,8 @@
       "traits": [
         {
           "name": "Discovery",
-          "text": "You uncovered a unique and powerful secret during your seclusion.",
-          "effects": []
+          "effects": [],
+          "text": "You uncovered a unique and powerful secret during your seclusion."
         }
       ]
     },
@@ -13109,8 +13808,8 @@
       "traits": [
         {
           "name": "Position of Privilege",
-          "text": "You are welcome in high society and people assume you belong there.",
-          "effects": []
+          "effects": [],
+          "text": "You are welcome in high society and people assume you belong there."
         }
       ]
     },
@@ -13131,8 +13830,8 @@
       "traits": [
         {
           "name": "Retainers",
-          "text": "Variant of Noble: you have three loyal retainers.",
-          "effects": []
+          "effects": [],
+          "text": "Variant of Noble: you have three loyal retainers."
         }
       ]
     },
@@ -13153,8 +13852,8 @@
       "traits": [
         {
           "name": "Wanderer",
-          "text": "Excellent memory for geography, and you can find food and water for up to six people daily.",
-          "effects": []
+          "effects": [],
+          "text": "Excellent memory for geography, and you can find food and water for up to six people daily."
         }
       ]
     },
@@ -13172,8 +13871,8 @@
       "traits": [
         {
           "name": "Researcher",
-          "text": "When you don't know a piece of lore, you know where to find it.",
-          "effects": []
+          "effects": [],
+          "text": "When you don't know a piece of lore, you know where to find it."
         }
       ]
     },
@@ -13192,8 +13891,8 @@
       "traits": [
         {
           "name": "Ship's Passage",
-          "text": "You can secure free passage on a sailing ship for you and your companions.",
-          "effects": []
+          "effects": [],
+          "text": "You can secure free passage on a sailing ship for you and your companions."
         }
       ]
     },
@@ -13212,8 +13911,8 @@
       "traits": [
         {
           "name": "Bad Reputation",
-          "text": "Variant of Sailor: people fear you, so you can get away with minor crimes.",
-          "effects": []
+          "effects": [],
+          "text": "Variant of Sailor: people fear you, so you can get away with minor crimes."
         }
       ]
     },
@@ -13232,8 +13931,8 @@
       "traits": [
         {
           "name": "Military Rank",
-          "text": "Soldiers loyal to your former organization recognize your authority.",
-          "effects": []
+          "effects": [],
+          "text": "Soldiers loyal to your former organization recognize your authority."
         }
       ]
     },
@@ -13252,8 +13951,8 @@
       "traits": [
         {
           "name": "City Secrets",
-          "text": "You know secret paths and can travel twice as fast through a city.",
-          "effects": []
+          "effects": [],
+          "text": "You know secret paths and can travel twice as fast through a city."
         }
       ]
     },
@@ -13271,8 +13970,8 @@
       "traits": [
         {
           "name": "Watcher's Eye",
-          "text": "You can easily find the local watch post and spot criminal dens.",
-          "effects": []
+          "effects": [],
+          "text": "You can easily find the local watch post and spot criminal dens."
         }
       ]
     },
@@ -13293,8 +13992,8 @@
       "traits": [
         {
           "name": "Respect of the Stout Folk",
-          "text": "Dwarves grant you free lodging and food.",
-          "effects": []
+          "effects": [],
+          "text": "Dwarves grant you free lodging and food."
         }
       ]
     },
@@ -13319,8 +14018,8 @@
       "traits": [
         {
           "name": "Library Access",
-          "text": "You have access to libraries and archives that others can't use.",
-          "effects": []
+          "effects": [],
+          "text": "You have access to libraries and archives that others can't use."
         }
       ]
     },
@@ -13338,8 +14037,8 @@
       "traits": [
         {
           "name": "Court Functionary",
-          "text": "You know how bureaucracies work and can access records and officials.",
-          "effects": []
+          "effects": [],
+          "text": "You know how bureaucracies work and can access records and officials."
         }
       ]
     },
@@ -13372,8 +14071,8 @@
       "traits": [
         {
           "name": "Safe Haven",
-          "text": "Your faction's members offer you help and shelter.",
-          "effects": []
+          "effects": [],
+          "text": "Your faction's members offer you help and shelter."
         }
       ]
     },
@@ -13394,8 +14093,8 @@
       "traits": [
         {
           "name": "All Eyes on You",
-          "text": "People are curious about you and your foreign origin.",
-          "effects": []
+          "effects": [],
+          "text": "People are curious about you and your foreign origin."
         }
       ]
     },
@@ -13423,8 +14122,8 @@
       "traits": [
         {
           "name": "Inheritance",
-          "text": "You carry a valuable or mysterious object.",
-          "effects": []
+          "effects": [],
+          "text": "You carry a valuable or mysterious object."
         }
       ]
     },
@@ -13453,8 +14152,8 @@
       "traits": [
         {
           "name": "Knightly Regard",
-          "text": "Members of your order and those who respect it offer help and shelter.",
-          "effects": []
+          "effects": [],
+          "text": "Members of your order and those who respect it offer help and shelter."
         }
       ]
     },
@@ -13473,8 +14172,8 @@
       "traits": [
         {
           "name": "Mercenary Life",
-          "text": "You know the mercenary companies and can find work for your skills.",
-          "effects": []
+          "effects": [],
+          "text": "You know the mercenary companies and can find work for your skills."
         }
       ]
     },
@@ -13499,8 +14198,8 @@
       "traits": [
         {
           "name": "Ear to the Ground",
-          "text": "You have contacts in every city who give you information.",
-          "effects": []
+          "effects": [],
+          "text": "You have contacts in every city who give you information."
         }
       ]
     },
@@ -13521,8 +14220,8 @@
       "traits": [
         {
           "name": "Uthgardt Heritage",
-          "text": "You know the North's wilderness and find twice the food, and tribes welcome you.",
-          "effects": []
+          "effects": [],
+          "text": "You know the North's wilderness and find twice the food, and tribes welcome you."
         }
       ]
     },
@@ -13543,8 +14242,8 @@
       "traits": [
         {
           "name": "Kept in Style",
-          "text": "You can maintain a comfortable lifestyle in Waterdeep at no cost.",
-          "effects": []
+          "effects": [],
+          "text": "You can maintain a comfortable lifestyle in Waterdeep at no cost."
         }
       ]
     },
@@ -13567,8 +14266,8 @@
       "traits": [
         {
           "name": "Heart of Darkness",
-          "text": "Commoners sense your burden and help you, even taking up arms beside you.",
-          "effects": []
+          "effects": [],
+          "text": "Commoners sense your burden and help you, even taking up arms beside you."
         }
       ]
     },
@@ -13591,8 +14290,8 @@
       "traits": [
         {
           "name": "Official Inquiry",
-          "text": "You can gain access to people and places related to crimes.",
-          "effects": []
+          "effects": [],
+          "text": "You can gain access to people and places related to crimes."
         }
       ]
     },
@@ -13616,8 +14315,8 @@
       "traits": [
         {
           "name": "Historical Knowledge",
-          "text": "You can identify ruins and estimate the value of art objects.",
-          "effects": []
+          "effects": [],
+          "text": "You can identify ruins and estimate the value of art objects."
         }
       ]
     },
@@ -13640,8 +14339,8 @@
       "traits": [
         {
           "name": "Feywild Visitor",
-          "text": "Fey creatures treat you with curiosity and respect.",
-          "effects": []
+          "effects": [],
+          "text": "Fey creatures treat you with curiosity and respect."
         }
       ]
     },
@@ -13662,8 +14361,8 @@
       "traits": [
         {
           "name": "Carnival Companion",
-          "text": "You have a contact at the Witchlight Carnival.",
-          "effects": []
+          "effects": [],
+          "text": "You have a contact at the Witchlight Carnival."
         }
       ]
     },
@@ -13682,8 +14381,8 @@
       "traits": [
         {
           "name": "Divine Contact",
-          "text": "You gain Magic Initiate (Cleric) and once met a god in the Astral Sea.",
-          "effects": []
+          "effects": [],
+          "text": "You gain Magic Initiate (Cleric) and once met a god in the Astral Sea."
         }
       ]
     },
@@ -13703,8 +14402,8 @@
       "traits": [
         {
           "name": "Wildspace Adaptation",
-          "text": "You gain the Tough feat and advantage on saves against nausea in zero gravity.",
-          "effects": []
+          "effects": [],
+          "text": "You gain the Tough feat and advantage on saves against nausea in zero gravity."
         }
       ]
     },
@@ -13723,8 +14422,8 @@
       "traits": [
         {
           "name": "Squire of Solamnia",
-          "text": "You gain the Squire of Solamnia feat.",
-          "effects": []
+          "effects": [],
+          "text": "You gain the Squire of Solamnia feat."
         }
       ]
     },
@@ -13743,8 +14442,8 @@
       "traits": [
         {
           "name": "Initiate of High Sorcery",
-          "text": "You gain the Initiate of High Sorcery feat.",
-          "effects": []
+          "effects": [],
+          "text": "You gain the Initiate of High Sorcery feat."
         }
       ]
     }
@@ -17656,7 +18355,7 @@
       "effects": [
         {
           "target": "unarmed-die",
-          "value": 6,
+          "value": 8,
           "conditional": false
         }
       ],

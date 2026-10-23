@@ -592,12 +592,12 @@ export function attacks(c: Character, weaponProfs: string[], granted: Effect[] =
 
   const unarmedAbility: Ability = monkDie && dex > str ? 'dex' : 'str';
   const um = abilityMod(c, unarmedAbility);
-  // Unarmed Fighting (d6, d8 sin armas ni shield) y Tavern Brawler (d4): se usa el dado mayor, también contra Martial Arts.
+  // Armas naturales (d6), Tavern Brawler (d4) y Unarmed Fighting (8: d8 con las manos libres, si no d6). Gana el dado mayor.
   let ud = Math.max(0, ...[...c.effects, ...granted].filter((e) => e.target === 'unarmed-die' && (!e.conditional || e.active)).map((e) => e.value));
   const unarmedNotes: string[] = monkDie ? ['Martial Arts'] : [];
-  if (ud === 6) {
-    if (!equippedWeapons.length && !usingShield(c)) ud = 8;
-    else unarmedNotes.push(tr('Unarmed Fighting: d8 con las dos manos libres'));
+  if (ud === 8 && (equippedWeapons.length || usingShield(c))) {
+    ud = 6;
+    unarmedNotes.push(tr('Unarmed Fighting: d8 con las dos manos libres'));
   }
   const die = Math.max(ud, monkDie ?? 0);
   out.push({

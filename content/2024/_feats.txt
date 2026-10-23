@@ -122,7 +122,7 @@ Draw thrown weapons as part of the attack, and +2 damage with them. {dmgthrown +
 @feat Two-Weapon Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
 Add your ability modifier to the damage of the extra Light weapon attack. {twf +1}
 @feat Unarmed Fighting | cat fighting style | prereq Fighting Style feature | source PHB 2024
-Unarmed strikes deal 1d6 (1d8 with both hands free) + Strength, and you damage creatures you grapple. {unarmed +6}
+Unarmed strikes deal 1d6 (1d8 with both hands free) + Strength, and you damage creatures you grapple. {unarmed +8}
 @feat Boon of Combat Prowess | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 Once per turn, turn a missed attack into a hit.
 @feat Boon of Dimensional Travel | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024

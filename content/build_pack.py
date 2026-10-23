@@ -42,7 +42,10 @@ def parse_header(line: str) -> dict:
     return head
 
 
-GRANT = re.compile(r"\{(skill|expertise|skillpick|armor|weapons|tools|lang|toolpick|langpick|save|savepick|res|pick)\s+([^}]*)\}")
+GRANT = re.compile(r"\{(skill|expertise|skillpick|armor|weapons|tools|lang|toolpick|langpick|save|savepick|res|pick|resist)\s+([^}]*)\}")
+# Spells de rasgos de raza: {spells Light; Faerie Fire long @3; Darkness long @5} {castwith cha}
+SPELLTOK = re.compile(r"\{spells\s+([^}]*)\}")
+CASTWITH = re.compile(r"\{castwith\s+(\w+)\}")
 ABBR = ["str", "dex", "con", "int", "wis", "cha"]
 
 
@@ -59,6 +62,8 @@ def grant_tokens(text: str, where: str):
             grants.setdefault(key, []).extend(csv(arg))
         elif kind == "lang":
             grants.setdefault("languages", []).extend(csv(arg))
+        elif kind == "resist":
+            grants.setdefault("resistances", []).extend(x.lower() for x in csv(arg))
         elif kind == "skillpick":
             bits = arg.split(None, 2)
             if bits[1] not in ("prof", "expertise", "either", "upgrade"):
@@ -211,7 +216,23 @@ def entry_body(entry: dict, line: str, where: str):
     if line.startswith("- "):
         name, _, text = line[2:].partition(" | ")
         effects = effects_of(text)
-        entry.setdefault("traits", []).append({"name": name.strip(), "text": EFFECT.sub("", text).strip(), "effects": effects})
+        text = EFFECT.sub("", text)
+        grants, resources, _, text = grant_tokens(text, where)
+        trait = {"name": name.strip(), "effects": effects}
+        m = SPELLTOK.search(text)
+        if m:
+            trait["spells"] = [feat_spell(x.strip()) for x in m.group(1).split(";") if x.strip()]
+            text = SPELLTOK.sub("", text)
+        m = CASTWITH.search(text)
+        if m:
+            trait["spellAbility"] = m.group(1)
+            text = CASTWITH.sub("", text)
+        if grants:
+            trait["grants"] = grants
+        if resources:
+            trait["resources"] = resources
+        trait["text"] = re.sub(r"\s{2,}", " ", text).strip()
+        entry.setdefault("traits", []).append(trait)
     else:
         effects = effects_of(line)
         if effects:
@@ -299,6 +320,18 @@ def feat_entry(name, parts, f):
 
 
 def feat_spell(item: str) -> dict:
+    min_level = 1
+    m = re.search(r"\s+@(\d+)$", item)
+    if m:
+        min_level = int(m.group(1))
+        item = item[: m.start()]
+    out = _feat_spell(item)
+    if min_level > 1:
+        out["minLevel"] = min_level
+    return out
+
+
+def _feat_spell(item: str) -> dict:
     uses = "none"
     m = re.search(r"\s+(long|short|will)$", item)
     if m:
