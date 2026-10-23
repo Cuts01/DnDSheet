@@ -171,6 +171,14 @@ export const upgradeSources = (c: Character, id: string) =>
     .filter(([src, list]) => list.includes(id) && isUpgrade(src) && liveSource(c, src))
     .map(([src]) => src);
 
+/* Tools con expertise por una elección de upgrade (Thieves' Tools del Rogue 2014). Devuelve los ids "tool:<slug>". */
+export const toolExpertise = (c: Character): Set<string> =>
+  new Set(
+    Object.entries(c.skillPicks)
+      .filter(([src]) => isUpgrade(src) && liveSource(c, src))
+      .flatMap(([, list]) => list.filter((x) => x.startsWith('tool:')))
+  );
+
 export function skillLevel(c: Character, s: SkillDef): ProfLevel {
   const manual = c.skills[s.id];
   if (manual === 'expertise') return manual;

@@ -38,6 +38,7 @@ export const FeatureGrantsSchema = z
         z.object({
           count: z.union([z.number().int().min(1).max(18), z.string().min(1)]).describe('Número o tabla por nivel, ej. "2@1,4@6"'),
           from: strs.describe('vacío = cualquier skill (en modo upgrade: las que ya tienes)'),
+          tools: strs.describe("Tools que también se pueden elegir en modo upgrade, ej. Thieves' Tools (Rogue 2014)"),
           mode: z
             .enum(['prof', 'expertise', 'either', 'upgrade'])
             .default('prof')

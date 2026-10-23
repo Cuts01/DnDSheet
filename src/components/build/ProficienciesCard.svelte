@@ -2,7 +2,8 @@
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Character, type ProfLevel } from '../../lib/model/character';
-  import { fmt, skillBonus, skillLevel, skillSources } from '../../lib/rules/derive';
+  import { fmt, skillBonus, skillLevel, skillSources, toolExpertise } from '../../lib/rules/derive';
+  import { slug } from '../../lib/model/pack';
   import { proficiencies, skillChoiceSlots } from '../../lib/rules/features';
   import { ABILITY_LABEL, SKILLS } from '../../lib/rules/tables';
 
@@ -10,7 +11,9 @@
 
   const slots = $derived(skillChoiceSlots(c, compendium.packs));
   const profs = $derived(proficiencies(c, compendium.packs));
-  const skillName = (id: string) => SKILLS.find((s) => s.id === id)?.name ?? id;
+  const toolName = (id: string) => profs.tools.find((x) => slug(x) === id.slice(5)) ?? id.slice(5);
+  const skillName = (id: string) => (id.startsWith('tool:') ? toolName(id) : (SKILLS.find((s) => s.id === id)?.name ?? id));
+  const toolX = $derived(toolExpertise(c));
   const srcName: Record<string, string> = {
     class: 'clase',
     species: 'raza',
@@ -161,7 +164,7 @@
         {#each profs[k] as p (p)}
           {@const extra = c.extraProficiencies[k].includes(p)}
           <span class="tag" class:extra>
-            {p}
+            {p}{k === 'tools' && toolX.has(`tool:${slug(p)}`) ? ' ◆' : ''}
             {#if extra}<button class="x" aria-label={`${t('Quitar')} ${p}`} onclick={() => (c.extraProficiencies[k] = c.extraProficiencies[k].filter((x) => x !== p))}>✕</button>{/if}
           </span>
         {:else}

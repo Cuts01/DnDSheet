@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-10-22T20:08:56Z"
+    "built": "2026-10-23T03:24:12Z"
   },
   "classes": [
     {
@@ -215,7 +215,8 @@
                   "Nature",
                   "Perception",
                   "Survival"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -373,7 +374,8 @@
               {
                 "count": "2@2,4@9",
                 "mode": "upgrade",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ]
           }
@@ -1339,7 +1341,8 @@
               {
                 "count": 1,
                 "mode": "upgrade",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ],
             "languageChoices": 2
@@ -1396,7 +1399,8 @@
               {
                 "count": 2,
                 "mode": "upgrade",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ]
           }
@@ -1531,7 +1535,8 @@
               {
                 "count": "2@1,4@6",
                 "mode": "upgrade",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ]
           }
@@ -1990,7 +1995,8 @@
                   "Medicine",
                   "Nature",
                   "Religion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -2870,7 +2876,8 @@
               {
                 "count": 3,
                 "mode": "prof",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ]
           }
@@ -2967,7 +2974,8 @@
                   "Nature",
                   "Perception",
                   "Survival"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -3055,7 +3063,8 @@
                   "Medicine",
                   "Persuasion",
                   "Religion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -3230,7 +3239,8 @@
                   "History",
                   "Nature",
                   "Religion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -3966,7 +3976,8 @@
                 "from": [
                   "Arcana",
                   "Nature"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -4039,7 +4050,8 @@
                   "Intimidation",
                   "Performance",
                   "Persuasion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -4124,7 +4136,8 @@
                   "Persuasion",
                   "Perception",
                   "Survival"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -4802,7 +4815,8 @@
                   "Intimidation",
                   "Performance",
                   "Persuasion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -5011,7 +5025,8 @@
                   "Deception",
                   "Performance",
                   "Persuasion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }
@@ -5501,7 +5516,8 @@
               {
                 "count": 1,
                 "mode": "prof",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ]
           }
@@ -6614,7 +6630,8 @@
               {
                 "count": 1,
                 "mode": "prof",
-                "from": []
+                "from": [],
+                "tools": []
               }
             ]
           }
@@ -6744,7 +6761,8 @@
                   "Deception",
                   "Intimidation",
                   "Persuasion"
-                ]
+                ],
+                "tools": []
               }
             ]
           }

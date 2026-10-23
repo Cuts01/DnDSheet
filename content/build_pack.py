@@ -51,7 +51,11 @@ def grant_tokens(text: str, where: str):
             if bits[1] not in ("prof", "expertise", "either", "upgrade"):
                 raise SystemExit(f"{where}: skillpick sin modo: {arg!r}")
             count = int(bits[0]) if bits[0].isdigit() else bits[0]
-            grants.setdefault("skillChoices", []).append({"count": count, "mode": bits[1], "from": csv(bits[2]) if len(bits) > 2 else []})
+            # Entradas con + son tools que también se pueden elegir: {skillpick 2 upgrade +Thieves' Tools}
+            items = csv(bits[2]) if len(bits) > 2 else []
+            grants.setdefault("skillChoices", []).append(
+                {"count": count, "mode": bits[1], "from": [x for x in items if not x.startswith("+")], "tools": [x[1:].strip() for x in items if x.startswith("+")]}
+            )
         elif kind == "toolpick":
             bits = arg.split(None, 1)
             grants.setdefault("toolChoices", []).append({"count": int(bits[0]), "from": csv(bits[1]) if len(bits) > 1 else []})

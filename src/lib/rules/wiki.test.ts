@@ -205,3 +205,17 @@ describe.skipIf(!p14)('Expertise de Rogue', () => {
     expect(syncGrants(legacy, [p14!])!.skillPicks[slot.source]).toEqual(['insight']);
   });
 });
+
+describe.skipIf(!p14 || !p24)('Expertise con Thieves Tools', () => {
+  it('Rogue 2014 puede elegir Thieves\' Tools; 2024 no', async () => {
+    const { featureSkillSlots } = await import('./grants');
+    const { toolExpertise } = await import('./derive');
+    const c: Character = { ...blankCharacter(), classes: [cls('Rogue', 1)], skillPicks: { class: ['stealth'] } };
+    const slot = featureSkillSlots(c, [p14!]).find((s) => s.label.startsWith('Expertise'))!;
+    expect(slot.from).toEqual(['stealth', 'tool:thieves-tools']);
+    c.skillPicks[slot.source] = ['tool:thieves-tools'];
+    expect(toolExpertise(c).has('tool:thieves-tools')).toBe(true);
+    const c24: Character = { ...blankCharacter(), ruleset: '2024', classes: [cls('Rogue', 1)], skillPicks: { class: ['stealth'] } };
+    expect(featureSkillSlots(c24, [p24!]).find((s) => s.label.startsWith('Expertise'))!.from).toEqual(['stealth']);
+  });
+});

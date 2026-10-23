@@ -1,7 +1,7 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry } from '../model/character';
 import { slug, type Feature, type FeatureGrants, type Pack, type PackOption } from '../model/pack';
 import { abilityMod, featureSource, pb, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
-import { findClass, findSubclass, featList } from './features';
+import { findClass, findSubclass, featList, proficiencies } from './features';
 import { SKILLS } from './tables';
 
 /*
@@ -306,6 +306,15 @@ export function featureSkillSlots(c: Character, packs: Pack[]): FeatureSkillSlot
         };
         const base = from.length ? from : SKILL_IDS;
         from = base.filter((id) => mine.includes(id) || (proficient(id) && !expertElsewhere(id)));
+        // Tools elegibles en el mismo slot, si eres proficient y no los elegiste en otro.
+        if (g.tools.length) {
+          const owned = proficiencies(c, packs).tools.map((x) => slug(x));
+          const elsewhere = Object.entries(c.skillPicks).filter(([k]) => k !== source && /^ftru:|^featu:/.test(k)).flatMap(([, v]) => v);
+          for (const tname of g.tools) {
+            const id = `tool:${slug(tname)}`;
+            if (mine.includes(id) || (owned.includes(slug(tname)) && !elsewhere.includes(id))) from.push(id);
+          }
+        }
       }
       out.push({ source, label: `${o.feature.name} (${modeLabel[g.mode]})`, count, from, mode: g.mode });
     });

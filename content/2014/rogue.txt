@@ -1,7 +1,7 @@
 @class Rogue | hitDie 8 | caster none | spell none | saves dex int | sublevel 3 | sublabel Roguish Archetype
 @prof armor light | weapons simple, hand crossbow, longsword, rapier, shortsword | tools Thieves' Tools | skills 4 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth
 @mc armor light | tools Thieves' Tools | skills 1 from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, Stealth
-1 | Expertise | Double your proficiency bonus for two skills or thieves' tools; two more at 6th level. {skillpick 2@1,4@6 upgrade}
+1 | Expertise | Double your proficiency bonus for two skills or thieves' tools; two more at 6th level. {skillpick 2@1,4@6 upgrade +Thieves' Tools}
 1 | Sneak Attack | Once per turn, deal extra damage with a finesse or ranged weapon hit if you have advantage or an ally is next to the target. The dice grow every odd level.
 1 | Thieves' Cant | You know the secret mix of jargon and signs rogues use to pass hidden messages.
 2 | Cunning Action | Take the Dash, Disengage or Hide action as a bonus action.
