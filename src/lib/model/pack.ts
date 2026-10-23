@@ -70,15 +70,14 @@ export type FeatureGrants = NonNullable<z.infer<typeof FeatureGrantsSchema>>;
  */
 export const AmountSchema = z.string().min(1);
 
-export const FeatureResourceSchema = z
-  .object({
-    name: z.string().min(1).describe('Ej. Superiority Dice, Rage, Ki Points'),
-    uses: AmountSchema,
-    recharge: z.string().default('long').describe('short, long o short1 (uno por Short Rest, todos por Long Rest). Acepta tabla: "long@1,short@5"'),
-    die: z.string().default('').describe('Dado del recurso, puede ser tabla: "d8@3,d10@10,d12@18"')
-  })
-  .nullable()
-  .default(null);
+export const ResourceDefSchema = z.object({
+  name: z.string().min(1).describe('Ej. Superiority Dice, Rage, Ki Points'),
+  uses: AmountSchema,
+  recharge: z.string().default('long').describe('short, long o short1 (uno por Short Rest, todos por Long Rest). Acepta tabla: "long@1,short@5"'),
+  die: z.string().default('').describe('Dado del recurso, puede ser tabla: "d8@3,d10@10,d12@18"')
+});
+export type ResourceDef = z.infer<typeof ResourceDefSchema>;
+export const FeatureResourceSchema = ResourceDefSchema.nullable().default(null);
 
 /* Elegir opciones de una lista del pack (maneuvers, fighting styles, metamagic...). "feat:<categoría>" usa feats del pack. */
 export const FeatureChooseSchema = z
@@ -215,6 +214,8 @@ export const PackFeatSchema = z.object({
   spells: z.array(GrantSpellSchema).default([]).describe('Spells que otorga el feat (Fey Touched, Magic Initiate...)'),
   grants: FeatureGrantsSchema.describe('Proficiencies fijas que da el feat (armor, weapons, tools, saves...)'),
   saveFromAsi: z.boolean().default(false).describe('Resilient: proficiency en el save de la ability que sube el feat'),
+  resources: z.array(ResourceDefSchema).default([]).describe('Usos del feat (Lucky: Luck Points). "level" es el nivel total'),
+  choose: FeatureChooseSchema.describe('Opciones a elegir (Martial Adept: maneuvers, Fighting Initiate: un Fighting Style)'),
   spellAbility: z
     .string()
     .default('')

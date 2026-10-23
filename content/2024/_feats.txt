@@ -6,7 +6,7 @@ Proficiency with three Artisan's Tools, a 20% discount on nonmagical items, and 
 @feat Healer | cat origin | source PHB 2024
 Spend a use of a Healer's Kit to let a creature spend a Hit Die and heal, adding your Proficiency Bonus; reroll 1s on healing dice.
 @feat Lucky | cat origin | source PHB 2024
-Luck Points equal to your Proficiency Bonus per Long Rest: give yourself advantage on a d20 Test or impose disadvantage on an attack against you.
+Luck Points equal to your Proficiency Bonus per Long Rest: give yourself advantage on a d20 Test or impose disadvantage on an attack against you. {res long pb Luck Points}
 @feat Magic Initiate | cat origin | repeatable | spells pick 2 L0 list:Cleric,Druid,Wizard; pick 1 L1 list:Cleric,Druid,Wizard long | castwith pick | source PHB 2024
 Choose Cleric, Druid or Wizard: learn two cantrips and a level 1 spell from that list, castable once per Long Rest without a slot (or with slots).
 @feat Musician | cat origin | source PHB 2024
@@ -26,7 +26,7 @@ Gain a Climb Speed equal to your Speed, stand up from Prone with 5 feet of movem
 @feat Charger | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
 Dash adds 10 feet of Speed; after moving 10 feet in a straight line, a melee hit deals 1d8 extra or pushes 10 feet, once per turn.
 @feat Chef | cat general | prereq Level 4+ | level 4 | asi con, wis | source PHB 2024
-Proficiency with Cook's Utensils; cook food that gives extra healing on Short Rests and treats that grant temp HP. {tools Cook's Utensils}
+Proficiency with Cook's Utensils; cook food that gives extra healing on Short Rests and treats that grant temp HP. {tools Cook's Utensils} {res long pb Chef Treats}
 @feat Crossbow Expert | cat general | prereq Level 4+, Dexterity 13+ | level 4 | asi dex | source PHB 2024
 Ignore Loading on crossbows, no disadvantage firing in melee, and add your ability modifier to the Light extra attack damage.
 @feat Crusher | cat general | prereq Level 4+ | level 4 | asi str, con | source PHB 2024
@@ -56,7 +56,7 @@ Proficiency or Expertise in a knowledge skill, and you can take the Study action
 @feat Lightly Armored | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
 Gain training with Light armor and Shields. {armor light, shields}
 @feat Mage Slayer | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
-Your hits impose disadvantage on concentration saves, and once per Long Rest turn a failed mental save into a success.
+Your hits impose disadvantage on concentration saves, and once per Long Rest turn a failed mental save into a success. {res long 1 Guarded Mind}
 @feat Martial Weapon Training | cat general | prereq Level 4+ | level 4 | asi str, dex | source PHB 2024
 Proficiency with Martial weapons.
 @feat Medium Armor Master | cat general | prereq Level 4+, Medium Armor training | level 4 | asi str, dex | source PHB 2024
@@ -76,7 +76,7 @@ Make a Bonus Action attack with the butt of a Quarterstaff, Spear or Heavy Reach
 @feat Resilient | cat general | prereq Level 4+ | level 4 | asi any | saveasi | source PHB 2024
 Gain proficiency in saving throws of the ability you increase.
 @feat Ritual Caster | cat general | prereq Level 4+, Intelligence, Wisdom or Charisma 13+ | level 4 | asi int, wis, cha | source PHB 2024
-Learn level 1 Ritual spells equal to your Proficiency Bonus, and cast one quickly once per Long Rest.
+Learn level 1 Ritual spells equal to your Proficiency Bonus, and cast one quickly once per Long Rest. {res long 1 Quick Ritual}
 @feat Sentinel | cat general | prereq Level 4+, Strength or Dexterity 13+ | level 4 | asi str, dex | source PHB 2024
 Opportunity attacks reduce Speed to 0, creatures that Disengage still provoke, and you can attack those who attack your allies.
 @feat Shadow Touched | cat general | prereq Level 4+ | level 4 | asi int, wis, cha | spells Invisibility long; pick 1 L1 illusion,necromancy long | castwith asi | source PHB 2024
@@ -130,19 +130,19 @@ After you take the Attack or Magic action, teleport up to 30 feet.
 @feat Boon of Energy Resistance | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 Resistance to two damage types, and redirect damage of those types to another creature with your Reaction.
 @feat Boon of Fate | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
-When a creature fails or succeeds on a d20 Test, add or subtract 2d4. Once per Initiative or rest.
+When a creature fails or succeeds on a d20 Test, add or subtract 2d4. Once per Initiative or rest. {res short 1 Boon of Fate}
 @feat Boon of Fortitude | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 Your HP maximum increases by 40, and healing gives you extra HP equal to your Constitution modifier once per turn. {hp +40}
 @feat Boon of Irresistible Offense | cat epic boon | prereq Level 19+ | level 19 | asi str, dex | source PHB 2024
 Your Bludgeoning, Piercing and Slashing damage ignores resistance, and a natural 20 adds damage equal to the ability score you raised.
 @feat Boon of Recovery | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
-Once per Long Rest, drop to 1 HP instead of 0 and regain half your HP, and a pool of ten d10s to heal as a Bonus Action.
+Once per Long Rest, drop to 1 HP instead of 0 and regain half your HP, and a pool of ten d10s to heal as a Bonus Action. {res long 1 Last Stand} {res long 10 die:d10 Recovery Dice}
 @feat Boon of Skill | cat epic boon | prereq Level 19+ | level 19 | asi any | skills 18 prof; 1 expertise | source PHB 2024
 Proficiency in all skills and Expertise in one.
 @feat Boon of Speed | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 Your Speed increases by 30 feet, and you can Disengage as a Bonus Action. {speed +30}
 @feat Boon of Spell Recall | cat epic boon | prereq Level 19+, Spellcasting | level 19 | asi int, wis, cha | source PHB 2024
-Once per Long Rest, cast a level 1 to 4 spell without expending a slot.
+Once per Long Rest, cast a level 1 to 4 spell without expending a slot. {res long 1 Free Spell (Spell Recall)}
 @feat Boon of the Night Spirit | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 In dim light or darkness, become Invisible as a Bonus Action and resist all damage except Psychic and Radiant.
 @feat Boon of Truesight | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024

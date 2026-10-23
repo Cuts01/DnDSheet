@@ -3,7 +3,7 @@ import { parsePack, type Pack } from './model/pack';
 import { t as tr } from './i18n.svelte';
 
 /* Los packs de la wiki generados antes de esta fecha no traen spells, passives, spells de subclass ni spells de feats. */
-export const MIN_WIKI_BUILT = '2026-10-23T17:35:00Z';
+export const MIN_WIKI_BUILT = '2026-10-23T17:42:00Z';
 export const isStale = (p: Pack) => p.pack.id.startsWith('wiki-') && (p.pack.built || '') < MIN_WIKI_BUILT;
 export const stalePacks = () => compendium.packs.filter(isStale);
 

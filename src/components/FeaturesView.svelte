@@ -11,7 +11,10 @@
   let showNext = $state(false);
   const slots = $derived(new Map(featureChoiceSlots(store.c, compendium.packs).map((x) => [x.featureId, x])));
   const extras = $derived(extraChoices(store.c, compendium.packs));
-  const resources = $derived(new Map(featureResources(store.c, compendium.packs).map((r) => [r.featureId, r])));
+  const allRes = $derived(featureResources(store.c, compendium.packs));
+  const resources = $derived(new Map(allRes.map((r) => [r.featureId, r])));
+  const resLine = (r: (typeof allRes)[number]) =>
+    `${r.max}${r.die ? ` × ${r.die}` : ''} · ${r.recharge === 'short' ? 'Short Rest' : r.recharge === 'short1' ? t('1 por Short Rest, todos por Long Rest') : 'Long Rest'}`;
   // Skills a elección de features: se eligen en Editar > Proficiencies; aquí solo se avisa si falta.
   const skillSlots = $derived(featureSkillSlots(store.c, compendium.packs));
   const skillPending = (fid: string) =>
@@ -110,9 +113,17 @@
       <h2>Feats</h2>
       {#each featRows as f (f.key)}
         <details class="feat">
-          <summary><span class="lvl num">F</span><span class="name">{f.name}</span><span class="tag">{f.tag}</span></summary>
+          <summary>
+            <span class="lvl num">F</span><span class="name">{f.name}</span>
+            {#if slots.get(`feat:${f.key}`) && slots.get(`feat:${f.key}`)!.chosen.length < slots.get(`feat:${f.key}`)!.count}<span class="tag todo">{t('elegir {n}', { n: slots.get(`feat:${f.key}`)!.count - slots.get(`feat:${f.key}`)!.chosen.length })}</span>{/if}
+            <span class="tag">{f.tag}</span>
+          </summary>
           {#if f.prereq}<div class="text muted small">{t('Requisito')}: {f.prereq}</div>{/if}
           <div class="text">{f.text || t('Sin texto.')}</div>
+          {#each allRes.filter((r) => r.featureId === `feat:${f.key}`) as r (r.key)}
+            <p class="grant small"><b>{r.name}</b>: {resLine(r)}</p>
+          {/each}
+          <FeatureChoices slot={slots.get(`feat:${f.key}`) ?? null} />
         </details>
       {/each}
     </div>

@@ -264,3 +264,18 @@ describe.skipIf(!p14 || !p24)('feats y fighting styles con números', () => {
     expect(ls24.damage).toBe('1d8 + 5');
   });
 });
+
+describe.skipIf(!p14 || !p24)('recursos de feats', () => {
+  it('Lucky da Luck Points (3 en 2014, PB en 2024) y Martial Adept da su dado y maneuvers', async () => {
+    const { featureResources, featureChoiceSlots } = await import('./grants');
+    const c: Character = { ...blankCharacter(), classes: [cls('Fighter', 4)] };
+    const slot = asiSlots(c)[0];
+    c.advancements[slot.key] = { kind: 'feat', asi: [], featRef: 'wiki-2014:lucky', featName: 'Lucky', featAbility: null } as Character['advancements'][string];
+    expect(featureResources(c, [p14!]).find((r) => r.name === 'Luck Points')).toMatchObject({ max: 3, recharge: 'long' });
+    c.feats = [{ id: 'x', ref: 'wiki-2014:martial-adept', name: 'Martial Adept', source: 'other', ability: null }];
+    expect(featureResources(c, [p14!]).find((r) => r.name === 'Superiority Die')).toMatchObject({ max: 1, die: 'd6', recharge: 'short' });
+    expect(featureChoiceSlots(c, [p14!]).find((s) => s.featureId === 'feat:x')?.count).toBe(2);
+    const c24: Character = { ...blankCharacter(), ruleset: '2024', classes: [cls('Fighter', 5)], feats: [{ id: 'y', ref: 'wiki-2024:lucky', name: 'Lucky', source: 'background', ability: null }] };
+    expect(featureResources(c24, [p24!]).find((r) => r.name === 'Luck Points')?.max).toBe(3);
+  });
+});

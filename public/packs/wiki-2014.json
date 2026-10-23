@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-10-23T17:35:46Z"
+    "built": "2026-10-23T17:42:44Z"
   },
   "classes": [
     {
@@ -13949,7 +13949,15 @@
       "name": "Lucky",
       "category": "general",
       "source": "PHB",
-      "text": "Three luck points per long rest to reroll your attack, check or save, or an attack against you."
+      "text": "Three luck points per long rest to reroll your attack, check or save, or an attack against you.",
+      "resources": [
+        {
+          "name": "Luck Points",
+          "uses": "3",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Mage Slayer",
@@ -14003,7 +14011,20 @@
       "name": "Martial Adept",
       "category": "general",
       "source": "PHB",
-      "text": "Learn two Battle Master maneuvers and gain one d6 superiority die per short rest."
+      "text": "Learn two Battle Master maneuvers and gain one d6 superiority die per short rest.",
+      "resources": [
+        {
+          "name": "Superiority Die",
+          "uses": "1",
+          "recharge": "short",
+          "die": "d6"
+        }
+      ],
+      "choose": {
+        "list": "maneuvers",
+        "count": "2",
+        "label": "Maneuvers"
+      }
     },
     {
       "name": "Medium Armor Master",
@@ -14336,7 +14357,15 @@
         ]
       },
       "source": "XGtE",
-      "text": "After you take damage, use your reaction to become invisible until the end of your next turn. Once per short or long rest."
+      "text": "After you take damage, use your reaction to become invisible until the end of your next turn. Once per short or long rest.",
+      "resources": [
+        {
+          "name": "Fade Away",
+          "uses": "1",
+          "recharge": "short",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Fey Teleportation",
@@ -14398,7 +14427,15 @@
         ]
       },
       "source": "XGtE",
-      "text": "Once per short rest, add one extra weapon damage die, and when you use Relentless Endurance you can attack as a reaction."
+      "text": "Once per short rest, add one extra weapon damage die, and when you use Relentless Endurance you can attack as a reaction.",
+      "resources": [
+        {
+          "name": "Orcish Fury",
+          "uses": "1",
+          "recharge": "short",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Prodigy",
@@ -14432,7 +14469,15 @@
         ]
       },
       "source": "XGtE",
-      "text": "When a creature hits you, use your reaction to make it reroll. Once per initiative or rest."
+      "text": "When a creature hits you, use your reaction to make it reroll. Once per initiative or rest.",
+      "resources": [
+        {
+          "name": "Second Chance",
+          "uses": "1",
+          "recharge": "short",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Squat Nimbleness",
@@ -14541,7 +14586,15 @@
         "tools": [
           "Cook's Utensils"
         ]
-      }
+      },
+      "resources": [
+        {
+          "name": "Chef Treats",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Crusher",
@@ -14601,7 +14654,12 @@
       "category": "general",
       "prerequisite": "Proficiency with a martial weapon",
       "source": "TCoE",
-      "text": "Learn one Fighting Style from the fighter list."
+      "text": "Learn one Fighting Style from the fighter list.",
+      "choose": {
+        "list": "fighting-style",
+        "count": "1",
+        "label": "Fighting Style"
+      }
     },
     {
       "name": "Gunner",
@@ -14620,7 +14678,20 @@
       "category": "general",
       "prerequisite": "Spellcasting or Pact Magic feature",
       "source": "TCoE",
-      "text": "Learn two Metamagic options and gain 2 sorcery points to use them."
+      "text": "Learn two Metamagic options and gain 2 sorcery points to use them.",
+      "resources": [
+        {
+          "name": "Sorcery Points (Metamagic Adept)",
+          "uses": "2",
+          "recharge": "long",
+          "die": ""
+        }
+      ],
+      "choose": {
+        "list": "metamagic",
+        "count": "2",
+        "label": "Metamagic"
+      }
     },
     {
       "name": "Piercer",
@@ -14762,7 +14833,21 @@
       "name": "Gift of the Chromatic Dragon",
       "category": "general",
       "source": "FToD",
-      "text": "Infuse a weapon with elemental damage (+1d4) once per long rest, and use your reaction to gain resistance to an element (proficiency bonus uses)."
+      "text": "Infuse a weapon with elemental damage (+1d4) once per long rest, and use your reaction to gain resistance to an element (proficiency bonus uses).",
+      "resources": [
+        {
+          "name": "Chromatic Infusion",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        },
+        {
+          "name": "Reactive Resistance",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Gift of the Gem Dragon",
@@ -14776,7 +14861,15 @@
         ]
       },
       "source": "FToD",
-      "text": "When a creature within 10 feet damages you, use your reaction to deal force damage and push it on a failed Strength save."
+      "text": "When a creature within 10 feet damages you, use your reaction to deal force damage and push it on a failed Strength save.",
+      "resources": [
+        {
+          "name": "Telekinetic Reprisal",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Gift of the Metallic Dragon",
@@ -14789,7 +14882,15 @@
       ],
       "spellAbility": "wis",
       "source": "FToD",
-      "text": "Cast Cure Wounds once per long rest, and use your reaction to add 1d4 to an ally's AC with protective wings."
+      "text": "Cast Cure Wounds once per long rest, and use your reaction to add 1d4 to an ally's AC with protective wings.",
+      "resources": [
+        {
+          "name": "Protective Wings",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Aberrant Dragonmark",
@@ -14990,7 +15091,15 @@
       "category": "background",
       "prerequisite": "Knight of Solamnia background",
       "source": "DSotDQ",
-      "text": "Gain advantage on a weapon attack and extra damage on a hit (Precise Strike), proficiency bonus uses per long rest, and a mounted combat benefit."
+      "text": "Gain advantage on a weapon attack and extra damage on a hit (Precise Strike), proficiency bonus uses per long rest, and a mounted combat benefit.",
+      "resources": [
+        {
+          "name": "Precise Strike",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Initiate of High Sorcery",

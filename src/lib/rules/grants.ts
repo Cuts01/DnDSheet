@@ -119,6 +119,49 @@ export function featureResources(c: Character, packs: Pack[]): FeatureResource[]
       picks: c.featureChoices[o.feature.id] ?? []
     });
   }
+  // Recursos de feats (Lucky, Martial Adept, Metamagic Adept...). Cada instancia del feat tiene los suyos.
+  const total = c.classes.reduce((s, k) => s + k.level, 0);
+  for (const fi of featInstances(c, packs)) {
+    const f = fi.feat?.item;
+    if (!f?.resources.length) continue;
+    const fid = `feat:${fi.owner}`;
+    f.resources.forEach((r, i) => {
+      const recharge = (tableValue(r.recharge, total) ?? 'long') as Recharge;
+      const max = evalAmount(r.uses, c, total);
+      if (max <= 0) return;
+      const key = `${PREFIX[recharge] ?? 'L'}:${fid}#${i}`;
+      out.push({
+        key,
+        name: r.name,
+        max,
+        used: Math.min(max, c.featureUsed[key] ?? 0),
+        die: r.die ? (tableValue(r.die, total) ?? '') : '',
+        recharge,
+        featureId: fid,
+        picks: i === 0 ? (c.featureChoices[fid] ?? []) : []
+      });
+    });
+  }
+  return out;
+}
+
+/* Quien elige opciones: class features con "choose" y feats con "choose" (Martial Adept, Fighting Initiate...). */
+interface Chooser {
+  id: string; // clave en c.featureChoices
+  name: string;
+  choose: NonNullable<Feature['choose']>;
+  level: number;
+  owned?: OwnedClassFeature;
+}
+function choosers(c: Character, packs: Pack[]): Chooser[] {
+  const out: Chooser[] = [];
+  for (const o of ownedFeatures(c, packs))
+    if (o.feature.choose) out.push({ id: o.feature.id, name: o.feature.name, choose: o.feature.choose, level: o.entry.level, owned: o });
+  const total = c.classes.reduce((s, k) => s + k.level, 0);
+  for (const fi of featInstances(c, packs)) {
+    const f = fi.feat?.item;
+    if (f?.choose) out.push({ id: `feat:${fi.owner}`, name: f.name, choose: f.choose, level: total });
+  }
   return out;
 }
 
@@ -164,20 +207,18 @@ export interface FeatureChoiceSlot {
 
 export function featureChoiceSlots(c: Character, packs: Pack[]): FeatureChoiceSlot[] {
   const out: FeatureChoiceSlot[] = [];
-  for (const o of ownedFeatures(c, packs)) {
-    const ch = o.feature.choose;
-    if (!ch) continue;
-    const count = evalAmount(ch.count, c, o.entry.level);
+  for (const ch of choosers(c, packs)) {
+    const count = evalAmount(ch.choose.count, c, ch.level);
     if (count <= 0) continue;
-    const list = optionList(packs, c.ruleset, ch.list);
+    const list = optionList(packs, c.ruleset, ch.choose.list);
     out.push({
-      featureId: o.feature.id,
-      featureName: o.feature.name,
-      label: ch.label || list.name,
+      featureId: ch.id,
+      featureName: ch.name,
+      label: ch.choose.label || list.name,
       count,
-      level: o.entry.level,
+      level: ch.level,
       options: list.options,
-      chosen: c.featureChoices[o.feature.id] ?? []
+      chosen: c.featureChoices[ch.id] ?? []
     });
   }
   return out;
@@ -205,10 +246,11 @@ function grantUnits(c: Character, packs: Pack[]): GrantUnit[] {
 /* Efectos de las opciones elegidas: de la lista del pack o de feats (Fighting Style 2024 se elige como feat). */
 export function chosenOptionEffects(c: Character, packs: Pack[]) {
   const out: { id: string; name: string; effects: PackEffect[] }[] = [];
-  for (const o of ownedFeatures(c, packs)) {
-    const ch = o.feature.choose;
-    const chosen = c.featureChoices[o.feature.id] ?? [];
-    if (!ch || !chosen.length) continue;
+  for (const cs of choosers(c, packs)) {
+    const ch = cs.choose;
+    const o = { feature: { id: cs.id } };
+    const chosen = c.featureChoices[cs.id] ?? [];
+    if (!chosen.length) continue;
     if (ch.list.startsWith('feat:')) {
       for (const name of chosen) {
         const f = featList(packs, c.ruleset).find((x) => x.item.name === name && x.pack.pack.ruleset === c.ruleset) ?? featList(packs, c.ruleset).find((x) => x.item.name === name);

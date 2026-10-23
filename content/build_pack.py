@@ -51,7 +51,7 @@ def grant_tokens(text: str, where: str):
     {skill A, B} {expertise A, B} {skillpick 2 expertise [A, B]} {armor heavy} {weapons martial} {tools Smith's Tools}
     {lang Giant} {toolpick 1 artisan} {langpick 1} {save wis} {save all} {savepick 1 wis, int, cha}
     {res short 4@3,5@7,6@15 die:d8@3,d10@10 Superiority Dice}  {pick maneuvers 3@3,5@7 Maneuvers}"""
-    grants, resource, choose = {}, None, None
+    grants, resources, choose = {}, [], None
     for m in GRANT.finditer(text):
         kind, arg = m.group(1), m.group(2).strip()
         if kind in ("skill", "expertise", "armor", "weapons", "tools"):
@@ -87,7 +87,7 @@ def grant_tokens(text: str, where: str):
                 die = rest_bits.pop(0)[4:]
             if not rest_bits:
                 raise SystemExit(f"{where}: res sin nombre: {arg!r}")
-            resource = {"name": " ".join(rest_bits), "uses": uses, "recharge": rest, "die": die}
+            resources.append({"name": " ".join(rest_bits), "uses": uses, "recharge": rest, "die": die})
         elif kind == "pick":
             bits = arg.split(None, 2)
             choose = {"list": bits[0], "count": bits[1], "label": bits[2] if len(bits) > 2 else ""}
@@ -96,7 +96,7 @@ def grant_tokens(text: str, where: str):
             bad = [x for x in grants[k] if x not in ABBR]
             if bad:
                 raise SystemExit(f"{where}: save desconocido {bad}")
-    return grants or None, resource, choose, GRANT.sub("", text)
+    return grants or None, resources, choose, GRANT.sub("", text)
 
 
 def feature(line: str, where: str) -> dict:
@@ -107,7 +107,8 @@ def feature(line: str, where: str) -> dict:
     text = parts[2]
     effects = effects_of(text)
     text = EFFECT.sub("", text)
-    grants, resource, choose, text = grant_tokens(text, where)
+    grants, resources, choose, text = grant_tokens(text, where)
+    resource = resources[0] if resources else None
     text = re.sub(r"\s{2,}", " ", text).strip()
     f = {"level": level, "name": parts[1], "text": text}
     if effects:
@@ -426,10 +427,14 @@ def build_generic(ruleset: str) -> dict:
             o["grants"] = grants
     # Los feats también: Heavily Armored da heavy armor, Chef da Cook's Utensils...
     for f in out["feats"]:
-        grants, _, _, text = grant_tokens(f.get("text", ""), f"feat {f['name']}")
+        grants, resources, choose, text = grant_tokens(f.get("text", ""), f"feat {f['name']}")
         f["text"] = re.sub(r"\s{2,}", " ", text).strip()
         if grants:
             f["grants"] = grants
+        if resources:
+            f["resources"] = resources
+        if choose:
+            f["choose"] = choose
     return out
 
 

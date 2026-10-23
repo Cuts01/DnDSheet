@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-10-23 · Tough y Fighting Styles') },
+  define: { __APP_VERSION__: JSON.stringify('2026-10-23 · recursos de feats') },
   plugins: [
     svelte(),
     VitePWA({

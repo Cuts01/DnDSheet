@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-10-23T17:35:46Z"
+    "built": "2026-10-23T17:42:44Z"
   },
   "classes": [
     {
@@ -7837,7 +7837,15 @@
       "name": "Lucky",
       "category": "origin",
       "source": "PHB 2024",
-      "text": "Luck Points equal to your Proficiency Bonus per Long Rest: give yourself advantage on a d20 Test or impose disadvantage on an attack against you."
+      "text": "Luck Points equal to your Proficiency Bonus per Long Rest: give yourself advantage on a d20 Test or impose disadvantage on an attack against you.",
+      "resources": [
+        {
+          "name": "Luck Points",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Magic Initiate",
@@ -7995,7 +8003,15 @@
         "tools": [
           "Cook's Utensils"
         ]
-      }
+      },
+      "resources": [
+        {
+          "name": "Chef Treats",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Crossbow Expert",
@@ -8261,7 +8277,15 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Your hits impose disadvantage on concentration saves, and once per Long Rest turn a failed mental save into a success."
+      "text": "Your hits impose disadvantage on concentration saves, and once per Long Rest turn a failed mental save into a success.",
+      "resources": [
+        {
+          "name": "Guarded Mind",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Martial Weapon Training",
@@ -8434,7 +8458,15 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Learn level 1 Ritual spells equal to your Proficiency Bonus, and cast one quickly once per Long Rest."
+      "text": "Learn level 1 Ritual spells equal to your Proficiency Bonus, and cast one quickly once per Long Rest.",
+      "resources": [
+        {
+          "name": "Quick Ritual",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Sentinel",
@@ -8882,7 +8914,15 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "When a creature fails or succeeds on a d20 Test, add or subtract 2d4. Once per Initiative or rest."
+      "text": "When a creature fails or succeeds on a d20 Test, add or subtract 2d4. Once per Initiative or rest.",
+      "resources": [
+        {
+          "name": "Boon of Fate",
+          "uses": "1",
+          "recharge": "short",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Boon of Fortitude",
@@ -8942,7 +8982,21 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Once per Long Rest, drop to 1 HP instead of 0 and regain half your HP, and a pool of ten d10s to heal as a Bonus Action."
+      "text": "Once per Long Rest, drop to 1 HP instead of 0 and regain half your HP, and a pool of ten d10s to heal as a Bonus Action.",
+      "resources": [
+        {
+          "name": "Last Stand",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        },
+        {
+          "name": "Recovery Dice",
+          "uses": "10",
+          "recharge": "long",
+          "die": "d10"
+        }
+      ]
     },
     {
       "name": "Boon of Skill",
@@ -9015,7 +9069,15 @@
         ]
       },
       "source": "PHB 2024",
-      "text": "Once per Long Rest, cast a level 1 to 4 spell without expending a slot."
+      "text": "Once per Long Rest, cast a level 1 to 4 spell without expending a slot.",
+      "resources": [
+        {
+          "name": "Free Spell (Spell Recall)",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
     },
     {
       "name": "Boon of the Night Spirit",

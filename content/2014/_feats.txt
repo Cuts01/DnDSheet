@@ -38,13 +38,13 @@ Gain proficiency with light armor. {armor light}
 @feat Linguist | asi int | source PHB
 Learn three languages and create written ciphers.
 @feat Lucky | source PHB
-Three luck points per long rest to reroll your attack, check or save, or an attack against you.
+Three luck points per long rest to reroll your attack, check or save, or an attack against you. {res long 3 Luck Points}
 @feat Mage Slayer | source PHB
 Reaction attack against adjacent casters, they have disadvantage on concentration saves you cause, and advantage on saves against spells cast within 5 feet.
 @feat Magic Initiate | repeatable | spells pick 2 L0 list:Bard,Cleric,Druid,Sorcerer,Warlock,Wizard; pick 1 L1 list:Bard,Cleric,Druid,Sorcerer,Warlock,Wizard long | castwith list | source PHB
 Choose a class: learn two cantrips and a 1st-level spell from its list, castable once per long rest.
 @feat Martial Adept | source PHB
-Learn two Battle Master maneuvers and gain one d6 superiority die per short rest.
+Learn two Battle Master maneuvers and gain one d6 superiority die per short rest. {res short 1 die:d6 Superiority Die} {pick maneuvers 2 Maneuvers}
 @feat Medium Armor Master | prereq Proficiency with medium armor | source PHB
 Medium armor doesn't impose Stealth disadvantage, and you can add up to +3 Dexterity to AC.
 @feat Mobile | source PHB
@@ -96,7 +96,7 @@ When you Dodge, you can spend a Hit Die to heal.
 @feat Elven Accuracy | cat racial | prereq Elf or half-elf | asi dex, int, wis, cha | source XGtE
 When you have advantage on an attack using Dexterity, Intelligence, Wisdom or Charisma, reroll one of the dice.
 @feat Fade Away | cat racial | prereq Gnome | asi dex, int | source XGtE
-After you take damage, use your reaction to become invisible until the end of your next turn. Once per short or long rest.
+After you take damage, use your reaction to become invisible until the end of your next turn. Once per short or long rest. {res short 1 Fade Away}
 @feat Fey Teleportation | cat racial | prereq Elf (high) | asi int, cha | spells Misty Step short | castwith int | source XGtE
 Learn Sylvan and cast Misty Step once per short or long rest.
 @feat Flames of Phlegethos | cat racial | prereq Tiefling | asi int, cha | source XGtE
@@ -104,11 +104,11 @@ Reroll 1s on fire spell damage, and after casting a fire spell you are wreathed 
 @feat Infernal Constitution | cat racial | prereq Tiefling | asi con | source XGtE
 Resistance to cold and poison damage and advantage on saves against being poisoned.
 @feat Orcish Fury | cat racial | prereq Half-orc | asi str, con | source XGtE
-Once per short rest, add one extra weapon damage die, and when you use Relentless Endurance you can attack as a reaction.
+Once per short rest, add one extra weapon damage die, and when you use Relentless Endurance you can attack as a reaction. {res short 1 Orcish Fury}
 @feat Prodigy | cat racial | prereq Half-elf, half-orc or human | skills 1 prof; 1 expertise | source XGtE
 Gain one skill, one tool and one language, and expertise in a skill.
 @feat Second Chance | cat racial | prereq Halfling | asi dex, con, cha | source XGtE
-When a creature hits you, use your reaction to make it reroll. Once per initiative or rest.
+When a creature hits you, use your reaction to make it reroll. Once per initiative or rest. {res short 1 Second Chance}
 @feat Squat Nimbleness | cat racial | prereq Dwarf or a Small race | asi str, dex | skills 1 prof acrobatics, athletics | source XGtE
 Your walking speed increases by 5 feet, you gain Acrobatics or Athletics, and advantage to escape grapples. {speed +5}
 @feat Wood Elf Magic | cat racial | prereq Elf (wood) | spells pick 1 L0 list:Druid; Longstrider long; Pass without Trace long | castwith wis | source XGtE
@@ -116,7 +116,7 @@ Learn a druid cantrip and cast Longstrider and Pass without Trace once per long 
 @feat Artificer Initiate | spells pick 1 L0 list:Artificer; pick 1 L1 list:Artificer long | castwith int | source TCoE
 Learn an artificer cantrip and a 1st-level artificer spell (once per long rest), plus proficiency with one artisan's tool.
 @feat Chef | asi con, wis | source TCoE
-Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP. {tools Cook's Utensils}
+Proficiency with cook's utensils; cook food that adds 1d8 healing on short rests and treats that give temp HP. {tools Cook's Utensils} {res long pb Chef Treats}
 @feat Crusher | asi str, con | source TCoE
 Once per turn bludgeoning hits push 5 feet, and critical hits give attacks against the target advantage.
 @feat Eldritch Adept | prereq Spellcasting or Pact Magic feature | source TCoE
@@ -124,11 +124,11 @@ Learn one Eldritch Invocation that has no prerequisites.
 @feat Fey Touched | asi int, wis, cha | spells Misty Step long; pick 1 L1 divination,enchantment long | castwith asi | source TCoE
 Learn Misty Step and a 1st-level divination or enchantment spell, each castable once per long rest without a slot.
 @feat Fighting Initiate | prereq Proficiency with a martial weapon | source TCoE
-Learn one Fighting Style from the fighter list.
+Learn one Fighting Style from the fighter list. {pick fighting-style 1 Fighting Style}
 @feat Gunner | asi dex | source TCoE
 Proficiency with firearms, ignore loading on firearms, and no disadvantage firing in melee.
 @feat Metamagic Adept | prereq Spellcasting or Pact Magic feature | source TCoE
-Learn two Metamagic options and gain 2 sorcery points to use them.
+Learn two Metamagic options and gain 2 sorcery points to use them. {res long 2 Sorcery Points (Metamagic Adept)} {pick metamagic 2 Metamagic}
 @feat Piercer | asi str, dex | source TCoE
 Once per turn reroll a piercing damage die, and critical hits add one extra damage die.
 @feat Poisoner | source TCoE
@@ -144,11 +144,11 @@ Learn an invisible Mage Hand and use a bonus action to shove a creature 5 feet o
 @feat Telepathic | asi int, wis, cha | spells Detect Thoughts long | castwith asi | source TCoE
 Telepathy 60 feet and cast Detect Thoughts once per long rest without a slot.
 @feat Gift of the Chromatic Dragon | source FToD
-Infuse a weapon with elemental damage (+1d4) once per long rest, and use your reaction to gain resistance to an element (proficiency bonus uses).
+Infuse a weapon with elemental damage (+1d4) once per long rest, and use your reaction to gain resistance to an element (proficiency bonus uses). {res long 1 Chromatic Infusion} {res long pb Reactive Resistance}
 @feat Gift of the Gem Dragon | asi int, wis, cha | source FToD
-When a creature within 10 feet damages you, use your reaction to deal force damage and push it on a failed Strength save.
+When a creature within 10 feet damages you, use your reaction to deal force damage and push it on a failed Strength save. {res long pb Telekinetic Reprisal}
 @feat Gift of the Metallic Dragon | spells Cure Wounds long | castwith wis | source FToD
-Cast Cure Wounds once per long rest, and use your reaction to add 1d4 to an ally's AC with protective wings.
+Cast Cure Wounds once per long rest, and use your reaction to add 1d4 to an ally's AC with protective wings. {res long pb Protective Wings}
 @feat Aberrant Dragonmark | prereq No other dragonmark | asi con | spells pick 1 L0 list:Sorcerer; pick 1 L1 list:Sorcerer long | castwith con | source ERftLW
 Learn a sorcerer cantrip and a 1st-level sorcerer spell castable once per long rest, with a Hit Die gamble on each cast.
 @feat Svirfneblin Magic | cat racial | prereq Gnome (deep gnome) | spells Nondetection will; Blindness/Deafness long; Blur long; Disguise Self long | castwith int | source SCAG
@@ -172,6 +172,6 @@ Once per turn, a weapon hit adds an effect of a chosen giant type (cloud, fire, 
 @feat Giant Foundling | asi str, con, wis | source BGG
 You count as Large for carrying and grappling, gain temp HP when you take damage while Large or bigger, and your reach extends with growth.
 @feat Squire of Solamnia | cat background | prereq Knight of Solamnia background | source DSotDQ
-Gain advantage on a weapon attack and extra damage on a hit (Precise Strike), proficiency bonus uses per long rest, and a mounted combat benefit.
+Gain advantage on a weapon attack and extra damage on a hit (Precise Strike), proficiency bonus uses per long rest, and a mounted combat benefit. {res long pb Precise Strike}
 @feat Initiate of High Sorcery | cat background | prereq Mage of High Sorcery background | source DSotDQ
 Learn a cantrip and two 1st-level spells tied to your moon (Lunitari, Nuitari or Solinari), each castable once per long rest without a slot.
