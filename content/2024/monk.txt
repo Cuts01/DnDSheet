@@ -24,7 +24,7 @@
 16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 18 | Superior Defense | At the start of your turn, spend 3 Focus Points to resist all damage except Force for 1 minute.
 19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
-20 | Body and Mind | Your Dexterity and Wisdom increase by 4, to a maximum of 25.
+20 | Body and Mind | Your Dexterity and Wisdom increase by 4, to a maximum of 25. {dex +4 max25} {wis +4 max25}
 
 @sub Warrior of Mercy | PHB 2024
 3 | Hand of Harm | Once per turn, when you hit with an Unarmed Strike, spend 1 Focus Point to add Necrotic damage equal to a Martial Arts die + Wisdom modifier.

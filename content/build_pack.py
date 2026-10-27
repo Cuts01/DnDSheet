@@ -17,18 +17,22 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 # {speed +10} {hp +2 level} {init +1 pb} {ac +1 cond}. level = nivel total (o de la clase en class features); pb = proficiency bonus.
-EFFECT = re.compile(r"\{(speed|init|ac|pperc|pinv|pins|hp|acarmor|atkranged|dmgduel|dmgthrown|unarmed|gwf|twf)\s*([+-]\d+)(\s+(?:level|pb))?(\s+cond)?\}")
+# Abilities: {str +4 max24} sube el score sobre el límite normal de 20 (Primal Champion, Body and Mind).
+EFFECT = re.compile(r"\{(speed|init|ac|pperc|pinv|pins|hp|acarmor|atkranged|dmgduel|dmgthrown|unarmed|gwf|twf|str|dex|con|int|wis|cha)\s*([+-]\d+)(\s+(?:level|pb))?(\s+max\d+)?(\s+cond)?\}")
 TARGET = {"speed": "speed", "init": "initiative", "ac": "ac", "pperc": "passive-perception", "pinv": "passive-investigation", "pins": "passive-insight",
           "hp": "hp", "acarmor": "ac-armor", "atkranged": "attack-ranged", "dmgduel": "damage-dueling", "dmgthrown": "damage-thrown",
-          "unarmed": "unarmed-die", "gwf": "great-weapon-fighting", "twf": "two-weapon-fighting"}
+          "unarmed": "unarmed-die", "gwf": "great-weapon-fighting", "twf": "two-weapon-fighting",
+          **{a: f"score-{a}" for a in ("str", "dex", "con", "int", "wis", "cha")}}
 
 
 def effects_of(text: str) -> list:
     out = []
     for m in EFFECT.finditer(text):
-        e = {"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(4))}
+        e = {"target": TARGET[m.group(1)], "value": int(m.group(2)), "conditional": bool(m.group(5))}
         if m.group(3):
             e["scale"] = m.group(3).strip()
+        if m.group(4):
+            e["max"] = int(m.group(4).strip()[3:])
         out.append(e)
     return out
 

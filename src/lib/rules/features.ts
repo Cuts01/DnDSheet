@@ -83,7 +83,7 @@ export function characterFeatures(c: Character, packs: Pack[]): ClassFeatures[] 
 }
 
 /* Valor de un efecto con escala: level usa el nivel de la clase (class features) o el total (feats, raza). */
-type ScaledEffect = { value: number; scale?: 'none' | 'level' | 'pb' };
+type ScaledEffect = { value: number; scale?: 'none' | 'level' | 'pb'; max?: number };
 export const scaled = (c: Character, e: ScaledEffect, level = totalLevel(c)) =>
   e.scale === 'level' ? e.value * level : e.scale === 'pb' ? e.value * pb(c) : e.value;
 
@@ -101,6 +101,7 @@ export function grantedEffects(c: Character, packs: Pack[]): Effect[] {
           sourceType: own.source,
           target: e.target,
           value: scaled(c, e, group.entry.level),
+          max: e.max,
           conditional: e.conditional,
           active: e.conditional ? (c.toggles[id] ?? false) : true
         });
@@ -376,7 +377,7 @@ export function otherGrantedEffects(c: Character, packs: Pack[]): Effect[] {
   const push = (prefix: string, source: string, type: Effect['sourceType'], effects: (ScaledEffect & { target: Effect['target']; conditional: boolean })[]) =>
     effects.forEach((e, i) => {
       const id = `${prefix}#${i}`;
-      out.push({ id, source, sourceType: type, target: e.target, value: scaled(c, e), conditional: e.conditional, active: e.conditional ? (c.toggles[id] ?? false) : true });
+      out.push({ id, source, sourceType: type, target: e.target, value: scaled(c, e), max: e.max, conditional: e.conditional, active: e.conditional ? (c.toggles[id] ?? false) : true });
     });
   const sp = findSpecies(packs, c.species.ref);
   sp?.item.traits.forEach((t, i) => push(`${sp.value}/t${i}`, t.name, 'species', t.effects));

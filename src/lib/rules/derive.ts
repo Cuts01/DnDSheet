@@ -20,8 +20,16 @@ export interface ScoreBreakdown {
   asi: number;
   feats: number;
   other: number;
+  /* Class features que pasan el límite de 20 (Primal Champion, Body and Mind). */
+  feature: number;
+  /* Puntos de ASI, feats o features que no cuentan por el tope (20, o 30 con Epic Boons). */
+  capped: number;
   total: number;
 }
+
+/* Tope de los ASI y feats: 20. Los Epic Boons 2024 suben hasta 30. */
+export const ABILITY_CAP = 20;
+export const EPIC_CAP = 30;
 
 const sumFor = (list: { ability: Ability; amount: number }[], a: Ability) =>
   list.reduce((s, b) => s + (b.ability === a ? b.amount : 0), 0);
@@ -33,14 +41,30 @@ export function scoreBreakdown(c: Character, a: Ability): ScoreBreakdown {
   const other = sumFor(c.bonuses.other, a);
   let asi = 0;
   let feats = 0;
-  const valid = new Set(asiSlots(c).map((s) => s.key));
+  let epic = 0;
+  const slots = new Map(asiSlots(c).map((s) => [s.key, s]));
   for (const [key, adv] of Object.entries(c.advancements)) {
-    if (!valid.has(key)) continue;
+    const slot = slots.get(key);
+    if (!slot) continue;
     if (adv.kind === 'asi') asi += sumFor(adv.asi, a);
-    else if (adv.featAbility === a) feats += 1;
+    else if (adv.featAbility === a) {
+      if (slot.epic) epic += 1;
+      else feats += 1;
+    }
   }
   for (const f of c.feats) if (f.ability === a) feats += 1;
-  return { base, species, background, asi, feats, other, total: base + species + background + asi + feats + other };
+  // Los ASI y feats no suben un score sobre 20 (si ya estaba sobre 20 por otra vía, no lo bajan).
+  const natural = base + species + background;
+  let total = Math.max(natural, Math.min(ABILITY_CAP, natural + asi + feats));
+  total = Math.max(total, Math.min(EPIC_CAP, total + epic));
+  let feature = 0;
+  for (const b of c.scoreBonus ?? []) {
+    if (b.ability !== a) continue;
+    feature += b.amount;
+    total = Math.max(total, Math.min(b.max, total + b.amount));
+  }
+  const capped = natural + asi + feats + epic + feature - total;
+  return { base, species, background, asi, feats: feats + epic, other, feature, capped, total: total + other };
 }
 
 export const score = (c: Character, a: Ability) => scoreBreakdown(c, a).total;

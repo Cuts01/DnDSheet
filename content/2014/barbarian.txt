@@ -19,7 +19,7 @@
 16 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
 18 | Indomitable Might | If your total for a Strength check is lower than your Strength score, use the score instead.
 19 | Ability Score Improvement | Raise one ability score by 2, or two scores by 1 each, to a maximum of 20.
-20 | Primal Champion | Your Strength and Constitution scores increase by 4, and their maximum becomes 24.
+20 | Primal Champion | Your Strength and Constitution scores increase by 4, and their maximum becomes 24. {str +4 max24} {con +4 max24}
 
 @sub Path of the Ancestral Guardian | XGtE
 3 | Ancestral Protectors | While raging, the first creature you hit each turn has disadvantage on attacks against anyone but you, and others it damages have resistance, until your next turn.

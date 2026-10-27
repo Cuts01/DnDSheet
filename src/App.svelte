@@ -82,6 +82,7 @@
     if (next) {
       store.c.skillPicks = next.skillPicks;
       store.c.autoSaves = next.autoSaves;
+      store.c.scoreBonus = next.scoreBonus;
       // Al ganar HP máximo (Tough, subir de nivel con Dwarven Toughness...) los HP actuales suben lo mismo.
       const delta = next.hpBonus - (store.c.hpBonus ?? 0);
       if (delta) {

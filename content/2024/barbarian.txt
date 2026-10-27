@@ -22,7 +22,7 @@
 17 | Improved Brutal Strike | Brutal Strike deals 2d10 extra damage and can apply two effects at once.
 18 | Indomitable Might | If your Strength check or save total is lower than your Strength score, use the score instead.
 19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
-20 | Primal Champion | Your Strength and Constitution increase by 4, to a maximum of 25.
+20 | Primal Champion | Your Strength and Constitution increase by 4, to a maximum of 25. {str +4 max25} {con +4 max25}
 
 @sub Path of the Berserker | PHB 2024
 3 | Frenzy | When you use Reckless Attack while raging, your first Strength hit each turn deals extra d6s equal to your Rage Damage bonus.

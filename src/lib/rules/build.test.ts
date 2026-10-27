@@ -162,3 +162,23 @@ describe('passives y feats con skills', () => {
     expect(skillLevel(c, sk('stealth'))).toBe('expertise');
   });
 });
+
+describe('tope de 20 en abilities', () => {
+  it('un ASI no sube un score sobre 20; Primal Champion sí, hasta 24', async () => {
+    const { scoreBreakdown, asiSlots } = await import('./derive');
+    const { blankCharacter, classFromPreset, CLASS_PRESETS } = await import('../model/character');
+    const k = classFromPreset(CLASS_PRESETS.find((p) => p.name === 'Fighter')!, 20);
+    const c = { ...blankCharacter(), classes: [k], abilities: { str: 15, dex: 10, con: 14, int: 10, wis: 10, cha: 10 } };
+    c.bonuses.species = [{ ability: 'str' as const, amount: 2 }];
+    const slots = asiSlots(c);
+    c.advancements[slots[0].key] = { kind: 'asi', asi: [{ ability: 'str', amount: 2 }], featRef: null, featName: '', featAbility: null };
+    c.advancements[slots[1].key] = { kind: 'asi', asi: [{ ability: 'str', amount: 2 }], featRef: null, featName: '', featAbility: null };
+    const b = scoreBreakdown(c, 'str');
+    expect(b.total).toBe(20);
+    expect(b.capped).toBe(1);
+    c.scoreBonus = [{ ability: 'str', amount: 4, max: 24 }];
+    expect(scoreBreakdown(c, 'str').total).toBe(24);
+    c.bonuses.other = [{ ability: 'str', amount: 2 }];
+    expect(scoreBreakdown(c, 'str').total).toBe(26);
+  });
+});

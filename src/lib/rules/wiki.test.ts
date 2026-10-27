@@ -326,3 +326,15 @@ describe.skipIf(!p14 || !p24)('rasgos de raza', () => {
     expect(featSpells(c, [p14!]).granted.map((g) => g.name)).toContain('Darkness');
   });
 });
+
+describe.skipIf(!p14)('Primal Champion', () => {
+  it('Barbarian 20 sube STR y CON 4, hasta 24', async () => {
+    const { syncGrants } = await import('./grants');
+    const { scoreBreakdown } = await import('./derive');
+    const c: Character = { ...blankCharacter(), classes: [cls('Barbarian', 20)], abilities: { str: 20, dex: 10, con: 18, int: 10, wis: 10, cha: 10 } };
+    const s = syncGrants(c, [p14!])!;
+    const n: Character = { ...c, scoreBonus: s.scoreBonus };
+    expect(scoreBreakdown(n, 'str').total).toBe(24);
+    expect(scoreBreakdown(n, 'con').total).toBe(22);
+  });
+});

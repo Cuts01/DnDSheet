@@ -406,7 +406,10 @@ const FIXED = /^ftr[px]:.*\|f[px]?$/;
  * Escribe en el personaje lo que los features dan sin elegir: skills fijas (en skillPicks) y saves (autoSaves).
  * Devuelve null si no hay cambios, para no disparar guardados de más.
  */
-export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character['skillPicks']; autoSaves: Ability[]; hpBonus: number } | null {
+export function syncGrants(
+  c: Character,
+  packs: Pack[]
+): { skillPicks: Character['skillPicks']; autoSaves: Ability[]; hpBonus: number; scoreBonus: Character['scoreBonus'] } | null {
   if (!packs.length) return null;
   const picks: Character['skillPicks'] = {};
   for (const [k, v] of Object.entries(c.skillPicks)) if (!FIXED.test(k)) picks[k] = v;
@@ -422,7 +425,11 @@ export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character
     fi.feat?.item.grants?.saves.forEach((a) => saves.add(a));
     if (fi.feat?.item.saveFromAsi && fi.ability) saves.add(fi.ability);
   }
-  const hpBonus = Math.max(0, allGrantedEffects(c, packs).reduce((s, e) => s + (e.target === 'hp' && (!e.conditional || e.active) ? e.value : 0), 0));
+  const granted = allGrantedEffects(c, packs);
+  const hpBonus = Math.max(0, granted.reduce((s, e) => s + (e.target === 'hp' && (!e.conditional || e.active) ? e.value : 0), 0));
+  const scoreBonus: Character['scoreBonus'] = granted
+    .filter((e) => e.target.startsWith('score-') && (!e.conditional || e.active))
+    .map((e) => ({ ability: e.target.slice(6) as Ability, amount: e.value, max: e.max ?? 20 }));
   // Quita elecciones de skills de features que ya no tienes (bajaste de nivel o cambiaste de subclass).
   const live = new Set(featureSkillSlots(c, packs).map((s) => s.source));
   for (const k of Object.keys(picks)) {
@@ -434,8 +441,12 @@ export function syncGrants(c: Character, packs: Pack[]): { skillPicks: Character
   }
   const autoSaves = ABILITIES.filter((a) => saves.has(a));
   const canon = (o: Record<string, string[]>) => JSON.stringify(Object.keys(o).sort().map((k) => [k, o[k]]));
-  const same = canon(picks) === canon(c.skillPicks) && JSON.stringify(autoSaves) === JSON.stringify(c.autoSaves) && hpBonus === c.hpBonus;
-  return same ? null : { skillPicks: picks, autoSaves, hpBonus };
+  const same =
+    canon(picks) === canon(c.skillPicks) &&
+    JSON.stringify(autoSaves) === JSON.stringify(c.autoSaves) &&
+    hpBonus === c.hpBonus &&
+    JSON.stringify(scoreBonus) === JSON.stringify(c.scoreBonus ?? []);
+  return same ? null : { skillPicks: picks, autoSaves, hpBonus, scoreBonus };
 }
 
 /* Resistencias a daño de raza, class features, feats y opciones elegidas. */

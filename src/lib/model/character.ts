@@ -54,7 +54,9 @@ export const AC_MODES = ['auto', 'unarmored', 'unarmored-con', 'unarmored-wis', 
 export const EFFECT_TARGETS = [
   'speed', 'initiative', 'ac', 'passive-perception', 'passive-investigation', 'passive-insight',
   /* hp: HP máximo extra. ac-armor: solo con armadura (Defense). El resto ajusta los ataques (fighting styles). */
-  'hp', 'ac-armor', 'attack-ranged', 'damage-dueling', 'damage-thrown', 'unarmed-die', 'great-weapon-fighting', 'two-weapon-fighting'
+  'hp', 'ac-armor', 'attack-ranged', 'damage-dueling', 'damage-thrown', 'unarmed-die', 'great-weapon-fighting', 'two-weapon-fighting',
+  /* score-<ability>: sube el score por encima de 20 hasta "max" (Primal Champion). */
+  'score-str', 'score-dex', 'score-con', 'score-int', 'score-wis', 'score-cha'
 ] as const;
 export type EffectTarget = (typeof EFFECT_TARGETS)[number];
 export const EFFECT_LABEL: Record<EffectTarget, string> = {
@@ -71,7 +73,13 @@ export const EFFECT_LABEL: Record<EffectTarget, string> = {
   'damage-thrown': 'Thrown damage',
   'unarmed-die': 'Unarmed die',
   'great-weapon-fighting': 'Great Weapon Fighting',
-  'two-weapon-fighting': 'Two-Weapon Fighting'
+  'two-weapon-fighting': 'Two-Weapon Fighting',
+  'score-str': 'STR',
+  'score-dex': 'DEX',
+  'score-con': 'CON',
+  'score-int': 'INT',
+  'score-wis': 'WIS',
+  'score-cha': 'CHA'
 };
 export const EFFECT_SOURCES = ['species', 'class', 'subclass', 'feat', 'spell', 'item', 'other'] as const;
 export type EffectSource = (typeof EFFECT_SOURCES)[number];
@@ -84,7 +92,9 @@ export const EffectSchema = z.object({
   value: int(-200, 200),
   /* true: se activa y desactiva desde Combate (Bladesong, Longstrider...). */
   conditional: z.boolean(),
-  active: z.boolean()
+  active: z.boolean(),
+  /* Tope del score para efectos de ability (24 o 25 en Primal Champion). */
+  max: z.number().int().optional()
 });
 export type Effect = z.infer<typeof EffectSchema>;
 
@@ -258,6 +268,8 @@ const CharacterObject = z.object({
   hpBonus: z.number().int().min(0).max(999).default(0),
   /* Regla de la casa: permitir feats raciales de otras razas (si el DM lo permite). */
   anyRacialFeats: z.boolean().default(false),
+  /* Aumentos de ability de class features con su tope (Primal Champion +4, máx. 24). Se calcula solo. */
+  scoreBonus: z.array(z.object({ ability: abilityEnum, amount: z.number().int(), max: z.number().int() })).default([]),
   notes: z.string(),
   updatedAt: z.string()
 });
@@ -380,6 +392,7 @@ export function blankCharacter(): Character {
     autoSaves: [],
     hpBonus: 0,
     anyRacialFeats: false,
+    scoreBonus: [],
     notes: '',
     updatedAt: new Date().toISOString()
   };

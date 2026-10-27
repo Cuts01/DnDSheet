@@ -23,6 +23,7 @@ export const PackEffectSchema = z.object({
     .boolean()
     .default(false)
     .describe('true si se activa y desactiva en juego (ej. Bladesong). false si aplica siempre'),
+  max: z.number().int().min(1).max(30).optional().describe('Abilities: tope del score (Primal Champion: 24)'),
   scale: z
     .enum(['none', 'level', 'pb'])
     .default('none')
