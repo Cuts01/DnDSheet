@@ -53,9 +53,9 @@ export function scoreBreakdown(c: Character, a: Ability): ScoreBreakdown {
     }
   }
   for (const f of c.feats) if (f.ability === a) feats += 1;
-  // Los ASI y feats no suben un score sobre 20 (si ya estaba sobre 20 por otra vía, no lo bajan).
+  // Raza, background, ASI y feats no suben un score sobre 20. Solo un valor base manual sobre 20 se respeta tal cual.
   const natural = base + species + background;
-  let total = Math.max(natural, Math.min(ABILITY_CAP, natural + asi + feats));
+  let total = Math.max(base, Math.min(ABILITY_CAP, natural + asi + feats));
   total = Math.max(total, Math.min(EPIC_CAP, total + epic));
   let feature = 0;
   for (const b of c.scoreBonus ?? []) {

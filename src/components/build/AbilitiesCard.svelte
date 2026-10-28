@@ -88,23 +88,30 @@
         <span class="num muted">{b.asi + b.feats + b.other + b.feature ? fmt(b.asi + b.feats + b.other + b.feature) : ''}</span>
         <span class="tot num" class:over={b.capped > 0} title={b.capped > 0 ? t('{n} puntos no cuentan: los ASI y feats no suben un score sobre 20', { n: b.capped }) : undefined}>
           <b>{b.total}</b> <small>{fmt(mod(b.total))}</small>
+          {#if b.capped > 0}<small class="cap">{t('máx. 20 (sobran {n})', { n: b.capped })}</small>{/if}
         </span>
       </div>
     {/each}
   </div>
   {#if rows.some((r) => r.b.capped > 0)}
     <p class="small err">
-      {t('Sobran puntos de ASI o feats en {list}: no pueden subir un score sobre 20. Úsalos en otra ability.', {
+      {t('Te sobran puntos en {list}: raza, background, ASI y feats no pueden subir un score sobre 20. Pon esos incrementos en otra ability.', {
         list: rows.filter((r) => r.b.capped > 0).map((r) => `${ABILITY_LABEL[r.a]} (${r.b.capped})`).join(', ')
       })}
     </p>
   {/if}
   <p class="muted small">
-    {t('Los incrementos de raza, background, ASI y feats se suman solos, hasta un máximo de 20. Solo features como Primal Champion o los Epic Boons pasan de 20; los bonos manuales (items) no tienen tope.')}
+    {t('Los incrementos de raza, background, ASI y feats se suman solos, hasta un máximo de 20. Solo features como Primal Champion o los Epic Boons pasan de 20, y los bonos manuales (items) no tienen tope.')}
   </p>
 </div>
 
 <style>
+  .cap {
+    display: block;
+    color: var(--bad);
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
   .card h2 {
     margin-bottom: 0;
   }

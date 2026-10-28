@@ -1,10 +1,11 @@
 <script lang="ts">
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
-  import { ABILITIES, type Character } from '../../lib/model/character';
+  import { ABILITIES, type Ability, type Character } from '../../lib/model/character';
   import { applySpecies, findSpecies, speciesList } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import NumField from '../NumField.svelte';
+  import { score, scoreBreakdown } from '../../lib/rules/derive';
   import RefSelect from './RefSelect.svelte';
 
   let { c = $bindable() }: { c: Character } = $props();
@@ -19,6 +20,8 @@
   function pick(r: Parameters<typeof applySpecies>[1]) {
     c = applySpecies($state.snapshot(c) as Character, r);
   }
+  // Incremento que no cuenta porque la ability ya llegó a 20.
+  const overCap = (a: Ability | null | undefined) => !!a && scoreBreakdown(c, a).capped > 0;
 </script>
 
 <div class="card stack">
@@ -51,8 +54,9 @@
           <div class="bonus">
             <b class="num">+{b.amount}</b>
             <select bind:value={c.bonuses.species[i].ability} disabled={locked} aria-label="Ability">
-              {#each ABILITIES as a (a)}<option value={a}>{ABILITY_LABEL[a]}</option>{/each}
+              {#each ABILITIES as a (a)}<option value={a} disabled={a !== b.ability && score(c, a) >= 20}>{ABILITY_LABEL[a]}{score(c, a) >= 20 ? ' (20)' : ''}</option>{/each}
             </select>
+            {#if overCap(b.ability)}<span class="capwarn">{t('máx. 20')}</span>{/if}
           </div>
         {/each}
       </div>
@@ -85,6 +89,11 @@
 </div>
 
 <style>
+  .capwarn {
+    color: var(--bad);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
   .card h2 {
     margin-bottom: 0;
   }

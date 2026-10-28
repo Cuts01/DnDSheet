@@ -3,7 +3,7 @@
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
   import type { PackFeat } from '../../lib/model/pack';
-  import { asiSlots } from '../../lib/rules/derive';
+  import { asiSlots, score, scoreBreakdown } from '../../lib/rules/derive';
   import { featList, findFeat, packAsiLevels, racialFeatAllowed, type Ref } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
@@ -60,6 +60,8 @@
     f.ability = r?.item.asi?.from[0] ?? null;
   }
   const srcLabel = { species: 'De tu raza', background: 'Del background', other: 'Feat adicional' } as const;
+  // Incremento que no cuenta porque la ability ya llegó a 20.
+  const overCap = (a: Ability | null | undefined) => !!a && scoreBreakdown(c, a).capped > 0;
 </script>
 
 <div class="card stack">
@@ -94,8 +96,9 @@
               <div class="bonus">
                 <b class="num">+{b.amount}</b>
                 <select bind:value={c.advancements[s.key].asi[i].ability} aria-label="Ability">
-                  {#each ABILITIES as x (x)}<option value={x}>{ABILITY_LABEL[x]}</option>{/each}
+                  {#each ABILITIES as x (x)}<option value={x} disabled={x !== b.ability && score(c, x) >= 20}>{ABILITY_LABEL[x]}{score(c, x) >= 20 ? ' (20)' : ''}</option>{/each}
                 </select>
+            {#if overCap(b.ability)}<span class="capwarn">{t('máx. 20')}</span>{/if}
               </div>
             {/each}
           </div>
@@ -116,8 +119,9 @@
             <div class="bonus self">
               <b class="num">+1</b>
               <select bind:value={c.advancements[s.key].featAbility} aria-label={t('Ability del feat')}>
-                {#each f.asi.from as x (x)}<option value={x}>{ABILITY_LABEL[x]}</option>{/each}
+                {#each f.asi.from as x (x)}<option value={x} disabled={x !== c.advancements[s.key].featAbility && score(c, x) >= 20}>{ABILITY_LABEL[x]}{score(c, x) >= 20 ? ' (20)' : ''}</option>{/each}
               </select>
+            {#if overCap(c.advancements[s.key].featAbility)}<span class="capwarn">{t('máx. 20')}</span>{/if}
             </div>
           {/if}
         {/if}
@@ -144,8 +148,9 @@
         <div class="bonus self">
           <b class="num">+1</b>
           <select bind:value={c.feats[i].ability} aria-label={t('Ability del feat')}>
-            {#each pf.asi.from as x (x)}<option value={x}>{ABILITY_LABEL[x]}</option>{/each}
+            {#each pf.asi.from as x (x)}<option value={x} disabled={x !== c.feats[i].ability && score(c, x) >= 20}>{ABILITY_LABEL[x]}{score(c, x) >= 20 ? ' (20)' : ''}</option>{/each}
           </select>
+            {#if overCap(c.feats[i].ability)}<span class="capwarn">{t('máx. 20')}</span>{/if}
         </div>
       {/if}
     </div>
@@ -162,6 +167,11 @@
 </div>
 
 <style>
+  .capwarn {
+    color: var(--bad);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
   .warn {
     color: var(--accent);
     margin: 0;

@@ -5,6 +5,7 @@
   import { applyBackground, backgroundList, findBackground } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
+  import { score, scoreBreakdown } from '../../lib/rules/derive';
 
   let { c = $bindable() }: { c: Character } = $props();
 
@@ -33,6 +34,8 @@
     if (other && other.ability === a) other.ability = c.bonuses.background[i].ability;
     c.bonuses.background[i].ability = a;
   }
+  // Incremento que no cuenta porque la ability ya llegó a 20.
+  const overCap = (a: Ability | null | undefined) => !!a && scoreBreakdown(c, a).capped > 0;
 </script>
 
 <div class="card stack">
@@ -64,8 +67,9 @@
               <div class="bonus">
                 <b class="num">+{b.amount}</b>
                 <select value={b.ability} onchange={(e) => setPlus(i, e.currentTarget.value as Ability)} aria-label="Ability">
-                  {#each bg.asi as a (a)}<option value={a}>{ABILITY_LABEL[a]}</option>{/each}
+                  {#each bg.asi as a (a)}<option value={a} disabled={a !== b.ability && score(c, a) >= 20}>{ABILITY_LABEL[a]}{score(c, a) >= 20 ? ' (20)' : ''}</option>{/each}
                 </select>
+            {#if overCap(b.ability)}<span class="capwarn">{t('máx. 20')}</span>{/if}
               </div>
             {/each}
           </div>
@@ -90,6 +94,11 @@
 </div>
 
 <style>
+  .capwarn {
+    color: var(--bad);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
   .card h2 {
     margin-bottom: 0;
   }

@@ -182,3 +182,17 @@ describe('tope de 20 en abilities', () => {
     expect(scoreBreakdown(c, 'str').total).toBe(26);
   });
 });
+
+describe('tope de 20 con raza', () => {
+  it('el +2 de raza tampoco pasa de 20 y se cuenta como sobrante', async () => {
+    const { scoreBreakdown } = await import('./derive');
+    const { blankCharacter } = await import('../model/character');
+    const c = { ...blankCharacter(), abilities: { str: 19, dex: 10, con: 10, int: 10, wis: 10, cha: 10 } };
+    c.bonuses.species = [{ ability: 'str' as const, amount: 2 }];
+    const b = scoreBreakdown(c, 'str');
+    expect(b.total).toBe(20);
+    expect(b.capped).toBe(1);
+    c.abilities.str = 22; // base manual sobre 20 (homebrew) se respeta
+    expect(scoreBreakdown(c, 'str').total).toBe(22);
+  });
+});
