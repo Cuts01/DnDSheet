@@ -1,7 +1,8 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry } from '../model/character';
-import { slug, type Feature, type FeatureGrants, type Pack, type PackEffect, type PackOption } from '../model/pack';
-import { abilityMod, featureSource, pb, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
-import { allGrantedEffects, featInstances, findClass, findSpecies, findSubclass, featList, proficiencies } from './features';
+import { slug, type Feature, type FeatureGrants, type Pack, type PackEffect, type PackFeat, type PackOption } from '../model/pack';
+import { abilityMod, featureSource, pb, score, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
+import { allGrantedEffects, featInstances, findClass, findSpecies, findSubclass, featList, proficiencies, racialFeatAllowed } from './features';
+import { featSpells } from './spells';
 import { SKILLS } from './tables';
 
 /*
@@ -457,4 +458,53 @@ export function resistances(c: Character, packs: Pack[]): string[] {
   for (const u of grantUnits(c, packs)) add(u.grants);
   for (const fi of featInstances(c, packs)) add(fi.feat?.item.grants);
   return [...out].sort();
+}
+
+/* ---------- Requisitos de feats ---------- */
+
+const ABILITY_NAMES: Record<string, Ability> = {
+  strength: 'str', dexterity: 'dex', constitution: 'con', intelligence: 'int', wisdom: 'wis', charisma: 'cha'
+};
+
+/*
+ * Revisa el prerequisite de un feat contra el personaje. Devuelve las partes que no cumple (vacío = cumple).
+ * Entiende nivel, abilities mínimas, spellcasting, proficiencies de armor y armas, Fighting Style, background,
+ * feats previos y raza. Lo que no reconoce (ej. "No other dragonmark") no bloquea.
+ */
+export function featPrereqFails(c: Character, feat: PackFeat, packs: Pack[]): string[] {
+  const fails: string[] = [];
+  const text = feat.prerequisite.trim();
+  const level = c.classes.reduce((s, k) => s + k.level, 0);
+  if (feat.minLevel > level) fails.push(`Level ${feat.minLevel}+`);
+  if (!text) return fails;
+  const low = text.toLowerCase();
+  // Nivel escrito en el texto: "Level 4+" o "4th level".
+  const lv = /level (\d+)\+|(\d+)(?:st|nd|rd|th) level/.exec(low);
+  if (lv && Number(lv[1] ?? lv[2]) > level && !fails.length) fails.push(`Level ${lv[1] ?? lv[2]}+`);
+  // Abilities: "Intelligence, Wisdom or Charisma 13+" (basta una).
+  const ab = /((?:strength|dexterity|constitution|intelligence|wisdom|charisma)(?:(?:,\s*|\s+or\s+)(?:strength|dexterity|constitution|intelligence|wisdom|charisma))*)\s+(\d+)/.exec(low);
+  if (ab) {
+    const need = Number(ab[2]);
+    const list = ab[1].split(/,\s*|\s+or\s+/).map((x) => ABILITY_NAMES[x.trim()]).filter(Boolean);
+    if (!list.some((a) => score(c, a) >= need)) fails.push(ab[0].replace(/\b\w/g, (m) => m.toUpperCase()));
+  }
+  const caster = c.classes.some((k) => k.caster !== 'none');
+  if (/spellcasting|pact magic/.test(low) && !caster) fails.push('Spellcasting / Pact Magic');
+  if (/ability to cast at least one spell/.test(low)) {
+    const canCast = caster || c.spells.length > 0 || featSpells(c, packs).granted.length > 0;
+    if (!canCast) fails.push('Cast at least one spell');
+  }
+  const profs = proficiencies(c, packs);
+  const armor = profs.armor.map((x) => x.toLowerCase());
+  for (const kind of ['light', 'medium', 'heavy'])
+    if (new RegExp(`${kind} armor (training)?|proficiency with ${kind} armor`).test(low) && !armor.some((x) => x.startsWith(kind))) fails.push(`${kind[0].toUpperCase()}${kind.slice(1)} armor`);
+  if (/shield training/.test(low) && !armor.some((x) => x.startsWith('shield'))) fails.push('Shields');
+  if (/martial weapon/.test(low) && !profs.weapons.some((x) => /martial/i.test(x))) fails.push('Martial weapon');
+  if (/fighting style feature/.test(low) && !ownedFeatures(c, packs).some((o) => /fighting style/i.test(o.feature.name))) fails.push('Fighting Style');
+  const bg = /^(.+?) background$/i.exec(text);
+  if (bg && !c.background.name.toLowerCase().includes(bg[1].toLowerCase())) fails.push(text);
+  const prev = /strike of the giants/i.test(low) && !featInstances(c, packs).some((f) => /strike of the giants/i.test(f.name) && f.feat?.item.name !== feat.name);
+  if (prev) fails.push('Strike of the Giants');
+  if (feat.category.toLowerCase() === 'racial' && !racialFeatAllowed(feat, c)) fails.push(text);
+  return fails;
 }

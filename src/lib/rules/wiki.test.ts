@@ -338,3 +338,24 @@ describe.skipIf(!p14)('Primal Champion', () => {
     expect(scoreBreakdown(n, 'con').total).toBe(22);
   });
 });
+
+describe.skipIf(!p14 || !p24)('prerequisites de feats', () => {
+  it('Fighter 20 sin spells: Shadow Touched sí, Metamagic Adept y War Caster no', async () => {
+    const { featPrereqFails } = await import('./grants');
+    const { featList, speciesList, applySpecies } = await import('./features');
+    const f = (n: string, p = p14!, rs = '2014') => featList([p], rs).find((x) => x.item.name === n)!.item;
+    const c: Character = { ...blankCharacter(), classes: [cls('Fighter', 20)], abilities: { str: 16, dex: 12, con: 14, int: 8, wis: 10, cha: 10 } };
+    expect(featPrereqFails(c, f('Shadow Touched'), [p14!])).toEqual([]);
+    expect(featPrereqFails(c, f('Metamagic Adept'), [p14!]).length).toBeGreaterThan(0);
+    expect(featPrereqFails(c, f('War Caster'), [p14!]).length).toBeGreaterThan(0);
+    // Un Aasimar sabe Light: ya puede lanzar al menos una spell.
+    const aas = applySpecies(c, speciesList([p14!], '2014').find((x) => x.item.name === 'Aasimar')!);
+    expect(featPrereqFails(aas, f('War Caster'), [p14!])).toEqual([]);
+    // 2024: Level 4+ y abilities mínimas.
+    const c24: Character = { ...c, ruleset: '2024', classes: [cls('Fighter', 3)] };
+    expect(featPrereqFails(c24, f('Shadow Touched', p24!, '2024'), [p24!])).toEqual(['Level 4+']);
+    const k = { ...c24, classes: [cls('Fighter', 4)] };
+    expect(featPrereqFails(k, f('Keen Mind', p24!, '2024'), [p24!]).length).toBe(1);
+    expect(featPrereqFails(k, f('Archery', p24!, '2024'), [p24!])).toEqual([]);
+  });
+});

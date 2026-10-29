@@ -4,7 +4,8 @@
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
   import type { PackFeat } from '../../lib/model/pack';
   import { asiSlots, score, scoreBreakdown } from '../../lib/rules/derive';
-  import { featList, findFeat, packAsiLevels, racialFeatAllowed, type Ref } from '../../lib/rules/features';
+  import { featList, findFeat, packAsiLevels, type Ref } from '../../lib/rules/features';
+  import { featPrereqFails } from '../../lib/rules/grants';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
 
@@ -14,7 +15,10 @@
   const feats = $derived(featList(compendium.packs, c.ruleset));
   const is2024 = $derived(c.ruleset === '2024');
   // Feats raciales solo de tu raza, salvo que actives la regla de la casa. El feat ya elegido siempre queda en la lista.
-  const raceOk = (f: Ref<PackFeat>, current: string | null) => c.anyRacialFeats || f.value === current || racialFeatAllowed(f.item, c);
+  // Feats cuyo prerequisite no cumples (nivel, abilities, spellcasting, armor, raza...) se ocultan, salvo que actives
+  // la regla de la casa. El feat ya elegido siempre queda en la lista.
+  const raceOk = (f: Ref<PackFeat>, current: string | null) => c.anyRacialFeats || f.value === current || featPrereqFails(c, f.item, compendium.packs).length === 0;
+  const failsOf = (f: PackFeat | null | undefined) => (f ? featPrereqFails(c, f, compendium.packs) : []);
   const forSlot = (epic: boolean, current: string | null) =>
     feats.filter((f) => {
       if (!raceOk(f, current)) return false;
@@ -25,7 +29,7 @@
   const forOrigin = (current: string | null) =>
     (is2024 ? feats.filter((f) => f.item.category.toLowerCase().includes('origin')) : feats).filter((f) => raceOk(f, current));
   const forOther = (current: string | null) => feats.filter((f) => raceOk(f, current));
-  const hasRacial = $derived(feats.some((f) => f.item.category.toLowerCase() === 'racial'));
+  const hasRacial = $derived(feats.length > 0);
 
   const emptyAdv = (): Advancement => ({ kind: 'asi', asi: [{ ability: 'str', amount: 2 }], featRef: null, featName: '', featAbility: null });
   const adv = (key: string) => c.advancements[key];
@@ -114,7 +118,7 @@
         {/if}
         {#if f}
           {#if f.prerequisite}<p class="small muted">{t('Requisito')}: {f.prerequisite}</p>{/if}
-          {#if !racialFeatAllowed(f, c)}<p class="small warn">{t('Tu raza no cumple el requisito de este feat racial.')}</p>{/if}
+          {#if failsOf(f).length}<p class="small warn">{t('No cumples el requisito: {list}', { list: failsOf(f).join(', ') })}</p>{/if}
           {#if f.asi}
             <div class="bonus self">
               <b class="num">+1</b>
@@ -143,7 +147,7 @@
       {:else}
         <label class="field"><span>Feat</span><input bind:value={c.feats[i].name} /></label>
       {/if}
-      {#if pf && !racialFeatAllowed(pf, c)}<p class="small warn">{t('Tu raza no cumple el requisito de este feat racial.')}</p>{/if}
+      {#if failsOf(pf).length}<p class="small warn">{t('No cumples el requisito: {list}', { list: failsOf(pf).join(', ') })}</p>{/if}
       {#if pf?.asi}
         <div class="bonus self">
           <b class="num">+1</b>
@@ -159,7 +163,7 @@
   {#if hasRacial}
     <label class="check small">
       <input type="checkbox" bind:checked={c.anyRacialFeats} />
-      <span>{t('Permitir feats raciales de otras razas (si tu DM lo permite)')}</span>
+      <span>{t('Mostrar feats aunque no cumplas el prerequisite (si tu DM lo permite)')}</span>
     </label>
   {/if}
   <button onclick={addOther}>{t('Agregar feat adicional')}</button>
