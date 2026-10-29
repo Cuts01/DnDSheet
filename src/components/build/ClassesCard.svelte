@@ -2,7 +2,7 @@
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, CASTER_TYPES, HIT_DICE, MAX_LEVEL, classFromPreset, uid, type Character } from '../../lib/model/character';
-  import { casterLevel, totalLevel } from '../../lib/rules/derive';
+  import { casterLevel, multiclassFails, totalLevel } from '../../lib/rules/derive';
   import { classChoices } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import NumField from '../NumField.svelte';
@@ -13,6 +13,10 @@
   const choices = $derived(classChoices(compendium.packs, c.ruleset));
   const levelsLeft = $derived(MAX_LEVEL - totalLevel(c));
   let newClass = $state('');
+  // Requisitos de multiclass: la clase nueva y todas las que ya tienes necesitan 13 en su ability principal.
+  const mcFails = (name: string) => (c.anyMulticlass || name === '__custom' ? [] : multiclassFails(c, name));
+  const hasMulticlass = $derived(c.classes.length > 1);
+  const currentFails = $derived(hasMulticlass && !c.anyMulticlass ? c.classes.flatMap((k) => multiclassFails(c, k.name)).filter((v, i, a) => a.indexOf(v) === i) : []);
 
   const casterLabel: Record<(typeof CASTER_TYPES)[number], string> = {
     none: 'No lanza spells',
@@ -24,7 +28,7 @@
   };
 
   function addClass() {
-    if (!newClass || levelsLeft <= 0) return;
+    if (!newClass || levelsLeft <= 0 || mcFails(newClass).length) return;
     const preset = choices.find((p) => p.name === newClass);
     c.classes.push(
       preset
@@ -102,18 +106,44 @@
     <div class="row">
       <select bind:value={newClass} aria-label={t('Clase a agregar')}>
         <option value="">{t('Agregar clase (multiclass)...')}</option>
-        {#each choices as p (p.name)}<option value={p.name}>{p.name}</option>{/each}
+        {#each choices as p (p.name)}
+          {@const f = mcFails(p.name)}
+          <option value={p.name} disabled={f.length > 0}>{p.name}{f.length ? ` (${t('requiere')} ${f.join(', ')})` : ''}</option>
+        {/each}
         <option value="__custom">{t('Personalizada')}</option>
       </select>
-      <button onclick={addClass} disabled={!newClass}>{t('Agregar')}</button>
+      <button onclick={addClass} disabled={!newClass || mcFails(newClass).length > 0}>{t('Agregar')}</button>
     </div>
+    <p class="muted small">{t('Para hacer multiclass necesitas 13 en la ability principal de la clase nueva y de todas las que ya tienes.')}</p>
   {:else}
     <p class="muted small">{t('Llegaste al nivel {n}: para agregar otra clase, baja niveles de una existente.', { n: MAX_LEVEL })}</p>
   {/if}
+  {#if currentFails.length}
+    <p class="small warn">{t('Tu multiclass no cumple el requisito: {list}', { list: currentFails.join(', ') })}</p>
+  {/if}
+  <label class="check small">
+    <input type="checkbox" bind:checked={c.anyMulticlass} />
+    <span>{t('Permitir multiclass sin cumplir los requisitos (si tu DM lo permite)')}</span>
+  </label>
   <p class="muted small">{t('La clase inicial define el HP de nivel 1, los saves y las proficiencies completas.')}</p>
 </div>
 
 <style>
+  .warn {
+    color: var(--accent);
+    margin: 0;
+  }
+  .check {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    min-height: var(--tap);
+  }
+  .check input {
+    width: 22px;
+    min-height: 22px;
+    accent-color: var(--accent);
+  }
   .card h2 {
     margin-bottom: 0;
   }

@@ -637,3 +637,42 @@ export function attacks(c: Character, weaponProfs: string[], granted: Effect[] =
   });
   return out;
 }
+
+/* ---------- Requisitos de multiclass (iguales en 2014 y 2024) ---------- */
+
+/* all: necesitas 13 en todas; any: basta con una (Fighter: STR o DEX). */
+export const MULTICLASS_REQ: Record<string, { all?: Ability[]; any?: Ability[] }> = {
+  artificer: { all: ['int'] },
+  barbarian: { all: ['str'] },
+  bard: { all: ['cha'] },
+  cleric: { all: ['wis'] },
+  druid: { all: ['wis'] },
+  fighter: { any: ['str', 'dex'] },
+  monk: { all: ['dex', 'wis'] },
+  paladin: { all: ['str', 'cha'] },
+  ranger: { all: ['dex', 'wis'] },
+  rogue: { all: ['dex'] },
+  sorcerer: { all: ['cha'] },
+  warlock: { all: ['cha'] },
+  wizard: { all: ['int'] }
+};
+
+const reqText = (r: { all?: Ability[]; any?: Ability[] }) =>
+  r.any ? r.any.map((a) => `${a.toUpperCase()} 13`).join(' / ') : (r.all ?? []).map((a) => `${a.toUpperCase()} 13`).join(' + ');
+
+/* Requisito de una clase que no cumples (null si la cumples o si es una clase sin requisito, como las homebrew). */
+export function classReqFail(c: Character, className: string): string | null {
+  const r = MULTICLASS_REQ[className.trim().toLowerCase()];
+  if (!r) return null;
+  const ok = r.any ? r.any.some((a) => score(c, a) >= 13) : (r.all ?? []).every((a) => score(c, a) >= 13);
+  return ok ? null : `${className} (${reqText(r)})`;
+}
+
+/*
+ * Para sumar una clase nueva necesitas 13 en la ability principal de esa clase y de todas las que ya tienes.
+ * Devuelve lo que falta; vacío = puedes.
+ */
+export function multiclassFails(c: Character, newClass: string): string[] {
+  const names = [...new Set([...c.classes.map((k) => k.name), newClass])];
+  return names.map((n) => classReqFail(c, n)).filter((x): x is string => !!x);
+}

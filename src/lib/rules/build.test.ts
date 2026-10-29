@@ -196,3 +196,17 @@ describe('tope de 20 con raza', () => {
     expect(scoreBreakdown(c, 'str').total).toBe(22);
   });
 });
+
+describe('requisitos de multiclass', () => {
+  it('pide 13 en la ability principal de la clase nueva y de las actuales', async () => {
+    const { multiclassFails } = await import('./derive');
+    const { blankCharacter, classFromPreset, CLASS_PRESETS } = await import('../model/character');
+    const k = classFromPreset(CLASS_PRESETS.find((p) => p.name === 'Fighter')!, 5);
+    const c = { ...blankCharacter(), classes: [k], abilities: { str: 16, dex: 10, con: 14, int: 8, wis: 12, cha: 13 } };
+    expect(multiclassFails(c, 'Paladin')).toEqual([]);
+    expect(multiclassFails(c, 'Monk')).toEqual(['Monk (DEX 13 + WIS 13)']);
+    expect(multiclassFails(c, 'Wizard')).toEqual(['Wizard (INT 13)']);
+    c.abilities.str = 10;
+    expect(multiclassFails(c, 'Warlock')).toEqual(['Fighter (STR 13 / DEX 13)']);
+  });
+});

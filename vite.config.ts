@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-10-28 · prerequisites de feats') },
+  define: { __APP_VERSION__: JSON.stringify('2026-10-28 · requisitos de multiclass') },
   plugins: [
     svelte(),
     VitePWA({

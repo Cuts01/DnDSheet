@@ -268,6 +268,8 @@ const CharacterObject = z.object({
   hpBonus: z.number().int().min(0).max(999).default(0),
   /* Regla de la casa: permitir feats raciales de otras razas (si el DM lo permite). */
   anyRacialFeats: z.boolean().default(false),
+  /* Regla de la casa: permitir multiclass sin los 13 en las abilities principales. */
+  anyMulticlass: z.boolean().default(false),
   /* Aumentos de ability de class features con su tope (Primal Champion +4, máx. 24). Se calcula solo. */
   scoreBonus: z.array(z.object({ ability: abilityEnum, amount: z.number().int(), max: z.number().int() })).default([]),
   notes: z.string(),
@@ -392,6 +394,7 @@ export function blankCharacter(): Character {
     autoSaves: [],
     hpBonus: 0,
     anyRacialFeats: false,
+    anyMulticlass: false,
     scoreBonus: [],
     notes: '',
     updatedAt: new Date().toISOString()
