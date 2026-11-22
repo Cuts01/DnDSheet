@@ -269,6 +269,10 @@ const CharacterObject = z.object({
   weight: z.string().max(40).default(''),
   /* Datos de campaña de Strixhaven (opcional). */
   strixhaven: StrixhavenSchema.default(() => StrixhavenSchema.parse({})),
+  /* Equipo inicial del background ya cargado (A: objetos, B: oro), para poder deshacerlo. */
+  startingGear: z
+    .object({ choice: z.enum(['', 'A', 'B']).default(''), itemIds: z.array(z.string()).default([]), gp: z.number().min(0).default(0) })
+    .default({ choice: '', itemIds: [], gp: 0 }),
   bonuses: z
     .object({ species: z.array(BonusSchema), background: z.array(BonusSchema), other: z.array(BonusSchema) })
     .default({ species: [], background: [], other: [] }),
@@ -438,6 +442,7 @@ export function blankCharacter(): Character {
     height: '',
     weight: '',
     strixhaven: StrixhavenSchema.parse({}),
+    startingGear: { choice: '', itemIds: [], gp: 0 },
     bonuses: { species: [], background: [], other: [] },
     advancements: {},
     feats: [],

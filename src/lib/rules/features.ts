@@ -390,6 +390,13 @@ export function applyBackground(c: Character, ref: Ref<PackBackground> | null, p
   delete n.skillPicks['background-choice'];
   n.bonuses.background = [];
   n.feats = n.feats.filter((f) => f.source !== 'background');
+  // El equipo inicial del background anterior se devuelve.
+  if (n.startingGear.choice) {
+    const ids = n.startingGear.itemIds;
+    n.inventory = n.inventory.filter((i) => !ids.includes(i.id));
+    n.currency.gp = Math.max(0, n.currency.gp - n.startingGear.gp);
+    n.startingGear = { choice: '', itemIds: [], gp: 0 };
+  }
   if (!ref) return n;
   const bg = ref.item;
   n.background.name = bg.name;

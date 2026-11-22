@@ -6,6 +6,7 @@
   import { applyBackground, backgroundList, findBackground } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
+  import { applyStartingGear, parseEquipment, undoStartingGear } from '../../lib/rules/startingGear';
   import { score, scoreBreakdown } from '../../lib/rules/derive';
 
   let { c = $bindable() }: { c: Character } = $props();
@@ -82,6 +83,34 @@
       </div>
     {/if}
 
+    {#if bg.equipment}
+      {@const plan = parseEquipment(bg.equipment)}
+      {@const g = c.startingGear}
+      <div class="gear">
+        <span class="small muted">{t('Equipo inicial')}</span>
+        <div class="gear-opts" role="radiogroup" aria-label={t('Equipo inicial')}>
+          <button class="opt" class:on={g.choice === 'A'} role="radio" aria-checked={g.choice === 'A'} onclick={() => (c = applyStartingGear($state.snapshot(c) as Character, bg.equipment, 'A', compendium.packs))}>
+            <b>{plan.alt != null ? 'A · ' : ''}{t('El equipo')}</b>
+            <small>{plan.items.map((i) => (i.qty > 1 ? `${i.qty} ${i.name}` : i.name)).join(', ')}{plan.gp ? `, ${plan.gp} GP` : ''}</small>
+          </button>
+          {#if plan.alt != null}
+            <button class="opt" class:on={g.choice === 'B'} role="radio" aria-checked={g.choice === 'B'} onclick={() => (c = applyStartingGear($state.snapshot(c) as Character, bg.equipment, 'B', compendium.packs))}>
+              <b>B · {plan.alt} GP</b>
+              <small>{t('Compras tu equipo por tu cuenta')}</small>
+            </button>
+          {/if}
+        </div>
+        {#if g.choice}
+          <p class="small muted">
+            {g.choice === 'A' ? t('Agregado a tu inventario ({n} objetos y {gp} GP).', { n: g.itemIds.length, gp: g.gp }) : t('Sumado a tus monedas: {gp} GP.', { gp: g.gp })}
+            <button class="ghost linkish" onclick={() => (c = undoStartingGear($state.snapshot(c) as Character))}>{t('Deshacer')}</button>
+          </p>
+        {:else}
+          <p class="small accent">{plan.alt != null ? t('Elige A o B: se carga en tu inventario y tus monedas.') : t('Toca para cargarlo en tu inventario.')}</p>
+        {/if}
+      </div>
+    {/if}
+
     {#if bg.skillChoices}
       <p class="small accent">{t('Elige {n} skill(s) en Proficiencies.', { n: bg.skillChoices.count })}</p>
     {/if}
@@ -101,6 +130,46 @@
 </div>
 
 <style>
+  .gear {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .gear p {
+    margin: 0;
+  }
+  .gear-opts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+  }
+  .opt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    text-align: left;
+    padding: 10px 12px;
+    min-height: 0;
+    border-radius: 12px;
+  }
+  .opt small {
+    color: var(--muted);
+    line-height: 1.35;
+  }
+  .opt.on {
+    border-color: var(--accent);
+    background: var(--surface-2);
+  }
+  .opt.on b {
+    color: var(--accent);
+  }
+  .linkish {
+    min-height: 0;
+    padding: 0 4px;
+    color: var(--accent);
+    text-decoration: underline;
+  }
   .capwarn {
     color: var(--bad);
     font-size: 0.75rem;

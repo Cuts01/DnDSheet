@@ -511,6 +511,12 @@ const en: Record<string, string> = {
   "Tu background te deja elegir: {list}.": "Your background lets you choose: {list}.",
   "cualquier {cat}": "any {cat}",
   " o ": " or ",
+  "El equipo": "The equipment",
+  "Compras tu equipo por tu cuenta": "Buy your own equipment",
+  "Agregado a tu inventario ({n} objetos y {gp} GP).": "Added to your inventory ({n} items and {gp} GP).",
+  "Sumado a tus monedas: {gp} GP.": "Added to your coins: {gp} GP.",
+  "Elige A o B: se carga en tu inventario y tus monedas.": "Choose A or B: it goes to your inventory and coins.",
+  "Toca para cargarlo en tu inventario.": "Tap to add it to your inventory.",
 };
 
 export default en;
