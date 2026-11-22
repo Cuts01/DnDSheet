@@ -244,6 +244,12 @@ class Flow {
     const size = 8.6;
     const kk = `${this.p.clean(k)}: `;
     const kw = this.p.f.bold.widthOfTextAtSize(kk, size);
+    // Nombre largo: el nombre en negrita en sus renglones y el valor debajo, con sangría.
+    if (kw > this.region.w * 0.42) {
+      this.para(kk.trim(), { size, font: this.p.f.bold });
+      this.para(v, { size, indent: 8, after: 2 });
+      return;
+    }
     const lines = wrap(this.p.clean(v), this.p.f.reg, size, this.region.w - kw);
     lines.forEach((l, i) => {
       this.ensure(size * 1.32);
@@ -305,32 +311,81 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   const img = await p.doc.embedJpg(bytes);
   page.drawImage(img, { x: 0, y: 0, width: W, height: H });
 
-  // Tamaño que entra en el ancho (en px de la plantilla), sin bajar de min.
-  const sized = (s: string, font: PDFFont, size: number, maxPx: number, min = 5.5) => {
+  /* Texto en un casillero: primero se achica hasta `min`; si igual no entra, pasa a varios renglones
+     (centrados en cy). Nunca se corta con "...". */
+  const block = (
+    s: string,
+    x: number,
+    cy: number,
+    maxPx: number,
+    size: number,
+    font: PDFFont,
+    o: { min?: number; lines?: number; align?: 'left' | 'center'; color?: RGB; wrapSize?: number } = {}
+  ) => {
     const c = p.clean(s);
+    const maxW = maxPx * SX;
+    const min = o.min ?? Math.max(5, size * 0.75);
     let z = size;
-    while (z > min && font.widthOfTextAtSize(c, z) > maxPx * SX) z -= 0.25;
-    return { c: font.widthOfTextAtSize(c, z) > maxPx * SX ? p.fit(c, font, z, maxPx * SX) : c, z };
+    while (z > min && font.widthOfTextAtSize(c, z) > maxW) z -= 0.25;
+    let ls = [c];
+    if (font.widthOfTextAtSize(c, z) > maxW) {
+      z = o.wrapSize ?? size;
+      ls = wrap(c, font, z, maxW);
+      while (z > min && ls.length > (o.lines ?? 2)) {
+        z -= 0.25;
+        ls = wrap(c, font, z, maxW);
+      }
+    }
+    const lh = z * 1.12;
+    ls.forEach((l, i) => {
+      const cyPt = cy * SY - ((ls.length - 1) * lh) / 2 + i * lh;
+      const xPt = o.align === 'center' ? x * SX - font.widthOfTextAtSize(l, z) / 2 : x * SX;
+      p.text(page, l, xPt, cyPt - z * 0.44, z, font, o.color ?? INK);
+    });
   };
-  const center = (s: string, cx: number, cy: number, size: number, font = bold, maxPx = 400) => {
-    const { c, z } = sized(s, font, size, maxPx);
-    p.text(page, c, cx * SX - font.widthOfTextAtSize(c, z) / 2, cy * SY - z * 0.44, z, font);
-  };
-  const left = (s: string, x: number, cy: number, size: number, font = reg, maxPx = 400, color: RGB = INK) => {
-    const { c, z } = sized(s, font, size, maxPx);
-    p.text(page, c, x * SX, cy * SY - z * 0.44, z, font, color);
-  };
-  // Texto sobre una línea del renglón (baseline apenas arriba de la línea).
-  const onLine = (s: string, x: number, lineY: number, size: number, font = reg, maxPx = 400, color: RGB = INK, min = size) => {
-    const { c, z } = sized(s, font, size, maxPx, min);
-    p.text(page, c, x * SX, lineY * SY - 2.2 - z * 0.8, z, font, color);
+  const center = (s: string, cx: number, cy: number, size: number, font = bold, maxPx = 400, lines = 2) =>
+    block(s, cx, cy, maxPx, size, font, { align: 'center', lines });
+  const left = (s: string, x: number, cy: number, size: number, font = reg, maxPx = 400, lines = 2) => block(s, x, cy, maxPx, size, font, { lines });
+
+  /* Renglones de la plantilla: cada ítem ocupa los renglones que necesite (los siguientes con sangría).
+     Si no entran todos, el último renglón avisa que sigue en la página 2. Devuelve true si algo no entró. */
+  type Row = { text: string; font?: PDFFont; color?: RGB };
+  const ruled = (items: Row[], linesY: number[], x: number, maxPx: number, size: number, note: string) => {
+    const maxW = maxPx * SX;
+    const IND = 8;
+    const expand = (it: Row) => {
+      const f = it.font ?? reg;
+      const first = wrap(p.clean(it.text), f, size, maxW);
+      if (first.length <= 1) return first;
+      // Renglones de continuación con sangría.
+      const [head, ...restWords] = first;
+      const rest = wrap(restWords.join(' '), f, size, maxW - IND);
+      return [head, ...rest];
+    };
+    const out: { text: string; font: PDFFont; color: RGB; indent: number }[] = [];
+    let over = false;
+    for (let i = 0; i < items.length; i++) {
+      const ls = expand(items[i]);
+      const left = items.length - i - 1;
+      const room = linesY.length - out.length - (left > 0 ? 1 : 0);
+      if (ls.length > room && !(left === 0 && ls.length <= linesY.length - out.length)) {
+        over = true;
+        break;
+      }
+      ls.forEach((l, k) => out.push({ text: l, font: items[i].font ?? reg, color: items[i].color ?? INK, indent: k ? IND : 0 }));
+    }
+    if (over) out.push({ text: note, font: p.f.ital, color: INK, indent: 0 });
+    out.forEach((l, i) => p.text(page, l.text, x * SX + l.indent, linesY[i] * SY - 2.2 - size * 0.8, size, l.font, l.color));
+    return over;
   };
   const dot = (x: number, y: number, rPx: number) => page.drawCircle({ x: x * SX, y: H - y * SY, size: rPx * SX, color: INK });
 
   // Encabezado
   // Banner NAME: el nombre sigue la curva del banner (arco con el centro más alto).
   {
-    const { c, z } = sized(d.name, bold, 15, 400, 8);
+    const c = p.clean(d.name);
+    let z = 15;
+    while (z > 6 && bold.widthOfTextAtSize(c, z) > 400 * SX) z -= 0.25;
     const R = 900 * SX;
     const total = bold.widthOfTextAtSize(c, z);
     const cx = 850 * SX;
@@ -350,19 +405,14 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   }
   // Recuadro de arriba a la derecha (plantilla editada): tamaño, altura y peso; la edad en AGE.
   left([d.front.size, d.front.height, d.front.weight].filter(Boolean).join(' / '), 1240, 132, 9.5, reg, 280);
-  if (d.front.age) center(d.front.age, 1586, 121, 8, bold, 60);
+  if (d.front.age) block(d.front.age, 1578, 120, 66, 8, bold, { align: 'center', min: 5, lines: 2, wrapSize: 5.5 });
   center(d.front.ac, 850, 252, 20, bold, 110);
   // Proficiency Bonus en el cuadro de arriba a la izquierda; Passive Investigation en el rombo de al lado.
   center(d.front.prof, 117, 131, 14, bold, 70);
   center(String(d.passives[2]?.value ?? ''), 450, 206, 12, bold, 70);
   center(String(d.front.perception), 155, 263, 12, bold, 70);
   // Level/Class en hasta dos renglones si es largo (multiclass).
-  const cl = wrap(p.clean(d.front.classLine), reg, 8, 370 * SX);
-  if (cl.length <= 1) left(d.front.classLine, 1225, 222, 9.5, reg, 385);
-  else {
-    left(cl[0], 1240, 208, 8, reg, 370);
-    left(cl.slice(1).join(' '), 1240, 230, 8, reg, 370);
-  }
+  block(d.front.classLine, 1262, 217, 350, 9.5, reg, { min: 8.5, lines: 2, wrapSize: 7.8 });
   left(d.front.originLine, 1150, 306, 9.5, reg, 455);
 
   // Abilities
@@ -391,11 +441,18 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   center(d.front.maxHp, 718, 352, 18, bold, 160);
   center(d.front.init, 722, 478, 18, bold, 160);
   center(d.front.speed, 975, 478, 15, bold, 170);
-  left(d.front.hitDice, 763, 712, 8.5, bold, 95);
+  left(d.front.hitDice, 763, 712, 8.5, bold, 95, 2);
   left(String(d.front.hitDiceTotal), 742, 764, 10, bold, 50);
 
   // Recursos (los círculos quedan para marcar a mano)
-  d.resources.slice(0, RES_LINES.length).forEach((r, i) => onLine(`${r.name} · ${r.short}`, 652, RES_LINES[i], 7.2, reg, 272, INK, 5.8));
+  const resOver = ruled(
+    d.resources.map((r) => ({ text: `${r.name} · ${r.short}` })),
+    RES_LINES,
+    652,
+    272,
+    7,
+    t('Más en la página 2')
+  );
 
   // Monedas
   const coin = (v: number, cx: number) => v && center(String(v), cx, 1431, 8.5, bold, 90);
@@ -407,37 +464,41 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   // Armas y ataques
   d.attacks.slice(0, ATK_ROWS.length).forEach((a, i) => {
     const y = ATK_ROWS[i];
-    left(a.name, 99, y, 7.5, bold, 128);
-    center(a.range, 278, y, 6.8, reg, 76);
-    center(a.hit, 366, y, 8.5, bold, 76);
-    const dl = wrap(p.clean(a.damage), reg, 6.6, 182 * SX);
-    if (dl.length <= 1) left(a.damage, 417, y, 6.8, reg, 182);
-    else {
-      p.text(page, dl[0], 417 * SX, y * SY - 7.3, 6.6, reg);
-      p.text(page, p.fit(dl.slice(1).join(' '), reg, 6.6, 182 * SX), 417 * SX, y * SY + 0.8, 6.6, reg);
-    }
+    block(a.name, 99, y, 128, 7.5, bold, { lines: 2, min: 6 });
+    center(a.range, 278, y, 6.8, reg, 76, 2);
+    center(a.hit, 366, y, 8.5, bold, 76, 1);
+    block(a.damage, 417, y, 182, 6.8, reg, { lines: 3, min: 5.2 });
   });
-  const rest = d.attacks.slice(ATK_ROWS.length);
-  rest.slice(0, ATK_EXTRA.length).forEach((a, i) => {
-    const more = i === ATK_EXTRA.length - 1 && rest.length > ATK_EXTRA.length;
-    onLine(more ? `${t('Más ataques en la página 2')}` : `${a.name} · ${a.range} · ${a.hit} · ${a.damage}`, 92, ATK_EXTRA[i], 7, more ? p.f.ital : reg, 510);
-  });
+  const atkOver = ruled(
+    d.attacks.slice(ATK_ROWS.length).map((a) => ({ text: [a.name, a.range, a.hit, a.damage].filter(Boolean).join(' · ') })),
+    ATK_EXTRA,
+    92,
+    510,
+    7,
+    t('Más ataques en la página 2')
+  );
 
   // Armor y consumibles
   d.armor.slice(0, ARMOR_ROWS.length).forEach((a, i) => {
-    left(`${a.name}${a.equipped ? '' : ` (${t('sin equipar')})`}`, 99, ARMOR_ROWS[i], 7.5, a.equipped ? bold : reg, 148);
+    block(`${a.name}${a.equipped ? '' : ` (${t('sin equipar')})`}`, 99, ARMOR_ROWS[i], 148, 7.5, a.equipped ? bold : reg, { lines: 2, min: 6 });
     center(a.ac, 296, ARMOR_ROWS[i], 8.5, bold, 76);
   });
   d.consumables.slice(0, ARMOR_ROWS.length).forEach((cn, i) => {
-    left(cn.name, 361, ARMOR_ROWS[i], 7.5, reg, 148);
+    block(cn.name, 361, ARMOR_ROWS[i], 148, 7.5, reg, { lines: 2, min: 6 });
     center(String(cn.qty), 559, ARMOR_ROWS[i], 8.5, bold, 76);
   });
 
   // Inventario
   const inv = [...d.inventory];
   if (d.coins.ep) inv.push(`${d.coins.ep} ep`);
-  const invShown = inv.length > INV_LINES.length ? [...inv.slice(0, INV_LINES.length - 1), t('... el resto en la página de equipo')] : inv;
-  invShown.forEach((x, i) => onLine(x, 640, INV_LINES[i], 7.2, reg, 422));
+  const invOver = ruled(
+    inv.map((x) => ({ text: x })),
+    INV_LINES,
+    640,
+    422,
+    7.2,
+    t('... el resto en la página de equipo')
+  );
 
   // Proficiencies (texto corrido por renglones, con sangría bajo cada título)
   const profLines: { k: string; v: string; kw: number }[] = [];
@@ -454,10 +515,16 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
 
   // Traits and features: nombres (el texto completo va en la página 2)
   const tl = d.traitLines;
-  const shown = tl.length > TRAIT_LINES.length ? [...tl.slice(0, TRAIT_LINES.length - 1), { text: t('... sigue en la página 2'), head: false }] : tl;
-  shown.forEach((l, i) => onLine(l.text, 1096, TRAIT_LINES[i], l.head ? 7.6 : 7.2, l.head ? bold : reg, 512, l.head ? ACCENT : INK));
+  ruled(
+    tl.map((l) => ({ text: l.text, font: l.head ? bold : reg })),
+    TRAIT_LINES,
+    1096,
+    512,
+    7.2,
+    t('... sigue en la página 2')
+  );
 
-  return { attacks: d.attacks.length > ATK_ROWS.length + ATK_EXTRA.length, resources: d.resources.length > RES_LINES.length, profs: profLines.length > PROF_LINES.length, inventory: inv.length > INV_LINES.length };
+  return { attacks: atkOver, resources: resOver, profs: profLines.length > PROF_LINES.length, inventory: invOver };
 }
 
 /* Encabezado de la página 2: foto, nombre y líneas de clase y origen. */
@@ -481,11 +548,21 @@ async function drawHeader(p: Painter, page: PDFPage, d: SheetData): Promise<numb
       /* Foto ilegible: se omite. */
     }
   }
-  p.text(page, p.fit(d.name, bold, 20, W - M - tx), tx, top + 8, 20, bold);
-  p.text(page, p.fit(d.lines[0], reg, 11, W - M - tx), tx, top + 34, 11, reg);
-  p.text(page, p.fit(d.lines[1], reg, 9.5, W - M - tx), tx, top + 50, 9.5, reg, MUTED);
-  if (d.lines[2]) p.text(page, p.fit(d.lines[2], reg, 8.5, W - M - tx), tx, top + 63, 8.5, reg, MUTED);
-  return (d.photo ? s : 74) + 12;
+  // Texto a la derecha de la foto, en los renglones que haga falta.
+  let y = top + 4;
+  const put = (text: string, size: number, font: PDFFont, color: RGB, gap: number) => {
+    if (!text) return;
+    for (const l of wrap(p.clean(text), font, size, W - M - tx)) {
+      p.text(page, l, tx, y, size, font, color);
+      y += size * 1.22;
+    }
+    y += gap;
+  };
+  put(d.name, 20, bold, INK, 3);
+  put(d.lines[0], 11, reg, INK, 1);
+  put(d.lines[1], 9.5, reg, MUTED, 0);
+  put(d.lines[2], 8.5, reg, MUTED, 0);
+  return Math.max(d.photo ? s : 0, y - top) + 12;
 }
 
 function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {
@@ -537,11 +614,23 @@ function drawSpell(flow: Flow, p: Painter, s: SpellRow) {
   flow.ensure(28);
   const r = flow.region;
   p.mark(r.page, r.x + 3.5, r.y + 4.4, s.mark === 'always' ? 'always' : s.mark === 'prepared' ? 'prof' : 'none');
-  const title = s.source ? `${s.name}` : s.name;
-  const tw = p.f.bold.widthOfTextAtSize(p.clean(title), 9.4);
-  p.text(r.page, p.fit(title, p.f.bold, 9.4, r.w - 12), r.x + 11, r.y, 9.4, p.f.bold);
-  if (s.source && 11 + tw + 8 + p.f.reg.widthOfTextAtSize(p.clean(s.source), 7.6) <= r.w) p.text(r.page, s.source, r.x + 11 + tw + 8, r.y + 1.3, 7.6, p.f.reg, MUTED);
-  flow.space(12.5);
+  const titleLines = wrap(p.clean(s.name), p.f.bold, 9.4, r.w - 12);
+  const tw = p.f.bold.widthOfTextAtSize(titleLines[titleLines.length - 1], 9.4);
+  titleLines.forEach((l, i) => p.text(r.page, l, r.x + 11, r.y + i * 12, 9.4, p.f.bold));
+  const lastY = r.y + (titleLines.length - 1) * 12;
+  if (s.source) {
+    const src = p.clean(s.source);
+    if (11 + tw + 8 + p.f.reg.widthOfTextAtSize(src, 7.6) <= r.w) p.text(r.page, src, r.x + 11 + tw + 8, lastY + 1.3, 7.6, p.f.reg, MUTED);
+    else {
+      flow.space(titleLines.length * 12 + 0.5);
+      flow.para(src, { size: 7.6, color: MUTED, indent: 11 });
+      if (s.meta) flow.para(s.meta, { size: 7.4, color: MUTED, indent: 11 });
+      if (s.text) flow.para(s.text, { size: 8.3, indent: 11 });
+      flow.space(5);
+      return;
+    }
+  }
+  flow.space(titleLines.length * 12 + 0.5);
   if (s.meta) flow.para(s.meta, { size: 7.4, color: MUTED, indent: 11 });
   if (s.text) flow.para(s.text, { size: 8.3, indent: 11 });
   flow.space(5);
