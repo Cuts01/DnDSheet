@@ -65,8 +65,16 @@
       title={c.abilitiesLocked ? t('Desbloquear ability scores') : t('Bloquear ability scores')}
       onclick={() => (c.abilitiesLocked = !c.abilitiesLocked)}
     >
-      <span aria-hidden="true">{c.abilitiesLocked ? '🔒' : '🔓'}</span>
-      <span class="small">{c.abilitiesLocked ? t('Bloqueado') : t('Bloquear')}</span>
+      <!-- Candado de línea fina, en el color del texto (dorado si está cerrado), como los íconos de la barra. -->
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="5" y="10.5" width="14" height="10" rx="2.5" />
+        {#if c.abilitiesLocked}
+          <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3" />
+        {:else}
+          <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 6.6-1.6" />
+        {/if}
+        <path d="M12 14.5v2" />
+      </svg>
     </button>
   </div>
   <div class="seg" role="tablist" aria-label={t('Método')}>
@@ -144,14 +152,24 @@
   .lock {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    width: 40px;
     min-height: 40px;
-    padding: 0 12px;
+    padding: 0;
     border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    transition:
+      color 0.15s,
+      background 0.15s;
+  }
+  .lock:hover {
+    background: var(--surface-2);
   }
   .lock.locked {
-    border-color: var(--accent);
     color: var(--accent);
+    background: var(--surface-2);
   }
   .locked-val {
     display: inline-flex;
