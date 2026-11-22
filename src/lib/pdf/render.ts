@@ -15,7 +15,8 @@ const INK = rgb(0.12, 0.12, 0.14);
 const MUTED = rgb(0.42, 0.42, 0.46);
 const LINE = rgb(0.74, 0.74, 0.77);
 const FILL = rgb(0.955, 0.955, 0.962);
-const ACCENT = rgb(0.56, 0.4, 0.09);
+/* Resaltados en negro (con negrita), sin color. */
+const ACCENT = INK;
 
 interface Fonts {
   reg: PDFFont;
@@ -327,17 +328,12 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   const dot = (x: number, y: number, rPx: number) => page.drawCircle({ x: x * SX, y: H - y * SY, size: rPx * SX, color: INK });
 
   // Encabezado
-  // Banner NAME: el jugador. Recuadro de arriba a la derecha: el PJ y su edad.
-  if (d.front.player) center(d.front.player, 850, 134, 13, bold, 420);
-  left(d.name, 1238, 133, 12, bold, 285);
+  // Banner NAME: el PJ. Recuadro de arriba a la derecha (plantilla editada): tamaño, altura, peso y edad.
+  center(d.name, 850, 134, 15, bold, 420);
+  left([d.front.size, d.front.height, d.front.weight].filter(Boolean).join(' · '), 1238, 134, 10, reg, 285);
   if (d.front.age) center(d.front.age, 1586, 121, 8, bold, 60);
-  // Recuadro libre de arriba a la izquierda: altura, peso y tamaño.
-  const body = [
-    d.front.height ? `${t('Altura')}: ${d.front.height}` : '',
-    d.front.weight ? `${t('Peso')}: ${d.front.weight}` : '',
-    `${t('Tamaño')}: ${d.front.size}`
-  ].filter(Boolean);
-  body.forEach((x, i) => left(x, 98, 100 + i * 21, 7, reg, 188));
+  // Passive Investigation (agregado a la plantilla arriba a la izquierda).
+  center(String(d.passives[2]?.value ?? ''), 138, 124, 12, bold, 70);
   center(d.front.ac, 850, 252, 20, bold, 110);
   center(d.front.prof, 450, 206, 12, bold, 70);
   center(String(d.front.perception), 155, 263, 12, bold, 70);

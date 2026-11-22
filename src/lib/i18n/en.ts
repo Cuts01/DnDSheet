@@ -455,8 +455,8 @@ const en: Record<string, string> = {
   "Ej. 80 kg": "E.g. 175 lb",
   "lo define la raza": "set by your race",
   "Jugador": "Player",
-  "Tu nombre (va en el banner del PDF)": "Your name (goes on the PDF banner)",
   "datos generales": "general details",
+  "Tu nombre": "Your name",
 };
 
 export default en;

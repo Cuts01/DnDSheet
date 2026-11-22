@@ -85,7 +85,7 @@
         <label class="field"><span>{t('Peso')}</span><input bind:value={store.c.weight} placeholder={t('Ej. 80 kg')} disabled={!!store.c.locks.general} /></label>
       </div>
       <p class="muted small">{t('Tamaño')}: <b>{store.c.species.size}</b> · {t('lo define la raza')}</p>
-      <label class="field"><span>{t('Jugador')}</span><input bind:value={store.c.playerName} placeholder={t('Tu nombre (va en el banner del PDF)')} disabled={!!store.c.locks.general} /></label>
+      <label class="field"><span>{t('Jugador')}</span><input bind:value={store.c.playerName} placeholder={t('Tu nombre')} disabled={!!store.c.locks.general} /></label>
       <PhotoField bind:photo={store.c.photo} />
       <label class="field">
         <span>Ruleset</span>
