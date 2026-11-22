@@ -5,7 +5,7 @@
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
   import type { PackFeat } from '../../lib/model/pack';
   import { asiSlots, score, scoreBreakdown } from '../../lib/rules/derive';
-  import { featList, findFeat, packAsiLevels, type Ref } from '../../lib/rules/features';
+  import { featByName, featList, findBackground, findFeat, packAsiLevels, type Ref } from '../../lib/rules/features';
   import { featPrereqFails } from '../../lib/rules/grants';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
@@ -56,6 +56,16 @@
   const featText = (f: PackFeat) => f.text;
   const featNote = (f: PackFeat) => [f.prerequisite ? `${t('Requisito')}: ${f.prerequisite}` : '', f.asi ? `+1 ${f.asi.from.map((x) => ABILITY_LABEL[x]).join('/')}` : ''].filter(Boolean).join(' · ');
   const featOf = (ref: string | null) => findFeat(compendium.packs, ref)?.item ?? null;
+  // El background da un feat fijo (Origin feat en 2024): no se elige, salvo que el DM lo permita.
+  const bgFeat = $derived.by(() => {
+    const name = findBackground(compendium.packs, c.background.ref)?.item.feat;
+    return name ? featByName(compendium.packs, name, c.ruleset) : null;
+  });
+  const fixedBg = (source: string) => source === 'background' && !!bgFeat && !c.anyBackgroundFeat;
+  function restoreBgFeat(i: number) {
+    if (!bgFeat) return;
+    c.feats[i] = { ...c.feats[i], ref: bgFeat.value, name: bgFeat.item.name, ability: null };
+  }
 
   function addOther() {
     c.feats.push({ id: uid(), ref: null, name: '', source: 'other', ability: null });
@@ -149,7 +159,16 @@
           <button class="ghost danger del" aria-label={t('Quitar feat')} onclick={() => c.feats.splice(i, 1)}>✕</button>
         {/if}
       </div>
-      {#if feats.length}
+      {#if fixedBg(f.source) && bgFeat}
+        <div class="fixed">
+          <span class="fixed-name">{bgFeat.item.name}</span>
+          {#if bgFeat.item.text}<p class="fixed-desc">{bgFeat.item.text}</p>{/if}
+          {#if f.ref !== bgFeat.value}
+            <p class="small warn">{t('Este feat fue cambiado, pero tu background da {feat}.', { feat: bgFeat.item.name })}</p>
+            <button class="ghost" onclick={() => restoreBgFeat(i)}>{t('Usar el de mi background')}</button>
+          {/if}
+        </div>
+      {:else if feats.length}
         <RefSelect options={f.source === 'other' ? forOther(f.ref) : forOrigin(f.ref)} value={f.ref} label="Feat" describe={featText} note={featNote} onpick={(r) => pickOther(i, r)} />
       {:else}
         <label class="field"><span>Feat</span><input bind:value={c.feats[i].name} /></label>
@@ -167,6 +186,12 @@
     </div>
   {/each}
 
+  {#if bgFeat}
+    <label class="check small">
+      <input type="checkbox" bind:checked={c.anyBackgroundFeat} />
+      <span>{t('Permitir cambiar el feat del background (si tu DM lo permite)')}</span>
+    </label>
+  {/if}
   {#if hasRacial}
     <label class="check small">
       <input type="checkbox" bind:checked={c.anyRacialFeats} />
@@ -180,6 +205,25 @@
 </div>
 
 <style>
+  .fixed {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .fixed-name {
+    font-weight: 650;
+  }
+  .fixed-desc {
+    margin: 0;
+    padding: 8px 10px;
+    background: var(--surface-2);
+    border-radius: 10px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+  .fixed .ghost {
+    align-self: flex-start;
+  }
   .capwarn {
     color: var(--bad);
     font-size: 0.75rem;

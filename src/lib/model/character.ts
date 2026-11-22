@@ -325,6 +325,8 @@ const CharacterObject = z.object({
   hpBonus: z.number().int().min(0).max(999).default(0),
   /* Regla de la casa: permitir feats raciales de otras razas (si el DM lo permite). */
   anyRacialFeats: z.boolean().default(false),
+  /* House rule: permitir cambiar el feat fijo que da el background (2024). */
+  anyBackgroundFeat: z.boolean().default(false),
   /* Regla de la casa: permitir multiclass sin los 13 en las abilities principales. */
   anyMulticlass: z.boolean().default(false),
   /* Aumentos de ability de class features con su tope (Primal Champion +4, máx. 24). Se calcula solo. */
@@ -461,6 +463,7 @@ export function blankCharacter(): Character {
     autoSaves: [],
     hpBonus: 0,
     anyRacialFeats: false,
+    anyBackgroundFeat: false,
     anyMulticlass: false,
     scoreBonus: [],
     notes: '',

@@ -503,6 +503,9 @@ const en: Record<string, string> = {
   "Skills del examen": "Exam skills",
   "Sumar punto": "Add a point",
   "Strixhaven": "Strixhaven",
+  "Este feat fue cambiado, pero tu background da {feat}.": "This feat was changed, but your background grants {feat}.",
+  "Usar el de mi background": "Use my background one",
+  "Permitir cambiar el feat del background (si tu DM lo permite)": "Allow changing the background feat (if your DM allows it)",
 };
 
 export default en;
