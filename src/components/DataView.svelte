@@ -27,7 +27,8 @@
 
   async function confirmImport(asNew: boolean) {
     if (!pending) return;
-    const c = pending;
+    // Copia simple: el pendiente es $state (proxy) y IndexedDB no puede clonar proxies.
+    const c = $state.snapshot(pending) as Character;
     pending = null;
     if (asNew) await store.add(c);
     else store.replace(c);
