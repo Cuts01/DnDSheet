@@ -506,6 +506,8 @@ const en: Record<string, string> = {
   "Este feat fue cambiado, pero tu background da {feat}.": "This feat was changed, but your background grants {feat}.",
   "Usar el de mi background": "Use my background one",
   "Permitir cambiar el feat del background (si tu DM lo permite)": "Allow changing the background feat (if your DM allows it)",
+  "Esta raza puede ser {list}: elige uno.": "This race can be {list}: pick one.",
+  "elígelo en la tarjeta de raza, más abajo": "pick it in the race card below",
 };
 
 export default en;

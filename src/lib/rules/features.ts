@@ -50,6 +50,15 @@ export function subclassVariant(c: Character, entryId: string, sub: PackSubclass
 export const variantOk = (c: Character, entryId: string, sub: PackSubclass, f: { variant?: string }) =>
   !f.variant || f.variant === subclassVariant(c, entryId, sub).value;
 
+/* Tamaños posibles de una raza ("Medium or Small" -> ['Medium', 'Small']). */
+export const sizeOptions = (size: string) =>
+  size
+    .split(/\s+or\s+|\s*[,/|]\s*/i)
+    .map((x) => x.trim())
+    .filter(Boolean);
+/* true si la raza deja elegir tamaño y todavía no se eligió. */
+export const sizePending = (size: string) => sizeOptions(size).length > 1;
+
 export function findSubclass(packs: Pack[], value: string | null): { sub: PackSubclass; pack: Pack } | null {
   if (!value) return null;
   const i = value.indexOf(':');

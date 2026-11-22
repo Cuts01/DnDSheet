@@ -10,6 +10,7 @@
   import LockButton from './LockButton.svelte';
   import PhotoField from './PhotoField.svelte';
   import StrixhavenEdit from './StrixhavenEdit.svelte';
+  import { sizePending } from '../lib/rules/features';
   import AbilitiesCard from './build/AbilitiesCard.svelte';
   import AdvancementsCard from './build/AdvancementsCard.svelte';
   import BackgroundCard from './build/BackgroundCard.svelte';
@@ -90,7 +91,10 @@
         <label class="field"><span>{t('Altura')}</span><input bind:value={store.c.height} placeholder={t('Ej. 1.80 m')} disabled={!!store.c.locks.general} /></label>
         <label class="field"><span>{t('Peso')}</span><input bind:value={store.c.weight} placeholder={t('Ej. 80 kg')} disabled={!!store.c.locks.general} /></label>
       </div>
-      <p class="muted small">{t('Tamaño')}: <b>{store.c.species.size}</b> · {t('lo define la raza')}</p>
+      <p class="muted small">
+        {t('Tamaño')}: <b>{store.c.species.size}</b> ·
+        {sizePending(store.c.species.size) ? t('elígelo en la tarjeta de raza, más abajo') : t('lo define la raza')}
+      </p>
       <label class="field"><span>{t('Jugador')}</span><input bind:value={store.c.playerName} placeholder={t('Tu nombre')} disabled={!!store.c.locks.general} /></label>
       <PhotoField bind:photo={store.c.photo} />
       <label class="check strix-toggle">

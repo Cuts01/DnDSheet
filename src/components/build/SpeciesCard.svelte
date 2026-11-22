@@ -3,7 +3,7 @@
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Ability, type Character } from '../../lib/model/character';
-  import { applySpecies, findSpecies, speciesList } from '../../lib/rules/features';
+  import { applySpecies, findSpecies, speciesList, sizeOptions } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import NumField from '../NumField.svelte';
   import { score, scoreBreakdown } from '../../lib/rules/derive';
@@ -45,11 +45,23 @@
     </div>
   {:else}
     <div class="facts small">
-      <span>{t('Tamaño')} <b>{sp.size}</b></span>
+      {#if sizeOptions(sp.size).length <= 1}<span>{t('Tamaño')} <b>{sp.size}</b></span>{/if}
       <span>Speed <b class="num">{sp.speed} ft</b></span>
       {#if sp.darkvision}<span>Darkvision <b class="num">{sp.darkvision} ft</b></span>{/if}
       {#if sp.languages.length}<span>{t('Idiomas')} <b>{sp.languages.join(', ')}</b></span>{/if}
     </div>
+
+    {#if sizeOptions(sp.size).length > 1}
+      {@const opts = sizeOptions(sp.size)}
+      <label class="field">
+        <span>{t('Tamaño')}</span>
+        <select value={opts.includes(c.species.size) ? c.species.size : ''} onchange={(e) => (c.species.size = e.currentTarget.value || sp.size)}>
+          <option value="">{t('Elegir...')}</option>
+          {#each opts as o (o)}<option value={o}>{o}</option>{/each}
+        </select>
+      </label>
+      {#if !opts.includes(c.species.size)}<p class="small warn">{t('Esta raza puede ser {list}: elige uno.', { list: opts.join(' o ') })}</p>{/if}
+    {/if}
 
     {#if c.bonuses.species.length}
       <div class="bonuses">
@@ -96,6 +108,10 @@
 </div>
 
 <style>
+  .warn {
+    color: var(--accent);
+    margin: 0;
+  }
   .capwarn {
     color: var(--bad);
     font-size: 0.75rem;
