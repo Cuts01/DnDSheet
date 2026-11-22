@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { blankCharacter } from '../model/character';
+import { blankCharacter, type Character } from '../model/character';
 import { parsePack, type Pack } from '../model/pack';
 import { applyStartingGear, gearEntries, parseEquipment, undoStartingGear } from './startingGear';
 import { applyBackground, findRef } from './features';
@@ -29,7 +29,7 @@ describe('equipo inicial del background', () => {
     expect(p.items.map((i) => i.name)).toContain('Holy symbol');
   });
   it.skipIf(!p24)('aplica A o B y deshace al cambiar de background', () => {
-    let c = { ...blankCharacter(), ruleset: '2024' as const };
+    let c: Character = { ...blankCharacter(), ruleset: '2024' };
     c = applyBackground(c, findRef([p24!], 'wiki-2024:genie-touched', (p) => p.backgrounds), [p24!]);
     const bg = findRef([p24!], 'wiki-2024:genie-touched', (p) => p.backgrounds)!.item;
     c = applyStartingGear(c, bg.equipment, 'A', [p24!]);

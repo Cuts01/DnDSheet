@@ -23,6 +23,7 @@
   import { EFFECT_LABEL, type Effect } from '../lib/model/character';
   import ShortRestDialog from './ShortRestDialog.svelte';
   import { featSpells, spellAttacks, subclassSpells } from '../lib/rules/spells';
+  import { moveAttack, orderAttacks } from '../lib/rules/attackOrder';
   import { featureChoiceSlots, featureResources, resistances } from '../lib/rules/grants';
 
   const c = $derived(store.c);
@@ -44,6 +45,22 @@
   const spellAtk = $derived(
     spellAttacks(c, compendium.packs, [...subclassSpells(c, compendium.packs).always, ...featSpells(c, compendium.packs).granted])
   );
+  // Ataques en el orden elegido por el jugador.
+  type AtkRow = { key: string; name: string; w?: (typeof atk)[number]; s?: (typeof spellAtk)[number] };
+  const ordered = $derived(
+    orderAttacks<AtkRow>(
+      [...atk.map((w) => ({ key: `w:${w.id}`, name: w.name, w })), ...spellAtk.map((x) => ({ key: `s:${x.id}`, name: x.name, s: x }))],
+      c.attackOrder
+    )
+  );
+  let sorting = $state(false);
+  function move(key: string, dir: -1 | 1) {
+    c.attackOrder = moveAttack(
+      ordered.map((r) => r.key),
+      key,
+      dir
+    );
+  }
   const toggles = $derived([
     ...c.effects.filter((e) => e.conditional).map((e) => ({ e, fromFeature: false })),
     ...granted.filter((e) => e.conditional).map((e) => ({ e, fromFeature: true }))
@@ -150,37 +167,55 @@
   {/if}
 
   <div class="card">
-    <h2>{t('Ataques')}</h2>
+    <div class="title-row">
+      <h2>{t('Ataques')}</h2>
+      {#if ordered.length > 1}
+        <button class="ghost small sort" aria-pressed={sorting} onclick={() => (sorting = !sorting)}>{sorting ? t('Listo') : t('Ordenar')}</button>
+      {/if}
+    </div>
     <ul class="attacks">
-      {#each atk as w (w.id)}
-        <li>
+      {#each ordered as it, idx (it.key)}
+        {#if it.w}
+        <li class:moving={sorting}>
           <div class="atk-main">
-            <span class="atk-name">{w.name}</span>
-            <span class="pair num"><small>Hit</small><b>{fmt(w.toHit)}</b></span>
-            <span class="pair num dmg"><small>{t('Daño')}</small><b>{w.damage}</b></span>
+            <span class="atk-name">{it.w.name}</span>
+            <span class="pair num"><small>Hit</small><b>{fmt(it.w.toHit)}</b></span>
+            <span class="pair num dmg"><small>{t('Daño')}</small><b>{it.w.damage}</b></span>
           </div>
           <div class="atk-sub muted small">
-            {w.damageType}{w.versatile ? ` · versatile ${w.versatile}` : ''}{w.notes.length ? ` · ${w.notes.join(' · ')}` : ''}
+            {it.w.damageType}{it.w.versatile ? ` · versatile ${it.w.versatile}` : ''}{it.w.notes.length ? ` · ${it.w.notes.join(' · ')}` : ''}
           </div>
+          {#if sorting}
+            <div class="order">
+              <button class="ghost" aria-label={t('Subir {name}', { name: it.name })} disabled={idx === 0} onclick={() => move(it.key, -1)}>↑</button>
+              <button class="ghost" aria-label={t('Bajar {name}', { name: it.name })} disabled={idx === ordered.length - 1} onclick={() => move(it.key, 1)}>↓</button>
+            </div>
+          {/if}
         </li>
-      {/each}
-      {#each spellAtk as s (s.id)}
-        <li class="spell">
+        {:else if it.s}
+        <li class="spell" class:moving={sorting}>
           <div class="atk-main">
-            <span class="atk-name">{s.name}</span>
-            {#if s.kind === 'attack'}
-              <span class="pair num"><small>Hit</small><b>{fmt(s.toHit)}</b></span>
-            {:else if s.kind === 'save'}
-              <span class="pair num"><small>{s.save ? ABILITY_LABEL[s.save as keyof typeof ABILITY_LABEL] : 'Save'}</small><b>DC {s.dc}</b></span>
+            <span class="atk-name">{it.s.name}</span>
+            {#if it.s.kind === 'attack'}
+              <span class="pair num"><small>Hit</small><b>{fmt(it.s.toHit)}</b></span>
+            {:else if it.s.kind === 'save'}
+              <span class="pair num"><small>{it.s.save ? ABILITY_LABEL[it.s.save as keyof typeof ABILITY_LABEL] : 'Save'}</small><b>DC {it.s.dc}</b></span>
             {:else}
               <span class="pair num"><small>{t('Impacta')}</small><b>auto</b></span>
             {/if}
-            <span class="pair num dmg"><small>{t('Daño')}</small><b>{splitDmg(s.damage)[0]}</b></span>
+            <span class="pair num dmg"><small>{t('Daño')}</small><b>{splitDmg(it.s.damage)[0]}</b></span>
           </div>
           <div class="atk-sub muted small">
-            spell · {splitDmg(s.damage)[1] || t('daño')}{s.note ? ` · ${s.note}` : ''}
+            spell · {splitDmg(it.s.damage)[1] || t('daño')}{it.s.note ? ` · ${it.s.note}` : ''}
           </div>
+          {#if sorting}
+            <div class="order">
+              <button class="ghost" aria-label={t('Subir {name}', { name: it.name })} disabled={idx === 0} onclick={() => move(it.key, -1)}>↑</button>
+              <button class="ghost" aria-label={t('Bajar {name}', { name: it.name })} disabled={idx === ordered.length - 1} onclick={() => move(it.key, 1)}>↓</button>
+            </div>
+          {/if}
         </li>
+        {/if}
       {/each}
     </ul>
     <p class="muted small hint">{t('Equipa weapons en la pestaña Equipo. Los spells de daño que puedes lanzar aparecen aquí.')}</p>
@@ -299,6 +334,35 @@
 <ShortRestDialog bind:open={shortOpen} />
 
 <style>
+  .sort {
+    min-height: 36px;
+    padding: 0 10px;
+    color: var(--accent);
+  }
+  .attacks li.moving {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 'main order' 'sub order';
+    column-gap: 8px;
+  }
+  .attacks li.moving .atk-main {
+    grid-area: main;
+  }
+  .attacks li.moving .atk-sub {
+    grid-area: sub;
+  }
+  .order {
+    grid-area: order;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+  }
+  .order button {
+    width: 40px;
+    min-height: 34px;
+    padding: 0;
+  }
   .conc {
     display: flex;
     justify-content: space-between;

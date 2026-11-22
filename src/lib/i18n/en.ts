@@ -517,6 +517,10 @@ const en: Record<string, string> = {
   "Sumado a tus monedas: {gp} GP.": "Added to your coins: {gp} GP.",
   "Elige A o B: se carga en tu inventario y tus monedas.": "Choose A or B: it goes to your inventory and coins.",
   "Toca para cargarlo en tu inventario.": "Tap to add it to your inventory.",
+  "Subir {name}": "Move {name} up",
+  "Bajar {name}": "Move {name} down",
+  "Ordenar": "Reorder",
+  "Listo": "Done",
 };
 
 export default en;

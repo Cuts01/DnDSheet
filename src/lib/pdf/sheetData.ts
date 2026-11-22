@@ -36,6 +36,7 @@ import {
 import { featureChoiceSlots, featureResources, resistances } from '../rules/grants';
 import { featSpells, findSpell, isReady, spellAttacks, spellKey, subclassSpells } from '../rules/spells';
 import { ABILITY_LABEL, SKILLS } from '../rules/tables';
+import { orderAttacks } from '../rules/attackOrder';
 import { COLLEGES, EXTRACURRICULARS, JOB_PAY_GP, belovedCount, collegeOf, relStatus, studentDice, YEAR_NAMES } from '../strixhaven';
 
 export interface TextItem {
@@ -146,14 +147,16 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
     if (w.normalRange) return `${w.normalRange}/${w.longRange ?? w.normalRange} ft`;
     return w.properties.some((x) => x.toLowerCase() === 'reach') ? '10 ft' : '5 ft';
   };
-  const atk = [
+  const atkAll = [
     ...attacks(c, profs.weapons, granted).map((a) => ({
+      key: `w:${a.id}`,
       name: a.name,
       hit: fmt(a.toHit),
       damage: [a.damage, a.damageType, a.versatile ? `(${t('versátil')} ${a.versatile})` : ''].filter(Boolean).join(' '),
       range: rangeOf(a.id)
     })),
     ...spellAttacks(c, packs, grantedSpells).map((s) => ({
+      key: `s:${s.id}`,
       name: s.name,
       hit: s.kind === 'attack' ? fmt(s.toHit) : s.kind === 'save' ? `DC ${s.dc}` : '-',
       damage: [s.damage, s.kind === 'save' && s.save ? `(${s.save})` : '', s.note].filter(Boolean).join(' '),
@@ -164,6 +167,8 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
       })()
     }))
   ];
+  // En el orden que eligió el jugador en Combate.
+  const atk = orderAttacks(atkAll, c.attackOrder).map(({ key: _k, ...rest }) => rest);
 
   const casting = spellcasting(c).map((l) => ({ label: l.className, ability: ABILITY_LABEL[l.ability], attack: fmt(l.attack), dc: l.dc }));
   const slots = slotMax(c)
