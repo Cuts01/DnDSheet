@@ -204,6 +204,7 @@ export const PackBackgroundSchema = z.object({
   traits: z.array(TraitSchema).default([]),
   equipment: z.string().default(''),
   spells: z.array(SubclassSpellsSchema).default([]).describe('Spells que se suman a tu lista de clase (Strixhaven)'),
+  featOptions: strings.describe('El feat del background se elige entre estos nombres o "cat:<categoría>" (Ravenloft, Pact Seeker)'),
   source: z.string().default('')
 });
 
@@ -240,6 +241,7 @@ export const PackFeatSchema = z.object({
     .describe('Ability para estas spells: int, wis, cha, con, "asi" (la que sube el feat), "list" (según la lista elegida) o "pick"'),
   text: z.string().default(''),
   effects: z.array(PackEffectSchema).default([]),
+  expanded: z.array(SubclassSpellsSchema).default([]).describe('Spells que se suman a tu lista de clase (Spells of the Mark)'),
   source: z.string().default('')
 });
 

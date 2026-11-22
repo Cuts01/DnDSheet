@@ -508,6 +508,9 @@ const en: Record<string, string> = {
   "Permitir cambiar el feat del background (si tu DM lo permite)": "Allow changing the background feat (if your DM allows it)",
   "Esta raza puede ser {list}: elige uno.": "This race can be {list}: pick one.",
   "elígelo en la tarjeta de raza, más abajo": "pick it in the race card below",
+  "Tu background te deja elegir: {list}.": "Your background lets you choose: {list}.",
+  "cualquier {cat}": "any {cat}",
+  " o ": " or ",
 };
 
 export default en;

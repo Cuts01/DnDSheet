@@ -300,6 +300,9 @@ def background_entry(name, parts, f):
         e["feat"] = f["feat"]
     if "equipment" in f:
         e["equipment"] = f["equipment"]
+    # featchoice A, cat:Dark Gift -> el feat se elige entre esos (nombres o categorías)
+    if "featchoice" in f:
+        e["featOptions"] = csv(f["featchoice"])
     # expanded 1: A, B; 2: C, D  -> spells que se suman a la lista de clase (Strixhaven)
     if "expanded" in f:
         e["spells"] = []
@@ -334,6 +337,12 @@ def feat_entry(name, parts, f):
         e["spells"] = [feat_spell(x.strip()) for x in f["spells"].split(";") if x.strip()]
     if "castwith" in f:
         e["spellAbility"] = f["castwith"]
+    # expanded 1: A, B; 2: C ... -> se suman a la lista de clase (Spells of the Mark)
+    if "expanded" in f:
+        e["expanded"] = []
+        for chunk in f["expanded"].split(";"):
+            lvl, _, names = chunk.partition(":")
+            e["expanded"].append({"level": int(lvl.strip()), "spells": csv(names), "mode": "expanded"})
     if "source" in f:
         e["source"] = f["source"]
     return e

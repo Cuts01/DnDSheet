@@ -204,8 +204,12 @@ export interface SubclassSpellInfo {
 export function subclassSpells(c: Character, packs: Pack[]): SubclassSpellInfo {
   const index = spellIndex(packs, c.ruleset);
   const out: SubclassSpellInfo = { always: [], expanded: new Map(), variants: [] };
-  // Background con spells propias (Strixhaven): se suman a la lista de cada clase con spellcasting.
-  const bgSpells = findBackground(packs, c.background.ref)?.item.spells ?? [];
+  // Background con spells propias (Strixhaven) y feats con Spells of the Mark (dragonmarks):
+  // se suman a la lista de cada clase con spellcasting.
+  const bgSpells = [
+    ...(findBackground(packs, c.background.ref)?.item.spells ?? []),
+    ...featInstances(c, packs).flatMap((f) => f.feat?.item.expanded ?? [])
+  ];
   if (bgSpells.length)
     for (const k of c.classes) {
       if (k.caster === 'none') continue;

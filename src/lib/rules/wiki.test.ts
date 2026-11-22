@@ -29,6 +29,19 @@ describe.skipIf(!p14 || !p24)('packs de la wiki', () => {
     expect(passive(c, 'perception', allGrantedEffects(c, [p14!]))).toBe(passive(c, 'perception') + 5);
   });
 
+  it('Backgrounds post-PHB 2024: feat fijo, feat a elegir y Spells of the Mark', () => {
+    const w = cls('Wizard', 3);
+    let c: Character = { ...blankCharacter(), ruleset: '2024', classes: [w] };
+    c = applyBackground(c, findRef([p24!], 'wiki-2024:house-cannith-heir', (p) => p.backgrounds), [p24!]);
+    expect(c.feats.map((f) => f.name)).toEqual(['Mark of Making']);
+    const exp = [...(subclassSpells(c, [p24!]).expanded.get(w.id) ?? [])];
+    expect(exp).toContain('spiritualweapon');
+    let h: Character = { ...blankCharacter(), ruleset: '2024', classes: [cls('Fighter', 1)] };
+    h = applyBackground(h, findRef([p24!], 'wiki-2024:haunted-one', (p) => p.backgrounds), [p24!]);
+    expect(h.feats).toHaveLength(1);
+    expect(h.feats[0].ref).toBeNull();
+  });
+
   it('Strixhaven: background con su Initiate, college spells en la lista y datos de campaña', () => {
     const w = cls('Wizard', 3);
     let c: Character = { ...blankCharacter(), ruleset: '2024', classes: [w] };

@@ -5,7 +5,7 @@
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
   import type { PackFeat } from '../../lib/model/pack';
   import { asiSlots, score, scoreBreakdown } from '../../lib/rules/derive';
-  import { featByName, featList, findBackground, findFeat, packAsiLevels, type Ref } from '../../lib/rules/features';
+  import { featByName, featInOptions, featList, findBackground, findFeat, packAsiLevels, type Ref } from '../../lib/rules/features';
   import { featPrereqFails } from '../../lib/rules/grants';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
@@ -62,6 +62,10 @@
     return name ? featByName(compendium.packs, name, c.ruleset) : null;
   });
   const fixedBg = (source: string) => source === 'background' && !!bgFeat && !c.anyBackgroundFeat;
+  // Background con feat a elegir (Ravenloft, Pact Seeker): solo esas opciones.
+  const bgOptions = $derived(findBackground(compendium.packs, c.background.ref)?.item.featOptions ?? []);
+  const forBgChoice = (current: string | null) =>
+    feats.filter((f) => f.value === current || featInOptions(f.item, bgOptions));
   function restoreBgFeat(i: number) {
     if (!bgFeat) return;
     c.feats[i] = { ...c.feats[i], ref: bgFeat.value, name: bgFeat.item.name, ability: null };
@@ -169,9 +173,12 @@
           {/if}
         </div>
       {:else if feats.length}
-        <RefSelect options={f.source === 'other' ? forOther(f.ref) : forOrigin(f.ref)} value={f.ref} label="Feat" describe={featText} note={featNote} onpick={(r) => pickOther(i, r)} />
+        <RefSelect options={f.source === 'other' ? forOther(f.ref) : f.source === 'background' && bgOptions.length && !c.anyBackgroundFeat ? forBgChoice(f.ref) : forOrigin(f.ref)} value={f.ref} label="Feat" describe={featText} note={featNote} onpick={(r) => pickOther(i, r)} />
       {:else}
         <label class="field"><span>Feat</span><input bind:value={c.feats[i].name} /></label>
+      {/if}
+      {#if f.source === 'background' && bgOptions.length && !c.anyBackgroundFeat}
+        <p class="small muted">{t('Tu background te deja elegir: {list}.', { list: bgOptions.map((o) => (o.toLowerCase().startsWith('cat:') ? t('cualquier {cat}', { cat: o.slice(4).trim().replace(/\b\w/g, (m) => m.toUpperCase()) }) : o)).join(t(' o ')) })}</p>
       {/if}
       {#if failsOf(pf).length}<p class="small warn">{t('No cumples el requisito: {list}', { list: failsOf(pf).join(', ') })}</p>{/if}
       {#if pf?.asi}

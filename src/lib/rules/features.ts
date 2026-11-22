@@ -51,6 +51,16 @@ export const variantOk = (c: Character, entryId: string, sub: PackSubclass, f: {
   !f.variant || f.variant === subclassVariant(c, entryId, sub).value;
 
 /* Tamaños posibles de una raza ("Medium or Small" -> ['Medium', 'Small']). */
+/* ¿El feat está entre las opciones del background? (nombres o "cat:<categoría>") */
+export function featInOptions(f: PackFeat, options: string[]): boolean {
+  const name = f.name.toLowerCase();
+  const cat = f.category.toLowerCase();
+  return options.some((o) => {
+    const x = o.toLowerCase().trim();
+    return x.startsWith('cat:') ? cat === x.slice(4).trim() : name === x || name.startsWith(`${x} (`);
+  });
+}
+
 export const sizeOptions = (size: string) =>
   size
     .split(/\s+or\s+|\s*[,/|]\s*/i)
@@ -389,6 +399,9 @@ export function applyBackground(c: Character, ref: Ref<PackBackground> | null, p
   if (bg.feat) {
     const f = featByName(packs, bg.feat, n.ruleset);
     n.feats.push({ id: uid(), ref: f?.value ?? null, name: f?.item.name ?? bg.feat, source: 'background', ability: null });
+  } else if (bg.featOptions.length) {
+    // Feat a elegir (Ravenloft: Survivor o un Dark Gift): queda vacío hasta que lo elijas.
+    n.feats.push({ id: uid(), ref: null, name: '', source: 'background', ability: null });
   }
   return n;
 }

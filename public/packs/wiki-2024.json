@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-11-22T06:59:02Z"
+    "built": "2026-11-22T15:14:06Z"
   },
   "classes": [
     {
@@ -8479,6 +8479,1043 @@
           "text": "College of essence studies: life, death and the swamp. You gain the Strixhaven Initiate feat (Witherbloom). If you have Spellcasting or Pact Magic, the Witherbloom spells are added to your class spell list (every list, if multiclassed): 1st: Cure Wounds, Inflict Wounds; 2nd: Lesser Restoration, Wither and Bloom; 3rd: Revivify, Vampiric Touch; 4th: Blight, Death Ward; 5th: Antilife Shell, Greater Restoration."
         }
       ]
+    },
+    {
+      "name": "Chondathan Freebooter",
+      "skills": [
+        "Athletics",
+        "Sleight of Hand"
+      ],
+      "tools": [
+        "Weaver's Tools"
+      ],
+      "asi": [
+        "str",
+        "dex",
+        "wis"
+      ],
+      "feat": "Skilled",
+      "equipment": "Dagger, Weaver's Tools, Backpack, Ball Bearings, Basket, Bedroll, Bucket, Rations (3 days), Rope, Signal Whistle, Traveler's Clothes, 38 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Dead Magic Dweller",
+      "skills": [
+        "Medicine",
+        "Survival"
+      ],
+      "tools": [
+        "Leatherworker's Tools"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "wis"
+      ],
+      "feat": "Healer",
+      "equipment": "Greatclub, Leatherworker's Tools, Bedroll, Blanket, Healer's Kit, Pole, Rations (3 days), Tent, Tinderbox, 5 Torches, Traveler's Clothes, Waterskin, 32 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Dragon Cultist",
+      "skills": [
+        "Deception",
+        "Stealth"
+      ],
+      "tools": [
+        "Calligrapher's Supplies"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "int"
+      ],
+      "feat": "Cult of the Dragon Initiate",
+      "equipment": "Calligrapher's Supplies, Dagger, Glass Bottle, Lamp, Manacles, Oil (5 flasks), 2 Pouches, Robe, Rope, 30 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Emerald Enclave Caretaker",
+      "skills": [
+        "Nature",
+        "Survival"
+      ],
+      "tools": [
+        "Herbalism Kit"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "wis"
+      ],
+      "feat": "Emerald Enclave Fledgling",
+      "equipment": "Shortbow, 20 Arrows, Herbalism Kit, Bedroll, Blanket, Pouch, Tent, Traveler's Clothes, 13 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Flaming Fist Mercenary",
+      "skills": [
+        "Intimidation",
+        "Perception"
+      ],
+      "tools": [
+        "Smith's Tools"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "cha"
+      ],
+      "feat": "Tough",
+      "equipment": "Mace, Smith's Tools, Fine Clothes, Manacles, Portable Ram, 4 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Genie Touched",
+      "skills": [
+        "Perception",
+        "Persuasion"
+      ],
+      "tools": [
+        "Glassblower's Tools"
+      ],
+      "asi": [
+        "dex",
+        "wis",
+        "cha"
+      ],
+      "feat": "Magic Initiate (Wizard)",
+      "equipment": "Light Hammer, Glassblower's Tools, Fine Clothes, Lamp, Oil (3 flasks), Waterskin, 2 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Harper",
+      "skills": [
+        "Performance",
+        "Sleight of Hand"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "feat": "Harper Agent",
+      "equipment": "Disguise Kit, Bedroll, Costume, Grappling Hook, Rope, Traveler's Clothes, 14 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Ice Fisher",
+      "skills": [
+        "Animal Handling",
+        "Athletics"
+      ],
+      "tools": [
+        "Woodcarver's Tools"
+      ],
+      "asi": [
+        "str",
+        "dex",
+        "con"
+      ],
+      "feat": "Alert",
+      "equipment": "Woodcarver's Tools, Basket, Block and Tackle, Bucket, Chain, Hunting Trap, Net, Pole, Rations (3 days), Rope, Traveler's Clothes, 32 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Knight of the Gauntlet",
+      "skills": [
+        "Athletics",
+        "Medicine"
+      ],
+      "tools": [
+        "Smith's Tools"
+      ],
+      "asi": [
+        "str",
+        "int",
+        "wis"
+      ],
+      "feat": "Tyro of the Gauntlet",
+      "equipment": "Spear, Smith's Tools, Bullseye Lantern, Holy Symbol, Manacles, Oil (5 flasks), Tinderbox, Traveler's Clothes, 9 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Lords' Alliance Vassal",
+      "skills": [
+        "Insight",
+        "Persuasion"
+      ],
+      "tools": [
+        "Calligrapher's Supplies"
+      ],
+      "asi": [
+        "str",
+        "int",
+        "cha"
+      ],
+      "feat": "Lords' Alliance Agent",
+      "equipment": "2 Javelins, Calligrapher's Supplies, Fine Clothes, Ink, 5 Ink Pens, Parchment (9 sheets), 13 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Moonwell Pilgrim",
+      "skills": [
+        "Nature",
+        "Performance"
+      ],
+      "tools": [
+        "Painter's Supplies"
+      ],
+      "asi": [
+        "con",
+        "wis",
+        "cha"
+      ],
+      "feat": "Magic Initiate (Druid)",
+      "equipment": "Quarterstaff, Painter's Supplies, Bedroll, Bell, Pouch, Robe, String, Traveler's Clothes, Waterskin, 34 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Mulhorandi Tomb Raider",
+      "skills": [
+        "Investigation",
+        "Religion"
+      ],
+      "tools": [
+        "Mason's Tools"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "int"
+      ],
+      "feat": "Lucky",
+      "equipment": "Dagger, Light Hammer, Mason's Tools, Backpack, Bedroll, Crowbar, Ladder, Pole, 2 Pouches, Rope, String, Tinderbox, 5 Torches, Traveler's Clothes, Waterskin, 26 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Mythalkeeper",
+      "skills": [
+        "Arcana",
+        "History"
+      ],
+      "tools": [
+        "Jeweler's Tools"
+      ],
+      "asi": [
+        "int",
+        "wis",
+        "cha"
+      ],
+      "feat": "Crafter",
+      "equipment": "Quarterstaff, Jeweler's Tools, Perfume, Pouch, Robe, Shovel, String, Waterskin, 16 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Purple Dragon Squire",
+      "skills": [
+        "Animal Handling",
+        "Insight"
+      ],
+      "tools": [
+        "Navigator's Tools"
+      ],
+      "asi": [
+        "str",
+        "wis",
+        "cha"
+      ],
+      "feat": "Purple Dragon Rook",
+      "equipment": "Spear, Navigator's Tools, Fine Clothes, 9 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Rashemi Wanderer",
+      "skills": [
+        "Intimidation",
+        "Perception"
+      ],
+      "tools": [
+        "Cartographer's Tools"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "cha"
+      ],
+      "feat": "Tough",
+      "equipment": "Cartographer's Tools, Backpack, Bedroll, Hooded Lantern, Oil (3 flasks), Rope, Tinderbox, Traveler's Clothes, Waterskin, 23 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Shadowmasters Exile",
+      "skills": [
+        "Acrobatics",
+        "Stealth"
+      ],
+      "tools": [
+        "Thieves' Tools"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "feat": "Savage Attacker",
+      "equipment": "2 Daggers, Thieves' Tools, Caltrops, Costume, Grappling Hook, Iron Spikes, Mirror, 2 Pouches, Rope, Traveler's Clothes, 3 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Spellfire Initiate",
+      "skills": [
+        "Arcana",
+        "Perception"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "cha"
+      ],
+      "feat": "Spellfire Spark",
+      "equipment": "Gaming Set (same as above), Arcane Focus (Crystal or Wand), 2 Pouches, Traveler's Clothes, 36 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Zhentarim Mercenary",
+      "skills": [
+        "Intimidation",
+        "Perception"
+      ],
+      "tools": [
+        "Forgery Kit"
+      ],
+      "asi": [
+        "str",
+        "dex",
+        "cha"
+      ],
+      "feat": "Zhentarim Ruffian",
+      "equipment": "Club, Dagger, Forgery Kit, Fine Clothes, Hooded Lantern, Oil (3 flasks), 2 Pouches, String, Tinderbox, 11 GP (or 50 GP)",
+      "source": "Heroes of Faerûn"
+    },
+    {
+      "name": "Aberrant Heir",
+      "skills": [
+        "History",
+        "Intimidation"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "cha"
+      ],
+      "feat": "Aberrant Dragonmark",
+      "equipment": "Dagger, Disguise Kit, Costume, Traveler's Clothes, 16 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "Archaeologist",
+      "skills": [
+        "History",
+        "Survival"
+      ],
+      "tools": [
+        "Cartographer's Tools"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "wis"
+      ],
+      "feat": "Skilled",
+      "equipment": "Cartographer's Tools, Bullseye Lantern, Map, Map or Scroll Case, Shovel, Tent, Traveler's Clothes, 17 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Agent",
+      "skills": [
+        "Investigation",
+        "Persuasion"
+      ],
+      "tools": [
+        "one kind of Artisan's Tools"
+      ],
+      "asi": [
+        "str",
+        "int",
+        "cha"
+      ],
+      "feat": "Lucky",
+      "equipment": "Artisan's Tools (same as above), Fine Clothes, 20 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Cannith Heir",
+      "skills": [
+        "Investigation",
+        "Sleight of Hand"
+      ],
+      "tools": [
+        "one kind of Artisan's Tools"
+      ],
+      "asi": [
+        "str",
+        "dex",
+        "int"
+      ],
+      "feat": "Mark of Making",
+      "equipment": "Artisan's Tools (same as above), Crowbar, Fine Clothes, 2 Pouches, 17 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Deneith Heir",
+      "skills": [
+        "Insight",
+        "Perception"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "wis"
+      ],
+      "feat": "Mark of Sentinel",
+      "equipment": "Spear, Shortbow, 20 Arrows, Gaming Set (same as above), Fine Clothes, Healer's Kit, Quiver, 1 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Ghallanda Heir",
+      "skills": [
+        "Insight",
+        "Persuasion"
+      ],
+      "tools": [
+        "Cook's Utensils"
+      ],
+      "asi": [
+        "dex",
+        "wis",
+        "cha"
+      ],
+      "feat": "Mark of Hospitality",
+      "equipment": "Cook's Utensils, Fine Clothes, Iron Pot, Lamp, Oil (5 flasks), Perfume, 26 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Jorasco Heir",
+      "skills": [
+        "Medicine",
+        "Stealth"
+      ],
+      "tools": [
+        "Herbalism Kit"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "wis"
+      ],
+      "feat": "Mark of Healing",
+      "equipment": "Herbalism Kit, Fine Clothes, Healer's Kit, 25 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Kundarak Heir",
+      "skills": [
+        "Arcana",
+        "Investigation"
+      ],
+      "tools": [
+        "Thieves' Tools"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "int"
+      ],
+      "feat": "Mark of Warding",
+      "equipment": "Thieves' Tools, Fine Clothes, 10 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Lyrandar Heir",
+      "skills": [
+        "Acrobatics",
+        "Nature"
+      ],
+      "tools": [
+        "Navigator's Tools"
+      ],
+      "asi": [
+        "str",
+        "dex",
+        "cha"
+      ],
+      "feat": "Mark of Storm",
+      "equipment": "Navigator's Tools, Fine Clothes, 10 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Medani Heir",
+      "skills": [
+        "Insight",
+        "Investigation"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "wis"
+      ],
+      "feat": "Mark of Detection",
+      "equipment": "Disguise Kit, Fine Clothes, 10 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Orien Heir",
+      "skills": [
+        "Acrobatics",
+        "Athletics"
+      ],
+      "tools": [
+        "Cartographer's Tools"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "int"
+      ],
+      "feat": "Mark of Passage",
+      "equipment": "Cartographer's Tools, Fine Clothes, Map, Map or Scroll Case, 18 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Phiarlan Heir",
+      "skills": [
+        "Deception",
+        "Stealth"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "dex",
+        "wis",
+        "cha"
+      ],
+      "feat": "Mark of Shadow",
+      "equipment": "Disguise Kit, Fine Clothes, 10 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Sivis Heir",
+      "skills": [
+        "History",
+        "Perception"
+      ],
+      "tools": [
+        "Calligrapher's Supplies"
+      ],
+      "asi": [
+        "int",
+        "wis",
+        "cha"
+      ],
+      "feat": "Mark of Scribing",
+      "equipment": "Calligrapher's Supplies, Fine Clothes, Ink, 5 Ink Pens, Paper (30 sheets), Parchment (9 sheets), 8 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Tharashk Heir",
+      "skills": [
+        "Perception",
+        "Survival"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "wis"
+      ],
+      "feat": "Mark of Finding",
+      "equipment": "Gaming Set (same as above), Climber's Kit, Fine Clothes, Hunting Trap, Manacles, 2 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Thuranni Heir",
+      "skills": [
+        "Performance",
+        "Stealth"
+      ],
+      "tools": [
+        "one kind of Musical Instrument"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "feat": "Mark of Shadow",
+      "equipment": "Musical Instrument (same as above), Costume, Fine Clothes, 13 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "House Vadalis Heir",
+      "skills": [
+        "Animal Handling",
+        "Nature"
+      ],
+      "tools": [
+        "Herbalism Kit"
+      ],
+      "asi": [
+        "con",
+        "wis",
+        "cha"
+      ],
+      "feat": "Mark of Handling",
+      "equipment": "Herbalism Kit, Fine Clothes, Net, 29 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "Inquisitive",
+      "skills": [
+        "Insight",
+        "Investigation"
+      ],
+      "tools": [
+        "Thieves' Tools"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "cha"
+      ],
+      "feat": "Alert",
+      "equipment": "Thieves' Tools, Bullseye Lantern, Crowbar, Oil (10 flasks), Traveler's Clothes, 10 GP (or 50 GP)",
+      "source": "Eberron: Forge of the Artificer"
+    },
+    {
+      "name": "Carouser",
+      "skills": [
+        "Deception",
+        "Persuasion"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "feat": "Tireless Reveler",
+      "equipment": "Dagger, Gaming Set (same as above), Fine Clothes, Glass Bottle, Mirror, Perfume, Pouch, Tinderbox, 19 GP (or 50 GP)",
+      "source": "Astarion's Book of Hungers"
+    },
+    {
+      "name": "Vampire Devotee",
+      "skills": [
+        "Persuasion",
+        "Stealth"
+      ],
+      "tools": [
+        "Cook's Utensils"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "cha"
+      ],
+      "feat": "Vampire's Plaything",
+      "equipment": "Cook's Utensils, Fine Clothes, 2 Glass Bottles, Healer's Kit, Perfume, Lamp, Oil (3 flasks), Waterskin, 19 GP (or 50 GP)",
+      "source": "Astarion's Book of Hungers"
+    },
+    {
+      "name": "Vampire Survivor",
+      "skills": [
+        "Insight",
+        "Religion"
+      ],
+      "tools": [
+        "Woodcarver's Tools"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "wis"
+      ],
+      "feat": "Vampire Hunter",
+      "equipment": "Woodcarver's Tools, Crowbar, Hooded Lantern, Holy Symbol (reliquary), Holy Water, Mirror, Oil (3 flasks), Tinderbox, Traveler's Clothes, Waterskin, 4 GP (or 50 GP)",
+      "source": "Astarion's Book of Hungers"
+    },
+    {
+      "name": "Haunted One",
+      "skills": [
+        "Arcana",
+        "Survival"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "con",
+        "wis",
+        "cha"
+      ],
+      "equipment": "Gaming Set (same as above), Crowbar, Holy Water, Mirror, Oil (2 flasks), Signal Whistle, Tinderbox, Traveler's Clothes, 5 Torches, Waterskin, 14 GP (or 50 GP)",
+      "featOptions": [
+        "Survivor",
+        "cat:dark gift"
+      ],
+      "source": "Ravenloft: The Horrors Within",
+      "traits": [
+        {
+          "name": "Feat",
+          "effects": [],
+          "text": "Survivor or a Dark Gift feat of your choice. Choose it in Edit > Classes > ASI y feats."
+        }
+      ]
+    },
+    {
+      "name": "Investigator",
+      "skills": [
+        "Insight",
+        "Investigation"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "int",
+        "wis",
+        "cha"
+      ],
+      "equipment": "Disguise Kit, Manacles, Shovel, Traveler's Clothes, 3 Vials, 16 GP (or 50 GP)",
+      "featOptions": [
+        "Sharp Eye",
+        "cat:dark gift"
+      ],
+      "source": "Ravenloft: The Horrors Within",
+      "traits": [
+        {
+          "name": "Feat",
+          "effects": [],
+          "text": "Sharp Eye or a Dark Gift feat of your choice. Choose it in Edit > Classes > ASI y feats."
+        }
+      ]
+    },
+    {
+      "name": "Mist Wanderer",
+      "skills": [
+        "Survival",
+        "Stealth"
+      ],
+      "tools": [
+        "one kind of Artisan's Tools"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "wis"
+      ],
+      "equipment": "Artisan's Tools (same as above), Lamp, Oil (5 flasks), Pouch, Rope, Tinderbox, Traveler's Clothes, 30 GP (or 50 GP)",
+      "featOptions": [
+        "cat:dark gift"
+      ],
+      "source": "Ravenloft: The Horrors Within",
+      "traits": [
+        {
+          "name": "Feat",
+          "effects": [],
+          "text": "A Dark Gift feat of your choice. Choose it in Edit > Classes > ASI y feats."
+        }
+      ]
+    },
+    {
+      "name": "Spirit Medium",
+      "skills": [
+        "Insight",
+        "Religion"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "wis"
+      ],
+      "equipment": "Dagger, Gaming Set (same as above), Basket, Bell, 8 Candles, Ink, Ink Pen, Paper (5 sheets), Tinderbox, Traveler's Clothes, 32 GP (or 50 GP)",
+      "featOptions": [
+        "cat:dark gift"
+      ],
+      "source": "Ravenloft: The Horrors Within",
+      "traits": [
+        {
+          "name": "Feat",
+          "effects": [],
+          "text": "A Dark Gift feat of your choice. Choose it in Edit > Classes > ASI y feats."
+        }
+      ]
+    },
+    {
+      "name": "Agent of the Ninth Quill",
+      "skills": [
+        "Arcana",
+        "Sleight of Hand"
+      ],
+      "tools": [
+        "Thieves' Tools"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "feat": "Arcane Infiltrator",
+      "equipment": "Dagger, Light Hammer, Thieves' Tools, Iron Spikes, Rope, Traveler's Clothes, 17 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Bejeweled Conclave Spy",
+      "skills": [
+        "Deception",
+        "Perception"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "dex",
+        "wis",
+        "cha"
+      ],
+      "feat": "Arcane Eloquence",
+      "equipment": "Disguise Kit, Fine Clothes, Perfume, 5 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Cosmic Dawn Experiment",
+      "skills": [
+        "Athletics",
+        "Survival"
+      ],
+      "tools": [
+        "one kind of Artisan's Tools"
+      ],
+      "asi": [
+        "str",
+        "dex",
+        "con"
+      ],
+      "feat": "Transmuted Anatomy",
+      "equipment": "Artisan's Tools (same as above), Backpack, Robe, Traveler's Clothes, 30 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Covenant of the Grave Recruit",
+      "skills": [
+        "History",
+        "Medicine"
+      ],
+      "tools": [
+        "Herbalism Kit"
+      ],
+      "asi": [
+        "str",
+        "int",
+        "wis"
+      ],
+      "feat": "Arcane Undertaker",
+      "equipment": "Dagger, Herbalism Kit, Book (anatomy), Shovel, 16 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Crucible Storm Chaser",
+      "skills": [
+        "Athletics",
+        "Nature"
+      ],
+      "tools": [
+        "Glassblower's Tools"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "int"
+      ],
+      "feat": "Arcane Overload",
+      "equipment": "Glassblower's Tools, Backpack, Rope, Traveler's Clothes, 15 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Familiar Trainer",
+      "skills": [
+        "Animal Handling",
+        "Arcana"
+      ],
+      "tools": [
+        "one kind of Gaming Set"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "wis"
+      ],
+      "feat": "Familiar Friend",
+      "equipment": "Quarterstaff, Gaming Set (same as above), Bedroll, Bell, String, Tinderbox, Traveler's Clothes, Waterskin, 44 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Horizon Weaver Initiate",
+      "skills": [
+        "Acrobatics",
+        "Survival"
+      ],
+      "tools": [
+        "Weaver's Tools"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "wis"
+      ],
+      "feat": "Portal Jumper",
+      "equipment": "Shortbow, 20 Arrows, Weaver's Tools, Map, Quiver, Rope, Traveler's Clothes, 18 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Phantasmic Circus Trouper",
+      "skills": [
+        "Deception",
+        "Performance"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "asi": [
+        "dex",
+        "con",
+        "cha"
+      ],
+      "feat": "Arcane Artist",
+      "equipment": "Disguise Kit, Gaming Set (any), Costume, Mirror, Traveler's Clothes, 12 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Seer Apprentice",
+      "skills": [
+        "History",
+        "Insight"
+      ],
+      "tools": [
+        "Navigator's Tools"
+      ],
+      "asi": [
+        "int",
+        "wis",
+        "cha"
+      ],
+      "feat": "Arcane Omens",
+      "equipment": "Navigator's Tools, 8 Candles, Ink, Ink Pen, Parchment (9 sheets), Pouch, Tinderbox, Traveler's Clothes, 11 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Ward of the Sheltering Hands",
+      "skills": [
+        "Insight",
+        "Medicine"
+      ],
+      "tools": [
+        "Cook's Utensils"
+      ],
+      "asi": [
+        "con",
+        "wis",
+        "cha"
+      ],
+      "feat": "Arcane Safeguard",
+      "equipment": "Cook's Utensils, Blanket, Healer's Kit, Lamp, Oil (3 flasks), Tinderbox, Traveler's Clothes, Waterskin, 40 GP (or 50 GP)",
+      "source": "Arcana Unleashed"
+    },
+    {
+      "name": "Lorwyn Expert",
+      "skills": [
+        "Athletics",
+        "Nature"
+      ],
+      "tools": [
+        "Cartographer's Tools"
+      ],
+      "asi": [
+        "str",
+        "con",
+        "wis"
+      ],
+      "feat": "Child of the Sun",
+      "equipment": "Quarterstaff, Cartographer's Tools, Backpack, Basket, Parchment (4 sheets), Rope, Traveler's Clothes, 29 GP (or 50 GP)",
+      "source": "Lorwyn: First Light"
+    },
+    {
+      "name": "Shadowmoor Expert",
+      "skills": [
+        "Acrobatics",
+        "Deception"
+      ],
+      "tools": [
+        "Glassblower's Tools"
+      ],
+      "asi": [
+        "dex",
+        "int",
+        "cha"
+      ],
+      "feat": "Shadowmoor Hexer",
+      "equipment": "Dagger, Glassblower's Tools, Backpack, Hunting Trap, Lamp, Oil (3 flasks), Traveler's Clothes, Waterskin, 8 GP (or 50 GP)",
+      "source": "Lorwyn: First Light"
+    },
+    {
+      "name": "Pact Seeker",
+      "skills": [
+        "Arcana",
+        "Persuasion"
+      ],
+      "tools": [
+        "Calligrapher's Supplies"
+      ],
+      "asi": [
+        "con",
+        "int",
+        "cha"
+      ],
+      "equipment": "Book, Calligrapher's Supplies, Ink, Ink Pen, Parchment (10 sheets), Traveler's Clothes, 2 GP (or 50 GP)",
+      "featOptions": [
+        "cat:planar pact"
+      ],
+      "source": "D&D Beyond Drops (May 2026)",
+      "traits": [
+        {
+          "name": "Feat",
+          "effects": [],
+          "text": "A Planar Pact feat of your choice. Choose it in Edit > Classes > ASI y feats."
+        }
+      ]
     }
   ],
   "feats": [
@@ -9980,6 +11017,1156 @@
       ],
       "source": "SACoC",
       "text": "You can cast Find Familiar as a ritual, and your familiar can take the form of your college's mascot: Spirit Statue (Lorehold), Art Elemental (Prismari), Fractal (Quandrix), Inkling (Silverquill) or Pest (Witherbloom). When you take the Attack action, you can forgo one attack so your mascot makes one attack with its reaction. As an action, you can teleport to swap places with your mascot if it is within 60 feet."
+    },
+    {
+      "name": "Cult of the Dragon Initiate",
+      "category": "origin",
+      "source": "Heroes of Faerûn",
+      "text": "Dragon's Tongue: you know Draconic (if you already do, learn another language). Dragon's Terror: as a Magic action, a creature you can see within 30 feet makes a Wisdom save (DC 8 + your Wisdom modifier + Proficiency Bonus) or is Frightened until the end of your next turn; on a success or when it ends, it is immune for 24 hours. Inspired by Fear: when you make a creature Frightened of you, you can gain Heroic Inspiration if you lack it, once per Short or Long Rest.",
+      "grants": {
+        "languages": [
+          "Draconic"
+        ]
+      },
+      "resources": [
+        {
+          "name": "Inspired by Fear",
+          "uses": "1",
+          "recharge": "short",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Emerald Enclave Fledgling",
+      "category": "origin",
+      "spells": [
+        {
+          "spell": "Speak with Animals",
+          "uses": "none"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Heroes of Faerûn",
+      "text": "Speak with Animals: you always have it prepared and can cast it with spell slots; Intelligence, Wisdom or Charisma is your spellcasting ability (choose). Cast as a Ritual, it lasts 8 hours. Tag Team: when you take the Help action, you can switch places with a willing ally within 5 feet as part of that action, without provoking Opportunity Attacks (not if the ally is Incapacitated)."
+    },
+    {
+      "name": "Harper Agent",
+      "category": "origin",
+      "source": "Heroes of Faerûn",
+      "text": "Thieves' Cant: you know Thieves' Cant. Instrument Training: proficiency with one Musical Instrument of your choice. Distracting Melody: when you take the Help action to assist an ally's attack roll, the enemy can be within 30 feet of you instead of 5 feet, if it can see or hear you.",
+      "grants": {
+        "languages": [
+          "Thieves' Cant"
+        ]
+      }
+    },
+    {
+      "name": "Lords' Alliance Agent",
+      "category": "origin",
+      "source": "Heroes of Faerûn",
+      "text": "Summary (check the exact text): Inspiring Strike: when you score a Critical Hit, you can grant Heroic Inspiration. Reassert Honor: a Reaction that helps you protect an ally near you when an enemy hits it."
+    },
+    {
+      "name": "Purple Dragon Rook",
+      "category": "origin",
+      "source": "Heroes of Faerûn",
+      "text": "Summary (check the exact text): Entreat: proficiency in one social skill of your choice (Persuasion among them). Rallying Cry: at the start of an encounter you can give your allies Heroic Inspiration, once per Long Rest.",
+      "resources": [
+        {
+          "name": "Rallying Cry",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Spellfire Spark",
+      "category": "origin",
+      "spells": [
+        {
+          "spell": "Sacred Flame",
+          "uses": "none"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Heroes of Faerûn",
+      "text": "Summary (check the exact text): Magic Absorption: once per turn, reduce damage you take from a spell or magical effect by 1d4. Spellfire Flame: you learn Sacred Flame and can cast it as a Bonus Action a limited number of times per Long Rest."
+    },
+    {
+      "name": "Tyro of the Gauntlet",
+      "category": "origin",
+      "source": "Heroes of Faerûn",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Zhentarim Ruffian",
+      "category": "origin",
+      "source": "Heroes of Faerûn",
+      "text": "Summary (check the exact text): Exploit Opening: when you make an Opportunity Attack, roll its damage dice twice and use the higher result. Family First: you can expend Heroic Inspiration to give yourself and your allies Advantage on Initiative."
+    },
+    {
+      "name": "Vampire's Plaything",
+      "category": "origin",
+      "source": "Astarion's Book of Hungers",
+      "text": "Decanting: when you finish a Long Rest, you can create a Potion of Healing or an Antitoxin in an empty vial or flask; it evaporates after your next Long Rest. Timely Retreat: Dash or Disengage as a Bonus Action, Proficiency Bonus times per Long Rest. Vampiric Connection: your former vampire master can talk to you telepathically on the same plane, and you can let it perceive through your senses.",
+      "resources": [
+        {
+          "name": "Timely Retreat",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Tireless Reveler",
+      "category": "origin",
+      "source": "Astarion's Book of Hungers",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Vampire Hunter",
+      "category": "origin",
+      "source": "Astarion's Book of Hungers",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Survivor",
+      "category": "origin",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Hypervigilance: when you roll Initiative, you can reroll the d20 if it shows 9 or lower, and must use the new roll. Steel Yourself: when you fail a save to avoid or end Charmed or Frightened, take a Reaction to add your Proficiency Bonus to the roll, once per Long Rest.",
+      "resources": [
+        {
+          "name": "Steel Yourself",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Sharp Eye",
+      "category": "origin",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Summary (check the exact text): when you take the Search or Study action, you can give yourself Advantage on the ability checks of that action, Proficiency Bonus times per Long Rest.",
+      "resources": [
+        {
+          "name": "Sharp Eye",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Aberrant Anatomy",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Breathless: hold your breath for 1 hour. Extrasensory Perception: proficiency and Expertise in Perception, and Blindsight 15 feet. Drawback (Warping Flesh): after you roll a 1 on a D20 Test, make a Constitution save or be Stunned until the end of your next turn."
+    },
+    {
+      "name": "Echoing Soul",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Channelled Prowess: proficiency in two skills of your choice and Expertise in one skill you are proficient in; you can change them after each Long Rest. Inherent Tongues: one extra language. Drawback (Intrusive Echoes): on a natural 1 on a D20 Test, make a Constitution save or be Incapacitated until the end of your next turn, with your Speed halved."
+    },
+    {
+      "name": "Gathered Whispers",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "spells": [
+        {
+          "spell": "Message",
+          "uses": "none"
+        },
+        {
+          "spell": "Augury",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Spirit Whispers: you learn Message (no Material component) and always have Augury prepared, castable once per Long Rest without a slot or components, or with slots. Unearthly Scream: when hit by an attack roll, take a Reaction to add your Proficiency Bonus to your AC against it, Proficiency Bonus times per Long Rest. Drawback (Voices from Beyond): on a natural 1 on a D20 Test, make a Wisdom save or be Deafened until the end of your next turn.",
+      "resources": [
+        {
+          "name": "Unearthly Scream",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Living Shadow",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "spells": [
+        {
+          "spell": "Mage Hand",
+          "uses": "none"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Grasping Shadow: you learn Mage Hand, cast without components. Lengthened Strike: when you make a melee attack as part of the Attack or Magic action, add 10 feet of reach, Proficiency Bonus times per Long Rest. Drawback (Ominous Will): on a natural 1 on a D20 Test, make a Wisdom save or be Incapacitated until the start of your next turn, then roll on the Shadow's Will table.",
+      "resources": [
+        {
+          "name": "Lengthened Strike",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Mist Walker",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Domain Traveler: entering the Mists counts as holding a Mist talisman keyed to a domain (not past borders a Darklord closed). Mist Walk: when you take damage or fail a save against Grappled or Restrained, take a Reaction to teleport up to 15 feet to a space you can see, Proficiency Bonus times per Long Rest. Drawback (Poisoned Roots): after a Long Rest, in that 10-mile area each Short Rest needs a Constitution save or gives no benefit.",
+      "resources": [
+        {
+          "name": "Mist Walk",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Second Skin",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "spells": [
+        {
+          "spell": "Alter Self",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Alternate Form: you always have Alter Self prepared; once per Long Rest you can cast it without a slot or components and without Concentration, or with slots. Drawback (Involuntary Change): a catalyst (1d6: moon phase, a flower scent, temple bells, a melody, touching pure silver, seeing someone who looks like a specific person) forces a Charisma save at the start of your next turn or you change; if that use is spent, you are Stunned until the start of your next turn."
+    },
+    {
+      "name": "Symbiotic Being",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Entwined Existence: the symbiote can't be targeted and dies and revives with you. Second Mind: proficiency in one of Arcana, Deception, History, Intimidation, Insight, Investigation, Nature, Religion, Perception or Persuasion, and one language. Sustained Symbiosis: when you fail a save, take a Reaction to roll a Hit Die and add it, Proficiency Bonus times per Long Rest. Drawback (Symbiotic Agenda): on a natural 1 on a D20 Test, make a Charisma save or be Charmed for 1d12 hours following the symbiote's goals (repeat the save when you take damage).",
+      "resources": [
+        {
+          "name": "Sustained Symbiosis",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Touch of Death",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "spells": [
+        {
+          "spell": "Chill Touch",
+          "uses": "none"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Death Touch: you learn Chill Touch, cast without components; its Necrotic damage ignores Resistance. Drawback (Pull of the Grave): Disadvantage on Death Saving Throws."
+    },
+    {
+      "name": "Watchers",
+      "category": "dark gift",
+      "prerequisite": "Ravenloft Campaign",
+      "spells": [
+        {
+          "spell": "Beast Sense",
+          "uses": "long"
+        },
+        {
+          "spell": "Speak with Animals",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Ravenloft: The Horrors Within",
+      "text": "Borrowed Eyes: you always have Beast Sense and Speak with Animals prepared, each castable once per Long Rest without a slot, or with slots. Heightened Suspicion: +1d4 to checks made as part of the Search action. Drawback (Incessant Watchers): Disadvantage on saves against Scrying; on a natural 1 on a D20 Test, make a Wisdom save or have Disadvantage on D20 Tests for 1 minute (repeat at the end of each turn)."
+    },
+    {
+      "name": "Aberrant Dragonmark",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "count": 1,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [
+            "Sorcerer"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        },
+        {
+          "count": 1,
+          "level": 1,
+          "uses": "short",
+          "schools": [],
+          "lists": [
+            "Sorcerer"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        }
+      ],
+      "spellAbility": "con",
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Aberrant Fortitude: when you fail a Constitution save, take a Reaction to add 1d4, once per Long Rest. Aberrant Magic: one Sorcerer cantrip and one level 1 Sorcerer spell always prepared, castable once per Short or Long Rest without a slot (or with slots); Constitution is your spellcasting ability. Aberrant Surge: when you cast that spell, you can spend and roll a Hit Die: even, gain that many Temporary HP; odd, another creature within 30 feet takes that much Force damage (or you, if none).",
+      "resources": [
+        {
+          "name": "Aberrant Fortitude",
+          "uses": "1",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Mark of Making",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Mending",
+          "uses": "none"
+        },
+        {
+          "spell": "Magic Weapon",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Identify",
+            "Tenser's Floating Disk"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Continual Flame",
+            "Spiritual Weapon"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Conjure Barrage",
+            "Elemental Weapon"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Fabricate",
+            "Stone Shape"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Creation"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Artisan's Intuition: +1d4 to Intelligence (Arcana) checks and checks with Artisan's Tools. Spellsmith: you know Mending and always have Magic Weapon prepared."
+    },
+    {
+      "name": "Mark of Sentinel",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Shield",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Compelled Duel",
+            "Shield of Faith"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Warding Bond",
+            "Zone of Truth"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Counterspell",
+            "Protection from Energy"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Death Ward",
+            "Guardian of Faith"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Bigby's Hand"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Sentinel's Intuition: +1d4 to Wisdom (Insight or Perception) checks. Guardian's Shield: you always have Shield prepared. Vigilant Guardian: when a creature you can see within 5 feet is hit by an attack, take a Reaction to swap places and be hit instead, Proficiency Bonus times per Long Rest.",
+      "resources": [
+        {
+          "name": "Vigilant Guardian",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Mark of Warding",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Alarm",
+          "uses": "long"
+        },
+        {
+          "spell": "Mage Armor",
+          "uses": "long"
+        },
+        {
+          "spell": "Arcane Lock",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Armor of Agathys",
+            "Sanctuary"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Knock",
+            "Nystul's Magic Aura"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Glyph of Warding",
+            "Magic Circle"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Leomund's Secret Chest",
+            "Mordenkainen's Faithful Hound"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Antilife Shell"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Warder's Intuition: +1d4 to Intelligence (Investigation) checks and Thieves' Tools checks. Wards and Seals: you always have Alarm and Mage Armor prepared, and Arcane Lock from character level 3."
+    },
+    {
+      "name": "Mark of Detection",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Detect Magic",
+          "uses": "long"
+        },
+        {
+          "spell": "Detect Poison and Disease",
+          "uses": "long"
+        },
+        {
+          "spell": "See Invisibility",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Detect Evil and Good",
+            "Identify"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Detect Thoughts",
+            "Find Traps"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Clairvoyance",
+            "Nondetection"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Arcane Eye",
+            "Divination"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Legend Lore"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Deductive Intuition: +1d4 to Intelligence (Investigation) and Wisdom (Insight) checks. Magical Detection: Detect Magic and Detect Poison and Disease, and See Invisibility from level 3."
+    },
+    {
+      "name": "Mark of Finding",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Hunter's Mark",
+          "uses": "long"
+        },
+        {
+          "spell": "Locate Object",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Faerie Fire",
+            "Longstrider"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Locate Animals or Plants",
+            "Mind Spike"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Clairvoyance",
+            "Speak with Plants"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Divination",
+            "Locate Creature"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Commune with Nature"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Hunter's Intuition: +1d4 to Wisdom (Perception or Survival) checks. Finder's Magic: Hunter's Mark, and Locate Object from level 3."
+    },
+    {
+      "name": "Mark of Handling",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Animal Friendship",
+          "uses": "long"
+        },
+        {
+          "spell": "Speak with Animals",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Command",
+            "Find Familiar"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Beast Sense",
+            "Calm Emotions"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Beacon of Hope",
+            "Conjure Animals"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Aura of Life",
+            "Dominate Beast"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Awaken"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Wild Intuition: +1d4 to Intelligence (Nature) and Wisdom (Animal Handling) checks. Primal Connection: Animal Friendship and Speak with Animals. Monstrous Connections (level 3): they can target a Monstrosity with Intelligence 3 or lower."
+    },
+    {
+      "name": "Mark of Healing",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Cure Wounds",
+          "uses": "long"
+        },
+        {
+          "spell": "Lesser Restoration",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "False Life",
+            "Healing Word"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Arcane Vigor",
+            "Prayer of Healing"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Aura of Vitality",
+            "Mass Healing Word"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Aura of Life",
+            "Aura of Purity"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Greater Restoration"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Medical Intuition: +1d4 to Wisdom (Medicine) and Herbalism Kit checks. Healing Touch: Cure Wounds, and Lesser Restoration from level 3."
+    },
+    {
+      "name": "Mark of Hospitality",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Purify Food and Drink",
+          "uses": "long"
+        },
+        {
+          "spell": "Unseen Servant",
+          "uses": "long"
+        },
+        {
+          "spell": "Calm Emotions",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Goodberry",
+            "Sleep"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Aid",
+            "Enhance Ability"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Create Food and Water",
+            "Leomund's Tiny Hut"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Aura of Purity",
+            "Mordenkainen's Private Sanctum"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Hallow"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Ever Hospitable: +1d4 to Charisma (Persuasion) checks and checks with Brewer's Supplies or Cook's Utensils. Innkeeper's Magic: Purify Food and Drink and Unseen Servant, and Calm Emotions from level 3."
+    },
+    {
+      "name": "Mark of Passage",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Misty Step",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Expeditious Retreat",
+            "Jump"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Find Steed",
+            "Pass without Trace"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Blink",
+            "Phantom Steed"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Dimension Door",
+            "Freedom of Movement"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Teleportation Circle"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "effects": [
+        {
+          "target": "speed",
+          "value": 5,
+          "conditional": false
+        }
+      ],
+      "text": "Summary (check the exact text). Courier's Speed: your Speed increases by 5 feet. Intuitive Motion: +1d4 to Strength (Athletics) and Dexterity (Acrobatics) checks. Magical Passage: Misty Step."
+    },
+    {
+      "name": "Mark of Scribing",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Message",
+          "uses": "none"
+        },
+        {
+          "spell": "Comprehend Languages",
+          "uses": "long"
+        },
+        {
+          "spell": "Magic Mouth",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Command",
+            "Illusory Script"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Animal Messenger",
+            "Silence"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Sending",
+            "Tongues"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Arcane Eye",
+            "Confusion"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Dream"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Gifted Scribe: +1d4 to Intelligence (History) and Calligrapher's Supplies checks. Scribe's Insight: Message, Comprehend Languages, and Magic Mouth from level 3."
+    },
+    {
+      "name": "Mark of Shadow",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Minor Illusion",
+          "uses": "none"
+        },
+        {
+          "spell": "Invisibility",
+          "uses": "long"
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Disguise Self",
+            "Silent Image"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Darkness",
+            "Pass without Trace"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Clairvoyance",
+            "Major Image"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Greater Invisibility",
+            "Hallucinatory Terrain"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Mislead"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Cunning Intuition: +1d4 to Dexterity (Stealth) and Charisma (Performance) checks. Shape Shadows: Minor Illusion and Invisibility."
+    },
+    {
+      "name": "Mark of Storm",
+      "category": "dragonmark",
+      "prerequisite": "Eberron Campaign, no other Dragonmark feat",
+      "spells": [
+        {
+          "spell": "Thunderclap",
+          "uses": "none"
+        },
+        {
+          "spell": "Gust of Wind",
+          "uses": "long",
+          "minLevel": 3
+        }
+      ],
+      "spellAbility": "pick",
+      "expanded": [
+        {
+          "level": 1,
+          "spells": [
+            "Feather Fall",
+            "Fog Cloud"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Levitate",
+            "Shatter"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Sleet Storm",
+            "Wind Wall"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Conjure Minor Elementals",
+            "Control Water"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Conjure Elemental"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "Eberron: Forge of the Artificer",
+      "text": "Summary (check the exact text). Windwright's Intuition: +1d4 to Dexterity (Acrobatics) and Navigator's Tools checks. Storm's Boon: Resistance to Lightning damage. Storm Magic: Thunderclap, and Gust of Wind from level 3.",
+      "grants": {
+        "resistances": [
+          "lightning"
+        ]
+      }
+    },
+    {
+      "name": "Arcane Infiltrator",
+      "category": "origin",
+      "spells": [
+        {
+          "spell": "Friends",
+          "uses": "none"
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "Arcana Unleashed",
+      "text": "You learn Friends (Intelligence, Wisdom or Charisma, choose). Cunning Diversion: take the Dodge action as a Bonus Action, Proficiency Bonus times per Long Rest.",
+      "resources": [
+        {
+          "name": "Cunning Diversion",
+          "uses": "pb",
+          "recharge": "long",
+          "die": ""
+        }
+      ]
+    },
+    {
+      "name": "Arcane Artist",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Arcane Eloquence",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Arcane Omens",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Arcane Overload",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Arcane Safeguard",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Arcane Undertaker",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Familiar Friend",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Portal Jumper",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Transmuted Anatomy",
+      "category": "origin",
+      "source": "Arcana Unleashed",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Child of the Sun",
+      "category": "origin",
+      "source": "Lorwyn: First Light",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
+    },
+    {
+      "name": "Shadowmoor Hexer",
+      "category": "origin",
+      "source": "Lorwyn: First Light",
+      "text": "Text not loaded yet (not verified): check the exact rules in the book."
     }
   ],
   "invocations": [

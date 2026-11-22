@@ -161,3 +161,105 @@ Silverquill: learn two cantrips from Sacred Flame, Thaumaturgy, Vicious Mockery,
 Witherbloom: learn two cantrips from Chill Touch, Druidcraft, Spare the Dying, and one 1st-level Druid or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat).
 @feat Strixhaven Mascot | cat general | prereq Level 4+, Strixhaven Initiate feat | level 4 | spells Find Familiar | source SACoC
 You can cast Find Familiar as a ritual, and your familiar can take the form of your college's mascot: Spirit Statue (Lorehold), Art Elemental (Prismari), Fractal (Quandrix), Inkling (Silverquill) or Pest (Witherbloom). When you take the Attack action, you can forgo one attack so your mascot makes one attack with its reaction. As an action, you can teleport to swap places with your mascot if it is within 60 feet.
+
+# Feats publicados después del PHB 2024. Los que dicen "Summary" son resúmenes; "not verified" = sin texto confirmado.
+# Heroes of Faerûn: Origin feats
+@feat Cult of the Dragon Initiate | cat origin | source Heroes of Faerûn
+Dragon's Tongue: you know Draconic (if you already do, learn another language). Dragon's Terror: as a Magic action, a creature you can see within 30 feet makes a Wisdom save (DC 8 + your Wisdom modifier + Proficiency Bonus) or is Frightened until the end of your next turn; on a success or when it ends, it is immune for 24 hours. Inspired by Fear: when you make a creature Frightened of you, you can gain Heroic Inspiration if you lack it, once per Short or Long Rest. {lang Draconic} {res short 1 Inspired by Fear}
+@feat Emerald Enclave Fledgling | cat origin | spells Speak with Animals | castwith pick | source Heroes of Faerûn
+Speak with Animals: you always have it prepared and can cast it with spell slots; Intelligence, Wisdom or Charisma is your spellcasting ability (choose). Cast as a Ritual, it lasts 8 hours. Tag Team: when you take the Help action, you can switch places with a willing ally within 5 feet as part of that action, without provoking Opportunity Attacks (not if the ally is Incapacitated).
+@feat Harper Agent | cat origin | source Heroes of Faerûn
+Thieves' Cant: you know Thieves' Cant. Instrument Training: proficiency with one Musical Instrument of your choice. Distracting Melody: when you take the Help action to assist an ally's attack roll, the enemy can be within 30 feet of you instead of 5 feet, if it can see or hear you. {lang Thieves' Cant}
+@feat Lords' Alliance Agent | cat origin | source Heroes of Faerûn
+Summary (check the exact text): Inspiring Strike: when you score a Critical Hit, you can grant Heroic Inspiration. Reassert Honor: a Reaction that helps you protect an ally near you when an enemy hits it.
+@feat Purple Dragon Rook | cat origin | source Heroes of Faerûn
+Summary (check the exact text): Entreat: proficiency in one social skill of your choice (Persuasion among them). Rallying Cry: at the start of an encounter you can give your allies Heroic Inspiration, once per Long Rest. {res long 1 Rallying Cry}
+@feat Spellfire Spark | cat origin | spells Sacred Flame | castwith pick | source Heroes of Faerûn
+Summary (check the exact text): Magic Absorption: once per turn, reduce damage you take from a spell or magical effect by 1d4. Spellfire Flame: you learn Sacred Flame and can cast it as a Bonus Action a limited number of times per Long Rest.
+@feat Tyro of the Gauntlet | cat origin | source Heroes of Faerûn
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Zhentarim Ruffian | cat origin | source Heroes of Faerûn
+Summary (check the exact text): Exploit Opening: when you make an Opportunity Attack, roll its damage dice twice and use the higher result. Family First: you can expend Heroic Inspiration to give yourself and your allies Advantage on Initiative.
+# Astarion's Book of Hungers: Origin feats
+@feat Vampire's Plaything | cat origin | source Astarion's Book of Hungers
+Decanting: when you finish a Long Rest, you can create a Potion of Healing or an Antitoxin in an empty vial or flask; it evaporates after your next Long Rest. Timely Retreat: Dash or Disengage as a Bonus Action, Proficiency Bonus times per Long Rest. Vampiric Connection: your former vampire master can talk to you telepathically on the same plane, and you can let it perceive through your senses. {res long pb Timely Retreat}
+@feat Tireless Reveler | cat origin | source Astarion's Book of Hungers
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Vampire Hunter | cat origin | source Astarion's Book of Hungers
+Text not loaded yet (not verified): check the exact rules in the book.
+# Ravenloft: The Horrors Within: Origin feats y Dark Gifts (cada Dark Gift tiene una desventaja; las salvaciones son DC 13 + tu Proficiency Bonus)
+@feat Survivor | cat origin | source Ravenloft: The Horrors Within
+Hypervigilance: when you roll Initiative, you can reroll the d20 if it shows 9 or lower, and must use the new roll. Steel Yourself: when you fail a save to avoid or end Charmed or Frightened, take a Reaction to add your Proficiency Bonus to the roll, once per Long Rest. {res long 1 Steel Yourself}
+@feat Sharp Eye | cat origin | source Ravenloft: The Horrors Within
+Summary (check the exact text): when you take the Search or Study action, you can give yourself Advantage on the ability checks of that action, Proficiency Bonus times per Long Rest. {res long pb Sharp Eye}
+@feat Aberrant Anatomy | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within
+Breathless: hold your breath for 1 hour. Extrasensory Perception: proficiency and Expertise in Perception, and Blindsight 15 feet. Drawback (Warping Flesh): after you roll a 1 on a D20 Test, make a Constitution save or be Stunned until the end of your next turn.
+@feat Echoing Soul | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within
+Channelled Prowess: proficiency in two skills of your choice and Expertise in one skill you are proficient in; you can change them after each Long Rest. Inherent Tongues: one extra language. Drawback (Intrusive Echoes): on a natural 1 on a D20 Test, make a Constitution save or be Incapacitated until the end of your next turn, with your Speed halved.
+@feat Gathered Whispers | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within | spells Message; Augury long | castwith pick
+Spirit Whispers: you learn Message (no Material component) and always have Augury prepared, castable once per Long Rest without a slot or components, or with slots. Unearthly Scream: when hit by an attack roll, take a Reaction to add your Proficiency Bonus to your AC against it, Proficiency Bonus times per Long Rest. Drawback (Voices from Beyond): on a natural 1 on a D20 Test, make a Wisdom save or be Deafened until the end of your next turn. {res long pb Unearthly Scream}
+@feat Living Shadow | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within | spells Mage Hand | castwith pick
+Grasping Shadow: you learn Mage Hand, cast without components. Lengthened Strike: when you make a melee attack as part of the Attack or Magic action, add 10 feet of reach, Proficiency Bonus times per Long Rest. Drawback (Ominous Will): on a natural 1 on a D20 Test, make a Wisdom save or be Incapacitated until the start of your next turn, then roll on the Shadow's Will table. {res long pb Lengthened Strike}
+@feat Mist Walker | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within
+Domain Traveler: entering the Mists counts as holding a Mist talisman keyed to a domain (not past borders a Darklord closed). Mist Walk: when you take damage or fail a save against Grappled or Restrained, take a Reaction to teleport up to 15 feet to a space you can see, Proficiency Bonus times per Long Rest. Drawback (Poisoned Roots): after a Long Rest, in that 10-mile area each Short Rest needs a Constitution save or gives no benefit. {res long pb Mist Walk}
+@feat Second Skin | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within | spells Alter Self long | castwith pick
+Alternate Form: you always have Alter Self prepared; once per Long Rest you can cast it without a slot or components and without Concentration, or with slots. Drawback (Involuntary Change): a catalyst (1d6: moon phase, a flower scent, temple bells, a melody, touching pure silver, seeing someone who looks like a specific person) forces a Charisma save at the start of your next turn or you change; if that use is spent, you are Stunned until the start of your next turn.
+@feat Symbiotic Being | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within
+Entwined Existence: the symbiote can't be targeted and dies and revives with you. Second Mind: proficiency in one of Arcana, Deception, History, Intimidation, Insight, Investigation, Nature, Religion, Perception or Persuasion, and one language. Sustained Symbiosis: when you fail a save, take a Reaction to roll a Hit Die and add it, Proficiency Bonus times per Long Rest. Drawback (Symbiotic Agenda): on a natural 1 on a D20 Test, make a Charisma save or be Charmed for 1d12 hours following the symbiote's goals (repeat the save when you take damage). {res long pb Sustained Symbiosis}
+@feat Touch of Death | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within | spells Chill Touch | castwith pick
+Death Touch: you learn Chill Touch, cast without components; its Necrotic damage ignores Resistance. Drawback (Pull of the Grave): Disadvantage on Death Saving Throws.
+@feat Watchers | cat dark gift | prereq Ravenloft Campaign | source Ravenloft: The Horrors Within | spells Beast Sense long; Speak with Animals long | castwith pick
+Borrowed Eyes: you always have Beast Sense and Speak with Animals prepared, each castable once per Long Rest without a slot, or with slots. Heightened Suspicion: +1d4 to checks made as part of the Search action. Drawback (Incessant Watchers): Disadvantage on saves against Scrying; on a natural 1 on a D20 Test, make a Wisdom save or have Disadvantage on D20 Tests for 1 minute (repeat at the end of each turn).
+# Eberron: Forge of the Artificer: Dragonmark feats. Requisito: campaña de Eberron y no tener otro Dragonmark. Las spells gratis son 1/Long Rest (Aberrant: Short o Long Rest) y también con slots; ability INT, WIS o CHA. "Spells of the Mark" se suman a tu lista de clase.
+@feat Aberrant Dragonmark | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells pick 1 L0 list:Sorcerer; pick 1 L1 list:Sorcerer short | castwith con
+Aberrant Fortitude: when you fail a Constitution save, take a Reaction to add 1d4, once per Long Rest. Aberrant Magic: one Sorcerer cantrip and one level 1 Sorcerer spell always prepared, castable once per Short or Long Rest without a slot (or with slots); Constitution is your spellcasting ability. Aberrant Surge: when you cast that spell, you can spend and roll a Hit Die: even, gain that many Temporary HP; odd, another creature within 30 feet takes that much Force damage (or you, if none). {res long 1 Aberrant Fortitude}
+@feat Mark of Making | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Mending; Magic Weapon long | castwith pick | expanded 1: Identify, Tenser's Floating Disk; 2: Continual Flame, Spiritual Weapon; 3: Conjure Barrage, Elemental Weapon; 4: Fabricate, Stone Shape; 5: Creation
+Artisan's Intuition: +1d4 to Intelligence (Arcana) checks and checks with Artisan's Tools. Spellsmith: you know Mending and always have Magic Weapon prepared.
+@feat Mark of Sentinel | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Shield long | castwith pick | expanded 1: Compelled Duel, Shield of Faith; 2: Warding Bond, Zone of Truth; 3: Counterspell, Protection from Energy; 4: Death Ward, Guardian of Faith; 5: Bigby's Hand
+Sentinel's Intuition: +1d4 to Wisdom (Insight or Perception) checks. Guardian's Shield: you always have Shield prepared. Vigilant Guardian: when a creature you can see within 5 feet is hit by an attack, take a Reaction to swap places and be hit instead, Proficiency Bonus times per Long Rest. {res long pb Vigilant Guardian}
+@feat Mark of Warding | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Alarm long; Mage Armor long; Arcane Lock long @3 | castwith pick | expanded 1: Armor of Agathys, Sanctuary; 2: Knock, Nystul's Magic Aura; 3: Glyph of Warding, Magic Circle; 4: Leomund's Secret Chest, Mordenkainen's Faithful Hound; 5: Antilife Shell
+Warder's Intuition: +1d4 to Intelligence (Investigation) checks and Thieves' Tools checks. Wards and Seals: you always have Alarm and Mage Armor prepared, and Arcane Lock from character level 3.
+@feat Mark of Detection | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Detect Magic long; Detect Poison and Disease long; See Invisibility long @3 | castwith pick | expanded 1: Detect Evil and Good, Identify; 2: Detect Thoughts, Find Traps; 3: Clairvoyance, Nondetection; 4: Arcane Eye, Divination; 5: Legend Lore
+Summary (check the exact text). Deductive Intuition: +1d4 to Intelligence (Investigation) and Wisdom (Insight) checks. Magical Detection: Detect Magic and Detect Poison and Disease, and See Invisibility from level 3.
+@feat Mark of Finding | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Hunter's Mark long; Locate Object long @3 | castwith pick | expanded 1: Faerie Fire, Longstrider; 2: Locate Animals or Plants, Mind Spike; 3: Clairvoyance, Speak with Plants; 4: Divination, Locate Creature; 5: Commune with Nature
+Summary (check the exact text). Hunter's Intuition: +1d4 to Wisdom (Perception or Survival) checks. Finder's Magic: Hunter's Mark, and Locate Object from level 3.
+@feat Mark of Handling | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Animal Friendship long; Speak with Animals long | castwith pick | expanded 1: Command, Find Familiar; 2: Beast Sense, Calm Emotions; 3: Beacon of Hope, Conjure Animals; 4: Aura of Life, Dominate Beast; 5: Awaken
+Summary (check the exact text). Wild Intuition: +1d4 to Intelligence (Nature) and Wisdom (Animal Handling) checks. Primal Connection: Animal Friendship and Speak with Animals. Monstrous Connections (level 3): they can target a Monstrosity with Intelligence 3 or lower.
+@feat Mark of Healing | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Cure Wounds long; Lesser Restoration long @3 | castwith pick | expanded 1: False Life, Healing Word; 2: Arcane Vigor, Prayer of Healing; 3: Aura of Vitality, Mass Healing Word; 4: Aura of Life, Aura of Purity; 5: Greater Restoration
+Summary (check the exact text). Medical Intuition: +1d4 to Wisdom (Medicine) and Herbalism Kit checks. Healing Touch: Cure Wounds, and Lesser Restoration from level 3.
+@feat Mark of Hospitality | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Purify Food and Drink long; Unseen Servant long; Calm Emotions long @3 | castwith pick | expanded 1: Goodberry, Sleep; 2: Aid, Enhance Ability; 3: Create Food and Water, Leomund's Tiny Hut; 4: Aura of Purity, Mordenkainen's Private Sanctum; 5: Hallow
+Summary (check the exact text). Ever Hospitable: +1d4 to Charisma (Persuasion) checks and checks with Brewer's Supplies or Cook's Utensils. Innkeeper's Magic: Purify Food and Drink and Unseen Servant, and Calm Emotions from level 3.
+@feat Mark of Passage | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Misty Step long | castwith pick | expanded 1: Expeditious Retreat, Jump; 2: Find Steed, Pass without Trace; 3: Blink, Phantom Steed; 4: Dimension Door, Freedom of Movement; 5: Teleportation Circle
+Summary (check the exact text). Courier's Speed: your Speed increases by 5 feet. Intuitive Motion: +1d4 to Strength (Athletics) and Dexterity (Acrobatics) checks. Magical Passage: Misty Step. {speed +5}
+@feat Mark of Scribing | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Message; Comprehend Languages long; Magic Mouth long @3 | castwith pick | expanded 1: Command, Illusory Script; 2: Animal Messenger, Silence; 3: Sending, Tongues; 4: Arcane Eye, Confusion; 5: Dream
+Summary (check the exact text). Gifted Scribe: +1d4 to Intelligence (History) and Calligrapher's Supplies checks. Scribe's Insight: Message, Comprehend Languages, and Magic Mouth from level 3.
+@feat Mark of Shadow | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Minor Illusion; Invisibility long | castwith pick | expanded 1: Disguise Self, Silent Image; 2: Darkness, Pass without Trace; 3: Clairvoyance, Major Image; 4: Greater Invisibility, Hallucinatory Terrain; 5: Mislead
+Summary (check the exact text). Cunning Intuition: +1d4 to Dexterity (Stealth) and Charisma (Performance) checks. Shape Shadows: Minor Illusion and Invisibility.
+@feat Mark of Storm | cat dragonmark | prereq Eberron Campaign, no other Dragonmark feat | source Eberron: Forge of the Artificer | spells Thunderclap; Gust of Wind long @3 | castwith pick | expanded 1: Feather Fall, Fog Cloud; 2: Levitate, Shatter; 3: Sleet Storm, Wind Wall; 4: Conjure Minor Elementals, Control Water; 5: Conjure Elemental
+Summary (check the exact text). Windwright's Intuition: +1d4 to Dexterity (Acrobatics) and Navigator's Tools checks. Storm's Boon: Resistance to Lightning damage. Storm Magic: Thunderclap, and Gust of Wind from level 3. {resist lightning}
+# Arcana Unleashed: Origin feats
+@feat Arcane Infiltrator | cat origin | spells Friends | castwith pick | source Arcana Unleashed
+You learn Friends (Intelligence, Wisdom or Charisma, choose). Cunning Diversion: take the Dodge action as a Bonus Action, Proficiency Bonus times per Long Rest. {res long pb Cunning Diversion}
+@feat Arcane Artist | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Arcane Eloquence | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Arcane Omens | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Arcane Overload | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Arcane Safeguard | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Arcane Undertaker | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Familiar Friend | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Portal Jumper | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Transmuted Anatomy | cat origin | source Arcana Unleashed
+Text not loaded yet (not verified): check the exact rules in the book.
+# Lorwyn: First Light: Origin feats
+@feat Child of the Sun | cat origin | source Lorwyn: First Light
+Text not loaded yet (not verified): check the exact rules in the book.
+@feat Shadowmoor Hexer | cat origin | source Lorwyn: First Light
+Text not loaded yet (not verified): check the exact rules in the book.

@@ -353,26 +353,35 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   const ruled = (items: Row[], linesY: number[], x: number, maxPx: number, size: number, note: string) => {
     const maxW = maxPx * SX;
     const IND = 8;
+    /* Sangría de los renglones siguientes: alineada después de "Nombre: " si el ítem lo tiene; si no, 8 pt. */
+    const indentOf = (text: string, f: PDFFont) => {
+      const i = text.indexOf(': ');
+      if (i < 0) return IND;
+      const w = f.widthOfTextAtSize(text.slice(0, i + 2), size);
+      return w <= maxW * 0.55 ? w : IND;
+    };
     const expand = (it: Row) => {
       const f = it.font ?? reg;
-      const first = wrap(p.clean(it.text), f, size, maxW);
-      if (first.length <= 1) return first;
-      // Renglones de continuación con sangría.
+      const text = p.clean(it.text);
+      const first = wrap(text, f, size, maxW);
+      if (first.length <= 1) return { lines: first, indent: 0 };
+      const ind = indentOf(text, f);
+      // Primer renglón a todo el ancho; el resto con la sangría.
       const [head, ...restWords] = first;
-      const rest = wrap(restWords.join(' '), f, size, maxW - IND);
-      return [head, ...rest];
+      const rest = wrap(restWords.join(' '), f, size, maxW - ind);
+      return { lines: [head, ...rest], indent: ind };
     };
     const out: { text: string; font: PDFFont; color: RGB; indent: number }[] = [];
     let over = false;
     for (let i = 0; i < items.length; i++) {
-      const ls = expand(items[i]);
+      const { lines: ls, indent } = expand(items[i]);
       const left = items.length - i - 1;
       const room = linesY.length - out.length - (left > 0 ? 1 : 0);
       if (ls.length > room && !(left === 0 && ls.length <= linesY.length - out.length)) {
         over = true;
         break;
       }
-      ls.forEach((l, k) => out.push({ text: l, font: items[i].font ?? reg, color: items[i].color ?? INK, indent: k ? IND : 0 }));
+      ls.forEach((l, k) => out.push({ text: l, font: items[i].font ?? reg, color: items[i].color ?? INK, indent: k ? indent : 0 }));
     }
     if (over) out.push({ text: note, font: p.f.ital, color: INK, indent: 0 });
     out.forEach((l, i) => p.text(page, l.text, x * SX + l.indent, linesY[i] * SY - 2.2 - size * 0.8, size, l.font, l.color));
