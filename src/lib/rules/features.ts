@@ -39,6 +39,17 @@ export function subclassOptions(packs: Pack[], className: string, ruleset: strin
     );
 }
 
+/* Opción elegida de una subclass con variantes (tipo de genie, terreno de Circle of the Land). Se guarda en
+   c.spellVariants por id de clase; sin elección vale la primera. */
+export function subclassVariant(c: Character, entryId: string, sub: PackSubclass): { options: string[]; value: string } {
+  const options = [...new Set([...sub.spells.map((g) => g.variant), ...sub.features.map((f) => f.variant)].filter(Boolean))];
+  const saved = c.spellVariants[entryId] ?? '';
+  return { options, value: options.includes(saved) ? saved : (options[0] ?? '') };
+}
+/* Un feature de subclass con variante solo cuenta si coincide con la opción elegida. */
+export const variantOk = (c: Character, entryId: string, sub: PackSubclass, f: { variant?: string }) =>
+  !f.variant || f.variant === subclassVariant(c, entryId, sub).value;
+
 export function findSubclass(packs: Pack[], value: string | null): { sub: PackSubclass; pack: Pack } | null {
   if (!value) return null;
   const i = value.indexOf(':');
@@ -69,7 +80,9 @@ export function characterFeatures(c: Character, packs: Pack[]): ClassFeatures[] 
     const sub = findSubclass(packs, entry.subclassId)?.sub ?? null;
     const features: OwnedFeature[] = [
       ...(cls?.features ?? []).map((f) => ({ feature: f, source: 'class' as const, sourceName: cls!.name, owned: f.level <= entry.level })),
-      ...(sub?.features ?? []).map((f) => ({ feature: f, source: 'subclass' as const, sourceName: sub!.name, owned: f.level <= entry.level }))
+      ...(sub?.features ?? [])
+        .filter((f) => variantOk(c, entry.id, sub!, f))
+        .map((f) => ({ feature: f, source: 'subclass' as const, sourceName: sub!.name, owned: f.level <= entry.level }))
     ].sort((a, b) => a.feature.level - b.feature.level || Number(a.source === 'subclass') - Number(b.source === 'subclass'));
     return {
       entry,

@@ -5,8 +5,9 @@ Convierte las fuentes de texto de content/<ruleset>/*.txt en un pack JSON para l
 Formato de cada archivo:
   @class <Nombre> | hitDie <n> | caster <none|full|half|third|artificer|pact> | spell <ability|none> | saves <a> <b> | sublevel <n> | sublabel <texto>
   <nivel> | <feature> | <resumen> [{speed +N} o {speed +N cond}]
-  @sub <Nombre> | <fuente>
+  @sub <Nombre> | <fuente> [| variant <rótulo>]
   <nivel> | <feature> | <resumen>
+  {variant <Opción>} en un feature de subclass: solo aplica si se elige esa opción (ej. el tipo de genie).
 
 Uso: python3 content/build_pack.py 2014   ->  public/packs/wiki-2014.json (la app lo carga sola)
 """
@@ -48,6 +49,7 @@ def parse_header(line: str) -> dict:
 
 GRANT = re.compile(r"\{(skill|expertise|skillpick|armor|weapons|tools|lang|toolpick|langpick|save|savepick|res|pick|resist)\s+([^}]*)\}")
 # Spells de rasgos de raza: {spells Light; Faerie Fire long @3; Darkness long @5} {castwith cha}
+VARIANT = re.compile(r"\{variant\s+([^}]*)\}")
 SPELLTOK = re.compile(r"\{spells\s+([^}]*)\}")
 CASTWITH = re.compile(r"\{castwith\s+(\w+)\}")
 ABBR = ["str", "dex", "con", "int", "wis", "cha"]
@@ -114,12 +116,17 @@ def feature(line: str, where: str) -> dict:
         raise SystemExit(f"{where}: linea invalida: {line!r}")
     level = int(re.sub(r"\D", "", parts[0]))
     text = parts[2]
+    vm = VARIANT.search(text)
+    variant = vm.group(1).strip() if vm else ""
+    text = VARIANT.sub("", text)
     effects = effects_of(text)
     text = EFFECT.sub("", text)
     grants, resources, choose, text = grant_tokens(text, where)
     resource = resources[0] if resources else None
     text = re.sub(r"\s{2,}", " ", text).strip()
     f = {"level": level, "name": parts[1], "text": text}
+    if variant:
+        f["variant"] = variant
     if effects:
         f["effects"] = effects
     if grants:
@@ -166,7 +173,10 @@ def subclass_spells(features: list) -> list:
             end = marks[i + 1].start() if i + 1 < len(marks) else len(text)
             names = spell_names(text[m.end():end])
             if names:
-                out.append({"level": int(m.group(1) or m.group(2)), "spells": names, "mode": "expanded" if expanded else "always"})
+                g = {"level": int(m.group(1) or m.group(2)), "spells": names, "mode": "expanded" if expanded else "always"}
+                if f.get("variant"):
+                    g["variant"] = f["variant"]
+                out.append(g)
     return out
 
 
@@ -645,6 +655,8 @@ def build(ruleset: str) -> dict:
                     raise SystemExit(f"{where}: @sub antes de @class")
                 h = parse_header(line[5:])
                 sub = {"class": cls["name"], "name": h["name"], "features": []}
+                if "variant" in h:
+                    sub["variantLabel"] = h["variant"]
                 if "caster" in h:
                     kind, _, ability = h["caster"].partition(" ")
                     sub["caster"] = kind

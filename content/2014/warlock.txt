@@ -44,12 +44,23 @@
 10 | Fiendish Resilience | After a rest, choose a damage type to resist until you choose another. Magical or silvered weapons ignore it.
 14 | Hurl Through Hell | When you hit a creature, send it through the lower planes until the end of your next turn; non-fiends take 10d10 psychic damage. Once per long rest. {res long 1 Hurl Through Hell}
 
-@sub The Genie | TCoE
-1 | Expanded Spell List | Detect Evil and Good, Phantasmal Force, Create Food and Water, Phantasmal Killer, Creation and Wish, plus extra spells set by your genie kind (Dao, Djinni, Efreeti or Marid).
+@sub The Genie | TCoE | variant Genie kind
+1 | Genie Kind | Choose your patron's kind: Dao (Earth), Djinni (Air), Efreeti (Fire) or Marid (Water). It sets your extra expanded spells, the damage type of Genie's Wrath and the resistance from Elemental Gift. Choose it in Edit > Classes, under the subclass.
+1 | Expanded Spell List | Added to the warlock spell list for you. 1st: Detect Evil and Good. 2nd: Phantasmal Force. 3rd: Create Food and Water. 4th: Phantasmal Killer. 5th: Creation. 9th: Wish.
+1 | Dao Expanded Spells | Added to the warlock spell list for you. 1st: Sanctuary. 2nd: Spike Growth. 3rd: Meld into Stone. 4th: Stone Shape. 5th: Wall of Stone. {variant Dao (Earth)}
+1 | Djinni Expanded Spells | Added to the warlock spell list for you. 1st: Thunderwave. 2nd: Gust of Wind. 3rd: Wind Wall. 4th: Greater Invisibility. 5th: Seeming. {variant Djinni (Air)}
+1 | Efreeti Expanded Spells | Added to the warlock spell list for you. 1st: Burning Hands. 2nd: Scorching Ray. 3rd: Fireball. 4th: Fire Shield. 5th: Flame Strike. {variant Efreeti (Fire)}
+1 | Marid Expanded Spells | Added to the warlock spell list for you. 1st: Fog Cloud. 2nd: Blur. 3rd: Sleet Storm. 4th: Control Water. 5th: Cone of Cold. {variant Marid (Water)}
 1 | Genie's Vessel | You receive a Tiny vessel that is your spellcasting focus. If it is lost, a 1-hour ceremony during a rest gives you a new one.
 1 | Bottled Respite | As an action, vanish into your vessel's extradimensional space for up to twice your proficiency bonus in hours. Once per long rest. {res long 1 Bottled Respite}
-1 | Genie's Wrath | Once per turn, when you hit with an attack roll, deal extra damage equal to your proficiency bonus of your genie kind's type.
-6 | Elemental Gift | Gain resistance to your genie's damage type. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest. {res long pb Elemental Gift (flight)}
+1 | Genie's Wrath (Dao) | Once per turn, when you hit with an attack roll, deal extra bludgeoning damage equal to your proficiency bonus. {variant Dao (Earth)}
+1 | Genie's Wrath (Djinni) | Once per turn, when you hit with an attack roll, deal extra thunder damage equal to your proficiency bonus. {variant Djinni (Air)}
+1 | Genie's Wrath (Efreeti) | Once per turn, when you hit with an attack roll, deal extra fire damage equal to your proficiency bonus. {variant Efreeti (Fire)}
+1 | Genie's Wrath (Marid) | Once per turn, when you hit with an attack roll, deal extra cold damage equal to your proficiency bonus. {variant Marid (Water)}
+6 | Elemental Gift (Dao) | Resistance to bludgeoning damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest. {resist bludgeoning} {res long pb Elemental Gift (flight)} {variant Dao (Earth)}
+6 | Elemental Gift (Djinni) | Resistance to thunder damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest. {resist thunder} {res long pb Elemental Gift (flight)} {variant Djinni (Air)}
+6 | Elemental Gift (Efreeti) | Resistance to fire damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest. {resist fire} {res long pb Elemental Gift (flight)} {variant Efreeti (Fire)}
+6 | Elemental Gift (Marid) | Resistance to cold damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest. {resist cold} {res long pb Elemental Gift (flight)} {variant Marid (Water)}
 10 | Sanctuary Vessel | Up to five willing creatures can enter your vessel with you. Staying 10 minutes grants short rest benefits, and Hit Dice healing there gets a bonus.
 14 | Limited Wish | As an action, cast any spell of 6th level or lower with a casting time of 1 action from any class list, ignoring requirements. Recharges after 1d4 long rests.
 

@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest';
 import { CLASS_PRESETS, blankCharacter, classFromPreset, type Character } from '../model/character';
 import { parsePack, type Pack } from '../model/pack';
 import { asiSlots, passive } from './derive';
-import { allGrantedEffects } from './features';
+import { allGrantedEffects, characterFeatures } from './features';
+import { resistances } from './grants';
 import { spellAttacks, spellEntryFrom, spellList, subclassSpells } from './spells';
 
 /* Pruebas con los packs reales de public/packs (se saltan si no están). */
@@ -24,6 +25,24 @@ describe.skipIf(!p14 || !p24)('packs de la wiki', () => {
     const slot = asiSlots(c)[0];
     c.advancements[slot.key] = { kind: 'feat', asi: [], featRef: 'wiki-2014:observant', featName: 'Observant', featAbility: 'wis' } as Character['advancements'][string];
     expect(passive(c, 'perception', allGrantedEffects(c, [p14!]))).toBe(passive(c, 'perception') + 5);
+  });
+
+  it('Genie: el tipo de genie cambia los spells extra, Genie\'s Wrath y la resistance de Elemental Gift', () => {
+    const k = cls('Warlock', 6);
+    k.subclassId = 'wiki-2014:warlock/the-genie';
+    const c: Character = { ...blankCharacter(), classes: [k], spellVariants: { [k.id]: 'Efreeti (Fire)' } };
+    const info = subclassSpells(c, [p14!]);
+    expect(info.variants[0]).toMatchObject({ label: 'Genie kind', value: 'Efreeti (Fire)' });
+    const exp = [...(info.expanded.get(k.id) ?? [])];
+    expect(exp).toContain('fireball');
+    expect(exp).toContain('detectevilandgood');
+    expect(exp).not.toContain('sanctuary');
+    const names = characterFeatures(c, [p14!])[0].features.map((f) => f.feature.name);
+    expect(names).toContain("Genie's Wrath (Efreeti)");
+    expect(names).not.toContain("Genie's Wrath (Dao)");
+    expect(resistances(c, [p14!])).toEqual(['fire']);
+    const marid = { ...c, spellVariants: { [k.id]: 'Marid (Water)' } };
+    expect(resistances(marid, [p14!])).toEqual(['cold']);
   });
 
   it('Life Domain 2014 da sus spells según nivel, y Land druid según terreno', () => {

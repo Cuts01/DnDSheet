@@ -99,7 +99,8 @@ export const FeatureSchema = z.object({
   effects: z.array(PackEffectSchema).default([]),
   grants: FeatureGrantsSchema,
   resource: FeatureResourceSchema,
-  choose: FeatureChooseSchema
+  choose: FeatureChooseSchema,
+  variant: z.string().default('').describe('Subclass: solo aplica si se eligió esta opción (ej. el tipo de genie)')
 });
 
 /* Opciones elegibles por features: maneuvers, fighting styles, metamagic, arcane shots, runes... */
@@ -334,7 +335,8 @@ export const PackSubclassSchema = z.object({
     .describe('Opcional. Cambia el spellcasting de la clase al elegir esta subclass (ej. Eldritch Knight: third)'),
   spellAbility: z.enum(ABILITIES).nullable().optional(),
   features: z.array(FeatureSchema).default([]),
-  spells: z.array(SubclassSpellsSchema).default([]).describe('Domain, Oath, Circle o Patron spells')
+  spells: z.array(SubclassSpellsSchema).default([]).describe('Domain, Oath, Circle o Patron spells'),
+  variantLabel: z.string().default('').describe('Nombre de la opción a elegir, ej. Genie kind o Land')
 });
 
 export const PackSchema = z.object({

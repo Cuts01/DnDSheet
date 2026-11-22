@@ -1,7 +1,7 @@
 import { uid, type Ability, type Character, type ClassEntry, type SpellEntry } from '../model/character';
 import type { Pack, PackFeat, PackSpell } from '../model/pack';
 import { abilityMod, pactSlots, pb, slotMax, spellcasting, type CastingLine } from './derive';
-import { featInstances, findRef, findSubclass, type Ref } from './features';
+import { featInstances, findRef, findSubclass, subclassVariant, type Ref } from './features';
 import { t as tr } from '../i18n.svelte';
 
 /* Mecánicas genéricas de spellcasting: cuántos cantrips y spells corresponden por nivel de clase. */
@@ -198,7 +198,7 @@ export interface GrantedSpell {
 export interface SubclassSpellInfo {
   always: GrantedSpell[];
   expanded: Map<string, Set<string>>; // classId -> claves de spells que se suman a su lista
-  variants: { classId: string; subclass: string; options: string[]; value: string }[];
+  variants: { classId: string; subclass: string; label: string; options: string[]; value: string }[];
 }
 
 export function subclassSpells(c: Character, packs: Pack[]): SubclassSpellInfo {
@@ -208,9 +208,8 @@ export function subclassSpells(c: Character, packs: Pack[]): SubclassSpellInfo {
     const found = findSubclass(packs, k.subclassId);
     if (!found || !found.sub.spells.length) continue;
     const groups = found.sub.spells;
-    const options = [...new Set(groups.map((g) => g.variant).filter(Boolean))];
-    const value = options.includes(c.spellVariants[k.id] ?? '') ? c.spellVariants[k.id] : (options[0] ?? '');
-    if (options.length) out.variants.push({ classId: k.id, subclass: found.sub.name, options, value });
+    const { options, value } = subclassVariant(c, k.id, found.sub);
+    if (options.length) out.variants.push({ classId: k.id, subclass: found.sub.name, label: found.sub.variantLabel, options, value });
     const maxLvl = maxSpellLevel(c, k);
     for (const g of groups) {
       if (g.variant && g.variant !== value) continue;

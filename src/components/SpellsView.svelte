@@ -319,7 +319,7 @@
         {/if}
         {#if variant}
           <label class="field variant">
-            <span>{variant.subclass}: {t('terreno')}</span>
+            <span>{variant.subclass}: {variant.label || t('terreno')}</span>
             <select value={variant.value} disabled={locked} onchange={(e) => (store.c.spellVariants[k.id] = e.currentTarget.value)}>
               {#each variant.options as o (o)}<option value={o}>{o}</option>{/each}
             </select>

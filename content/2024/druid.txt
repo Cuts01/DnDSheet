@@ -17,7 +17,7 @@
 19 | Epic Boon | Gain an Epic Boon feat or another feat you qualify for.
 20 | Archdruid | Regain a Wild Shape use on Initiative if you have none, convert Wild Shape uses into spell slots, and age much more slowly.
 
-@sub Circle of the Land | PHB 2024
+@sub Circle of the Land | PHB 2024 | variant Land
 3 | Circle of the Land Spells | After each Long Rest, choose a land; its spells are always prepared. Arid: Blur, Burning Hands, Fire Bolt / Fireball / Blight / Wall of Stone. Polar: Fog Cloud, Hold Person, Ray of Frost / Sleet Storm / Ice Storm / Cone of Cold. Temperate: Misty Step, Shocking Grasp, Sleep / Lightning Bolt / Freedom of Movement / Tree Stride. Tropical: Acid Splash, Ray of Sickness, Web / Stinking Cloud / Polymorph / Insect Plague (levels 3, 5, 7, 9).
 3 | Land's Aid | As a Magic action, spend a Wild Shape use to make a 10-foot burst that damages foes (Constitution save) and heals one creature. Scales at 10th and 14th level.
 6 | Natural Recovery | Cast one prepared Circle spell without a slot once per Long Rest, and recover spell slots on a Short Rest up to half your Druid level. {res long 1 Natural Recovery}

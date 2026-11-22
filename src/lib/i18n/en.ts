@@ -458,6 +458,7 @@ const en: Record<string, string> = {
   "datos generales": "general details",
   "Tu nombre": "Your name",
   "Más en la página 2": "More on page 2",
+  "Opción": "Option",
 };
 
 export default en;

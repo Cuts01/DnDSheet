@@ -5,7 +5,7 @@
   import { findClass, subclassOptions } from '../lib/rules/features';
 
   /* Subclass: lista desde los packs importados, o texto libre (homebrew rapido o sin packs). */
-  let { entry = $bindable(), ruleset }: { entry: ClassEntry; ruleset: string } = $props();
+  let { entry = $bindable(), ruleset, variant = $bindable() }: { entry: ClassEntry; ruleset: string; variant?: string } = $props();
 
   const options = $derived(subclassOptions(compendium.packs, entry.name, ruleset));
   const cls = $derived(findClass(compendium.packs, entry.name, ruleset)?.cls ?? null);
@@ -19,6 +19,12 @@
         : ''
   );
   const early = $derived(cls && entry.level < cls.subclassLevel);
+  // Opción de la subclass (tipo de genie, terreno de Circle of the Land...).
+  const chosenSub = $derived(options.find((o) => o.value === entry.subclassId)?.sub ?? null);
+  const variantOptions = $derived(
+    chosenSub ? [...new Set([...chosenSub.spells.map((g) => g.variant), ...chosenSub.features.map((f) => f.variant)].filter(Boolean))] : []
+  );
+  const variantValue = $derived(variant && variantOptions.includes(variant) ? variant : (variantOptions[0] ?? ''));
 
   function pick(v: string) {
     if (v === '' || v === '__free') {
@@ -53,6 +59,14 @@
         {/each}
       </select>
     </label>
+    {#if variantOptions.length}
+      <label class="field">
+        <span>{chosenSub?.variantLabel || t('Opción')}</span>
+        <select value={variantValue} onchange={(e) => (variant = e.currentTarget.value)}>
+          {#each variantOptions as o (o)}<option value={o}>{o}</option>{/each}
+        </select>
+      </label>
+    {/if}
     {#if selected === '__free'}
       <input bind:value={entry.subclass} placeholder={t('Nombre (sin features automáticos)')} aria-label={t('Subclass en texto libre')} />
     {/if}

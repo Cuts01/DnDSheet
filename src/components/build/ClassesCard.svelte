@@ -75,7 +75,7 @@
         {:else}
           <label class="field"><span>{t('Clase')}</span><input bind:value={k.name} list="class-names" /></label>
         {/if}
-        <SubclassField bind:entry={c.classes[i]} ruleset={c.ruleset} />
+        <SubclassField bind:entry={c.classes[i]} ruleset={c.ruleset} bind:variant={c.spellVariants[c.classes[i].id]} />
       </div>
       <div class="grid4">
         <NumField label={t('Nivel')} bind:value={k.level} min={1} max={k.level + levelsLeft} />

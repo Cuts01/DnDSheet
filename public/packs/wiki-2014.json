@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-10-27T23:33:27Z"
+    "built": "2026-11-22T05:42:18Z"
   },
   "classes": [
     {
@@ -4413,6 +4413,7 @@
           "text": "Beasts and plants that attack you must make a Wisdom save or choose another target; on a success they're immune for 24 hours."
         }
       ],
+      "variantLabel": "Land",
       "spells": [
         {
           "level": 3,
@@ -8352,8 +8353,37 @@
       "features": [
         {
           "level": 1,
+          "name": "Genie Kind",
+          "text": "Choose your patron's kind: Dao (Earth), Djinni (Air), Efreeti (Fire) or Marid (Water). It sets your extra expanded spells, the damage type of Genie's Wrath and the resistance from Elemental Gift. Choose it in Edit > Classes, under the subclass."
+        },
+        {
+          "level": 1,
           "name": "Expanded Spell List",
-          "text": "Detect Evil and Good, Phantasmal Force, Create Food and Water, Phantasmal Killer, Creation and Wish, plus extra spells set by your genie kind (Dao, Djinni, Efreeti or Marid)."
+          "text": "Added to the warlock spell list for you. 1st: Detect Evil and Good. 2nd: Phantasmal Force. 3rd: Create Food and Water. 4th: Phantasmal Killer. 5th: Creation. 9th: Wish."
+        },
+        {
+          "level": 1,
+          "name": "Dao Expanded Spells",
+          "text": "Added to the warlock spell list for you. 1st: Sanctuary. 2nd: Spike Growth. 3rd: Meld into Stone. 4th: Stone Shape. 5th: Wall of Stone.",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 1,
+          "name": "Djinni Expanded Spells",
+          "text": "Added to the warlock spell list for you. 1st: Thunderwave. 2nd: Gust of Wind. 3rd: Wind Wall. 4th: Greater Invisibility. 5th: Seeming.",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 1,
+          "name": "Efreeti Expanded Spells",
+          "text": "Added to the warlock spell list for you. 1st: Burning Hands. 2nd: Scorching Ray. 3rd: Fireball. 4th: Fire Shield. 5th: Flame Strike.",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 1,
+          "name": "Marid Expanded Spells",
+          "text": "Added to the warlock spell list for you. 1st: Fog Cloud. 2nd: Blur. 3rd: Sleet Storm. 4th: Control Water. 5th: Cone of Cold.",
+          "variant": "Marid (Water)"
         },
         {
           "level": 1,
@@ -8373,13 +8403,89 @@
         },
         {
           "level": 1,
-          "name": "Genie's Wrath",
-          "text": "Once per turn, when you hit with an attack roll, deal extra damage equal to your proficiency bonus of your genie kind's type."
+          "name": "Genie's Wrath (Dao)",
+          "text": "Once per turn, when you hit with an attack roll, deal extra bludgeoning damage equal to your proficiency bonus.",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 1,
+          "name": "Genie's Wrath (Djinni)",
+          "text": "Once per turn, when you hit with an attack roll, deal extra thunder damage equal to your proficiency bonus.",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 1,
+          "name": "Genie's Wrath (Efreeti)",
+          "text": "Once per turn, when you hit with an attack roll, deal extra fire damage equal to your proficiency bonus.",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 1,
+          "name": "Genie's Wrath (Marid)",
+          "text": "Once per turn, when you hit with an attack roll, deal extra cold damage equal to your proficiency bonus.",
+          "variant": "Marid (Water)"
         },
         {
           "level": 6,
-          "name": "Elemental Gift",
-          "text": "Gain resistance to your genie's damage type. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.",
+          "name": "Elemental Gift (Dao)",
+          "text": "Resistance to bludgeoning damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.",
+          "variant": "Dao (Earth)",
+          "grants": {
+            "resistances": [
+              "bludgeoning"
+            ]
+          },
+          "resource": {
+            "name": "Elemental Gift (flight)",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
+        },
+        {
+          "level": 6,
+          "name": "Elemental Gift (Djinni)",
+          "text": "Resistance to thunder damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.",
+          "variant": "Djinni (Air)",
+          "grants": {
+            "resistances": [
+              "thunder"
+            ]
+          },
+          "resource": {
+            "name": "Elemental Gift (flight)",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
+        },
+        {
+          "level": 6,
+          "name": "Elemental Gift (Efreeti)",
+          "text": "Resistance to fire damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.",
+          "variant": "Efreeti (Fire)",
+          "grants": {
+            "resistances": [
+              "fire"
+            ]
+          },
+          "resource": {
+            "name": "Elemental Gift (flight)",
+            "uses": "pb",
+            "recharge": "long",
+            "die": ""
+          }
+        },
+        {
+          "level": 6,
+          "name": "Elemental Gift (Marid)",
+          "text": "Resistance to cold damage. As a bonus action, gain a 30-foot flying speed with hover for 10 minutes, proficiency bonus times per long rest.",
+          "variant": "Marid (Water)",
+          "grants": {
+            "resistances": [
+              "cold"
+            ]
+          },
           "resource": {
             "name": "Elemental Gift (flight)",
             "uses": "pb",
@@ -8396,6 +8502,211 @@
           "level": 14,
           "name": "Limited Wish",
           "text": "As an action, cast any spell of 6th level or lower with a casting time of 1 action from any class list, ignoring requirements. Recharges after 1d4 long rests."
+        }
+      ],
+      "variantLabel": "Genie kind",
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Detect Evil and Good"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Phantasmal Force"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Create Food and Water"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Phantasmal Killer"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Creation"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 9,
+          "spells": [
+            "Wish"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Sanctuary"
+          ],
+          "mode": "expanded",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Spike Growth"
+          ],
+          "mode": "expanded",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Meld into Stone"
+          ],
+          "mode": "expanded",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Stone Shape"
+          ],
+          "mode": "expanded",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Wall of Stone"
+          ],
+          "mode": "expanded",
+          "variant": "Dao (Earth)"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Thunderwave"
+          ],
+          "mode": "expanded",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Gust of Wind"
+          ],
+          "mode": "expanded",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Wind Wall"
+          ],
+          "mode": "expanded",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Greater Invisibility"
+          ],
+          "mode": "expanded",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Seeming"
+          ],
+          "mode": "expanded",
+          "variant": "Djinni (Air)"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Burning Hands"
+          ],
+          "mode": "expanded",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Scorching Ray"
+          ],
+          "mode": "expanded",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Fireball"
+          ],
+          "mode": "expanded",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Fire Shield"
+          ],
+          "mode": "expanded",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Flame Strike"
+          ],
+          "mode": "expanded",
+          "variant": "Efreeti (Fire)"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Fog Cloud"
+          ],
+          "mode": "expanded",
+          "variant": "Marid (Water)"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Blur"
+          ],
+          "mode": "expanded",
+          "variant": "Marid (Water)"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Sleet Storm"
+          ],
+          "mode": "expanded",
+          "variant": "Marid (Water)"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Control Water"
+          ],
+          "mode": "expanded",
+          "variant": "Marid (Water)"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Cone of Cold"
+          ],
+          "mode": "expanded",
+          "variant": "Marid (Water)"
         }
       ]
     },

@@ -1,7 +1,7 @@
 import { ABILITIES, type Ability, type Character, type ClassEntry } from '../model/character';
 import { slug, type Feature, type FeatureGrants, type Pack, type PackEffect, type PackFeat, type PackOption } from '../model/pack';
 import { abilityMod, featureSource, pb, score, skillLevel, skillSources, upgradeSources, type SkillMode } from './derive';
-import { allGrantedEffects, featInstances, findClass, findSpecies, findSubclass, featList, proficiencies, racialFeatAllowed } from './features';
+import { allGrantedEffects, featInstances, findClass, findSpecies, findSubclass, featList, proficiencies, racialFeatAllowed, variantOk } from './features';
 import { featSpells } from './spells';
 import { SKILLS } from './tables';
 
@@ -26,7 +26,7 @@ export function ownedFeatures(c: Character, packs: Pack[]): OwnedClassFeature[] 
     for (const f of cls?.features ?? []) if (f.level <= entry.level) out.push({ feature: f, entry, subId: '', sourceName: cls!.name });
     const sub = findSubclass(packs, entry.subclassId)?.sub;
     for (const f of sub?.features ?? [])
-      if (f.level <= entry.level) out.push({ feature: f, entry, subId: entry.subclassId ?? '', sourceName: sub!.name });
+      if (f.level <= entry.level && variantOk(c, entry.id, sub!, f)) out.push({ feature: f, entry, subId: entry.subclassId ?? '', sourceName: sub!.name });
   }
   return out;
 }
