@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from './LockButton.svelte';
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { compendium } from '../lib/compendium.svelte';
@@ -167,6 +168,7 @@
     if (casting_ === id) casting_ = null;
   }
   // En Agregar, el ✓ de una spell ya elegida la quita (las que dan features o feats no se quitan desde aquí).
+  const locked = $derived(!!store.c.locks.spells);
   const ownByRef = (ref: string) => store.c.spells.find((x) => x.ref === ref);
 
   /* ---------- Agregar ---------- */
@@ -318,7 +320,7 @@
         {#if variant}
           <label class="field variant">
             <span>{variant.subclass}: {t('terreno')}</span>
-            <select value={variant.value} onchange={(e) => (store.c.spellVariants[k.id] = e.currentTarget.value)}>
+            <select value={variant.value} disabled={locked} onchange={(e) => (store.c.spellVariants[k.id] = e.currentTarget.value)}>
               {#each variant.options as o (o)}<option value={o}>{o}</option>{/each}
             </select>
           </label>
@@ -355,7 +357,7 @@
         {#if f.lists.length > 1}
           <label class="field">
             <span>{t('Lista de clase')}</span>
-            <select value={f.list} onchange={(e) => setList(f.key, e.currentTarget.value)}>
+            <select value={f.list} disabled={locked} onchange={(e) => setList(f.key, e.currentTarget.value)}>
               <option value="">{t('Elegir...')}</option>
               {#each f.lists as l (l)}<option value={l}>{l}</option>{/each}
             </select>
@@ -364,7 +366,7 @@
         {#if f.chooseAbility}
           <label class="field">
             <span>Ability</span>
-            <select value={f.ability} onchange={(e) => setFeatAbility(f.key, e.currentTarget.value)}>
+            <select value={f.ability} disabled={locked} onchange={(e) => setFeatAbility(f.key, e.currentTarget.value)}>
               {#each ['int', 'wis', 'cha'] as a (a)}<option value={a}>{ABILITY_LABEL[a as keyof typeof ABILITY_LABEL]}</option>{/each}
             </select>
           </label>
@@ -377,7 +379,7 @@
               <span>
                 {p.level === 0 ? 'Cantrip' : `${t('Nivel')} ${p.level}`}{p.schools.length ? ` (${p.schools.join(` ${t('o')} `)})` : ''}{p.attackOnly ? ` ${t('con attack roll')}` : ''}{p.uses === 'will' ? `, ${t('sin slot')}` : p.uses !== 'none' ? `, ${t('gratis')} ${p.uses === 'short' ? '1/SR' : '1/LR'}` : ''}{p.ritualOnly ? ' (ritual)' : ''}
               </span>
-              <select value={p.chosen[n] ?? ''} disabled={p.lists.length > 0 && !f.list} onchange={(e) => pick(f.key, p.index, n, e.currentTarget.value)}>
+              <select value={p.chosen[n] ?? ''} disabled={locked || (p.lists.length > 0 && !f.list)} onchange={(e) => pick(f.key, p.index, n, e.currentTarget.value)}>
                 <option value="">{p.lists.length > 0 && !f.list ? t('Elige la lista primero') : t('Elegir...')}</option>
                 {#each p.options as o (o.value)}<option value={o.item.name}>{o.item.name}</option>{/each}
               </select>
@@ -389,11 +391,14 @@
     </div>
   {/each}
 
+  <div class="tabs-row">
   <div class="seg" role="tablist">
     <button role="tab" class:on={mode === 'mine'} aria-selected={mode === 'mine'} onclick={() => (mode = 'mine')}
       >{t('Mis spells')} ({c.spells.length + virtual.length})</button
     >
     <button role="tab" class:on={mode === 'add'} aria-selected={mode === 'add'} onclick={() => (mode = 'add')}>{t('Agregar')}</button>
+  </div>
+  <LockButton bind:locked={store.c.locks.spells} what={t('spells elegidas')} />
   </div>
   <input bind:value={q} placeholder={t('Buscar spell...')} aria-label={t('Buscar spell')} />
 
@@ -482,7 +487,7 @@
                     {#if casters.length > 1}
                       <label class="field small">
                         <span>{t('Clase')}</span>
-                        <select bind:value={s.classId}>
+                        <select bind:value={s.classId} disabled={locked}>
                           {#each casters as k (k.id)}<option value={k.id}>{k.name}</option>{/each}
                         </select>
                       </label>
@@ -533,6 +538,7 @@
         <span>{t('Incluir spells del otro ruleset')}</span>
       </label>
       {#if addLimitMsg}<p class="warn small">{addLimitMsg}</p>{/if}
+      {#if locked}<p class="warn small">{t('Las spells elegidas están bloqueadas. Toca el candado para agregar o quitar.')}</p>{/if}
       <p class="muted small">{t('Toca ✓ para quitar una spell que ya elegiste. Las marcadas con ★ vienen de un feature o feat.')}</p>
       <ul class="results">
         {#each results as r (r.value)}
@@ -550,9 +556,9 @@
                 >
               </button>
               {#if added && ownByRef(r.value)}
-                <button class="add on" aria-label={`${t('Quitar')} ${s.name}`} title={t('Tocar para quitar')} onclick={() => remove(ownByRef(r.value)!.id)}>✓</button>
+                <button class="add on" disabled={locked} aria-label={`${t('Quitar')} ${s.name}`} title={t('Tocar para quitar')} onclick={() => remove(ownByRef(r.value)!.id)}>✓</button>
               {:else}
-                <button class="add" disabled={added || capped} aria-label={`${t('Agregar')} ${s.name}`} title={capped ? t('Máximo alcanzado') : added ? t('La da un feature o feat') : undefined} onclick={() => add(r)}
+                <button class="add" disabled={locked || added || capped} aria-label={`${t('Agregar')} ${s.name}`} title={capped ? t('Máximo alcanzado') : added ? t('La da un feature o feat') : undefined} onclick={() => add(r)}
                   >{added ? '★' : capped ? '–' : '+'}</button
                 >
               {/if}
@@ -579,13 +585,21 @@
         <select bind:value={customLevel} aria-label={t('Nivel')}>
           {#each Array.from({ length: 10 }, (_, i) => i) as l (l)}<option value={l}>{l === 0 ? 'Cantrip' : l}</option>{/each}
         </select>
-        <button onclick={addCustom}>+</button>
+        <button disabled={locked} onclick={addCustom}>+</button>
       </div>
     </div>
   {/if}
 </section>
 
 <style>
+  .tabs-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tabs-row .seg {
+    flex: 1;
+  }
   .add.on {
     color: var(--accent);
     border-color: var(--accent);

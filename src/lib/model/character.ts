@@ -222,6 +222,8 @@ const CharacterObject = z.object({
     .default({}),
   /* Candado: con true no se pueden cambiar los scores base ni el método. */
   abilitiesLocked: z.boolean().default(false),
+  /* Candados por sección (species, background, classes, feats, invocations, profs, choices, spells, general). */
+  locks: z.record(z.string(), z.boolean()).default({}),
   bonuses: z
     .object({ species: z.array(BonusSchema), background: z.array(BonusSchema), other: z.array(BonusSchema) })
     .default({ species: [], background: [], other: [] }),
@@ -381,6 +383,7 @@ export function blankCharacter(): Character {
     abilityMethod: 'pointbuy',
     abilitySaved: {},
     abilitiesLocked: false,
+    locks: {},
     bonuses: { species: [], background: [], other: [] },
     advancements: {},
     feats: [],

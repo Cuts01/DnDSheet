@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Character, type ProfLevel } from '../../lib/model/character';
@@ -87,7 +88,11 @@
 </script>
 
 <div class="card stack">
-  <h2>Skills</h2>
+  <div class="title-row">
+    <h2>Skills</h2>
+    <LockButton bind:locked={c.locks.profs} what={'proficiencies'} />
+  </div>
+  <fieldset class="lockable stack" disabled={!!c.locks.profs}>
   {#each fixedSources as [src, label] (src)}
     {@const list = c.skillPicks[src] ?? []}
     {#if list.length}
@@ -193,6 +198,8 @@
     </div>
   {/each}
   <p class="muted small">{t('Las de clase, raza y background se calculan solas desde los packs. Las que agregues aquí se suman.')}</p>
+  </fieldset>
+
 </div>
 
 <style>

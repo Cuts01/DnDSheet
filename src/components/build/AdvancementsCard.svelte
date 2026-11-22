@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, uid, type Ability, type Advancement, type Character } from '../../lib/model/character';
@@ -71,7 +72,11 @@
 </script>
 
 <div class="card stack">
-  <h2>{t('ASI y feats')}</h2>
+  <div class="title-row">
+    <h2>{t('ASI y feats')}</h2>
+    <LockButton bind:locked={c.locks.feats} what={t('ASI y feats')} />
+  </div>
+  <fieldset class="lockable stack" disabled={!!c.locks.feats}>
   {#if !slots.length && !c.feats.length}
     <p class="muted small">{t('Todavía no tienes niveles de Ability Score Improvement.')}</p>
   {/if}
@@ -170,6 +175,8 @@
   {/if}
   <button onclick={addOther}>{t('Agregar feat adicional')}</button>
   <p class="muted small">{t('Para feats que no vienen de un ASI: Fighting Style 2024, bonus de un DM, etc.')}</p>
+  </fieldset>
+
 </div>
 
 <style>

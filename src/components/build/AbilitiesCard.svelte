@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { ABILITIES, type Ability, type Character } from '../../lib/model/character';
   import {
@@ -57,25 +58,7 @@
 <div class="card stack">
   <div class="title-row">
     <h2>Ability scores</h2>
-    <button
-      class="lock"
-      class:locked={c.abilitiesLocked}
-      aria-pressed={c.abilitiesLocked}
-      aria-label={c.abilitiesLocked ? t('Desbloquear ability scores') : t('Bloquear ability scores')}
-      title={c.abilitiesLocked ? t('Desbloquear ability scores') : t('Bloquear ability scores')}
-      onclick={() => (c.abilitiesLocked = !c.abilitiesLocked)}
-    >
-      <!-- Candado de línea fina, en el color del texto (dorado si está cerrado), como los íconos de la barra. -->
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="5" y="10.5" width="14" height="10" rx="2.5" />
-        {#if c.abilitiesLocked}
-          <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3" />
-        {:else}
-          <path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 6.6-1.6" />
-        {/if}
-        <path d="M12 14.5v2" />
-      </svg>
-    </button>
+    <LockButton bind:locked={c.abilitiesLocked} what="ability scores" />
   </div>
   <div class="seg" role="tablist" aria-label={t('Método')}>
     <button class:on={c.abilityMethod === 'pointbuy'} disabled={c.abilitiesLocked && c.abilityMethod !== 'pointbuy'} onclick={() => setMethod('pointbuy')}>Point buy</button>
@@ -140,37 +123,6 @@
 </div>
 
 <style>
-  .title-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  .title-row h2 {
-    margin: 0;
-  }
-  .lock {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    min-height: 40px;
-    padding: 0;
-    border-radius: 999px;
-    border: none;
-    background: transparent;
-    color: var(--muted);
-    transition:
-      color 0.15s,
-      background 0.15s;
-  }
-  .lock:hover {
-    background: var(--surface-2);
-  }
-  .lock.locked {
-    color: var(--accent);
-    background: var(--surface-2);
-  }
   .locked-val {
     display: inline-flex;
     align-items: center;

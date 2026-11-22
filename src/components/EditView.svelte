@@ -7,6 +7,7 @@
   import { clampUsage } from '../lib/rules/rests';
   import NumField from './NumField.svelte';
   import SpeedCard from './SpeedCard.svelte';
+  import LockButton from './LockButton.svelte';
   import AbilitiesCard from './build/AbilitiesCard.svelte';
   import AdvancementsCard from './build/AdvancementsCard.svelte';
   import BackgroundCard from './build/BackgroundCard.svelte';
@@ -72,11 +73,14 @@
 <section class="edit">
   {#if section === 'origin'}
     <div class="card stack">
-      <h2>General</h2>
-      <label class="field"><span>{t('Nombre')}</span><input bind:value={store.c.name} /></label>
+      <div class="title-row">
+        <h2>General</h2>
+        <LockButton bind:locked={store.c.locks.general} what={t('nombre y ruleset')} />
+      </div>
+      <label class="field"><span>{t('Nombre')}</span><input bind:value={store.c.name} disabled={!!store.c.locks.general} /></label>
       <label class="field">
         <span>Ruleset</span>
-        <select bind:value={store.c.ruleset}>
+        <select bind:value={store.c.ruleset} disabled={!!store.c.locks.general}>
           <option value="2014">2014</option>
           <option value="2024">2024</option>
         </select>

@@ -407,6 +407,12 @@ const en: Record<string, string> = {
   "Ver todos con descripción": "Browse all with descriptions",
   "Cerrar lista": "Close list",
   "Ninguno coincide.": "No matches.",
+  "Bloquear {what}": "Lock {what}",
+  "Desbloquear {what}": "Unlock {what}",
+  "nombre y ruleset": "name and ruleset",
+  "elecciones de features (maneuvers, fighting style...)": "feature choices (maneuvers, fighting style...)",
+  "spells elegidas": "chosen spells",
+  "Las spells elegidas están bloqueadas. Toca el candado para agregar o quitar.": "Chosen spells are locked. Tap the lock to add or remove.",
 };
 
 export default en;

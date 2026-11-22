@@ -158,3 +158,27 @@ dialog {
 dialog::backdrop {
   background: rgb(0 0 0 / 0.6);
 }
+
+/* Título de tarjeta con candado a la derecha. */
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.title-row h2 {
+  margin: 0;
+}
+/* Contenido bloqueable: un fieldset sin estilo que desactiva todo lo de adentro. */
+fieldset.lockable {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

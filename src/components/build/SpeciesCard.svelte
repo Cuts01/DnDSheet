@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Ability, type Character } from '../../lib/model/character';
@@ -25,7 +26,11 @@
 </script>
 
 <div class="card stack">
-  <h2>{c.ruleset === '2024' ? 'Species' : t('Raza')}</h2>
+  <div class="title-row">
+    <h2>{c.ruleset === '2024' ? 'Species' : t('Raza')}</h2>
+    <LockButton bind:locked={c.locks.species} what={c.ruleset === '2024' ? 'species' : t('raza')} />
+  </div>
+  <fieldset class="lockable stack" disabled={!!c.locks.species}>
 
   {#if options.length}
     <RefSelect {options} value={c.species.ref} label={c.ruleset === '2024' ? 'Species' : t('Raza')} onpick={pick} />
@@ -86,6 +91,8 @@
       {/if}
     {/if}
   {/if}
+  </fieldset>
+
 </div>
 
 <style>

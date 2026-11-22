@@ -9,6 +9,7 @@
   let { slot = null, extras = [] }: { slot?: FeatureChoiceSlot | null; extras?: ExtraChoice[] } = $props();
 
   let open = $state<string | null>(null);
+  const locked = $derived(!!store.c.locks.choices);
   let showAll = $state(false);
 
   const available = $derived(slot ? slot.options.filter((o) => o.minLevel <= slot.level || slot.chosen.includes(o.name)) : []);
@@ -43,7 +44,7 @@
             <button
               class="pick"
               aria-pressed={on}
-              disabled={!on && slot.chosen.length >= slot.count}
+              disabled={locked || (!on && slot.chosen.length >= slot.count)}
               aria-label={on ? `${t('Quitar')} ${o.name}` : `${t('Elegir')} ${o.name}`}
               onclick={() => toggle(slot.featureId, o.name, slot.count)}>{on ? '●' : '○'}</button
             >
@@ -56,7 +57,7 @@
         {/each}
       </ul>
       {#if slot.chosen.length >= slot.count}
-        <button class="ghost small more" onclick={() => (showAll = !showAll)}>{showAll ? t('Ver solo las elegidas') : t('Cambiar elecciones')}</button>
+        <button class="ghost small more" disabled={locked} onclick={() => (showAll = !showAll)}>{showAll ? t('Ver solo las elegidas') : t('Cambiar elecciones')}</button>
       {/if}
     {/if}
   </div>
@@ -72,13 +73,13 @@
       <div class="chips">
         {#each x.options as o (o)}
           {@const on = x.chosen.includes(o)}
-          <button class="chip" class:on aria-pressed={on} disabled={!on && x.chosen.length >= x.count} onclick={() => toggle(x.key, o, x.count)}>{label(x, o)}</button>
+          <button class="chip" class:on aria-pressed={on} disabled={locked || (!on && x.chosen.length >= x.count)} onclick={() => toggle(x.key, o, x.count)}>{label(x, o)}</button>
         {/each}
       </div>
     {:else}
       {#each Array.from({ length: x.count }, (_, i) => i) as i (i)}
         {#if x.kind === 'tool'}
-          <select value={x.chosen[i] ?? ''} onchange={(e) => setAt(x.key, i, e.currentTarget.value)} aria-label="Tool">
+          <select value={x.chosen[i] ?? ''} disabled={locked} onchange={(e) => setAt(x.key, i, e.currentTarget.value)} aria-label="Tool">
             <option value="">{t('Elegir...')}</option>
             {#each x.options as o (o)}<option value={o}>{o}</option>{/each}
           </select>
@@ -86,6 +87,7 @@
           <input
             value={x.chosen[i] ?? ''}
             list="std-languages"
+            disabled={locked}
             placeholder={t('Idioma')}
             aria-label={t('Idioma')}
             onchange={(e) => setAt(x.key, i, e.currentTarget.value.trim())}

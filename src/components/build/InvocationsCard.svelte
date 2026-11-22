@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { uid, type Character } from '../../lib/model/character';
@@ -26,7 +27,11 @@
 
 {#if level > 0}
   <div class="card stack">
-    <h2>Eldritch Invocations <span class="muted">· {c.invocations.length} / {max}</span></h2>
+    <div class="title-row">
+      <h2>Eldritch Invocations <span class="muted">· {c.invocations.length} / {max}</span></h2>
+      <LockButton bind:locked={c.locks.invocations} what={'Eldritch Invocations'} />
+    </div>
+    <fieldset class="lockable stack" disabled={!!c.locks.invocations}>
 
     {#if c.ruleset === '2014' && level >= 3}
       <label class="field">
@@ -62,6 +67,8 @@
       <p class="small err">{t('Tienes más invocations de las que permite tu nivel de Warlock ({n}).', { n: max })}</p>
     {/if}
     <p class="muted small">{c.ruleset === '2014' ? t('La lista solo muestra las que cumplen el nivel y tu Pact Boon. Los demás requisitos se indican en cada una.') : t('La lista solo muestra las que cumplen el nivel. Los demás requisitos se indican en cada una.')}</p>
+    </fieldset>
+
   </div>
 {/if}
 

@@ -7,6 +7,7 @@
   import { EFFECT_LABEL } from '../lib/model/character';
   import { extraChoices, featureChoiceSlots, featureResources, featureSkillSlots } from '../lib/rules/grants';
   import FeatureChoices from './FeatureChoices.svelte';
+  import LockButton from './LockButton.svelte';
 
   let showNext = $state(false);
   const slots = $derived(new Map(featureChoiceSlots(store.c, compendium.packs).map((x) => [x.featureId, x])));
@@ -81,10 +82,13 @@
     </div>
   {/if}
 
-  <label class="check">
-    <input type="checkbox" bind:checked={showNext} />
-    <span>{t('Mostrar también los features de niveles siguientes')}</span>
-  </label>
+  <div class="top-row">
+    <label class="check">
+      <input type="checkbox" bind:checked={showNext} />
+      <span>{t('Mostrar también los features de niveles siguientes')}</span>
+    </label>
+    <LockButton bind:locked={store.c.locks.choices} what={t('elecciones de features (maneuvers, fighting style...)')} />
+  </div>
 
   {#if sp || bg}
     <div class="card stack">
@@ -206,6 +210,12 @@
 </section>
 
 <style>
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
   .features {
     display: grid;
     gap: var(--gap);
@@ -215,7 +225,7 @@
     .features {
       grid-template-columns: 1fr 1fr;
     }
-    .features > .check,
+    .features > .top-row,
     .features > .card:first-child {
       grid-column: 1 / -1;
     }

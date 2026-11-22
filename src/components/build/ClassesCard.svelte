@@ -1,4 +1,5 @@
 <script lang="ts">
+  import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, CASTER_TYPES, HIT_DICE, MAX_LEVEL, classFromPreset, uid, type Character } from '../../lib/model/character';
@@ -55,7 +56,11 @@
 </script>
 
 <div class="card stack">
-  <h2>{t('Clases')} <span class="muted">· {t('nivel')} {totalLevel(c)}/{MAX_LEVEL} · caster level {casterLevel(c)}</span></h2>
+  <div class="title-row">
+    <h2>{t('Clases')} <span class="muted">· {t('nivel')} {totalLevel(c)}/{MAX_LEVEL} · caster level {casterLevel(c)}</span></h2>
+    <LockButton bind:locked={c.locks.classes} what={t('clases')} />
+  </div>
+  <fieldset class="lockable stack" disabled={!!c.locks.classes}>
   {#each c.classes as k, i (k.id)}
     <div class="class-row">
       <div class="grid2">
@@ -126,6 +131,8 @@
     <span>{t('Permitir multiclass sin cumplir los requisitos (si tu DM lo permite)')}</span>
   </label>
   <p class="muted small">{t('La clase inicial define el HP de nivel 1, los saves y las proficiencies completas.')}</p>
+  </fieldset>
+
 </div>
 
 <style>

@@ -29,6 +29,7 @@
     c.hp = { max: hp, current: hp, temp: 0 };
     // Al crear el personaje los scores quedan con candado, para no cambiarlos sin querer (se abre en Editar).
     c.abilitiesLocked = true;
+    c.locks = { ...c.locks, general: true, species: true, background: true };
     await store.add(c);
     oncreated?.();
   }
