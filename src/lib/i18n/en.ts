@@ -396,6 +396,11 @@ const en: Record<string, string> = {
   "¿Quitar {name}?": "Remove {name}?",
   "¿Reemplazar a": "Replace",
   "Último guardado": "Last saved",
+  "Desbloquear ability scores": "Unlock ability scores",
+  "Bloquear ability scores": "Lock ability scores",
+  "Bloqueado": "Locked",
+  "Bloquear": "Lock",
+  "Bloqueado: los scores base no se pueden cambiar. Toca el candado para editarlos.": "Locked: base scores cannot be changed. Tap the lock to edit them.",
 };
 
 export default en;

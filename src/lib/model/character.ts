@@ -212,6 +212,16 @@ const CharacterObject = z.object({
   background: z.object({ name: z.string(), ref: z.string().nullable() }).default({ name: '', ref: null }),
   /* abilities = scores base. Los incrementos van aparte y se suman en lib/rules. */
   abilityMethod: z.enum(ABILITY_METHODS).default('manual'),
+  /* Scores guardados por método: al volver a un método se recuperan los que tenía (no se pierde el Manual). */
+  abilitySaved: z
+    .object({
+      pointbuy: z.object({ str: score, dex: score, con: score, int: score, wis: score, cha: score }).optional(),
+      array: z.object({ str: score, dex: score, con: score, int: score, wis: score, cha: score }).optional(),
+      manual: z.object({ str: score, dex: score, con: score, int: score, wis: score, cha: score }).optional()
+    })
+    .default({}),
+  /* Candado: con true no se pueden cambiar los scores base ni el método. */
+  abilitiesLocked: z.boolean().default(false),
   bonuses: z
     .object({ species: z.array(BonusSchema), background: z.array(BonusSchema), other: z.array(BonusSchema) })
     .default({ species: [], background: [], other: [] }),
@@ -369,6 +379,8 @@ export function blankCharacter(): Character {
     species: { name: '', speed: 30, ref: null, size: 'Medium', darkvision: 0 },
     background: { name: '', ref: null },
     abilityMethod: 'pointbuy',
+    abilitySaved: {},
+    abilitiesLocked: false,
     bonuses: { species: [], background: [], other: [] },
     advancements: {},
     feats: [],

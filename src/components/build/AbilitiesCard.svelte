@@ -19,12 +19,20 @@
   const left = $derived(spent === null ? null : POINT_BUY_BUDGET - spent);
   const rows = $derived(ABILITIES.map((a) => ({ a, b: scoreBreakdown(c, a) })));
 
+  // Cada método recuerda sus propios scores: cambiar a Point buy por error y volver a Manual recupera lo que tenías.
   function setMethod(m: Character['abilityMethod']) {
+    if (c.abilitiesLocked || m === c.abilityMethod) return;
+    c.abilitySaved = { ...c.abilitySaved, [c.abilityMethod]: { ...c.abilities } };
     c.abilityMethod = m;
+    const saved = c.abilitySaved[m];
+    if (saved) {
+      c.abilities = { ...saved };
+      return;
+    }
     if (m === 'pointbuy' && pointBuySpent(c) === null) {
       for (const a of ABILITIES) c.abilities[a] = 8;
     }
-    if (m === 'array') {
+    if (m === 'array' && !ABILITIES.every((a) => STANDARD_ARRAY.includes(c.abilities[a]))) {
       const sorted = [...STANDARD_ARRAY];
       ABILITIES.forEach((a, i) => (c.abilities[a] = sorted[i]));
     }
@@ -47,12 +55,28 @@
 </script>
 
 <div class="card stack">
-  <h2>Ability scores</h2>
-  <div class="seg" role="tablist" aria-label={t('Método')}>
-    <button class:on={c.abilityMethod === 'pointbuy'} onclick={() => setMethod('pointbuy')}>Point buy</button>
-    <button class:on={c.abilityMethod === 'array'} onclick={() => setMethod('array')}>Standard array</button>
-    <button class:on={c.abilityMethod === 'manual'} onclick={() => setMethod('manual')}>Manual</button>
+  <div class="title-row">
+    <h2>Ability scores</h2>
+    <button
+      class="lock"
+      class:locked={c.abilitiesLocked}
+      aria-pressed={c.abilitiesLocked}
+      aria-label={c.abilitiesLocked ? t('Desbloquear ability scores') : t('Bloquear ability scores')}
+      title={c.abilitiesLocked ? t('Desbloquear ability scores') : t('Bloquear ability scores')}
+      onclick={() => (c.abilitiesLocked = !c.abilitiesLocked)}
+    >
+      <span aria-hidden="true">{c.abilitiesLocked ? '🔒' : '🔓'}</span>
+      <span class="small">{c.abilitiesLocked ? t('Bloqueado') : t('Bloquear')}</span>
+    </button>
   </div>
+  <div class="seg" role="tablist" aria-label={t('Método')}>
+    <button class:on={c.abilityMethod === 'pointbuy'} disabled={c.abilitiesLocked && c.abilityMethod !== 'pointbuy'} onclick={() => setMethod('pointbuy')}>Point buy</button>
+    <button class:on={c.abilityMethod === 'array'} disabled={c.abilitiesLocked && c.abilityMethod !== 'array'} onclick={() => setMethod('array')}>Standard array</button>
+    <button class:on={c.abilityMethod === 'manual'} disabled={c.abilitiesLocked && c.abilityMethod !== 'manual'} onclick={() => setMethod('manual')}>Manual</button>
+  </div>
+  {#if c.abilitiesLocked}
+    <p class="small muted">{t('Bloqueado: los scores base no se pueden cambiar. Toca el candado para editarlos.')}</p>
+  {/if}
 
   {#if c.abilityMethod === 'pointbuy'}
     <p class="small" class:err={left !== null && left < 0}>
@@ -72,7 +96,9 @@
       <div class="r">
         <span class="ab">{ABILITY_LABEL[a]}</span>
         <span class="base">
-          {#if c.abilityMethod === 'pointbuy'}
+          {#if c.abilitiesLocked}
+            <b class="num locked-val">{c.abilities[a]}</b>
+          {:else if c.abilityMethod === 'pointbuy'}
             <button class="mini" aria-label={`${t('Bajar')} ${a}`} onclick={() => step(a, -1)} disabled={c.abilities[a] <= 8}>-</button>
             <b class="num">{c.abilities[a]}</b>
             <button class="mini" aria-label={`${t('Subir')} ${a}`} onclick={() => step(a, 1)} disabled={c.abilities[a] >= 15}>+</button>
@@ -106,6 +132,33 @@
 </div>
 
 <style>
+  .title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .title-row h2 {
+    margin: 0;
+  }
+  .lock {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 40px;
+    padding: 0 12px;
+    border-radius: 999px;
+  }
+  .lock.locked {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .locked-val {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 12px;
+  }
   .cap {
     display: block;
     color: var(--bad);

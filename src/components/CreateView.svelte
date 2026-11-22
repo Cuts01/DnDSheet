@@ -27,6 +27,8 @@
     const c = $state.snapshot(draft) as Character;
     c.name = c.name.trim();
     c.hp = { max: hp, current: hp, temp: 0 };
+    // Al crear el personaje los scores quedan con candado, para no cambiarlos sin querer (se abre en Editar).
+    c.abilitiesLocked = true;
     await store.add(c);
     oncreated?.();
   }
