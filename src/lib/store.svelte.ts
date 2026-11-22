@@ -12,6 +12,7 @@ export interface CharacterInfo {
   level: number;
   ruleset: string;
   updatedAt: string;
+  photo?: string;
   /* false si el registro no pasó la validación (se puede borrar, no abrir). */
   valid: boolean;
 }
@@ -40,6 +41,7 @@ const infoOf = (id: string, c: Character): CharacterInfo => ({
   level: totalLevel(c),
   ruleset: c.ruleset,
   updatedAt: c.updatedAt,
+  photo: c.photo,
   valid: true
 });
 

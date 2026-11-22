@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PdfButton from './PdfButton.svelte';
   import { t, i18n } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { canShareFiles, downloadCharacter, readCharacterFile, shareCharacter } from '../lib/io';
@@ -66,6 +67,12 @@
     <h2>{t('Personajes')}</h2>
     <CharacterList />
     <p class="small muted">{t('También puedes cambiar de personaje tocando su nombre arriba.')}</p>
+  </div>
+
+  <div class="card stack">
+    <h2>{t('Hoja en PDF')}</h2>
+    <p class="small muted">{t('Una hoja de personaje para imprimir o compartir: abilities, skills, combate, features, spells y equipo. Se arma en el teléfono, sin internet.')}</p>
+    <PdfButton primary />
   </div>
 
   <div class="card stack">

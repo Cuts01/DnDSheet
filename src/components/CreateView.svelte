@@ -11,6 +11,7 @@
   import ClassesCard from './build/ClassesCard.svelte';
   import SpeciesCard from './build/SpeciesCard.svelte';
   import PacksCard from './PacksCard.svelte';
+  import PhotoField from './PhotoField.svelte';
 
   let { oncreated }: { oncreated?: () => void } = $props();
 
@@ -60,6 +61,7 @@
   <div class="card stack">
     <h2>{t('Identidad')}</h2>
     <label class="field"><span>{t('Nombre')}</span><input bind:value={draft.name} placeholder={t('Nombre del personaje')} /></label>
+    <PhotoField bind:photo={draft.photo} />
     <label class="field">
       <span>Ruleset</span>
       <select bind:value={draft.ruleset}>

@@ -6,6 +6,7 @@
   import { ABILITY_LABEL, SKILLS } from '../lib/rules/tables';
   import { compendium } from '../lib/compendium.svelte';
   import { allGrantedEffects } from '../lib/rules/features';
+  import PdfButton from './PdfButton.svelte';
 
   const c = $derived(store.c);
   const granted = $derived(allGrantedEffects(c, compendium.packs));
@@ -51,9 +52,13 @@
     </ul>
     <p class="muted small legend">● proficient · ◆ expertise</p>
   </div>
+  <div class="pdf-row"><PdfButton /></div>
 </section>
 
 <style>
+  .pdf-row {
+    grid-column: 1 / -1;
+  }
   .sheet {
     display: grid;
     gap: var(--gap);

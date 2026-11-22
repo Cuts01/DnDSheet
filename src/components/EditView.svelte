@@ -8,6 +8,7 @@
   import NumField from './NumField.svelte';
   import SpeedCard from './SpeedCard.svelte';
   import LockButton from './LockButton.svelte';
+  import PhotoField from './PhotoField.svelte';
   import AbilitiesCard from './build/AbilitiesCard.svelte';
   import AdvancementsCard from './build/AdvancementsCard.svelte';
   import BackgroundCard from './build/BackgroundCard.svelte';
@@ -78,6 +79,7 @@
         <LockButton bind:locked={store.c.locks.general} what={t('nombre y ruleset')} />
       </div>
       <label class="field"><span>{t('Nombre')}</span><input bind:value={store.c.name} disabled={!!store.c.locks.general} /></label>
+      <PhotoField bind:photo={store.c.photo} />
       <label class="field">
         <span>Ruleset</span>
         <select bind:value={store.c.ruleset} disabled={!!store.c.locks.general}>

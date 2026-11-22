@@ -224,6 +224,8 @@ const CharacterObject = z.object({
   abilitiesLocked: z.boolean().default(false),
   /* Candados por sección (species, background, classes, feats, invocations, profs, choices, spells, general). */
   locks: z.record(z.string(), z.boolean()).default({}),
+  /* Foto del personaje como data URL JPEG (ver lib/photo.ts). */
+  photo: z.string().max(3_000_000).default(''),
   bonuses: z
     .object({ species: z.array(BonusSchema), background: z.array(BonusSchema), other: z.array(BonusSchema) })
     .default({ species: [], background: [], other: [] }),
@@ -384,6 +386,7 @@ export function blankCharacter(): Character {
     abilitySaved: {},
     abilitiesLocked: false,
     locks: {},
+    photo: '',
     bonuses: { species: [], background: [], other: [] },
     advancements: {},
     feats: [],

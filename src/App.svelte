@@ -109,9 +109,12 @@
 {:else}
 <div class="app">
   <header class="top">
-    <button class="who ghost" aria-haspopup="dialog" aria-label={t('Cambiar de personaje')} onclick={() => (switching = true)}>
+    <button class="who ghost" class:with-photo={!!store.c.photo} aria-haspopup="dialog" aria-label={t('Cambiar de personaje')} onclick={() => (switching = true)}>
+      {#if store.c.photo}<img class="avatar" src={store.c.photo} alt="" />{/if}
+      <span class="who-text">
       <span class="name-row"><span class="h1">{store.c.name || t('Sin nombre')}</span><span class="swap" aria-hidden="true">▾</span></span>
       <p class="muted">{classSummary(store.c)} · {t('nivel')} {totalLevel(store.c)} · {store.c.ruleset}{store.list.length > 1 ? ` · ${t('{n} personajes', { n: store.list.length })}` : ''}</p>
+      </span>
     </button>
   </header>
   <CharacterSwitcher bind:open={switching} />
@@ -173,6 +176,23 @@
     font-weight: 700;
     font-size: 1.35rem;
     line-height: 1.2;
+  }
+  .who.with-photo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .avatar {
+    flex: none;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .who-text {
+    display: block;
+    min-width: 0;
   }
   .who {
     display: block;

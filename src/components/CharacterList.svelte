@@ -30,12 +30,15 @@
   {#each store.list as ch (ch.id)}
     {@const current = ch.id === store.currentId}
     <li class:current>
-      <button class="pick ghost" disabled={!ch.valid} aria-current={current ? 'true' : undefined} onclick={() => open(ch.id)}>
+      <button class="pick ghost" class:with-photo={!!ch.photo} disabled={!ch.valid} aria-current={current ? 'true' : undefined} onclick={() => open(ch.id)}>
+        {#if ch.photo}<img class="avatar" src={ch.photo} alt="" />{/if}
+        <span class="txt">
         <span class="nm">{ch.name || t('Sin nombre')}{#if current}<span class="tag">{t('abierto')}</span>{/if}</span>
         <small class="muted">
           {#if ch.valid}{ch.summary} · {t('nivel')} {ch.level} · {ch.ruleset}{ch.updatedAt ? ` · ${date(ch.updatedAt)}` : ''}
           {:else}{t('No se puede abrir: el registro no es válido.')}{/if}
         </small>
+        </span>
       </button>
       <button class="ghost danger del" aria-label={`${t('Borrar')} ${ch.name}`} onclick={() => remove(ch.id, ch.name)}>✕</button>
     </li>
@@ -47,6 +50,23 @@
 </div>
 
 <style>
+  .txt {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .pick.with-photo {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .avatar {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
   .chars {
     list-style: none;
     margin: 0;

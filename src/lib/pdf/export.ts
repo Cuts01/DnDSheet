@@ -1,0 +1,21 @@
+import type { Character } from '../model/character';
+import type { Pack } from '../model/pack';
+import { sheetData } from './sheetData';
+
+/* Arma el PDF (pdf-lib se descarga recién aquí) y lo baja como archivo. */
+export async function exportSheetPdf(c: Character, packs: Pack[]): Promise<string> {
+  const { renderSheetPdf } = await import('./render');
+  const bytes = await renderSheetPdf(sheetData(c, packs));
+  const blob = new Blob([bytes as BlobPart], { type: 'application/pdf' });
+  const base = (c.name || 'personaje').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\w-]+/g, '-').replace(/^-+|-+$/g, '') || 'personaje';
+  const file = `${base}-hoja.pdf`;
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = file;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30_000);
+  return file;
+}
