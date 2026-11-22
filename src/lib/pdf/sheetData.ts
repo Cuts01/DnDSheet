@@ -67,7 +67,7 @@ export interface SheetData {
   consumables: { name: string; qty: number }[];
   coins: { pp: number; gp: number; ep: number; sp: number; cp: number };
   /* Valores sueltos para la plantilla de la página 1. */
-  front: { classLine: string; originLine: string; ac: string; init: string; speed: string; prof: string; maxHp: string; perception: number; hitDice: string; hitDiceTotal: number };
+  front: { player: string; age: string; height: string; weight: string; size: string; classLine: string; originLine: string; ac: string; init: string; speed: string; prof: string; maxHp: string; perception: number; hitDice: string; hitDiceTotal: number };
   /* Una línea por rasgo para el recuadro Traits and Features (el texto completo va en las páginas siguientes). */
   traitLines: { text: string; head?: boolean }[];
   casting: { label: string; ability: string; attack: string; dc: number }[];
@@ -102,7 +102,16 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
   const classOnly = c.classes.map((k) => `${k.name}${k.subclass ? ` (${k.subclass})` : ''} ${k.level}`).join(' / ');
   const lines = [
     `${classOnly || t('Sin clase')} · ${t('nivel')} ${totalLevel(c)}`,
-    [c.species.name || sp?.name, c.background.name || bg?.name, `D&D 5e ${c.ruleset}`].filter(Boolean).join(' · ')
+    [c.species.name || sp?.name, c.background.name || bg?.name, `D&D 5e ${c.ruleset}`].filter(Boolean).join(' · '),
+    [
+      c.age ? `${t('Edad')}: ${c.age}` : '',
+      c.height ? `${t('Altura')}: ${c.height}` : '',
+      c.weight ? `${t('Peso')}: ${c.weight}` : '',
+      `${t('Tamaño')}: ${c.species.size}`,
+      c.playerName ? `${t('Jugador')}: ${c.playerName}` : ''
+    ]
+      .filter(Boolean)
+      .join(' · ')
   ];
 
   const stats = [
@@ -303,6 +312,11 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
     consumables,
     coins: { ...c.currency },
     front: {
+      player: c.playerName,
+      age: c.age,
+      height: c.height,
+      weight: c.weight,
+      size: c.species.size,
       classLine: lines[0],
       originLine: [c.species.name || sp?.name, c.background.name || bg?.name].filter(Boolean).join(' / '),
       ac: String(ac.total),

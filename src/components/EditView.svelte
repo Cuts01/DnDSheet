@@ -76,9 +76,16 @@
     <div class="card stack">
       <div class="title-row">
         <h2>General</h2>
-        <LockButton bind:locked={store.c.locks.general} what={t('nombre y ruleset')} />
+        <LockButton bind:locked={store.c.locks.general} what={t('datos generales')} />
       </div>
       <label class="field"><span>{t('Nombre')}</span><input bind:value={store.c.name} disabled={!!store.c.locks.general} /></label>
+      <div class="grid3">
+        <label class="field"><span>{t('Edad')}</span><input bind:value={store.c.age} placeholder={t('Ej. 27')} disabled={!!store.c.locks.general} /></label>
+        <label class="field"><span>{t('Altura')}</span><input bind:value={store.c.height} placeholder={t('Ej. 1.80 m')} disabled={!!store.c.locks.general} /></label>
+        <label class="field"><span>{t('Peso')}</span><input bind:value={store.c.weight} placeholder={t('Ej. 80 kg')} disabled={!!store.c.locks.general} /></label>
+      </div>
+      <p class="muted small">{t('Tamaño')}: <b>{store.c.species.size}</b> · {t('lo define la raza')}</p>
+      <label class="field"><span>{t('Jugador')}</span><input bind:value={store.c.playerName} placeholder={t('Tu nombre (va en el banner del PDF)')} disabled={!!store.c.locks.general} /></label>
       <PhotoField bind:photo={store.c.photo} />
       <label class="field">
         <span>Ruleset</span>

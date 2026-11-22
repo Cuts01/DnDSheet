@@ -327,7 +327,17 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   const dot = (x: number, y: number, rPx: number) => page.drawCircle({ x: x * SX, y: H - y * SY, size: rPx * SX, color: INK });
 
   // Encabezado
-  center(d.name, 850, 134, 15, bold, 420);
+  // Banner NAME: el jugador. Recuadro de arriba a la derecha: el PJ y su edad.
+  if (d.front.player) center(d.front.player, 850, 134, 13, bold, 420);
+  left(d.name, 1238, 133, 12, bold, 285);
+  if (d.front.age) center(d.front.age, 1586, 121, 8, bold, 60);
+  // Recuadro libre de arriba a la izquierda: altura, peso y tamaño.
+  const body = [
+    d.front.height ? `${t('Altura')}: ${d.front.height}` : '',
+    d.front.weight ? `${t('Peso')}: ${d.front.weight}` : '',
+    `${t('Tamaño')}: ${d.front.size}`
+  ].filter(Boolean);
+  body.forEach((x, i) => left(x, 98, 100 + i * 21, 7, reg, 188));
   center(d.front.ac, 850, 252, 20, bold, 110);
   center(d.front.prof, 450, 206, 12, bold, 70);
   center(String(d.front.perception), 155, 263, 12, bold, 70);
@@ -459,7 +469,8 @@ async function drawHeader(p: Painter, page: PDFPage, d: SheetData): Promise<numb
   p.text(page, p.fit(d.name, bold, 20, W - M - tx), tx, top + 8, 20, bold);
   p.text(page, p.fit(d.lines[0], reg, 11, W - M - tx), tx, top + 34, 11, reg);
   p.text(page, p.fit(d.lines[1], reg, 9.5, W - M - tx), tx, top + 50, 9.5, reg, MUTED);
-  return (d.photo ? s : 62) + 12;
+  if (d.lines[2]) p.text(page, p.fit(d.lines[2], reg, 8.5, W - M - tx), tx, top + 63, 8.5, reg, MUTED);
+  return (d.photo ? s : 74) + 12;
 }
 
 function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {

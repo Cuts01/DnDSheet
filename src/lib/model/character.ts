@@ -226,6 +226,11 @@ const CharacterObject = z.object({
   locks: z.record(z.string(), z.boolean()).default({}),
   /* Foto del personaje como data URL JPEG (ver lib/photo.ts). */
   photo: z.string().max(3_000_000).default(''),
+  /* Datos de la hoja: texto libre (cada uno usa sus unidades). */
+  playerName: z.string().max(80).default(''),
+  age: z.string().max(40).default(''),
+  height: z.string().max(40).default(''),
+  weight: z.string().max(40).default(''),
   bonuses: z
     .object({ species: z.array(BonusSchema), background: z.array(BonusSchema), other: z.array(BonusSchema) })
     .default({ species: [], background: [], other: [] }),
@@ -387,6 +392,10 @@ export function blankCharacter(): Character {
     abilitiesLocked: false,
     locks: {},
     photo: '',
+    playerName: '',
+    age: '',
+    height: '',
+    weight: '',
     bonuses: { species: [], background: [], other: [] },
     advancements: {},
     feats: [],

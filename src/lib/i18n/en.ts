@@ -448,6 +448,15 @@ const en: Record<string, string> = {
   "Más ataques en la página 2": "More attacks on page 2",
   "... el resto en la página de equipo": "... the rest is on the equipment page",
   "... sigue en la página 2": "... continued on page 2",
+  "Edad": "Age",
+  "Altura": "Height",
+  "Ej. 27": "E.g. 27",
+  "Ej. 1.80 m": "E.g. 5'11\"",
+  "Ej. 80 kg": "E.g. 175 lb",
+  "lo define la raza": "set by your race",
+  "Jugador": "Player",
+  "Tu nombre (va en el banner del PDF)": "Your name (goes on the PDF banner)",
+  "datos generales": "general details",
 };
 
 export default en;
