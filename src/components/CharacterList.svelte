@@ -53,7 +53,14 @@
   .txt {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex: 1;
     min-width: 0;
+    width: 100%;
+    align-self: stretch;
+    justify-content: center;
+    overflow: hidden;
   }
   .pick.with-photo {
     flex-direction: row;
@@ -97,6 +104,7 @@
     justify-content: center;
     gap: 2px;
     padding: 8px 12px;
+    overflow: hidden;
   }
   .nm {
     font-weight: 600;
