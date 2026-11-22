@@ -6,19 +6,40 @@ import { t as tr } from '../i18n.svelte';
 
 const clone = (c: Character): Character => structuredClone(c);
 
+/* El daño va a los temp HP, luego a la forma (Polymorph 2014) y el sobrante a tus HP.
+   La forma termina al llegar a 0 (2014) o al quedarse sin temp HP (2024). */
 export function damage(c: Character, amount: number): Character {
   const n = clone(c);
   let rest = Math.max(0, Math.floor(amount));
   const fromTemp = Math.min(n.hp.temp, rest);
   n.hp.temp -= fromTemp;
   rest -= fromTemp;
+  let ended = false;
+  if (n.shape?.mode === 'pool') {
+    const fromShape = Math.min(n.shape.hp, rest);
+    n.shape.hp -= fromShape;
+    rest -= fromShape;
+    ended = n.shape.hp <= 0;
+  } else if (n.shape?.mode === 'temp') {
+    ended = n.hp.temp <= 0;
+  }
+  if (ended && n.shape) {
+    if (n.concentration === n.shape.spell) n.concentration = '';
+    n.shape = null;
+  }
   n.hp.current = Math.max(0, n.hp.current - rest);
   return n;
 }
 
+/* En una forma de Polymorph 2014 la curación va a la forma. */
 export function heal(c: Character, amount: number): Character {
   const n = clone(c);
-  n.hp.current = Math.min(maxHp(n), Math.max(0, n.hp.current) + Math.max(0, Math.floor(amount)));
+  const a = Math.max(0, Math.floor(amount));
+  if (n.shape?.mode === 'pool') {
+    n.shape.hp = Math.min(n.shape.max, n.shape.hp + a);
+    return n;
+  }
+  n.hp.current = Math.min(maxHp(n), Math.max(0, n.hp.current) + a);
   return n;
 }
 
@@ -85,6 +106,7 @@ export function longRest(c: Character): Character {
   const n = clone(c);
   n.hp.current = maxHp(n);
   n.hp.temp = 0;
+  n.shape = null;
   n.slotsUsed.pact = 0;
   n.slotsUsed.levels = n.slotsUsed.levels.map(() => 0);
   n.arcaneRecoveryUsed = false;

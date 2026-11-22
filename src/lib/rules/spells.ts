@@ -165,7 +165,14 @@ export function castSpell(c: Character, opt: SlotOption | null, concentration: s
   const n = structuredClone(c);
   if (opt?.kind === 'slot' && opt.left > 0) n.slotsUsed.levels[opt.level - 1]++;
   if (opt?.kind === 'pact' && opt.left > 0) n.slotsUsed.pact++;
-  if (concentration) n.concentration = concentration;
+  if (concentration) {
+    // Concentrarse en otro spell termina el anterior (y la forma de Polymorph si venía de él).
+    if (n.shape && n.concentration === n.shape.spell && concentration !== n.shape.spell) {
+      if (n.shape.mode === 'temp') n.hp.temp = 0;
+      n.shape = null;
+    }
+    n.concentration = concentration;
+  }
   return n;
 }
 

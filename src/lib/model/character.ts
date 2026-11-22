@@ -320,6 +320,21 @@ const CharacterObject = z.object({
   freeUsed: z.record(z.string(), z.boolean()).default({}),
   /* Spell con concentration activa ('' = ninguna). */
   concentration: z.string().default(''),
+  /* Forma de Polymorph. pool (2014): HP propios de la forma; el daño sobrante pasa a tus HP.
+     temp (2024): la forma da temp HP y termina cuando se acaban. */
+  shape: z
+    .object({
+      name: z.string(),
+      spell: z.string().default('Polymorph'),
+      mode: z.enum(['pool', 'temp']),
+      hp: z.number(),
+      max: z.number(),
+      ac: z.number().default(10),
+      cr: z.number().default(0),
+      speed: z.string().default('')
+    })
+    .nullable()
+    .default(null),
   resources: z.array(ResourceSchema),
   /* Usos gastados de recursos de features (Superiority Dice, Rage...). Clave "<S|L|O>:<featureId>" según cómo se recupera. */
   featureUsed: z.record(z.string(), z.number().int().min(0).max(999)).default({}),
@@ -464,6 +479,7 @@ export function blankCharacter(): Character {
     featSpells: {},
     freeUsed: {},
     concentration: '',
+    shape: null,
     arcaneRecoveryUsed: false,
     resources: [],
     featureUsed: {},

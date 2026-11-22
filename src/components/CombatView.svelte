@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { crLabel, endConcentration, endShape } from '../lib/rules/castEffects';
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import {
@@ -105,7 +106,23 @@
   {#if c.concentration}
     <div class="card conc">
       <span><small class="muted">Concentration</small> <b>{c.concentration}</b></span>
-      <button onclick={() => (store.c.concentration = '')}>{t('Terminar')}</button>
+      <button onclick={() => store.apply(endConcentration)}>{t('Terminar')}</button>
+    </div>
+  {/if}
+  {#if c.shape}
+    <div class="card shape">
+      <div class="shape-top">
+        <span class="shape-name"><small class="muted">{t('Forma')} · {c.shape.spell}</small><b>{c.shape.name}</b></span>
+        <button onclick={() => store.apply(endShape)}>{t('Volver a tu forma')}</button>
+      </div>
+      <p class="small muted">CR {crLabel(c.shape.cr)} · AC {c.shape.ac} · {c.shape.speed}</p>
+      {#if c.shape.mode === 'pool'}
+        <div class="shape-hp num"><b>{c.shape.hp}</b> <span class="muted">/ {c.shape.max} HP {t('de la forma')}</span></div>
+        <div class="bar" aria-hidden="true"><span style:width={`${Math.max(0, Math.min(1, c.shape.hp / c.shape.max)) * 100}%`}></span></div>
+        <p class="small muted">{t('Daño y curación van a la forma. Si llega a 0, el sobrante pasa a tus HP.')}</p>
+      {:else}
+        <p class="small muted">{t('Sus HP son tus temp HP. Si se acaban, vuelves a tu forma.')}</p>
+      {/if}
     </div>
   {/if}
   <div class="rests">
@@ -642,5 +659,24 @@
     .cast-line > :first-child {
       grid-column: 1 / -1;
     }
+  }
+  .shape {
+    display: grid;
+    gap: 6px;
+  }
+  .shape p {
+    margin: 0;
+  }
+  .shape-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .shape-name {
+    display: grid;
+  }
+  .shape-hp b {
+    font-size: 1.6rem;
   }
 </style>

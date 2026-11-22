@@ -30,6 +30,8 @@
   import { canLoadLocal, importFiles, importLocalWiki, stalePacks } from '../lib/packImport';
   import { featInstances } from '../lib/rules/features';
   import Pips from './Pips.svelte';
+  import CastEffectPanel from './CastEffectPanel.svelte';
+  import { castEffect, endConcentration, gainTemp, type CastEffect } from '../lib/rules/castEffects';
 
   const c = $derived(store.c);
   const casting = $derived(spellcasting(c));
@@ -44,6 +46,8 @@
   let open = $state<string | null>(null);
   let casting_ = $state<string | null>(null); // id de la spell con el selector de slot abierto
   let flash = $state('');
+  /* Efecto pendiente de un spell recién lanzado (False Life, Polymorph). */
+  let fx = $state<{ id: string; name: string; effect: CastEffect } | null>(null);
 
   /* ---------- Spells de subclass ---------- */
   const sub = $derived(subclassSpells(c, compendium.packs));
@@ -157,7 +161,15 @@
           ? t('{name} lanzada con Pact slot (nivel {n})', { name: s.name, n: opt.level })
           : t('{name} lanzada con slot de nivel {n}', { name: s.name, n: opt.level })
         : t('{name} lanzada', { name: s.name });
-    flash = how + (conc && prev && prev !== s.name ? `. ${t('Terminó la concentration en {name}.', { name: prev })}` : '.');
+    let extra = '';
+    fx = null;
+    const e = castEffect(store.c, s.name, opt && !ritual ? opt.level : s.level);
+    if (e?.kind === 'temp') {
+      const had = store.c.hp.temp;
+      store.apply((x) => gainTemp(x, e.amount));
+      extra = had >= e.amount ? ` ${t('Ya tenías {n} temp HP, te quedas con esos (no se suman).', { n: had })}` : ` +${e.amount} temp HP.`;
+    } else if (e) fx = { id: s.id, name: s.name, effect: e };
+    flash = how + (conc && prev && prev !== s.name ? `. ${t('Terminó la concentration en {name}.', { name: prev })}` : '.') + extra;
     setTimeout(() => (flash = ''), 3500);
   }
 
@@ -284,7 +296,7 @@
   {#if c.concentration}
     <div class="conc card">
       <span><small class="muted">Concentration</small><b>{c.concentration}</b></span>
-      <button onclick={() => (store.c.concentration = '')}>{t('Terminar')}</button>
+      <button onclick={() => store.apply(endConcentration)}>{t('Terminar')}</button>
     </div>
   {/if}
   {#if flash}<p class="flash small" role="status">{flash}</p>{/if}
@@ -459,6 +471,10 @@
                 {#if d?.ritual}<button onclick={() => cast(s, null, true)}>Ritual (+10 min)</button>{/if}
                 <button class="ghost" onclick={() => cast(s, null)}>{t('Sin slot')}</button>
               </div>
+            {/if}
+
+            {#if fx?.id === s.id}
+              <CastEffectPanel name={fx.name} effect={fx.effect} onclose={() => (fx = null)} />
             {/if}
 
             {#if open === s.id}
