@@ -166,9 +166,6 @@
     if (open === id) open = null;
     if (casting_ === id) casting_ = null;
   }
-  function askRemove(id: string, name: string) {
-    if (confirm(t('¿Quitar {name} de tus spells?', { name }))) remove(id);
-  }
   // En Agregar, el ✓ de una spell ya elegida la quita (las que dan features o feats no se quitan desde aquí).
   const ownByRef = (ref: string) => store.c.spells.find((x) => x.ref === ref);
 
@@ -442,11 +439,6 @@
               {#if s.level > 0 || d?.concentration || free}
                 <button class="cast" onclick={() => (s.level === 0 && !free ? cast(s, null) : (casting_ = casting_ === s.id ? null : s.id))}>{t('Lanzar')}</button>
               {/if}
-              {#if !isVirtual(s)}
-                <button class="rm ghost" aria-label={`${t('Quitar')} ${s.name}`} title={t('Quitar')} onclick={() => askRemove(s.id, s.name)}>
-                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
-                </button>
-              {/if}
             </div>
 
             {#if casting_ === s.id}
@@ -501,7 +493,6 @@
                         <span>{t('Siempre preparada (no cuenta)')}</span>
                       </label>
                     {/if}
-                    <button class="danger" onclick={() => remove(s.id)}>{t('Quitar')}</button>
                   </div>
                 {/if}
               </div>
@@ -542,6 +533,7 @@
         <span>{t('Incluir spells del otro ruleset')}</span>
       </label>
       {#if addLimitMsg}<p class="warn small">{addLimitMsg}</p>{/if}
+      <p class="muted small">{t('Toca ✓ para quitar una spell que ya elegiste. Las marcadas con ★ vienen de un feature o feat.')}</p>
       <ul class="results">
         {#each results as r (r.value)}
           {@const s = r.item}
@@ -594,22 +586,6 @@
 </section>
 
 <style>
-  .rm {
-    width: 36px;
-    min-width: 36px;
-    min-height: 36px;
-    padding: 0;
-    border: none;
-    color: var(--muted);
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .rm:hover {
-    color: var(--bad);
-    background: var(--surface-2);
-  }
   .add.on {
     color: var(--accent);
     border-color: var(--accent);
@@ -893,9 +869,6 @@
   }
   .opts select {
     width: auto;
-    min-height: 40px;
-  }
-  .opts button {
     min-height: 40px;
   }
   .filters {
