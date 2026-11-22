@@ -82,7 +82,8 @@ export interface SheetData {
   currency: string;
   features: { heading: string; items: TextItem[] }[];
   spells: SpellRow[];
-  inventory: string[];
+  /* head en negrita (cantidad, nombre y bonus); tail normal (estado y notas). */
+  inventory: { head: string; tail: string }[];
   notes: string;
   /* Campaña de Strixhaven (solo si está activada). */
   strix: { label: string; value: string }[] | null;
@@ -301,10 +302,14 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
     );
   const spells = [...own, ...virtual].sort((a, b) => a.level - b.level || a.name.localeCompare(b.name));
 
-  const inventory = c.inventory.map(
-    (i) =>
-      `${i.qty > 1 ? `${i.qty} × ` : ''}${i.name}${i.bonus ? ` ${fmt(i.bonus)}` : ''}${i.equipped ? ` (${t('equipado')})` : ''}${i.attuned ? ' (attuned)' : ''}${i.notes ? `: ${i.notes}` : ''}`
-  );
+  const inventory = c.inventory.map((i) => {
+    const head = `${i.qty > 1 && !i.name.includes(`(${i.qty})`) ? `${i.qty} × ` : ''}${i.name}${i.bonus ? ` ${fmt(i.bonus)}` : ''}`;
+    const tags = `${i.equipped ? ` (${t('equipado')})` : ''}${i.attuned ? ' (attuned)' : ''}`;
+    const notes = i.notes.trim();
+    // Sin etiquetas, los ":" van en negrita con el nombre (como "Armor:" en Proficiencies).
+    if (notes && !tags) return { head: `${head}:`, tail: ` ${notes}` };
+    return { head, tail: `${tags}${notes ? `: ${notes}` : ''}` };
+  });
 
   let strix: SheetData['strix'] = null;
   if (c.strixhaven.enabled) {

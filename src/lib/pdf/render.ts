@@ -81,6 +81,43 @@ function wrap(text: string, font: PDFFont, size: number, width: number): string[
   return out;
 }
 
+/* Renglones con un inicio en negrita (head) y el resto normal. El primer renglón va a todo el ancho;
+   los siguientes llevan sangría: alineada después de los ":" si caben, si no `ind`. */
+type MixedLine = { head: string; text: string; indent: number };
+function wrapMixed(head: string, tail: string, bold: PDFFont, reg: PDFFont, size: number, maxW: number, ind: number): MixedLine[] {
+  const hw = head ? bold.widthOfTextAtSize(head, size) : 0;
+  if (hw > maxW * 0.7) {
+    // Nombre larguísimo: el nombre en sus renglones y el resto debajo.
+    const out: MixedLine[] = wrap(head, bold, size, maxW).map((h) => ({ head: h, text: '', indent: 0 }));
+    if (tail.trim()) wrap(tail.trim(), reg, size, maxW - ind).forEach((l) => out.push({ head: '', text: l, indent: ind }));
+    return out;
+  }
+  const words = tail.trim().split(/\s+/).filter(Boolean);
+  const lead = tail.startsWith(' ') ? ' ' : '';
+  let first = '';
+  let k = 0;
+  for (; k < words.length; k++) {
+    const next = first ? `${first} ${words[k]}` : `${lead}${words[k]}`;
+    if (hw + reg.widthOfTextAtSize(next, size) > maxW && first) break;
+    first = next;
+  }
+  const out: MixedLine[] = [{ head, text: first, indent: 0 }];
+  if (k < words.length) {
+    const full = head + first;
+    const c = full.indexOf(': ');
+    let indent = ind;
+    if (c >= 0) {
+      const w = c + 2 <= head.length ? bold.widthOfTextAtSize(full.slice(0, c + 2), size) : hw + reg.widthOfTextAtSize(full.slice(head.length, c + 2), size);
+      if (w <= maxW * 0.55) indent = w;
+    } else if (head.endsWith(':')) {
+      const w = hw + reg.widthOfTextAtSize(' ', size);
+      if (w <= maxW * 0.55) indent = w;
+    }
+    wrap(words.slice(k).join(' '), reg, size, maxW - indent).forEach((l) => out.push({ head: '', text: l, indent }));
+  }
+  return out;
+}
+
 function roundRect(w: number, h: number, r: number) {
   r = Math.min(r, w / 2, h / 2);
   return `M ${r} 0 H ${w - r} Q ${w} 0 ${w} ${r} V ${h - r} Q ${w} ${h} ${w - r} ${h} H ${r} Q 0 ${h} 0 ${h - r} V ${r} Q 0 0 ${r} 0 Z`;
@@ -240,6 +277,22 @@ class Flow {
     if (it.extra) this.para(it.extra, { size: 8.6, font: this.p.f.ital, color: ACCENT });
     this.space(5);
   }
+  /* Renglón con inicio en negrita y el resto normal (inventario de la página 2). */
+  mixed(head: string, tail: string, size = 8.6) {
+    const lh = size * 1.32;
+    for (const l of wrapMixed(this.p.clean(head), this.p.clean(tail), this.p.f.bold, this.p.f.reg, size, this.region.w, 8)) {
+      this.ensure(lh);
+      const r = this.region;
+      let lx = r.x + l.indent;
+      if (l.head) {
+        this.p.text(r.page, l.head, lx, r.y, size, this.p.f.bold);
+        lx += this.p.f.bold.widthOfTextAtSize(l.head, size);
+      }
+      if (l.text) this.p.text(r.page, l.text, lx, r.y, size);
+      this.space(lh);
+    }
+    this.space(1.5);
+  }
   keyValue(k: string, v: string) {
     const size = 8.6;
     const kk = `${this.p.clean(k)}: `;
@@ -349,7 +402,7 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
 
   /* Renglones de la plantilla: cada ítem ocupa los renglones que necesite (los siguientes con sangría).
      Si no entran todos, el último renglón avisa que sigue en la página 2. Devuelve true si algo no entró. */
-  type Row = { text: string; font?: PDFFont; color?: RGB };
+  type Row = { text: string; head?: string; font?: PDFFont; color?: RGB };
   const ruled = (items: Row[], linesY: number[], x: number, maxPx: number, size: number, note: string) => {
     const maxW = maxPx * SX;
     const IND = 8;
@@ -360,7 +413,11 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
       const w = f.widthOfTextAtSize(text.slice(0, i + 2), size);
       return w <= maxW * 0.55 ? w : IND;
     };
-    const expand = (it: Row) => {
+    const expand = (it: Row): { lines: string[]; indent: number; heads?: string[]; indents?: number[] } => {
+      if (it.head !== undefined) {
+        const ml = wrapMixed(p.clean(it.head), p.clean(it.text), bold, reg, size, maxW, IND);
+        return { lines: ml.map((m) => m.text), indent: 0, heads: ml.map((m) => m.head), indents: ml.map((m) => m.indent) };
+      }
       const f = it.font ?? reg;
       const text = p.clean(it.text);
       const first = wrap(text, f, size, maxW);
@@ -371,20 +428,30 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
       const rest = wrap(restWords.join(' '), f, size, maxW - ind);
       return { lines: [head, ...rest], indent: ind };
     };
-    const out: { text: string; font: PDFFont; color: RGB; indent: number }[] = [];
+    const out: { text: string; font: PDFFont; color: RGB; indent: number; head?: string }[] = [];
     let over = false;
     for (let i = 0; i < items.length; i++) {
-      const { lines: ls, indent } = expand(items[i]);
+      const { lines: ls, indent, heads, indents } = expand(items[i]);
       const left = items.length - i - 1;
       const room = linesY.length - out.length - (left > 0 ? 1 : 0);
       if (ls.length > room && !(left === 0 && ls.length <= linesY.length - out.length)) {
         over = true;
         break;
       }
-      ls.forEach((l, k) => out.push({ text: l, font: items[i].font ?? reg, color: items[i].color ?? INK, indent: k ? indent : 0 }));
+      ls.forEach((l, k) =>
+        out.push({ text: l, font: items[i].font ?? reg, color: items[i].color ?? INK, indent: indents ? indents[k] : k ? indent : 0, head: heads?.[k] })
+      );
     }
     if (over) out.push({ text: note, font: p.f.ital, color: INK, indent: 0 });
-    out.forEach((l, i) => p.text(page, l.text, x * SX + l.indent, linesY[i] * SY - 2.2 - size * 0.8, size, l.font, l.color));
+    out.forEach((l, i) => {
+      const y = linesY[i] * SY - 2.2 - size * 0.8;
+      let lx = x * SX + l.indent;
+      if (l.head) {
+        p.text(page, l.head, lx, y, size, bold, l.color);
+        lx += bold.widthOfTextAtSize(l.head, size);
+      }
+      if (l.text) p.text(page, l.text, lx, y, size, l.font, l.color);
+    });
     return over;
   };
   const dot = (x: number, y: number, rPx: number) => page.drawCircle({ x: x * SX, y: H - y * SY, size: rPx * SX, color: INK });
@@ -498,10 +565,10 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   });
 
   // Inventario
-  const inv = [...d.inventory];
-  if (d.coins.ep) inv.push(`${d.coins.ep} ep`);
+  const inv: Row[] = d.inventory.map((x) => ({ head: x.head, text: x.tail }));
+  if (d.coins.ep) inv.push({ text: `${d.coins.ep} ep` });
   const invOver = ruled(
-    inv.map((x) => ({ text: x })),
+    inv,
     INV_LINES,
     640,
     422,
@@ -699,7 +766,7 @@ export async function renderSheetPdf(d: SheetData): Promise<Uint8Array> {
   if (over.inventory || d.notes.trim()) {
     if (over.inventory) {
       flow.heading(t('Equipo'));
-      for (const i of d.inventory) flow.para(`• ${i}`, { size: 8.6, after: 1.5 });
+      for (const i of d.inventory) flow.mixed(`• ${i.head}`, i.tail);
       if (d.currency) {
         flow.space(4);
         flow.keyValue(t('Monedas'), d.currency);
