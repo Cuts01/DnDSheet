@@ -1,6 +1,6 @@
 /* Dibuja la hoja de personaje en PDF (A4, vectorial) con pdf-lib. Se carga solo al exportar. */
 import { clip, endPath, popGraphicsState, pushGraphicsState, rectangle } from 'pdf-lib';
-import { PDFDocument, rgb, StandardFonts, type PDFFont, type PDFPage, type RGB } from 'pdf-lib';
+import { degrees, PDFDocument, rgb, StandardFonts, type PDFFont, type PDFPage, type RGB } from 'pdf-lib';
 import { t } from '../i18n.svelte';
 import { levelName, type SheetData, type SpellRow, type TextItem } from './sheetData';
 import templateUrl from '../../assets/sheet-template.jpg?url';
@@ -328,14 +328,33 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
   const dot = (x: number, y: number, rPx: number) => page.drawCircle({ x: x * SX, y: H - y * SY, size: rPx * SX, color: INK });
 
   // Encabezado
-  // Banner NAME: el PJ. Recuadro de arriba a la derecha (plantilla editada): tamaño, altura, peso y edad.
-  center(d.name, 850, 134, 15, bold, 420);
-  left([d.front.size, d.front.height, d.front.weight].filter(Boolean).join(' · '), 1238, 134, 10, reg, 285);
+  // Banner NAME: el nombre sigue la curva del banner (arco con el centro más alto).
+  {
+    const { c, z } = sized(d.name, bold, 15, 400, 8);
+    const R = 900 * SX;
+    const total = bold.widthOfTextAtSize(c, z);
+    const cx = 850 * SX;
+    const base = 138 * SY;
+    let pos = -total / 2;
+    for (const ch of c) {
+      const w = bold.widthOfTextAtSize(ch, z);
+      const th = (pos + w / 2) / R;
+      // Punto medio del carácter sobre el arco y origen corrido medio ancho por la tangente.
+      const mx = cx + R * Math.sin(th);
+      const my = base + R * (1 - Math.cos(th));
+      const ox = mx - (w / 2) * Math.cos(th);
+      const oy = my - (w / 2) * Math.sin(th);
+      page.drawText(ch, { x: ox, y: H - oy, size: z, font: bold, color: INK, rotate: degrees((-th * 180) / Math.PI) });
+      pos += w;
+    }
+  }
+  // Recuadro de arriba a la derecha (plantilla editada): tamaño, altura y peso; la edad en AGE.
+  left([d.front.size, d.front.height, d.front.weight].filter(Boolean).join(' / '), 1240, 132, 9.5, reg, 280);
   if (d.front.age) center(d.front.age, 1586, 121, 8, bold, 60);
-  // Passive Investigation (agregado a la plantilla arriba a la izquierda).
-  center(String(d.passives[2]?.value ?? ''), 138, 124, 12, bold, 70);
   center(d.front.ac, 850, 252, 20, bold, 110);
-  center(d.front.prof, 450, 206, 12, bold, 70);
+  // Proficiency Bonus en el cuadro de arriba a la izquierda; Passive Investigation en el rombo de al lado.
+  center(d.front.prof, 117, 131, 14, bold, 70);
+  center(String(d.passives[2]?.value ?? ''), 450, 206, 12, bold, 70);
   center(String(d.front.perception), 155, 263, 12, bold, 70);
   // Level/Class en hasta dos renglones si es largo (multiclass).
   const cl = wrap(p.clean(d.front.classLine), reg, 8, 370 * SX);
