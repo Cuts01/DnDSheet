@@ -52,6 +52,8 @@
     target.featName = r?.item.name ?? '';
     target.featAbility = r?.item.asi?.from[0] ?? null;
   }
+  const featText = (f: PackFeat) => f.text;
+  const featNote = (f: PackFeat) => [f.prerequisite ? `${t('Requisito')}: ${f.prerequisite}` : '', f.asi ? `+1 ${f.asi.from.map((x) => ABILITY_LABEL[x]).join('/')}` : ''].filter(Boolean).join(' · ');
   const featOf = (ref: string | null) => findFeat(compendium.packs, ref)?.item ?? null;
 
   function addOther() {
@@ -112,7 +114,7 @@
       {:else}
         {@const f = featOf(a.featRef)}
         {#if feats.length}
-          <RefSelect options={forSlot(s.epic, a.featRef)} value={a.featRef} label="Feat" onpick={(r) => pickFeat(c.advancements[s.key], r)} />
+          <RefSelect options={forSlot(s.epic, a.featRef)} value={a.featRef} label="Feat" describe={featText} note={featNote} onpick={(r) => pickFeat(c.advancements[s.key], r)} />
         {:else}
           <label class="field"><span>Feat</span><input bind:value={c.advancements[s.key].featName} placeholder={t('Importa un pack con feats')} /></label>
         {/if}
@@ -143,7 +145,7 @@
         {/if}
       </div>
       {#if feats.length}
-        <RefSelect options={f.source === 'other' ? forOther(f.ref) : forOrigin(f.ref)} value={f.ref} label="Feat" onpick={(r) => pickOther(i, r)} />
+        <RefSelect options={f.source === 'other' ? forOther(f.ref) : forOrigin(f.ref)} value={f.ref} label="Feat" describe={featText} note={featNote} onpick={(r) => pickOther(i, r)} />
       {:else}
         <label class="field"><span>Feat</span><input bind:value={c.feats[i].name} /></label>
       {/if}

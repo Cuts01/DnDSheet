@@ -404,6 +404,9 @@ const en: Record<string, string> = {
   "Tocar para quitar": "Tap to remove",
   "La da un feature o feat": "Granted by a feature or feat",
   "Toca ✓ para quitar una spell que ya elegiste. Las marcadas con ★ vienen de un feature o feat.": "Tap ✓ to remove a spell you already chose. Spells marked ★ come from a feature or feat.",
+  "Ver todos con descripción": "Browse all with descriptions",
+  "Cerrar lista": "Close list",
+  "Ninguno coincide.": "No matches.",
 };
 
 export default en;
