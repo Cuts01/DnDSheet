@@ -119,9 +119,9 @@
       {#if c.shape.mode === 'pool'}
         <div class="shape-hp num"><b>{c.shape.hp}</b> <span class="muted">/ {c.shape.max} HP {t('de la forma')}</span></div>
         <div class="bar" aria-hidden="true"><span style:width={`${Math.max(0, Math.min(1, c.shape.hp / c.shape.max)) * 100}%`}></span></div>
-        <p class="small muted">{t('Daño y curación van a la forma. Si llega a 0, el sobrante pasa a tus HP.')}</p>
+        <p class="small muted">{t('El daño va a la forma y no se puede curar. Si llega a 0, el sobrante pasa a tus HP.')}</p>
       {:else}
-        <p class="small muted">{t('Sus HP son tus temp HP. Si se acaban, vuelves a tu forma.')}</p>
+        <p class="small muted">{t('Sus HP son tus temp HP y no se pueden curar. Si se acaban, vuelves a tu forma.')}</p>
       {/if}
     </div>
   {/if}

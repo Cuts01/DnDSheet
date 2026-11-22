@@ -34,20 +34,25 @@ describe('Polymorph', () => {
     expect(c.shape?.hp).toBe(137);
     expect(c.hp.current).toBe(40);
     c = heal(c, 10);
-    expect(c.shape?.hp).toBe(147);
-    c = damage(c, 150);
+    expect(c.shape?.hp).toBe(137);
+    expect(c.hp.current).toBe(50);
+    c = damage(c, 140);
     expect(c.shape).toBeNull();
     expect(c.concentration).toBe('');
-    expect(c.hp.current).toBe(37);
+    expect(c.hp.current).toBe(47);
   });
   it('2024: da temp HP y termina al acabarse', () => {
     let c = castSpell(pc('2024'), null, 'Polymorph');
     c = takeShape(c, { ...ape, hp: 168 }, 'temp');
     expect(c.hp.temp).toBe(168);
-    c = damage(c, 170);
+    c = damage(c, 20);
+    c = heal(c, 50);
+    expect(c.hp.temp).toBe(148);
+    expect(c.hp.current).toBe(40 + 10);
+    c = damage(c, 150);
     expect(c.shape).toBeNull();
     expect(c.concentration).toBe('');
-    expect(c.hp.current).toBe(38);
+    expect(c.hp.current).toBe(48);
   });
   it('terminar la concentration o concentrarse en otro spell quita la forma', () => {
     let c = takeShape(castSpell(pc('2024'), null, 'Polymorph'), ape, 'temp');

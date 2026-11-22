@@ -31,14 +31,10 @@ export function damage(c: Character, amount: number): Character {
   return n;
 }
 
-/* En una forma de Polymorph 2014 la curación va a la forma. */
+/* La curación nunca recupera los HP de una forma de Polymorph (ni temp HP): va a tus HP. */
 export function heal(c: Character, amount: number): Character {
   const n = clone(c);
   const a = Math.max(0, Math.floor(amount));
-  if (n.shape?.mode === 'pool') {
-    n.shape.hp = Math.min(n.shape.max, n.shape.hp + a);
-    return n;
-  }
   n.hp.current = Math.min(maxHp(n), Math.max(0, n.hp.current) + a);
   return n;
 }
