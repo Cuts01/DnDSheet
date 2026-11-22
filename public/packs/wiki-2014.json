@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-11-22T05:42:18Z"
+    "built": "2026-11-22T06:59:02Z"
   },
   "classes": [
     {
@@ -14771,6 +14771,325 @@
           "text": "You gain the Initiate of High Sorcery feat."
         }
       ]
+    },
+    {
+      "name": "Lorehold Student",
+      "skills": [
+        "History",
+        "Religion"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "feat": "Strixhaven Initiate (Lorehold)",
+      "equipment": "Bottle of black ink, ink pen, hammer, hooded lantern, tinderbox, tome of history, school uniform, 15 gp",
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Comprehend Languages",
+            "Identify"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Borrowed Knowledge",
+            "Locate Object"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Speak with Dead",
+            "Spirit Guardians"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Arcane Eye",
+            "Stone Shape"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Flame Strike",
+            "Legend Lore"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "SACoC",
+      "traits": [
+        {
+          "name": "Lorehold Initiate",
+          "effects": [],
+          "text": "College of archaeomancy: history, spirits and the magic of past ages. You gain the Strixhaven Initiate feat (Lorehold). If you have Spellcasting or Pact Magic, the Lorehold spells are added to your class spell list (every list, if multiclassed): 1st: Comprehend Languages, Identify; 2nd: Borrowed Knowledge, Locate Object; 3rd: Speak with Dead, Spirit Guardians; 4th: Arcane Eye, Stone Shape; 5th: Flame Strike, Legend Lore."
+        }
+      ]
+    },
+    {
+      "name": "Prismari Student",
+      "skills": [
+        "Acrobatics",
+        "Performance"
+      ],
+      "tools": [
+        "one Artisan's Tools or Musical Instrument"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "feat": "Strixhaven Initiate (Prismari)",
+      "equipment": "Bottle of black ink, ink pen, artisan's tools or musical instrument, school uniform, 10 gp",
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Chromatic Orb",
+            "Thunderwave"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Flaming Sphere",
+            "Kinetic Jaunt"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Haste",
+            "Water Walk"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Freedom of Movement",
+            "Wall of Fire"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Cone of Cold",
+            "Conjure Elemental"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "SACoC",
+      "traits": [
+        {
+          "name": "Prismari Initiate",
+          "effects": [],
+          "text": "College of elemental arts: performance, creativity and elemental magic. You gain the Strixhaven Initiate feat (Prismari). If you have Spellcasting or Pact Magic, the Prismari spells are added to your class spell list (every list, if multiclassed): 1st: Chromatic Orb, Thunderwave; 2nd: Flaming Sphere, Kinetic Jaunt; 3rd: Haste, Water Walk; 4th: Freedom of Movement, Wall of Fire; 5th: Cone of Cold, Conjure Elemental."
+        }
+      ]
+    },
+    {
+      "name": "Quandrix Student",
+      "skills": [
+        "Arcana",
+        "Nature"
+      ],
+      "tools": [
+        "one Artisan's Tools"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "feat": "Strixhaven Initiate (Quandrix)",
+      "equipment": "Bottle of black ink, ink pen, abacus, book of arcane theory, school uniform, 15 gp",
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Entangle",
+            "Guiding Bolt"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Enlarge/Reduce",
+            "Vortex Warp"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Aura of Vitality",
+            "Haste"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Control Water",
+            "Freedom of Movement"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Circle of Power",
+            "Passwall"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "SACoC",
+      "traits": [
+        {
+          "name": "Quandrix Initiate",
+          "effects": [],
+          "text": "College of numeromancy: mathematics and the patterns of nature. You gain the Strixhaven Initiate feat (Quandrix). If you have Spellcasting or Pact Magic, the Quandrix spells are added to your class spell list (every list, if multiclassed): 1st: Entangle, Guiding Bolt; 2nd: Enlarge/Reduce, Vortex Warp; 3rd: Aura of Vitality, Haste; 4th: Control Water, Freedom of Movement; 5th: Circle of Power, Passwall."
+        }
+      ]
+    },
+    {
+      "name": "Silverquill Student",
+      "skills": [
+        "Intimidation",
+        "Persuasion"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "feat": "Strixhaven Initiate (Silverquill)",
+      "equipment": "Bottle of black ink, ink pen, book of poetry, school uniform, 15 gp",
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Dissonant Whispers",
+            "Silvery Barbs"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Calm Emotions",
+            "Darkness"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Beacon of Hope",
+            "Daylight"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Compulsion",
+            "Confusion"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Dominate Person",
+            "Rary's Telepathic Bond"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "SACoC",
+      "traits": [
+        {
+          "name": "Silverquill Initiate",
+          "effects": [],
+          "text": "College of eloquence: the power of words, light and shadow. You gain the Strixhaven Initiate feat (Silverquill). If you have Spellcasting or Pact Magic, the Silverquill spells are added to your class spell list (every list, if multiclassed): 1st: Dissonant Whispers, Silvery Barbs; 2nd: Calm Emotions, Darkness; 3rd: Beacon of Hope, Daylight; 4th: Compulsion, Confusion; 5th: Dominate Person, Rary's Telepathic Bond."
+        }
+      ]
+    },
+    {
+      "name": "Witherbloom Student",
+      "skills": [
+        "Nature",
+        "Survival"
+      ],
+      "tools": [
+        "Herbalism Kit"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "feat": "Strixhaven Initiate (Witherbloom)",
+      "equipment": "Bottle of black ink, ink pen, book about plant identification, iron pot, herbalism kit, school uniform, 15 gp",
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Cure Wounds",
+            "Inflict Wounds"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Lesser Restoration",
+            "Wither and Bloom"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Revivify",
+            "Vampiric Touch"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Blight",
+            "Death Ward"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Antilife Shell",
+            "Greater Restoration"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "SACoC",
+      "traits": [
+        {
+          "name": "Witherbloom Initiate",
+          "effects": [],
+          "text": "College of essence studies: life, death and the swamp. You gain the Strixhaven Initiate feat (Witherbloom). If you have Spellcasting or Pact Magic, the Witherbloom spells are added to your class spell list (every list, if multiclassed): 1st: Cure Wounds, Inflict Wounds; 2nd: Lesser Restoration, Wither and Bloom; 3rd: Revivify, Vampiric Touch; 4th: Blight, Death Ward; 5th: Antilife Shell, Greater Restoration."
+        }
+      ]
     }
   ],
   "feats": [
@@ -16131,6 +16450,195 @@
       "prerequisite": "Mage of High Sorcery background",
       "source": "DSotDQ",
       "text": "Learn a cantrip and two 1st-level spells tied to your moon (Lunitari, Nuitari or Solinari), each castable once per long rest without a slot."
+    },
+    {
+      "name": "Strixhaven Initiate (Lorehold)",
+      "category": "general",
+      "spells": [
+        {
+          "count": 2,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [],
+          "attackOnly": false,
+          "ritualOnly": false,
+          "names": [
+            "Light",
+            "Sacred Flame",
+            "Thaumaturgy"
+          ]
+        },
+        {
+          "count": 1,
+          "level": 1,
+          "uses": "long",
+          "schools": [],
+          "lists": [
+            "Cleric",
+            "Wizard"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "SACoC",
+      "text": "Lorehold: learn two cantrips from Light, Sacred Flame, Thaumaturgy, and one 1st-level Cleric or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat)."
+    },
+    {
+      "name": "Strixhaven Initiate (Prismari)",
+      "category": "general",
+      "spells": [
+        {
+          "count": 2,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [],
+          "attackOnly": false,
+          "ritualOnly": false,
+          "names": [
+            "Fire Bolt",
+            "Prestidigitation",
+            "Ray of Frost"
+          ]
+        },
+        {
+          "count": 1,
+          "level": 1,
+          "uses": "long",
+          "schools": [],
+          "lists": [
+            "Bard",
+            "Sorcerer"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "SACoC",
+      "text": "Prismari: learn two cantrips from Fire Bolt, Prestidigitation, Ray of Frost, and one 1st-level Bard or Sorcerer spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat)."
+    },
+    {
+      "name": "Strixhaven Initiate (Quandrix)",
+      "category": "general",
+      "spells": [
+        {
+          "count": 2,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [],
+          "attackOnly": false,
+          "ritualOnly": false,
+          "names": [
+            "Druidcraft",
+            "Guidance",
+            "Mage Hand"
+          ]
+        },
+        {
+          "count": 1,
+          "level": 1,
+          "uses": "long",
+          "schools": [],
+          "lists": [
+            "Druid",
+            "Wizard"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "SACoC",
+      "text": "Quandrix: learn two cantrips from Druidcraft, Guidance, Mage Hand, and one 1st-level Druid or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat)."
+    },
+    {
+      "name": "Strixhaven Initiate (Silverquill)",
+      "category": "general",
+      "spells": [
+        {
+          "count": 2,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [],
+          "attackOnly": false,
+          "ritualOnly": false,
+          "names": [
+            "Sacred Flame",
+            "Thaumaturgy",
+            "Vicious Mockery"
+          ]
+        },
+        {
+          "count": 1,
+          "level": 1,
+          "uses": "long",
+          "schools": [],
+          "lists": [
+            "Bard",
+            "Cleric"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "SACoC",
+      "text": "Silverquill: learn two cantrips from Sacred Flame, Thaumaturgy, Vicious Mockery, and one 1st-level Bard or Cleric spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat)."
+    },
+    {
+      "name": "Strixhaven Initiate (Witherbloom)",
+      "category": "general",
+      "spells": [
+        {
+          "count": 2,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [],
+          "attackOnly": false,
+          "ritualOnly": false,
+          "names": [
+            "Chill Touch",
+            "Druidcraft",
+            "Spare the Dying"
+          ]
+        },
+        {
+          "count": 1,
+          "level": 1,
+          "uses": "long",
+          "schools": [],
+          "lists": [
+            "Druid",
+            "Wizard"
+          ],
+          "attackOnly": false,
+          "ritualOnly": false
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "SACoC",
+      "text": "Witherbloom: learn two cantrips from Chill Touch, Druidcraft, Spare the Dying, and one 1st-level Druid or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat)."
+    },
+    {
+      "name": "Strixhaven Mascot",
+      "category": "general",
+      "prerequisite": "4th level, Strixhaven Initiate feat",
+      "minLevel": 4,
+      "spells": [
+        {
+          "spell": "Find Familiar",
+          "uses": "none"
+        }
+      ],
+      "source": "SACoC",
+      "text": "You can cast Find Familiar as a ritual, and your familiar can take the form of your college's mascot: Spirit Statue (Lorehold), Art Elemental (Prismari), Fractal (Quandrix), Inkling (Silverquill) or Pest (Witherbloom). When you take the Attack action, you can forgo one attack so your mascot makes one attack with its reaction. As an action, you can teleport to swap places with your mascot if it is within 60 feet."
     }
   ],
   "invocations": [

@@ -7,6 +7,7 @@
   import { compendium } from '../lib/compendium.svelte';
   import { allGrantedEffects } from '../lib/rules/features';
   import PdfButton from './PdfButton.svelte';
+  import StrixhavenCard from './StrixhavenCard.svelte';
 
   const c = $derived(store.c);
   const granted = $derived(allGrantedEffects(c, compendium.packs));
@@ -52,6 +53,7 @@
     </ul>
     <p class="muted small legend">● proficient · ◆ expertise</p>
   </div>
+  {#if store.c.strixhaven.enabled}<StrixhavenCard />{/if}
   <div class="pdf-row"><PdfButton /></div>
 </section>
 

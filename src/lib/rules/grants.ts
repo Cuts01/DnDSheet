@@ -503,6 +503,13 @@ export function featPrereqFails(c: Character, feat: PackFeat, packs: Pack[]): st
   if (/fighting style feature/.test(low) && !ownedFeatures(c, packs).some((o) => /fighting style/i.test(o.feature.name))) fails.push('Fighting Style');
   const bg = /^(.+?) background$/i.exec(text);
   if (bg && !c.background.name.toLowerCase().includes(bg[1].toLowerCase())) fails.push(text);
+  // "Strixhaven Initiate feat": hace falta tener ese feat (cualquier variante, ej. por college).
+  for (const part of text.split(/,\s*/)) {
+    const m = /^(.+?) feat$/i.exec(part.trim());
+    if (!m || /fighting style/i.test(m[1])) continue;
+    const want = m[1].toLowerCase();
+    if (!featInstances(c, packs).some((f) => (f.feat?.item.name ?? f.name).toLowerCase().startsWith(want))) fails.push(part.trim());
+  }
   const prev = /strike of the giants/i.test(low) && !featInstances(c, packs).some((f) => /strike of the giants/i.test(f.name) && f.feat?.item.name !== feat.name);
   if (prev) fails.push('Strike of the Giants');
   if (feat.category.toLowerCase() === 'racial' && !racialFeatAllowed(feat, c)) fails.push(text);

@@ -36,6 +36,7 @@ import {
 import { featureChoiceSlots, featureResources, resistances } from '../rules/grants';
 import { featSpells, findSpell, isReady, spellAttacks, spellKey, subclassSpells } from '../rules/spells';
 import { ABILITY_LABEL, SKILLS } from '../rules/tables';
+import { COLLEGES, EXTRACURRICULARS, JOB_PAY_GP, belovedCount, collegeOf, relStatus, studentDice, YEAR_NAMES } from '../strixhaven';
 
 export interface TextItem {
   title: string;
@@ -82,6 +83,8 @@ export interface SheetData {
   spells: SpellRow[];
   inventory: string[];
   notes: string;
+  /* Campaña de Strixhaven (solo si está activada). */
+  strix: { label: string; value: string }[] | null;
 }
 
 const recharge = (r: string) =>
@@ -298,7 +301,35 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
       `${i.qty > 1 ? `${i.qty} × ` : ''}${i.name}${i.bonus ? ` ${fmt(i.bonus)}` : ''}${i.equipped ? ` (${t('equipado')})` : ''}${i.attuned ? ' (attuned)' : ''}${i.notes ? `: ${i.notes}` : ''}`
   );
 
+  let strix: SheetData['strix'] = null;
+  if (c.strixhaven.enabled) {
+    const s = c.strixhaven;
+    const college = collegeOf(c);
+    const info = COLLEGES.find((x) => x.name === college);
+    const status = { beloved: 'Beloved', friend: 'Friend', rival: 'Rival', neutral: 'Neutral' } as const;
+    const res = { '': '-', failed: 'Failed', passed: 'Passed', aced: 'Aced' } as const;
+    strix = [
+      { label: 'College', value: [college || '-', info?.focus].filter(Boolean).join(' · ') },
+      { label: t('Año'), value: YEAR_NAMES[s.year] },
+      ...(info ? [{ label: 'Mascot', value: info.mascot }] : []),
+      ...s.extracurriculars.map((e) => ({ label: 'Extracurricular', value: `${e} (${EXTRACURRICULARS.find((x) => x.name === e)?.skills.join(', ') ?? ''})` })),
+      ...(s.job ? [{ label: 'Job', value: `${s.job} · ${JOB_PAY_GP} gp/${t('semana')}` }] : []),
+      { label: 'Student Dice (d4)', value: studentDice(c).map((d) => `${d.source}: ${d.skills.join(', ') || '-'}`).join(' · ') || '-' },
+      ...(belovedCount(c) ? [{ label: 'Beloved Inspiration', value: `${belovedCount(c)} / Long Rest` }] : []),
+      ...s.exams.map((e) => ({ label: `${t('Examen')} (${t('Año')} ${e.year})`, value: `${e.name || '-'} · ${e.skills || '-'} · ${res[e.result]}` })),
+      ...s.relationships
+        .filter((r) => r.name.trim())
+        .map((r) => {
+          const st = relStatus(r);
+          const extra = (st === 'friend' || st === 'beloved') && r.boon ? ` · Boon: ${r.boon}` : st === 'rival' && r.bane ? ` · Bane: ${r.bane}` : '';
+          return { label: r.name, value: `${status[st]} (${r.points > 0 ? '+' : ''}${r.points})${extra}${r.notes ? ` · ${r.notes}` : ''}` };
+        }),
+      ...(s.notes.trim() ? [{ label: t('Notas'), value: s.notes.trim() }] : [])
+    ];
+  }
+
   return {
+    strix,
     name: c.name || t('Sin nombre'),
     photo: c.photo,
     lines,

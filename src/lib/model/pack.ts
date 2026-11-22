@@ -141,6 +141,7 @@ export const GrantSpellSchema = z.object({
   lists: strings.describe('Listas de clase permitidas; si hay varias, se pide elegir una'),
   attackOnly: z.boolean().default(false).describe('Solo cantrips con attack roll (Spell Sniper)'),
   ritualOnly: z.boolean().default(false).describe('Solo spells ritual (Pact of the Tome 2024)'),
+  names: strings.describe('Solo estas spells (ej. cantrips del Strixhaven Initiate)'),
   minLevel: z.number().int().min(1).max(20).default(1).describe('Nivel total desde el que se tiene (spells de raza: nivel 3 y 5)'),
   uses: z
     .enum(['none', 'long', 'short', 'will'])
@@ -185,6 +186,13 @@ export const PackSpeciesSchema = z.object({
   source: z.string().default('')
 });
 
+export const SubclassSpellsSchema = z.object({
+  level: z.number().int().min(1).max(20).describe('always: nivel de clase. expanded: nivel de spell'),
+  spells: strings,
+  mode: z.enum(['always', 'expanded']).default('always').describe('always: siempre preparadas. expanded: se suman a tu lista de clase'),
+  variant: z.string().default('').describe('Opción a elegir, ej. el terreno de Circle of the Land')
+});
+
 export const PackBackgroundSchema = z.object({
   name: z.string().min(1),
   skills: strings,
@@ -195,6 +203,7 @@ export const PackBackgroundSchema = z.object({
   feat: z.string().nullable().default(null).describe('2024: nombre del origin feat que otorga'),
   traits: z.array(TraitSchema).default([]),
   equipment: z.string().default(''),
+  spells: z.array(SubclassSpellsSchema).default([]).describe('Spells que se suman a tu lista de clase (Strixhaven)'),
   source: z.string().default('')
 });
 
@@ -272,12 +281,6 @@ export const PackSpellSchema = z.object({
   source: z.string().default('')
 });
 
-export const SubclassSpellsSchema = z.object({
-  level: z.number().int().min(1).max(20).describe('always: nivel de clase. expanded: nivel de spell'),
-  spells: strings,
-  mode: z.enum(['always', 'expanded']).default('always').describe('always: siempre preparadas. expanded: se suman a tu lista de clase'),
-  variant: z.string().default('').describe('Opción a elegir, ej. el terreno de Circle of the Land')
-});
 
 export const WeaponDataSchema = z.object({
   category: z.enum(['simple', 'martial']),

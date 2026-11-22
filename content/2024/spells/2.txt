@@ -183,3 +183,10 @@ Creatures you choose in a 10-foot-radius Sphere make a Constitution save, taking
 + Damage increases by 1d6 and one more Hit Point Die can be spent per slot level above 2.
 Zone of Truth | Enc | Action | 60 feet | V, S | 10 minutes | Brd, Clr, Pal | PHB 2024
 Creatures in a 15-foot-radius Sphere make a Charisma save; those that fail can't speak a deliberate lie while in it. You know who succeeded or failed.
+Borrowed Knowledge | Div | Action | Self | V, S, M | 1 hour | Brd, Clr, Wlk, Wiz | SACoC
+You gain proficiency in one skill of your choice for the duration. Material: a book worth 25+ GP.
+Kinetic Jaunt | Tra | Bonus Action | Self | S | C, up to 1 minute | Art, Brd, Sor, Wiz | SACoC
+Your Speed increases by 10 feet, you don't provoke Opportunity Attacks, and you can move through the space of any creature.
+Vortex Warp | Con | Action | 90 feet | V, S | Instantaneous | Art, Sor, Wiz | SACoC
+Teleport a creature you can see to an unoccupied space you can see within range; an unwilling creature makes a Constitution save to resist.
++ Range increases by 30 feet per slot level above 2.

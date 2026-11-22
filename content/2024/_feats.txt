@@ -147,3 +147,17 @@ Once per Long Rest, cast a level 1 to 4 spell without expending a slot. {res lon
 In dim light or darkness, become Invisible as a Bonus Action and resist all damage except Psychic and Radiant.
 @feat Boon of Truesight | cat epic boon | prereq Level 19+ | level 19 | asi any | source PHB 2024
 You have Truesight out to 60 feet.
+
+# Strixhaven: A Curriculum of Chaos. Un Strixhaven Initiate por college (como en D&D Beyond).
+@feat Strixhaven Initiate (Lorehold) | cat origin | spells pick 2 L0 names:Light,Sacred Flame,Thaumaturgy; pick 1 L1 list:Cleric,Wizard long | castwith pick | source SACoC
+Lorehold: learn two cantrips from Light, Sacred Flame, Thaumaturgy, and one 1st-level Cleric or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat).
+@feat Strixhaven Initiate (Prismari) | cat origin | spells pick 2 L0 names:Fire Bolt,Prestidigitation,Ray of Frost; pick 1 L1 list:Bard,Sorcerer long | castwith pick | source SACoC
+Prismari: learn two cantrips from Fire Bolt, Prestidigitation, Ray of Frost, and one 1st-level Bard or Sorcerer spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat).
+@feat Strixhaven Initiate (Quandrix) | cat origin | spells pick 2 L0 names:Druidcraft,Guidance,Mage Hand; pick 1 L1 list:Druid,Wizard long | castwith pick | source SACoC
+Quandrix: learn two cantrips from Druidcraft, Guidance, Mage Hand, and one 1st-level Druid or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat).
+@feat Strixhaven Initiate (Silverquill) | cat origin | spells pick 2 L0 names:Sacred Flame,Thaumaturgy,Vicious Mockery; pick 1 L1 list:Bard,Cleric long | castwith pick | source SACoC
+Silverquill: learn two cantrips from Sacred Flame, Thaumaturgy, Vicious Mockery, and one 1st-level Bard or Cleric spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat).
+@feat Strixhaven Initiate (Witherbloom) | cat origin | spells pick 2 L0 names:Chill Touch,Druidcraft,Spare the Dying; pick 1 L1 list:Druid,Wizard long | castwith pick | source SACoC
+Witherbloom: learn two cantrips from Chill Touch, Druidcraft, Spare the Dying, and one 1st-level Druid or Wizard spell. Cast that spell once per long rest without a slot, or with your slots. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat).
+@feat Strixhaven Mascot | cat general | prereq Level 4+, Strixhaven Initiate feat | level 4 | spells Find Familiar | source SACoC
+You can cast Find Familiar as a ritual, and your familiar can take the form of your college's mascot: Spirit Statue (Lorehold), Art Elemental (Prismari), Fractal (Quandrix), Inkling (Silverquill) or Pest (Witherbloom). When you take the Attack action, you can forgo one attack so your mascot makes one attack with its reaction. As an action, you can teleport to swap places with your mascot if it is within 60 feet.

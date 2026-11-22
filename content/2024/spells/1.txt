@@ -178,3 +178,5 @@ Ranged spell attack for 2d12 Lightning damage. On each later turn you can use a 
 Wrathful Smite | Nec | Bonus Action | Self | V | 1 minute | Pal | PHB 2024
 Cast right after hitting with a melee weapon or Unarmed Strike: extra 1d6 Necrotic damage, and the target makes a Wisdom save or is Frightened for the duration, repeating the save at the end of each of its turns.
 + Damage increases by 1d6 per slot level above 1.
+Silvery Barbs | Enc | Reaction | 60 feet | V | Instantaneous | Brd, Sor, Wiz | SACoC
+When a creature you can see succeeds on an attack roll, ability check or saving throw, it rerolls and uses the lower roll. Then another creature you choose gets Advantage on its next attack roll, ability check or saving throw within 1 minute.

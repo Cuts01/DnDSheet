@@ -1,7 +1,7 @@
 import { uid, type Ability, type Character, type ClassEntry, type SpellEntry } from '../model/character';
 import type { Pack, PackFeat, PackSpell } from '../model/pack';
 import { abilityMod, pactSlots, pb, slotMax, spellcasting, type CastingLine } from './derive';
-import { featInstances, findRef, findSubclass, subclassVariant, type Ref } from './features';
+import { featInstances, findBackground, findRef, findSubclass, subclassVariant, type Ref } from './features';
 import { t as tr } from '../i18n.svelte';
 
 /* Mecánicas genéricas de spellcasting: cuántos cantrips y spells corresponden por nivel de clase. */
@@ -204,6 +204,16 @@ export interface SubclassSpellInfo {
 export function subclassSpells(c: Character, packs: Pack[]): SubclassSpellInfo {
   const index = spellIndex(packs, c.ruleset);
   const out: SubclassSpellInfo = { always: [], expanded: new Map(), variants: [] };
+  // Background con spells propias (Strixhaven): se suman a la lista de cada clase con spellcasting.
+  const bgSpells = findBackground(packs, c.background.ref)?.item.spells ?? [];
+  if (bgSpells.length)
+    for (const k of c.classes) {
+      if (k.caster === 'none') continue;
+      const maxLvl = maxSpellLevel(c, k);
+      const set = out.expanded.get(k.id) ?? new Set<string>();
+      for (const g of bgSpells) if (g.level <= maxLvl) g.spells.forEach((n) => set.add(spellKey(n)));
+      out.expanded.set(k.id, set);
+    }
   for (const k of c.classes) {
     const found = findSubclass(packs, k.subclassId);
     if (!found || !found.sub.spells.length) continue;
@@ -347,8 +357,8 @@ export function featSpells(c: Character, packs: Pack[]): { slots: FeatSpellSlot[
     if (f?.item.spells.length) sources.push({ key: `inv:${inv.id}`, ability: null, feat: f.item });
   }
   const PACT_2014: Record<string, PackFeat['spells']> = {
-    chain: [{ spell: 'Find Familiar', count: 1, level: 1, schools: [], lists: [], attackOnly: false, ritualOnly: false, uses: 'none', minLevel: 1 }],
-    tome: [{ spell: '', count: 3, level: 0, schools: [], lists: [], attackOnly: false, ritualOnly: false, uses: 'none', minLevel: 1 }]
+    chain: [{ spell: 'Find Familiar', count: 1, level: 1, schools: [], lists: [], attackOnly: false, ritualOnly: false, names: [], uses: 'none', minLevel: 1 }],
+    tome: [{ spell: '', count: 3, level: 0, schools: [], lists: [], attackOnly: false, ritualOnly: false, names: [], uses: 'none', minLevel: 1 }]
   };
   // Rasgos de raza con spells (Light Bearer, Infernal Legacy, Drow Magic...).
   const sp = findRef(packs, c.species.ref, (p) => p.species);
@@ -393,6 +403,7 @@ export function featSpells(c: Character, packs: Pack[]): { slots: FeatSpellSlot[
         .filter((r) => !g.lists.length || (allowed.length > 0 && allowed.some((l) => inClassList(r.item, l))))
         .filter((r) => !g.attackOnly || r.item.attack === 'ranged' || r.item.attack === 'melee')
         .filter((r) => !g.ritualOnly || r.item.ritual)
+        .filter((r) => !g.names?.length || g.names.some((n) => spellKey(n) === spellKey(r.item.name)))
         .sort((a, b) => a.item.name.localeCompare(b.item.name));
       const chosen = (state?.picks[i] ?? []).slice(0, g.count);
       picks.push({ index: i, count: g.count, level: g.level, schools: g.schools, lists: g.lists, attackOnly: g.attackOnly, ritualOnly: g.ritualOnly, uses: g.uses, chosen, options });

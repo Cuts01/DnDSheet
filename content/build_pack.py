@@ -300,6 +300,12 @@ def background_entry(name, parts, f):
         e["feat"] = f["feat"]
     if "equipment" in f:
         e["equipment"] = f["equipment"]
+    # expanded 1: A, B; 2: C, D  -> spells que se suman a la lista de clase (Strixhaven)
+    if "expanded" in f:
+        e["spells"] = []
+        for chunk in f["expanded"].split(";"):
+            lvl, _, names = chunk.partition(":")
+            e["spells"].append({"level": int(lvl.strip()), "spells": csv(names), "mode": "expanded"})
     if "source" in f:
         e["source"] = f["source"]
     return e
@@ -353,6 +359,12 @@ def _feat_spell(item: str) -> dict:
         item = item[: m.start()]
     if not item.startswith("pick "):
         return {"spell": item.strip(), "uses": uses}
+    # names:A,B C,D al final: solo esas spells (Strixhaven Initiate)
+    names = []
+    m = re.search(r"\s+names:(.+)$", item)
+    if m:
+        names = csv(m.group(1))
+        item = item[: m.start()]
     bits = item.split()
     out = {"count": int(bits[1]), "level": int(bits[2][1:]), "uses": uses, "schools": [], "lists": [], "attackOnly": False, "ritualOnly": False}
     for b in bits[3:]:
@@ -364,6 +376,8 @@ def _feat_spell(item: str) -> dict:
             out["lists"] = [x for x in b[5:].split(",") if x]
         else:
             out["schools"] = [x.strip().title() for x in b.split(",") if x.strip()]
+    if names:
+        out["names"] = names
     return out
 
 

@@ -95,6 +95,9 @@ export function longRest(c: Character): Character {
   // Los efectos condicionales (Bladesong, Longstrider...) no sobreviven a un Long Rest.
   for (const e of n.effects) if (e.conditional) e.active = false;
   n.toggles = {};
+  // Strixhaven: los Student Dice y la Beloved Inspiration vuelven con el Long Rest.
+  n.strixhaven.diceUsed = [];
+  n.strixhaven.belovedUsed = 0;
 
   if (n.ruleset === '2024') {
     n.hitDiceUsed = {};

@@ -59,3 +59,8 @@
 @species Tiefling (Infernal) | size Medium or Small | speed 30 | darkvision 60 | lang Common | source PHB 2024
 - Infernal Legacy | Resistance to Fire and the Fire Bolt cantrip; Hellish Rebuke at level 3 and Darkness at level 5, once per Long Rest each. {resist fire} {spells Fire Bolt; Hellish Rebuke long @3; Darkness long @5} {castwith pick}
 - Otherworldly Presence | You know Thaumaturgy. {spells Thaumaturgy} {castwith pick}
+
+# Strixhaven (SACoC), adaptado a 2024: sin aumentos de abilities (vienen del background).
+@species Owlin | size Medium or Small | speed 30 | darkvision 120 | skills Stealth | lang Common | source SACoC (adaptado a 2024)
+- Flight | Flying speed equal to your walking speed, but not while wearing medium or heavy armor.
+- Silent Feathers | Proficiency in Stealth.

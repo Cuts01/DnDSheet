@@ -604,6 +604,10 @@ function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {
     flow.heading(t('Recursos'));
     for (const r of d.resources) flow.keyValue(r.name, r.detail);
   }
+  if (d.strix) {
+    flow.heading('Strixhaven');
+    for (const r of d.strix) flow.keyValue(r.label, r.value);
+  }
   flow.heading(t('Otros datos'));
   for (const ps of d.passives.slice(1)) flow.keyValue(ps.label, String(ps.value));
   if (d.resistances) flow.keyValue('Resistances', d.resistances);

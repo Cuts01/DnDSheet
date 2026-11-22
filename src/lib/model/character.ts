@@ -1,5 +1,41 @@
 import { z } from 'zod';
 
+/* ---------- Campaña de Strixhaven ---------- */
+export const StrixRelationshipSchema = z.object({
+  id: z.string(),
+  name: z.string().max(80).default(''),
+  points: z.number().int().min(-20).max(20).default(0),
+  beloved: z.boolean().default(false),
+  boon: z.string().max(300).default('').describe('Bond Boon mientras es Friend'),
+  bane: z.string().max(300).default('').describe('Bond Bane mientras es Rival'),
+  notes: z.string().max(500).default('')
+});
+export type StrixRelationship = z.infer<typeof StrixRelationshipSchema>;
+
+export const StrixExamSchema = z.object({
+  id: z.string(),
+  year: z.number().int().min(1).max(4).default(1),
+  name: z.string().max(80).default(''),
+  skills: z.string().max(80).default('').describe('Las dos skills del examen'),
+  result: z.enum(['', 'failed', 'passed', 'aced']).default('')
+});
+export type StrixExam = z.infer<typeof StrixExamSchema>;
+
+export const StrixhavenSchema = z.object({
+  enabled: z.boolean().default(false),
+  college: z.string().default('').describe('Vacío: se toma del background <College> Student'),
+  year: z.number().int().min(1).max(4).default(1),
+  extracurriculars: z.array(z.string()).max(2).default([]),
+  job: z.string().default(''),
+  exams: z.array(StrixExamSchema).default([]),
+  relationships: z.array(StrixRelationshipSchema).default([]),
+  diceUsed: z.array(z.string()).default([]).describe('Student dice usados desde el último Long Rest'),
+  belovedUsed: z.number().int().min(0).default(0),
+  notes: z.string().max(4000).default('')
+});
+export type Strixhaven = z.infer<typeof StrixhavenSchema>;
+
+
 /*
  * Modelo del personaje.
  * Principio: solo se guardan inputs (lo que eliges) y consumo (lo que gastaste).
@@ -231,6 +267,8 @@ const CharacterObject = z.object({
   age: z.string().max(40).default(''),
   height: z.string().max(40).default(''),
   weight: z.string().max(40).default(''),
+  /* Datos de campaña de Strixhaven (opcional). */
+  strixhaven: StrixhavenSchema.default(() => StrixhavenSchema.parse({})),
   bonuses: z
     .object({ species: z.array(BonusSchema), background: z.array(BonusSchema), other: z.array(BonusSchema) })
     .default({ species: [], background: [], other: [] }),
@@ -324,6 +362,7 @@ function migrate(raw: unknown): unknown {
   return r;
 }
 
+
 export const CharacterSchema = z.preprocess(migrate, CharacterObject);
 export type Character = z.infer<typeof CharacterObject>;
 
@@ -396,6 +435,7 @@ export function blankCharacter(): Character {
     age: '',
     height: '',
     weight: '',
+    strixhaven: StrixhavenSchema.parse({}),
     bonuses: { species: [], background: [], other: [] },
     advancements: {},
     feats: [],

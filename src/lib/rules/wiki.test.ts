@@ -2,8 +2,10 @@ import { describe, expect, it } from 'vitest';
 import { CLASS_PRESETS, blankCharacter, classFromPreset, type Character } from '../model/character';
 import { parsePack, type Pack } from '../model/pack';
 import { asiSlots, passive } from './derive';
-import { allGrantedEffects, characterFeatures } from './features';
-import { resistances } from './grants';
+import { allGrantedEffects, applyBackground, characterFeatures, featByName, findRef } from './features';
+import { featPrereqFails, resistances } from './grants';
+import { longRest } from './rests';
+import { belovedCount, collegeOf, relStatus, studentDice } from '../strixhaven';
 import { spellAttacks, spellEntryFrom, spellList, subclassSpells } from './spells';
 
 /* Pruebas con los packs reales de public/packs (se saltan si no están). */
@@ -25,6 +27,36 @@ describe.skipIf(!p14 || !p24)('packs de la wiki', () => {
     const slot = asiSlots(c)[0];
     c.advancements[slot.key] = { kind: 'feat', asi: [], featRef: 'wiki-2014:observant', featName: 'Observant', featAbility: 'wis' } as Character['advancements'][string];
     expect(passive(c, 'perception', allGrantedEffects(c, [p14!]))).toBe(passive(c, 'perception') + 5);
+  });
+
+  it('Strixhaven: background con su Initiate, college spells en la lista y datos de campaña', () => {
+    const w = cls('Wizard', 3);
+    let c: Character = { ...blankCharacter(), ruleset: '2024', classes: [w] };
+    const bg = findRef(p24 ? [p24] : [], 'wiki-2024:quandrix-student', (p) => p.backgrounds);
+    expect(bg?.item.name).toBe('Quandrix Student');
+    c = applyBackground(c, bg, [p24!]);
+    expect(c.feats.map((f) => f.name)).toContain('Strixhaven Initiate (Quandrix)');
+    const exp = [...(subclassSpells(c, [p24!]).expanded.get(w.id) ?? [])];
+    expect(exp).toContain('vortexwarp');
+    expect(exp).not.toContain('haste'); // 3rd level: aún no
+    expect(collegeOf(c)).toBe('Quandrix');
+    // Strixhaven Mascot pide nivel 4 y el Initiate.
+    const mascot = featByName([p24!], 'Strixhaven Mascot', '2024')!.item;
+    expect(featPrereqFails({ ...c, classes: [cls('Wizard', 4)] }, mascot, [p24!])).toEqual([]);
+    expect(featPrereqFails({ ...blankCharacter(), ruleset: '2024', classes: [cls('Fighter', 4)] }, mascot, [p24!])).toContain('Strixhaven Initiate feat');
+    // Student dice, relaciones y Long Rest.
+    c.strixhaven = { ...c.strixhaven, enabled: true, year: 1, extracurriculars: ['Dragonchess Club'], exams: [{ id: 'e1', year: 1, name: 'Magical Physiologies', skills: 'Arcana, Medicine', result: 'aced' }, { id: 'e0', year: 2, name: 'Old', skills: 'History', result: 'aced' }] };
+    const dice = studentDice(c);
+    expect(dice.map((d) => d.source)).toEqual(['Dragonchess Club', 'Magical Physiologies', 'Magical Physiologies']);
+    expect(dice[0].skills).toEqual(['Deception', 'Investigation']);
+    c.strixhaven.relationships = [{ id: 'r', name: 'Rubina', points: 2, beloved: true, boon: '', bane: '', notes: '' }, { id: 'q', name: 'Quentin', points: -2, beloved: false, boon: '', bane: '', notes: '' }];
+    expect(c.strixhaven.relationships.map(relStatus)).toEqual(['beloved', 'rival']);
+    expect(belovedCount(c)).toBe(1);
+    c.strixhaven.diceUsed = [dice[0].id];
+    c.strixhaven.belovedUsed = 1;
+    const rested = longRest(c);
+    expect(rested.strixhaven.diceUsed).toEqual([]);
+    expect(rested.strixhaven.belovedUsed).toBe(0);
   });
 
   it('Genie: el tipo de genie cambia los spells extra, Genie\'s Wrath y la resistance de Elemental Gift', () => {
