@@ -163,7 +163,14 @@
   function remove(id: string) {
     const i = store.c.spells.findIndex((s) => s.id === id);
     if (i >= 0) store.c.spells.splice(i, 1);
+    if (open === id) open = null;
+    if (casting_ === id) casting_ = null;
   }
+  function askRemove(id: string, name: string) {
+    if (confirm(t('¿Quitar {name} de tus spells?', { name }))) remove(id);
+  }
+  // En Agregar, el ✓ de una spell ya elegida la quita (las que dan features o feats no se quitan desde aquí).
+  const ownByRef = (ref: string) => store.c.spells.find((x) => x.ref === ref);
 
   /* ---------- Agregar ---------- */
   let addClass = $state<string>(''); // classId o '__all'
@@ -435,6 +442,11 @@
               {#if s.level > 0 || d?.concentration || free}
                 <button class="cast" onclick={() => (s.level === 0 && !free ? cast(s, null) : (casting_ = casting_ === s.id ? null : s.id))}>{t('Lanzar')}</button>
               {/if}
+              {#if !isVirtual(s)}
+                <button class="rm ghost" aria-label={`${t('Quitar')} ${s.name}`} title={t('Quitar')} onclick={() => askRemove(s.id, s.name)}>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                </button>
+              {/if}
             </div>
 
             {#if casting_ === s.id}
@@ -545,9 +557,13 @@
                     : ''}</span
                 >
               </button>
-              <button class="add" disabled={added || capped} aria-label={`${t('Agregar')} ${s.name}`} title={capped ? t('Máximo alcanzado') : undefined} onclick={() => add(r)}
-                >{added ? '✓' : capped ? '–' : '+'}</button
-              >
+              {#if added && ownByRef(r.value)}
+                <button class="add on" aria-label={`${t('Quitar')} ${s.name}`} title={t('Tocar para quitar')} onclick={() => remove(ownByRef(r.value)!.id)}>✓</button>
+              {:else}
+                <button class="add" disabled={added || capped} aria-label={`${t('Agregar')} ${s.name}`} title={capped ? t('Máximo alcanzado') : added ? t('La da un feature o feat') : undefined} onclick={() => add(r)}
+                  >{added ? '★' : capped ? '–' : '+'}</button
+                >
+              {/if}
             </div>
             {#if open === r.value}
               <div class="body small">
@@ -578,6 +594,26 @@
 </section>
 
 <style>
+  .rm {
+    width: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    border: none;
+    color: var(--muted);
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .rm:hover {
+    color: var(--bad);
+    background: var(--surface-2);
+  }
+  .add.on {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
   .spells {
     display: flex;
     flex-direction: column;

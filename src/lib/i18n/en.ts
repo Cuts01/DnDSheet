@@ -401,6 +401,9 @@ const en: Record<string, string> = {
   "Bloqueado": "Locked",
   "Bloquear": "Lock",
   "Bloqueado: los scores base no se pueden cambiar. Toca el candado para editarlos.": "Locked: base scores cannot be changed. Tap the lock to edit them.",
+  "¿Quitar {name} de tus spells?": "Remove {name} from your spells?",
+  "Tocar para quitar": "Tap to remove",
+  "La da un feature o feat": "Granted by a feature or feat",
 };
 
 export default en;
