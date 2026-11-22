@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-11-21 · PDF y foto') },
+  define: { __APP_VERSION__: JSON.stringify('2026-11-21 · PDF con plantilla') },
   plugins: [
     svelte(),
     VitePWA({
@@ -31,7 +31,7 @@ export default defineConfig({
       },
       workbox: {
         // Solo se cachea el codigo de la app. El contenido (personaje, compendium) vive en IndexedDB.
-        globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,jpg,webmanifest}'],
         navigateFallback: 'index.html',
         cleanupOutdatedCaches: true
       }

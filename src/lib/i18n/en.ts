@@ -443,6 +443,11 @@ const en: Record<string, string> = {
   "versátil": "versatile",
   "Equipo inicial": "Starting equipment",
   "equipado": "equipped",
+  "Otros datos": "Other details",
+  "sin equipar": "not equipped",
+  "Más ataques en la página 2": "More attacks on page 2",
+  "... el resto en la página de equipo": "... the rest is on the equipment page",
+  "... sigue en la página 2": "... continued on page 2",
 };
 
 export default en;
