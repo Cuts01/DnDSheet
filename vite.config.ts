@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-11-22 · inventario en negritas') },
+  define: { __APP_VERSION__: JSON.stringify('2026-11-22 · arreglo packs wiki') },
   plugins: [
     svelte(),
     VitePWA({

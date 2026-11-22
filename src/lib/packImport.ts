@@ -2,9 +2,16 @@ import { compendium } from './compendium.svelte';
 import { parsePack, type Pack } from './model/pack';
 import { t as tr } from './i18n.svelte';
 
-/* Los packs de la wiki generados antes de esta fecha no traen spells, passives, spells de subclass ni spells de feats. */
-export const MIN_WIKI_BUILT = '2026-11-22T15:14:06Z';
-export const isStale = (p: Pack) => p.pack.id.startsWith('wiki-') && (p.pack.built || '') < MIN_WIKI_BUILT;
+/* Fecha mínima de cada pack de la wiki: uno más viejo no trae datos que la app usa.
+   Va por pack, porque cada ruleset se regenera por separado (al regenerar uno, sube solo su fecha). */
+export const MIN_WIKI_BUILT: Record<string, string> = {
+  'wiki-2014': '2026-11-22T06:59:02Z',
+  'wiki-2024': '2026-11-22T15:14:06Z'
+};
+export const isStale = (p: Pack) => {
+  const min = MIN_WIKI_BUILT[p.pack.id];
+  return !!min && (p.pack.built || '') < min;
+};
 export const stalePacks = () => compendium.packs.filter(isStale);
 
 export interface ImportResult {
