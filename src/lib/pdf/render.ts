@@ -293,6 +293,43 @@ class Flow {
     }
     this.space(1.5);
   }
+  /* Tabla con encabezado gris; si una fila no entra pasa a la siguiente columna y repite el encabezado. */
+  table(head: string[], rows: string[][], fracs: number[], boldCol: boolean[] = [], size = 7.8) {
+    const lh = size * 1.3;
+    const pad = 3;
+    const widths = () => fracs.map((f) => f * this.region.w);
+    const cells = (row: string[], bold: (i: number) => boolean) =>
+      row.map((v, i) => wrap(this.p.clean(v), bold(i) ? this.p.f.bold : this.p.f.reg, size, widths()[i] - 2 * pad));
+    const drawRow = (lines: string[][], bold: (i: number) => boolean, fill?: RGB) => {
+      const h = Math.max(...lines.map((l) => l.length)) * lh + 2 * pad;
+      const r = this.region;
+      const ws = widths();
+      if (fill) this.p.box(r.page, r.x, r.y, r.w, h, { fill, border: fill, r: 0, bw: 0 });
+      let x = r.x;
+      lines.forEach((ls, i) => {
+        ls.forEach((l, k) => this.p.text(r.page, l, x + pad, r.y + pad + k * lh, size, bold(i) ? this.p.f.bold : this.p.f.reg));
+        x += ws[i];
+      });
+      this.p.hline(r.page, r.x, r.y + h, r.w, LINE, 0.5);
+      this.space(h);
+    };
+    const header = () => drawRow(cells(head, () => true), () => true, FILL);
+    const headH = Math.max(...cells(head, () => true).map((l) => l.length)) * lh + 2 * pad;
+    const isBold = (i: number) => !!boldCol[i];
+    const first = cells(rows[0] ?? [], isBold);
+    this.ensure(headH + Math.max(1, ...first.map((l) => l.length)) * lh + 2 * pad);
+    header();
+    for (const row of rows) {
+      const ls = cells(row, isBold);
+      const h = Math.max(...ls.map((l) => l.length)) * lh + 2 * pad;
+      if (this.region.y + h > this.region.bottom) {
+        this.next();
+        header();
+      }
+      drawRow(ls, isBold);
+    }
+    this.space(4);
+  }
   keyValue(k: string, v: string) {
     const size = 8.6;
     const kk = `${this.p.clean(k)}: `;
@@ -683,6 +720,16 @@ function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {
   if (d.strix) {
     flow.heading('Strixhaven');
     for (const r of d.strix) flow.keyValue(r.label, r.value);
+    if (d.strixRel.length) {
+      flow.sub('Relationships', 9.4);
+      flow.table(
+        [t('Nombre'), t('Estado'), 'Boon / Bane', t('Notas')],
+        d.strixRel.map((r) => [r.name, r.status, r.bond, r.notes]),
+        [0.22, 0.17, 0.27, 0.34],
+        [true, false, false, false]
+      );
+    }
+    if (d.strixNotes) flow.keyValue(t('Notas'), d.strixNotes);
   }
   flow.heading(t('Otros datos'));
   for (const ps of d.passives.slice(1)) flow.keyValue(ps.label, String(ps.value));

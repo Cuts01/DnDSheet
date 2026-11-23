@@ -539,6 +539,7 @@ const en: Record<string, string> = {
   "El daño va a la forma y no se puede curar. Si llega a 0, el sobrante pasa a tus HP.": "Damage goes to the form and it can't be healed. If it drops to 0, the leftover carries over to your HP.",
   "Sus HP son tus temp HP y no se pueden curar. Si se acaban, vuelves a tu forma.": "Its HP are your temp HP and can't be healed. If they run out, you revert.",
   "Ya tenías {n} temp HP, te quedas con esos (no se suman).": "You already had {n} temp HP, you keep those (they don't stack).",
+  "Estado": "Status",
 };
 
 export default en;

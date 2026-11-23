@@ -87,6 +87,9 @@ export interface SheetData {
   notes: string;
   /* Campaña de Strixhaven (solo si está activada). */
   strix: { label: string; value: string }[] | null;
+  /* Relationships de Strixhaven, como tabla. */
+  strixRel: { name: string; status: string; bond: string; notes: string }[];
+  strixNotes: string;
 }
 
 const recharge = (r: string) =>
@@ -312,6 +315,8 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
   });
 
   let strix: SheetData['strix'] = null;
+  let strixRel: SheetData['strixRel'] = [];
+  let strixNotes = '';
   if (c.strixhaven.enabled) {
     const s = c.strixhaven;
     const college = collegeOf(c);
@@ -327,19 +332,21 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
       { label: 'Student Dice (d4)', value: studentDice(c).map((d) => `${d.source}: ${d.skills.join(', ') || '-'}`).join(' · ') || '-' },
       ...(belovedCount(c) ? [{ label: 'Beloved Inspiration', value: `${belovedCount(c)} / Long Rest` }] : []),
       ...s.exams.map((e) => ({ label: `${t('Examen')} (${t('Año')} ${e.year})`, value: `${e.name || '-'} · ${e.skills || '-'} · ${res[e.result]}` })),
-      ...s.relationships
-        .filter((r) => r.name.trim())
-        .map((r) => {
-          const st = relStatus(r);
-          const extra = (st === 'friend' || st === 'beloved') && r.boon ? ` · Boon: ${r.boon}` : st === 'rival' && r.bane ? ` · Bane: ${r.bane}` : '';
-          return { label: r.name, value: `${status[st]} (${r.points > 0 ? '+' : ''}${r.points})${extra}${r.notes ? ` · ${r.notes}` : ''}` };
-        }),
-      ...(s.notes.trim() ? [{ label: t('Notas'), value: s.notes.trim() }] : [])
     ];
+    strixRel = s.relationships
+      .filter((r) => r.name.trim())
+      .map((r) => {
+        const st = relStatus(r);
+        const bond = (st === 'friend' || st === 'beloved') && r.boon ? `Boon: ${r.boon}` : st === 'rival' && r.bane ? `Bane: ${r.bane}` : '-';
+        return { name: r.name.trim(), status: `${status[st]} (${r.points > 0 ? '+' : ''}${r.points})`, bond, notes: r.notes.trim() || '-' };
+      });
+    strixNotes = s.notes.trim();
   }
 
   return {
     strix,
+    strixRel,
+    strixNotes,
     name: c.name || t('Sin nombre'),
     photo: c.photo,
     lines,
