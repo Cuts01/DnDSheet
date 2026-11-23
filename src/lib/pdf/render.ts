@@ -723,10 +723,11 @@ function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {
     if (d.strixRel.length) {
       flow.sub('Relationships', 9.4);
       flow.table(
-        [t('Nombre'), t('Estado'), 'Boon / Bane', t('Notas')],
-        d.strixRel.map((r) => [r.name, r.status, r.bond, r.notes]),
-        [0.22, 0.17, 0.27, 0.34],
-        [true, false, false, false]
+        [t('Nombre'), t('Estado'), t('Notas')],
+        // Sin columna Boon / Bane: si hay uno, va al inicio de las notas.
+        d.strixRel.map((r) => [r.name, r.status, r.bond !== '-' ? (r.notes !== '-' ? `${r.bond}. ${r.notes}` : r.bond) : r.notes]),
+        [0.26, 0.19, 0.55],
+        [true, false, false]
       );
     }
     if (d.strixNotes) flow.keyValue(t('Notas'), d.strixNotes);
