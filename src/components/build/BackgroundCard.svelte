@@ -2,8 +2,8 @@
   import LockButton from '../LockButton.svelte';
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
-  import type { Ability, Character } from '../../lib/model/character';
-  import { applyBackground, backgroundList, findBackground } from '../../lib/rules/features';
+  import { ABILITIES, uid, type Ability, type Character } from '../../lib/model/character';
+  import { applyBackground, backgroundList, findBackground, isLegacy, topAbilities } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import RefSelect from './RefSelect.svelte';
   import { applyStartingGear, parseEquipment, undoStartingGear } from '../../lib/rules/startingGear';
@@ -12,7 +12,12 @@
   let { c = $bindable() }: { c: Character } = $props();
 
   const options = $derived(backgroundList(compendium.packs, c.ruleset));
-  const bg = $derived(findBackground(compendium.packs, c.background.ref)?.item ?? null);
+  const bgRef = $derived(findBackground(compendium.packs, c.background.ref));
+  const bg = $derived(bgRef?.item ?? null);
+  /* Background de un libro 2014 en un PJ 2024: aumentos a elección entre las seis y un Origin feat. */
+  const legacy = $derived(isLegacy(c, bgRef));
+  const asiFrom = $derived<Ability[]>(legacy ? [...ABILITIES] : (bg?.asi ?? []));
+  const missingFeat = $derived(legacy && !c.feats.some((f) => f.source === 'background'));
   const split = $derived(c.bonuses.background.length === 3 ? 'three' : 'two');
   let showTraits = $state(false);
 
@@ -23,18 +28,24 @@
   // 2024: +2/+1 entre dos de las tres abilities del background, o +1 a las tres.
   function setSplit(mode: 'two' | 'three') {
     if (!bg) return;
+    const pool = legacy ? topAbilities(c, 3) : bg.asi;
     c.bonuses.background =
       mode === 'three'
-        ? bg.asi.map((a) => ({ ability: a, amount: 1 }))
+        ? pool.slice(0, 3).map((a) => ({ ability: a, amount: 1 }))
         : [
-            { ability: bg.asi[0], amount: 2 },
-            { ability: bg.asi[1], amount: 1 }
+            { ability: pool[0], amount: 2 },
+            { ability: pool[1], amount: 1 }
           ];
   }
+  // Cambia una ability; si otra fila ya la tenía, intercambian (nunca dos aumentos a la misma).
   function setPlus(i: number, a: Ability) {
-    const other = c.bonuses.background[1 - i];
-    if (other && other.ability === a) other.ability = c.bonuses.background[i].ability;
-    c.bonuses.background[i].ability = a;
+    const list = c.bonuses.background;
+    const j = list.findIndex((b, k) => k !== i && b.ability === a);
+    if (j >= 0) list[j].ability = list[i].ability;
+    list[i].ability = a;
+  }
+  function addLegacyFeat() {
+    c.feats = [...c.feats, { id: uid(), ref: null, name: '', source: 'background', ability: null }];
   }
   // Incremento que no cuenta porque la ability ya llegó a 20.
   const overCap = (a: Ability | null | undefined) => !!a && scoreBreakdown(c, a).capped > 0;
@@ -60,20 +71,27 @@
       {#if bg.feat}<span>Origin feat <b>{bg.feat}</b></span>{/if}
     </div>
 
-    {#if bg.asi.length >= 3}
+    {#if legacy}
+      <p class="small accent">{t('Background de un libro 2014 en un PJ 2024: elige +2 / +1 o +1 / +1 / +1 en las características que quieras y un Origin feat en Clases y mejoras (PHB 2024).')}</p>
+      {#if missingFeat}
+        <button class="small" onclick={addLegacyFeat}>{t('Agregar el Origin feat del background')}</button>
+      {/if}
+    {/if}
+
+    {#if asiFrom.length >= 3}
       <div class="stack tight">
-        <span class="small muted">{t('Incrementos')}: {bg.asi.map((a) => ABILITY_LABEL[a]).join(', ')}</span>
+        <span class="small muted">{t('Incrementos')}: {legacy ? t('cualquiera') : asiFrom.map((a) => ABILITY_LABEL[a]).join(', ')}</span>
         <div class="seg">
-          <button class:on={split === 'two'} onclick={() => setSplit('two')}>+2 / +1</button>
+          <button class:on={c.bonuses.background.length > 0 && split === 'two'} onclick={() => setSplit('two')}>+2 / +1</button>
           <button class:on={split === 'three'} onclick={() => setSplit('three')}>+1 / +1 / +1</button>
         </div>
-        {#if split === 'two'}
-          <div class="row">
+        {#if split === 'two' || legacy}
+          <div class="row asi-row">
             {#each c.bonuses.background as b, i (i)}
               <div class="bonus">
                 <b class="num">+{b.amount}</b>
                 <select value={b.ability} onchange={(e) => setPlus(i, e.currentTarget.value as Ability)} aria-label="Ability">
-                  {#each bg.asi as a (a)}<option value={a} disabled={a !== b.ability && score(c, a) >= 20}>{ABILITY_LABEL[a]}{score(c, a) >= 20 ? ' (20)' : ''}</option>{/each}
+                  {#each asiFrom as a (a)}<option value={a} disabled={a !== b.ability && score(c, a) >= 20}>{ABILITY_LABEL[a]}{score(c, a) >= 20 ? ' (20)' : ''}</option>{/each}
                 </select>
             {#if overCap(b.ability)}<span class="capwarn">{t('máx. 20')}</span>{/if}
               </div>
@@ -130,6 +148,9 @@
 </div>
 
 <style>
+  .asi-row {
+    flex-wrap: wrap;
+  }
   .gear {
     display: flex;
     flex-direction: column;

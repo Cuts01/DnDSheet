@@ -540,6 +540,11 @@ const en: Record<string, string> = {
   "Sus HP son tus temp HP y no se pueden curar. Si se acaban, vuelves a tu forma.": "Its HP are your temp HP and can't be healed. If they run out, you revert.",
   "Ya tenías {n} temp HP, te quedas con esos (no se suman).": "You already had {n} temp HP, you keep those (they don't stack).",
   "Estado": "Status",
+  "Background de un libro 2014 en un PJ 2024: elige +2 / +1 o +1 / +1 / +1 en las características que quieras y un Origin feat en Clases y mejoras (PHB 2024).": "2014 background on a 2024 character: choose +2 / +1 or +1 / +1 / +1 in any abilities and an Origin feat in Classes and advancements (2024 PHB).",
+  "Agregar el Origin feat del background": "Add the background's Origin feat",
+  "cualquiera": "any",
+  "Species de un libro 2014 en un PJ 2024: sus aumentos de características no aplican; vienen del background (PHB 2024).": "2014 species on a 2024 character: its ability score increases don't apply; they come from the background (2024 PHB).",
+  "Quitar los aumentos de la species": "Remove the species' increases",
 };
 
 export default en;

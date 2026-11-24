@@ -5,7 +5,7 @@ import { t as tr } from './i18n.svelte';
 /* Fecha mínima de cada pack de la wiki: uno más viejo no trae datos que la app usa.
    Va por pack, porque cada ruleset se regenera por separado (al regenerar uno, sube solo su fecha). */
 export const MIN_WIKI_BUILT: Record<string, string> = {
-  'wiki-2014': '2026-11-22T06:59:02Z',
+  'wiki-2014': '2026-11-24T02:48:55Z',
   'wiki-2024': '2026-11-22T15:14:06Z'
 };
 export const isStale = (p: Pack) => {

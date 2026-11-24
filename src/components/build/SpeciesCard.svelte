@@ -3,7 +3,7 @@
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Ability, type Character } from '../../lib/model/character';
-  import { applySpecies, findSpecies, speciesList, sizeOptions } from '../../lib/rules/features';
+  import { applySpecies, findSpecies, isLegacy, speciesList, sizeOptions } from '../../lib/rules/features';
   import { ABILITY_LABEL } from '../../lib/rules/tables';
   import NumField from '../NumField.svelte';
   import { score, scoreBreakdown } from '../../lib/rules/derive';
@@ -14,6 +14,8 @@
   const options = $derived(speciesList(compendium.packs, c.ruleset));
   const current = $derived(findSpecies(compendium.packs, c.species.ref));
   const sp = $derived(current?.item ?? null);
+  /* Species de un libro 2014 en un PJ 2024: sus aumentos no cuentan (vienen del background). */
+  const legacy = $derived(isLegacy(c, current));
   const fixedCount = $derived(sp ? Object.keys(sp.asi.fixed).length : 0);
   let custom = $state(false);
   let showTraits = $state(false);
@@ -63,6 +65,12 @@
       {#if !opts.includes(c.species.size)}<p class="small warn">{t('Esta raza puede ser {list}: elige uno.', { list: opts.join(' o ') })}</p>{/if}
     {/if}
 
+    {#if legacy}
+      <p class="small accent">{t('Species de un libro 2014 en un PJ 2024: sus aumentos de características no aplican; vienen del background (PHB 2024).')}</p>
+      {#if c.bonuses.species.length}
+        <button class="small" onclick={() => (c.bonuses.species = [])}>{t('Quitar los aumentos de la species')}</button>
+      {/if}
+    {/if}
     {#if c.bonuses.species.length}
       <div class="bonuses">
         <span class="small muted">{t('Incrementos')}</span>

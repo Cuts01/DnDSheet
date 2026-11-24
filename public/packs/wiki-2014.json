@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-11-22T06:59:02Z"
+    "built": "2026-11-24T02:48:55Z"
   },
   "classes": [
     {
@@ -15090,6 +15090,1219 @@
           "text": "College of essence studies: life, death and the swamp. You gain the Strixhaven Initiate feat (Witherbloom). If you have Spellcasting or Pact Magic, the Witherbloom spells are added to your class spell list (every list, if multiclassed): 1st: Cure Wounds, Inflict Wounds; 2nd: Lesser Restoration, Wither and Bloom; 3rd: Revivify, Vampiric Touch; 4th: Blight, Death Ward; 5th: Antilife Shell, Greater Restoration."
         }
       ]
+    },
+    {
+      "name": "Variant City Watch (Investigator)",
+      "skills": [
+        "Insight",
+        "Investigation"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "equipment": "Uniform, horn, manacles, 10 gp",
+      "source": "SCAG",
+      "traits": [
+        {
+          "name": "Watcher's Eye",
+          "effects": [],
+          "text": "Variant of City Watch for investigators: you easily find the local watch post and spot criminal dens."
+        }
+      ]
+    },
+    {
+      "name": "Anthropologist",
+      "skills": [
+        "Insight",
+        "Religion"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "equipment": "Leather-bound diary, ink, ink pen, traveler's clothes, trinket of special significance, 10 gp",
+      "source": "ToA",
+      "traits": [
+        {
+          "name": "Adept Linguist",
+          "effects": [],
+          "text": "After observing humanoids interact for at least 1 day, you can communicate with them on a rudimentary level even without a shared language."
+        }
+      ]
+    },
+    {
+      "name": "Athlete",
+      "skills": [
+        "Acrobatics",
+        "Athletics"
+      ],
+      "tools": [
+        "Vehicles (land)"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Bronze discus or leather ball, lucky charm or past trophy, traveler's clothes, 10 gp",
+      "source": "MOoT",
+      "traits": [
+        {
+          "name": "Echoes of Victory",
+          "effects": [],
+          "text": "Within 100 miles of where you grew up, there's a 50% chance to find an admirer who gives you information or temporary shelter. Between adventures, competing lets you maintain a comfortable lifestyle."
+        }
+      ]
+    },
+    {
+      "name": "Grinner",
+      "skills": [
+        "Deception",
+        "Performance"
+      ],
+      "tools": [
+        "Thieves' Tools",
+        "one Musical Instrument"
+      ],
+      "equipment": "Fine clothes, disguise kit, musical instrument, gold-plated ring depicting a smiling face, 15 gp",
+      "source": "EGtW",
+      "traits": [
+        {
+          "name": "Ballad of the Grinning Fool",
+          "effects": [],
+          "text": "In a big city of the Menagerie Coast or the Dwendalian Empire, playing the ballad in a major tavern brings a member of the Golden Grin who shelters you and your companions."
+        }
+      ]
+    },
+    {
+      "name": "Volstrucker Agent",
+      "skills": [
+        "Deception",
+        "Stealth"
+      ],
+      "tools": [
+        "Poisoner's Kit"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Common clothes, black cloak with a hood, poisoner's kit, 10 gp",
+      "source": "EGtW",
+      "traits": [
+        {
+          "name": "Shadow Network",
+          "effects": [],
+          "text": "Write a letter in special arcane ink (10 gp per page) to a Volstrucker member and burn it: it reappears on that agent."
+        }
+      ]
+    },
+    {
+      "name": "Azorius Functionary",
+      "skills": [
+        "Insight",
+        "Intimidation"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "equipment": "Azorius insignia, scroll with the text of a law important to you, ink, ink pen, fine clothes, 10 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Friends",
+            "Message"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Command",
+            "Ensnaring Strike"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Arcane Lock",
+            "Calm Emotions",
+            "Hold Person"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Clairvoyance",
+            "Counterspell"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Compulsion",
+            "Divination"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Dominate Person"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Legal Authority",
+          "effects": [],
+          "text": "You can enforce Ravnica's laws: people mind their manners and your insignia gets you an audience with anyone. If you have Spellcasting or Pact Magic, the Azorius guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Boros Legionnaire",
+      "skills": [
+        "Athletics",
+        "Intimidation"
+      ],
+      "tools": [
+        "one Gaming Set"
+      ],
+      "languages": [
+        "one of Celestial",
+        "Draconic",
+        "Goblin or Minotaur"
+      ],
+      "equipment": "Boros insignia, feather from an angel's wing, tattered piece of a Boros banner, common clothes, 2 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Fire Bolt",
+            "Sacred Flame"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Guiding Bolt",
+            "Heroism"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Aid",
+            "Scorching Ray"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Beacon of Hope",
+            "Blinding Smite"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Death Ward",
+            "Wall of Fire"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Flame Strike"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Legion Station",
+          "effects": [],
+          "text": "You can requisition simple equipment, rest and get medical care in any Boros garrison, and earn 1 gp per week. If you have Spellcasting or Pact Magic, the Boros guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Dimir Operative",
+      "skills": [
+        "Deception",
+        "Stealth"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Dimir insignia, three small knives, dark common clothes, starting equipment of your secondary guild's background",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Encode Thoughts",
+            "Mage Hand"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Disguise Self",
+            "Sleep"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Detect Thoughts",
+            "Pass without Trace"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Gaseous Form",
+            "Meld into Stone",
+            "Nondetection"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Arcane Eye",
+            "Freedom of Movement"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Modify Memory"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "False Identity",
+          "effects": [],
+          "text": "You keep a cover identity as a member of another guild, with papers, contacts and disguises, and can drop it to blend into the guildless. If you have Spellcasting or Pact Magic, the Dimir guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Golgari Agent",
+      "skills": [
+        "Nature",
+        "Survival"
+      ],
+      "tools": [
+        "Poisoner's Kit"
+      ],
+      "languages": [
+        "one of Elvish",
+        "Giant or Kraul"
+      ],
+      "equipment": "Golgari insignia, poisoner's kit, pet beetle or spider, common clothes, 10 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Dancing Lights",
+            "Spare the Dying"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Entangle",
+            "Ray of Sickness"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Protection from Poison",
+            "Ray of Enfeeblement",
+            "Spider Climb"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Animate Dead",
+            "Plant Growth"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Giant Insect",
+            "Grasping Vine"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Cloudkill",
+            "Insect Plague"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Undercity Paths",
+          "effects": [],
+          "text": "Out of combat, you and companions you lead travel between two places in the city twice as fast using hidden underground paths. If you have Spellcasting or Pact Magic, the Golgari guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Gruul Anarch",
+      "skills": [
+        "Animal Handling",
+        "Athletics"
+      ],
+      "tools": [
+        "Herbalism Kit"
+      ],
+      "languages": [
+        "one of Draconic",
+        "Giant",
+        "Goblin or Sylvan"
+      ],
+      "equipment": "Gruul insignia, hunting trap, herbalism kit, boar skull, beast-hide cloak, traveler's clothes, 10 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Fire Bolt",
+            "Produce Flame"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Compelled Duel",
+            "Speak with Animals",
+            "Thunderwave"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Beast Sense",
+            "Shatter"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Conjure Animals",
+            "Conjure Barrage"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Dominate Beast",
+            "Stoneskin"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Destructive Wave"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Rubblebelt Refuge",
+          "effects": [],
+          "text": "In ruined and abandoned areas of the city you find hiding spots, plus food and water for you and up to five others each day. If you have Spellcasting or Pact Magic, the Gruul guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Izzet Engineer",
+      "skills": [
+        "Arcana",
+        "Investigation"
+      ],
+      "tools": [
+        "one Artisan's Tools"
+      ],
+      "languages": [
+        "one of Draconic",
+        "Goblin or Vedalken"
+      ],
+      "equipment": "Izzet insignia, artisan's tools, remains of a failed experiment, hammer, block and tackle, common clothes, 5 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Produce Flame",
+            "Shocking Grasp"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Chaos Bolt",
+            "Create or Destroy Water",
+            "Unseen Servant"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Heat Metal",
+            "Rope Trick"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Call Lightning",
+            "Elemental Weapon",
+            "Glyph of Warding"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Conjure Minor Elementals",
+            "Divination",
+            "Otiluke's Resilient Sphere"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Animate Objects",
+            "Conjure Elemental"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Urban Infrastructure",
+          "effects": [],
+          "text": "You know the city's pipes, tunnels and maintenance spaces, and can access Izzet facilities. If you have Spellcasting or Pact Magic, the Izzet guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Orzhov Representative",
+      "skills": [
+        "Intimidation",
+        "Religion"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "equipment": "Orzhov insignia, foot-long chain of ten gold coins, vestments, fine clothes, 10 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Friends",
+            "Guidance"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Command",
+            "Illusory Script"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Enthrall",
+            "Ray of Enfeeblement",
+            "Zone of Truth"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Bestow Curse",
+            "Speak with Dead",
+            "Spirit Guardians"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Blight",
+            "Death Ward",
+            "Leomund's Secret Chest"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Geas"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Leverage",
+          "effects": [],
+          "text": "You can demand help from people below you in the guild hierarchy (messages, rides, cleanups), as the DM judges reasonable. If you have Spellcasting or Pact Magic, the Orzhov guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Rakdos Cultist",
+      "skills": [
+        "Acrobatics",
+        "Performance"
+      ],
+      "tools": [
+        "one Musical Instrument"
+      ],
+      "languages": [
+        "one of Abyssal or Giant"
+      ],
+      "equipment": "Rakdos insignia, musical instrument, costume, hooded lantern, 10-foot spiked chain, tinderbox, 10 torches, common clothes, bottle of sweet chili sauce, 10 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Fire Bolt",
+            "Vicious Mockery"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Burning Hands",
+            "Dissonant Whispers",
+            "Hellish Rebuke"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Crown of Madness",
+            "Enthrall",
+            "Flaming Sphere"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Fear",
+            "Haste"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Confusion",
+            "Wall of Fire"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Dominate Person"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Fearsome Reputation",
+          "effects": [],
+          "text": "People fear the Cult of Rakdos: you can get away with minor crimes if no authorities see them. If you have Spellcasting or Pact Magic, the Rakdos guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Selesnya Initiate",
+      "skills": [
+        "Nature",
+        "Persuasion"
+      ],
+      "tools": [
+        "one Artisan's Tools or Musical Instrument"
+      ],
+      "languages": [
+        "one of Elvish",
+        "Loxodon or Sylvan"
+      ],
+      "equipment": "Selesnya insignia, healer's kit, robe, common clothes, 5 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Druidcraft",
+            "Friends"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Animal Friendship",
+            "Charm Person"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Aid",
+            "Animal Messenger",
+            "Calm Emotions",
+            "Warding Bond"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Plant Growth",
+            "Speak with Plants"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Aura of Life",
+            "Conjure Minor Elementals"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Awaken",
+            "Commune with Nature"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Conclave's Shelter",
+          "effects": [],
+          "text": "You and your companions can hide, rest and get free healing at any Selesnya enclave. If you have Spellcasting or Pact Magic, the Selesnya guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Simic Scientist",
+      "skills": [
+        "Arcana",
+        "Medicine"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "equipment": "Simic insignia, book of research notes, ink pen, ink, flask of oil, vial of acid, vial of fish scales, vial of seaweed, vial of jellyfish stingers, glass bottle of unidentified slime, common clothes, 10 gp",
+      "spells": [
+        {
+          "level": 0,
+          "spells": [
+            "Acid Splash",
+            "Druidcraft"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 1,
+          "spells": [
+            "Detect Poison and Disease",
+            "Expeditious Retreat",
+            "Jump"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 2,
+          "spells": [
+            "Alter Self",
+            "Enhance Ability",
+            "Enlarge/Reduce"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Gaseous Form",
+            "Water Breathing",
+            "Wind Wall"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 4,
+          "spells": [
+            "Freedom of Movement",
+            "Polymorph"
+          ],
+          "mode": "expanded"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Creation"
+          ],
+          "mode": "expanded"
+        }
+      ],
+      "source": "GGtR",
+      "traits": [
+        {
+          "name": "Researcher",
+          "effects": [],
+          "text": "When you don't know a magical or scientific fact, you know where and from whom to get it. If you have Spellcasting or Pact Magic, the Simic guild spells are added to your class spell list."
+        }
+      ]
+    },
+    {
+      "name": "Faceless",
+      "skills": [
+        "Deception",
+        "Intimidation"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Disguise kit, costume, 10 gp",
+      "source": "BGDiA",
+      "traits": [
+        {
+          "name": "Dual Personalities",
+          "effects": [],
+          "text": "While disguised as your persona you can't be identified as your true self, and vice versa, unless someone discovers the connection."
+        }
+      ]
+    },
+    {
+      "name": "Celebrity Adventurer's Scion",
+      "skills": [
+        "Perception",
+        "Performance"
+      ],
+      "tools": [
+        "Disguise Kit"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "equipment": "Disguise kit, fine clothes, 30 gp",
+      "source": "AI",
+      "traits": [
+        {
+          "name": "Name Dropping",
+          "effects": [],
+          "text": "You've met powerful people who may give you minor help, and common folk might offer you a meal or a bed."
+        }
+      ]
+    },
+    {
+      "name": "Failed Merchant",
+      "skills": [
+        "Investigation",
+        "Persuasion"
+      ],
+      "tools": [
+        "one Artisan's Tools"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Artisan's tools, merchant's scale, fine clothes, 10 gp",
+      "source": "AI",
+      "traits": [
+        {
+          "name": "Supply Chain",
+          "effects": [],
+          "text": "You keep connections with wholesalers, suppliers and merchants to find items or information."
+        }
+      ]
+    },
+    {
+      "name": "Gambler",
+      "skills": [
+        "Deception",
+        "Insight"
+      ],
+      "tools": [
+        "one Gaming Set"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Gaming set, lucky charm, fine clothes, 15 gp",
+      "source": "AI",
+      "traits": [
+        {
+          "name": "Never Tell Me the Odds",
+          "effects": [],
+          "text": "In downtime involving chance or planning, you sense which choice is best and which offers are too good to be true."
+        }
+      ]
+    },
+    {
+      "name": "Plaintiff",
+      "skills": [
+        "Medicine",
+        "Persuasion"
+      ],
+      "tools": [
+        "one Artisan's Tools"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Artisan's tools, fine clothes, 20 gp",
+      "source": "AI",
+      "traits": [
+        {
+          "name": "Legalese",
+          "effects": [],
+          "text": "You know the local legal system and can use legal jargon to intimidate or deceive common folk for favors."
+        }
+      ]
+    },
+    {
+      "name": "Rival Intern",
+      "skills": [
+        "History",
+        "Investigation"
+      ],
+      "tools": [
+        "one Artisan's Tools"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Artisan's tools, ledger from your previous employer, fine clothes, 10 gp",
+      "source": "AI",
+      "traits": [
+        {
+          "name": "Inside Informant",
+          "effects": [],
+          "text": "You keep contacts from your previous employer who can give you information."
+        }
+      ]
+    },
+    {
+      "name": "Fisher",
+      "skills": [
+        "History",
+        "Survival"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Fishing tackle, net, favorite fishing lure or oiled leather wading boots, traveler's clothes, 10 gp",
+      "source": "GoS",
+      "traits": [
+        {
+          "name": "Harvest the Water",
+          "effects": [],
+          "text": "Advantage on checks with fishing tackle. Near water with marine life you live a modest lifestyle and catch food for yourself and up to ten others daily."
+        }
+      ]
+    },
+    {
+      "name": "Marine",
+      "skills": [
+        "Athletics",
+        "Survival"
+      ],
+      "tools": [
+        "Vehicles (water)",
+        "Vehicles (land)"
+      ],
+      "equipment": "Dagger of a fallen comrade, folded flag of your ship or company, traveler's clothes, 10 gp",
+      "source": "GoS",
+      "traits": [
+        {
+          "name": "Steady",
+          "effects": [],
+          "text": "You can travel up to 16 hours a day before a forced march, and always find a safe route to land a boat on shore if one exists."
+        }
+      ]
+    },
+    {
+      "name": "Shipwright",
+      "skills": [
+        "History",
+        "Perception"
+      ],
+      "tools": [
+        "Carpenter's Tools",
+        "Vehicles (water)"
+      ],
+      "equipment": "Carpenter's tools, blank book, ink, ink pen, traveler's clothes, 10 gp",
+      "source": "GoS",
+      "traits": [
+        {
+          "name": "I'll Patch It!",
+          "effects": [],
+          "text": "With carpenter's tools and wood, restore 5 x your proficiency bonus hull HP to a water vehicle (once until it's fully repaired ashore)."
+        }
+      ]
+    },
+    {
+      "name": "Smuggler",
+      "skills": [
+        "Athletics",
+        "Deception"
+      ],
+      "tools": [
+        "Vehicles (water)"
+      ],
+      "equipment": "Fancy leather vest or pair of leather boots, common clothes, 15 gp",
+      "source": "GoS",
+      "traits": [
+        {
+          "name": "Down Low",
+          "effects": [],
+          "text": "A network of smugglers offers you and your companions free, secret safe houses (poor lifestyle) in a town."
+        }
+      ]
+    },
+    {
+      "name": "House Agent",
+      "skills": [
+        "Investigation",
+        "Persuasion"
+      ],
+      "tools": [
+        "two based on your house (e.g. Cannith: Alchemist's Supplies",
+        "Tinker's Tools)"
+      ],
+      "equipment": "Fine clothes, house signet ring, identification papers, 20 gp",
+      "source": "ERftLW",
+      "traits": [
+        {
+          "name": "House Connections",
+          "effects": [],
+          "text": "You get food and lodging at any house enclave, your house supplies your missions, and you have contacts across it."
+        }
+      ]
+    },
+    {
+      "name": "Gate Warden",
+      "skills": [
+        "Persuasion",
+        "Survival"
+      ],
+      "languages": [
+        "two of your choice"
+      ],
+      "feat": "Scion of the Outer Planes",
+      "equipment": "Ring of keys to unknown locks, blank book, bottle of black ink, ink pen or quill, traveler's clothes, 10 gp",
+      "source": "SatO",
+      "traits": [
+        {
+          "name": "Planar Infusion",
+          "effects": [],
+          "text": "You gain the Scion of the Outer Planes feat, and you find free modest lodging and food in the community where you grew up."
+        }
+      ]
+    },
+    {
+      "name": "Planar Philosopher",
+      "skills": [
+        "Arcana"
+      ],
+      "skillChoices": {
+        "count": 1,
+        "from": [
+          "Athletics",
+          "History",
+          "Insight",
+          "Intimidation",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Performance",
+          "Persuasion",
+          "Religion",
+          "Stealth",
+          "Survival"
+        ]
+      },
+      "languages": [
+        "two of your choice"
+      ],
+      "feat": "Scion of the Outer Planes",
+      "equipment": "Portal key, manifesto of your philosophy, common clothes in your faction's style, 10 gp",
+      "source": "SatO",
+      "traits": [
+        {
+          "name": "Conviction",
+          "effects": [],
+          "text": "You gain the Scion of the Outer Planes feat, and members of your faction give you free modest lodging and food."
+        }
+      ]
+    },
+    {
+      "name": "Giant Foundling",
+      "skills": [
+        "Intimidation",
+        "Survival"
+      ],
+      "languages": [
+        "Giant and one of your choice"
+      ],
+      "feat": "Strike of the Giants",
+      "equipment": "Backpack, small stone or sprig that reminds you of home, traveler's clothes, 10 gp",
+      "source": "BGotG",
+      "traits": [
+        {
+          "name": "Strike of the Giants",
+          "effects": [],
+          "text": "You gain the Strike of the Giants feat."
+        }
+      ]
+    },
+    {
+      "name": "Rune Carver",
+      "skills": [
+        "History",
+        "Perception"
+      ],
+      "tools": [
+        "one Artisan's Tools"
+      ],
+      "languages": [
+        "Giant"
+      ],
+      "feat": "Rune Shaper",
+      "equipment": "Artisan's tools, small knife, whetstone, common clothes, 10 gp",
+      "source": "BGotG",
+      "traits": [
+        {
+          "name": "Rune Shaper",
+          "effects": [],
+          "text": "You gain the Rune Shaper feat."
+        }
+      ]
+    },
+    {
+      "name": "Rewarded",
+      "skills": [
+        "Insight",
+        "Persuasion"
+      ],
+      "tools": [
+        "one Gaming Set"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Bottle of black ink, ink pen, 5 sheets of paper, gaming set, signet ring, fine clothes, 18 gp",
+      "featOptions": [
+        "Lucky",
+        "Magic Initiate",
+        "Skilled"
+      ],
+      "source": "BoMT",
+      "traits": [
+        {
+          "name": "Fortune's Favor",
+          "effects": [],
+          "text": "Your unexpected good fortune grants you the Lucky, Magic Initiate or Skilled feat (your choice)."
+        }
+      ]
+    },
+    {
+      "name": "Ruined",
+      "skills": [
+        "Stealth",
+        "Survival"
+      ],
+      "tools": [
+        "one Gaming Set"
+      ],
+      "languages": [
+        "one of your choice"
+      ],
+      "equipment": "Cracked hourglass, rusty manacles, half-empty bottle, hunting trap, gaming set, traveler's clothes, 13 gp",
+      "featOptions": [
+        "Alert",
+        "Skilled",
+        "Tough"
+      ],
+      "source": "BoMT",
+      "traits": [
+        {
+          "name": "Still Standing",
+          "effects": [],
+          "text": "Your ruinous misfortune grants you the Alert, Skilled or Tough feat (your choice)."
+        }
+      ]
     }
   ],
   "feats": [
@@ -16639,6 +17852,31 @@
       ],
       "source": "SACoC",
       "text": "You can cast Find Familiar as a ritual, and your familiar can take the form of your college's mascot: Spirit Statue (Lorehold), Art Elemental (Prismari), Fractal (Quandrix), Inkling (Silverquill) or Pest (Witherbloom). When you take the Attack action, you can forgo one attack so your mascot makes one attack with its reaction. As an action, you can teleport to swap places with your mascot if it is within 60 feet."
+    },
+    {
+      "name": "Scion of the Outer Planes",
+      "category": "general",
+      "spells": [
+        {
+          "count": 1,
+          "level": 0,
+          "uses": "none",
+          "schools": [],
+          "lists": [],
+          "attackOnly": false,
+          "ritualOnly": false,
+          "names": [
+            "Minor Illusion",
+            "Chill Touch",
+            "Sacred Flame",
+            "Guidance",
+            "Mage Hand"
+          ]
+        }
+      ],
+      "spellAbility": "pick",
+      "source": "SatO",
+      "text": "Choose a type of Outer Plane: Chaotic (Poison resistance, Minor Illusion), Evil (Necrotic resistance, Chill Touch), Good (Radiant resistance, Sacred Flame), Lawful (Force resistance, Guidance) or the Outlands (Psychic resistance, Mage Hand). You gain that resistance and cantrip, castable without material components. Spellcasting ability: Intelligence, Wisdom or Charisma (choose when you take the feat)."
     }
   ],
   "invocations": [
@@ -20067,6 +21305,24 @@
       "save": null,
       "damage": "1d10 force",
       "scaling": "beams"
+    },
+    {
+      "name": "Encode Thoughts",
+      "level": 0,
+      "school": "Enchantment",
+      "classes": [
+        "Wizard"
+      ],
+      "castingTime": "1 action",
+      "range": "Self",
+      "components": "S",
+      "material": "",
+      "duration": "8 hours",
+      "concentration": false,
+      "ritual": false,
+      "text": "You pull a memory, idea or message from your mind into a tangible thread of glowing energy that you can hold. Detect Thoughts or Modify Memory can read or alter it, and you can also use it to store or send a message. It lasts for the duration or until you cast this spell again.",
+      "higher": "",
+      "source": "GGtR"
     },
     {
       "name": "Fire Bolt",

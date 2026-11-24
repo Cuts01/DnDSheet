@@ -1,4 +1,4 @@
-import { CLASS_PRESETS, uid, type Ability, type Character, type ClassEntry, type ClassPreset, type Effect, type ItemEntry } from '../model/character';
+import { ABILITIES, CLASS_PRESETS, uid, type Ability, type Character, type ClassEntry, type ClassPreset, type Effect, type ItemEntry } from '../model/character';
 import { sameName, slug, type Feature, type Pack, type PackBackground, type PackClass, type PackFeat, type PackItem, type PackSpecies, type PackSubclass } from '../model/pack';
 
 import { asiSlots, featSource, pb, skillSources, totalLevel, type SkillMode } from './derive';
@@ -352,6 +352,15 @@ export function packAsiLevels(packs: Pack[], ruleset: string) {
   };
 }
 
+/* PJ 2024 con una species o background de un libro 2014 (PHB 2024, "Backgrounds and Species from Older Books"):
+   la species no da aumentos de características; el background da +2/+1 o +1/+1/+1 a elección y un Origin feat. */
+export const isLegacy = (c: Pick<Character, 'ruleset'>, ref: { pack: Pack } | null | undefined) =>
+  c.ruleset === '2024' && ref?.pack.pack.ruleset === '2014';
+
+/* Las abilities con base más alta primero (para proponer los aumentos de un background antiguo). */
+export const topAbilities = (c: Character, n: number): Ability[] =>
+  [...ABILITIES].sort((a, b) => c.abilities[b] - c.abilities[a]).slice(0, n);
+
 /* ---------- Aplicar selecciones (devuelven el personaje modificado) ---------- */
 
 export function applySpecies(c: Character, ref: Ref<PackSpecies> | null): Character {
@@ -369,9 +378,10 @@ export function applySpecies(c: Character, ref: Ref<PackSpecies> | null): Charac
   n.species.size = sp.size;
   n.species.darkvision = sp.darkvision;
   n.bonuses.species = Object.entries(sp.asi.fixed).map(([ability, amount]) => ({ ability: ability as Ability, amount: amount! }));
+  if (isLegacy(n, ref)) n.bonuses.species = [];
   // Incrementos a eleccion (Half-Elf, Variant Human, razas de Monsters of the Multiverse): valores por defecto editables.
   const used = new Set(n.bonuses.species.map((b) => b.ability));
-  for (const ch of sp.asi.choose) {
+  for (const ch of isLegacy(n, ref) ? [] : sp.asi.choose) {
     for (let i = 0; i < ch.count; i++) {
       const ability = ch.from.find((a) => !used.has(a)) ?? ch.from[0];
       used.add(ability);
@@ -403,11 +413,19 @@ export function applyBackground(c: Character, ref: Ref<PackBackground> | null, p
   if (bg.skills.length) n.skillPicks.background = bg.skills.map((x) => slug(x));
   // 2024: por defecto +2 a la primera y +1 a la segunda; se cambia en Editar.
   if (bg.asi.length >= 2) n.bonuses.background = [{ ability: bg.asi[0], amount: 2 }, { ability: bg.asi[1], amount: 1 }];
+  const legacy = isLegacy(n, ref);
+  if (legacy) {
+    const [a, b] = topAbilities(n, 2);
+    n.bonuses.background = [{ ability: a, amount: 2 }, { ability: b, amount: 1 }];
+  }
   if (bg.feat) {
     const f = featByName(packs, bg.feat, n.ruleset);
     n.feats.push({ id: uid(), ref: f?.value ?? null, name: f?.item.name ?? bg.feat, source: 'background', ability: null });
   } else if (bg.featOptions.length) {
     // Feat a elegir (Ravenloft: Survivor o un Dark Gift): queda vacío hasta que lo elijas.
+    n.feats.push({ id: uid(), ref: null, name: '', source: 'background', ability: null });
+  } else if (legacy) {
+    // Background 2014 sin feat en un PJ 2024: un Origin feat a elección.
     n.feats.push({ id: uid(), ref: null, name: '', source: 'background', ability: null });
   }
   return n;

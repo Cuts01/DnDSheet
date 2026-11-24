@@ -187,7 +187,7 @@ export const PackSpeciesSchema = z.object({
 });
 
 export const SubclassSpellsSchema = z.object({
-  level: z.number().int().min(1).max(20).describe('always: nivel de clase. expanded: nivel de spell'),
+  level: z.number().int().min(0).max(20).describe('always: nivel de clase. expanded: nivel de spell (0 = cantrips)'),
   spells: strings,
   mode: z.enum(['always', 'expanded']).default('always').describe('always: siempre preparadas. expanded: se suman a tu lista de clase'),
   variant: z.string().default('').describe('Opción a elegir, ej. el terreno de Circle of the Land')

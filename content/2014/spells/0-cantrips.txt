@@ -24,6 +24,8 @@ Predict the weather for 24 hours, make a flower bloom or seed open, create a har
 Eldritch Blast | Evo | 1 action | 120 feet | V, S | Instantaneous | - | PHB
 A beam of crackling energy: ranged spell attack for 1d10 force damage.
 + Two beams at level 5, three at 11, four at 17, each with its own attack roll.
+Encode Thoughts | Enc | 1 action | Self | S | 8 hours | Wizard | GGtR
+You pull a memory, idea or message from your mind into a tangible thread of glowing energy that you can hold. Detect Thoughts or Modify Memory can read or alter it, and you can also use it to store or send a message. It lasts for the duration or until you cast this spell again.
 Fire Bolt | Evo | 1 action | 120 feet | V, S | Instantaneous | - | PHB
 Ranged spell attack for 1d10 fire damage. Flammable unattended objects ignite.
 + 2d10 at level 5, 3d10 at 11, 4d10 at 17.
