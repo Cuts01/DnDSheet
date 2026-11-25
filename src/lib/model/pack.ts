@@ -101,7 +101,8 @@ export const FeatureSchema = z.object({
   resource: FeatureResourceSchema,
   choose: FeatureChooseSchema,
   variant: z.string().default('').describe('Subclass: solo aplica si se eligió esta opción (ej. el tipo de genie)'),
-  alwaysSpells: strs.describe('Spells que este feature deja siempre preparadas desde su nivel (ej. Divine Smite)')
+  alwaysSpells: strs.describe('Spells que este feature deja siempre preparadas desde su nivel (ej. Divine Smite)'),
+  spellLists: strs.describe('Listas de otras clases que se suman a la de esta clase desde su nivel (ej. Divine Soul: Cleric)')
 });
 
 /* Opciones elegibles por features: maneuvers, fighting styles, metamagic, arcane shots, runes... */

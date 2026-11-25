@@ -231,15 +231,29 @@ export function subclassSpells(c: Character, packs: Pack[]): SubclassSpellInfo {
     const ref = index.get(key) ?? null;
     out.always.push({ key, name: ref?.item.name ?? n, level: ref?.item.level ?? 1, classId: k.id, source, ref });
   };
+  // Listas de otras clases que un feature suma a la de esta clase (Divine Soul: Cleric; Magical Secrets 2024).
+  const addLists = (k: ClassEntry, lists: string[]) => {
+    if (!lists.length) return;
+    const set = out.expanded.get(k.id) ?? new Set<string>();
+    for (const r of index.values()) if (lists.some((l) => inClassList(r.item, l))) set.add(spellKey(r.item.name));
+    out.expanded.set(k.id, set);
+  };
   // Features de clase y subclass que dejan spells siempre preparadas (Paladin's Smite, Faithful Steed, Star Map...).
   for (const k of c.classes) {
     const cls = findClass(packs, k.name, c.ruleset)?.cls;
-    for (const f of cls?.features ?? []) if (f.level <= k.level) f.alwaysSpells.forEach((n) => addAlways(k, n, f.name));
+    for (const f of cls?.features ?? [])
+      if (f.level <= k.level) {
+        f.alwaysSpells.forEach((n) => addAlways(k, n, f.name));
+        addLists(k, f.spellLists);
+      }
     const sub = findSubclass(packs, k.subclassId)?.sub;
     if (!sub) continue;
     const { value } = subclassVariant(c, k.id, sub);
     for (const f of sub.features)
-      if (f.level <= k.level && (!f.variant || f.variant === value)) f.alwaysSpells.forEach((n) => addAlways(k, n, f.name));
+      if (f.level <= k.level && (!f.variant || f.variant === value)) {
+        f.alwaysSpells.forEach((n) => addAlways(k, n, f.name));
+        addLists(k, f.spellLists);
+      }
   }
   for (const k of c.classes) {
     const found = findSubclass(packs, k.subclassId);

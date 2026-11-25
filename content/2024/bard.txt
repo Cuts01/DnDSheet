@@ -9,7 +9,7 @@
 5 | Font of Inspiration | Bardic Inspiration returns on a Short or Long Rest, and you can spend a spell slot to regain a use.
 7 | Countercharm | As a Reaction, let yourself or a creature within 30 feet reroll a failed save against Charmed or Frightened with advantage.
 8 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
-10 | Magical Secrets | Your prepared spells can come from the Bard, Cleric, Druid and Wizard lists.
+10 | Magical Secrets | Your prepared spells can come from the Bard, Cleric, Druid and Wizard lists; they count as bard spells for you. {lists Cleric, Druid, Wizard}
 12 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 16 | Ability Score Improvement | Take the Ability Score Improvement feat (raise ability scores) or another feat you qualify for.
 18 | Superior Inspiration | When you roll Initiative, regain Bardic Inspiration uses until you have two.

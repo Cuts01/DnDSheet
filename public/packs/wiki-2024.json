@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-11-25T10:31:31Z"
+    "built": "2026-11-25T18:46:16Z"
   },
   "classes": [
     {
@@ -430,7 +430,12 @@
         {
           "level": 10,
           "name": "Magical Secrets",
-          "text": "Your prepared spells can come from the Bard, Cleric, Druid and Wizard lists."
+          "text": "Your prepared spells can come from the Bard, Cleric, Druid and Wizard lists; they count as bard spells for you.",
+          "spellLists": [
+            "Cleric",
+            "Druid",
+            "Wizard"
+          ]
         },
         {
           "level": 12,

@@ -35,7 +35,7 @@
 18 | Draconic Presence | Spend 5 sorcery points for a 60-foot aura that charms or frightens creatures for 1 minute on a failed Wisdom save.
 
 @sub Divine Soul | XGtE | variant Affinity
-1 | Divine Magic | You can learn cleric spells as sorcerer spells, and gain one bonus spell based on your affinity: Good, Evil, Law, Chaos or Neutrality. Choose it in Edit > Classes, under the subclass.
+1 | Divine Magic | When you learn or replace a sorcerer cantrip or spell, you can choose it from the cleric spell list too; it counts as a sorcerer spell. You also gain one bonus spell based on your affinity: Good, Evil, Law, Chaos or Neutrality. Choose it in Edit > Classes, under the subclass. {lists Cleric}
 1 | Divine Magic (Good) | Cure Wounds is always prepared for you and doesn't count against your sorcerer spells known. {variant Good}
 1 | Divine Magic (Evil) | Inflict Wounds is always prepared for you and doesn't count against your sorcerer spells known. {variant Evil}
 1 | Divine Magic (Law) | Bless is always prepared for you and doesn't count against your sorcerer spells known. {variant Law}

@@ -119,6 +119,10 @@ def feature(line: str, where: str) -> dict:
     vm = VARIANT.search(text)
     variant = vm.group(1).strip() if vm else ""
     text = VARIANT.sub("", text)
+    # {lists Cleric} / {lists Bard, Cleric, Druid, Wizard}: listas de otras clases que se suman a la de esta clase.
+    lm = re.search(r"\{lists ([^}]+)\}", text)
+    lists = [x.strip() for x in lm.group(1).split(",") if x.strip()] if lm else []
+    text = re.sub(r"\{lists [^}]+\}", "", text)
     effects = effects_of(text)
     text = EFFECT.sub("", text)
     grants, resources, choose, text = grant_tokens(text, where)
@@ -127,6 +131,8 @@ def feature(line: str, where: str) -> dict:
     f = {"level": level, "name": parts[1], "text": text}
     if variant:
         f["variant"] = variant
+    if lists:
+        f["spellLists"] = lists
     if effects:
         f["effects"] = effects
     if grants:
