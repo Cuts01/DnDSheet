@@ -34,15 +34,21 @@
 14 | Dragon Wings | As a bonus action, sprout wings and gain a flying speed equal to your speed.
 18 | Draconic Presence | Spend 5 sorcery points for a 60-foot aura that charms or frightens creatures for 1 minute on a failed Wisdom save.
 
-@sub Divine Soul | XGtE
-1 | Divine Magic | You can learn cleric spells as sorcerer spells, and gain one bonus spell based on your affinity (good, evil, law, chaos or neutrality).
+@sub Divine Soul | XGtE | variant Affinity
+1 | Divine Magic | You can learn cleric spells as sorcerer spells, and gain one bonus spell based on your affinity: Good, Evil, Law, Chaos or Neutrality. Choose it in Edit > Classes, under the subclass.
+1 | Divine Magic (Good) | Cure Wounds is always prepared for you and doesn't count against your sorcerer spells known. {variant Good}
+1 | Divine Magic (Evil) | Inflict Wounds is always prepared for you and doesn't count against your sorcerer spells known. {variant Evil}
+1 | Divine Magic (Law) | Bless is always prepared for you and doesn't count against your sorcerer spells known. {variant Law}
+1 | Divine Magic (Chaos) | Bane is always prepared for you and doesn't count against your sorcerer spells known. {variant Chaos}
+1 | Divine Magic (Neutrality) | Protection from Evil and Good is always prepared for you and doesn't count against your sorcerer spells known. {variant Neutrality}
 1 | Favored by the Gods | When you fail a save or miss an attack, add 2d4 to the roll. Once per short or long rest. {res short 1 Favored by the Gods}
 6 | Empowered Healing | Spend 1 sorcery point to reroll healing dice for you or an ally within 5 feet. Once per turn.
 14 | Otherworldly Wings | As a bonus action, gain a 30-foot flying speed.
 18 | Unearthly Recovery | As a bonus action when below half HP, regain half your HP maximum. Once per long rest. {res long 1 Unearthly Recovery}
 
 @sub Lunar Sorcery | DSotDQ
-1 | Lunar Embodiment | Learn spells by moon phase (Full Moon, New Moon, Crescent Moon) and choose a phase after each rest; you can cast one of that phase's 1st-level spells free once per long rest.
+1 | Lunar Embodiment | Learn spells by moon phase (Full Moon, New Moon, Crescent Moon) and choose a phase after each long rest; you can cast one of that phase's 1st-level spells free once per long rest.
+1 | Lunar Spells | Always known (they don't count against your sorcerer spells known). 1st: Shield, Ray of Sickness, Color Spray. 3rd: Lesser Restoration, Blindness/Deafness, Alter Self. 5th: Dispel Magic, Vampiric Touch, Phantom Steed. 7th: Death Ward, Confusion, Hallucinatory Terrain. 9th: Rary's Telepathic Bond, Hold Monster, Mislead.
 1 | Moon Fire | You learn Sacred Flame, and it can target two creatures within 5 feet of each other.
 6 | Lunar Boons | Spend less sorcery points on Metamagic for spells of your current phase's schools. Proficiency bonus uses per long rest. {res long pb Lunar Boons}
 6 | Waxing and Waning | As a bonus action, spend 1 sorcery point to change your lunar phase.

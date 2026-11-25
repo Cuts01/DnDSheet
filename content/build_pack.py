@@ -183,6 +183,8 @@ def subclass_spells(features: list) -> list:
 ALWAYS_PATTERNS = [
     re.compile(r"([^.;:]+?) (?:is|are) always prepared"),
     re.compile(r"always have ([^.;:]+?) prepared"),
+    # Cantrips o spells aprendidos por el feature: "You learn Mage Hand", "you know Guidance".
+    re.compile(r"\b[Yy]ou (?:learn|know) (?:the )?([^.;:,]+?)(?: cantrip)?(?=[.;:,]|$| and (?:it|can|always))"),
 ]
 
 
@@ -192,6 +194,8 @@ def always_spells(text: str, known: dict) -> list:
     out = []
     for pat in ALWAYS_PATTERNS:
         for m in pat.finditer(text):
+            if re.search(r"\bor\b", m.group(1)):
+                continue  # "Druidcraft or Thaumaturgy": es una elección, no un spell fijo
             pieces = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", m.group(1)) if x.strip()]
             i = 0
             while i < len(pieces):

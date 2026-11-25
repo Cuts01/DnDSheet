@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2024 (resumen)",
     "ruleset": "2024",
     "homebrew": false,
-    "built": "2026-11-25T10:26:02Z"
+    "built": "2026-11-25T10:31:31Z"
   },
   "classes": [
     {
@@ -36,7 +36,10 @@
             "uses": "int",
             "recharge": "long",
             "die": ""
-          }
+          },
+          "alwaysSpells": [
+            "Mending"
+          ]
         },
         {
           "level": 2,
@@ -2960,7 +2963,10 @@
         {
           "level": 3,
           "name": "Guiding Whispers",
-          "text": "You know Guidance, and its range is 60 feet for you."
+          "text": "You know Guidance, and its range is 60 feet for you.",
+          "alwaysSpells": [
+            "Guidance"
+          ]
         },
         {
           "level": 3,
@@ -4503,7 +4509,10 @@
         {
           "level": 3,
           "name": "Manipulate Elements",
-          "text": "You know Elementalism, cast with Wisdom."
+          "text": "You know Elementalism, cast with Wisdom.",
+          "alwaysSpells": [
+            "Elementalism"
+          ]
         },
         {
           "level": 6,
@@ -6941,7 +6950,10 @@
         {
           "level": 3,
           "name": "Improved Illusions",
-          "text": "Your Illusion spells need no Verbal components and gain 60 feet of range; you know Minor Illusion, can cast it as a Bonus Action, and it can make both sound and image."
+          "text": "Your Illusion spells need no Verbal components and gain 60 feet of range; you know Minor Illusion, can cast it as a Bonus Action, and it can make both sound and image.",
+          "alwaysSpells": [
+            "Minor Illusion"
+          ]
         },
         {
           "level": 6,

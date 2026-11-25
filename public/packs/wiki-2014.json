@@ -7,7 +7,7 @@
     "name": "Wiki 5e 2014 (resumen)",
     "ruleset": "2014",
     "homebrew": false,
-    "built": "2026-11-25T10:26:02Z"
+    "built": "2026-11-25T10:31:31Z"
   },
   "classes": [
     {
@@ -2850,7 +2850,10 @@
         {
           "level": 3,
           "name": "Guiding Whispers",
-          "text": "You learn Guidance, and its range becomes 60 feet for you."
+          "text": "You learn Guidance, and its range becomes 60 feet for you.",
+          "alwaysSpells": [
+            "Guidance"
+          ]
         },
         {
           "level": 3,
@@ -3561,7 +3564,10 @@
         {
           "level": 1,
           "name": "Bonus Cantrip",
-          "text": "You learn the Light cantrip."
+          "text": "You learn the Light cantrip.",
+          "alwaysSpells": [
+            "Light"
+          ]
         },
         {
           "level": 1,
@@ -4882,7 +4888,8 @@
             "die": ""
           },
           "alwaysSpells": [
-            "Guiding Bolt"
+            "Guiding Bolt",
+            "Guidance"
           ]
         },
         {
@@ -7152,7 +7159,10 @@
         {
           "level": 3,
           "name": "Swarmkeeper Magic",
-          "text": "You learn Mage Hand; always prepared: 3rd Faerie Fire, 5th Web, 9th Gaseous Form, 13th Arcane Eye, 17th Insect Plague."
+          "text": "You learn Mage Hand. Always prepared at these ranger levels. 3rd: Faerie Fire. 5th: Web. 9th: Gaseous Form. 13th: Arcane Eye. 17th: Insect Plague.",
+          "alwaysSpells": [
+            "Mage Hand"
+          ]
         },
         {
           "level": 7,
@@ -7180,6 +7190,43 @@
             "recharge": "long",
             "die": ""
           }
+        }
+      ],
+      "spells": [
+        {
+          "level": 3,
+          "spells": [
+            "Faerie Fire"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Web"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 9,
+          "spells": [
+            "Gaseous Form"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 13,
+          "spells": [
+            "Arcane Eye"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 17,
+          "spells": [
+            "Insect Plague"
+          ],
+          "mode": "always"
         }
       ]
     },
@@ -7787,7 +7834,52 @@
         {
           "level": 1,
           "name": "Divine Magic",
-          "text": "You can learn cleric spells as sorcerer spells, and gain one bonus spell based on your affinity (good, evil, law, chaos or neutrality)."
+          "text": "You can learn cleric spells as sorcerer spells, and gain one bonus spell based on your affinity: Good, Evil, Law, Chaos or Neutrality. Choose it in Edit > Classes, under the subclass."
+        },
+        {
+          "level": 1,
+          "name": "Divine Magic (Good)",
+          "text": "Cure Wounds is always prepared for you and doesn't count against your sorcerer spells known.",
+          "variant": "Good",
+          "alwaysSpells": [
+            "Cure Wounds"
+          ]
+        },
+        {
+          "level": 1,
+          "name": "Divine Magic (Evil)",
+          "text": "Inflict Wounds is always prepared for you and doesn't count against your sorcerer spells known.",
+          "variant": "Evil",
+          "alwaysSpells": [
+            "Inflict Wounds"
+          ]
+        },
+        {
+          "level": 1,
+          "name": "Divine Magic (Law)",
+          "text": "Bless is always prepared for you and doesn't count against your sorcerer spells known.",
+          "variant": "Law",
+          "alwaysSpells": [
+            "Bless"
+          ]
+        },
+        {
+          "level": 1,
+          "name": "Divine Magic (Chaos)",
+          "text": "Bane is always prepared for you and doesn't count against your sorcerer spells known.",
+          "variant": "Chaos",
+          "alwaysSpells": [
+            "Bane"
+          ]
+        },
+        {
+          "level": 1,
+          "name": "Divine Magic (Neutrality)",
+          "text": "Protection from Evil and Good is always prepared for you and doesn't count against your sorcerer spells known.",
+          "variant": "Neutrality",
+          "alwaysSpells": [
+            "Protection from Evil and Good"
+          ]
         },
         {
           "level": 1,
@@ -7821,7 +7913,8 @@
             "die": ""
           }
         }
-      ]
+      ],
+      "variantLabel": "Affinity"
     },
     {
       "class": "Sorcerer",
@@ -7830,12 +7923,20 @@
         {
           "level": 1,
           "name": "Lunar Embodiment",
-          "text": "Learn spells by moon phase (Full Moon, New Moon, Crescent Moon) and choose a phase after each rest; you can cast one of that phase's 1st-level spells free once per long rest."
+          "text": "Learn spells by moon phase (Full Moon, New Moon, Crescent Moon) and choose a phase after each long rest; you can cast one of that phase's 1st-level spells free once per long rest."
+        },
+        {
+          "level": 1,
+          "name": "Lunar Spells",
+          "text": "Always known (they don't count against your sorcerer spells known). 1st: Shield, Ray of Sickness, Color Spray. 3rd: Lesser Restoration, Blindness/Deafness, Alter Self. 5th: Dispel Magic, Vampiric Touch, Phantom Steed. 7th: Death Ward, Confusion, Hallucinatory Terrain. 9th: Rary's Telepathic Bond, Hold Monster, Mislead."
         },
         {
           "level": 1,
           "name": "Moon Fire",
-          "text": "You learn Sacred Flame, and it can target two creatures within 5 feet of each other."
+          "text": "You learn Sacred Flame, and it can target two creatures within 5 feet of each other.",
+          "alwaysSpells": [
+            "Sacred Flame"
+          ]
         },
         {
           "level": 6,
@@ -7868,6 +7969,53 @@
             "recharge": "long",
             "die": ""
           }
+        }
+      ],
+      "spells": [
+        {
+          "level": 1,
+          "spells": [
+            "Shield",
+            "Ray of Sickness",
+            "Color Spray"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 3,
+          "spells": [
+            "Lesser Restoration",
+            "Blindness/Deafness",
+            "Alter Self"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 5,
+          "spells": [
+            "Dispel Magic",
+            "Vampiric Touch",
+            "Phantom Steed"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 7,
+          "spells": [
+            "Death Ward",
+            "Confusion",
+            "Hallucinatory Terrain"
+          ],
+          "mode": "always"
+        },
+        {
+          "level": 9,
+          "spells": [
+            "Rary's Telepathic Bond",
+            "Hold Monster",
+            "Mislead"
+          ],
+          "mode": "always"
         }
       ]
     },
@@ -8089,7 +8237,11 @@
         {
           "level": 1,
           "name": "Bonus Cantrips",
-          "text": "You learn Light and Sacred Flame; they count as warlock cantrips but not against your cantrips known."
+          "text": "You learn Light and Sacred Flame; they count as warlock cantrips but not against your cantrips known.",
+          "alwaysSpells": [
+            "Light",
+            "Sacred Flame"
+          ]
         },
         {
           "level": 1,
@@ -8211,7 +8363,10 @@
             "uses": "1",
             "recharge": "long",
             "die": ""
-          }
+          },
+          "alwaysSpells": [
+            "Evard's Black Tentacles"
+          ]
         },
         {
           "level": 14,
@@ -8991,7 +9146,10 @@
         {
           "level": 1,
           "name": "Among the Dead",
-          "text": "You learn Spare the Dying, have advantage on saves against disease, and undead must make a Wisdom save to target you directly."
+          "text": "You learn Spare the Dying, have advantage on saves against disease, and undead must make a Wisdom save to target you directly.",
+          "alwaysSpells": [
+            "Spare the Dying"
+          ]
         },
         {
           "level": 6,
@@ -9382,7 +9540,10 @@
         {
           "level": 2,
           "name": "Improved Minor Illusion",
-          "text": "You learn Minor Illusion, and it creates both a sound and an image."
+          "text": "You learn Minor Illusion, and it creates both a sound and an image.",
+          "alwaysSpells": [
+            "Minor Illusion"
+          ]
         },
         {
           "level": 6,

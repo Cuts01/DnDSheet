@@ -79,7 +79,7 @@
 
 @sub Swarmkeeper | TCoE
 3 | Gathered Swarm | Your swarm of spirits adds once per turn on a hit: an extra 1d6 piercing, a 15-foot push, or moving you 5 feet.
-3 | Swarmkeeper Magic | You learn Mage Hand; always prepared: 3rd Faerie Fire, 5th Web, 9th Gaseous Form, 13th Arcane Eye, 17th Insect Plague.
+3 | Swarmkeeper Magic | You learn Mage Hand. Always prepared at these ranger levels. 3rd: Faerie Fire. 5th: Web. 9th: Gaseous Form. 13th: Arcane Eye. 17th: Insect Plague.
 7 | Writhing Tide | As a bonus action, gain a 10-foot flying speed with hover for 1 minute. Proficiency bonus uses per long rest. {res long pb Writhing Tide}
 11 | Mighty Swarm | Gathered Swarm deals 1d8, the push knocks prone, and moving with it gives half cover.
 15 | Swarming Dispersal | When you take damage, use your reaction to gain resistance and teleport 30 feet. Proficiency bonus uses per long rest. {res long pb Swarming Dispersal}
