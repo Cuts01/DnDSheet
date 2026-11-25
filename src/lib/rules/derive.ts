@@ -147,7 +147,9 @@ export function profAmount(level: ProfLevel, bonus: number): number {
 
 /* Proficient en un save: los marcados a mano más los que dan los features (autoSaves). */
 export const hasSave = (c: Character, a: Ability) => c.saves.includes(a) || c.autoSaves.includes(a);
-export const saveBonus = (c: Character, a: Ability) => abilityMod(c, a) + (hasSave(c, a) ? pb(c) : 0);
+/* Aura of Protection (Paladin 6+, 2014 y 2024): Charisma modifier (mínimo +1) a todos los saves. */
+export const auraOfProtection = (c: Character) => (classLevel(c, 'paladin') >= 6 ? Math.max(1, abilityMod(c, 'cha')) : 0);
+export const saveBonus = (c: Character, a: Ability) => abilityMod(c, a) + (hasSave(c, a) ? pb(c) : 0) + auraOfProtection(c);
 
 /*
  * Skills: lo marcado a mano manda (expertise); si no, cuenta como proficient si alguna fuente la otorga.

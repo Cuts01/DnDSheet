@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-11-23 · backgrounds 2014 y reglas legacy') },
+  define: { __APP_VERSION__: JSON.stringify('2026-11-25 · Aura of Protection') },
   plugins: [
     svelte(),
     VitePWA({

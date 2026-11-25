@@ -2,7 +2,7 @@
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { ABILITIES } from '../lib/model/character';
-  import { abilityMod, fmt, hasSave, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
+  import { abilityMod, auraOfProtection, fmt, hasSave, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
   import { ABILITY_LABEL, SKILLS } from '../lib/rules/tables';
   import { compendium } from '../lib/compendium.svelte';
   import { allGrantedEffects } from '../lib/rules/features';
@@ -31,6 +31,9 @@
         </div>
       {/each}
     </div>
+    {#if auraOfProtection(c)}
+      <p class="small muted aura">{t('Los saves incluyen Aura of Protection ({n}).', { n: fmt(auraOfProtection(c)) })}</p>
+    {/if}
     <div class="passives">
       <span>Passive Perception <b class="num">{passive(c, 'perception', granted)}</b></span>
       <span>Passive Insight <b class="num">{passive(c, 'insight', granted)}</b></span>
@@ -58,6 +61,9 @@
 </section>
 
 <style>
+  .aura {
+    margin: 8px 0 0;
+  }
   .pdf-row {
     grid-column: 1 / -1;
   }

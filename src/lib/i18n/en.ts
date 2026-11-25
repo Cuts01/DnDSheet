@@ -545,6 +545,7 @@ const en: Record<string, string> = {
   "cualquiera": "any",
   "Species de un libro 2014 en un PJ 2024: sus aumentos de características no aplican; vienen del background (PHB 2024).": "2014 species on a 2024 character: its ability score increases don't apply; they come from the background (2024 PHB).",
   "Quitar los aumentos de la species": "Remove the species' increases",
+  "Los saves incluyen Aura of Protection ({n}).": "Saves include Aura of Protection ({n}).",
 };
 
 export default en;
