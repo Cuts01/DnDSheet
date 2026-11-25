@@ -1,7 +1,7 @@
 import { uid, type Ability, type Character, type ClassEntry, type SpellEntry } from '../model/character';
 import type { Pack, PackFeat, PackSpell } from '../model/pack';
 import { abilityMod, pactSlots, pb, slotMax, spellcasting, type CastingLine } from './derive';
-import { featInstances, findBackground, findRef, findSubclass, subclassVariant, type Ref } from './features';
+import { featInstances, findBackground, findClass, findRef, findSubclass, subclassVariant, type Ref } from './features';
 import { t as tr } from '../i18n.svelte';
 
 /* Mecánicas genéricas de spellcasting: cuántos cantrips y spells corresponden por nivel de clase. */
@@ -225,6 +225,22 @@ export function subclassSpells(c: Character, packs: Pack[]): SubclassSpellInfo {
       for (const g of bgSpells) if (g.level <= maxLvl) g.spells.forEach((n) => set.add(spellKey(n)));
       out.expanded.set(k.id, set);
     }
+  const addAlways = (k: ClassEntry, n: string, source: string) => {
+    const key = spellKey(n);
+    if (out.always.some((x) => x.key === key)) return;
+    const ref = index.get(key) ?? null;
+    out.always.push({ key, name: ref?.item.name ?? n, level: ref?.item.level ?? 1, classId: k.id, source, ref });
+  };
+  // Features de clase y subclass que dejan spells siempre preparadas (Paladin's Smite, Faithful Steed, Star Map...).
+  for (const k of c.classes) {
+    const cls = findClass(packs, k.name, c.ruleset)?.cls;
+    for (const f of cls?.features ?? []) if (f.level <= k.level) f.alwaysSpells.forEach((n) => addAlways(k, n, f.name));
+    const sub = findSubclass(packs, k.subclassId)?.sub;
+    if (!sub) continue;
+    const { value } = subclassVariant(c, k.id, sub);
+    for (const f of sub.features)
+      if (f.level <= k.level && (!f.variant || f.variant === value)) f.alwaysSpells.forEach((n) => addAlways(k, n, f.name));
+  }
   for (const k of c.classes) {
     const found = findSubclass(packs, k.subclassId);
     if (!found || !found.sub.spells.length) continue;

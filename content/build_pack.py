@@ -180,6 +180,37 @@ def subclass_spells(features: list) -> list:
     return out
 
 
+ALWAYS_PATTERNS = [
+    re.compile(r"([^.;:]+?) (?:is|are) always prepared"),
+    re.compile(r"always have ([^.;:]+?) prepared"),
+]
+
+
+def always_spells(text: str, known: dict) -> list:
+    """Spells que un feature deja siempre preparadas: 'X is always prepared', 'A and B are always prepared',
+    'you always have X prepared'. Solo cuenta nombres que existen como spell (ignora 'its spells', 'two spells'...)."""
+    out = []
+    for pat in ALWAYS_PATTERNS:
+        for m in pat.finditer(text):
+            pieces = [x.strip() for x in re.split(r",\s*(?:and\s+)?|\s+and\s+", m.group(1)) if x.strip()]
+            i = 0
+            while i < len(pieces):
+                # Nombres con "and" (Detect Poison and Disease): prueba juntar con el siguiente.
+                if i + 1 < len(pieces) and f"{pieces[i]} and {pieces[i + 1]}".lower() in known:
+                    cand, i = f"{pieces[i]} and {pieces[i + 1]}", i + 2
+                else:
+                    cand, i = pieces[i], i + 1
+                words = cand.split()
+                # Quita palabras iniciales que no son parte del nombre ("Your star chart is a focus; Guidance").
+                for k in range(len(words)):
+                    name = " ".join(words[k:])
+                    if name.lower() in known:
+                        if known[name.lower()] not in out:
+                            out.append(known[name.lower()])
+                        break
+    return out
+
+
 def dedupe(features: list) -> list:
     """Quita repeticiones (features opcionales listados en cada nivel de ASI), salvo los ASI."""
     seen, out = set(), []
@@ -707,6 +738,13 @@ def build(ruleset: str) -> dict:
         sp = subclass_spells(s["features"])
         if sp:
             s["spells"] = sp
+    spells = build_spells(ruleset)
+    known = {x["name"].lower(): x["name"] for x in spells}
+    for owner in classes + subclasses:
+        for f in owner["features"]:
+            names = always_spells(f.get("text", ""), known)
+            if names:
+                f["alwaysSpells"] = names
     return {
         "$schema": "./pack.schema.json",
         "format": "cuts5e-pack",
@@ -721,7 +759,7 @@ def build(ruleset: str) -> dict:
         "classes": classes,
         "subclasses": subclasses,
         **build_generic(ruleset),
-        "spells": build_spells(ruleset),
+        "spells": spells,
     }
 
 
