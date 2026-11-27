@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { campaigns } from '../lib/campaigns.svelte';
   import PdfButton from './PdfButton.svelte';
   import { t, i18n } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
-  import { canShareFiles, downloadCharacter, readCharacterFile, shareCharacter } from '../lib/io';
+  import { canShareFiles, downloadCharacter, readCharacterFile, shareCharacter } from '../lib/io.svelte';
   import type { Character } from '../lib/model/character';
   import { classSummary } from '../lib/rules/derive';
   import PacksCard from './PacksCard.svelte';
@@ -68,6 +69,15 @@
     <h2>{t('Personajes')}</h2>
     <CharacterList />
     <p class="small muted">{t('También puedes cambiar de personaje tocando su nombre arriba.')}</p>
+  </div>
+
+  <div class="card stack">
+    <h2>{t('Campañas')}</h2>
+    <label class="check">
+      <input type="checkbox" checked={campaigns.enabled} onchange={(e) => campaigns.setEnabled(e.currentTarget.checked)} />
+      {t('Usar campañas (agrega la pestaña Campaña)')}
+    </label>
+    <p class="small muted">{t('Guarda los detalles de cada campaña y relaciona tus PJs con ellas. En campañas de Strixhaven también hay calendario de 10 días y tus clases.')}</p>
   </div>
 
   <div class="card stack">
@@ -139,6 +149,18 @@
 </section>
 
 <style>
+  .check {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .check input {
+    width: 20px;
+    height: 20px;
+    min-height: 0;
+    flex: none;
+    margin: 0;
+  }
   .data {
     display: grid;
     gap: var(--gap);

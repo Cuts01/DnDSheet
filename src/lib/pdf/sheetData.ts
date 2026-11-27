@@ -89,6 +89,9 @@ export interface SheetData {
   strix: { label: string; value: string }[] | null;
   /* Relationships de Strixhaven, como tabla. */
   strixRel: { name: string; status: string; bond: string; notes: string }[];
+  /* Clases de Strixhaven del PJ (tabla) y nombre de su campaña. */
+  strixCourses: { name: string; kind: string; days: string; time: string; who: string }[];
+  campaign: string;
   strixNotes: string;
 }
 
@@ -99,7 +102,7 @@ const rest = (r: string) => (r === 'short' ? 'SR' : r === 'short1' ? 'SR/LR' : r
 
 const levelName = (l: number) => (l === 0 ? 'Cantrips' : `${t('Nivel')} ${l}`);
 
-export function sheetData(c: Character, packs: Pack[]): SheetData {
+export function sheetData(c: Character, packs: Pack[], extra: { campaign?: string; dayNames?: string[] } = {}): SheetData {
   const granted = allGrantedEffects(c, packs);
   const ac = armorClassInfo(c, granted);
   const profs = proficiencies(c, packs);
@@ -317,6 +320,7 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
   let strix: SheetData['strix'] = null;
   let strixRel: SheetData['strixRel'] = [];
   let strixNotes = '';
+  let strixCourses: SheetData['strixCourses'] = [];
   if (c.strixhaven.enabled) {
     const s = c.strixhaven;
     const college = collegeOf(c);
@@ -341,12 +345,24 @@ export function sheetData(c: Character, packs: Pack[]): SheetData {
         return { name: r.name.trim(), status: `${status[st]} (${r.points > 0 ? '+' : ''}${r.points})`, bond, notes: r.notes.trim() || '-' };
       });
     strixNotes = s.notes.trim();
+    const dn = extra.dayNames ?? [];
+    strixCourses = s.courses
+      .filter((x) => x.name.trim())
+      .map((x) => ({
+        name: x.name.trim(),
+        kind: x.kind === 'elective' ? t('Optativa') : t('Obligatoria'),
+        days: x.days.map((d) => dn[d - 1]?.trim() || String(d)).join(', ') || '-',
+        time: x.time.trim() || '-',
+        who: [x.professor.trim(), x.place.trim()].filter(Boolean).join(' · ') || '-'
+      }));
   }
 
   return {
     strix,
     strixRel,
     strixNotes,
+    strixCourses,
+    campaign: extra.campaign?.trim() ?? '',
     name: c.name || t('Sin nombre'),
     photo: c.photo,
     lines,

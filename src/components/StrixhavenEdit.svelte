@@ -4,6 +4,8 @@
   import { uid } from '../lib/model/character';
   import { COLLEGES, EXTRACURRICULARS, JOBS, JOB_PAY_GP, collegeOf, maxExtracurriculars, relStatus, YEAR_NAMES } from '../lib/strixhaven';
   import { SKILLS } from '../lib/rules/tables';
+  import { campaigns } from '../lib/campaigns.svelte';
+  import StrixCourses from './StrixCourses.svelte';
 
   /* Editar > Strixhaven: college, año, extracurriculars, job, exámenes y relaciones. */
   const s = $derived(store.c.strixhaven);
@@ -171,6 +173,8 @@
   <h2>{t('Notas de Strixhaven')}</h2>
   <textarea rows="4" bind:value={store.c.strixhaven.notes} placeholder={t('Clases, profesores, Mage Tower, lo que quieras recordar')}></textarea>
 </div>
+
+<StrixCourses dayNames={campaigns.get(store.c.campaignId)?.calendar.dayNames} />
 
 <style>
   .title-row button {

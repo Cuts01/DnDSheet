@@ -16,9 +16,11 @@
   import { autoSyncLocal } from './lib/packImport';
   import { compendium } from './lib/compendium.svelte';
   import CharacterSwitcher from './components/CharacterSwitcher.svelte';
+  import CampaignView from './components/CampaignView.svelte';
+  import { campaigns } from './lib/campaigns.svelte';
   import { syncGrants } from './lib/rules/grants';
 
-  type View = 'combat' | 'sheet' | 'spells' | 'features' | 'gear' | 'edit' | 'data';
+  type View = 'combat' | 'sheet' | 'spells' | 'features' | 'gear' | 'edit' | 'campaign' | 'data';
 
   let view = $state<View>('combat');
   let switching = $state(false);
@@ -31,6 +33,8 @@
       featSpells(store.c, compendium.packs).granted.length > 0
   );
   const spellsTab = { id: 'spells' as View, label: 'Spells', icon: '✧' };
+  // Pestaña opcional: se activa en Datos > Campañas.
+  const campaignTab = $derived({ id: 'campaign' as View, label: t('Campaña'), icon: '⚑' });
   const tabs = $derived(
     (wide
       ? [
@@ -39,6 +43,7 @@
           { id: 'features' as View, label: t('Rasgos'), icon: '✦' },
           { id: 'gear' as View, label: t('Equipo'), icon: '⚒' },
           { id: 'edit' as View, label: t('Editar'), icon: '✎' },
+          campaignTab,
           { id: 'data' as View, label: t('Datos'), icon: '⇅' }
         ]
       : [
@@ -48,9 +53,10 @@
           { id: 'features' as View, label: t('Rasgos'), icon: '✦' },
           { id: 'gear' as View, label: t('Equipo'), icon: '⚒' },
           { id: 'edit' as View, label: t('Editar'), icon: '✎' },
+          campaignTab,
           { id: 'data' as View, label: t('Datos'), icon: '⇅' }
         ]
-    ).filter((x) => x.id !== 'spells' || showSpells)
+    ).filter((x) => (x.id !== 'spells' || showSpells) && (x.id !== 'campaign' || campaigns.enabled))
   );
   const isActive = (id: View) => view === id || (wide && id === 'combat' && view === 'sheet');
 
@@ -62,12 +68,17 @@
     mq.addEventListener('change', onMq);
 
     // Guarda de inmediato si la app pasa a segundo plano (cambio de app, pantalla apagada).
-    const onHide = () => document.visibilityState === 'hidden' && store.flush();
+    const onHide = () => {
+      if (document.visibilityState !== 'hidden') return;
+      void store.flush();
+      void campaigns.flush();
+    };
     document.addEventListener('visibilitychange', onHide);
     window.addEventListener('pagehide', onHide);
 
     compendium.load().then(() => autoSyncLocal());
     store.load();
+    void campaigns.load();
     return () => {
       mq.removeEventListener('change', onMq);
       document.removeEventListener('visibilitychange', onHide);
@@ -145,6 +156,8 @@
       <InventoryView />
     {:else if view === 'edit'}
       <EditView />
+    {:else if view === 'campaign' && campaigns.enabled}
+      <CampaignView />
     {:else}
       <DataView />
     {/if}

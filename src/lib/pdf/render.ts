@@ -730,9 +730,19 @@ function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {
         [true, false, false]
       );
     }
+    if (d.strixCourses.length) {
+      flow.sub(t('Clases'), 9.4);
+      flow.table(
+        [t('Clase'), t('Tipo'), t('Días'), t('Hora'), t('Profesor / lugar')],
+        d.strixCourses.map((x) => [x.name, x.kind, x.days, x.time, x.who]),
+        [0.26, 0.2, 0.18, 0.1, 0.26],
+        [true, false, false, false, false]
+      );
+    }
     if (d.strixNotes) flow.keyValue(t('Notas'), d.strixNotes);
   }
   flow.heading(t('Otros datos'));
+  if (d.campaign) flow.keyValue(t('Campaña'), d.campaign);
   for (const ps of d.passives.slice(1)) flow.keyValue(ps.label, String(ps.value));
   if (d.resistances) flow.keyValue('Resistances', d.resistances);
   if (over.profs) for (const r of d.profs) flow.keyValue(r.label, r.value);

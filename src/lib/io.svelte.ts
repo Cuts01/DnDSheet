@@ -1,5 +1,6 @@
 import { CharacterSchema, type Character } from './model/character';
 import { t as tr } from './i18n.svelte';
+import { campaigns } from './campaigns.svelte';
 
 function fileName(c: Character) {
   const slug = c.name.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'personaje';
@@ -9,7 +10,10 @@ function fileName(c: Character) {
 }
 
 function toFile(c: Character): File {
-  const json = JSON.stringify({ ...c, updatedAt: new Date().toISOString() }, null, 2);
+  // Si el PJ está en una campaña, el respaldo la lleva (campo extra, el schema del personaje lo ignora).
+  const camp = campaigns.get(c.campaignId);
+  const extra = camp ? { campaign: $state.snapshot(camp) } : {};
+  const json = JSON.stringify({ ...c, updatedAt: new Date().toISOString(), ...extra }, null, 2);
   return new File([json], fileName(c), { type: 'application/json' });
 }
 
@@ -55,6 +59,12 @@ export async function readCharacterFile(file: File): Promise<ImportResult> {
       ok: false,
       errors: parsed.error.issues.slice(0, 8).map((i) => `${i.path.join('.') || '(raiz)'}: ${i.message}`)
     };
+  }
+  // La campaña del respaldo se agrega si no existe, o si es más nueva que la guardada.
+  const camp = (raw as { campaign?: { id?: string; updatedAt?: string } }).campaign;
+  if (camp?.id) {
+    const have = campaigns.get(camp.id);
+    if (!have || (camp.updatedAt ?? '') > have.updatedAt) await campaigns.upsert(camp);
   }
   return { ok: true, character: parsed.data };
 }

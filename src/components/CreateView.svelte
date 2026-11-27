@@ -4,7 +4,7 @@
   import { compendium } from '../lib/compendium.svelte';
   import { blankCharacter, type Character } from '../lib/model/character';
   import { averageHp } from '../lib/rules/derive';
-  import { readCharacterFile } from '../lib/io';
+  import { readCharacterFile } from '../lib/io.svelte';
   import AbilitiesCard from './build/AbilitiesCard.svelte';
   import BackgroundCard from './build/BackgroundCard.svelte';
   import ProficienciesCard from './build/ProficienciesCard.svelte';

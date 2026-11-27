@@ -13,6 +13,7 @@ export interface CharacterInfo {
   ruleset: string;
   updatedAt: string;
   photo?: string;
+  campaignId?: string | null;
   /* false si el registro no pasó la validación (se puede borrar, no abrir). */
   valid: boolean;
 }
@@ -42,6 +43,7 @@ const infoOf = (id: string, c: Character): CharacterInfo => ({
   ruleset: c.ruleset,
   updatedAt: c.updatedAt,
   photo: c.photo,
+  campaignId: c.campaignId,
   valid: true
 });
 

@@ -21,6 +21,20 @@ export const StrixExamSchema = z.object({
 });
 export type StrixExam = z.infer<typeof StrixExamSchema>;
 
+/* Una clase (curso) de Strixhaven del PJ; se repite cada semana de 10 días. */
+export const StrixCourseSchema = z.object({
+  id: z.string(),
+  name: z.string().max(120).default(''),
+  kind: z.enum(['required', 'elective']).default('required'),
+  days: z.array(z.number().int().min(1).max(10)).default([]),
+  time: z.string().max(40).default(''),
+  professor: z.string().max(120).default(''),
+  place: z.string().max(120).default(''),
+  notes: z.string().max(1000).default('')
+});
+export type StrixCourse = z.infer<typeof StrixCourseSchema>;
+export const MAX_ELECTIVES = 3;
+
 export const StrixhavenSchema = z.object({
   enabled: z.boolean().default(false),
   college: z.string().default('').describe('Vacío: se toma del background <College> Student'),
@@ -31,6 +45,7 @@ export const StrixhavenSchema = z.object({
   relationships: z.array(StrixRelationshipSchema).default([]),
   diceUsed: z.array(z.string()).default([]).describe('Student dice usados desde el último Long Rest'),
   belovedUsed: z.number().int().min(0).default(0),
+  courses: z.array(StrixCourseSchema).default([]),
   notes: z.string().max(4000).default('')
 });
 export type Strixhaven = z.infer<typeof StrixhavenSchema>;
@@ -320,6 +335,7 @@ const CharacterObject = z.object({
   freeUsed: z.record(z.string(), z.boolean()).default({}),
   /* Spell con concentration activa ('' = ninguna). */
   concentration: z.string().default(''),
+  campaignId: z.string().nullable().default(null),
   /* Spells activas sin concentration que cambian la AC (Mage Armor, Shield, Barkskin 2024). */
   activeEffects: z.array(z.string()).default([]),
   /* Forma de Polymorph. pool (2014): HP propios de la forma; el daño sobrante pasa a tus HP.
@@ -481,6 +497,7 @@ export function blankCharacter(): Character {
     featSpells: {},
     freeUsed: {},
     concentration: '',
+    campaignId: null,
     activeEffects: [],
     shape: null,
     arcaneRecoveryUsed: false,
