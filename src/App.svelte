@@ -8,7 +8,6 @@
   import EditView from './components/EditView.svelte';
   import DataView from './components/DataView.svelte';
   import CreateView from './components/CreateView.svelte';
-  import FeaturesView from './components/FeaturesView.svelte';
   import InventoryView from './components/InventoryView.svelte';
   import SpellsView from './components/SpellsView.svelte';
   import { spellcasting } from './lib/rules/derive';
@@ -20,7 +19,7 @@
   import { campaigns } from './lib/campaigns.svelte';
   import { syncGrants } from './lib/rules/grants';
 
-  type View = 'combat' | 'sheet' | 'spells' | 'features' | 'gear' | 'edit' | 'campaign' | 'data';
+  type View = 'combat' | 'sheet' | 'spells' | 'gear' | 'edit' | 'campaign' | 'data';
 
   let view = $state<View>('combat');
   let switching = $state(false);
@@ -40,7 +39,6 @@
       ? [
           { id: 'combat' as View, label: t('Juego'), icon: '⚔' },
           spellsTab,
-          { id: 'features' as View, label: t('Rasgos'), icon: '✦' },
           { id: 'gear' as View, label: t('Equipo'), icon: '⚒' },
           { id: 'edit' as View, label: t('Editar'), icon: '✎' },
           campaignTab,
@@ -50,7 +48,6 @@
           { id: 'combat' as View, label: t('Combate'), icon: '⚔' },
           { id: 'sheet' as View, label: t('Hoja'), icon: '☰' },
           spellsTab,
-          { id: 'features' as View, label: t('Rasgos'), icon: '✦' },
           { id: 'gear' as View, label: t('Equipo'), icon: '⚒' },
           { id: 'edit' as View, label: t('Editar'), icon: '✎' },
           campaignTab,
@@ -150,8 +147,6 @@
       {/if}
     {:else if view === 'spells'}
       <SpellsView />
-    {:else if view === 'features'}
-      <FeaturesView />
     {:else if view === 'gear'}
       <InventoryView />
     {:else if view === 'edit'}

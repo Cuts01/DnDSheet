@@ -18,11 +18,13 @@
   import InvocationsCard from './build/InvocationsCard.svelte';
   import ProficienciesCard from './build/ProficienciesCard.svelte';
   import SpeciesCard from './build/SpeciesCard.svelte';
+  import FeaturesView from './FeaturesView.svelte';
 
-  type Section = 'origin' | 'classes' | 'profs' | 'strix' | 'other';
+  type Section = 'origin' | 'classes' | 'features' | 'profs' | 'strix' | 'other';
   const ALL: [Section, string][] = [
     ['origin', 'Personaje'],
     ['classes', 'Clases y mejoras'],
+    ['features', 'Rasgos'],
     ['profs', 'Proficiencies'],
     ['strix', 'Strixhaven'],
     ['other', 'Ajustes']
@@ -117,6 +119,8 @@
     <ClassesCard bind:c={store.c} />
     <AdvancementsCard bind:c={store.c} />
     <InvocationsCard bind:c={store.c} />
+  {:else if section === 'features'}
+    <FeaturesView />
   {:else if section === 'profs'}
     <ProficienciesCard bind:c={store.c} />
   {:else}
