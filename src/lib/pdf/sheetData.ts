@@ -1,5 +1,7 @@
 /* Datos de la hoja para el PDF: todo ya calculado y en texto, para que el dibujo no dependa de las reglas. */
 import { t } from '../i18n.svelte';
+import type { Catalog } from '../model/campaign';
+import { scheduleRows } from '../rules/schedule';
 import { ABILITIES, type Ability, type Character, type SpellEntry } from '../model/character';
 import type { Pack } from '../model/pack';
 import {
@@ -91,6 +93,7 @@ export interface SheetData {
   strixRel: { name: string; status: string; bond: string; notes: string }[];
   /* Clases de Strixhaven del PJ (tabla) y nombre de su campaña. */
   strixCourses: { name: string; kind: string; days: string; time: string; who: string }[];
+  strixSchedule: { kind: string; name: string; when: string; who: string }[];
   campaign: string;
   strixNotes: string;
 }
@@ -102,7 +105,7 @@ const rest = (r: string) => (r === 'short' ? 'SR' : r === 'short1' ? 'SR/LR' : r
 
 const levelName = (l: number) => (l === 0 ? 'Cantrips' : `${t('Nivel')} ${l}`);
 
-export function sheetData(c: Character, packs: Pack[], extra: { campaign?: string; dayNames?: string[] } = {}): SheetData {
+export function sheetData(c: Character, packs: Pack[], extra: { campaign?: string; dayNames?: string[]; catalog?: Catalog | null } = {}): SheetData {
   const granted = allGrantedEffects(c, packs);
   const ac = armorClassInfo(c, granted);
   const profs = proficiencies(c, packs);
@@ -321,19 +324,29 @@ export function sheetData(c: Character, packs: Pack[], extra: { campaign?: strin
   let strixRel: SheetData['strixRel'] = [];
   let strixNotes = '';
   let strixCourses: SheetData['strixCourses'] = [];
+  let strixSchedule: SheetData['strixSchedule'] = [];
   if (c.strixhaven.enabled) {
     const s = c.strixhaven;
     const college = collegeOf(c);
     const info = COLLEGES.find((x) => x.name === college);
     const status = { beloved: 'Beloved', friend: 'Friend', rival: 'Rival', neutral: 'Neutral' } as const;
     const res = { '': '-', failed: 'Failed', passed: 'Passed', aced: 'Aced' } as const;
+    const usesCatalog = !!(extra.catalog && extra.catalog.courses.length);
     strix = [
       { label: 'College', value: [college || '-', info?.focus].filter(Boolean).join(' · ') },
       { label: t('Año'), value: YEAR_NAMES[s.year] },
       ...(info ? [{ label: 'Mascot', value: info.mascot }] : []),
-      ...s.extracurriculars.map((e) => ({ label: 'Extracurricular', value: `${e} (${EXTRACURRICULARS.find((x) => x.name === e)?.skills.join(', ') ?? ''})` })),
-      ...(s.job ? [{ label: 'Job', value: `${s.job} · ${JOB_PAY_GP} gp/${t('semana')}` }] : []),
-      { label: 'Student Dice (d4)', value: studentDice(c).map((d) => `${d.source}: ${d.skills.join(', ') || '-'}`).join(' · ') || '-' },
+      // Con horario del catálogo, clubes y trabajo salen en la tabla Horario.
+      ...(usesCatalog
+        ? []
+        : [
+            ...s.extracurriculars.map((e) => {
+              const sk = EXTRACURRICULARS.find((x) => x.name === e)?.skills.join(', ');
+              return { label: 'Extracurricular', value: sk ? `${e} (${sk})` : e };
+            }),
+            ...(s.job ? [{ label: 'Job', value: `${s.job} · ${JOB_PAY_GP} gp/${t('semana')}` }] : [])
+          ]),
+      { label: 'Student Dice (d4)', value: studentDice(c, extra.catalog).map((d) => `${d.source}: ${d.skills.join(', ') || '-'}`).join(' · ') || '-' },
       ...(belovedCount(c) ? [{ label: 'Beloved Inspiration', value: `${belovedCount(c)} / Long Rest` }] : []),
       ...s.exams.map((e) => ({ label: `${t('Examen')} (${t('Año')} ${e.year})`, value: `${e.name || '-'} · ${e.skills || '-'} · ${res[e.result]}` })),
     ];
@@ -346,6 +359,9 @@ export function sheetData(c: Character, packs: Pack[], extra: { campaign?: strin
       });
     strixNotes = s.notes.trim();
     const dn = extra.dayNames ?? [];
+    // Con catálogo de campaña: el horario elegido (obligatorias, optativas, clubes, equipo y trabajo).
+    if (extra.catalog && extra.catalog.courses.length)
+      strixSchedule = scheduleRows(c, extra.catalog, dn).map((r) => ({ kind: r.kind, name: r.name, when: r.when, who: [r.where, r.who].filter(Boolean).join(' · ') || '-' }));
     strixCourses = s.courses
       .filter((x) => x.name.trim())
       .map((x) => ({
@@ -362,6 +378,7 @@ export function sheetData(c: Character, packs: Pack[], extra: { campaign?: strin
     strixRel,
     strixNotes,
     strixCourses,
+    strixSchedule,
     campaign: extra.campaign?.trim() ?? '',
     name: c.name || t('Sin nombre'),
     photo: c.photo,

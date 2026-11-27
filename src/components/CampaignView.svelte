@@ -5,6 +5,8 @@
   import { campaigns } from '../lib/campaigns.svelte';
   import { uid } from '../lib/model/character';
   import StrixCourses from './StrixCourses.svelte';
+  import ScheduleSelector from './ScheduleSelector.svelte';
+  import { clashes, fmtSpan, scheduleOf } from '../lib/rules/schedule';
 
   /* Pestaña Campaña (opcional): campaña del PJ abierto, sus datos y, si es Strixhaven, calendario y clases. */
   const camp = $derived(campaigns.get(store.c.campaignId));
@@ -47,6 +49,50 @@
     camp.strixhaven = on;
     if (on) store.c.strixhaven.enabled = true;
   }
+  /* ---------- Importar / exportar el archivo de campaña ---------- */
+  let fileInput: HTMLInputElement | undefined = $state();
+  let importMsg = $state('');
+  async function onImport(e: Event) {
+    const file = (e.currentTarget as HTMLInputElement).files?.[0];
+    (e.currentTarget as HTMLInputElement).value = '';
+    if (!file) return;
+    let raw: unknown;
+    try {
+      raw = JSON.parse(await file.text());
+    } catch {
+      importMsg = t('El archivo no es JSON válido.');
+      return;
+    }
+    const r = await campaigns.importFile(raw);
+    if (!r.ok) {
+      importMsg = t('Ese archivo no es una campaña de la app.');
+      return;
+    }
+    creating = false;
+    store.c.campaignId = r.campaign.id;
+    if (r.campaign.strixhaven) store.c.strixhaven.enabled = true;
+    importMsg = r.updated ? t('Campaña actualizada: {name}. Tus notas y el día actual se mantienen.', { name: r.campaign.name }) : t('Campaña importada: {name}.', { name: r.campaign.name });
+  }
+  function exportCampaign() {
+    if (!camp) return;
+    const json = JSON.stringify({ format: 'dndsheet-campaign', version: 1, campaign: $state.snapshot(camp) }, null, 1);
+    const url = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${(camp.name || 'campaña').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\w-]+/g, '-').toLowerCase()}.campaign.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  /* ---------- Horario del catálogo en el calendario ---------- */
+  const cat = $derived(camp?.catalog ?? null);
+  const plan = $derived(cat ? scheduleOf(store.c, cat) : null);
+  const clashKeys = $derived(new Set(plan ? clashes(plan.timed).flatMap(([a, b]) => [a, b]) : []));
+  const timedOn = (d: number) => plan?.timed.filter((x) => x.day === d) ?? [];
+  const notesOn = (d: number) => plan?.notes.filter((x) => x.day === d) ?? [];
+
   async function removeCampaign() {
     if (!camp) return;
     if (!confirmDelete) {
@@ -133,6 +179,12 @@
     {#if !camp && !creating}
       <p class="small muted">{t('Crea una campaña o elige una existente para guardar sus detalles y compartirlos entre tus PJs.')}</p>
     {/if}
+    <div class="row">
+      <button onclick={() => fileInput?.click()}>{t('Importar campaña')}</button>
+      {#if camp}<button class="ghost" onclick={exportCampaign}>{t('Exportar campaña')}</button>{/if}
+      <input bind:this={fileInput} type="file" accept="application/json,.json,text/plain" hidden onchange={onImport} />
+    </div>
+    {#if importMsg}<p class="small ok">{importMsg}</p>{/if}
   </div>
 
   {#if camp}
@@ -193,13 +245,26 @@
             <li class:today={isToday}>
               <div class="d-head">
                 <b>{name}</b>
+                {#if cat?.dayTypes[i]}<span class="dtype">{cat.dayTypes[i]}</span>{/if}
                 {#if isToday}<span class="tag">{t('Hoy')}</span>{/if}
                 <span class="spacer"></span>
                 <button class="ghost add" aria-label={t('Agregar evento el {day}', { day: name })} onclick={() => ((addingDay = addingDay === d ? null : d), (eventTitle = ''))}>+</button>
               </div>
-              {#each coursesOn(d) as x (x.id)}
-                <div class="item course" class:elective={x.kind === 'elective'}>{x.name || t('Clase sin nombre')}{x.time ? ` · ${x.time}` : ''}{x.place ? ` · ${x.place}` : ''}</div>
-              {/each}
+              {#if plan}
+                {#each timedOn(d) as x, k (k)}
+                  <div class="item slot k-{x.kind}" class:clash={clashKeys.has(x)}>
+                    <span class="time">{fmtSpan(x.start, x.end)}</span>
+                    <span class="grow">{x.label}{x.kind === 'job' ? ` · ${x.detail.toLowerCase()}` : ''}</span>
+                  </div>
+                {/each}
+                {#each notesOn(d) as x, k (k)}
+                  <div class="item slot note k-{x.kind}"><span class="grow">{x.label}: {x.text}</span></div>
+                {/each}
+              {:else}
+                {#each coursesOn(d) as x (x.id)}
+                  <div class="item course" class:elective={x.kind === 'elective'}>{x.name || t('Clase sin nombre')}{x.time ? ` · ${x.time}` : ''}{x.place ? ` · ${x.place}` : ''}</div>
+                {/each}
+              {/if}
               {#each eventsOn(viewWeek, d) as e (e.id)}
                 <div class="item event">
                   <span class="grow">★ {e.title}</span>
@@ -235,7 +300,42 @@
         </details>
       </div>
 
-      <StrixCourses dayNames={cal.dayNames} />
+      {#if cat && cat.courses.length}
+        <ScheduleSelector {camp} />
+      {:else}
+        <StrixCourses dayNames={cal.dayNames} />
+      {/if}
+    {/if}
+
+    {#if cat && cat.guide.length}
+      <div class="card stack">
+        <h2>{t('Guía')}</h2>
+        {#each cat.guide as g, i (i)}
+          <details class="guide">
+            <summary>{g.title}</summary>
+            {#each g.text.split('\n') as line, k (k)}<p class="small">{line}</p>{/each}
+          </details>
+        {/each}
+      </div>
+    {/if}
+
+    {#if cat}
+      <div class="card stack">
+        <details>
+          <summary><b>{t('Reglas de la campaña')}</b></summary>
+          <p class="small muted">{t('Vienen del DM. Si te confirma otra cosa, cámbialas aquí.')}</p>
+          <div class="rules">
+            <label class="field"><span>{t('Optativas mínimas')}</span><input type="number" min="0" bind:value={cat.rules.minElectives} /></label>
+            <label class="field"><span>{t('Optativas máximas')}</span><input type="number" min="0" bind:value={cat.rules.maxElectives} /></label>
+            <label class="field"><span>{t('Máx. de Nivel 2.º año')}</span><input type="number" min="0" bind:value={cat.rules.maxLevel2} /></label>
+            <label class="field"><span>{t('Clubes máximos')}</span><input type="number" min="0" bind:value={cat.rules.maxClubs} /></label>
+            <label class="field"><span>{t('Trabajos máximos')}</span><input type="number" min="0" bind:value={cat.rules.maxJobs} /></label>
+          </div>
+          <label class="check small"><input type="checkbox" bind:checked={cat.rules.teamCountsAsClub} /> {t('El equipo de Mage Tower cuenta como club')}</label>
+          <label class="check small"><input type="checkbox" bind:checked={cat.rules.jobUsesClubSlot} /> {t('El trabajo ocupa un lugar de club (dos clubes, o un club y un trabajo)')}</label>
+          <label class="check small"><input type="checkbox" bind:checked={cat.rules.scholarshipReplacesJob} /> {t('La beca sustituye al trabajo')}</label>
+        </details>
+      </div>
     {/if}
 
     <div class="card stack">
@@ -350,6 +450,59 @@
   }
   .item.course.elective {
     font-style: italic;
+  }
+  .dtype {
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .slot {
+    border-left: 3px solid var(--line);
+    padding-left: 6px;
+  }
+  .slot .time {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    min-width: 86px;
+    font-size: 0.78rem;
+  }
+  .slot.k-required {
+    border-left-color: var(--accent);
+  }
+  .slot.k-elective {
+    border-left-color: var(--temp);
+  }
+  .slot.k-club {
+    border-left-color: var(--pact);
+  }
+  .slot.k-team {
+    border-left-color: var(--good);
+  }
+  .slot.k-job {
+    border-left-color: var(--muted);
+  }
+  .slot.note {
+    border-left-style: dashed;
+    color: var(--muted);
+  }
+  .slot.clash {
+    background: color-mix(in srgb, var(--bad) 18%, transparent);
+    border-left-color: var(--bad);
+  }
+  .guide summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .guide p {
+    margin: 4px 0;
+  }
+  .rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .ok {
+    color: var(--good);
   }
   .names {
     display: grid;

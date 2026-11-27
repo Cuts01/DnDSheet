@@ -730,6 +730,16 @@ function drawSummary(flow: Flow, p: Painter, d: SheetData, over: Overflow) {
         [true, false, false]
       );
     }
+    if (d.strixSchedule.length) {
+      flow.sub(t('Horario'), 9.4);
+      flow.table(
+        [t('Tipo'), t('Actividad'), t('Cuándo'), t('Dónde / quién')],
+        d.strixSchedule.map((x) => [x.kind, x.name, x.when, x.who]),
+        [0.17, 0.3, 0.26, 0.27],
+        [false, true, false, false],
+        7.2
+      );
+    }
     if (d.strixCourses.length) {
       flow.sub(t('Clases'), 9.4);
       flow.table(

@@ -1,5 +1,6 @@
 /* Campaña de Strixhaven (Strixhaven: A Curriculum of Chaos): colleges, extracurriculars, jobs, exámenes,
    relaciones y student dice. Todo opcional: solo se usa si el personaje tiene la campaña activada. */
+import type { Catalog } from './model/campaign';
 import type { Character, StrixRelationship } from './model/character';
 
 export const COLLEGES = [
@@ -62,13 +63,23 @@ export interface StudentDie {
 
 /* Student Dice (d4): uno por extracurricular y uno o dos por examen aprobado o con honores del año actual.
    Cada uno se usa una vez por Long Rest en una prueba con sus skills. */
-export function studentDice(c: Character): StudentDie[] {
+/* catalog: clubes de la campaña (cada club elegido da un dado con sus habilidades; el equipo de Mage Tower cuenta como club). */
+export function studentDice(c: Character, catalog?: Catalog | null): StudentDie[] {
   const s = c.strixhaven;
   const out: StudentDie[] = [];
-  s.extracurriculars.slice(0, maxExtracurriculars(c)).forEach((name) => {
-    const e = EXTRACURRICULARS.find((x) => x.name === name);
-    out.push({ id: `ec:${name}`, source: name, skills: e ? [...e.skills] : [], used: false });
-  });
+  const sch = s.schedule;
+  if (catalog && (sch.clubs.length || sch.team)) {
+    for (const id of sch.clubs) {
+      const k = catalog.clubs.find((x) => x.id === id);
+      if (k) out.push({ id: `ec:${k.name}`, source: k.name, skills: [...k.skills], used: false });
+    }
+    const t = catalog.teams.find((x) => x.id === sch.team);
+    if (t && catalog.rules.teamCountsAsClub) out.push({ id: `ec:${t.name}`, source: t.name, skills: [], used: false });
+  } else
+    s.extracurriculars.slice(0, maxExtracurriculars(c)).forEach((name) => {
+      const e = EXTRACURRICULARS.find((x) => x.name === name);
+      out.push({ id: `ec:${name}`, source: name, skills: e ? [...e.skills] : [], used: false });
+    });
   for (const ex of s.exams) {
     if (ex.year !== s.year) continue; // los dados de exámenes se pierden al terminar el año
     const n = ex.result === 'aced' ? 2 : ex.result === 'passed' ? 1 : 0;

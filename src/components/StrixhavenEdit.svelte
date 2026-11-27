@@ -13,6 +13,8 @@
   const info = $derived(COLLEGES.find((x) => x.name === college) ?? null);
   const bgCollege = $derived(/^(\w+) Student$/i.exec(store.c.background.name.trim())?.[1] ?? '');
   const maxEc = $derived(maxExtracurriculars(store.c));
+  /* Con catálogo de campaña, clubes, trabajo y clases se eligen en la pestaña Campaña. */
+  const catalog = $derived(campaigns.get(store.c.campaignId)?.catalog ?? null);
   const jobKnown = $derived(JOBS.some((p) => p.jobs.some((j) => `${p.place}: ${j}` === s.job)));
   let jobFree = $state(false);
 
@@ -72,6 +74,14 @@
   <p class="small muted">{t('El background {college} Student da el feat Strixhaven Initiate de ese college y suma sus spells a tu lista de clase.', { college: college || 'Lorehold' })}</p>
 </div>
 
+{#if catalog}
+<div class="card stack">
+  <h2>{t('Extracurriculars y Job')}</h2>
+  <p class="small muted">{t('Tu campaña tiene su propio catálogo: elige clases, clubes y trabajo en la pestaña Campaña > Mi horario.')}</p>
+  {#if s.extracurriculars.length}<p class="small"><b>{t('Clubes')}:</b> {s.extracurriculars.join(', ')}</p>{/if}
+  {#if s.job}<p class="small"><b>Job:</b> {s.job}</p>{/if}
+</div>
+{:else}
 <div class="card stack">
   <h2>{t('Extracurriculars y Job')}</h2>
   <p class="small muted">{t('Cada extracurricular da un Student Die (d4) para pruebas con sus dos skills y un Relationship Point con un miembro. Con Job solo puedes estar en uno.')}</p>
@@ -109,6 +119,8 @@
     <p class="small"><b>{e}</b>: Student Die (d4) · {ecSkills(e)}</p>
   {/each}
 </div>
+
+{/if}
 
 <div class="card stack">
   <div class="title-row">
@@ -174,7 +186,7 @@
   <textarea rows="4" bind:value={store.c.strixhaven.notes} placeholder={t('Clases, profesores, Mage Tower, lo que quieras recordar')}></textarea>
 </div>
 
-<StrixCourses dayNames={campaigns.get(store.c.campaignId)?.calendar.dayNames} />
+{#if !catalog}<StrixCourses dayNames={campaigns.get(store.c.campaignId)?.calendar.dayNames} />{/if}
 
 <style>
   .title-row button {

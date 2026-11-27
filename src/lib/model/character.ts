@@ -39,13 +39,25 @@ export const StrixhavenSchema = z.object({
   enabled: z.boolean().default(false),
   college: z.string().default('').describe('Vacío: se toma del background <College> Student'),
   year: z.number().int().min(1).max(4).default(1),
-  extracurriculars: z.array(z.string()).max(2).default([]),
+  extracurriculars: z.array(z.string()).max(4).default([]),
   job: z.string().default(''),
   exams: z.array(StrixExamSchema).default([]),
   relationships: z.array(StrixRelationshipSchema).default([]),
   diceUsed: z.array(z.string()).default([]).describe('Student dice usados desde el último Long Rest'),
   belovedUsed: z.number().int().min(0).default(0),
   courses: z.array(StrixCourseSchema).default([]),
+  /* Horario elegido del catálogo de la campaña (ids). Las obligatorias del catálogo se suman solas. */
+  schedule: z
+    .object({
+      electives: z.array(z.string()).default([]),
+      clubs: z.array(z.string()).default([]),
+      team: z.string().default(''),
+      job: z.string().default(''),
+      position: z.string().default(''),
+      shifts: z.array(z.string()).default([]),
+      scholarship: z.boolean().default(false).describe('Media beca por otro deporte')
+    })
+    .default(() => ({ electives: [], clubs: [], team: '', job: '', position: '', shifts: [], scholarship: false })),
   notes: z.string().max(4000).default('')
 });
 export type Strixhaven = z.infer<typeof StrixhavenSchema>;

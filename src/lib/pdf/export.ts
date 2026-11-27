@@ -7,7 +7,7 @@ import { campaigns } from '../campaigns.svelte';
 export async function exportSheetPdf(c: Character, packs: Pack[]): Promise<string> {
   const { renderSheetPdf } = await import('./render');
   const camp = campaigns.get(c.campaignId);
-  const bytes = await renderSheetPdf(sheetData(c, packs, { campaign: camp?.name, dayNames: camp?.calendar.dayNames }));
+  const bytes = await renderSheetPdf(sheetData(c, packs, { campaign: camp?.name, dayNames: camp?.calendar.dayNames, catalog: camp?.catalog }));
   const blob = new Blob([bytes as BlobPart], { type: 'application/pdf' });
   const base = (c.name || 'personaje').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\w-]+/g, '-').replace(/^-+|-+$/g, '') || 'personaje';
   const file = `${base}-hoja.pdf`;

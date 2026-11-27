@@ -1,5 +1,5 @@
 import { db } from './db';
-import { CampaignSchema, blankCampaign, type Campaign } from './model/campaign';
+import { CampaignFileSchema, CampaignSchema, blankCampaign, type Campaign } from './model/campaign';
 import { uid } from './model/character';
 
 const ENABLED_KEY = 'hoja5e:campaigns';
@@ -64,6 +64,32 @@ class CampaignStore {
     await db.campaigns.put({ id: r.data.id, data: r.data });
     this.list = [...this.list.filter((x) => x.id !== r.data.id), r.data].sort((a, b) => a.name.localeCompare(b.name));
     return this.get(r.data.id);
+  }
+
+  /*
+   * Importa un archivo de campaña. Si ya existe (mismo id), actualiza lo que viene del DM
+   * (catálogo, nombres de días, término, reglas y eventos nuevos) sin tocar tus notas ni el día actual.
+   */
+  async importFile(raw: unknown): Promise<{ ok: true; campaign: Campaign; updated: boolean } | { ok: false; error: string }> {
+    const f = CampaignFileSchema.safeParse(raw);
+    const r = f.success ? { success: true as const, data: f.data.campaign } : CampaignSchema.safeParse((raw as { campaign?: unknown })?.campaign ?? raw);
+    if (!r.success) return { ok: false, error: 'invalid' };
+    const incoming = r.data;
+    const have = this.get(incoming.id);
+    if (!have) {
+      const c = await this.upsert({ ...incoming, updatedAt: new Date().toISOString() });
+      return c ? { ok: true, campaign: c, updated: false } : { ok: false, error: 'invalid' };
+    }
+    const merged: Campaign = {
+      ...$state.snapshot(have),
+      catalog: incoming.catalog,
+      strixhaven: incoming.strixhaven || have.strixhaven,
+      calendar: { ...have.calendar, dayNames: incoming.calendar.dayNames, term: incoming.calendar.term || have.calendar.term },
+      events: [...have.events, ...incoming.events.filter((e) => !have.events.some((x) => x.id === e.id))],
+      updatedAt: new Date().toISOString()
+    };
+    const c = await this.upsert(merged);
+    return c ? { ok: true, campaign: c, updated: true } : { ok: false, error: 'invalid' };
   }
 
   /* Programa el guardado de una campaña editada en el formulario. */

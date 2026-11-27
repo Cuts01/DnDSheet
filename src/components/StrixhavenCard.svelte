@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { campaigns } from '../lib/campaigns.svelte';
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { COLLEGES, JOB_PAY_GP, belovedCount, collegeOf, relStatus, studentDice, YEAR_NAMES } from '../lib/strixhaven';
@@ -7,7 +8,7 @@
   const s = $derived(store.c.strixhaven);
   const college = $derived(collegeOf(store.c));
   const info = $derived(COLLEGES.find((x) => x.name === college) ?? null);
-  const dice = $derived(studentDice(store.c));
+  const dice = $derived(studentDice(store.c, campaigns.get(store.c.campaignId)?.catalog));
   const beloved = $derived(belovedCount(store.c));
   const rels = $derived(s.relationships.filter((r) => r.name.trim()).map((r) => ({ r, st: relStatus(r) })));
 
