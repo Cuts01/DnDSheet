@@ -31,6 +31,7 @@
   import { featInstances } from '../lib/rules/features';
   import Pips from './Pips.svelte';
   import CastEffectPanel from './CastEffectPanel.svelte';
+  import { isAcSpell } from '../lib/rules/derive';
   import { castEffect, endConcentration, gainTemp, type CastEffect } from '../lib/rules/castEffects';
 
   const c = $derived(store.c);
@@ -163,6 +164,8 @@
         : t('{name} lanzada', { name: s.name });
     let extra = '';
     fx = null;
+    // Spells sin concentration que cambian la AC (Mage Armor, Shield, Barkskin 2024): quedan activas en Combate.
+    if (!conc && isAcSpell(s.name) && !store.c.activeEffects.includes(s.name)) store.c.activeEffects = [...store.c.activeEffects, s.name];
     const e = castEffect(store.c, s.name, opt && !ritual ? opt.level : s.level);
     if (e?.kind === 'temp') {
       const had = store.c.hp.temp;

@@ -320,6 +320,8 @@ const CharacterObject = z.object({
   freeUsed: z.record(z.string(), z.boolean()).default({}),
   /* Spell con concentration activa ('' = ninguna). */
   concentration: z.string().default(''),
+  /* Spells activas sin concentration que cambian la AC (Mage Armor, Shield, Barkskin 2024). */
+  activeEffects: z.array(z.string()).default([]),
   /* Forma de Polymorph. pool (2014): HP propios de la forma; el daño sobrante pasa a tus HP.
      temp (2024): la forma da temp HP y termina cuando se acaban. */
   shape: z
@@ -479,6 +481,7 @@ export function blankCharacter(): Character {
     featSpells: {},
     freeUsed: {},
     concentration: '',
+    activeEffects: [],
     shape: null,
     arcaneRecoveryUsed: false,
     resources: [],

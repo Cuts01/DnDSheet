@@ -346,11 +346,53 @@ function autoArmorClass(c: Character): AcBreakdown {
   return { label, total: base + c.ac.bonus };
 }
 
-export function armorClassInfo(c: Character, granted: Effect[] = []): AcBreakdown {
+/* Spells que cambian la AC mientras están activas (por concentration o en activeEffects). */
+export const AC_SPELLS: Record<string, { bonus?: number; min?: number; min2024?: number; mage?: boolean }> = {
+  'shield of faith': { bonus: 2 },
+  haste: { bonus: 2 },
+  shield: { bonus: 5 },
+  'mage armor': { mage: true },
+  barkskin: { min: 16, min2024: 17 }
+};
+export const isAcSpell = (name: string) => name.toLowerCase() in AC_SPELLS;
+export const activeAcSpells = (c: Character) =>
+  [...new Set([c.concentration, ...c.activeEffects].filter((n) => n && isAcSpell(n)))];
+
+export function armorClassInfo(c: Character, granted: Effect[] = [], opts: { spells?: boolean } = {}): AcBreakdown {
   // Defense (fighting style) solo cuenta con armadura puesta.
   const extra = effectSum(c, granted, 'ac') + (wearingArmor(c) ? effectSum(c, granted, 'ac-armor') : 0);
-  const base = AUTO(c) ? autoArmorClass(c) : { label: 'Manual', total: manualArmorClass(c) };
-  return extra ? { label: `${base.label} ${extra > 0 ? '+' : ''}${extra} (features)`, total: base.total + extra } : base;
+  let base = AUTO(c) ? autoArmorClass(c) : { label: 'Manual', total: manualArmorClass(c) };
+  if (extra) base = { label: `${base.label} ${extra > 0 ? '+' : ''}${extra} (features)`, total: base.total + extra };
+  if (!opts.spells) return base;
+  // Spells activas (solo en Combate; la hoja y el PDF muestran la AC base).
+  let { total, label } = base;
+  const spells = activeAcSpells(c);
+  for (const n of spells) {
+    const e = AC_SPELLS[n.toLowerCase()];
+    if (e.mage && !wearingArmor(c)) {
+      const mage = 13 + abilityMod(c, 'dex') + (c.ac.shield ? 2 : 0) + extra;
+      if (mage > total) {
+        total = mage;
+        label = `Mage Armor${c.ac.shield ? ' + shield' : ''}`;
+      }
+    }
+  }
+  for (const n of spells) {
+    const e = AC_SPELLS[n.toLowerCase()];
+    if (e.bonus) {
+      total += e.bonus;
+      label += ` +${e.bonus} (${n})`;
+    }
+  }
+  for (const n of spells) {
+    const e = AC_SPELLS[n.toLowerCase()];
+    const min = c.ruleset === '2024' ? (e.min2024 ?? e.min) : e.min;
+    if (min && total < min) {
+      total = min;
+      label = `${n} (${min})`;
+    }
+  }
+  return { label, total };
 }
 
 export const armorClass = (c: Character) => armorClassInfo(c).total;

@@ -3,6 +3,7 @@
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import {
+    activeAcSpells,
     armorClassInfo,
     attacks,
     casterLevel,
@@ -37,7 +38,8 @@
   const hpPct = $derived(hpMax > 0 ? Math.max(0, Math.min(1, c.hp.current / hpMax)) : 0);
 
   const granted = $derived(grantedEffects(c, compendium.packs));
-  const ac = $derived(armorClassInfo(c, granted));
+  const ac = $derived(armorClassInfo(c, granted, { spells: true }));
+  const acSpells = $derived(activeAcSpells(c));
   const atk = $derived(attacks(c, proficiencies(c, compendium.packs).weapons, granted));
   const splitDmg = (d: string): [string, string] => {
     const m = /^(\d+d\d+(?:\s*[+-]\s*\d+)?)\s*(.*)$/.exec(d);
@@ -109,6 +111,16 @@
       <button onclick={() => store.apply(endConcentration)}>{t('Terminar')}</button>
     </div>
   {/if}
+  {#if c.activeEffects.length}
+    <div class="card active-fx">
+      <small class="muted">{t('Activas')}</small>
+      {#each c.activeEffects as n (n)}
+        <span class="chip">{n}
+          <button class="ghost x" aria-label={t('Terminar {name}', { name: n })} onclick={() => (store.c.activeEffects = store.c.activeEffects.filter((x) => x !== n))}>✕</button>
+        </span>
+      {/each}
+    </div>
+  {/if}
   {#if c.shape}
     <div class="card shape">
       <div class="shape-top">
@@ -163,7 +175,10 @@
   </div>
 
   <div class="quick">
-    <div class="stat" title={ac.label}><span>AC</span><b class="num">{ac.total}</b></div>
+    <div class="stat" class:boosted={acSpells.length > 0} title={ac.label}>
+      <span>AC</span><b class="num">{ac.total}</b>
+      {#if acSpells.length}<small class="acfx">{acSpells.join(', ')}</small>{/if}
+    </div>
     <div class="stat"><span>Initiative</span><b class="num">{fmt(initiative(c, granted))}</b></div>
     <div class="stat"><span>Speed</span><b class="num">{speed(c, granted)}</b></div>
     <div class="stat"><span>Prof.</span><b class="num">{fmt(pb(c))}</b></div>
@@ -486,6 +501,17 @@
   .stat b {
     font-size: 1.6rem;
   }
+  .stat.boosted {
+    border-color: var(--accent);
+  }
+  .stat.boosted b {
+    color: var(--accent);
+  }
+  .acfx {
+    font-size: 0.62rem;
+    color: var(--accent);
+    line-height: 1.1;
+  }
 
   .toggles {
     display: flex;
@@ -678,5 +704,23 @@
   }
   .shape-hp b {
     font-size: 1.6rem;
+  }
+  .active-fx {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .active-fx .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 4px 2px 10px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  .active-fx .x {
+    min-height: 0;
+    padding: 2px 6px;
   }
 </style>

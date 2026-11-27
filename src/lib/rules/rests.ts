@@ -103,6 +103,7 @@ export function longRest(c: Character): Character {
   n.hp.current = maxHp(n);
   n.hp.temp = 0;
   n.shape = null;
+  n.activeEffects = [];
   n.slotsUsed.pact = 0;
   n.slotsUsed.levels = n.slotsUsed.levels.map(() => 0);
   n.arcaneRecoveryUsed = false;
