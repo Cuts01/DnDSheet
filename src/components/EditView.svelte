@@ -19,12 +19,14 @@
   import ProficienciesCard from './build/ProficienciesCard.svelte';
   import SpeciesCard from './build/SpeciesCard.svelte';
   import FeaturesView from './FeaturesView.svelte';
+  import InventoryView from './InventoryView.svelte';
 
-  type Section = 'origin' | 'classes' | 'features' | 'profs' | 'strix' | 'other';
+  type Section = 'origin' | 'classes' | 'features' | 'gear' | 'profs' | 'strix' | 'other';
   const ALL: [Section, string][] = [
     ['origin', 'Personaje'],
     ['classes', 'Clases y mejoras'],
     ['features', 'Rasgos'],
+    ['gear', 'Equipo'],
     ['profs', 'Proficiencies'],
     ['strix', 'Strixhaven'],
     ['other', 'Ajustes']
@@ -121,6 +123,8 @@
     <InvocationsCard bind:c={store.c} />
   {:else if section === 'features'}
     <FeaturesView />
+  {:else if section === 'gear'}
+    <InventoryView />
   {:else if section === 'profs'}
     <ProficienciesCard bind:c={store.c} />
   {:else}
@@ -148,7 +152,7 @@
         </select>
       </label>
       {#if c.ac.mode === 'auto'}
-        <p class="small muted">{t('Ahora')}: {ac.label}. {t('Equipa armor y shield en la pestaña Equipo.')}</p>
+        <p class="small muted">{t('Ahora')}: {ac.label}. {t('Equipa armor y shield en Editar > Equipo.')}</p>
       {/if}
       <div class="grid3">
         {#if !['auto', 'unarmored', 'unarmored-con', 'unarmored-wis', 'unarmored-cha', 'mage'].includes(c.ac.mode)}

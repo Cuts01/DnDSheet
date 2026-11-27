@@ -51,7 +51,7 @@
       <h1>{t('Nuevo personaje')}</h1>
       {#if store.currentId}<button onclick={() => store.cancelNew()}>{t('Volver a {name}', { name: store.c.name || t('Sin nombre') })}</button>{/if}
     </div>
-    <p class="muted">{t('Lo básico para empezar, incluidas tus skills. Feats, invocations y equipo se completan después en Editar y Equipo.')}</p>
+    <p class="muted">{t('Lo básico para empezar, incluidas tus skills. Feats, invocations y equipo se completan después en Editar.')}</p>
   </header>
 
   {#if !compendium.packs.length}

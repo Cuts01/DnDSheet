@@ -250,7 +250,7 @@
         {/if}
       {/each}
     </ul>
-    <p class="muted small hint">{t('Equipa weapons en la pestaña Equipo. Los spells de daño que puedes lanzar aparecen aquí.')}</p>
+    <p class="muted small hint">{t('Equipa weapons en Editar > Equipo. Los spells de daño que puedes lanzar aparecen aquí.')}</p>
   </div>
 
   {#if casting.length}

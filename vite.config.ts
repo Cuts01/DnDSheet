@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 export default defineConfig({
   base: './',
   // Versión visible en Datos para saber qué código está corriendo.
-  define: { __APP_VERSION__: JSON.stringify('2026-11-27 · Rasgos dentro de Editar') },
+  define: { __APP_VERSION__: JSON.stringify('2026-11-27 · Rasgos y Equipo dentro de Editar') },
   plugins: [
     svelte(),
     VitePWA({
