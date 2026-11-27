@@ -655,6 +655,11 @@ const en: Record<string, string> = {
   "Vienen del DM. Si te confirma otra cosa, cámbialas aquí.": "These come from the DM. If they confirm something else, change them here.",
   "hora a convenir": "time to be agreed",
   "Tu campaña tiene su propio catálogo: elige clases, clubes y trabajo en la pestaña Campaña > Mi horario.": "Your campaign has its own catalog: choose classes, clubs and job in the Campaign tab > My schedule.",
+  "Fechas": "Dates",
+  "Fecha del primer día de la semana 1. Con eso cada día del calendario muestra su fecha.": "Date of the first day of week 1. With it, each calendar day shows its date.",
+  "Día": "Day",
+  "Mes": "Month",
+  "Días por mes": "Days per month",
 };
 
 export default en;

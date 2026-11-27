@@ -84,8 +84,16 @@ class CampaignStore {
       ...$state.snapshot(have),
       catalog: incoming.catalog,
       strixhaven: incoming.strixhaven || have.strixhaven,
-      calendar: { ...have.calendar, dayNames: incoming.calendar.dayNames, term: incoming.calendar.term || have.calendar.term },
-      events: [...have.events, ...incoming.events.filter((e) => !have.events.some((x) => x.id === e.id))],
+      calendar: {
+        ...have.calendar,
+        dayNames: incoming.calendar.dayNames,
+        term: incoming.calendar.term || have.calendar.term,
+        start: incoming.calendar.start ?? have.calendar.start,
+        monthDays: incoming.calendar.monthDays,
+        monthNames: incoming.calendar.monthNames
+      },
+      // Los eventos del DM se actualizan por id; los que agregaste tú se quedan.
+      events: [...have.events.filter((x) => !incoming.events.some((e) => e.id === x.id)), ...incoming.events],
       updatedAt: new Date().toISOString()
     };
     const c = await this.upsert(merged);

@@ -117,10 +117,17 @@ export const CampaignSchema = z.object({
     .object({
       dayNames: z.array(z.string().max(40)).length(10).default(DEFAULT_DAY_NAMES),
       term: z.string().max(80).default('').describe('Ej. Year 1, Fall term'),
+      /* Fecha del día 1 de la semana 1 (meses de monthDays días). Null: sin fechas. */
+      start: z
+        .object({ day: z.number().int().min(1).max(60), month: z.number().int().min(1).max(20), year: z.number().int().default(0) })
+        .nullable()
+        .default(null),
+      monthDays: z.number().int().min(10).max(60).default(30),
+      monthNames: z.array(z.string().max(30)).default(['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']),
       week: z.number().int().min(1).default(1),
       day: z.number().int().min(1).max(10).default(1)
     })
-    .default(() => ({ dayNames: DEFAULT_DAY_NAMES, term: '', week: 1, day: 1 })),
+    .default(() => ({ dayNames: DEFAULT_DAY_NAMES, term: '', start: null, monthDays: 30, monthNames: [], week: 1, day: 1 })),
   events: z.array(CampaignEventSchema).default([]),
   catalog: CatalogSchema.nullable().default(null),
   updatedAt: z.string().default('')
@@ -135,3 +142,16 @@ export const CampaignFileSchema = z.object({
   version: z.number().int(),
   campaign: CampaignSchema
 });
+
+/* Fecha de un día del calendario: "11 de septiembre" (o null si la campaña no tiene fecha de inicio). */
+export function dateOf(cal: Campaign['calendar'], week: number, day: number): { day: number; month: number; year: number; label: string } | null {
+  if (!cal.start) return null;
+  const months = Math.max(1, cal.monthNames.length || 12);
+  const idx = cal.start.day - 1 + (week - 1) * 10 + (day - 1);
+  let month = cal.start.month - 1 + Math.floor(idx / cal.monthDays);
+  const d = (idx % cal.monthDays) + 1;
+  const year = cal.start.year + Math.floor(month / months);
+  month = month % months;
+  const name = cal.monthNames[month] ?? String(month + 1);
+  return { day: d, month: month + 1, year, label: `${d} de ${name}` };
+}

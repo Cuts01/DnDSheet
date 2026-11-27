@@ -4,6 +4,7 @@
   import { store } from '../lib/store.svelte';
   import { campaigns } from '../lib/campaigns.svelte';
   import { uid } from '../lib/model/character';
+  import { dateOf } from '../lib/model/campaign';
   import StrixCourses from './StrixCourses.svelte';
   import ScheduleSelector from './ScheduleSelector.svelte';
   import { clashes, fmtSpan, scheduleOf } from '../lib/rules/schedule';
@@ -116,6 +117,11 @@
     }
   });
   const cal = $derived(camp?.calendar);
+  function setStart(k: 'day' | 'month' | 'year', v: number) {
+    if (!camp) return;
+    const cur = camp.calendar.start ?? { day: 1, month: 1, year: 0 };
+    camp.calendar.start = { ...cur, [k]: Number.isFinite(v) && v > 0 ? v : cur[k] };
+  }
   function step(d: -1 | 1) {
     if (!camp) return;
     const k = camp.calendar;
@@ -225,7 +231,7 @@
             <span>{t('Hoy')}</span>
             <div class="row">
               <button class="ghost" aria-label={t('Día anterior')} onclick={() => step(-1)}>◀</button>
-              <b class="grow">{t('Semana')} {cal.week} · {cal.dayNames[cal.day - 1]}</b>
+              <b class="grow">{t('Semana')} {cal.week} · {cal.dayNames[cal.day - 1]}{#if dateOf(cal, cal.week, cal.day)}<small class="date">{dateOf(cal, cal.week, cal.day)?.label}</small>{/if}</b>
               <button class="ghost" aria-label={t('Día siguiente')} onclick={() => step(1)}>▶</button>
             </div>
           </div>
@@ -245,6 +251,7 @@
             <li class:today={isToday}>
               <div class="d-head">
                 <b>{name}</b>
+                {#if dateOf(cal, viewWeek, d)}<span class="dtype">{dateOf(cal, viewWeek, d)?.label}</span>{/if}
                 {#if cat?.dayTypes[i]}<span class="dtype">{cat.dayTypes[i]}</span>{/if}
                 {#if isToday}<span class="tag">{t('Hoy')}</span>{/if}
                 <span class="spacer"></span>
@@ -285,11 +292,26 @@
           <div class="stack tight">
             <span class="small muted">{t('Próximos eventos')}</span>
             {#each upcoming as e (e.id)}
-              <span class="small">{t('Semana')} {e.week} · {cal.dayNames[e.day - 1]}: <b>{e.title}</b></span>
+              <span class="small">{t('Semana')} {e.week} · {cal.dayNames[e.day - 1]}{dateOf(cal, e.week, e.day) ? ` (${dateOf(cal, e.week, e.day)?.label})` : ''}: <b>{e.title}</b></span>
             {/each}
           </div>
         {/if}
 
+        <details>
+          <summary class="small">{t('Fechas')}</summary>
+          <p class="small muted">{t('Fecha del primer día de la semana 1. Con eso cada día del calendario muestra su fecha.')}</p>
+          <div class="names">
+            <label class="field"><span>{t('Día')}</span><input type="number" min="1" max={cal.monthDays} value={cal.start?.day ?? ''} onchange={(e) => setStart('day', +e.currentTarget.value)} /></label>
+            <label class="field"><span>{t('Mes')}</span>
+              <select value={cal.start?.month ?? ''} onchange={(e) => setStart('month', +e.currentTarget.value)}>
+                <option value="">-</option>
+                {#each cal.monthNames as m, k (k)}<option value={k + 1}>{m}</option>{/each}
+              </select>
+            </label>
+            <label class="field"><span>{t('Año')}</span><input type="number" value={cal.start?.year ?? ''} onchange={(e) => setStart('year', +e.currentTarget.value)} /></label>
+            <label class="field"><span>{t('Días por mes')}</span><input type="number" min="10" max="60" bind:value={camp.calendar.monthDays} /></label>
+          </div>
+        </details>
         <details>
           <summary class="small">{t('Nombres de los días')}</summary>
           <div class="names">
@@ -450,6 +472,12 @@
   }
   .item.course.elective {
     font-style: italic;
+  }
+  .date {
+    display: block;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--muted);
   }
   .dtype {
     font-size: 0.7rem;

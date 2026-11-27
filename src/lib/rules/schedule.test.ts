@@ -46,3 +46,14 @@ describe('horario de Strixhaven con catálogo', () => {
     expect(scheduleRows(c, cat, days).map((r) => r.kind)).toEqual(['Obligatoria', 'Optativa', 'Club', 'Mage Tower', 'Trabajo']);
   });
 });
+
+describe('fechas del calendario (meses de 30 días)', () => {
+  it('11 de septiembre es la semana 1, día 1; el cierre de altas cae el 8 de octubre', async () => {
+    const { CampaignSchema, dateOf } = await import('../model/campaign');
+    const k = CampaignSchema.parse({ id: 'x', calendar: { start: { day: 11, month: 9, year: 4565 } } });
+    expect(dateOf(k.calendar, 1, 1)?.label).toBe('11 de septiembre');
+    expect(dateOf(k.calendar, 1, 4)?.label).toBe('14 de septiembre');
+    expect(dateOf(k.calendar, 3, 8)?.label).toBe('8 de octubre');
+    expect(dateOf(k.calendar, 8, 10)?.label).toBe('30 de noviembre');
+  });
+});
