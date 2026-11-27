@@ -2,7 +2,7 @@
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import type { Campaign, CatalogClub, CatalogCourse, CatalogJob, CatalogTeam } from '../lib/model/campaign';
-  import { clashNames, courseLabel, fmtSpan, scheduleOf, syncFromSchedule, tally, whenText } from '../lib/rules/schedule';
+  import { classDC, clashNames, courseLabel, fmtSpan, picked, scheduleOf, syncFromSchedule, tally, whenText } from '../lib/rules/schedule';
 
   /* Elegir optativas, clubes, equipo de Mage Tower y trabajo del catálogo de la campaña. */
   let { camp }: { camp: Campaign } = $props();
@@ -77,6 +77,17 @@
   const shiftGroups = (j: CatalogJob) => groupBy(j.shifts, (x) => `${x.label}|${x.start ?? ''}|${x.end ?? ''}`);
   const shiftClash = (sh: CatalogJob['shifts'][number]) =>
     !sch.shifts.includes(sh.id) && sh.start !== null && sh.end !== null && clashNames([{ day: sh.day, start: sh.start, end: sh.end }], `job:${sh.id}`, plan.timed).length > 0;
+  /* Clases que llevas (obligatorias + optativas) con su DC y el dado de estudio ganado. */
+  const myCourses = $derived.by(() => {
+    const p = picked(store.c, cat);
+    return [...p.required, ...p.electives];
+  });
+  function setStudy(id: string, v: string) {
+    const st = { ...store.c.strixhaven.schedule.study };
+    if (v) st[id] = v;
+    else delete st[id];
+    store.c.strixhaven.schedule.study = st;
+  }
   const teamInfo = (x: CatalogTeam) => [x.when, `${t('Entrenador')}: ${x.coach}`, `${t('Capitán')}: ${x.captain}`, `${t('Mascota')}: ${x.mascot}`].filter(Boolean).join(' · ');
 </script>
 
@@ -109,7 +120,10 @@
 
   {#if tab === 'opt'}
     <p class="small muted">
-      {t('Elige de {min} a {max} optativas. Como mucho {l2} de Nivel 2.º año. Las obligatorias ya están en tu calendario.', { min: rules.minElectives, max: rules.maxElectives, l2: rules.maxLevel2 })}
+      {rules.maxLevel2 >= rules.maxElectives
+        ? t('Elige de {min} a {max} optativas. Las de Nivel 2.º año se dan con alumnos de 2.º y son más difíciles: se permiten, pero no se recomiendan.', { min: rules.minElectives, max: rules.maxElectives })
+        : t('Elige de {min} a {max} optativas. Como mucho {l2} de Nivel 2.º año. Las obligatorias ya están en tu calendario.', { min: rules.minElectives, max: rules.maxElectives, l2: rules.maxLevel2 })}
+      {#if rules.classDC}{t('Checks de clase: DC {dc}; Nivel 2.º año: DC {dc2}.', { dc: rules.classDC, dc2: rules.level2DC || rules.classDC })}{/if}
     </p>
     {#each groupBy(shownElectives, (x) => x.college || t('Otras')) as [college, list] (college)}
       <h3>{college}</h3>
@@ -121,7 +135,7 @@
             <button class="item" class:on class:clashy={cl.length > 0} aria-pressed={on} disabled={!on && electiveBlocked(x)} onclick={() => toggleElective(x)}>
               <span class="box" aria-hidden="true">{on ? '✓' : ''}</span>
               <span class="body">
-                <span class="top"><b class="code">{x.code}</b> <span class="nm">{x.name}</span>{#if x.level2}<span class="lvl">{t('Nivel 2.º año')}</span>{/if}</span>
+                <span class="top"><b class="code">{x.code}</b> <span class="nm">{x.name}</span>{#if x.level2}<span class="lvl">{t('Nivel 2.º año')}</span>{/if}{#if classDC(cat, x)}<span class="dc">DC {classDC(cat, x)}</span>{/if}</span>
                 <span class="meta">{whenText(x.blocks, days)} · {x.room} · {x.prof}</span>
                 {#if x.desc}<span class="desc">{x.desc}</span>{/if}
                 {#if cl.length}<span class="why">{t('Choca con {list}', { list: cl.join(', ') })}</span>{/if}
@@ -164,7 +178,11 @@
       </ul>
     {/each}
   {:else if tab === 'team'}
-    <p class="small muted">{t('Los de Año 0 entran como suplentes con media beca. El equipo cuenta como club y la beca sustituye al trabajo. Solo un equipo.')}</p>
+    <p class="small muted">
+      {t('Los de Año 0 entran como suplentes con media beca. El equipo cuenta como club y la beca sustituye al trabajo. Solo un equipo.')}
+      {#if !rules.teamGivesDie}{t('No da Student Die.')}{/if}
+      {#if rules.teamPerk}{rules.teamPerk}{/if}
+    </p>
     <ul class="items">
       <li>
         <button class="item" class:on={!sch.team} aria-pressed={!sch.team} onclick={() => setTeam('')}>
@@ -245,7 +263,53 @@
   {/if}
 </div>
 
+{#if rules.classDC && myCourses.length}
+  <div class="card stack">
+    <h2>{t('Mis clases y checks')}</h2>
+    <p class="small muted">{t('Cada clase tiene checks de {dice}, igual que los exámenes. Estudiando y yendo bien en clase ganas un dado de estudio; anótalo aquí.', { dice: rules.checkDice || '2d6' })}</p>
+    <ul class="study">
+      {#each myCourses as x (x.id)}
+        <li>
+          <span class="s-name"><b class="code">{x.code}</b> {x.name}</span>
+          <span class="dc">DC {classDC(cat, x)}</span>
+          <select aria-label={t('Dado de estudio de {name}', { name: x.code || x.name })} value={sch.study[x.id] ?? ''} onchange={(e) => setStudy(x.id, e.currentTarget.value)}>
+            <option value="">{t('Sin dado')}</option>
+            {#each rules.studyDice as d (d)}<option value={d}>{d}</option>{/each}
+          </select>
+        </li>
+      {/each}
+    </ul>
+  </div>
+{/if}
+
 <style>
+  .dc {
+    font-size: 0.7rem;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+  .study {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+  }
+  .study li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto 96px;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 6px;
+  }
+  .s-name {
+    font-size: 0.85rem;
+    min-width: 0;
+  }
   .counts {
     display: flex;
     flex-wrap: wrap;

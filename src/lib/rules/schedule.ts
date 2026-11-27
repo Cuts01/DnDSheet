@@ -137,6 +137,7 @@ export function tally(c: Character, cat: Catalog, dayNames: string[]): Tally {
   }
   if (p.electives.length > r.maxElectives) w.push(`Tienes ${p.electives.length} optativas; el máximo es ${r.maxElectives}.`);
   if (level2 > r.maxLevel2) w.push(`Solo puedes llevar ${r.maxLevel2} optativa(s) de Nivel 2.º año (llevas ${level2}).`);
+  else if (level2 > 1) w.push(`Llevas ${level2} optativas de Nivel 2.º año: se permite, pero el DM no lo recomienda (son pesadas).`);
   if (clubs > r.maxClubs) w.push(`Cuentas ${clubs} clubes${r.jobUsesClubSlot && jobs ? ' contando el trabajo' : ''}; el máximo es ${r.maxClubs}.`);
   if (jobs && scholarship && r.scholarshipReplacesJob) w.push('Con beca deportiva no tienes trabajo: la beca lo sustituye.');
   if (p.job && !p.shifts.length) w.push(`Marca los turnos que harás en ${p.job.name}.`);
@@ -148,9 +149,15 @@ export function tally(c: Character, cat: Catalog, dayNames: string[]): Tally {
 export function scheduleRows(c: Character, cat: Catalog, dayNames: string[]): { kind: string; name: string; when: string; where: string; who: string }[] {
   const p = picked(c, cat);
   const rows: { kind: string; name: string; when: string; where: string; who: string }[] = [];
-  for (const x of p.required) rows.push({ kind: 'Obligatoria', name: courseLabel(x), when: whenText(x.blocks, dayNames), where: x.room, who: x.prof });
+  const extra = (x: CatalogCourse) => {
+    const dc = classDC(cat, x);
+    const die = c.strixhaven.schedule.study[x.id];
+    return [dc ? `DC ${dc}` : '', die ? `estudio ${die}` : ''].filter(Boolean).join(', ');
+  };
+  const kind = (k: string, x: CatalogCourse) => (extra(x) ? `${k} (${extra(x)})` : k);
+  for (const x of p.required) rows.push({ kind: kind('Obligatoria', x), name: courseLabel(x), when: whenText(x.blocks, dayNames), where: x.room, who: x.prof });
   for (const x of p.electives)
-    rows.push({ kind: 'Optativa', name: courseLabel(x) + (x.level2 ? ' (Nivel 2.º año)' : ''), when: whenText(x.blocks, dayNames), where: x.room, who: x.prof });
+    rows.push({ kind: kind('Optativa', x), name: courseLabel(x) + (x.level2 ? ' (Nivel 2.º año)' : ''), when: whenText(x.blocks, dayNames), where: x.room, who: x.prof });
   for (const x of p.clubs) rows.push({ kind: 'Club', name: x.name, when: x.when, where: x.where, who: x.sponsor });
   if (p.team) rows.push({ kind: 'Mage Tower', name: p.team.name, when: p.team.when, where: 'Estadio', who: p.team.coach });
   if (p.job) {
@@ -168,3 +175,6 @@ export function syncFromSchedule(c: Character, cat: Catalog) {
   const pos = c.strixhaven.schedule.position;
   c.strixhaven.job = p.job ? `${p.job.name}${pos ? `: ${pos}` : ''}` : '';
 }
+
+/* DC del check de clase de un curso (0 si la campaña no usa checks). */
+export const classDC = (cat: Catalog, x: CatalogCourse) => (x.level2 ? cat.rules.level2DC || cat.rules.classDC : cat.rules.classDC);

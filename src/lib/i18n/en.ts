@@ -660,6 +660,17 @@ const en: Record<string, string> = {
   "Día": "Day",
   "Mes": "Month",
   "Días por mes": "Days per month",
+  "Elige de {min} a {max} optativas. Las de Nivel 2.º año se dan con alumnos de 2.º y son más difíciles: se permiten, pero no se recomiendan.": "Choose {min} to {max} electives. Second-year level courses are taken with second-year students and are harder: allowed, but not recommended.",
+  "Checks de clase: DC {dc}; Nivel 2.º año: DC {dc2}.": "Class checks: DC {dc}; second-year level: DC {dc2}.",
+  "No da Student Die.": "It doesn't give a Student Die.",
+  "Mis clases y checks": "My classes and checks",
+  "Cada clase tiene checks de {dice}, igual que los exámenes. Estudiando y yendo bien en clase ganas un dado de estudio; anótalo aquí.": "Each class has {dice} checks, like exams. Studying and doing well in class earns you a study die; note it here.",
+  "Dado de estudio de {name}": "Study die for {name}",
+  "Sin dado": "No die",
+  "DC de clase": "Class DC",
+  "DC Nivel 2.º año": "Second-year level DC",
+  "El equipo de Mage Tower da Student Die": "The Mage Tower team gives a Student Die",
+  "Qué da el equipo de Mage Tower": "What the Mage Tower team gives",
 };
 
 export default en;

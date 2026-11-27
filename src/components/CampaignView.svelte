@@ -352,7 +352,11 @@
             <label class="field"><span>{t('Máx. de Nivel 2.º año')}</span><input type="number" min="0" bind:value={cat.rules.maxLevel2} /></label>
             <label class="field"><span>{t('Clubes máximos')}</span><input type="number" min="0" bind:value={cat.rules.maxClubs} /></label>
             <label class="field"><span>{t('Trabajos máximos')}</span><input type="number" min="0" bind:value={cat.rules.maxJobs} /></label>
+            <label class="field"><span>{t('DC de clase')}</span><input type="number" min="0" bind:value={cat.rules.classDC} /></label>
+            <label class="field"><span>{t('DC Nivel 2.º año')}</span><input type="number" min="0" bind:value={cat.rules.level2DC} /></label>
           </div>
+          <label class="check small"><input type="checkbox" bind:checked={cat.rules.teamGivesDie} /> {t('El equipo de Mage Tower da Student Die')}</label>
+          <label class="field"><span>{t('Qué da el equipo de Mage Tower')}</span><input bind:value={cat.rules.teamPerk} /></label>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.teamCountsAsClub} /> {t('El equipo de Mage Tower cuenta como club')}</label>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.jobUsesClubSlot} /> {t('El trabajo ocupa un lugar de club (dos clubes, o un club y un trabajo)')}</label>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.scholarshipReplacesJob} /> {t('La beca sustituye al trabajo')}</label>

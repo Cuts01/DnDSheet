@@ -55,9 +55,11 @@ export const StrixhavenSchema = z.object({
       job: z.string().default(''),
       position: z.string().default(''),
       shifts: z.array(z.string()).default([]),
-      scholarship: z.boolean().default(false).describe('Media beca por otro deporte')
+      scholarship: z.boolean().default(false).describe('Media beca por otro deporte'),
+      /* Dado de estudio ganado en cada clase (id del curso -> 'd4', 'd6'...). */
+      study: z.record(z.string(), z.string()).default({})
     })
-    .default(() => ({ electives: [], clubs: [], team: '', job: '', position: '', shifts: [], scholarship: false })),
+    .default(() => ({ electives: [], clubs: [], team: '', job: '', position: '', shifts: [], scholarship: false, study: {} })),
   notes: z.string().max(4000).default('')
 });
 export type Strixhaven = z.infer<typeof StrixhavenSchema>;

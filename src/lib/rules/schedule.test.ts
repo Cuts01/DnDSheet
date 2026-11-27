@@ -37,7 +37,7 @@ describe('horario de Strixhaven con catálogo', () => {
     c.strixhaven.schedule = { ...c.strixhaven.schedule, electives: ['E2'], clubs: ['C1'], team: 'T1', job: 'J1', shifts: ['s1', 's2'] };
     syncFromSchedule(c, cat);
     expect(c.strixhaven.extracurriculars).toEqual(['Horticultura', 'Mage Tower · Witherbloom']);
-    expect(studentDice(c, cat).map((d) => d.skills.join(','))).toEqual(['Nature,Survival', '']);
+    expect(studentDice(c, cat).map((d) => d.skills.join(','))).toEqual(['Nature,Survival']);
     const { notes } = scheduleOf(c, cat);
     expect(notes.map((n) => n.text)).toEqual(['Excursiones', 'Guardia (hora a convenir)']);
     const tl = tally(c, cat, days);

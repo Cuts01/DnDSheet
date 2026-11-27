@@ -74,7 +74,7 @@ export function studentDice(c: Character, catalog?: Catalog | null): StudentDie[
       if (k) out.push({ id: `ec:${k.name}`, source: k.name, skills: [...k.skills], used: false });
     }
     const t = catalog.teams.find((x) => x.id === sch.team);
-    if (t && catalog.rules.teamCountsAsClub) out.push({ id: `ec:${t.name}`, source: t.name, skills: [], used: false });
+    if (t && catalog.rules.teamGivesDie) out.push({ id: `ec:${t.name}`, source: t.name, skills: [], used: false });
   } else
     s.extracurriculars.slice(0, maxExtracurriculars(c)).forEach((name) => {
       const e = EXTRACURRICULARS.find((x) => x.name === name);
