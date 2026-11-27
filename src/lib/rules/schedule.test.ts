@@ -57,3 +57,18 @@ describe('fechas del calendario (meses de 30 días)', () => {
     expect(dateOf(k.calendar, 8, 10)?.label).toBe('30 de noviembre');
   });
 });
+
+describe('media proficiency', () => {
+  it('suma la mitad del PB (hacia abajo) solo si no eres proficient', async () => {
+    const { skillBonus, abilityMod } = await import('./derive');
+    const { SKILLS } = await import('./tables');
+    const c = pc();
+    c.classes = [{ ...blankCharacter().classes[0], id: 'w', name: 'Wizard', level: 5 } as Character['classes'][number]];
+    const arcana = SKILLS.find((s) => s.id === 'arcana')!;
+    const base = abilityMod(c, 'int');
+    c.strixhaven.schedule.halfProf = { E1: 'arcana' };
+    expect(skillBonus(c, arcana)).toBe(base + 1); // PB +3 a level 5
+    c.skills.arcana = 'prof';
+    expect(skillBonus(c, arcana)).toBe(base + 3);
+  });
+});

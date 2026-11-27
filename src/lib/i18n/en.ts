@@ -671,6 +671,13 @@ const en: Record<string, string> = {
   "DC Nivel 2.º año": "Second-year level DC",
   "El equipo de Mage Tower da Student Die": "The Mage Tower team gives a Student Die",
   "Qué da el equipo de Mage Tower": "What the Mage Tower team gives",
+  "media proficiency": "half proficiency",
+  "El equipo cuenta como club. {beca}. Solo un equipo.": "The team counts as a club. {beca}. Only one team.",
+  "Algunas clases dan media proficiency en una skill si te va bien: elígela y se suma a tu hoja (◐).": "Some classes give half proficiency in a skill if you do well: pick it and it is added to your sheet (◐).",
+  "Media proficiency de {name}": "Half proficiency from {name}",
+  "Sin media proficiency": "No half proficiency",
+  "Beca del equipo de Mage Tower": "Mage Tower team scholarship",
+  "Beca de otros deportes": "Other sports scholarship",
 };
 
 export default en;

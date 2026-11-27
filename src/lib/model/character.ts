@@ -57,9 +57,11 @@ export const StrixhavenSchema = z.object({
       shifts: z.array(z.string()).default([]),
       scholarship: z.boolean().default(false).describe('Media beca por otro deporte'),
       /* Dado de estudio ganado en cada clase (id del curso -> 'd4', 'd6'...). */
-      study: z.record(z.string(), z.string()).default({})
+      study: z.record(z.string(), z.string()).default({}),
+      /* Media proficiency ganada en una clase (id del curso -> id de la skill). */
+      halfProf: z.record(z.string(), z.string()).default({})
     })
-    .default(() => ({ electives: [], clubs: [], team: '', job: '', position: '', shifts: [], scholarship: false, study: {} })),
+    .default(() => ({ electives: [], clubs: [], team: '', job: '', position: '', shifts: [], scholarship: false, study: {}, halfProf: {} })),
   notes: z.string().max(4000).default('')
 });
 export type Strixhaven = z.infer<typeof StrixhavenSchema>;
@@ -258,6 +260,8 @@ const CharacterObject = z.object({
   abilities: z.object({ str: score, dex: score, con: score, int: score, wis: score, cha: score }),
   saves: z.array(abilityEnum),
   skills: z.record(z.string(), z.enum(PROF_LEVELS)),
+  /* Skills con media proficiency (mitad del PB, redondeado hacia abajo) marcadas a mano. */
+  halfSkills: z.array(z.string()).default([]),
   hp: z.object({ max: int(0), current: int(-999), temp: int(0) }),
   hitDiceUsed: z.record(z.string(), int(0, 20)),
   ac: z.object({
@@ -475,6 +479,7 @@ export function blankCharacter(): Character {
     abilities: { str: 8, dex: 8, con: 8, int: 8, wis: 8, cha: 8 },
     saves: [...fighter.saves],
     skills: {},
+    halfSkills: [],
     hp: { max: 0, current: 0, temp: 0 },
     hitDiceUsed: {},
     ac: { mode: 'auto', base: 10, shield: false, bonus: 0 },

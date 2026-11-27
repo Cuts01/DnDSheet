@@ -85,6 +85,8 @@ export const CatalogRulesSchema = z.object({
   jobUsesClubSlot: z.boolean().default(false).describe('Regla del libro: dos clubes, o un club y un trabajo'),
   scholarshipReplacesJob: z.boolean().default(true),
   teamGivesDie: z.boolean().default(false).describe('El equipo de Mage Tower da Student Die'),
+  teamScholarship: str(120).describe('Beca del equipo de Mage Tower, ej. Beca completa'),
+  otherScholarship: str(120).describe('Beca de otros deportes, ej. Media beca: 2 gp por semana'),
   teamPerk: str(300).describe('Lo que da el equipo en lugar del dado (ej. un favor)'),
   classDC: z.number().int().min(0).default(0).describe('DC de los checks de clase (2d6); 0: sin checks'),
   level2DC: z.number().int().min(0).default(0),

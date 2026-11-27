@@ -217,8 +217,11 @@ export function skillLevel(c: Character, s: SkillDef): ProfLevel {
   if (src.some((x) => x.startsWith('feate:') || x.startsWith('ftre:')) && src.length > 1) return 'expertise';
   return 'prof';
 }
+/* Media proficiency: a mano (halfSkills) o ganada en clases de Strixhaven. Solo cuenta si no eres proficient. */
+export const halfSkillIds = (c: Character) => new Set([...c.halfSkills, ...Object.values(c.strixhaven.schedule.halfProf)]);
+export const isHalfSkill = (c: Character, s: SkillDef) => skillLevel(c, s) === 'none' && halfSkillIds(c).has(s.id);
 export const skillBonus = (c: Character, s: SkillDef) =>
-  abilityMod(c, s.ability) + profAmount(skillLevel(c, s), pb(c));
+  abilityMod(c, s.ability) + (isHalfSkill(c, s) ? Math.floor(pb(c) / 2) : profAmount(skillLevel(c, s), pb(c)));
 
 /* Passive = 10 + skill, más efectos como Observant (+5). */
 export function passive(c: Character, skillId: string, granted: Effect[] = []): number {

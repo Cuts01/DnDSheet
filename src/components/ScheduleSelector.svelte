@@ -2,6 +2,7 @@
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import type { Campaign, CatalogClub, CatalogCourse, CatalogJob, CatalogTeam } from '../lib/model/campaign';
+  import { SKILLS } from '../lib/rules/tables';
   import { classDC, clashNames, courseLabel, fmtSpan, picked, scheduleOf, syncFromSchedule, tally, whenText } from '../lib/rules/schedule';
 
   /* Elegir optativas, clubes, equipo de Mage Tower y trabajo del catálogo de la campaña. */
@@ -82,6 +83,12 @@
     const p = picked(store.c, cat);
     return [...p.required, ...p.electives];
   });
+  function setHalf(id: string, v: string) {
+    const h = { ...store.c.strixhaven.schedule.halfProf };
+    if (v) h[id] = v;
+    else delete h[id];
+    store.c.strixhaven.schedule.halfProf = h;
+  }
   function setStudy(id: string, v: string) {
     const st = { ...store.c.strixhaven.schedule.study };
     if (v) st[id] = v;
@@ -179,7 +186,9 @@
     {/each}
   {:else if tab === 'team'}
     <p class="small muted">
-      {t('Los de Año 0 entran como suplentes con media beca. El equipo cuenta como club y la beca sustituye al trabajo. Solo un equipo.')}
+      {rules.teamScholarship
+        ? t('El equipo cuenta como club. {beca}. Solo un equipo.', { beca: rules.teamScholarship })
+        : t('Los de Año 0 entran como suplentes con media beca. El equipo cuenta como club y la beca sustituye al trabajo. Solo un equipo.')}
       {#if !rules.teamGivesDie}{t('No da Student Die.')}{/if}
       {#if rules.teamPerk}{rules.teamPerk}{/if}
     </p>
@@ -211,7 +220,7 @@
       {t('Un trabajo como máximo.')}{rules.pay ? ` ${t('Paga')}: ${rules.pay}.` : ''}
       {t('Elige el lugar y marca los turnos que acuerdes.')}
     </p>
-    <label class="check small"><input type="checkbox" checked={sch.scholarship} onchange={(e) => update((s) => (s.scholarship = e.currentTarget.checked))} /> {t('Tengo media beca por otro deporte')}</label>
+    <label class="check small"><input type="checkbox" checked={sch.scholarship} onchange={(e) => update((s) => (s.scholarship = e.currentTarget.checked))} /> {t('Tengo media beca por otro deporte')}{rules.otherScholarship ? ` (${rules.otherScholarship})` : ''}</label>
     <ul class="items">
       <li>
         <button class="item" class:on={!sch.job} aria-pressed={!sch.job} onclick={() => setJob('')}>
@@ -263,18 +272,23 @@
   {/if}
 </div>
 
-{#if rules.classDC && myCourses.length}
+{#if myCourses.length}
   <div class="card stack">
     <h2>{t('Mis clases y checks')}</h2>
-    <p class="small muted">{t('Cada clase tiene checks de {dice}, igual que los exámenes. Estudiando y yendo bien en clase ganas un dado de estudio; anótalo aquí.', { dice: rules.checkDice || '2d6' })}</p>
+    {#if rules.classDC}<p class="small muted">{t('Cada clase tiene checks de {dice}, igual que los exámenes. Estudiando y yendo bien en clase ganas un dado de estudio; anótalo aquí.', { dice: rules.checkDice || '2d6' })}</p>{/if}
+    <p class="small muted">{t('Algunas clases dan media proficiency en una skill si te va bien: elígela y se suma a tu hoja (◐).')}</p>
     <ul class="study">
       {#each myCourses as x (x.id)}
         <li>
           <span class="s-name"><b class="code">{x.code}</b> {x.name}</span>
-          <span class="dc">DC {classDC(cat, x)}</span>
+          {#if classDC(cat, x)}<span class="dc">DC {classDC(cat, x)}</span>{:else}<span></span>{/if}
           <select aria-label={t('Dado de estudio de {name}', { name: x.code || x.name })} value={sch.study[x.id] ?? ''} onchange={(e) => setStudy(x.id, e.currentTarget.value)}>
             <option value="">{t('Sin dado')}</option>
             {#each rules.studyDice as d (d)}<option value={d}>{d}</option>{/each}
+          </select>
+          <select class="half" aria-label={t('Media proficiency de {name}', { name: x.code || x.name })} value={sch.halfProf[x.id] ?? ''} onchange={(e) => setHalf(x.id, e.currentTarget.value)}>
+            <option value="">{t('Sin media proficiency')}</option>
+            {#each SKILLS as k (k.id)}<option value={k.id}>◐ {k.name}</option>{/each}
           </select>
         </li>
       {/each}
@@ -309,6 +323,9 @@
   .s-name {
     font-size: 0.85rem;
     min-width: 0;
+  }
+  .study .half {
+    grid-column: 1 / -1;
   }
   .counts {
     display: flex;

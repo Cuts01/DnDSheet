@@ -3,7 +3,7 @@
   import { t } from '../../lib/i18n.svelte';
   import { compendium } from '../../lib/compendium.svelte';
   import { ABILITIES, type Character, type ProfLevel } from '../../lib/model/character';
-  import { fmt, skillBonus, skillLevel, skillSources, toolExpertise } from '../../lib/rules/derive';
+  import { fmt, skillBonus, skillLevel, skillSources, toolExpertise, isHalfSkill } from '../../lib/rules/derive';
   import { slug } from '../../lib/model/pack';
   import { findBackground, findSpecies, proficiencies, skillChoiceSlots } from '../../lib/rules/features';
   import { ABILITY_LABEL, SKILLS } from '../../lib/rules/tables';
@@ -56,11 +56,18 @@
   }
 
   // Tocar una skill: si ya es proficient por una fuente, alterna expertise; si no, none, prof, expertise.
+  // Sin fuente: nada, media proficiency, proficient, expertise.
   function cycle(id: string) {
     const derived = skillSources(c, id).length > 0;
     const cur = c.skills[id];
+    const half = c.halfSkills.includes(id);
+    if (!derived && !cur && !half) {
+      c.halfSkills = [...c.halfSkills, id];
+      return;
+    }
+    if (half) c.halfSkills = c.halfSkills.filter((x) => x !== id);
     const order: (ProfLevel | undefined)[] = derived ? [undefined, 'expertise'] : [undefined, 'prof', 'expertise'];
-    const next = order[(order.indexOf(cur) + 1) % order.length];
+    const next = half ? 'prof' : order[(order.indexOf(cur) + 1) % order.length];
     if (next === undefined) delete c.skills[id];
     else c.skills[id] = next;
   }
@@ -147,8 +154,8 @@
     {#each SKILLS as s (s.id)}
       {@const lvl = skillLevel(c, s)}
       {@const src = skillSources(c, s.id)}
-      <button class="skill" class:on={lvl !== 'none'} onclick={() => cycle(s.id)}>
-        <span class="mark">{mark[lvl]}</span>
+      <button class="skill" class:on={lvl !== 'none' || isHalfSkill(c, s)} onclick={() => cycle(s.id)}>
+        <span class="mark">{isHalfSkill(c, s) ? '◐' : mark[lvl]}</span>
         <span class="name">
           {s.name}
           {#if src.length}<small class="muted">{[...new Set(src.map(srcLabel))].join(', ')}</small>{/if}
@@ -157,7 +164,7 @@
       </button>
     {/each}
   </div>
-  <p class="muted small">{t('Toca una skill para marcar expertise o agregar una proficiency extra.')} ● proficient · ◆ expertise</p>
+  <p class="muted small">{t('Toca una skill para marcar expertise o agregar una proficiency extra.')} ◐ {t('media proficiency')} · ● proficient · ◆ expertise</p>
 
   <h2>Saving throws</h2>
   <div class="saves">

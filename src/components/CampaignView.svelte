@@ -357,6 +357,8 @@
           </div>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.teamGivesDie} /> {t('El equipo de Mage Tower da Student Die')}</label>
           <label class="field"><span>{t('Qué da el equipo de Mage Tower')}</span><input bind:value={cat.rules.teamPerk} /></label>
+          <label class="field"><span>{t('Beca del equipo de Mage Tower')}</span><input bind:value={cat.rules.teamScholarship} /></label>
+          <label class="field"><span>{t('Beca de otros deportes')}</span><input bind:value={cat.rules.otherScholarship} /></label>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.teamCountsAsClub} /> {t('El equipo de Mage Tower cuenta como club')}</label>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.jobUsesClubSlot} /> {t('El trabajo ocupa un lugar de club (dos clubes, o un club y un trabajo)')}</label>
           <label class="check small"><input type="checkbox" bind:checked={cat.rules.scholarshipReplacesJob} /> {t('La beca sustituye al trabajo')}</label>

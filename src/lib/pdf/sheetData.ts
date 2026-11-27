@@ -21,6 +21,7 @@ import {
   score,
   skillBonus,
   skillLevel,
+  isHalfSkill,
   slotMax,
   speed,
   spellcasting,
@@ -64,7 +65,7 @@ export interface SheetData {
   stats: { label: string; value: string; sub?: string }[];
   abilities: { label: string; mod: string; score: number }[];
   saves: { label: string; value: string; prof: boolean }[];
-  skills: { label: string; ability: string; value: string; level: 'none' | 'prof' | 'expertise' }[];
+  skills: { label: string; ability: string; value: string; level: 'none' | 'prof' | 'expertise'; half?: boolean }[];
   passives: { label: string; value: number }[];
   attacks: { name: string; hit: string; damage: string; range: string }[];
   armor: { name: string; ac: string; equipped: boolean }[];
@@ -139,7 +140,7 @@ export function sheetData(c: Character, packs: Pack[], extra: { campaign?: strin
 
   const abilities = ABILITIES.map((a) => ({ label: ABILITY_LABEL[a], mod: fmt(abilityMod(c, a)), score: score(c, a) }));
   const saves = ABILITIES.map((a: Ability) => ({ label: ABILITY_LABEL[a], value: fmt(saveBonus(c, a)), prof: hasSave(c, a) }));
-  const skills = SKILLS.map((s) => ({ label: s.name, ability: ABILITY_LABEL[s.ability], value: fmt(skillBonus(c, s)), level: skillLevel(c, s) }));
+  const skills = SKILLS.map((s) => ({ label: s.name, ability: ABILITY_LABEL[s.ability], value: fmt(skillBonus(c, s)), level: skillLevel(c, s), half: isHalfSkill(c, s) }));
   const passives = [
     { label: 'Passive Perception', value: passive(c, 'perception', granted) },
     { label: 'Passive Insight', value: passive(c, 'insight', granted) },

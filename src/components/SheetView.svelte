@@ -2,7 +2,7 @@
   import { t } from '../lib/i18n.svelte';
   import { store } from '../lib/store.svelte';
   import { ABILITIES } from '../lib/model/character';
-  import { abilityMod, auraOfProtection, fmt, hasSave, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
+  import { abilityMod, auraOfProtection, fmt, hasSave, isHalfSkill, passive, saveBonus, score, skillBonus, skillLevel } from '../lib/rules/derive';
   import { ABILITY_LABEL, SKILLS } from '../lib/rules/tables';
   import { compendium } from '../lib/compendium.svelte';
   import { allGrantedEffects } from '../lib/rules/features';
@@ -46,15 +46,16 @@
     <ul class="skills">
       {#each SKILLS as s (s.id)}
         {@const lvl = skillLevel(c, s)}
-        <li class:active={lvl !== 'none'}>
-          <span class="mark" aria-label={lvl}>{mark[lvl]}</span>
+        {@const half = isHalfSkill(c, s)}
+        <li class:active={lvl !== 'none' || half}>
+          <span class="mark" aria-label={half ? 'half' : lvl}>{half ? '◐' : mark[lvl]}</span>
           <span class="sk-name">{s.name}</span>
           <span class="sk-ab muted">{ABILITY_LABEL[s.ability]}</span>
           <b class="num">{fmt(skillBonus(c, s))}</b>
         </li>
       {/each}
     </ul>
-    <p class="muted small legend">● proficient · ◆ expertise</p>
+    <p class="muted small legend">{#if SKILLS.some((s) => isHalfSkill(c, s))}◐ {t('media proficiency')} · {/if}● proficient · ◆ expertise</p>
   </div>
   {#if store.c.strixhaven.enabled}<StrixhavenCard />{/if}
   <div class="pdf-row"><PdfButton /></div>

@@ -546,6 +546,11 @@ async function drawTemplate(p: Painter, d: SheetData): Promise<Overflow> {
     const y = SKILL_Y[s.label];
     if (y === undefined) continue;
     if (s.level !== 'none') dot(336, y + 5, 8.5);
+    else if (s.half) {
+      // Media proficiency: medio círculo relleno (mitad izquierda).
+      const r = 8.5 * SX;
+      page.drawSvgPath(`M 0 ${-r} A ${r} ${r} 0 0 0 0 ${r} Z`, { x: 336 * SX, y: H - (y + 5) * SY, color: INK });
+    }
     if (s.level === 'expertise') dot(343.5, y - 6, 5);
     center(s.value, 378, y - 2, 8.5, bold, 34);
   }
